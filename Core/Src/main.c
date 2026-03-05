@@ -130,15 +130,21 @@ int main(void)
   MX_QUADSPI_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */
+  
   BMI270_Configure();
   
   GPS_Start();
+  
   BME280_Config(OSRS_2, OSRS_16, OSRS_1, MODE_NORMAL, T_SB_0p5, IIR_16);
   
   // Flash configuration
   Enable_4BYTEMODE();
 
   Flash_SectorErase(0);
+
+  //Display initiation
+  Oled_init();
+  Oled_introScreen();
 
   /* USER CODE END 2 */
 
@@ -159,8 +165,12 @@ int main(void)
       case STATE_2:
 
         if (tastScheduler >= 1){
-          packageDataToMem();
-          sendPackageToMem();
+
+          if(GPS_connected) // Check if GPS has good connection before storing data
+          {
+            packageDataToMem();
+            sendPackageToMem();
+          }
 
           HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 0);
           HAL_GPIO_WritePin(GPIOB, LED_R_Pin, 0);  
@@ -169,7 +179,7 @@ int main(void)
         }
         break;
       case STATE_3:
-        if(Custom_STN_NotificationEnabled()) // Check if someone is connected and ha notification enabled
+        if(Custom_STN_NotificationEnabled()) // Check if someone is connected and has notification enabled
         {
           readMemSendBle();
         }

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****            capability (RWW)
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****        (+) Single bank memory organization
   31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****        (+) PCROP protection
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 2
 
 
   32:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****        (+) WRP protection
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @brief FLASH Extended HAL module driver
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @{
   88:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 3
 
 
   89:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @brief  Perform an erase of the specified FLASH memory pages.
  144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @note   Before any operation, it is possible to check there is no operation suspended
  145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   *         by call HAL_FLASHEx_IsOperationSuspended()
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 4
 
 
  146:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @param[in]  pEraseInit Pointer to an @ref FLASH_EraseInitTypeDef structure that
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
  201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   /* Process Unlocked */
  202:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   __HAL_UNLOCK(&pFlash);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 5
 
 
  203:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  257:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** }
  258:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
  259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** /**
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 6
 
 
  260:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @brief  Program Option bytes.
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   {
  315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****     /* Do Nothing */
  316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 7
 
 
  317:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  371:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   */
  372:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** void HAL_FLASHEx_OBGetConfig(FLASH_OBProgramInitTypeDef *pOBInit)
  373:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 8
 
 
  374:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   pOBInit->OptionType = OPTIONBYTE_ALL;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  428:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @retval None
  429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   */
  430:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** void HAL_FLASHEx_ForceFlashEmpty(uint32_t FlashEmpty)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 9
 
 
  431:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  485:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   return status;
  486:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** }
  487:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 10
 
 
  488:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** /**
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
   43 000e 22F40072 		bic	r2, r2, #512
   44 0012 1A60     		str	r2, [r3]
  527:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****     /* Reset instruction cache */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 11
 
 
  528:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****     __HAL_FLASH_INSTRUCTION_CACHE_RESET();
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
   85 0056 1A60     		str	r2, [r3]
   86              	.L1:
  542:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 12
 
 
  543:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  555:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @brief  Configure the write protection of the desired pages.
  556:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @note   When WRP is active in a zone, it cannot be erased or programmed.
  557:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   *         Consequently, a software mass erase cannot be performed if one zone
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 13
 
 
  558:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   *         is write-protected.
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  157              	.L10:
  588:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****                (WRPStartOffset | (WRDPEndOffset << FLASH_WRP1AR_WRP1A_END_Pos)));
  589:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 14
 
 
  590:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   else /* OB_WRPAREA_BANK1_AREAB */
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  617:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   *         @arg @ref OB_IWDG_STDBY_FREEZE or @ref OB_IWDG_STDBY_RUN
  618:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   *         @arg @ref OB_WWDG_SW or @ref OB_WWDG_HW
  619:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   *         @arg @ref OB_BOOT1_SRAM or @ref OB_BOOT1_SYSTEM
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 15
 
 
  620:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   *         @arg @ref OB_SRAM2_PARITY_ENABLE or @ref OB_SRAM2_PARITY_DISABLE
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  215 000e 0B43     		orrs	r3, r3, r1
  216              	.LVL10:
  217              		.loc 1 645 36 view .LVU49
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 16
 
 
  218 0010 1343     		orrs	r3, r3, r2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  669:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   /* Check the parameters */
  670:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   assert_param(IS_OB_PCROP_CONFIG(PCROPConfig));
  251              		.loc 1 670 3 view .LVU56
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 17
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 17
 
 
  671:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   assert_param(IS_FLASH_MAIN_MEM_ADDRESS(PCROP1AStartAddr));
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  286              		.loc 1 689 5 is_stmt 1 view .LVU72
  287              		.loc 1 689 16 is_stmt 0 view .LVU73
  288 001e 43EAD223 		orr	r3, r3, r2, lsr #11
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 18
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 18
 
 
  289              	.LVL17:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  699:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** }
  327              		.loc 1 699 3 is_stmt 1 view .LVU84
  328 003a 034A     		ldr	r2, .L29
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 19
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 19
 
 
  329              	.LVL22:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  718:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
  719:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   /* Check the parameters */
  720:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   assert_param(IS_FLASH_MAIN_MEM_ADDRESS(PCROP1BStartAddr));
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 20
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 20
 
 
  364              		.loc 1 720 3 view .LVU92
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  738:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @note   To validate the extra user option bytes, the option bytes must be reloaded
  739:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   *         through the call of the @ref HAL_FLASH_OB_Launch() function.
  740:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   * @param  IPCCDataBufAddr IPCC data buffer start address area in SRAM2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 21
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 21
 
 
  741:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   *         This parameter must be the double-word aligned
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  761:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** static void FLASH_OB_SecureConfig(FLASH_OBProgramInitTypeDef *pOBParam)
  762:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** {
  439              		.loc 1 762 1 is_stmt 1 view -0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 22
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 22
 
 
  440              		.cfi_startproc
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  474              		.loc 1 782 5 is_stmt 0 view .LVU125
  475 0024 23F47013 		bic	r3, r3, #3932160
  476 0028 426B     		ldr	r2, [r0, #52]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 23
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 23
 
 
  477 002a 02F15F42 		add	r2, r2, #-553648128
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  504              	.L38:
  810:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   }
  811:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 24
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 24
 
 
  812:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   /* Boot vector */
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  536              	.LVL46:
  537              	.L43:
  791:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** #if defined(FLASH_SRRVR_BRSD_A)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 25
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 25
 
 
  538              		.loc 1 791 7 is_stmt 1 view .LVU144
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  847:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   */
  848:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** static void FLASH_OB_GetWRP(uint32_t WRPArea, uint32_t *WRPStartOffset, uint32_t *WRDPEndOffset)
  849:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 26
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 26
 
 
  577              		.loc 1 849 1 is_stmt 1 view -0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  618 001e C3F30743 		ubfx	r3, r3, #16, #8
  619              		.loc 1 862 20 view .LVU169
  620 0022 1360     		str	r3, [r2]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 27
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 27
 
 
  863:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   }
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  659              	.LVL57:
  660              	.L52:
  881:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 28
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 28
 
 
  882:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   else
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  911:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   CLEAR_BIT(user_config, (FLASH_OPTR_RDP | FLASH_OPTR_ESE));
  688              		.loc 1 911 3 is_stmt 1 view .LVU183
  912:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 29
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 29
 
 
  913:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   return user_config;
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  725              		.loc 1 932 3 is_stmt 1 view .LVU189
  933:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
  934:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   pcrop             = (READ_BIT(FLASH->PCROP1BSR, FLASH_PCROP1BSR_PCROP1B_STRT));
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 30
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 30
 
 
  726              		.loc 1 934 3 view .LVU190
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  770              		.loc 1 944 31 is_stmt 0 view .LVU211
  771 002e 04EAC324 		and	r4, r4, r3, lsl #11
  772              		.loc 1 944 66 view .LVU212
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 31
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 31
 
 
  773 0032 04F10064 		add	r4, r4, #134217728
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  818 0002 DB6B     		ldr	r3, [r3, #60]
  819              		.loc 1 955 68 view .LVU223
  820 0004 0448     		ldr	r0, .L65+4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 32
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 32
 
 
  821 0006 00EA0310 		and	r0, r0, r3, lsl #4
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  973:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   uint32_t srrvr_reg_val = READ_REG(FLASH->SRRVR);
  860              		.loc 1 973 3 is_stmt 1 view .LVU229
  861              		.loc 1 973 12 is_stmt 0 view .LVU230
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 33
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 33
 
 
  862 0008 D6F88440 		ldr	r4, [r6, #132]
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  994:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** #endif /* FLASH_SRRVR_SBRSA_B */
  995:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
  996:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   *SecureRAM2bStartAddr = ((user_config << SRAM_SECURE_PAGE_GRANULARITY_OFFSET) + SRAM2B_BASE);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 34
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 34
 
 
  896              		.loc 1 996 3 is_stmt 1 view .LVU246
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
 1008:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** static void FLASH_OB_GetC2BootResetConfig(uint32_t *C2BootResetVectAddr, uint32_t *C2BootResetRegio
 1009:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** {
  941              		.loc 1 1009 1 is_stmt 1 view -0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 35
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 35
 
 
  942              		.cfi_startproc
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  980              		.loc 1 1014 26 view .LVU273
  981 0034 0360     		str	r3, [r0]
  982 0036 7047     		bx	lr
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 36
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 36
 
 
  983              	.L76:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
 1041:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
 1042:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   return status;
  1019              		.loc 1 1042 3 is_stmt 1 view .LVU280
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 37
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 37
 
 
 1043:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** }
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1065 0006 5ED0     		beq	.L93
  272:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   uint32_t optr;
  1066              		.loc 1 272 1 is_stmt 0 view .LVU292
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 38
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 38
 
 
  1067 0008 10B5     		push	{r4, lr}
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1106              	.L87:
  316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
  1107              		.loc 1 316 3 is_stmt 1 view .LVU308
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 39
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 39
 
 
  319:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   {
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  352:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
  1145              		.loc 1 352 12 is_stmt 0 view .LVU326
  1146 005c FFF7FEFF 		bl	FLASH_OB_ProceedWriteOperation
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 40
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 40
 
 
  1147              	.LVL89:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1188 008c FFF7FEFF 		bl	FLASH_OB_OptrConfig
  1189              	.LVL96:
  305:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 41
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 41
 
 
  1190              		.loc 1 305 5 is_stmt 0 view .LVU340
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1235 00c4 CAE7     		b	.L92
  1236              	.LVL107:
  1237              	.L93:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 42
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 42
 
 
  1238              	.LCFI12:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1286              	.LVL110:
  376:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****   {
  1287              		.loc 1 376 6 view .LVU358
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 43
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 43
 
 
  1288 000e 0128     		cmp	r0, #1
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1327 0048 A064     		str	r0, [r4, #72]
  398:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****                                  &(pOBInit->SecureRAM2bStartAddr), &(pOBInit->SecureMode));
  1328              		.loc 1 398 3 is_stmt 1 view .LVU374
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 44
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 44
 
 
  1329 004a 04F13C03 		add	r3, r4, #60
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1379              		.loc 1 415 11 is_stmt 0 view .LVU380
  1380 0000 024B     		ldr	r3, .L115
  1381 0002 1868     		ldr	r0, [r3]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 45
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 45
 
 
  416:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1434              		@ args = 0, pretend = 0, frame = 0
  1435              		@ frame_needed = 0, uses_anonymous_args = 0
  1436              		@ link register save eliminated.
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 46
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 46
 
 
  448:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** }
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1489              		.cfi_startproc
  1490              		@ args = 0, pretend = 0, frame = 0
  1491              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 47
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 47
 
 
  1492              		@ link register save eliminated.
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** }
  1538              		.loc 1 513 3 is_stmt 0 view .LVU403
  1539 000c 40F48030 		orr	r0, r0, #65536
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 48
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 48
 
 
  1540 0010 40F00200 		orr	r0, r0, #2
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1587 000e 184B     		ldr	r3, .L145
  1588 0010 0122     		movs	r2, #1
  1589 0012 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 49
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 49
 
 
  162:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1627              		.loc 1 205 1 is_stmt 0 view .LVU429
  1628 0034 3846     		mov	r0, r7
  1629 0036 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 50
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 50
 
 
  1630              	.LVL130:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1668 005c 0746     		mov	r7, r0
  1669 005e 0028     		cmp	r0, #0
  1670 0060 EFD0     		beq	.L139
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 51
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 51
 
 
  188:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c ****           break;
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1717              		.loc 1 223 3 view .LVU455
  223:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_flash_ex.c **** 
  1718              		.loc 1 223 3 view .LVU456
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 52
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 52
 
 
  1719 0002 144B     		ldr	r3, .L152
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1757              		.loc 1 257 1 is_stmt 0 view .LVU472
  1758 002c 2846     		mov	r0, r5
  1759 002e 38BD     		pop	{r3, r4, r5, pc}
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 53
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 53
 
 
  1760              	.LVL142:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1798              	.L153:
  1799              		.align	2
  1800              	.L152:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 54
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 54
 
 
  1801 0054 00000000 		.word	pFlash
@@ -3192,92 +3192,92 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 1
  1810              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  1811              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
  1812              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_flash.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 55
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 55
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_flash_ex.c
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:21     .text.FLASH_FlushCaches:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:26     .text.FLASH_FlushCaches:00000000 FLASH_FlushCaches
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:92     .text.FLASH_FlushCaches:0000005c $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:97     .text.FLASH_AcknowledgePageErase:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:102    .text.FLASH_AcknowledgePageErase:00000000 FLASH_AcknowledgePageErase
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:120    .text.FLASH_AcknowledgePageErase:00000010 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:125    .text.FLASH_OB_WRPConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:130    .text.FLASH_OB_WRPConfig:00000000 FLASH_OB_WRPConfig
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:174    .text.FLASH_OB_WRPConfig:00000028 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:179    .text.FLASH_OB_OptrConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:184    .text.FLASH_OB_OptrConfig:00000000 FLASH_OB_OptrConfig
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:230    .text.FLASH_OB_OptrConfig:0000001c $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:235    .text.FLASH_OB_PCROP1AConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:240    .text.FLASH_OB_PCROP1AConfig:00000000 FLASH_OB_PCROP1AConfig
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:344    .text.FLASH_OB_PCROP1AConfig:00000048 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:349    .text.FLASH_OB_PCROP1BConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:354    .text.FLASH_OB_PCROP1BConfig:00000000 FLASH_OB_PCROP1BConfig
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:390    .text.FLASH_OB_PCROP1BConfig:00000014 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:395    .text.FLASH_OB_IPCCBufferAddrConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:400    .text.FLASH_OB_IPCCBufferAddrConfig:00000000 FLASH_OB_IPCCBufferAddrConfig
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:426    .text.FLASH_OB_IPCCBufferAddrConfig:00000010 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:431    .text.FLASH_OB_SecureConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:436    .text.FLASH_OB_SecureConfig:00000000 FLASH_OB_SecureConfig
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:563    .text.FLASH_OB_SecureConfig:000000a8 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:569    .text.FLASH_OB_GetWRP:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:574    .text.FLASH_OB_GetWRP:00000000 FLASH_OB_GetWRP
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:626    .text.FLASH_OB_GetWRP:00000028 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:631    .text.FLASH_OB_GetRDP:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:636    .text.FLASH_OB_GetRDP:00000000 FLASH_OB_GetRDP
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:666    .text.FLASH_OB_GetRDP:00000014 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:671    .text.FLASH_OB_GetUser:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:676    .text.FLASH_OB_GetUser:00000000 FLASH_OB_GetUser
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:699    .text.FLASH_OB_GetUser:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:705    .text.FLASH_OB_GetPCROP:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:710    .text.FLASH_OB_GetPCROP:00000000 FLASH_OB_GetPCROP
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:797    .text.FLASH_OB_GetPCROP:00000044 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:803    .text.FLASH_OB_GetIPCCBufferAddr:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:808    .text.FLASH_OB_GetIPCCBufferAddr:00000000 FLASH_OB_GetIPCCBufferAddr
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:829    .text.FLASH_OB_GetIPCCBufferAddr:00000014 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:835    .text.FLASH_OB_GetSecureMemoryConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:840    .text.FLASH_OB_GetSecureMemoryConfig:00000000 FLASH_OB_GetSecureMemoryConfig
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:928    .text.FLASH_OB_GetSecureMemoryConfig:00000048 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:933    .text.FLASH_OB_GetC2BootResetConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:938    .text.FLASH_OB_GetC2BootResetConfig:00000000 FLASH_OB_GetC2BootResetConfig
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:986    .text.FLASH_OB_GetC2BootResetConfig:00000038 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:992    .text.FLASH_OB_ProceedWriteOperation:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:997    .text.FLASH_OB_ProceedWriteOperation:00000000 FLASH_OB_ProceedWriteOperation
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1039   .text.FLASH_OB_ProceedWriteOperation:00000024 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1044   .text.HAL_FLASHEx_OBProgram:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1050   .text.HAL_FLASHEx_OBProgram:00000000 HAL_FLASHEx_OBProgram
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1250   .text.HAL_FLASHEx_OBProgram:000000cc $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1256   .text.HAL_FLASHEx_OBGetConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1262   .text.HAL_FLASHEx_OBGetConfig:00000000 HAL_FLASHEx_OBGetConfig
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1360   .text.HAL_FLASHEx_OBGetConfig:0000007c $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1365   .text.HAL_FLASHEx_FlashEmptyCheck:00000000 $t
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s 			page 56
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:21     .text.FLASH_FlushCaches:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:26     .text.FLASH_FlushCaches:00000000 FLASH_FlushCaches
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:92     .text.FLASH_FlushCaches:0000005c $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:97     .text.FLASH_AcknowledgePageErase:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:102    .text.FLASH_AcknowledgePageErase:00000000 FLASH_AcknowledgePageErase
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:120    .text.FLASH_AcknowledgePageErase:00000010 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:125    .text.FLASH_OB_WRPConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:130    .text.FLASH_OB_WRPConfig:00000000 FLASH_OB_WRPConfig
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:174    .text.FLASH_OB_WRPConfig:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:179    .text.FLASH_OB_OptrConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:184    .text.FLASH_OB_OptrConfig:00000000 FLASH_OB_OptrConfig
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:230    .text.FLASH_OB_OptrConfig:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:235    .text.FLASH_OB_PCROP1AConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:240    .text.FLASH_OB_PCROP1AConfig:00000000 FLASH_OB_PCROP1AConfig
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:344    .text.FLASH_OB_PCROP1AConfig:00000048 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:349    .text.FLASH_OB_PCROP1BConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:354    .text.FLASH_OB_PCROP1BConfig:00000000 FLASH_OB_PCROP1BConfig
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:390    .text.FLASH_OB_PCROP1BConfig:00000014 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:395    .text.FLASH_OB_IPCCBufferAddrConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:400    .text.FLASH_OB_IPCCBufferAddrConfig:00000000 FLASH_OB_IPCCBufferAddrConfig
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:426    .text.FLASH_OB_IPCCBufferAddrConfig:00000010 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:431    .text.FLASH_OB_SecureConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:436    .text.FLASH_OB_SecureConfig:00000000 FLASH_OB_SecureConfig
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:563    .text.FLASH_OB_SecureConfig:000000a8 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:569    .text.FLASH_OB_GetWRP:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:574    .text.FLASH_OB_GetWRP:00000000 FLASH_OB_GetWRP
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:626    .text.FLASH_OB_GetWRP:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:631    .text.FLASH_OB_GetRDP:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:636    .text.FLASH_OB_GetRDP:00000000 FLASH_OB_GetRDP
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:666    .text.FLASH_OB_GetRDP:00000014 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:671    .text.FLASH_OB_GetUser:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:676    .text.FLASH_OB_GetUser:00000000 FLASH_OB_GetUser
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:699    .text.FLASH_OB_GetUser:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:705    .text.FLASH_OB_GetPCROP:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:710    .text.FLASH_OB_GetPCROP:00000000 FLASH_OB_GetPCROP
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:797    .text.FLASH_OB_GetPCROP:00000044 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:803    .text.FLASH_OB_GetIPCCBufferAddr:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:808    .text.FLASH_OB_GetIPCCBufferAddr:00000000 FLASH_OB_GetIPCCBufferAddr
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:829    .text.FLASH_OB_GetIPCCBufferAddr:00000014 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:835    .text.FLASH_OB_GetSecureMemoryConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:840    .text.FLASH_OB_GetSecureMemoryConfig:00000000 FLASH_OB_GetSecureMemoryConfig
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:928    .text.FLASH_OB_GetSecureMemoryConfig:00000048 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:933    .text.FLASH_OB_GetC2BootResetConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:938    .text.FLASH_OB_GetC2BootResetConfig:00000000 FLASH_OB_GetC2BootResetConfig
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:986    .text.FLASH_OB_GetC2BootResetConfig:00000038 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:992    .text.FLASH_OB_ProceedWriteOperation:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:997    .text.FLASH_OB_ProceedWriteOperation:00000000 FLASH_OB_ProceedWriteOperation
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1039   .text.FLASH_OB_ProceedWriteOperation:00000024 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1044   .text.HAL_FLASHEx_OBProgram:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1050   .text.HAL_FLASHEx_OBProgram:00000000 HAL_FLASHEx_OBProgram
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1250   .text.HAL_FLASHEx_OBProgram:000000cc $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1256   .text.HAL_FLASHEx_OBGetConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1262   .text.HAL_FLASHEx_OBGetConfig:00000000 HAL_FLASHEx_OBGetConfig
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1360   .text.HAL_FLASHEx_OBGetConfig:0000007c $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1365   .text.HAL_FLASHEx_FlashEmptyCheck:00000000 $t
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckapOwM.s 			page 56
 
 
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1371   .text.HAL_FLASHEx_FlashEmptyCheck:00000000 HAL_FLASHEx_FlashEmptyCheck
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1388   .text.HAL_FLASHEx_FlashEmptyCheck:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1393   .text.HAL_FLASHEx_ForceFlashEmpty:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1399   .text.HAL_FLASHEx_ForceFlashEmpty:00000000 HAL_FLASHEx_ForceFlashEmpty
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1419   .text.HAL_FLASHEx_ForceFlashEmpty:00000010 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1424   .text.HAL_FLASHEx_SuspendOperation:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1430   .text.HAL_FLASHEx_SuspendOperation:00000000 HAL_FLASHEx_SuspendOperation
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1447   .text.HAL_FLASHEx_SuspendOperation:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1452   .text.HAL_FLASHEx_AllowOperation:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1458   .text.HAL_FLASHEx_AllowOperation:00000000 HAL_FLASHEx_AllowOperation
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1475   .text.HAL_FLASHEx_AllowOperation:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1480   .text.HAL_FLASHEx_IsOperationSuspended:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1486   .text.HAL_FLASHEx_IsOperationSuspended:00000000 HAL_FLASHEx_IsOperationSuspended
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1512   .text.HAL_FLASHEx_IsOperationSuspended:00000010 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1517   .text.FLASH_PageErase:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1523   .text.FLASH_PageErase:00000000 FLASH_PageErase
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1547   .text.FLASH_PageErase:00000018 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1552   .text.HAL_FLASHEx_Erase:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1558   .text.HAL_FLASHEx_Erase:00000000 HAL_FLASHEx_Erase
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1689   .text.HAL_FLASHEx_Erase:00000070 $d
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1694   .text.HAL_FLASHEx_Erase_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1700   .text.HAL_FLASHEx_Erase_IT:00000000 HAL_FLASHEx_Erase_IT
-C:\Users\bku598\AppData\Local\Temp\ccPZ80Qb.s:1801   .text.HAL_FLASHEx_Erase_IT:00000054 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1371   .text.HAL_FLASHEx_FlashEmptyCheck:00000000 HAL_FLASHEx_FlashEmptyCheck
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1388   .text.HAL_FLASHEx_FlashEmptyCheck:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1393   .text.HAL_FLASHEx_ForceFlashEmpty:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1399   .text.HAL_FLASHEx_ForceFlashEmpty:00000000 HAL_FLASHEx_ForceFlashEmpty
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1419   .text.HAL_FLASHEx_ForceFlashEmpty:00000010 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1424   .text.HAL_FLASHEx_SuspendOperation:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1430   .text.HAL_FLASHEx_SuspendOperation:00000000 HAL_FLASHEx_SuspendOperation
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1447   .text.HAL_FLASHEx_SuspendOperation:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1452   .text.HAL_FLASHEx_AllowOperation:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1458   .text.HAL_FLASHEx_AllowOperation:00000000 HAL_FLASHEx_AllowOperation
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1475   .text.HAL_FLASHEx_AllowOperation:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1480   .text.HAL_FLASHEx_IsOperationSuspended:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1486   .text.HAL_FLASHEx_IsOperationSuspended:00000000 HAL_FLASHEx_IsOperationSuspended
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1512   .text.HAL_FLASHEx_IsOperationSuspended:00000010 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1517   .text.FLASH_PageErase:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1523   .text.FLASH_PageErase:00000000 FLASH_PageErase
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1547   .text.FLASH_PageErase:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1552   .text.HAL_FLASHEx_Erase:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1558   .text.HAL_FLASHEx_Erase:00000000 HAL_FLASHEx_Erase
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1689   .text.HAL_FLASHEx_Erase:00000070 $d
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1694   .text.HAL_FLASHEx_Erase_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1700   .text.HAL_FLASHEx_Erase_IT:00000000 HAL_FLASHEx_Erase_IT
+C:\Users\bku598\AppData\Local\Temp\cckapOwM.s:1801   .text.HAL_FLASHEx_Erase_IT:00000054 $d
 
 UNDEFINED SYMBOLS
 FLASH_WaitForLastOperation

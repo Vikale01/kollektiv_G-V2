@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
   28:Core/Src/system_stm32wbxx.c ****   *        System Clock source                    | MSI
   29:Core/Src/system_stm32wbxx.c ****   *-----------------------------------------------------------------------------
   30:Core/Src/system_stm32wbxx.c ****   *        SYSCLK(Hz)                             | 4000000
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 2
 
 
   31:Core/Src/system_stm32wbxx.c ****   *-----------------------------------------------------------------------------
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
   85:Core/Src/system_stm32wbxx.c **** #include "stm32wbxx.h"
   86:Core/Src/system_stm32wbxx.c **** 
   87:Core/Src/system_stm32wbxx.c **** #if !defined  (HSE_VALUE)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 3
 
 
   88:Core/Src/system_stm32wbxx.c **** #define HSE_VALUE    (32000000UL) /*!< Value of the External oscillator in Hz */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  142:Core/Src/system_stm32wbxx.c ****                                                      This value must be a multiple of 0x200. */
  143:Core/Src/system_stm32wbxx.c **** #endif /* VECT_TAB_OFFSET */
  144:Core/Src/system_stm32wbxx.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 4
 
 
  145:Core/Src/system_stm32wbxx.c **** #else
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  199:Core/Src/system_stm32wbxx.c ****   */
  200:Core/Src/system_stm32wbxx.c **** 
  201:Core/Src/system_stm32wbxx.c **** /** @addtogroup STM32WBxx_System_Private_FunctionPrototypes
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 5
 
 
  202:Core/Src/system_stm32wbxx.c ****   * @{
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
   49              		.loc 1 235 13 is_stmt 0 view .LVU8
   50 001a 4FF4E022 		mov	r2, #458752
   51 001e 9A60     		str	r2, [r3, #8]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 6
 
 
  236:Core/Src/system_stm32wbxx.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  257:Core/Src/system_stm32wbxx.c ****   /* Disable all interrupts */
  258:Core/Src/system_stm32wbxx.c ****   RCC->CIER = 0x00000000;
   85              		.loc 1 258 3 is_stmt 1 view .LVU25
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 7
 
 
   86              		.loc 1 258 13 is_stmt 0 view .LVU26
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  293:Core/Src/system_stm32wbxx.c ****   *              32 MHz), user has to ensure that HSE_VALUE is same as the real
  294:Core/Src/system_stm32wbxx.c ****   *              frequency of the crystal used. Otherwise, this function may
  295:Core/Src/system_stm32wbxx.c ****   *              have wrong result.
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 8
 
 
  296:Core/Src/system_stm32wbxx.c ****   *
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  144 0028 45       		.byte	(.L5-.L7)/2
  145 0029 45       		.byte	(.L5-.L7)/2
  146 002a 1F       		.byte	(.L6-.L7)/2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 9
 
 
  147 002b 00       		.p2align 1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  359:Core/Src/system_stm32wbxx.c ****   /* Compute HCLK clock frequency --------------------------------------------*/
  360:Core/Src/system_stm32wbxx.c ****   /* Get HCLK1 prescaler */
  361:Core/Src/system_stm32wbxx.c ****   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> RCC_CFGR_HPRE_Pos)];
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 10
 
 
  156              		.loc 1 361 3 view .LVU41
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  197              		.loc 1 332 17 view .LVU57
  198 0062 02F00302 		and	r2, r2, #3
  199              	.LVL4:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 11
 
 
  333:Core/Src/system_stm32wbxx.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  236              		.loc 1 349 50 view .LVU75
  237 008a 520F     		lsrs	r2, r2, #29
  349:Core/Src/system_stm32wbxx.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 12
 
 
  238              		.loc 1 349 12 view .LVU76
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  277              		.loc 1 355 23 is_stmt 0 view .LVU91
  278 00a8 024B     		ldr	r3, .L17+4
  279 00aa 1960     		str	r1, [r3]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 13
 
 
  356:Core/Src/system_stm32wbxx.c ****   }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  338 0024 00366E01 		.word	24000000
  339 0028 0048E801 		.word	32000000
  340 002c 006CDC02 		.word	48000000
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 14
 
 
  341 0030 00000000 		.word	0
@@ -829,29 +829,29 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 1
  392              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
  393              		.file 5 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/system_stm32wbxx.h"
  394              		.file 6 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_stm32wbxx.c
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:21     .text.SystemInit:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:27     .text.SystemInit:00000000 SystemInit
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:94     .text.SystemInit:0000005c $d
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:100    .text.SystemCoreClockUpdate:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:106    .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:134    .text.SystemCoreClockUpdate:0000001e $d
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:285    .text.SystemCoreClockUpdate:000000b0 $d
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:328    .rodata.MSIRangeTable:00000000 MSIRangeTable
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:386    .data.SystemCoreClock:00000000 SystemCoreClock
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:364    .rodata.AHBPrescTable:00000000 AHBPrescTable
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:298    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:295    .rodata.SmpsPrescalerTable:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:325    .rodata.MSIRangeTable:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:350    .rodata.APBPrescTable:00000000 APBPrescTable
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:347    .rodata.APBPrescTable:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:361    .rodata.AHBPrescTable:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:383    .data.SystemCoreClock:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:147    .text.SystemCoreClockUpdate:0000002b $d
-C:\Users\bku598\AppData\Local\Temp\ccyyyGrJ.s:147    .text.SystemCoreClockUpdate:0000002c $t
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:21     .text.SystemInit:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:27     .text.SystemInit:00000000 SystemInit
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:94     .text.SystemInit:0000005c $d
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:100    .text.SystemCoreClockUpdate:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:106    .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:134    .text.SystemCoreClockUpdate:0000001e $d
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:285    .text.SystemCoreClockUpdate:000000b0 $d
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:328    .rodata.MSIRangeTable:00000000 MSIRangeTable
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:386    .data.SystemCoreClock:00000000 SystemCoreClock
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:364    .rodata.AHBPrescTable:00000000 AHBPrescTable
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:298    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:295    .rodata.SmpsPrescalerTable:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:325    .rodata.MSIRangeTable:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:350    .rodata.APBPrescTable:00000000 APBPrescTable
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:347    .rodata.APBPrescTable:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:361    .rodata.AHBPrescTable:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:383    .data.SystemCoreClock:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:147    .text.SystemCoreClockUpdate:0000002b $d
+C:\Users\bku598\AppData\Local\Temp\ccsHX6to.s:147    .text.SystemCoreClockUpdate:0000002c $t
 
 NO UNDEFINED SYMBOLS

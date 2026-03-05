@@ -39,6 +39,7 @@ extern "C" {
 #include "gps.h"
 #include "flash.h"
 #include "sensordata.h"
+#include "oled_display.h"
 
 #include "custom_stm.h"
 #include "custom_app.h"

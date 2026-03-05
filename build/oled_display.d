@@ -1,5 +1,5 @@
-build/gps.o: Core/Src/gps.c Core/Inc/gps.h Core/Inc/main.h \
- Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h \
+build/oled_display.o: Core/Src/oled_display.c Core/Inc/oled_display.h \
+ Core/Inc/main.h Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h \
  Core/Inc/stm32wbxx_hal_conf.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h \
@@ -65,7 +65,7 @@ build/gps.o: Core/Src/gps.c Core/Inc/gps.h Core/Inc/main.h \
  Middlewares/ST/STM32_WPAN/ble/core/template/osal.h \
  Middlewares/ST/STM32_WPAN/ble/core/template/compiler.h \
  STM32_WPAN/App/custom_app.h
-Core/Inc/gps.h:
+Core/Inc/oled_display.h:
 Core/Inc/main.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:
 Core/Inc/stm32wbxx_hal_conf.h:

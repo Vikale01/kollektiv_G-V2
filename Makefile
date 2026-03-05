@@ -61,6 +61,7 @@ Core/Src/bme280.c \
 Core/Src/sensordata.c \
 Core/Src/gps.c \
 Core/Src/flash.c \
+Core/Src/oled_display.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim.c \

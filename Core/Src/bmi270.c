@@ -456,20 +456,20 @@ const uint8_t bmi270_config_file[8192] = {
   * @param Value Value to be written
   * @retval None
   */
-static int BMI270_I2C_write(uint8_t memAddress, uint8_t value)
-{
-    if (HAL_I2C_Mem_Write(&BMI270_I2C,
-                          BMI270_ADDRESS, 
-                          memAddress, 
-                          1, 
-                          &value, 
-                          1, 
-                          1000) != HAL_OK)
-    {
-        return BMI270_ERR_I2C;
-    }
-    return BMI270_OK;
-}
+// static int BMI270_I2C_write(uint8_t memAddress, uint8_t value)
+// {
+//     if (HAL_I2C_Mem_Write(&BMI270_I2C,
+//                           BMI270_ADDRESS, 
+//                           memAddress, 
+//                           1, 
+//                           &value, 
+//                           1, 
+//                           1000) != HAL_OK)
+//     {
+//         return BMI270_ERR_I2C;
+//     }
+//     return BMI270_OK;
+// }
 
 /**
   * @brief BMI270 I2C read-wrapper

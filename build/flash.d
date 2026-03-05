@@ -56,7 +56,8 @@ build/flash.o: Core/Src/flash.c Core/Inc/flash.h Core/Inc/main.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rtc.h \
  Middlewares/ST/STM32_WPAN/ble/core/ble_bufsize.h Core/Inc/app_entry.h \
  Core/Inc/app_common.h Core/Inc/bmi270.h Core/Inc/bme280.h Core/Inc/gps.h \
- Core/Inc/flash.h Core/Inc/sensordata.h STM32_WPAN/App/custom_stm.h \
+ Core/Inc/flash.h Core/Inc/sensordata.h Core/Inc/oled_display.h \
+ STM32_WPAN/App/custom_stm.h \
  Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h \
  Middlewares/ST/STM32_WPAN/ble/core/template/ble_const.h \
  Middlewares/ST/STM32_WPAN/ble/core/ble_std.h \
@@ -132,6 +133,7 @@ Core/Inc/bme280.h:
 Core/Inc/gps.h:
 Core/Inc/flash.h:
 Core/Inc/sensordata.h:
+Core/Inc/oled_display.h:
 STM32_WPAN/App/custom_stm.h:
 Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h:
 Middlewares/ST/STM32_WPAN/ble/core/template/ble_const.h:

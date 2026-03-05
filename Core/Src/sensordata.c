@@ -37,8 +37,6 @@ uint8_t readbuffer[BUFFER_SIZE];
 uint16_t pageNumber = 0;
 
 
-
-
 /* Private functions -----------------------------------------------*/
 
 static void sendPage_ble(uint8_t pageBuffer[256]) 
@@ -111,7 +109,7 @@ void packageDataToMem(void)
   }
   else
   {
-    buffer[255] = pageNumber;
+    buffer[255] = pageNumber; // Just nu klarar denna att räkna upp till 255. Men vi behöver 200 000
     
     bufferFull = true;
   }
