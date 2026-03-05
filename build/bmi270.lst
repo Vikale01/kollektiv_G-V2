@@ -1,0 +1,3921 @@
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"bmi270.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/bmi270.c"
+  20              		.section	.text.BMI270_I2C_read,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	BMI270_I2C_read:
+  27              	.LVL0:
+  28              	.LFB1262:
+   1:Core/Src/bmi270.c **** /***********************************************************
+   2:Core/Src/bmi270.c ****  * @file    bmi270.c
+   3:Core/Src/bmi270.c ****  * @author  Viktor Alexandersson & Niklas Christensen 
+   4:Core/Src/bmi270.c ****  * @date    2025-12-04
+   5:Core/Src/bmi270.c ****  ***********************************************************/
+   6:Core/Src/bmi270.c **** /* Includes -----------------------------------------------*/
+   7:Core/Src/bmi270.c **** #include "bmi270.h"
+   8:Core/Src/bmi270.c **** 
+   9:Core/Src/bmi270.c **** /* Variables -----------------------------------------------*/
+  10:Core/Src/bmi270.c ****     int16_t raw_ax;
+  11:Core/Src/bmi270.c ****     int16_t raw_ay;
+  12:Core/Src/bmi270.c ****     int16_t raw_az;
+  13:Core/Src/bmi270.c ****     int16_t raw_gx;
+  14:Core/Src/bmi270.c ****     int16_t raw_gy;
+  15:Core/Src/bmi270.c ****     int16_t raw_gz;
+  16:Core/Src/bmi270.c **** 
+  17:Core/Src/bmi270.c ****     /* Configuration file */
+  18:Core/Src/bmi270.c **** const uint8_t bmi270_config_file[8192] = {
+  19:Core/Src/bmi270.c ****     0xc8, 0x2e, 0x00, 0x2e, 0x80, 0x2e, 0x3d, 0xb1, 0xc8, 0x2e, 0x00, 0x2e, 0x80, 0x2e, 0x91, 0x03,
+  20:Core/Src/bmi270.c ****     0xb0, 0x80, 0x2e, 0xa3, 0x03, 0xc8, 0x2e, 0x00, 0x2e, 0x80, 0x2e, 0x00, 0xb0, 0x50, 0x30, 0x21,
+  21:Core/Src/bmi270.c ****     0x10, 0x30, 0x21, 0x2e, 0x6a, 0xf5, 0x80, 0x2e, 0x3b, 0x03, 0x00, 0x00, 0x00, 0x00, 0x08, 0x19,
+  22:Core/Src/bmi270.c ****     0x00, 0x75, 0x00, 0x00, 0x10, 0x00, 0x10, 0xd1, 0x00, 0xb3, 0x43, 0x80, 0x2e, 0x00, 0xc1, 0x80,
+  23:Core/Src/bmi270.c ****     0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1,
+  24:Core/Src/bmi270.c ****     0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00,
+  25:Core/Src/bmi270.c ****     0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e,
+  26:Core/Src/bmi270.c ****     0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80,
+  27:Core/Src/bmi270.c ****     0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1,
+  28:Core/Src/bmi270.c ****     0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00,
+  29:Core/Src/bmi270.c ****     0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e,
+  30:Core/Src/bmi270.c ****     0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80,
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 2
+
+
+  31:Core/Src/bmi270.c ****     0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0xe0, 0x5f, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00,
+  32:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x92, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  33:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x19, 0x00, 0x00, 0x88, 0x00, 0x00, 0x00, 0x00, 0x00,
+  34:Core/Src/bmi270.c ****     0xe0, 0xaa, 0x38, 0x05, 0xe0, 0x90, 0x30, 0xfa, 0x00, 0x96, 0x00, 0x4b, 0x09, 0x11, 0x00, 0x11,
+  35:Core/Src/bmi270.c ****     0x2d, 0x01, 0xd4, 0x7b, 0x3b, 0x01, 0xdb, 0x7a, 0x04, 0x00, 0x3f, 0x7b, 0xcd, 0x6c, 0xc3, 0x04,
+  36:Core/Src/bmi270.c ****     0x04, 0xec, 0xe6, 0x0c, 0x46, 0x01, 0x00, 0x27, 0x00, 0x19, 0x00, 0x96, 0x00, 0xa0, 0x00, 0x01,
+  37:Core/Src/bmi270.c ****     0xf0, 0x3c, 0x00, 0x01, 0x01, 0x00, 0x03, 0x00, 0x01, 0x00, 0x0e, 0x00, 0x00, 0x00, 0x32, 0x00,
+  38:Core/Src/bmi270.c ****     0x06, 0x04, 0x00, 0xc8, 0x00, 0x00, 0x00, 0x04, 0x00, 0xa8, 0x05, 0xee, 0x06, 0x00, 0x04, 0xbc,
+  39:Core/Src/bmi270.c ****     0x85, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  40:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0xb4, 0x00, 0x01, 0x00, 0xb9, 0x00, 0x01, 0x00, 0x98, 0x00, 0x00, 0x00, 0x00,
+  41:Core/Src/bmi270.c ****     0x00, 0x00, 0x01, 0x00, 0x80, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  42:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  43:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  44:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  45:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x2e, 0x00, 0xc1,
+  46:Core/Src/bmi270.c ****     0x00, 0xeb, 0x00, 0xda, 0x00, 0x00, 0x0c, 0xff, 0x0f, 0x00, 0x04, 0xc0, 0x00, 0x5b, 0xf5, 0xc9,
+  47:Core/Src/bmi270.c ****     0x80, 0x00, 0x3f, 0xff, 0x19, 0xf4, 0x58, 0xf5, 0x66, 0xf5, 0x64, 0xf5, 0xc0, 0xf1, 0xf0, 0x00,
+  48:Core/Src/bmi270.c ****     0x01, 0xd3, 0x01, 0xdb, 0x01, 0xff, 0x7f, 0xff, 0x01, 0xe4, 0x00, 0x74, 0xf7, 0xf3, 0x00, 0xfa,
+  49:Core/Src/bmi270.c ****     0xca, 0x03, 0x6c, 0x38, 0x56, 0xfe, 0x44, 0xfd, 0xbc, 0x02, 0xf9, 0x06, 0x00, 0xfc, 0x12, 0x02,
+  50:Core/Src/bmi270.c ****     0xfa, 0x9a, 0xfd, 0x77, 0x05, 0xbb, 0x02, 0x96, 0x01, 0x95, 0x01, 0x7f, 0x01, 0x82, 0x01, 0x89,
+  51:Core/Src/bmi270.c ****     0x88, 0x01, 0x8a, 0x01, 0x8c, 0x01, 0x8f, 0x01, 0x8d, 0x01, 0x92, 0x01, 0x91, 0x01, 0xdd, 0x00,
+  52:Core/Src/bmi270.c ****     0x01, 0xdb, 0x00, 0xb6, 0x01, 0x70, 0x69, 0x26, 0xd3, 0x9c, 0x07, 0x1f, 0x05, 0x9d, 0x00, 0x00,
+  53:Core/Src/bmi270.c ****     0x37, 0xfa, 0xa2, 0x01, 0xaa, 0x01, 0xa1, 0x01, 0xa8, 0x01, 0xa0, 0x01, 0xa8, 0x05, 0xb4, 0x01,
+  54:Core/Src/bmi270.c ****     0x00, 0xd0, 0x00, 0xfc, 0x00, 0xc5, 0x01, 0xff, 0xfb, 0xb1, 0x00, 0x00, 0x38, 0x00, 0x30, 0xfd,
+  55:Core/Src/bmi270.c ****     0xcd, 0x01, 0xa0, 0x00, 0x5f, 0xff, 0x00, 0x40, 0xff, 0x00, 0x00, 0x80, 0x6d, 0x0f, 0xeb, 0x00,
+  56:Core/Src/bmi270.c ****     0xf5, 0x68, 0xf7, 0xb3, 0xf1, 0x67, 0x0f, 0x5b, 0x0f, 0x61, 0x0f, 0x80, 0x0f, 0x58, 0xf7, 0x5b,
+  57:Core/Src/bmi270.c ****     0x86, 0x00, 0x72, 0x0f, 0x85, 0x0f, 0xc6, 0xf1, 0x7f, 0x0f, 0x6c, 0xf7, 0x00, 0xe0, 0x00, 0xff,
+  58:Core/Src/bmi270.c ****     0x0f, 0x8a, 0x0f, 0xff, 0x03, 0xf0, 0x3f, 0x8b, 0x00, 0x8e, 0x00, 0x90, 0x00, 0xb9, 0x00, 0x2d,
+  59:Core/Src/bmi270.c ****     0xcb, 0x01, 0x20, 0xf2, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  60:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  61:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  62:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  63:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  64:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  65:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  66:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  67:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  68:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  69:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  70:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30,
+  71:Core/Src/bmi270.c ****     0xd7, 0x0e, 0x50, 0x32, 0x98, 0x2e, 0xfa, 0x03, 0x00, 0x30, 0xf0, 0x7f, 0x00, 0x2e, 0x00, 0x2e,
+  72:Core/Src/bmi270.c ****     0x2e, 0x01, 0x80, 0x08, 0xa2, 0xfb, 0x2f, 0x98, 0x2e, 0xba, 0x03, 0x21, 0x2e, 0x19, 0x00, 0x01,
+  73:Core/Src/bmi270.c ****     0x00, 0xb2, 0x07, 0x2f, 0x01, 0x2e, 0x19, 0x00, 0x00, 0xb2, 0x03, 0x2f, 0x01, 0x50, 0x03, 0x52,
+  74:Core/Src/bmi270.c ****     0xcc, 0x01, 0x2e, 0xdd, 0x00, 0x00, 0xb2, 0x27, 0x2f, 0x05, 0x2e, 0x8a, 0x00, 0x05, 0x52, 0x98,
+  75:Core/Src/bmi270.c ****     0x03, 0x2e, 0xe9, 0x00, 0x40, 0xb2, 0xf0, 0x7f, 0x08, 0x2f, 0x01, 0x2e, 0x19, 0x00, 0x00, 0xb2,
+  76:Core/Src/bmi270.c ****     0x30, 0x21, 0x2e, 0xe9, 0x00, 0x98, 0x2e, 0xb4, 0xb1, 0x01, 0x2e, 0x18, 0x00, 0x00, 0xb2, 0x10,
+  77:Core/Src/bmi270.c ****     0x98, 0x2e, 0x4d, 0xc3, 0x05, 0x50, 0x98, 0x2e, 0x5a, 0xc7, 0x98, 0x2e, 0xf9, 0xb4, 0x98, 0x2e,
+  78:Core/Src/bmi270.c ****     0x2e, 0x67, 0xb6, 0x98, 0x2e, 0x17, 0xb2, 0x10, 0x30, 0x21, 0x2e, 0x77, 0x00, 0x01, 0x2e, 0xef,
+  79:Core/Src/bmi270.c ****     0x04, 0x2f, 0x98, 0x2e, 0x7a, 0xb7, 0x00, 0x30, 0x21, 0x2e, 0xef, 0x00, 0x01, 0x2e, 0xd4, 0x00,
+  80:Core/Src/bmi270.c ****     0x2f, 0x01, 0x2e, 0xdd, 0x00, 0x00, 0xb2, 0x07, 0x2f, 0x05, 0x52, 0x98, 0x2e, 0x8e, 0x0e, 0x00,
+  81:Core/Src/bmi270.c ****     0x10, 0x30, 0x21, 0x2e, 0x7d, 0x00, 0x01, 0x2e, 0x7d, 0x00, 0x00, 0x90, 0x90, 0x2e, 0xf1, 0x02,
+  82:Core/Src/bmi270.c ****     0x00, 0x00, 0xb2, 0x04, 0x2f, 0x98, 0x2e, 0x2f, 0x0e, 0x00, 0x30, 0x21, 0x2e, 0x7b, 0x00, 0x01,
+  83:Core/Src/bmi270.c ****     0x00, 0xb2, 0x12, 0x2f, 0x01, 0x2e, 0xd4, 0x00, 0x00, 0x90, 0x02, 0x2f, 0x98, 0x2e, 0x1f, 0x0e,
+  84:Core/Src/bmi270.c ****     0x2e, 0x81, 0x0d, 0x01, 0x2e, 0xd4, 0x00, 0x04, 0x90, 0x02, 0x2f, 0x50, 0x32, 0x98, 0x2e, 0xfa,
+  85:Core/Src/bmi270.c ****     0x21, 0x2e, 0x7b, 0x00, 0x01, 0x2e, 0x7c, 0x00, 0x00, 0xb2, 0x90, 0x2e, 0x09, 0x03, 0x01, 0x2e,
+  86:Core/Src/bmi270.c ****     0x31, 0x01, 0x08, 0x00, 0xb2, 0x04, 0x2f, 0x98, 0x2e, 0x47, 0xcb, 0x10, 0x30, 0x21, 0x2e, 0x77,
+  87:Core/Src/bmi270.c ****     0x01, 0x2e, 0x7c, 0x00, 0x01, 0x08, 0x00, 0xb2, 0x61, 0x2f, 0x03, 0x2e, 0x89, 0x00, 0x01, 0x2e,
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 3
+
+
+  88:Core/Src/bmi270.c ****     0xbc, 0x98, 0xb8, 0x05, 0xb2, 0x0f, 0x58, 0x23, 0x2f, 0x07, 0x90, 0x09, 0x54, 0x00, 0x30, 0x37,
+  89:Core/Src/bmi270.c ****     0x04, 0x41, 0xdc, 0xbe, 0x44, 0xbe, 0xdc, 0xba, 0x2c, 0x01, 0x61, 0x00, 0x0f, 0x56, 0x4a, 0x0f,
+  90:Core/Src/bmi270.c ****     0x42, 0x94, 0xb8, 0xc1, 0x42, 0x11, 0x30, 0x05, 0x2e, 0x6a, 0xf7, 0x2c, 0xbd, 0x2f, 0xb9, 0x80,
+  91:Core/Src/bmi270.c ****     0x98, 0x2e, 0xc3, 0xb7, 0x21, 0x2d, 0x61, 0x30, 0x23, 0x2e, 0xd4, 0x00, 0x98, 0x2e, 0xc3, 0xb7,
+  92:Core/Src/bmi270.c ****     0x2e, 0x5a, 0xf5, 0x18, 0x2d, 0xe1, 0x7f, 0x50, 0x30, 0x98, 0x2e, 0xfa, 0x03, 0x0f, 0x52, 0x07,
+  93:Core/Src/bmi270.c ****     0x70, 0x30, 0x0d, 0x54, 0x42, 0x42, 0x7e, 0x82, 0xe2, 0x6f, 0x80, 0xb2, 0x42, 0x42, 0x05, 0x2f,
+  94:Core/Src/bmi270.c ****     0x00, 0x10, 0x30, 0x98, 0x2e, 0xc3, 0xb7, 0x03, 0x2d, 0x60, 0x30, 0x21, 0x2e, 0xd4, 0x00, 0x01,
+  95:Core/Src/bmi270.c ****     0x06, 0x90, 0x18, 0x2f, 0x01, 0x2e, 0x76, 0x00, 0x0b, 0x54, 0x07, 0x52, 0xe0, 0x7f, 0x98, 0x2e,
+  96:Core/Src/bmi270.c ****     0x6f, 0x08, 0x1a, 0x40, 0x30, 0x08, 0x2f, 0x21, 0x2e, 0xd4, 0x00, 0x20, 0x30, 0x98, 0x2e, 0xaf,
+  97:Core/Src/bmi270.c ****     0x98, 0x2e, 0xfa, 0x03, 0x05, 0x2d, 0x98, 0x2e, 0x38, 0x0e, 0x00, 0x30, 0x21, 0x2e, 0xd4, 0x00,
+  98:Core/Src/bmi270.c ****     0x2e, 0x7c, 0x00, 0x18, 0x2d, 0x01, 0x2e, 0xd4, 0x00, 0x03, 0xaa, 0x01, 0x2f, 0x98, 0x2e, 0x45,
+  99:Core/Src/bmi270.c ****     0xd4, 0x00, 0x3f, 0x80, 0x03, 0xa2, 0x01, 0x2f, 0x00, 0x2e, 0x02, 0x2d, 0x98, 0x2e, 0x5b, 0x0e,
+ 100:Core/Src/bmi270.c ****     0x2e, 0xce, 0xb7, 0x00, 0x30, 0x21, 0x2e, 0x7d, 0x00, 0x50, 0x32, 0x98, 0x2e, 0xfa, 0x03, 0x01,
+ 101:Core/Src/bmi270.c ****     0x00, 0xb2, 0x24, 0x2f, 0x98, 0x2e, 0xf5, 0xcb, 0x03, 0x2e, 0xd5, 0x00, 0x11, 0x54, 0x01, 0x0a,
+ 102:Core/Src/bmi270.c ****     0x86, 0x21, 0x2e, 0xc9, 0x01, 0xe0, 0x40, 0x13, 0x52, 0xc4, 0x40, 0x82, 0x40, 0xa8, 0xb9, 0x52,
+ 103:Core/Src/bmi270.c ****     0x53, 0x42, 0x04, 0x0a, 0x50, 0x42, 0xe1, 0x7f, 0xf0, 0x31, 0x41, 0x40, 0xf2, 0x6f, 0x25, 0xbd,
+ 104:Core/Src/bmi270.c ****     0x0a, 0xd0, 0x7f, 0x98, 0x2e, 0xa8, 0xcf, 0x06, 0xbc, 0xd1, 0x6f, 0xe2, 0x6f, 0x08, 0x0a, 0x80,
+ 105:Core/Src/bmi270.c ****     0x58, 0xb7, 0x00, 0x30, 0x21, 0x2e, 0xee, 0x00, 0x21, 0x2e, 0x77, 0x00, 0x21, 0x2e, 0xdd, 0x00,
+ 106:Core/Src/bmi270.c ****     0x01, 0x1a, 0x24, 0x22, 0x00, 0x80, 0x2e, 0xec, 0x01, 0x10, 0x50, 0xfb, 0x7f, 0x98, 0x2e, 0xf3,
+ 107:Core/Src/bmi270.c ****     0xfb, 0x6f, 0x01, 0x30, 0x71, 0x54, 0x11, 0x42, 0x42, 0x0e, 0xfc, 0x2f, 0xc0, 0x2e, 0x01, 0x42,
+ 108:Core/Src/bmi270.c ****     0x2e, 0x00, 0xc1, 0xfd, 0x2d, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 109:Core/Src/bmi270.c ****     0x34, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 110:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 111:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 112:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 113:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 114:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 115:Core/Src/bmi270.c ****     0x00, 0x00, 0x20, 0x50, 0xe7, 0x7f, 0xf6, 0x7f, 0x06, 0x32, 0x0f, 0x2e, 0x61, 0xf5, 0xfe, 0x09,
+ 116:Core/Src/bmi270.c ****     0x2f, 0x17, 0x30, 0x2f, 0x2e, 0xef, 0x00, 0x2d, 0x2e, 0x61, 0xf5, 0xf6, 0x6f, 0xe7, 0x6f, 0xe0,
+ 117:Core/Src/bmi270.c ****     0x20, 0x50, 0xe7, 0x7f, 0xf6, 0x7f, 0x46, 0x30, 0x0f, 0x2e, 0xa4, 0xf1, 0xbe, 0x09, 0x80, 0xb3,
+ 118:Core/Src/bmi270.c ****     0x2e, 0xd4, 0x00, 0x84, 0xaf, 0x02, 0x2f, 0x16, 0x30, 0x2d, 0x2e, 0x7b, 0x00, 0x86, 0x30, 0x2d,
+ 119:Core/Src/bmi270.c ****     0xf6, 0x6f, 0xe7, 0x6f, 0xe0, 0x5f, 0xc8, 0x2e, 0x01, 0x2e, 0x77, 0xf7, 0x09, 0xbc, 0x0f, 0xb8,
+ 120:Core/Src/bmi270.c ****     0x50, 0xfb, 0x7f, 0x10, 0x30, 0x0b, 0x2f, 0x03, 0x2e, 0x8a, 0x00, 0x96, 0xbc, 0x9f, 0xb8, 0x40,
+ 121:Core/Src/bmi270.c ****     0x03, 0x2e, 0x68, 0xf7, 0x9e, 0xbc, 0x9f, 0xb8, 0x40, 0xb2, 0x07, 0x2f, 0x03, 0x2e, 0x7e, 0x00,
+ 122:Core/Src/bmi270.c ****     0x2f, 0x98, 0x2e, 0xdc, 0x03, 0x03, 0x2c, 0x00, 0x30, 0x21, 0x2e, 0x7e, 0x00, 0xfb, 0x6f, 0xf0,
+ 123:Core/Src/bmi270.c ****     0x20, 0x50, 0xe0, 0x7f, 0xfb, 0x7f, 0x00, 0x2e, 0x27, 0x50, 0x98, 0x2e, 0x3b, 0xc8, 0x29, 0x50,
+ 124:Core/Src/bmi270.c ****     0xc8, 0x01, 0x50, 0x98, 0x2e, 0x55, 0xcc, 0xe1, 0x6f, 0x2b, 0x50, 0x98, 0x2e, 0xe0, 0xc9, 0xfb,
+ 125:Core/Src/bmi270.c ****     0xe0, 0x5f, 0x21, 0x2e, 0x7e, 0x00, 0xb8, 0x2e, 0x73, 0x50, 0x01, 0x30, 0x57, 0x54, 0x11, 0x42,
+ 126:Core/Src/bmi270.c ****     0x2f, 0xb8, 0x2e, 0x21, 0x2e, 0x59, 0xf5, 0x10, 0x30, 0xc0, 0x2e, 0x21, 0x2e, 0x4a, 0xf1, 0x90,
+ 127:Core/Src/bmi270.c ****     0xe6, 0x7f, 0xd5, 0x7f, 0xc4, 0x7f, 0xb3, 0x7f, 0xa1, 0x7f, 0x90, 0x7f, 0x82, 0x7f, 0x7b, 0x7f,
+ 128:Core/Src/bmi270.c ****     0xb7, 0x00, 0xb2, 0x90, 0x2e, 0x97, 0xb0, 0x03, 0x2e, 0x8f, 0x00, 0x07, 0x2e, 0x91, 0x00, 0x05,
+ 129:Core/Src/bmi270.c ****     0x3f, 0xba, 0x9f, 0xb8, 0x01, 0x2e, 0xb1, 0x00, 0xa3, 0xbd, 0x4c, 0x0a, 0x05, 0x2e, 0xb1, 0x00,
+ 130:Core/Src/bmi270.c ****     0xb9, 0xcb, 0x0a, 0x4f, 0xba, 0x22, 0xbd, 0x01, 0x2e, 0xb3, 0x00, 0xdc, 0x0a, 0x2f, 0xb9, 0x03,
+ 131:Core/Src/bmi270.c ****     0x0a, 0xbe, 0x9a, 0x0a, 0xcf, 0xb9, 0x9b, 0xbc, 0x01, 0x2e, 0x97, 0x00, 0x9f, 0xb8, 0x93, 0x0a,
+ 132:Core/Src/bmi270.c ****     0x0a, 0x0f, 0xb8, 0x90, 0x0a, 0x25, 0x2e, 0x18, 0x00, 0x05, 0x2e, 0xc1, 0xf5, 0x2e, 0xbd, 0x2e,
+ 133:Core/Src/bmi270.c ****     0x19, 0x00, 0x31, 0x30, 0x8a, 0x04, 0x00, 0x90, 0x07, 0x2f, 0x01, 0x2e, 0xd4, 0x00, 0x04, 0xa2,
+ 134:Core/Src/bmi270.c ****     0x2e, 0x18, 0x00, 0x00, 0xb2, 0x0c, 0x2f, 0x19, 0x50, 0x05, 0x52, 0x98, 0x2e, 0x4d, 0xb7, 0x05,
+ 135:Core/Src/bmi270.c ****     0x80, 0x90, 0x10, 0x30, 0x01, 0x2f, 0x21, 0x2e, 0x78, 0x00, 0x25, 0x2e, 0xdd, 0x00, 0x98, 0x2e,
+ 136:Core/Src/bmi270.c ****     0xb2, 0x02, 0x30, 0x01, 0x30, 0x04, 0x2f, 0x01, 0x2e, 0x19, 0x00, 0x00, 0xb2, 0x00, 0x2f, 0x21,
+ 137:Core/Src/bmi270.c ****     0xea, 0x00, 0x08, 0x1a, 0x0e, 0x2f, 0x23, 0x2e, 0xea, 0x00, 0x33, 0x30, 0x1b, 0x50, 0x0b, 0x09,
+ 138:Core/Src/bmi270.c ****     0x56, 0x46, 0xbe, 0x4b, 0x08, 0x4c, 0x0a, 0x01, 0x42, 0x0a, 0x80, 0x15, 0x52, 0x01, 0x42, 0x00,
+ 139:Core/Src/bmi270.c ****     0x18, 0x00, 0x00, 0xb2, 0x1f, 0x2f, 0x03, 0x2e, 0xc0, 0xf5, 0xf0, 0x30, 0x48, 0x08, 0x47, 0xaa,
+ 140:Core/Src/bmi270.c ****     0x2e, 0x7a, 0x00, 0x61, 0x22, 0x4b, 0x1a, 0x05, 0x2f, 0x07, 0x2e, 0x66, 0xf5, 0xbf, 0xbd, 0xbf,
+ 141:Core/Src/bmi270.c ****     0x0b, 0x2f, 0x1d, 0x56, 0x2b, 0x30, 0xd2, 0x42, 0xdb, 0x42, 0x01, 0x04, 0xc2, 0x42, 0x04, 0xbd,
+ 142:Core/Src/bmi270.c ****     0x84, 0x23, 0x2e, 0x7a, 0x00, 0x02, 0x42, 0x02, 0x32, 0x25, 0x2e, 0x62, 0xf5, 0x05, 0x2e, 0xd6,
+ 143:Core/Src/bmi270.c ****     0x25, 0x2e, 0xd6, 0x00, 0x02, 0x31, 0x25, 0x2e, 0x60, 0xf5, 0x05, 0x2e, 0x8a, 0x00, 0x0b, 0x50,
+ 144:Core/Src/bmi270.c ****     0xb2, 0x0b, 0x2f, 0x05, 0x2e, 0xca, 0xf5, 0xf0, 0x3e, 0x90, 0x08, 0x25, 0x2e, 0xca, 0xf5, 0x05,
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 4
+
+
+ 145:Core/Src/bmi270.c ****     0xe0, 0x3f, 0x90, 0x08, 0x25, 0x2e, 0x59, 0xf5, 0x90, 0x6f, 0xa1, 0x6f, 0xb3, 0x6f, 0xc4, 0x6f,
+ 146:Core/Src/bmi270.c ****     0x6f, 0xf7, 0x6f, 0x7b, 0x6f, 0x82, 0x6f, 0x70, 0x5f, 0xc8, 0x2e, 0xc0, 0x50, 0x90, 0x7f, 0xe5,
+ 147:Core/Src/bmi270.c ****     0xc3, 0x7f, 0xb1, 0x7f, 0xa2, 0x7f, 0x87, 0x7f, 0xf6, 0x7f, 0x7b, 0x7f, 0x00, 0x2e, 0x01, 0x2e,
+ 148:Core/Src/bmi270.c ****     0x7f, 0x98, 0x2e, 0x35, 0xb7, 0x02, 0x30, 0x63, 0x6f, 0x15, 0x52, 0x50, 0x7f, 0x62, 0x7f, 0x5a,
+ 149:Core/Src/bmi270.c ****     0x1a, 0x09, 0x00, 0xb3, 0x14, 0x2f, 0x00, 0xb2, 0x03, 0x2f, 0x09, 0x2e, 0x18, 0x00, 0x00, 0x91,
+ 150:Core/Src/bmi270.c ****     0x7f, 0x98, 0x2e, 0x97, 0xb7, 0x1f, 0x50, 0x02, 0x8a, 0x02, 0x32, 0x04, 0x30, 0x25, 0x2e, 0x64,
+ 151:Core/Src/bmi270.c ****     0x50, 0x6f, 0x43, 0x6f, 0x44, 0x43, 0x25, 0x2e, 0x60, 0xf5, 0xd9, 0x08, 0xc0, 0xb2, 0x36, 0x2f,
+ 152:Core/Src/bmi270.c ****     0xb7, 0x00, 0xb2, 0x06, 0x2f, 0x01, 0x2e, 0x19, 0x00, 0x00, 0xb2, 0x02, 0x2f, 0x50, 0x6f, 0x00,
+ 153:Core/Src/bmi270.c ****     0x01, 0x2e, 0x79, 0x00, 0x00, 0x90, 0x19, 0x2f, 0x10, 0x30, 0x21, 0x2e, 0x79, 0x00, 0x00, 0x30,
+ 154:Core/Src/bmi270.c ****     0x03, 0x13, 0x2d, 0x01, 0x2e, 0xc3, 0xf5, 0x0c, 0xbc, 0x0f, 0xb8, 0x12, 0x30, 0x10, 0x04, 0x03,
+ 155:Core/Src/bmi270.c ****     0x21, 0x50, 0x03, 0x52, 0x98, 0x2e, 0x4d, 0xb7, 0x10, 0x30, 0x21, 0x2e, 0xee, 0x00, 0x02, 0x30,
+ 156:Core/Src/bmi270.c ****     0x2e, 0x79, 0x00, 0x60, 0x6f, 0x00, 0x90, 0x05, 0x2f, 0x00, 0x30, 0x21, 0x2e, 0xea, 0x00, 0x15,
+ 157:Core/Src/bmi270.c ****     0x64, 0xf5, 0x15, 0x52, 0x23, 0x2e, 0x60, 0xf5, 0x02, 0x32, 0x50, 0x6f, 0x00, 0x90, 0x02, 0x2f,
+ 158:Core/Src/bmi270.c ****     0x2e, 0x78, 0x00, 0x07, 0x2e, 0x60, 0xf5, 0x1a, 0x09, 0x00, 0x91, 0xa3, 0x2f, 0x19, 0x09, 0x00,
+ 159:Core/Src/bmi270.c ****     0x90, 0x6f, 0xa2, 0x6f, 0xb1, 0x6f, 0xc3, 0x6f, 0xd4, 0x6f, 0xe5, 0x6f, 0x7b, 0x6f, 0xf6, 0x6f,
+ 160:Core/Src/bmi270.c ****     0x5f, 0xc8, 0x2e, 0xc0, 0x50, 0xe7, 0x7f, 0xf6, 0x7f, 0x26, 0x30, 0x0f, 0x2e, 0x61, 0xf5, 0x2f,
+ 161:Core/Src/bmi270.c ****     0x0f, 0x2e, 0x7c, 0x00, 0xbe, 0x09, 0xa2, 0x7f, 0x80, 0x7f, 0x80, 0xb3, 0xd5, 0x7f, 0xc4, 0x7f,
+ 162:Core/Src/bmi270.c ****     0x7f, 0x7b, 0x7f, 0x0b, 0x2f, 0x23, 0x50, 0x1a, 0x25, 0x12, 0x40, 0x42, 0x7f, 0x74, 0x82, 0x12,
+ 163:Core/Src/bmi270.c ****     0x00, 0x2e, 0x00, 0x40, 0x60, 0x7f, 0x98, 0x2e, 0x6a, 0xd6, 0x81, 0x30, 0x01, 0x2e, 0x7c, 0x00,
+ 164:Core/Src/bmi270.c ****     0xb2, 0x42, 0x2f, 0x03, 0x2e, 0x89, 0x00, 0x01, 0x2e, 0x89, 0x00, 0x97, 0xbc, 0x06, 0xbc, 0x9f,
+ 165:Core/Src/bmi270.c ****     0x00, 0x90, 0x23, 0x2e, 0xd8, 0x00, 0x10, 0x30, 0x01, 0x30, 0x2a, 0x2f, 0x03, 0x2e, 0xd4, 0x00,
+ 166:Core/Src/bmi270.c ****     0x2f, 0x47, 0xb2, 0x00, 0x30, 0x2d, 0x2f, 0x21, 0x2e, 0x7c, 0x00, 0x2b, 0x2d, 0x03, 0x2e, 0xfd,
+ 167:Core/Src/bmi270.c ****     0x9f, 0xb8, 0x40, 0x90, 0x14, 0x2f, 0x03, 0x2e, 0xfc, 0xf5, 0x99, 0xbc, 0x9f, 0xb8, 0x40, 0x90,
+ 168:Core/Src/bmi270.c ****     0x2e, 0x49, 0xf1, 0x25, 0x54, 0x4a, 0x08, 0x40, 0x90, 0x08, 0x2f, 0x98, 0x2e, 0x35, 0xb7, 0x00,
+ 169:Core/Src/bmi270.c ****     0x03, 0x2f, 0x50, 0x30, 0x21, 0x2e, 0xd4, 0x00, 0x10, 0x2d, 0x98, 0x2e, 0xaf, 0xb7, 0x00, 0x30,
+ 170:Core/Src/bmi270.c ****     0x00, 0x0a, 0x2d, 0x05, 0x2e, 0x69, 0xf7, 0x2d, 0xbd, 0x2f, 0xb9, 0x80, 0xb2, 0x01, 0x2f, 0x21,
+ 171:Core/Src/bmi270.c ****     0x23, 0x2e, 0x7c, 0x00, 0xe0, 0x31, 0x21, 0x2e, 0x61, 0xf5, 0xf6, 0x6f, 0xe7, 0x6f, 0x80, 0x6f,
+ 172:Core/Src/bmi270.c ****     0x6f, 0xc4, 0x6f, 0xd5, 0x6f, 0x7b, 0x6f, 0x91, 0x6f, 0x40, 0x5f, 0xc8, 0x2e, 0x60, 0x51, 0x0a,
+ 173:Core/Src/bmi270.c ****     0xf4, 0x7f, 0xeb, 0x7f, 0x00, 0x32, 0x31, 0x52, 0x32, 0x30, 0x13, 0x30, 0x98, 0x2e, 0x15, 0xcb,
+ 174:Core/Src/bmi270.c ****     0x84, 0xd2, 0x7f, 0x43, 0x30, 0x05, 0x50, 0x2d, 0x52, 0x98, 0x2e, 0x95, 0xc1, 0xd2, 0x6f, 0x27,
+ 175:Core/Src/bmi270.c ****     0xd7, 0xc7, 0x2a, 0x25, 0xb0, 0x86, 0xc0, 0x7f, 0xd3, 0x7f, 0xaf, 0x84, 0x29, 0x50, 0xf1, 0x6f,
+ 176:Core/Src/bmi270.c ****     0xc8, 0x2a, 0x25, 0xae, 0x8a, 0xaa, 0x88, 0xf2, 0x6e, 0x2b, 0x50, 0xc1, 0x6f, 0xd3, 0x6f, 0xf4,
+ 177:Core/Src/bmi270.c ****     0xb6, 0xc8, 0xe0, 0x6e, 0x00, 0xb2, 0x32, 0x2f, 0x33, 0x54, 0x83, 0x86, 0xf1, 0x6f, 0xc3, 0x7f,
+ 178:Core/Src/bmi270.c ****     0x30, 0xf4, 0x7f, 0xd0, 0x7f, 0xb2, 0x7f, 0xe3, 0x30, 0xc5, 0x6f, 0x56, 0x40, 0x45, 0x41, 0x28,
+ 179:Core/Src/bmi270.c ****     0x0e, 0xb4, 0x08, 0xbc, 0x82, 0x40, 0x10, 0x0a, 0x2f, 0x54, 0x26, 0x05, 0x91, 0x7f, 0x44, 0x28,
+ 180:Core/Src/bmi270.c ****     0x2e, 0xd9, 0xc0, 0x08, 0xb9, 0x33, 0x30, 0x53, 0x09, 0xc1, 0x6f, 0xd3, 0x6f, 0xf4, 0x6f, 0x83,
+ 181:Core/Src/bmi270.c ****     0x6c, 0x15, 0xb2, 0x6f, 0xbe, 0x09, 0x75, 0x0b, 0x90, 0x42, 0x45, 0x42, 0x51, 0x0e, 0x32, 0xbc,
+ 182:Core/Src/bmi270.c ****     0x6f, 0x7e, 0x86, 0xf4, 0x7f, 0xd0, 0x7f, 0xb2, 0x7f, 0x04, 0x30, 0x91, 0x6f, 0xd6, 0x2f, 0xeb,
+ 183:Core/Src/bmi270.c ****     0xb8, 0x2e, 0x03, 0x2e, 0x97, 0x00, 0x1b, 0xbc, 0x60, 0x50, 0x9f, 0xbc, 0x0c, 0xb8, 0xf0, 0x7f,
+ 184:Core/Src/bmi270.c ****     0x7f, 0x2b, 0x2f, 0x03, 0x2e, 0x7f, 0x00, 0x41, 0x40, 0x01, 0x2e, 0xc8, 0x00, 0x01, 0x1a, 0x11,
+ 185:Core/Src/bmi270.c ****     0x23, 0x2e, 0xc8, 0x00, 0x10, 0x41, 0xa0, 0x7f, 0x38, 0x81, 0x01, 0x41, 0xd0, 0x7f, 0xb1, 0x7f,
+ 186:Core/Src/bmi270.c ****     0xcf, 0xd0, 0x6f, 0x07, 0x80, 0xa1, 0x6f, 0x11, 0x42, 0x00, 0x2e, 0xb1, 0x6f, 0x01, 0x42, 0x11,
+ 187:Core/Src/bmi270.c ****     0xfc, 0x00, 0x00, 0xa8, 0x03, 0x30, 0xcb, 0x22, 0x4a, 0x25, 0x01, 0x2e, 0x7f, 0x00, 0x3c, 0x89,
+ 188:Core/Src/bmi270.c ****     0x54, 0x98, 0x2e, 0xc4, 0xce, 0xc1, 0x6f, 0xf0, 0x6f, 0x98, 0x2e, 0x95, 0xcf, 0x04, 0x2d, 0x01,
+ 189:Core/Src/bmi270.c ****     0x98, 0x2e, 0x95, 0xcf, 0xeb, 0x6f, 0xa0, 0x5f, 0xb8, 0x2e, 0x03, 0x2e, 0xb3, 0x00, 0x02, 0x32,
+ 190:Core/Src/bmi270.c ****     0x31, 0x30, 0x50, 0x8a, 0x08, 0x08, 0x08, 0xcb, 0x08, 0xe0, 0x7f, 0x80, 0xb2, 0xf3, 0x7f, 0xdb,
+ 191:Core/Src/bmi270.c ****     0x03, 0x2e, 0xca, 0x00, 0x41, 0x90, 0x04, 0x2f, 0x01, 0x30, 0x23, 0x2e, 0xca, 0x00, 0x98, 0x2e,
+ 192:Core/Src/bmi270.c ****     0xb2, 0x05, 0x2f, 0x03, 0x2e, 0xda, 0x00, 0x00, 0x30, 0x41, 0x04, 0x23, 0x2e, 0xda, 0x00, 0x98,
+ 193:Core/Src/bmi270.c ****     0x10, 0x25, 0xf0, 0x6f, 0x00, 0xb2, 0x05, 0x2f, 0x01, 0x2e, 0xda, 0x00, 0x02, 0x30, 0x10, 0x04,
+ 194:Core/Src/bmi270.c ****     0x00, 0x40, 0xb2, 0x01, 0x2f, 0x23, 0x2e, 0xc8, 0x01, 0xdb, 0x6f, 0xe0, 0x6f, 0xd0, 0x5f, 0x80,
+ 195:Core/Src/bmi270.c ****     0x01, 0x30, 0xe0, 0x6f, 0x98, 0x2e, 0x95, 0xcf, 0x11, 0x30, 0x23, 0x2e, 0xca, 0x00, 0xdb, 0x6f,
+ 196:Core/Src/bmi270.c ****     0x2e, 0xd0, 0x50, 0x0a, 0x25, 0x33, 0x84, 0x55, 0x50, 0xd2, 0x7f, 0xe2, 0x7f, 0x03, 0x8c, 0xc0,
+ 197:Core/Src/bmi270.c ****     0x00, 0x30, 0x05, 0x5a, 0x39, 0x54, 0x51, 0x41, 0xa5, 0x7f, 0x96, 0x7f, 0x80, 0x7f, 0x98, 0x2e,
+ 198:Core/Src/bmi270.c ****     0x30, 0xf5, 0x7f, 0x20, 0x25, 0x91, 0x6f, 0x3b, 0x58, 0x3d, 0x5c, 0x3b, 0x56, 0x98, 0x2e, 0x67,
+ 199:Core/Src/bmi270.c ****     0xd5, 0x6f, 0x52, 0x40, 0x50, 0x43, 0xc1, 0x7f, 0xd5, 0x7f, 0x10, 0x25, 0x98, 0x2e, 0xfe, 0xc9,
+ 200:Core/Src/bmi270.c ****     0x2e, 0x74, 0xc0, 0x86, 0x6f, 0x30, 0x28, 0x92, 0x6f, 0x82, 0x8c, 0xa5, 0x6f, 0x6f, 0x52, 0x69,
+ 201:Core/Src/bmi270.c ****     0xdb, 0x2f, 0x19, 0xa0, 0x15, 0x30, 0x03, 0x2f, 0x00, 0x30, 0x21, 0x2e, 0x81, 0x01, 0x0a, 0x2d,
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 5
+
+
+ 202:Core/Src/bmi270.c ****     0x01, 0x05, 0x28, 0x42, 0x36, 0x21, 0x2e, 0x81, 0x01, 0x02, 0x0e, 0x01, 0x2f, 0x98, 0x2e, 0xf3,
+ 203:Core/Src/bmi270.c ****     0x12, 0x30, 0x01, 0x40, 0x98, 0x2e, 0xfe, 0xc9, 0x51, 0x6f, 0x0b, 0x5c, 0x8e, 0x0e, 0x3b, 0x6f,
+ 204:Core/Src/bmi270.c ****     0x30, 0x21, 0x2e, 0x95, 0x01, 0x45, 0x6f, 0x2a, 0x8d, 0xd2, 0x7f, 0xcb, 0x7f, 0x13, 0x2f, 0x02,
+ 205:Core/Src/bmi270.c ****     0xd2, 0x7f, 0xa8, 0x0e, 0x0e, 0x2f, 0xc0, 0x6f, 0x53, 0x54, 0x02, 0x00, 0x51, 0x54, 0x42, 0x0e,
+ 206:Core/Src/bmi270.c ****     0x52, 0x02, 0x30, 0x01, 0x2f, 0x00, 0x2e, 0x03, 0x2d, 0x50, 0x42, 0x42, 0x42, 0x12, 0x30, 0xd2,
+ 207:Core/Src/bmi270.c ****     0x03, 0x2f, 0x00, 0x30, 0x21, 0x2e, 0x80, 0x01, 0x12, 0x2d, 0x01, 0x2e, 0xc9, 0x00, 0x02, 0x80,
+ 208:Core/Src/bmi270.c ****     0x01, 0x11, 0x30, 0x91, 0x28, 0x00, 0x40, 0x25, 0x2e, 0x80, 0x01, 0x10, 0x0e, 0x05, 0x2f, 0x01,
+ 209:Core/Src/bmi270.c ****     0x01, 0x90, 0x01, 0x2f, 0x98, 0x2e, 0xf3, 0x03, 0x00, 0x2e, 0xa0, 0x41, 0x01, 0x90, 0xa6, 0x7f,
+ 210:Core/Src/bmi270.c ****     0xb4, 0x01, 0x2e, 0x95, 0x01, 0x00, 0xa8, 0x90, 0x2e, 0xe3, 0xb4, 0x5b, 0x54, 0x95, 0x80, 0x82,
+ 211:Core/Src/bmi270.c ****     0x02, 0x40, 0x2d, 0x8c, 0x3f, 0x52, 0x96, 0x7f, 0x90, 0x2e, 0xc2, 0xb3, 0x29, 0x0e, 0x76, 0x2f,
+ 212:Core/Src/bmi270.c ****     0x00, 0x00, 0x40, 0x81, 0x28, 0x45, 0x52, 0xb3, 0x30, 0x98, 0x2e, 0x0f, 0xca, 0x5d, 0x54, 0x80,
+ 213:Core/Src/bmi270.c ****     0xa1, 0x40, 0x72, 0x7f, 0x82, 0x80, 0x82, 0x40, 0x60, 0x7f, 0x98, 0x2e, 0xfe, 0xc9, 0x10, 0x25,
+ 214:Core/Src/bmi270.c ****     0xc0, 0x62, 0x6f, 0x05, 0x30, 0x87, 0x40, 0xc0, 0x91, 0x04, 0x30, 0x05, 0x2f, 0x05, 0x2e, 0x83,
+ 215:Core/Src/bmi270.c ****     0x14, 0x30, 0x00, 0x2f, 0x04, 0x30, 0x05, 0x2e, 0xc9, 0x00, 0x73, 0x6f, 0x81, 0x40, 0xe2, 0x40,
+ 216:Core/Src/bmi270.c ****     0x0f, 0xe1, 0x40, 0x16, 0x30, 0xfe, 0x29, 0xcb, 0x40, 0x02, 0x2f, 0x83, 0x6f, 0x83, 0x0f, 0x22,
+ 217:Core/Src/bmi270.c ****     0x13, 0x0f, 0x12, 0x30, 0x77, 0x2f, 0x49, 0x54, 0x42, 0x0e, 0x12, 0x30, 0x73, 0x2f, 0x00, 0x91,
+ 218:Core/Src/bmi270.c ****     0x2e, 0x8b, 0x01, 0x19, 0xa8, 0x02, 0x30, 0x6c, 0x2f, 0x63, 0x50, 0x00, 0x2e, 0x17, 0x42, 0x05,
+ 219:Core/Src/bmi270.c ****     0x12, 0x30, 0x0b, 0x25, 0x08, 0x0f, 0x50, 0x30, 0x02, 0x2f, 0x21, 0x2e, 0x83, 0x01, 0x03, 0x2d,
+ 220:Core/Src/bmi270.c ****     0x2e, 0x83, 0x01, 0x2b, 0x2e, 0x85, 0x01, 0x5a, 0x2c, 0x12, 0x30, 0x00, 0x91, 0x2b, 0x25, 0x04,
+ 221:Core/Src/bmi270.c ****     0x02, 0x30, 0x17, 0x42, 0x17, 0x2c, 0x02, 0x42, 0x98, 0x2e, 0xfe, 0xc9, 0x10, 0x25, 0x98, 0x2e,
+ 222:Core/Src/bmi270.c ****     0x2e, 0xc9, 0x00, 0x81, 0x84, 0x5b, 0x30, 0x82, 0x40, 0x37, 0x2e, 0x83, 0x01, 0x02, 0x0e, 0x07,
+ 223:Core/Src/bmi270.c ****     0x40, 0x30, 0x62, 0x40, 0x41, 0x40, 0x91, 0x0e, 0x01, 0x2f, 0x21, 0x2e, 0x83, 0x01, 0x05, 0x30,
+ 224:Core/Src/bmi270.c ****     0x01, 0x12, 0x30, 0x36, 0x2c, 0x16, 0x30, 0x15, 0x25, 0x81, 0x7f, 0x98, 0x2e, 0xfe, 0xc9, 0x10,
+ 225:Core/Src/bmi270.c ****     0x74, 0xc0, 0x19, 0xa2, 0x16, 0x30, 0x15, 0x2f, 0x05, 0x2e, 0x97, 0x01, 0x80, 0x6f, 0x82, 0x0e,
+ 226:Core/Src/bmi270.c ****     0x2e, 0x86, 0x01, 0x06, 0x28, 0x21, 0x2e, 0x86, 0x01, 0x0b, 0x2d, 0x03, 0x2e, 0x87, 0x01, 0x5f,
+ 227:Core/Src/bmi270.c ****     0x91, 0x42, 0x00, 0x2e, 0x82, 0x40, 0x90, 0x0e, 0x01, 0x2f, 0x21, 0x2e, 0x88, 0x01, 0x02, 0x30,
+ 228:Core/Src/bmi270.c ****     0x30, 0xc0, 0x6f, 0x08, 0x1c, 0xa8, 0x0f, 0x16, 0x30, 0x05, 0x30, 0x5b, 0x50, 0x09, 0x2f, 0x02,
+ 229:Core/Src/bmi270.c ****     0x82, 0x01, 0x05, 0x42, 0x05, 0x80, 0x00, 0x2e, 0x02, 0x42, 0x3e, 0x80, 0x00, 0x2e, 0x06, 0x42,
+ 230:Core/Src/bmi270.c ****     0x6f, 0x3e, 0x88, 0x01, 0x40, 0x04, 0x41, 0x4c, 0x28, 0x01, 0x42, 0x07, 0x80, 0x10, 0x25, 0x24,
+ 231:Core/Src/bmi270.c ****     0x00, 0xa8, 0xf5, 0x22, 0x23, 0x29, 0x44, 0x42, 0x7a, 0x82, 0x7e, 0x88, 0x43, 0x40, 0x04, 0x41,
+ 232:Core/Src/bmi270.c ****     0x23, 0xdf, 0x28, 0x43, 0x42, 0xd9, 0xa0, 0x14, 0x2f, 0x00, 0x90, 0x02, 0x2f, 0xd2, 0x6f, 0x81,
+ 233:Core/Src/bmi270.c ****     0x63, 0x54, 0x06, 0x28, 0x90, 0x42, 0x85, 0x42, 0x09, 0x2c, 0x02, 0x30, 0x5b, 0x50, 0x03, 0x80,
+ 234:Core/Src/bmi270.c ****     0x01, 0x2b, 0x2e, 0x82, 0x01, 0x05, 0x42, 0x12, 0x30, 0x2b, 0x2e, 0x83, 0x01, 0x45, 0x82, 0x00,
+ 235:Core/Src/bmi270.c ****     0x7a, 0x82, 0x02, 0xa0, 0x08, 0x2f, 0x63, 0x50, 0x3b, 0x30, 0x15, 0x42, 0x05, 0x42, 0x37, 0x80,
+ 236:Core/Src/bmi270.c ****     0x01, 0x05, 0x42, 0x12, 0x30, 0x01, 0x2e, 0xc9, 0x00, 0x02, 0x8c, 0x40, 0x40, 0x84, 0x41, 0x7a,
+ 237:Core/Src/bmi270.c ****     0x03, 0x2f, 0x01, 0x2e, 0x8b, 0x01, 0x19, 0xa4, 0x04, 0x2f, 0x2b, 0x2e, 0x82, 0x01, 0x98, 0x2e,
+ 238:Core/Src/bmi270.c ****     0x30, 0x81, 0x90, 0x61, 0x52, 0x08, 0x2f, 0x65, 0x42, 0x65, 0x42, 0x43, 0x80, 0x39, 0x84, 0x82,
+ 239:Core/Src/bmi270.c ****     0x45, 0x42, 0x85, 0x42, 0x05, 0x43, 0x00, 0x2e, 0x80, 0x41, 0x00, 0x90, 0x90, 0x2e, 0xe1, 0xb4,
+ 240:Core/Src/bmi270.c ****     0x6f, 0x80, 0x40, 0x00, 0xb2, 0x43, 0x58, 0x69, 0x50, 0x44, 0x2f, 0x55, 0x5c, 0xb7, 0x87, 0x8c,
+ 241:Core/Src/bmi270.c ****     0x96, 0x01, 0xc4, 0x40, 0x36, 0x2f, 0x41, 0x56, 0x8b, 0x0e, 0x2a, 0x2f, 0x0b, 0x52, 0xa1, 0x0e,
+ 242:Core/Src/bmi270.c ****     0x2e, 0x8f, 0x01, 0x14, 0x25, 0x98, 0x2e, 0xfe, 0xc9, 0x4b, 0x54, 0x02, 0x0f, 0x69, 0x50, 0x05,
+ 243:Core/Src/bmi270.c ****     0x15, 0x2f, 0x03, 0x2e, 0x8e, 0x01, 0x4d, 0x5c, 0x8e, 0x0f, 0x3a, 0x2f, 0x05, 0x2e, 0x8f, 0x01,
+ 244:Core/Src/bmi270.c ****     0xc9, 0x4f, 0x54, 0x82, 0x0f, 0x05, 0x30, 0x69, 0x50, 0x65, 0x54, 0x30, 0x2f, 0x6d, 0x52, 0x15,
+ 245:Core/Src/bmi270.c ****     0x45, 0x42, 0x04, 0x30, 0x2b, 0x2c, 0x84, 0x43, 0x6b, 0x52, 0x42, 0x8c, 0x00, 0x2e, 0x85, 0x43,
+ 246:Core/Src/bmi270.c ****     0x2c, 0x45, 0x42, 0x8e, 0x0f, 0x20, 0x2f, 0x0d, 0x2e, 0x8e, 0x01, 0xb1, 0x0e, 0x1c, 0x2f, 0x23,
+ 247:Core/Src/bmi270.c ****     0x1a, 0x2d, 0x0e, 0x0e, 0x17, 0x2f, 0xa1, 0x0f, 0x15, 0x2f, 0x23, 0x2e, 0x8d, 0x01, 0x13, 0x2d,
+ 248:Core/Src/bmi270.c ****     0xc0, 0x43, 0x54, 0xc2, 0x0e, 0x0a, 0x2f, 0x65, 0x50, 0x04, 0x80, 0x0b, 0x30, 0x06, 0x82, 0x0b,
+ 249:Core/Src/bmi270.c ****     0x41, 0x40, 0x12, 0x30, 0x25, 0x2e, 0x8c, 0x01, 0x01, 0x42, 0x05, 0x30, 0x69, 0x50, 0x65, 0x54,
+ 250:Core/Src/bmi270.c ****     0x84, 0xbe, 0x8c, 0x84, 0x40, 0x86, 0x41, 0x26, 0x29, 0x94, 0x42, 0xbe, 0x8e, 0xd5, 0x7f, 0x19,
+ 251:Core/Src/bmi270.c ****     0x0b, 0x2e, 0x8c, 0x01, 0x84, 0x40, 0xc7, 0x41, 0x5d, 0x29, 0x27, 0x29, 0x45, 0x42, 0x84, 0x42,
+ 252:Core/Src/bmi270.c ****     0x2f, 0xc0, 0xb3, 0x1d, 0x2f, 0x05, 0x2e, 0x94, 0x01, 0x99, 0xa0, 0x01, 0x2f, 0x80, 0xb3, 0x13,
+ 253:Core/Src/bmi270.c ****     0x18, 0x2f, 0xc0, 0xb3, 0x16, 0x2f, 0x12, 0x40, 0x01, 0x40, 0x92, 0x7f, 0x98, 0x2e, 0x74, 0xc0,
+ 254:Core/Src/bmi270.c ****     0x0f, 0x20, 0x30, 0x03, 0x2f, 0x10, 0x30, 0x21, 0x2e, 0x7e, 0x01, 0x0a, 0x2d, 0x21, 0x2e, 0x7e,
+ 255:Core/Src/bmi270.c ****     0x20, 0x30, 0x21, 0x2e, 0x7e, 0x01, 0x03, 0x2d, 0x10, 0x30, 0x21, 0x2e, 0x7e, 0x01, 0xc2, 0x6f,
+ 256:Core/Src/bmi270.c ****     0x00, 0xbc, 0x84, 0x02, 0x80, 0x82, 0x40, 0x00, 0x40, 0x90, 0x0e, 0xd5, 0x6f, 0x02, 0x2f, 0x15,
+ 257:Core/Src/bmi270.c ****     0xf3, 0x03, 0x41, 0x91, 0x05, 0x30, 0x07, 0x2f, 0x67, 0x50, 0x3d, 0x80, 0x2b, 0x2e, 0x8f, 0x01,
+ 258:Core/Src/bmi270.c ****     0x80, 0x00, 0x2e, 0x05, 0x42, 0x02, 0x2c, 0x00, 0x30, 0x00, 0x30, 0xa2, 0x6f, 0x98, 0x8a, 0x86,
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 6
+
+
+ 259:Core/Src/bmi270.c ****     0x05, 0x2f, 0x98, 0x2e, 0xf3, 0x03, 0xc0, 0x30, 0x21, 0x2e, 0x95, 0x01, 0x06, 0x25, 0x1a, 0x25,
+ 260:Core/Src/bmi270.c ****     0x82, 0x96, 0x40, 0x56, 0x43, 0x51, 0x0e, 0xfb, 0x2f, 0xbb, 0x6f, 0x30, 0x5f, 0xb8, 0x2e, 0x01,
+ 261:Core/Src/bmi270.c ****     0x01, 0x31, 0x41, 0x08, 0x40, 0xb2, 0x20, 0x50, 0xf2, 0x30, 0x02, 0x08, 0xfb, 0x7f, 0x01, 0x30,
+ 262:Core/Src/bmi270.c ****     0x2e, 0xcc, 0x00, 0x81, 0x90, 0xe0, 0x7f, 0x03, 0x2f, 0x23, 0x2e, 0xcc, 0x00, 0x98, 0x2e, 0x55,
+ 263:Core/Src/bmi270.c ****     0x1d, 0xb5, 0x10, 0x25, 0xfb, 0x6f, 0xe0, 0x6f, 0xe0, 0x5f, 0x80, 0x2e, 0x95, 0xcf, 0x98, 0x2e,
+ 264:Core/Src/bmi270.c ****     0x30, 0x21, 0x2e, 0xcc, 0x00, 0xfb, 0x6f, 0xe0, 0x5f, 0xb8, 0x2e, 0x00, 0x51, 0x05, 0x58, 0xeb,
+ 265:Core/Src/bmi270.c ****     0x89, 0x52, 0x6f, 0x5a, 0x89, 0x50, 0x13, 0x41, 0x06, 0x40, 0xb3, 0x01, 0x16, 0x42, 0xcb, 0x16,
+ 266:Core/Src/bmi270.c ****     0x02, 0x13, 0x42, 0x65, 0x0e, 0xf5, 0x2f, 0x05, 0x40, 0x14, 0x30, 0x2c, 0x29, 0x04, 0x42, 0x08,
+ 267:Core/Src/bmi270.c ****     0x90, 0x2e, 0x52, 0xb6, 0xb3, 0x88, 0xb0, 0x8a, 0xb6, 0x84, 0xa4, 0x7f, 0xc4, 0x7f, 0xb5, 0x7f,
+ 268:Core/Src/bmi270.c ****     0x7f, 0x73, 0x30, 0x04, 0x30, 0x55, 0x40, 0x42, 0x40, 0x8a, 0x17, 0xf3, 0x08, 0x6b, 0x01, 0x90,
+ 269:Core/Src/bmi270.c ****     0x4b, 0x82, 0xad, 0xbe, 0x71, 0x7f, 0x45, 0x0a, 0x09, 0x54, 0x84, 0x7f, 0x98, 0x2e, 0xd9, 0xc0,
+ 270:Core/Src/bmi270.c ****     0x54, 0xd0, 0x42, 0xa3, 0x7f, 0xf2, 0x7f, 0x60, 0x7f, 0x20, 0x25, 0x71, 0x6f, 0x75, 0x5a, 0x77,
+ 271:Core/Src/bmi270.c ****     0x75, 0x56, 0x98, 0x2e, 0x67, 0xcc, 0xb1, 0x6f, 0x62, 0x6f, 0x50, 0x42, 0xb1, 0x7f, 0xb3, 0x30,
+ 272:Core/Src/bmi270.c ****     0x2e, 0x0f, 0xca, 0x84, 0x6f, 0x20, 0x29, 0x71, 0x6f, 0x92, 0x6f, 0xa5, 0x6f, 0x76, 0x82, 0x6a,
+ 273:Core/Src/bmi270.c ****     0x00, 0x30, 0xd0, 0x2f, 0xd2, 0x6f, 0xd1, 0x7f, 0xb4, 0x7f, 0x98, 0x2e, 0x2b, 0xb7, 0x15, 0xbd,
+ 274:Core/Src/bmi270.c ****     0x0a, 0xc2, 0x6f, 0xc0, 0x7f, 0x98, 0x2e, 0x2b, 0xb7, 0x15, 0xbd, 0x0b, 0xb8, 0x42, 0x0a, 0xc0,
+ 275:Core/Src/bmi270.c ****     0x41, 0x18, 0x89, 0x16, 0xe1, 0x18, 0xd0, 0x18, 0xa1, 0x7f, 0x27, 0x25, 0x16, 0x25, 0x98, 0x2e,
+ 276:Core/Src/bmi270.c ****     0x54, 0x90, 0x7f, 0xb3, 0x30, 0x82, 0x40, 0x80, 0x90, 0x0d, 0x2f, 0x7d, 0x52, 0x92, 0x6f, 0x98,
+ 277:Core/Src/bmi270.c ****     0xb2, 0x6f, 0x90, 0x0e, 0x06, 0x2f, 0x8b, 0x50, 0x14, 0x30, 0x42, 0x6f, 0x51, 0x6f, 0x14, 0x42,
+ 278:Core/Src/bmi270.c ****     0x42, 0x00, 0x2e, 0x31, 0x6f, 0x98, 0x2e, 0x74, 0xc0, 0x41, 0x6f, 0x80, 0x7f, 0x98, 0x2e, 0x74,
+ 279:Core/Src/bmi270.c ****     0x10, 0x04, 0x43, 0x52, 0x01, 0x0f, 0x05, 0x2e, 0xcb, 0x00, 0x00, 0x30, 0x04, 0x30, 0x21, 0x2f,
+ 280:Core/Src/bmi270.c ****     0x58, 0x8c, 0x0e, 0x04, 0x30, 0x1c, 0x2f, 0x85, 0x88, 0x41, 0x6f, 0x04, 0x41, 0x8c, 0x0f, 0x04,
+ 281:Core/Src/bmi270.c ****     0x84, 0x88, 0x00, 0x2e, 0x04, 0x41, 0x04, 0x05, 0x8c, 0x0e, 0x04, 0x30, 0x0f, 0x2f, 0x82, 0x88,
+ 282:Core/Src/bmi270.c ****     0x41, 0x04, 0x05, 0x8c, 0x0e, 0x04, 0x30, 0x08, 0x2f, 0x83, 0x88, 0x00, 0x2e, 0x04, 0x41, 0x8c,
+ 283:Core/Src/bmi270.c ****     0x02, 0x2f, 0x21, 0x2e, 0xad, 0x01, 0x14, 0x30, 0x00, 0x91, 0x14, 0x2f, 0x03, 0x2e, 0xa1, 0x01,
+ 284:Core/Src/bmi270.c ****     0x2f, 0x03, 0x2e, 0xad, 0x01, 0x14, 0x30, 0x4c, 0x28, 0x23, 0x2e, 0xad, 0x01, 0x46, 0xa0, 0x06,
+ 285:Core/Src/bmi270.c ****     0x8d, 0x52, 0x48, 0x82, 0x82, 0x40, 0x21, 0x2e, 0xa1, 0x01, 0x42, 0x42, 0x5c, 0x2c, 0x02, 0x30,
+ 286:Core/Src/bmi270.c ****     0x01, 0x80, 0xb2, 0x02, 0x30, 0x55, 0x2f, 0x03, 0x2e, 0xa9, 0x01, 0x92, 0x6f, 0xb3, 0x30, 0x98,
+ 287:Core/Src/bmi270.c ****     0xb2, 0x6f, 0x90, 0x0f, 0x00, 0x30, 0x02, 0x30, 0x4a, 0x2f, 0xa2, 0x6f, 0x87, 0x52, 0x91, 0x00,
+ 288:Core/Src/bmi270.c ****     0x0e, 0x02, 0x2f, 0x00, 0x2e, 0x43, 0x2c, 0x02, 0x30, 0xc2, 0x6f, 0x7f, 0x52, 0x91, 0x0e, 0x02,
+ 289:Core/Src/bmi270.c ****     0x51, 0x6f, 0x81, 0x54, 0x98, 0x2e, 0xfe, 0xc9, 0x10, 0x25, 0xb3, 0x30, 0x21, 0x25, 0x98, 0x2e,
+ 290:Core/Src/bmi270.c ****     0x6f, 0xc0, 0x7f, 0xb3, 0x30, 0x12, 0x25, 0x98, 0x2e, 0x0f, 0xca, 0x42, 0x6f, 0xb0, 0x7f, 0xb3,
+ 291:Core/Src/bmi270.c ****     0x98, 0x2e, 0x0f, 0xca, 0xb2, 0x6f, 0x90, 0x28, 0x83, 0x52, 0x98, 0x2e, 0xfe, 0xc9, 0xc2, 0x6f,
+ 292:Core/Src/bmi270.c ****     0x30, 0x02, 0x30, 0x1d, 0x2f, 0x05, 0x2e, 0xa1, 0x01, 0x80, 0xb2, 0x12, 0x30, 0x0f, 0x2f, 0x42,
+ 293:Core/Src/bmi270.c ****     0xab, 0x01, 0x91, 0x0e, 0x02, 0x30, 0x12, 0x2f, 0x52, 0x6f, 0x03, 0x2e, 0xac, 0x01, 0x91, 0x0f,
+ 294:Core/Src/bmi270.c ****     0x2f, 0x21, 0x2e, 0xaa, 0x01, 0x0a, 0x2c, 0x12, 0x30, 0x03, 0x2e, 0xcb, 0x00, 0x8d, 0x58, 0x08,
+ 295:Core/Src/bmi270.c ****     0x11, 0x43, 0x00, 0x43, 0x25, 0x2e, 0xa1, 0x01, 0xd4, 0x6f, 0x8f, 0x52, 0x00, 0x43, 0x3a, 0x89,
+ 296:Core/Src/bmi270.c ****     0x43, 0x10, 0x43, 0x61, 0x0e, 0xfb, 0x2f, 0x03, 0x2e, 0xa0, 0x01, 0x11, 0x1a, 0x02, 0x2f, 0x02,
+ 297:Core/Src/bmi270.c ****     0xa0, 0x01, 0xeb, 0x6f, 0x00, 0x5f, 0xb8, 0x2e, 0x91, 0x52, 0x10, 0x30, 0x02, 0x30, 0x95, 0x56,
+ 298:Core/Src/bmi270.c ****     0x0e, 0xfc, 0x2f, 0x8d, 0x54, 0x88, 0x82, 0x93, 0x56, 0x80, 0x42, 0x53, 0x42, 0x40, 0x42, 0x42,
+ 299:Core/Src/bmi270.c ****     0xc0, 0x2e, 0xc2, 0x42, 0x00, 0x2e, 0xa3, 0x52, 0x00, 0x51, 0x52, 0x40, 0x47, 0x40, 0x1a, 0x25,
+ 300:Core/Src/bmi270.c ****     0x00, 0x8f, 0xbe, 0x72, 0x86, 0xfb, 0x7f, 0x0b, 0x30, 0x7c, 0xbf, 0xa5, 0x50, 0x10, 0x08, 0xdf,
+ 301:Core/Src/bmi270.c ****     0xf8, 0xbf, 0xcb, 0x42, 0xd3, 0x7f, 0x6c, 0xbb, 0xfc, 0xbb, 0xc5, 0x0a, 0x90, 0x7f, 0x1b, 0x7f,
+ 302:Core/Src/bmi270.c ****     0xb2, 0xe5, 0x7f, 0xb7, 0x7f, 0xa6, 0x7f, 0xc4, 0x7f, 0x90, 0x2e, 0x1c, 0xb7, 0x07, 0x2e, 0xd2,
+ 303:Core/Src/bmi270.c ****     0x0b, 0x2f, 0x97, 0x52, 0x01, 0x2e, 0xcd, 0x00, 0x82, 0x7f, 0x98, 0x2e, 0xbb, 0xcc, 0x0b, 0x30,
+ 304:Core/Src/bmi270.c ****     0x00, 0x82, 0x6f, 0x90, 0x6f, 0x1a, 0x25, 0x00, 0xb2, 0x8b, 0x7f, 0x14, 0x2f, 0xa6, 0xbd, 0x25,
+ 305:Core/Src/bmi270.c ****     0x2f, 0xb9, 0x80, 0xb2, 0xd4, 0xb0, 0x0c, 0x2f, 0x99, 0x54, 0x9b, 0x56, 0x0b, 0x30, 0x0b, 0x2e,
+ 306:Core/Src/bmi270.c ****     0x58, 0x9b, 0x42, 0xdb, 0x42, 0x6c, 0x09, 0x2b, 0x2e, 0xb1, 0x00, 0x8b, 0x42, 0xcb, 0x42, 0x86,
+ 307:Core/Src/bmi270.c ****     0xa7, 0x56, 0xc3, 0x08, 0x39, 0x52, 0x05, 0x50, 0x72, 0x7f, 0x63, 0x7f, 0x98, 0x2e, 0xc2, 0xc0,
+ 308:Core/Src/bmi270.c ****     0x6f, 0xd1, 0x0a, 0x01, 0x2e, 0xcd, 0x00, 0xd5, 0x6f, 0xc4, 0x6f, 0x72, 0x6f, 0x97, 0x52, 0x9d,
+ 309:Core/Src/bmi270.c ****     0x06, 0xcd, 0x23, 0x6f, 0x90, 0x6f, 0x99, 0x52, 0xc0, 0xb2, 0x04, 0xbd, 0x54, 0x40, 0xaf, 0xb9,
+ 310:Core/Src/bmi270.c ****     0x7f, 0x02, 0x30, 0x06, 0x2f, 0xc0, 0xb2, 0x02, 0x30, 0x03, 0x2f, 0x9b, 0x5c, 0x12, 0x30, 0x94,
+ 311:Core/Src/bmi270.c ****     0x03, 0xbf, 0x6f, 0xbb, 0x80, 0xb3, 0x20, 0x2f, 0x06, 0x6f, 0x26, 0x01, 0x16, 0x6f, 0x6e, 0x03,
+ 312:Core/Src/bmi270.c ****     0x90, 0x29, 0x2e, 0xce, 0x00, 0x9b, 0x52, 0x14, 0x2f, 0x9b, 0x5c, 0x00, 0x2e, 0x93, 0x41, 0x86,
+ 313:Core/Src/bmi270.c ****     0xae, 0x07, 0x80, 0xab, 0x04, 0x2f, 0x80, 0x91, 0x0a, 0x2f, 0x86, 0x6f, 0x73, 0x0f, 0x07, 0x2f,
+ 314:Core/Src/bmi270.c ****     0xb2, 0x04, 0x2f, 0x54, 0x42, 0x45, 0x42, 0x12, 0x30, 0x04, 0x2c, 0x11, 0x30, 0x02, 0x2c, 0x11,
+ 315:Core/Src/bmi270.c ****     0x02, 0xbc, 0x0f, 0xb8, 0xd2, 0x7f, 0x00, 0xb2, 0x0a, 0x2f, 0x01, 0x2e, 0xfc, 0x00, 0x05, 0x2e,
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 7
+
+
+ 316:Core/Src/bmi270.c ****     0x1a, 0x02, 0x2f, 0x21, 0x2e, 0xc7, 0x01, 0x03, 0x2d, 0x02, 0x2c, 0x01, 0x30, 0x01, 0x30, 0xb0,
+ 317:Core/Src/bmi270.c ****     0x95, 0xcf, 0xd1, 0x6f, 0xa0, 0x6f, 0x98, 0x2e, 0x95, 0xcf, 0xe2, 0x6f, 0x9f, 0x52, 0x01, 0x2e,
+ 318:Core/Src/bmi270.c ****     0x40, 0x50, 0x42, 0x0c, 0x2c, 0x42, 0x42, 0x11, 0x30, 0x23, 0x2e, 0xd2, 0x00, 0x01, 0x30, 0xb0,
+ 319:Core/Src/bmi270.c ****     0x95, 0xcf, 0xa0, 0x6f, 0x01, 0x30, 0x98, 0x2e, 0x95, 0xcf, 0x00, 0x2e, 0xfb, 0x6f, 0x00, 0x5f,
+ 320:Core/Src/bmi270.c ****     0x86, 0x01, 0x30, 0x00, 0x30, 0x94, 0x40, 0x24, 0x18, 0x06, 0x00, 0x53, 0x0e, 0x4f, 0x02, 0xf9,
+ 321:Core/Src/bmi270.c ****     0xa9, 0x52, 0x00, 0x2e, 0x60, 0x40, 0x41, 0x40, 0x0d, 0xbc, 0x98, 0xbc, 0xc0, 0x2e, 0x01, 0x0a,
+ 322:Core/Src/bmi270.c ****     0x52, 0x53, 0x3c, 0x52, 0x40, 0x40, 0x40, 0x4b, 0x00, 0x82, 0x16, 0x26, 0xb9, 0x01, 0xb8, 0x41,
+ 323:Core/Src/bmi270.c ****     0x97, 0xb8, 0x01, 0x08, 0xc0, 0x2e, 0x11, 0x30, 0x01, 0x08, 0x43, 0x86, 0x25, 0x40, 0x04, 0x40,
+ 324:Core/Src/bmi270.c ****     0x0b, 0x22, 0x11, 0x54, 0x42, 0x03, 0x80, 0x4b, 0x0e, 0xf6, 0x2f, 0xb8, 0x2e, 0x9f, 0x50, 0x10,
+ 325:Core/Src/bmi270.c ****     0x05, 0x2e, 0xd3, 0x00, 0xfb, 0x7f, 0x00, 0x2e, 0x13, 0x40, 0x93, 0x42, 0x41, 0x0e, 0xfb, 0x2f,
+ 326:Core/Src/bmi270.c ****     0xb7, 0x98, 0x2e, 0x87, 0xcf, 0x01, 0x2e, 0xd9, 0x00, 0x00, 0xb2, 0xfb, 0x6f, 0x0b, 0x2f, 0x01,
+ 327:Core/Src/bmi270.c ****     0xb1, 0x3f, 0x01, 0x08, 0x01, 0x30, 0xf0, 0x5f, 0x23, 0x2e, 0xd9, 0x00, 0x21, 0x2e, 0x69, 0xf7,
+ 328:Core/Src/bmi270.c ****     0xb7, 0xf0, 0x5f, 0xb8, 0x2e, 0x01, 0x2e, 0xc0, 0xf8, 0x03, 0x2e, 0xfc, 0xf5, 0x15, 0x54, 0xaf,
+ 329:Core/Src/bmi270.c ****     0x0b, 0x2e, 0x69, 0xf7, 0xcb, 0x0a, 0xb1, 0x58, 0x80, 0x90, 0xdd, 0xbe, 0x4c, 0x08, 0x5f, 0xb9,
+ 330:Core/Src/bmi270.c ****     0x90, 0x07, 0x2f, 0x03, 0x34, 0xc3, 0x08, 0xf2, 0x3a, 0x0a, 0x08, 0x02, 0x35, 0xc0, 0x90, 0x4a,
+ 331:Core/Src/bmi270.c ****     0xc0, 0x2e, 0x23, 0x2e, 0xfc, 0xf5, 0x10, 0x50, 0xfb, 0x7f, 0x98, 0x2e, 0x56, 0xc7, 0x98, 0x2e,
+ 332:Core/Src/bmi270.c ****     0x30, 0xfb, 0x6f, 0xf0, 0x5f, 0x21, 0x2e, 0xcc, 0x00, 0x21, 0x2e, 0xca, 0x00, 0xb8, 0x2e, 0x03,
+ 333:Core/Src/bmi270.c ****     0x16, 0xb8, 0x02, 0x34, 0x4a, 0x0c, 0x21, 0x2e, 0x2d, 0xf5, 0xc0, 0x2e, 0x23, 0x2e, 0xd3, 0x00,
+ 334:Core/Src/bmi270.c ****     0x2e, 0xd5, 0x00, 0x03, 0x2e, 0xd5, 0x00, 0x40, 0xb2, 0x10, 0x30, 0x21, 0x2e, 0x77, 0x00, 0x01,
+ 335:Core/Src/bmi270.c ****     0x05, 0x2e, 0xd8, 0x00, 0x80, 0x90, 0x01, 0x2f, 0x23, 0x2e, 0x6f, 0xf5, 0xc0, 0x2e, 0x21, 0x2e,
+ 336:Core/Src/bmi270.c ****     0x30, 0x81, 0x08, 0x01, 0x2e, 0x6a, 0xf7, 0x71, 0x3f, 0x23, 0xbd, 0x01, 0x08, 0x02, 0x0a, 0xc0,
+ 337:Core/Src/bmi270.c ****     0x6a, 0xf7, 0x30, 0x25, 0x00, 0x30, 0x21, 0x2e, 0x5a, 0xf5, 0x10, 0x50, 0x21, 0x2e, 0x7b, 0x00,
+ 338:Core/Src/bmi270.c ****     0x00, 0xfb, 0x7f, 0x98, 0x2e, 0xc3, 0xb7, 0x40, 0x30, 0x21, 0x2e, 0xd4, 0x00, 0xfb, 0x6f, 0xf0,
+ 339:Core/Src/bmi270.c ****     0x80, 0x2e, 0xaf, 0xb7, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1,
+ 340:Core/Src/bmi270.c ****     0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00,
+ 341:Core/Src/bmi270.c ****     0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e,
+ 342:Core/Src/bmi270.c ****     0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x01, 0x2e, 0x5d, 0xf7, 0x08, 0xbc, 0x80, 0xac, 0x0e,
+ 343:Core/Src/bmi270.c ****     0x00, 0x30, 0x41, 0x04, 0x82, 0x06, 0xc0, 0xa4, 0x00, 0x30, 0x11, 0x2f, 0x40, 0xa9, 0x03, 0x2f,
+ 344:Core/Src/bmi270.c ****     0x2f, 0x00, 0xa7, 0x0b, 0x2f, 0x80, 0xb3, 0xb3, 0x58, 0x02, 0x2f, 0x90, 0xa1, 0x26, 0x13, 0x20,
+ 345:Core/Src/bmi270.c ****     0x10, 0x30, 0x01, 0x2f, 0xcc, 0x0e, 0x00, 0x2f, 0x00, 0x30, 0xb8, 0x2e, 0xb5, 0x50, 0x18, 0x08,
+ 346:Core/Src/bmi270.c ****     0xb6, 0x0d, 0x17, 0xc6, 0xbd, 0x56, 0xbc, 0xb7, 0x58, 0xda, 0xba, 0x04, 0x01, 0x1d, 0x0a, 0x10,
+ 347:Core/Src/bmi270.c ****     0x32, 0x25, 0x45, 0x03, 0xfb, 0x7f, 0xf6, 0x30, 0x21, 0x25, 0x98, 0x2e, 0x37, 0xca, 0x16, 0xb5,
+ 348:Core/Src/bmi270.c ****     0xb8, 0x80, 0xa8, 0x41, 0x0a, 0x0e, 0x2f, 0x80, 0x90, 0x02, 0x2f, 0x2d, 0x50, 0x48, 0x0f, 0x09,
+ 349:Core/Src/bmi270.c ****     0x04, 0x2f, 0xbf, 0x90, 0x06, 0x2f, 0xb7, 0x54, 0xca, 0x0f, 0x03, 0x2f, 0x00, 0x2e, 0x02, 0x2c,
+ 350:Core/Src/bmi270.c ****     0x52, 0xf2, 0x33, 0x98, 0x2e, 0xd9, 0xc0, 0xfb, 0x6f, 0xf1, 0x37, 0xc0, 0x2e, 0x01, 0x08, 0xf0,
+ 351:Core/Src/bmi270.c ****     0xb9, 0x54, 0xd0, 0x40, 0xc4, 0x40, 0x0b, 0x2e, 0xfd, 0xf3, 0xbf, 0x52, 0x90, 0x42, 0x94, 0x42,
+ 352:Core/Src/bmi270.c ****     0x30, 0xc1, 0x50, 0x0f, 0x88, 0x06, 0x40, 0x04, 0x41, 0x96, 0x42, 0xc5, 0x42, 0x48, 0xbe, 0x73,
+ 353:Core/Src/bmi270.c ****     0xd8, 0x00, 0x4f, 0xba, 0x84, 0x42, 0x03, 0x42, 0x81, 0xb3, 0x02, 0x2f, 0x2b, 0x2e, 0x6f, 0xf5,
+ 354:Core/Src/bmi270.c ****     0x2e, 0x77, 0xf7, 0xbd, 0x56, 0x93, 0x08, 0x25, 0x2e, 0x77, 0xf7, 0xbb, 0x54, 0x25, 0x2e, 0xc2,
+ 355:Core/Src/bmi270.c ****     0xfd, 0xf3, 0x42, 0x30, 0xb4, 0x33, 0xda, 0x0a, 0x4c, 0x00, 0x27, 0x2e, 0xfd, 0xf3, 0x43, 0x40,
+ 356:Core/Src/bmi270.c ****     0x08, 0x43, 0x42, 0x00, 0x2e, 0x00, 0x2e, 0x43, 0x40, 0x24, 0x30, 0xdc, 0x0a, 0x43, 0x42, 0x04,
+ 357:Core/Src/bmi270.c ****     0xfd, 0xf3, 0x4a, 0x0a, 0x23, 0x2e, 0xfd, 0xf3, 0x61, 0x34, 0xc0, 0x2e, 0x01, 0x42, 0x00, 0x2e,
+ 358:Core/Src/bmi270.c ****     0x25, 0x7a, 0x86, 0xe0, 0x7f, 0xf3, 0x7f, 0x03, 0x25, 0xc3, 0x52, 0x41, 0x84, 0xdb, 0x7f, 0x33,
+ 359:Core/Src/bmi270.c ****     0x16, 0xc2, 0x1a, 0x25, 0x7d, 0x82, 0xf0, 0x6f, 0xe2, 0x6f, 0x32, 0x25, 0x16, 0x40, 0x94, 0x40,
+ 360:Core/Src/bmi270.c ****     0x40, 0x8e, 0x17, 0xc4, 0x42, 0x6e, 0x03, 0x95, 0x42, 0x41, 0x0e, 0xf4, 0x2f, 0xdb, 0x6f, 0xa0,
+ 361:Core/Src/bmi270.c ****     0xb0, 0x51, 0xfb, 0x7f, 0x98, 0x2e, 0xe8, 0x0d, 0x5a, 0x25, 0x98, 0x2e, 0x0f, 0x0e, 0xcb, 0x58,
+ 362:Core/Src/bmi270.c ****     0x7f, 0x65, 0x89, 0x6b, 0x8d, 0xc5, 0x5a, 0x65, 0x7f, 0xe1, 0x7f, 0x83, 0x7f, 0xa6, 0x7f, 0x74,
+ 363:Core/Src/bmi270.c ****     0xb6, 0x7f, 0x94, 0x7f, 0x17, 0x30, 0xc7, 0x52, 0xc9, 0x54, 0x51, 0x7f, 0x00, 0x2e, 0x85, 0x6f,
+ 364:Core/Src/bmi270.c ****     0x2e, 0x51, 0x41, 0x45, 0x81, 0x42, 0x41, 0x13, 0x40, 0x3b, 0x8a, 0x00, 0x40, 0x4b, 0x04, 0xd0,
+ 365:Core/Src/bmi270.c ****     0x85, 0x7f, 0x02, 0x2f, 0x02, 0x30, 0x51, 0x04, 0xd3, 0x06, 0x41, 0x84, 0x05, 0x30, 0x5d, 0x02,
+ 366:Core/Src/bmi270.c ****     0x08, 0xd3, 0x00, 0x8d, 0x02, 0xaf, 0xbc, 0xb1, 0xb9, 0x59, 0x0a, 0x65, 0x6f, 0x11, 0x43, 0xa1,
+ 367:Core/Src/bmi270.c ****     0x53, 0x41, 0x01, 0x43, 0x34, 0x7f, 0x65, 0x7f, 0x26, 0x31, 0xe5, 0x6f, 0xd4, 0x6f, 0x98, 0x2e,
+ 368:Core/Src/bmi270.c ****     0x6f, 0x75, 0x6f, 0x83, 0x40, 0x42, 0x41, 0x23, 0x7f, 0x12, 0x7f, 0xf6, 0x30, 0x40, 0x25, 0x51,
+ 369:Core/Src/bmi270.c ****     0x37, 0xca, 0x14, 0x6f, 0x20, 0x05, 0x70, 0x6f, 0x25, 0x6f, 0x69, 0x07, 0xa2, 0x6f, 0x31, 0x6f,
+ 370:Core/Src/bmi270.c ****     0x42, 0x9b, 0x42, 0x8b, 0x42, 0x55, 0x42, 0x32, 0x7f, 0x40, 0xa9, 0xc3, 0x6f, 0x71, 0x7f, 0x02,
+ 371:Core/Src/bmi270.c ****     0xc3, 0x7f, 0x03, 0x2f, 0x40, 0x91, 0x15, 0x2f, 0x00, 0xa7, 0x13, 0x2f, 0x00, 0xa4, 0x11, 0x2f,
+ 372:Core/Src/bmi270.c ****     0x2e, 0x79, 0xca, 0x55, 0x6f, 0xb7, 0x54, 0x54, 0x41, 0x82, 0x00, 0xf3, 0x3f, 0x45, 0x41, 0xcb,
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 8
+
+
+ 373:Core/Src/bmi270.c ****     0x98, 0x2e, 0x37, 0xca, 0x35, 0x6f, 0xa4, 0x6f, 0x41, 0x43, 0x03, 0x2c, 0x00, 0x43, 0xa4, 0x6f,
+ 374:Core/Src/bmi270.c ****     0x30, 0x42, 0x6f, 0x51, 0x6f, 0x93, 0x40, 0x42, 0x82, 0x00, 0x41, 0xc3, 0x00, 0x03, 0x43, 0x51,
+ 375:Core/Src/bmi270.c ****     0x94, 0x40, 0x41, 0x41, 0x4c, 0x02, 0xc4, 0x6f, 0xd1, 0x56, 0x63, 0x0e, 0x74, 0x6f, 0x51, 0x43,
+ 376:Core/Src/bmi270.c ****     0x2f, 0x09, 0x2e, 0xd8, 0x00, 0x01, 0xb3, 0x21, 0x2f, 0xcb, 0x58, 0x90, 0x6f, 0x13, 0x41, 0xb6,
+ 377:Core/Src/bmi270.c ****     0x00, 0x2e, 0x91, 0x41, 0x14, 0x40, 0x92, 0x41, 0x15, 0x40, 0x17, 0x2e, 0x6f, 0xf5, 0xb6, 0x7f,
+ 378:Core/Src/bmi270.c ****     0x7f, 0x98, 0x2e, 0x00, 0x0c, 0x07, 0x15, 0xc2, 0x6f, 0x14, 0x0b, 0x29, 0x2e, 0x6f, 0xf5, 0xc3,
+ 379:Core/Src/bmi270.c ****     0xe4, 0x6f, 0xd0, 0x6f, 0xe6, 0x2f, 0x14, 0x30, 0x05, 0x2e, 0x6f, 0xf5, 0x14, 0x0b, 0x29, 0x2e,
+ 380:Core/Src/bmi270.c ****     0x2d, 0xcd, 0x56, 0x04, 0x32, 0xb5, 0x6f, 0x1c, 0x01, 0x51, 0x41, 0x52, 0x41, 0xc3, 0x40, 0xb5,
+ 381:Core/Src/bmi270.c ****     0x98, 0x2e, 0x1f, 0x0c, 0xe4, 0x6f, 0x21, 0x87, 0x00, 0x43, 0x04, 0x32, 0xcf, 0x54, 0x5a, 0x0e,
+ 382:Core/Src/bmi270.c ****     0x54, 0x09, 0x2e, 0x77, 0xf7, 0x22, 0x0b, 0x29, 0x2e, 0x77, 0xf7, 0xfb, 0x6f, 0x50, 0x5e, 0xb8,
+ 383:Core/Src/bmi270.c ****     0x01, 0x2e, 0xd4, 0x00, 0x00, 0xb2, 0xfb, 0x7f, 0x51, 0x2f, 0x01, 0xb2, 0x48, 0x2f, 0x02, 0xb2,
+ 384:Core/Src/bmi270.c ****     0x90, 0x56, 0x2f, 0xd7, 0x52, 0x79, 0x80, 0x42, 0x40, 0x81, 0x84, 0x00, 0x40, 0x42, 0x42, 0x98,
+ 385:Core/Src/bmi270.c ****     0xd9, 0x54, 0xd7, 0x50, 0xa1, 0x40, 0x98, 0xbd, 0x82, 0x40, 0x3e, 0x82, 0xda, 0x0a, 0x44, 0x40,
+ 386:Core/Src/bmi270.c ****     0x00, 0x53, 0x42, 0x00, 0x2e, 0x43, 0x40, 0x9a, 0x02, 0x52, 0x42, 0x00, 0x2e, 0x41, 0x40, 0x15,
+ 387:Core/Src/bmi270.c ****     0x3a, 0x2f, 0x3a, 0x82, 0x00, 0x30, 0x41, 0x40, 0x21, 0x2e, 0x85, 0x0f, 0x40, 0xb2, 0x0a, 0x2f,
+ 388:Core/Src/bmi270.c ****     0x0c, 0x98, 0x2e, 0x45, 0x0e, 0x98, 0x2e, 0x5b, 0x0e, 0xfb, 0x6f, 0xf0, 0x5f, 0x00, 0x30, 0x80,
+ 389:Core/Src/bmi270.c ****     0xdd, 0x52, 0xd3, 0x54, 0x42, 0x42, 0x4f, 0x84, 0x73, 0x30, 0xdb, 0x52, 0x83, 0x42, 0x1b, 0x30,
+ 390:Core/Src/bmi270.c ****     0x30, 0x27, 0x2e, 0xd7, 0x00, 0x37, 0x2e, 0xd4, 0x00, 0x21, 0x2e, 0xd6, 0x00, 0x7a, 0x84, 0x17,
+ 391:Core/Src/bmi270.c ****     0x30, 0x30, 0x21, 0x2e, 0xd4, 0x00, 0x12, 0x2d, 0x21, 0x30, 0x00, 0x30, 0x23, 0x2e, 0xd4, 0x00,
+ 392:Core/Src/bmi270.c ****     0xf7, 0x0b, 0x2d, 0x17, 0x30, 0x98, 0x2e, 0x51, 0x0c, 0xd5, 0x50, 0x0c, 0x82, 0x72, 0x30, 0x2f,
+ 393:Core/Src/bmi270.c ****     0x25, 0x2e, 0x7b, 0xf7, 0x40, 0x42, 0x00, 0x2e, 0xfb, 0x6f, 0xf0, 0x5f, 0xb8, 0x2e, 0x70, 0x50,
+ 394:Core/Src/bmi270.c ****     0x86, 0xfb, 0x7f, 0xe1, 0x32, 0x62, 0x30, 0x98, 0x2e, 0xc2, 0xc4, 0xb5, 0x56, 0xa5, 0x6f, 0xab,
+ 395:Core/Src/bmi270.c ****     0x4b, 0x08, 0xdf, 0x56, 0xc4, 0x6f, 0x23, 0x09, 0x4d, 0xba, 0x93, 0xbc, 0x8c, 0x0b, 0xd1, 0x6f,
+ 396:Core/Src/bmi270.c ****     0x52, 0xe1, 0x5e, 0x56, 0x42, 0xaf, 0x09, 0x4d, 0xba, 0x23, 0xbd, 0x94, 0x0a, 0xe5, 0x6f, 0x68,
+ 397:Core/Src/bmi270.c ****     0xbd, 0xb9, 0x63, 0xbe, 0xfb, 0x6f, 0x52, 0x42, 0xe3, 0x0a, 0xc0, 0x2e, 0x43, 0x42, 0x90, 0x5f,
+ 398:Core/Src/bmi270.c ****     0x2e, 0x25, 0xf3, 0x13, 0x40, 0x00, 0x40, 0x9b, 0xbc, 0x9b, 0xb4, 0x08, 0xbd, 0xb8, 0xb9, 0x98,
+ 399:Core/Src/bmi270.c ****     0x08, 0xb6, 0x89, 0x16, 0xc0, 0x2e, 0x19, 0x00, 0x62, 0x02, 0x10, 0x50, 0xfb, 0x7f, 0x98, 0x2e,
+ 400:Core/Src/bmi270.c ****     0x2e, 0xd4, 0x00, 0x31, 0x30, 0x08, 0x04, 0xfb, 0x6f, 0x01, 0x30, 0xf0, 0x5f, 0x23, 0x2e, 0xd6,
+ 401:Core/Src/bmi270.c ****     0xd7, 0x00, 0xb8, 0x2e, 0x01, 0x2e, 0xd7, 0x00, 0x03, 0x2e, 0xd6, 0x00, 0x48, 0x0e, 0x01, 0x2f,
+ 402:Core/Src/bmi270.c ****     0x0e, 0xb8, 0x2e, 0xe3, 0x50, 0x21, 0x34, 0x01, 0x42, 0x82, 0x30, 0xc1, 0x32, 0x25, 0x2e, 0x62,
+ 403:Core/Src/bmi270.c ****     0x22, 0x30, 0x01, 0x40, 0x4a, 0x0a, 0x01, 0x42, 0xb8, 0x2e, 0xe3, 0x54, 0xf0, 0x3b, 0x83, 0x40,
+ 404:Core/Src/bmi270.c ****     0x52, 0x83, 0x42, 0x00, 0x30, 0x83, 0x30, 0x50, 0x42, 0xc4, 0x32, 0x27, 0x2e, 0x64, 0xf5, 0x94,
+ 405:Core/Src/bmi270.c ****     0x40, 0x42, 0xd3, 0x3f, 0x84, 0x40, 0x7d, 0x82, 0xe3, 0x08, 0x40, 0x42, 0x83, 0x42, 0xb8, 0x2e,
+ 406:Core/Src/bmi270.c ****     0x30, 0x40, 0x42, 0x7c, 0x86, 0xb9, 0x52, 0x09, 0x2e, 0x70, 0x0f, 0xbf, 0x54, 0xc4, 0x42, 0xd3,
+ 407:Core/Src/bmi270.c ****     0x55, 0x40, 0x94, 0x42, 0x85, 0x42, 0x21, 0x2e, 0xd7, 0x00, 0x42, 0x40, 0x25, 0x2e, 0xfd, 0xf3,
+ 408:Core/Src/bmi270.c ****     0x82, 0x05, 0x2e, 0x7d, 0x00, 0x80, 0xb2, 0x14, 0x2f, 0x05, 0x2e, 0x89, 0x00, 0x27, 0xbd, 0x2f,
+ 409:Core/Src/bmi270.c ****     0x02, 0x2f, 0x21, 0x2e, 0x6f, 0xf5, 0x0c, 0x2d, 0x07, 0x2e, 0x71, 0x0f, 0x14, 0x30, 0x1c, 0x09,
+ 410:Core/Src/bmi270.c ****     0xf7, 0xbd, 0x56, 0x47, 0xbe, 0x93, 0x08, 0x94, 0x0a, 0x25, 0x2e, 0x77, 0xf7, 0xe7, 0x54, 0x50,
+ 411:Core/Src/bmi270.c ****     0xfc, 0x2f, 0xb8, 0x2e, 0x50, 0x50, 0x02, 0x30, 0x43, 0x86, 0xe5, 0x50, 0xfb, 0x7f, 0xe3, 0x7f,
+ 412:Core/Src/bmi270.c ****     0x7f, 0xb1, 0x7f, 0x00, 0x2e, 0x41, 0x40, 0x00, 0x40, 0x48, 0x04, 0x98, 0x2e, 0x74, 0xc0, 0x1e,
+ 413:Core/Src/bmi270.c ****     0x14, 0x30, 0xb1, 0x6f, 0xe3, 0x22, 0xc0, 0x6f, 0x52, 0x40, 0xe4, 0x6f, 0x4c, 0x0e, 0x12, 0x42,
+ 414:Core/Src/bmi270.c ****     0x2f, 0x03, 0x2e, 0x86, 0x0f, 0x40, 0x90, 0x11, 0x30, 0x03, 0x2f, 0x23, 0x2e, 0x86, 0x0f, 0x02,
+ 415:Core/Src/bmi270.c ****     0xd0, 0x6f, 0xfb, 0x6f, 0xb0, 0x5f, 0xb8, 0x2e, 0x40, 0x50, 0xf1, 0x7f, 0x0a, 0x25, 0x3c, 0x86,
+ 416:Core/Src/bmi270.c ****     0x33, 0x22, 0x30, 0x98, 0x2e, 0xc2, 0xc4, 0xd3, 0x6f, 0xf4, 0x30, 0xdc, 0x09, 0x47, 0x58, 0xc2,
+ 417:Core/Src/bmi270.c ****     0xeb, 0x58, 0x6a, 0xbb, 0xdc, 0x08, 0xb4, 0xb9, 0xb1, 0xbd, 0xe9, 0x5a, 0x95, 0x08, 0x21, 0xbd,
+ 418:Core/Src/bmi270.c ****     0x0b, 0x51, 0xbe, 0xf1, 0x6f, 0xeb, 0x6f, 0x52, 0x42, 0x54, 0x42, 0xc0, 0x2e, 0x43, 0x42, 0xc0,
+ 419:Core/Src/bmi270.c ****     0xf5, 0x50, 0x31, 0x30, 0x11, 0x42, 0xfb, 0x7f, 0x7b, 0x30, 0x0b, 0x42, 0x11, 0x30, 0x02, 0x80,
+ 420:Core/Src/bmi270.c ****     0x42, 0x03, 0x00, 0x07, 0x2e, 0x80, 0x03, 0x05, 0x2e, 0xd3, 0x00, 0x23, 0x52, 0xe2, 0x7f, 0xd3,
+ 421:Core/Src/bmi270.c ****     0x98, 0x2e, 0xb6, 0x0e, 0xd1, 0x6f, 0x08, 0x0a, 0x1a, 0x25, 0x7b, 0x86, 0xd0, 0x7f, 0x01, 0x33,
+ 422:Core/Src/bmi270.c ****     0x2e, 0xc2, 0xc4, 0xd1, 0x6f, 0x08, 0x0a, 0x00, 0xb2, 0x0d, 0x2f, 0xe3, 0x6f, 0x01, 0x2e, 0x80,
+ 423:Core/Src/bmi270.c ****     0xc7, 0x86, 0x23, 0x2e, 0x21, 0xf2, 0x08, 0xbc, 0xc0, 0x42, 0x98, 0x2e, 0xa5, 0xb7, 0x00, 0x2e,
+ 424:Core/Src/bmi270.c ****     0x2e, 0xb0, 0x6f, 0x0b, 0xb8, 0x03, 0x2e, 0x1b, 0x00, 0x08, 0x1a, 0xb0, 0x7f, 0x70, 0x30, 0x04,
+ 425:Core/Src/bmi270.c ****     0x21, 0xf2, 0x00, 0x2e, 0x00, 0x2e, 0xd0, 0x2e, 0x98, 0x2e, 0x6d, 0xc0, 0x98, 0x2e, 0x5d, 0xc0,
+ 426:Core/Src/bmi270.c ****     0x2e, 0x44, 0xcb, 0xef, 0x50, 0x98, 0x2e, 0x46, 0xc3, 0xf1, 0x50, 0x98, 0x2e, 0x53, 0xc7, 0x35,
+ 427:Core/Src/bmi270.c ****     0x64, 0xcf, 0x10, 0x30, 0x98, 0x2e, 0xdc, 0x03, 0x20, 0x26, 0xc0, 0x6f, 0x02, 0x31, 0x12, 0x42,
+ 428:Core/Src/bmi270.c ****     0x42, 0x37, 0x80, 0x01, 0x30, 0x01, 0x42, 0xf3, 0x37, 0xf7, 0x52, 0xfb, 0x50, 0x44, 0x40, 0xa2,
+ 429:Core/Src/bmi270.c ****     0x8b, 0x31, 0x09, 0x2e, 0x5e, 0xf7, 0xf9, 0x54, 0xe3, 0x08, 0x83, 0x42, 0x1b, 0x42, 0x23, 0x33,
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 9
+
+
+ 430:Core/Src/bmi270.c ****     0x84, 0x0b, 0x40, 0x33, 0x30, 0x83, 0x42, 0x0b, 0x42, 0xe0, 0x7f, 0xd1, 0x7f, 0x98, 0x2e, 0x58,
+ 431:Core/Src/bmi270.c ****     0x80, 0x30, 0x40, 0x42, 0x03, 0x30, 0xe0, 0x6f, 0xf3, 0x54, 0x04, 0x30, 0x00, 0x2e, 0x00, 0x2e,
+ 432:Core/Src/bmi270.c ****     0x0e, 0xfa, 0x2f, 0x43, 0x42, 0x11, 0x30, 0xfb, 0x6f, 0xc0, 0x2e, 0x01, 0x42, 0xb0, 0x5f, 0xc1,
+ 433:Core/Src/bmi270.c ****     0x6d, 0x57, 0x00, 0x00, 0x77, 0x8e, 0x00, 0x00, 0xe0, 0xff, 0xff, 0xff, 0xd3, 0xff, 0xff, 0xff,
+ 434:Core/Src/bmi270.c ****     0xff, 0xee, 0xe1, 0xff, 0xff, 0x7c, 0x13, 0x00, 0x00, 0x46, 0xe6, 0xff, 0xff, 0x00, 0x00, 0x00,
+ 435:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 436:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+ 437:Core/Src/bmi270.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x2e,
+ 438:Core/Src/bmi270.c ****     0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80,
+ 439:Core/Src/bmi270.c ****     0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1,
+ 440:Core/Src/bmi270.c ****     0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00,
+ 441:Core/Src/bmi270.c ****     0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e,
+ 442:Core/Src/bmi270.c ****     0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80,
+ 443:Core/Src/bmi270.c ****     0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1,
+ 444:Core/Src/bmi270.c ****     0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00,
+ 445:Core/Src/bmi270.c ****     0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e,
+ 446:Core/Src/bmi270.c ****     0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80,
+ 447:Core/Src/bmi270.c ****     0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1,
+ 448:Core/Src/bmi270.c ****     0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00,
+ 449:Core/Src/bmi270.c ****     0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e,
+ 450:Core/Src/bmi270.c ****     0x2e, 0x00, 0xc1
+ 451:Core/Src/bmi270.c **** };
+ 452:Core/Src/bmi270.c **** 
+ 453:Core/Src/bmi270.c **** /**
+ 454:Core/Src/bmi270.c ****   * @brief BMI270 I2C write-wrapper
+ 455:Core/Src/bmi270.c ****   * @param memAddress Internal memory adress
+ 456:Core/Src/bmi270.c ****   * @param Value Value to be written
+ 457:Core/Src/bmi270.c ****   * @retval None
+ 458:Core/Src/bmi270.c ****   */
+ 459:Core/Src/bmi270.c **** static int BMI270_I2C_write(uint8_t memAddress, uint8_t value)
+ 460:Core/Src/bmi270.c **** {
+ 461:Core/Src/bmi270.c ****     if (HAL_I2C_Mem_Write(&BMI270_I2C,
+ 462:Core/Src/bmi270.c ****                           BMI270_ADDRESS, 
+ 463:Core/Src/bmi270.c ****                           memAddress, 
+ 464:Core/Src/bmi270.c ****                           1, 
+ 465:Core/Src/bmi270.c ****                           &value, 
+ 466:Core/Src/bmi270.c ****                           1, 
+ 467:Core/Src/bmi270.c ****                           1000) != HAL_OK)
+ 468:Core/Src/bmi270.c ****     {
+ 469:Core/Src/bmi270.c ****         return BMI270_ERR_I2C;
+ 470:Core/Src/bmi270.c ****     }
+ 471:Core/Src/bmi270.c ****     return BMI270_OK;
+ 472:Core/Src/bmi270.c **** }
+ 473:Core/Src/bmi270.c **** 
+ 474:Core/Src/bmi270.c **** /**
+ 475:Core/Src/bmi270.c ****   * @brief BMI270 I2C read-wrapper
+ 476:Core/Src/bmi270.c ****   * @param memAddress Internal memory adress
+ 477:Core/Src/bmi270.c ****   * @param pData Pointer to data buffer
+ 478:Core/Src/bmi270.c ****   * @retval None
+ 479:Core/Src/bmi270.c ****   */
+ 480:Core/Src/bmi270.c **** static int BMI270_I2C_read(uint8_t memAddress, uint8_t *pData)
+ 481:Core/Src/bmi270.c **** {
+  29              		.loc 1 481 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 481 1 is_stmt 0 view .LVU1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 10
+
+
+  34 0000 00B5     		push	{lr}
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 4
+  37              		.cfi_offset 14, -4
+  38 0002 85B0     		sub	sp, sp, #20
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_offset 24
+  41 0004 0246     		mov	r2, r0
+ 482:Core/Src/bmi270.c ****     if (HAL_I2C_Mem_Read(&BMI270_I2C, 
+  42              		.loc 1 482 5 is_stmt 1 view .LVU2
+  43              		.loc 1 482 9 is_stmt 0 view .LVU3
+  44 0006 4FF47A73 		mov	r3, #1000
+  45 000a 0293     		str	r3, [sp, #8]
+  46 000c 0123     		movs	r3, #1
+  47 000e 0193     		str	r3, [sp, #4]
+  48 0010 0091     		str	r1, [sp]
+  49 0012 D021     		movs	r1, #208
+  50              	.LVL1:
+  51              		.loc 1 482 9 view .LVU4
+  52 0014 0448     		ldr	r0, .L6
+  53              	.LVL2:
+  54              		.loc 1 482 9 view .LVU5
+  55 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+  56              	.LVL3:
+  57              		.loc 1 482 8 discriminator 1 view .LVU6
+  58 001a 10B9     		cbnz	r0, .L5
+  59              	.L1:
+ 483:Core/Src/bmi270.c ****                          BMI270_ADDRESS, 
+ 484:Core/Src/bmi270.c ****                          memAddress, 
+ 485:Core/Src/bmi270.c ****                          1, 
+ 486:Core/Src/bmi270.c ****                          pData, 
+ 487:Core/Src/bmi270.c ****                          1, 
+ 488:Core/Src/bmi270.c ****                          1000) != HAL_OK)
+ 489:Core/Src/bmi270.c ****     {
+ 490:Core/Src/bmi270.c ****         return BMI270_ERR_I2C;
+ 491:Core/Src/bmi270.c ****     }
+ 492:Core/Src/bmi270.c ****     return BMI270_OK;
+ 493:Core/Src/bmi270.c **** }
+  60              		.loc 1 493 1 view .LVU7
+  61 001c 05B0     		add	sp, sp, #20
+  62              	.LCFI2:
+  63              		.cfi_remember_state
+  64              		.cfi_def_cfa_offset 4
+  65              		@ sp needed
+  66 001e 5DF804FB 		ldr	pc, [sp], #4
+  67              	.L5:
+  68              	.LCFI3:
+  69              		.cfi_restore_state
+ 490:Core/Src/bmi270.c ****     }
+  70              		.loc 1 490 16 view .LVU8
+  71 0022 0120     		movs	r0, #1
+  72 0024 FAE7     		b	.L1
+  73              	.L7:
+  74 0026 00BF     		.align	2
+  75              	.L6:
+  76 0028 00000000 		.word	hi2c1
+  77              		.cfi_endproc
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 11
+
+
+  78              	.LFE1262:
+  80              		.section	.text.BMI270_WriteConfig,"ax",%progbits
+  81              		.align	1
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  86              	BMI270_WriteConfig:
+  87              	.LFB1263:
+ 494:Core/Src/bmi270.c **** 
+ 495:Core/Src/bmi270.c **** /**
+ 496:Core/Src/bmi270.c ****   * @brief BMI270 write configuration function
+ 497:Core/Src/bmi270.c ****   * @param None
+ 498:Core/Src/bmi270.c ****   * @retval None
+ 499:Core/Src/bmi270.c ****   */
+ 500:Core/Src/bmi270.c **** static int BMI270_WriteConfig(void)
+ 501:Core/Src/bmi270.c **** {
+  88              		.loc 1 501 1 is_stmt 1 view -0
+  89              		.cfi_startproc
+  90              		@ args = 0, pretend = 0, frame = 8
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92 0000 30B5     		push	{r4, r5, lr}
+  93              	.LCFI4:
+  94              		.cfi_def_cfa_offset 12
+  95              		.cfi_offset 4, -12
+  96              		.cfi_offset 5, -8
+  97              		.cfi_offset 14, -4
+  98 0002 87B0     		sub	sp, sp, #28
+  99              	.LCFI5:
+ 100              		.cfi_def_cfa_offset 40
+ 502:Core/Src/bmi270.c ****     uint8_t chip_id;
+ 101              		.loc 1 502 5 view .LVU10
+ 503:Core/Src/bmi270.c ****     uint8_t status_value = 0x00;
+ 102              		.loc 1 503 5 view .LVU11
+ 103              		.loc 1 503 13 is_stmt 0 view .LVU12
+ 104 0004 0020     		movs	r0, #0
+ 105 0006 8DF81600 		strb	r0, [sp, #22]
+ 504:Core/Src/bmi270.c ****     uint8_t dataBuffer = 0x00;
+ 106              		.loc 1 504 5 is_stmt 1 view .LVU13
+ 107              		.loc 1 504 13 is_stmt 0 view .LVU14
+ 108 000a 8DF81500 		strb	r0, [sp, #21]
+ 505:Core/Src/bmi270.c **** 
+ 506:Core/Src/bmi270.c **** 	// Check the chip ID before reading
+ 507:Core/Src/bmi270.c ****     if ((BMI270_I2C_read(REG_CHIP_ID_BMI270, &chip_id)) != HAL_OK)
+ 109              		.loc 1 507 5 is_stmt 1 view .LVU15
+ 110              		.loc 1 507 10 is_stmt 0 view .LVU16
+ 111 000e 0DF11701 		add	r1, sp, #23
+ 112 0012 FFF7FEFF 		bl	BMI270_I2C_read
+ 113              	.LVL4:
+ 114              		.loc 1 507 8 discriminator 1 view .LVU17
+ 115 0016 0028     		cmp	r0, #0
+ 116 0018 40F09380 		bne	.L13
+ 117 001c 0446     		mov	r4, r0
+ 508:Core/Src/bmi270.c ****     {
+ 509:Core/Src/bmi270.c ****         return BMI270_ERR_I2C;
+ 510:Core/Src/bmi270.c ****     }
+ 511:Core/Src/bmi270.c ****  
+ 512:Core/Src/bmi270.c **** 	if (chip_id != CHIP_ID) { return BMI270_ERR_CHIP_ID; }
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 12
+
+
+ 118              		.loc 1 512 2 is_stmt 1 view .LVU18
+ 119              		.loc 1 512 14 is_stmt 0 view .LVU19
+ 120 001e 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
+ 121              		.loc 1 512 5 view .LVU20
+ 122 0022 242B     		cmp	r3, #36
+ 123 0024 03D0     		beq	.L23
+ 124              		.loc 1 512 35 discriminator 1 view .LVU21
+ 125 0026 0224     		movs	r4, #2
+ 126              	.L8:
+ 513:Core/Src/bmi270.c **** 
+ 514:Core/Src/bmi270.c ****     dataBuffer = SOFT_RESET_CMD;
+ 515:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_CMD, 1, &dataBuffer, 1, 1000) != HAL_OK)
+ 516:Core/Src/bmi270.c ****     {
+ 517:Core/Src/bmi270.c ****         return BMI270_ERR_I2C;
+ 518:Core/Src/bmi270.c ****     }
+ 519:Core/Src/bmi270.c ****     HAL_Delay(10); 
+ 520:Core/Src/bmi270.c **** 
+ 521:Core/Src/bmi270.c ****     dataBuffer = 0x00;
+ 522:Core/Src/bmi270.c ****     //Power config   
+ 523:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CONF, 1, &dataBuffer, 1, 1000) != HAL
+ 524:Core/Src/bmi270.c ****     {
+ 525:Core/Src/bmi270.c ****         return BMI270_ERR_I2C; //I2C FEL
+ 526:Core/Src/bmi270.c ****     }
+ 527:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 528:Core/Src/bmi270.c **** 
+ 529:Core/Src/bmi270.c ****     //Init ctrl
+ 530:Core/Src/bmi270.c ****     dataBuffer = 0x00;
+ 531:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_INIT_CTRL, 1, &dataBuffer, 1, 1000) != HA
+ 532:Core/Src/bmi270.c ****     {
+ 533:Core/Src/bmi270.c ****         return BMI270_ERR_I2C; //I2C FEL
+ 534:Core/Src/bmi270.c ****     }
+ 535:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 536:Core/Src/bmi270.c **** 
+ 537:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_INIT_DATA, I2C_MEMADD_SIZE_8BIT, (uint8_t
+ 538:Core/Src/bmi270.c ****     {
+ 539:Core/Src/bmi270.c ****         return BMI270_ERR_I2C; //I2C FEL
+ 540:Core/Src/bmi270.c ****     }
+ 541:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 542:Core/Src/bmi270.c **** 
+ 543:Core/Src/bmi270.c ****     // Init ctrl = 1
+ 544:Core/Src/bmi270.c ****     dataBuffer = 0x01;
+ 545:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_INIT_CTRL, 1, &dataBuffer, 1, 1000) != HA
+ 546:Core/Src/bmi270.c ****     {
+ 547:Core/Src/bmi270.c ****         return BMI270_ERR_I2C;
+ 548:Core/Src/bmi270.c ****     }
+ 549:Core/Src/bmi270.c ****     HAL_Delay(200);
+ 550:Core/Src/bmi270.c **** 
+ 551:Core/Src/bmi270.c ****     uint32_t timeout = 1000;
+ 552:Core/Src/bmi270.c **** 
+ 553:Core/Src/bmi270.c ****     while (timeout > 0)
+ 554:Core/Src/bmi270.c ****     {
+ 555:Core/Src/bmi270.c ****         if (HAL_I2C_Mem_Read(&BMI270_I2C, BMI270_ADDRESS, REG_INTERNAL_STATUS, 1, &status_value, 1,
+ 556:Core/Src/bmi270.c ****         {
+ 557:Core/Src/bmi270.c ****             return 1; 
+ 558:Core/Src/bmi270.c ****         }
+ 559:Core/Src/bmi270.c **** 
+ 560:Core/Src/bmi270.c ****         if (status_value == 0x01)
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 13
+
+
+ 561:Core/Src/bmi270.c ****         {
+ 562:Core/Src/bmi270.c ****             break;
+ 563:Core/Src/bmi270.c ****         }
+ 564:Core/Src/bmi270.c **** 
+ 565:Core/Src/bmi270.c ****         HAL_Delay(5);
+ 566:Core/Src/bmi270.c ****         timeout--;
+ 567:Core/Src/bmi270.c ****     }
+ 568:Core/Src/bmi270.c **** 
+ 569:Core/Src/bmi270.c ****     if (timeout == 0)
+ 570:Core/Src/bmi270.c ****     {
+ 571:Core/Src/bmi270.c ****         return 1;
+ 572:Core/Src/bmi270.c ****     }
+ 573:Core/Src/bmi270.c ****     
+ 574:Core/Src/bmi270.c **** 	return 0;
+ 575:Core/Src/bmi270.c **** }
+ 127              		.loc 1 575 1 view .LVU22
+ 128 0028 2046     		mov	r0, r4
+ 129 002a 07B0     		add	sp, sp, #28
+ 130              	.LCFI6:
+ 131              		.cfi_remember_state
+ 132              		.cfi_def_cfa_offset 12
+ 133              		@ sp needed
+ 134 002c 30BD     		pop	{r4, r5, pc}
+ 135              	.L23:
+ 136              	.LCFI7:
+ 137              		.cfi_restore_state
+ 514:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_CMD, 1, &dataBuffer, 1, 1000) != HAL_OK)
+ 138              		.loc 1 514 5 is_stmt 1 view .LVU23
+ 514:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_CMD, 1, &dataBuffer, 1, 1000) != HAL_OK)
+ 139              		.loc 1 514 16 is_stmt 0 view .LVU24
+ 140 002e B623     		movs	r3, #182
+ 141 0030 8DF81530 		strb	r3, [sp, #21]
+ 515:Core/Src/bmi270.c ****     {
+ 142              		.loc 1 515 5 is_stmt 1 view .LVU25
+ 515:Core/Src/bmi270.c ****     {
+ 143              		.loc 1 515 8 is_stmt 0 view .LVU26
+ 144 0034 4FF47A73 		mov	r3, #1000
+ 145 0038 0293     		str	r3, [sp, #8]
+ 146 003a 0123     		movs	r3, #1
+ 147 003c 0193     		str	r3, [sp, #4]
+ 148 003e 0DF11502 		add	r2, sp, #21
+ 149 0042 0092     		str	r2, [sp]
+ 150 0044 7E22     		movs	r2, #126
+ 151 0046 D021     		movs	r1, #208
+ 152 0048 4048     		ldr	r0, .L29
+ 153 004a FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 154              	.LVL5:
+ 515:Core/Src/bmi270.c ****     {
+ 155              		.loc 1 515 7 discriminator 1 view .LVU27
+ 156 004e 08B1     		cbz	r0, .L24
+ 517:Core/Src/bmi270.c ****     }
+ 157              		.loc 1 517 16 view .LVU28
+ 158 0050 0124     		movs	r4, #1
+ 159 0052 E9E7     		b	.L8
+ 160              	.L24:
+ 519:Core/Src/bmi270.c **** 
+ 161              		.loc 1 519 5 is_stmt 1 view .LVU29
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 14
+
+
+ 162 0054 0A20     		movs	r0, #10
+ 163 0056 FFF7FEFF 		bl	HAL_Delay
+ 164              	.LVL6:
+ 521:Core/Src/bmi270.c ****     //Power config   
+ 165              		.loc 1 521 5 view .LVU30
+ 521:Core/Src/bmi270.c ****     //Power config   
+ 166              		.loc 1 521 16 is_stmt 0 view .LVU31
+ 167 005a 0023     		movs	r3, #0
+ 168 005c 8DF81530 		strb	r3, [sp, #21]
+ 523:Core/Src/bmi270.c ****     {
+ 169              		.loc 1 523 5 is_stmt 1 view .LVU32
+ 523:Core/Src/bmi270.c ****     {
+ 170              		.loc 1 523 8 is_stmt 0 view .LVU33
+ 171 0060 4FF47A73 		mov	r3, #1000
+ 172 0064 0293     		str	r3, [sp, #8]
+ 173 0066 0123     		movs	r3, #1
+ 174 0068 0193     		str	r3, [sp, #4]
+ 175 006a 0DF11502 		add	r2, sp, #21
+ 176 006e 0092     		str	r2, [sp]
+ 177 0070 7C22     		movs	r2, #124
+ 178 0072 D021     		movs	r1, #208
+ 179 0074 3548     		ldr	r0, .L29
+ 180 0076 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 181              	.LVL7:
+ 523:Core/Src/bmi270.c ****     {
+ 182              		.loc 1 523 7 discriminator 1 view .LVU34
+ 183 007a 08B1     		cbz	r0, .L25
+ 525:Core/Src/bmi270.c ****     }
+ 184              		.loc 1 525 16 view .LVU35
+ 185 007c 0124     		movs	r4, #1
+ 186 007e D3E7     		b	.L8
+ 187              	.L25:
+ 527:Core/Src/bmi270.c **** 
+ 188              		.loc 1 527 5 is_stmt 1 view .LVU36
+ 189 0080 0120     		movs	r0, #1
+ 190 0082 FFF7FEFF 		bl	HAL_Delay
+ 191              	.LVL8:
+ 530:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_INIT_CTRL, 1, &dataBuffer, 1, 1000) != HA
+ 192              		.loc 1 530 5 view .LVU37
+ 530:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_INIT_CTRL, 1, &dataBuffer, 1, 1000) != HA
+ 193              		.loc 1 530 16 is_stmt 0 view .LVU38
+ 194 0086 0023     		movs	r3, #0
+ 195 0088 8DF81530 		strb	r3, [sp, #21]
+ 531:Core/Src/bmi270.c ****     {
+ 196              		.loc 1 531 5 is_stmt 1 view .LVU39
+ 531:Core/Src/bmi270.c ****     {
+ 197              		.loc 1 531 8 is_stmt 0 view .LVU40
+ 198 008c 4FF47A73 		mov	r3, #1000
+ 199 0090 0293     		str	r3, [sp, #8]
+ 200 0092 0123     		movs	r3, #1
+ 201 0094 0193     		str	r3, [sp, #4]
+ 202 0096 0DF11502 		add	r2, sp, #21
+ 203 009a 0092     		str	r2, [sp]
+ 204 009c 5922     		movs	r2, #89
+ 205 009e D021     		movs	r1, #208
+ 206 00a0 2A48     		ldr	r0, .L29
+ 207 00a2 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 15
+
+
+ 208              	.LVL9:
+ 531:Core/Src/bmi270.c ****     {
+ 209              		.loc 1 531 7 discriminator 1 view .LVU41
+ 210 00a6 08B1     		cbz	r0, .L26
+ 533:Core/Src/bmi270.c ****     }
+ 211              		.loc 1 533 16 view .LVU42
+ 212 00a8 0124     		movs	r4, #1
+ 213 00aa BDE7     		b	.L8
+ 214              	.L26:
+ 535:Core/Src/bmi270.c **** 
+ 215              		.loc 1 535 5 is_stmt 1 view .LVU43
+ 216 00ac 0120     		movs	r0, #1
+ 217 00ae FFF7FEFF 		bl	HAL_Delay
+ 218              	.LVL10:
+ 537:Core/Src/bmi270.c ****     {
+ 219              		.loc 1 537 5 view .LVU44
+ 537:Core/Src/bmi270.c ****     {
+ 220              		.loc 1 537 8 is_stmt 0 view .LVU45
+ 221 00b2 42F21073 		movw	r3, #10000
+ 222 00b6 0293     		str	r3, [sp, #8]
+ 223 00b8 4FF40053 		mov	r3, #8192
+ 224 00bc 0193     		str	r3, [sp, #4]
+ 225 00be 244B     		ldr	r3, .L29+4
+ 226 00c0 0093     		str	r3, [sp]
+ 227 00c2 0123     		movs	r3, #1
+ 228 00c4 5E22     		movs	r2, #94
+ 229 00c6 D021     		movs	r1, #208
+ 230 00c8 2048     		ldr	r0, .L29
+ 231 00ca FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 232              	.LVL11:
+ 537:Core/Src/bmi270.c ****     {
+ 233              		.loc 1 537 7 discriminator 1 view .LVU46
+ 234 00ce 08B1     		cbz	r0, .L27
+ 539:Core/Src/bmi270.c ****     }
+ 235              		.loc 1 539 16 view .LVU47
+ 236 00d0 0124     		movs	r4, #1
+ 237 00d2 A9E7     		b	.L8
+ 238              	.L27:
+ 541:Core/Src/bmi270.c **** 
+ 239              		.loc 1 541 5 is_stmt 1 view .LVU48
+ 240 00d4 0120     		movs	r0, #1
+ 241 00d6 FFF7FEFF 		bl	HAL_Delay
+ 242              	.LVL12:
+ 544:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_INIT_CTRL, 1, &dataBuffer, 1, 1000) != HA
+ 243              		.loc 1 544 5 view .LVU49
+ 544:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_INIT_CTRL, 1, &dataBuffer, 1, 1000) != HA
+ 244              		.loc 1 544 16 is_stmt 0 view .LVU50
+ 245 00da 0123     		movs	r3, #1
+ 246 00dc 8DF81530 		strb	r3, [sp, #21]
+ 545:Core/Src/bmi270.c ****     {
+ 247              		.loc 1 545 5 is_stmt 1 view .LVU51
+ 545:Core/Src/bmi270.c ****     {
+ 248              		.loc 1 545 8 is_stmt 0 view .LVU52
+ 249 00e0 4FF47A72 		mov	r2, #1000
+ 250 00e4 0292     		str	r2, [sp, #8]
+ 251 00e6 0193     		str	r3, [sp, #4]
+ 252 00e8 0DF11502 		add	r2, sp, #21
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 16
+
+
+ 253 00ec 0092     		str	r2, [sp]
+ 254 00ee 5922     		movs	r2, #89
+ 255 00f0 D021     		movs	r1, #208
+ 256 00f2 1648     		ldr	r0, .L29
+ 257 00f4 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 258              	.LVL13:
+ 545:Core/Src/bmi270.c ****     {
+ 259              		.loc 1 545 7 discriminator 1 view .LVU53
+ 260 00f8 08B1     		cbz	r0, .L28
+ 547:Core/Src/bmi270.c ****     }
+ 261              		.loc 1 547 16 view .LVU54
+ 262 00fa 0124     		movs	r4, #1
+ 263 00fc 94E7     		b	.L8
+ 264              	.L28:
+ 549:Core/Src/bmi270.c **** 
+ 265              		.loc 1 549 5 is_stmt 1 view .LVU55
+ 266 00fe C820     		movs	r0, #200
+ 267 0100 FFF7FEFF 		bl	HAL_Delay
+ 268              	.LVL14:
+ 551:Core/Src/bmi270.c **** 
+ 269              		.loc 1 551 5 view .LVU56
+ 553:Core/Src/bmi270.c ****     {
+ 270              		.loc 1 553 5 view .LVU57
+ 551:Core/Src/bmi270.c **** 
+ 271              		.loc 1 551 14 is_stmt 0 view .LVU58
+ 272 0104 4FF47A75 		mov	r5, #1000
+ 273              	.LVL15:
+ 274              	.L10:
+ 553:Core/Src/bmi270.c ****     {
+ 275              		.loc 1 553 20 is_stmt 1 view .LVU59
+ 276 0108 B5B1     		cbz	r5, .L11
+ 555:Core/Src/bmi270.c ****         {
+ 277              		.loc 1 555 9 view .LVU60
+ 555:Core/Src/bmi270.c ****         {
+ 278              		.loc 1 555 13 is_stmt 0 view .LVU61
+ 279 010a 4FF47A73 		mov	r3, #1000
+ 280 010e 0293     		str	r3, [sp, #8]
+ 281 0110 0123     		movs	r3, #1
+ 282 0112 0193     		str	r3, [sp, #4]
+ 283 0114 0DF11602 		add	r2, sp, #22
+ 284 0118 0092     		str	r2, [sp]
+ 285 011a 2122     		movs	r2, #33
+ 286 011c D021     		movs	r1, #208
+ 287 011e 0B48     		ldr	r0, .L29
+ 288 0120 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 289              	.LVL16:
+ 555:Core/Src/bmi270.c ****         {
+ 290              		.loc 1 555 12 discriminator 1 view .LVU62
+ 291 0124 78B9     		cbnz	r0, .L20
+ 560:Core/Src/bmi270.c ****         {
+ 292              		.loc 1 560 9 is_stmt 1 view .LVU63
+ 560:Core/Src/bmi270.c ****         {
+ 293              		.loc 1 560 26 is_stmt 0 view .LVU64
+ 294 0126 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
+ 560:Core/Src/bmi270.c ****         {
+ 295              		.loc 1 560 12 view .LVU65
+ 296 012a 012B     		cmp	r3, #1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 17
+
+
+ 297 012c 04D0     		beq	.L11
+ 565:Core/Src/bmi270.c ****         timeout--;
+ 298              		.loc 1 565 9 is_stmt 1 view .LVU66
+ 299 012e 0520     		movs	r0, #5
+ 300 0130 FFF7FEFF 		bl	HAL_Delay
+ 301              	.LVL17:
+ 566:Core/Src/bmi270.c ****     }
+ 302              		.loc 1 566 9 view .LVU67
+ 566:Core/Src/bmi270.c ****     }
+ 303              		.loc 1 566 16 is_stmt 0 view .LVU68
+ 304 0134 013D     		subs	r5, r5, #1
+ 305              	.LVL18:
+ 566:Core/Src/bmi270.c ****     }
+ 306              		.loc 1 566 16 view .LVU69
+ 307 0136 E7E7     		b	.L10
+ 308              	.L11:
+ 569:Core/Src/bmi270.c ****     {
+ 309              		.loc 1 569 5 is_stmt 1 view .LVU70
+ 569:Core/Src/bmi270.c ****     {
+ 310              		.loc 1 569 8 is_stmt 0 view .LVU71
+ 311 0138 002D     		cmp	r5, #0
+ 312 013a 7FF475AF 		bne	.L8
+ 571:Core/Src/bmi270.c ****     }
+ 313              		.loc 1 571 16 view .LVU72
+ 314 013e 0124     		movs	r4, #1
+ 315 0140 72E7     		b	.L8
+ 316              	.LVL19:
+ 317              	.L13:
+ 509:Core/Src/bmi270.c ****     }
+ 318              		.loc 1 509 16 view .LVU73
+ 319 0142 0124     		movs	r4, #1
+ 320 0144 70E7     		b	.L8
+ 321              	.LVL20:
+ 322              	.L20:
+ 557:Core/Src/bmi270.c ****         }
+ 323              		.loc 1 557 20 view .LVU74
+ 324 0146 0124     		movs	r4, #1
+ 325 0148 6EE7     		b	.L8
+ 326              	.L30:
+ 327 014a 00BF     		.align	2
+ 328              	.L29:
+ 329 014c 00000000 		.word	hi2c1
+ 330 0150 00000000 		.word	bmi270_config_file
+ 331              		.cfi_endproc
+ 332              	.LFE1263:
+ 334              		.section	.text.BMI270_Configure,"ax",%progbits
+ 335              		.align	1
+ 336              		.global	BMI270_Configure
+ 337              		.syntax unified
+ 338              		.thumb
+ 339              		.thumb_func
+ 341              	BMI270_Configure:
+ 342              	.LFB1264:
+ 576:Core/Src/bmi270.c **** 
+ 577:Core/Src/bmi270.c **** int BMI270_Configure()
+ 578:Core/Src/bmi270.c **** {
+ 343              		.loc 1 578 1 is_stmt 1 view -0
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 18
+
+
+ 344              		.cfi_startproc
+ 345              		@ args = 0, pretend = 0, frame = 8
+ 346              		@ frame_needed = 0, uses_anonymous_args = 0
+ 347 0000 10B5     		push	{r4, lr}
+ 348              	.LCFI8:
+ 349              		.cfi_def_cfa_offset 8
+ 350              		.cfi_offset 4, -8
+ 351              		.cfi_offset 14, -4
+ 352 0002 86B0     		sub	sp, sp, #24
+ 353              	.LCFI9:
+ 354              		.cfi_def_cfa_offset 32
+ 579:Core/Src/bmi270.c ****     uint8_t reg_value = 0x00;
+ 355              		.loc 1 579 5 view .LVU76
+ 356              		.loc 1 579 13 is_stmt 0 view .LVU77
+ 357 0004 0023     		movs	r3, #0
+ 358 0006 8DF81730 		strb	r3, [sp, #23]
+ 580:Core/Src/bmi270.c **** 
+ 581:Core/Src/bmi270.c ****     if(BMI270_WriteConfig() != 0)
+ 359              		.loc 1 581 5 is_stmt 1 view .LVU78
+ 360              		.loc 1 581 8 is_stmt 0 view .LVU79
+ 361 000a FFF7FEFF 		bl	BMI270_WriteConfig
+ 362              	.LVL21:
+ 363              		.loc 1 581 7 discriminator 1 view .LVU80
+ 364 000e 18B1     		cbz	r0, .L40
+ 582:Core/Src/bmi270.c ****     {
+ 583:Core/Src/bmi270.c ****         return 1;
+ 365              		.loc 1 583 16 view .LVU81
+ 366 0010 0124     		movs	r4, #1
+ 367              	.L31:
+ 584:Core/Src/bmi270.c ****     }
+ 585:Core/Src/bmi270.c **** 
+ 586:Core/Src/bmi270.c ****     reg_value = 0x0E;
+ 587:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CTRL, 1, &reg_value, 1, 1000) != HAL_
+ 588:Core/Src/bmi270.c ****     {
+ 589:Core/Src/bmi270.c ****         return 1;
+ 590:Core/Src/bmi270.c ****     }
+ 591:Core/Src/bmi270.c ****     HAL_Delay(10);
+ 592:Core/Src/bmi270.c **** 
+ 593:Core/Src/bmi270.c ****     reg_value = 0xA8;
+ 594:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 595:Core/Src/bmi270.c ****     {
+ 596:Core/Src/bmi270.c ****         return 1;
+ 597:Core/Src/bmi270.c ****     }
+ 598:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 599:Core/Src/bmi270.c **** 
+ 600:Core/Src/bmi270.c ****     reg_value = 0x01;
+ 601:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_RANGE, 1, &reg_value, 1, 1000) != HAL
+ 602:Core/Src/bmi270.c ****     {
+ 603:Core/Src/bmi270.c ****         return 1;
+ 604:Core/Src/bmi270.c ****     }
+ 605:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 606:Core/Src/bmi270.c **** 
+ 607:Core/Src/bmi270.c ****     reg_value = 0xA9;
+ 608:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_GYR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 609:Core/Src/bmi270.c ****     {
+ 610:Core/Src/bmi270.c ****         return 1;
+ 611:Core/Src/bmi270.c ****     }
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 19
+
+
+ 612:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 613:Core/Src/bmi270.c **** 
+ 614:Core/Src/bmi270.c ****     reg_value = 0x02;
+ 615:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 616:Core/Src/bmi270.c ****     {
+ 617:Core/Src/bmi270.c ****         return 1;
+ 618:Core/Src/bmi270.c ****     }
+ 619:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 620:Core/Src/bmi270.c **** 
+ 621:Core/Src/bmi270.c ****     return 0; //ALLT OK
+ 622:Core/Src/bmi270.c **** }
+ 368              		.loc 1 622 1 view .LVU82
+ 369 0012 2046     		mov	r0, r4
+ 370 0014 06B0     		add	sp, sp, #24
+ 371              	.LCFI10:
+ 372              		.cfi_remember_state
+ 373              		.cfi_def_cfa_offset 8
+ 374              		@ sp needed
+ 375 0016 10BD     		pop	{r4, pc}
+ 376              	.L40:
+ 377              	.LCFI11:
+ 378              		.cfi_restore_state
+ 379 0018 0446     		mov	r4, r0
+ 586:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CTRL, 1, &reg_value, 1, 1000) != HAL_
+ 380              		.loc 1 586 5 is_stmt 1 view .LVU83
+ 586:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CTRL, 1, &reg_value, 1, 1000) != HAL_
+ 381              		.loc 1 586 15 is_stmt 0 view .LVU84
+ 382 001a 0E23     		movs	r3, #14
+ 383 001c 8DF81730 		strb	r3, [sp, #23]
+ 587:Core/Src/bmi270.c ****     {
+ 384              		.loc 1 587 5 is_stmt 1 view .LVU85
+ 587:Core/Src/bmi270.c ****     {
+ 385              		.loc 1 587 8 is_stmt 0 view .LVU86
+ 386 0020 4FF47A73 		mov	r3, #1000
+ 387 0024 0293     		str	r3, [sp, #8]
+ 388 0026 0123     		movs	r3, #1
+ 389 0028 0193     		str	r3, [sp, #4]
+ 390 002a 0DF11702 		add	r2, sp, #23
+ 391 002e 0092     		str	r2, [sp]
+ 392 0030 7D22     		movs	r2, #125
+ 393 0032 D021     		movs	r1, #208
+ 394 0034 3048     		ldr	r0, .L46
+ 395 0036 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 396              	.LVL22:
+ 587:Core/Src/bmi270.c ****     {
+ 397              		.loc 1 587 7 discriminator 1 view .LVU87
+ 398 003a 08B1     		cbz	r0, .L41
+ 589:Core/Src/bmi270.c ****     }
+ 399              		.loc 1 589 16 view .LVU88
+ 400 003c 0124     		movs	r4, #1
+ 401 003e E8E7     		b	.L31
+ 402              	.L41:
+ 591:Core/Src/bmi270.c **** 
+ 403              		.loc 1 591 5 is_stmt 1 view .LVU89
+ 404 0040 0A20     		movs	r0, #10
+ 405 0042 FFF7FEFF 		bl	HAL_Delay
+ 406              	.LVL23:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 20
+
+
+ 593:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 407              		.loc 1 593 5 view .LVU90
+ 593:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 408              		.loc 1 593 15 is_stmt 0 view .LVU91
+ 409 0046 A823     		movs	r3, #168
+ 410 0048 8DF81730 		strb	r3, [sp, #23]
+ 594:Core/Src/bmi270.c ****     {
+ 411              		.loc 1 594 5 is_stmt 1 view .LVU92
+ 594:Core/Src/bmi270.c ****     {
+ 412              		.loc 1 594 8 is_stmt 0 view .LVU93
+ 413 004c 4FF47A73 		mov	r3, #1000
+ 414 0050 0293     		str	r3, [sp, #8]
+ 415 0052 0123     		movs	r3, #1
+ 416 0054 0193     		str	r3, [sp, #4]
+ 417 0056 0DF11702 		add	r2, sp, #23
+ 418 005a 0092     		str	r2, [sp]
+ 419 005c 4022     		movs	r2, #64
+ 420 005e D021     		movs	r1, #208
+ 421 0060 2548     		ldr	r0, .L46
+ 422 0062 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 423              	.LVL24:
+ 594:Core/Src/bmi270.c ****     {
+ 424              		.loc 1 594 7 discriminator 1 view .LVU94
+ 425 0066 08B1     		cbz	r0, .L42
+ 596:Core/Src/bmi270.c ****     }
+ 426              		.loc 1 596 16 view .LVU95
+ 427 0068 0124     		movs	r4, #1
+ 428 006a D2E7     		b	.L31
+ 429              	.L42:
+ 598:Core/Src/bmi270.c **** 
+ 430              		.loc 1 598 5 is_stmt 1 view .LVU96
+ 431 006c 0120     		movs	r0, #1
+ 432 006e FFF7FEFF 		bl	HAL_Delay
+ 433              	.LVL25:
+ 600:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_RANGE, 1, &reg_value, 1, 1000) != HAL
+ 434              		.loc 1 600 5 view .LVU97
+ 600:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_RANGE, 1, &reg_value, 1, 1000) != HAL
+ 435              		.loc 1 600 15 is_stmt 0 view .LVU98
+ 436 0072 0123     		movs	r3, #1
+ 437 0074 8DF81730 		strb	r3, [sp, #23]
+ 601:Core/Src/bmi270.c ****     {
+ 438              		.loc 1 601 5 is_stmt 1 view .LVU99
+ 601:Core/Src/bmi270.c ****     {
+ 439              		.loc 1 601 8 is_stmt 0 view .LVU100
+ 440 0078 4FF47A72 		mov	r2, #1000
+ 441 007c 0292     		str	r2, [sp, #8]
+ 442 007e 0193     		str	r3, [sp, #4]
+ 443 0080 0DF11702 		add	r2, sp, #23
+ 444 0084 0092     		str	r2, [sp]
+ 445 0086 4122     		movs	r2, #65
+ 446 0088 D021     		movs	r1, #208
+ 447 008a 1B48     		ldr	r0, .L46
+ 448 008c FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 449              	.LVL26:
+ 601:Core/Src/bmi270.c ****     {
+ 450              		.loc 1 601 7 discriminator 1 view .LVU101
+ 451 0090 08B1     		cbz	r0, .L43
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 21
+
+
+ 603:Core/Src/bmi270.c ****     }
+ 452              		.loc 1 603 16 view .LVU102
+ 453 0092 0124     		movs	r4, #1
+ 454 0094 BDE7     		b	.L31
+ 455              	.L43:
+ 605:Core/Src/bmi270.c **** 
+ 456              		.loc 1 605 5 is_stmt 1 view .LVU103
+ 457 0096 0120     		movs	r0, #1
+ 458 0098 FFF7FEFF 		bl	HAL_Delay
+ 459              	.LVL27:
+ 607:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_GYR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 460              		.loc 1 607 5 view .LVU104
+ 607:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_GYR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 461              		.loc 1 607 15 is_stmt 0 view .LVU105
+ 462 009c A923     		movs	r3, #169
+ 463 009e 8DF81730 		strb	r3, [sp, #23]
+ 608:Core/Src/bmi270.c ****     {
+ 464              		.loc 1 608 5 is_stmt 1 view .LVU106
+ 608:Core/Src/bmi270.c ****     {
+ 465              		.loc 1 608 8 is_stmt 0 view .LVU107
+ 466 00a2 4FF47A73 		mov	r3, #1000
+ 467 00a6 0293     		str	r3, [sp, #8]
+ 468 00a8 0123     		movs	r3, #1
+ 469 00aa 0193     		str	r3, [sp, #4]
+ 470 00ac 0DF11702 		add	r2, sp, #23
+ 471 00b0 0092     		str	r2, [sp]
+ 472 00b2 4222     		movs	r2, #66
+ 473 00b4 D021     		movs	r1, #208
+ 474 00b6 1048     		ldr	r0, .L46
+ 475 00b8 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 476              	.LVL28:
+ 608:Core/Src/bmi270.c ****     {
+ 477              		.loc 1 608 7 discriminator 1 view .LVU108
+ 478 00bc 08B1     		cbz	r0, .L44
+ 610:Core/Src/bmi270.c ****     }
+ 479              		.loc 1 610 16 view .LVU109
+ 480 00be 0124     		movs	r4, #1
+ 481 00c0 A7E7     		b	.L31
+ 482              	.L44:
+ 612:Core/Src/bmi270.c **** 
+ 483              		.loc 1 612 5 is_stmt 1 view .LVU110
+ 484 00c2 0120     		movs	r0, #1
+ 485 00c4 FFF7FEFF 		bl	HAL_Delay
+ 486              	.LVL29:
+ 614:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 487              		.loc 1 614 5 view .LVU111
+ 614:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 488              		.loc 1 614 15 is_stmt 0 view .LVU112
+ 489 00c8 0223     		movs	r3, #2
+ 490 00ca 8DF81730 		strb	r3, [sp, #23]
+ 615:Core/Src/bmi270.c ****     {
+ 491              		.loc 1 615 5 is_stmt 1 view .LVU113
+ 615:Core/Src/bmi270.c ****     {
+ 492              		.loc 1 615 8 is_stmt 0 view .LVU114
+ 493 00ce 4FF47A73 		mov	r3, #1000
+ 494 00d2 0293     		str	r3, [sp, #8]
+ 495 00d4 0123     		movs	r3, #1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 22
+
+
+ 496 00d6 0193     		str	r3, [sp, #4]
+ 497 00d8 0DF11702 		add	r2, sp, #23
+ 498 00dc 0092     		str	r2, [sp]
+ 499 00de 7C22     		movs	r2, #124
+ 500 00e0 D021     		movs	r1, #208
+ 501 00e2 0548     		ldr	r0, .L46
+ 502 00e4 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 503              	.LVL30:
+ 615:Core/Src/bmi270.c ****     {
+ 504              		.loc 1 615 7 discriminator 1 view .LVU115
+ 505 00e8 08B1     		cbz	r0, .L45
+ 617:Core/Src/bmi270.c ****     }
+ 506              		.loc 1 617 16 view .LVU116
+ 507 00ea 0124     		movs	r4, #1
+ 508 00ec 91E7     		b	.L31
+ 509              	.L45:
+ 619:Core/Src/bmi270.c **** 
+ 510              		.loc 1 619 5 is_stmt 1 view .LVU117
+ 511 00ee 0120     		movs	r0, #1
+ 512 00f0 FFF7FEFF 		bl	HAL_Delay
+ 513              	.LVL31:
+ 621:Core/Src/bmi270.c **** }
+ 514              		.loc 1 621 5 view .LVU118
+ 621:Core/Src/bmi270.c **** }
+ 515              		.loc 1 621 12 is_stmt 0 view .LVU119
+ 516 00f4 8DE7     		b	.L31
+ 517              	.L47:
+ 518 00f6 00BF     		.align	2
+ 519              	.L46:
+ 520 00f8 00000000 		.word	hi2c1
+ 521              		.cfi_endproc
+ 522              	.LFE1264:
+ 524              		.section	.text.BMI270_ReadMeasurement,"ax",%progbits
+ 525              		.align	1
+ 526              		.global	BMI270_ReadMeasurement
+ 527              		.syntax unified
+ 528              		.thumb
+ 529              		.thumb_func
+ 531              	BMI270_ReadMeasurement:
+ 532              	.LVL32:
+ 533              	.LFB1265:
+ 623:Core/Src/bmi270.c **** 
+ 624:Core/Src/bmi270.c **** /**
+ 625:Core/Src/bmi270.c ****   * @brief BMI270 read measurement function
+ 626:Core/Src/bmi270.c ****   * @param None
+ 627:Core/Src/bmi270.c ****   * @retval Accelerometer and Gyro values
+ 628:Core/Src/bmi270.c ****   */
+ 629:Core/Src/bmi270.c **** void BMI270_ReadMeasurement(float *ax, float *ay, float *az, float *gx, float *gy, float *gz)
+ 630:Core/Src/bmi270.c **** {
+ 534              		.loc 1 630 1 is_stmt 1 view -0
+ 535              		.cfi_startproc
+ 536              		@ args = 8, pretend = 0, frame = 16
+ 537              		@ frame_needed = 0, uses_anonymous_args = 0
+ 538              		.loc 1 630 1 is_stmt 0 view .LVU121
+ 539 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 540              	.LCFI12:
+ 541              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 23
+
+
+ 542              		.cfi_offset 4, -24
+ 543              		.cfi_offset 5, -20
+ 544              		.cfi_offset 6, -16
+ 545              		.cfi_offset 7, -12
+ 546              		.cfi_offset 8, -8
+ 547              		.cfi_offset 14, -4
+ 548 0004 88B0     		sub	sp, sp, #32
+ 549              	.LCFI13:
+ 550              		.cfi_def_cfa_offset 56
+ 551 0006 0746     		mov	r7, r0
+ 552 0008 0E46     		mov	r6, r1
+ 553 000a 1546     		mov	r5, r2
+ 554 000c 1C46     		mov	r4, r3
+ 631:Core/Src/bmi270.c ****     uint8_t sensor_raw[12];
+ 555              		.loc 1 631 5 is_stmt 1 view .LVU122
+ 632:Core/Src/bmi270.c **** 
+ 633:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Read(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_GYRO_DATA, 1, sensor_raw, 12, HAL_MAX_
+ 556              		.loc 1 633 5 view .LVU123
+ 557              		.loc 1 633 8 is_stmt 0 view .LVU124
+ 558 000e 4FF0FF33 		mov	r3, #-1
+ 559              	.LVL33:
+ 560              		.loc 1 633 8 view .LVU125
+ 561 0012 0293     		str	r3, [sp, #8]
+ 562 0014 0C22     		movs	r2, #12
+ 563              	.LVL34:
+ 564              		.loc 1 633 8 view .LVU126
+ 565 0016 0192     		str	r2, [sp, #4]
+ 566 0018 05AB     		add	r3, sp, #20
+ 567 001a 0093     		str	r3, [sp]
+ 568 001c 0123     		movs	r3, #1
+ 569 001e D021     		movs	r1, #208
+ 570              	.LVL35:
+ 571              		.loc 1 633 8 view .LVU127
+ 572 0020 4248     		ldr	r0, .L53
+ 573              	.LVL36:
+ 574              		.loc 1 633 8 view .LVU128
+ 575 0022 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 576              	.LVL37:
+ 577              		.loc 1 633 7 discriminator 1 view .LVU129
+ 578 0026 0028     		cmp	r0, #0
+ 579 0028 75D1     		bne	.L52
+ 634:Core/Src/bmi270.c ****     {
+ 635:Core/Src/bmi270.c ****         *ax = *ay = *az = *gx = *gy = *gz = 0.0f;
+ 636:Core/Src/bmi270.c ****         return;
+ 637:Core/Src/bmi270.c ****     }
+ 638:Core/Src/bmi270.c **** 
+ 639:Core/Src/bmi270.c ****     raw_gx = ((sensor_raw[1] << 8) | sensor_raw[0]);
+ 580              		.loc 1 639 5 is_stmt 1 view .LVU130
+ 581              		.loc 1 639 26 is_stmt 0 view .LVU131
+ 582 002a 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
+ 583              		.loc 1 639 48 view .LVU132
+ 584 002e 9DF814E0 		ldrb	lr, [sp, #20]	@ zero_extendqisi2
+ 585              		.loc 1 639 36 view .LVU133
+ 586 0032 4EEA032E 		orr	lr, lr, r3, lsl #8
+ 587 0036 0FFA8EFE 		sxth	lr, lr
+ 588              		.loc 1 639 12 view .LVU134
+ 589 003a 3D4B     		ldr	r3, .L53+4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 24
+
+
+ 590 003c A3F800E0 		strh	lr, [r3]	@ movhi
+ 640:Core/Src/bmi270.c ****     raw_gy = ((sensor_raw[3] << 8) | sensor_raw[2]);
+ 591              		.loc 1 640 5 is_stmt 1 view .LVU135
+ 592              		.loc 1 640 26 is_stmt 0 view .LVU136
+ 593 0040 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
+ 594              		.loc 1 640 48 view .LVU137
+ 595 0044 9DF81600 		ldrb	r0, [sp, #22]	@ zero_extendqisi2
+ 596              		.loc 1 640 36 view .LVU138
+ 597 0048 40EA0320 		orr	r0, r0, r3, lsl #8
+ 598 004c 00B2     		sxth	r0, r0
+ 599              		.loc 1 640 12 view .LVU139
+ 600 004e 394B     		ldr	r3, .L53+8
+ 601 0050 1880     		strh	r0, [r3]	@ movhi
+ 641:Core/Src/bmi270.c ****     raw_gz = ((sensor_raw[5] << 8) | sensor_raw[4]);
+ 602              		.loc 1 641 5 is_stmt 1 view .LVU140
+ 603              		.loc 1 641 26 is_stmt 0 view .LVU141
+ 604 0052 9DF81930 		ldrb	r3, [sp, #25]	@ zero_extendqisi2
+ 605              		.loc 1 641 48 view .LVU142
+ 606 0056 9DF81810 		ldrb	r1, [sp, #24]	@ zero_extendqisi2
+ 607              		.loc 1 641 36 view .LVU143
+ 608 005a 41EA0321 		orr	r1, r1, r3, lsl #8
+ 609 005e 09B2     		sxth	r1, r1
+ 610              		.loc 1 641 12 view .LVU144
+ 611 0060 354B     		ldr	r3, .L53+12
+ 612 0062 1980     		strh	r1, [r3]	@ movhi
+ 642:Core/Src/bmi270.c **** 
+ 643:Core/Src/bmi270.c ****     raw_ax = ((sensor_raw[7] << 8) | sensor_raw[6]);
+ 613              		.loc 1 643 5 is_stmt 1 view .LVU145
+ 614              		.loc 1 643 26 is_stmt 0 view .LVU146
+ 615 0064 9DF81B30 		ldrb	r3, [sp, #27]	@ zero_extendqisi2
+ 616              		.loc 1 643 48 view .LVU147
+ 617 0068 9DF81A20 		ldrb	r2, [sp, #26]	@ zero_extendqisi2
+ 618              		.loc 1 643 36 view .LVU148
+ 619 006c 42EA0322 		orr	r2, r2, r3, lsl #8
+ 620 0070 12B2     		sxth	r2, r2
+ 621              		.loc 1 643 12 view .LVU149
+ 622 0072 324B     		ldr	r3, .L53+16
+ 623 0074 1A80     		strh	r2, [r3]	@ movhi
+ 644:Core/Src/bmi270.c ****     raw_ay = ((sensor_raw[9] << 8) | sensor_raw[8]);
+ 624              		.loc 1 644 5 is_stmt 1 view .LVU150
+ 625              		.loc 1 644 26 is_stmt 0 view .LVU151
+ 626 0076 9DF81DC0 		ldrb	ip, [sp, #29]	@ zero_extendqisi2
+ 627              		.loc 1 644 48 view .LVU152
+ 628 007a 9DF81C30 		ldrb	r3, [sp, #28]	@ zero_extendqisi2
+ 629              		.loc 1 644 36 view .LVU153
+ 630 007e 43EA0C23 		orr	r3, r3, ip, lsl #8
+ 631 0082 1BB2     		sxth	r3, r3
+ 632              		.loc 1 644 12 view .LVU154
+ 633 0084 DFF8C0C0 		ldr	ip, .L53+28
+ 634 0088 ACF80030 		strh	r3, [ip]	@ movhi
+ 645:Core/Src/bmi270.c ****     raw_az = ((sensor_raw[11] << 8) | sensor_raw[10]);
+ 635              		.loc 1 645 5 is_stmt 1 view .LVU155
+ 636              		.loc 1 645 26 is_stmt 0 view .LVU156
+ 637 008c 9DF81F80 		ldrb	r8, [sp, #31]	@ zero_extendqisi2
+ 638              		.loc 1 645 49 view .LVU157
+ 639 0090 9DF81EC0 		ldrb	ip, [sp, #30]	@ zero_extendqisi2
+ 640              		.loc 1 645 37 view .LVU158
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 25
+
+
+ 641 0094 4CEA082C 		orr	ip, ip, r8, lsl #8
+ 642 0098 0FFA8CFC 		sxth	ip, ip
+ 643              		.loc 1 645 12 view .LVU159
+ 644 009c DFF8AC80 		ldr	r8, .L53+32
+ 645 00a0 A8F800C0 		strh	ip, [r8]	@ movhi
+ 646:Core/Src/bmi270.c **** 
+ 647:Core/Src/bmi270.c ****     *ax = raw_ax / 16384.0f;
+ 646              		.loc 1 647 5 is_stmt 1 view .LVU160
+ 647              		.loc 1 647 18 is_stmt 0 view .LVU161
+ 648 00a4 07EE902A 		vmov	s15, r2	@ int
+ 649 00a8 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 650 00ac 9FED247A 		vldr.32	s14, .L53+20
+ 651 00b0 67EE877A 		vmul.f32	s15, s15, s14
+ 652              		.loc 1 647 9 view .LVU162
+ 653 00b4 C7ED007A 		vstr.32	s15, [r7]
+ 648:Core/Src/bmi270.c ****     *ay = raw_ay / 16384.0f;
+ 654              		.loc 1 648 5 is_stmt 1 view .LVU163
+ 655              		.loc 1 648 18 is_stmt 0 view .LVU164
+ 656 00b8 07EE903A 		vmov	s15, r3	@ int
+ 657 00bc F8EEE77A 		vcvt.f32.s32	s15, s15
+ 658 00c0 67EE877A 		vmul.f32	s15, s15, s14
+ 659              		.loc 1 648 9 view .LVU165
+ 660 00c4 C6ED007A 		vstr.32	s15, [r6]
+ 649:Core/Src/bmi270.c ****     *az = raw_az / 16384.0f;
+ 661              		.loc 1 649 5 is_stmt 1 view .LVU166
+ 662              		.loc 1 649 18 is_stmt 0 view .LVU167
+ 663 00c8 07EE90CA 		vmov	s15, ip	@ int
+ 664 00cc F8EEE77A 		vcvt.f32.s32	s15, s15
+ 665 00d0 67EE877A 		vmul.f32	s15, s15, s14
+ 666              		.loc 1 649 9 view .LVU168
+ 667 00d4 C5ED007A 		vstr.32	s15, [r5]
+ 650:Core/Src/bmi270.c **** 
+ 651:Core/Src/bmi270.c ****     *gx = raw_gx / 16.4f;
+ 668              		.loc 1 651 5 is_stmt 1 view .LVU169
+ 669              		.loc 1 651 18 is_stmt 0 view .LVU170
+ 670 00d8 07EE90EA 		vmov	s15, lr	@ int
+ 671 00dc F8EEE77A 		vcvt.f32.s32	s15, s15
+ 672 00e0 9FED187A 		vldr.32	s14, .L53+24
+ 673 00e4 C7EE876A 		vdiv.f32	s13, s15, s14
+ 674              		.loc 1 651 9 view .LVU171
+ 675 00e8 C4ED006A 		vstr.32	s13, [r4]
+ 652:Core/Src/bmi270.c ****     *gy = raw_gy / 16.4f;
+ 676              		.loc 1 652 5 is_stmt 1 view .LVU172
+ 677              		.loc 1 652 18 is_stmt 0 view .LVU173
+ 678 00ec 07EE900A 		vmov	s15, r0	@ int
+ 679 00f0 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 680 00f4 C7EE876A 		vdiv.f32	s13, s15, s14
+ 681              		.loc 1 652 9 view .LVU174
+ 682 00f8 0E9B     		ldr	r3, [sp, #56]
+ 683 00fa C3ED006A 		vstr.32	s13, [r3]
+ 653:Core/Src/bmi270.c ****     *gz = raw_gz / 16.4f;
+ 684              		.loc 1 653 5 is_stmt 1 view .LVU175
+ 685              		.loc 1 653 18 is_stmt 0 view .LVU176
+ 686 00fe 07EE901A 		vmov	s15, r1	@ int
+ 687 0102 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 688 0106 C7EE876A 		vdiv.f32	s13, s15, s14
+ 689              		.loc 1 653 9 view .LVU177
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 26
+
+
+ 690 010a 0F9B     		ldr	r3, [sp, #60]
+ 691 010c C3ED006A 		vstr.32	s13, [r3]
+ 692              	.L48:
+ 654:Core/Src/bmi270.c **** }
+ 693              		.loc 1 654 1 view .LVU178
+ 694 0110 08B0     		add	sp, sp, #32
+ 695              	.LCFI14:
+ 696              		.cfi_remember_state
+ 697              		.cfi_def_cfa_offset 24
+ 698              		@ sp needed
+ 699 0112 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 700              	.LVL38:
+ 701              	.L52:
+ 702              	.LCFI15:
+ 703              		.cfi_restore_state
+ 635:Core/Src/bmi270.c ****         return;
+ 704              		.loc 1 635 9 is_stmt 1 view .LVU179
+ 635:Core/Src/bmi270.c ****         return;
+ 705              		.loc 1 635 43 is_stmt 0 view .LVU180
+ 706 0116 0023     		movs	r3, #0
+ 707 0118 0F9A     		ldr	r2, [sp, #60]
+ 708 011a 1360     		str	r3, [r2]	@ float
+ 635:Core/Src/bmi270.c ****         return;
+ 709              		.loc 1 635 37 view .LVU181
+ 710 011c 0E9A     		ldr	r2, [sp, #56]
+ 711 011e 1360     		str	r3, [r2]	@ float
+ 635:Core/Src/bmi270.c ****         return;
+ 712              		.loc 1 635 31 view .LVU182
+ 713 0120 2360     		str	r3, [r4]	@ float
+ 635:Core/Src/bmi270.c ****         return;
+ 714              		.loc 1 635 25 view .LVU183
+ 715 0122 2B60     		str	r3, [r5]	@ float
+ 635:Core/Src/bmi270.c ****         return;
+ 716              		.loc 1 635 19 view .LVU184
+ 717 0124 3360     		str	r3, [r6]	@ float
+ 635:Core/Src/bmi270.c ****         return;
+ 718              		.loc 1 635 13 view .LVU185
+ 719 0126 3B60     		str	r3, [r7]	@ float
+ 636:Core/Src/bmi270.c ****     }
+ 720              		.loc 1 636 9 is_stmt 1 view .LVU186
+ 721 0128 F2E7     		b	.L48
+ 722              	.L54:
+ 723 012a 00BF     		.align	2
+ 724              	.L53:
+ 725 012c 00000000 		.word	hi2c1
+ 726 0130 00000000 		.word	raw_gx
+ 727 0134 00000000 		.word	raw_gy
+ 728 0138 00000000 		.word	raw_gz
+ 729 013c 00000000 		.word	raw_ax
+ 730 0140 00008038 		.word	947912704
+ 731 0144 33338341 		.word	1099117363
+ 732 0148 00000000 		.word	raw_ay
+ 733 014c 00000000 		.word	raw_az
+ 734              		.cfi_endproc
+ 735              	.LFE1265:
+ 737              		.section	.text.BMI270_ReadMeasurement_raw,"ax",%progbits
+ 738              		.align	1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 27
+
+
+ 739              		.global	BMI270_ReadMeasurement_raw
+ 740              		.syntax unified
+ 741              		.thumb
+ 742              		.thumb_func
+ 744              	BMI270_ReadMeasurement_raw:
+ 745              	.LVL39:
+ 746              	.LFB1266:
+ 655:Core/Src/bmi270.c **** 
+ 656:Core/Src/bmi270.c **** void BMI270_ReadMeasurement_raw(uint8_t sensor_raw[12])
+ 657:Core/Src/bmi270.c **** {
+ 747              		.loc 1 657 1 view -0
+ 748              		.cfi_startproc
+ 749              		@ args = 0, pretend = 0, frame = 0
+ 750              		@ frame_needed = 0, uses_anonymous_args = 0
+ 751              		.loc 1 657 1 is_stmt 0 view .LVU188
+ 752 0000 00B5     		push	{lr}
+ 753              	.LCFI16:
+ 754              		.cfi_def_cfa_offset 4
+ 755              		.cfi_offset 14, -4
+ 756 0002 85B0     		sub	sp, sp, #20
+ 757              	.LCFI17:
+ 758              		.cfi_def_cfa_offset 24
+ 658:Core/Src/bmi270.c **** 
+ 659:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Read(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_GYRO_DATA, 1, sensor_raw, 12, HAL_MAX_
+ 759              		.loc 1 659 5 is_stmt 1 view .LVU189
+ 760              		.loc 1 659 8 is_stmt 0 view .LVU190
+ 761 0004 4FF0FF33 		mov	r3, #-1
+ 762 0008 0293     		str	r3, [sp, #8]
+ 763 000a 0C22     		movs	r2, #12
+ 764 000c 0192     		str	r2, [sp, #4]
+ 765 000e 0090     		str	r0, [sp]
+ 766 0010 0123     		movs	r3, #1
+ 767 0012 D021     		movs	r1, #208
+ 768 0014 0248     		ldr	r0, .L57
+ 769              	.LVL40:
+ 770              		.loc 1 659 8 view .LVU191
+ 771 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 772              	.LVL41:
+ 660:Core/Src/bmi270.c ****     {
+ 661:Core/Src/bmi270.c ****         return;
+ 773              		.loc 1 661 9 is_stmt 1 view .LVU192
+ 662:Core/Src/bmi270.c ****     }
+ 663:Core/Src/bmi270.c **** }...
+ 774              		.loc 1 663 1 is_stmt 0 view .LVU193
+ 775 001a 05B0     		add	sp, sp, #20
+ 776              	.LCFI18:
+ 777              		.cfi_def_cfa_offset 4
+ 778              		@ sp needed
+ 779 001c 5DF804FB 		ldr	pc, [sp], #4
+ 780              	.L58:
+ 781              		.align	2
+ 782              	.L57:
+ 783 0020 00000000 		.word	hi2c1
+ 784              		.cfi_endproc
+ 785              	.LFE1266:
+ 787              		.global	bmi270_config_file
+ 788              		.section	.rodata.bmi270_config_file,"a"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 28
+
+
+ 789              		.align	2
+ 792              	bmi270_config_file:
+ 793 0000 C82E002E 		.ascii	"\310.\000.\200.=\261\310.\000.\200.\221\003\200.\274"
+ 793      802E3DB1 
+ 793      C82E002E 
+ 793      802E9103 
+ 793      802EBC
+ 794 0013 B0802EA3 		.ascii	"\260\200.\243\003\310.\000.\200.\000\260P0!.Y\365\020"
+ 794      03C82E00 
+ 794      2E802E00 
+ 794      B0503021 
+ 794      2E59F510 
+ 795 0027 30212E6A 		.ascii	"0!.j\365\200.;\003\000\000\000\000\010\031\001\000\""
+ 795      F5802E3B 
+ 795      03000000 
+ 795      00081901 
+ 795      0022
+ 796 0039 00750000 		.ascii	"\000u\000\000\020\000\020\321\000\263C\200.\000\301"
+ 796      100010D1 
+ 796      00B34380 
+ 796      2E00C1
+ 797 0048 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 797      802E00C1 
+ 797      802E00C1 
+ 797      802E00C1 
+ 798 0058 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 798      802E00C1 
+ 798      802E00C1 
+ 798      802E00C1 
+ 799 0068 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 799      802E00C1 
+ 799      802E00C1 
+ 799      802E00C1 
+ 800 0078 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 800      802E00C1 
+ 800      802E00C1 
+ 800      802E00C1 
+ 801 0088 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 801      802E00C1 
+ 801      802E00C1 
+ 801      802E00C1 
+ 802 0098 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 802      802E00C1 
+ 802      802E00C1 
+ 802      802E00C1 
+ 803 00a8 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 803      802E00C1 
+ 803      802E00C1 
+ 803      802E00C1 
+ 804 00b8 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 804      802E00C1 
+ 804      802E00C1 
+ 804      802E00C1 
+ 805 00c8 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 805      802E00C1 
+ 805      802E00C1 
+ 805      802E00C1 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 29
+
+
+ 806 00d8 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 806      802E00C1 
+ 806      802E00C1 
+ 806      802E00C1 
+ 807 00e8 802E00C1 		.ascii	"\200.\000\301\340_\000\000\000\000\001\000\000\000\000"
+ 807      E05F0000 
+ 807      00000100 
+ 807      000000
+ 808 00f7 00000000 		.ascii	"\000\000\000\000\000\000\000\222\000\000\000\000\000"
+ 808      00000092 
+ 808      00000000 
+ 808      00
+ 809 0104 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\010"
+ 809      00000000 
+ 809      00000000 
+ 809      08
+ 810 0111 19000088 		.ascii	"\031\000\000\210\000\000\000\000\000\000\000\005\340"
+ 810      00000000 
+ 810      00000005 
+ 810      E0
+ 811 011e AA3805E0 		.ascii	"\2528\005\340\2200\372\000\226\000K\011\021\000\021"
+ 811      9030FA00 
+ 811      96004B09 
+ 811      110011
+ 812 012d 0002002D 		.ascii	"\000\002\000-\001\324{;\001\333z\004\000?{\315l\303"
+ 812      01D47B3B 
+ 812      01DB7A04 
+ 812      003F7BCD 
+ 812      6CC3
+ 813 013f 048509C3 		.ascii	"\004\205\011\303\004\354\346\014F\001\000'\000\031\000"
+ 813      04ECE60C 
+ 813      46010027 
+ 813      001900
+ 814 014e 9600A000 		.ascii	"\226\000\240\000\001\000\014\000\360<\000\001\001\000"
+ 814      01000C00 
+ 814      F03C0001 
+ 814      0100
+ 815 015c 03000100 		.ascii	"\003\000\001\000\016\000\000\0002\000\005\000\356\006"
+ 815      0E000000 
+ 815      32000500 
+ 815      EE06
+ 816 016a 0400C800 		.ascii	"\004\000\310\000\000\000\004\000\250\005\356\006\000"
+ 816      00000400 
+ 816      A805EE06 
+ 816      00
+ 817 0177 04BC02B3 		.ascii	"\004\274\002\263\000\205\007\000\000\000\000\000\000"
+ 817      00850700 
+ 817      00000000 
+ 817      00
+ 818 0184 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 818      00000000 
+ 818      00000000 
+ 818      00
+ 819 0191 00B40001 		.ascii	"\000\264\000\001\000\271\000\001\000\230\000\000\000"
+ 819      00B90001 
+ 819      00980000 
+ 819      00
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 30
+
+
+ 820 019e 00000000 		.ascii	"\000\000\000\000\000\000\001\000\200\000\004\000\000"
+ 820      00000100 
+ 820      80000400 
+ 820      00
+ 821 01ab 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 821      00000000 
+ 821      00000000 
+ 821      00
+ 822 01b8 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 822      00000000 
+ 822      00000000 
+ 822      00
+ 823 01c5 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 823      00000000 
+ 823      00000000 
+ 823      00
+ 824 01d2 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 824      00000000 
+ 824      00000000 
+ 824      00
+ 825 01df 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 825      00000000 
+ 825      00000000 
+ 825      00
+ 826 01ec 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 826      00000000 
+ 826      00000000 
+ 826      00
+ 827 01f9 00802E00 		.ascii	"\000\200.\000\301\375-\336\000\353\000\332\000\000\014"
+ 827      C1FD2DDE 
+ 827      00EB00DA 
+ 827      00000C
+ 828 0208 FF0F0004 		.ascii	"\377\017\000\004\300\000[\365\311\001\036\362\200\000"
+ 828      C0005BF5 
+ 828      C9011EF2 
+ 828      8000
+ 829 0216 3FFF19F4 		.ascii	"?\377\031\364X\365f\365d\365\300\361\360\000\340\000"
+ 829      58F566F5 
+ 829      64F5C0F1 
+ 829      F000E000 
+ 830 0226 CD01D301 		.ascii	"\315\001\323\001\333\001\377\177\377\001\344\000t\367"
+ 830      DB01FF7F 
+ 830      FF01E400 
+ 830      74F7
+ 831 0234 F300FA00 		.ascii	"\363\000\372\000\377?\312\003l8V\376D\375\274\002\371"
+ 831      FF3FCA03 
+ 831      6C3856FE 
+ 831      44FDBC02 
+ 831      F9
+ 832 0245 0600FC12 		.ascii	"\006\000\374\022\002\256\001X\372\232\375w\005\273\002"
+ 832      02AE0158 
+ 832      FA9AFD77 
+ 832      05BB02
+ 833 0254 96019501 		.ascii	"\226\001\225\001\177\001\202\001\211\001\207\001\210"
+ 833      7F018201 
+ 833      89018701 
+ 833      88
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 31
+
+
+ 834 0261 018A018C 		.ascii	"\001\212\001\214\001\217\001\215\001\222\001\221\001"
+ 834      018F018D 
+ 834      01920191 
+ 834      01
+ 835 026e DD009F01 		.ascii	"\335\000\237\001~\001\333\000\266\001pi&\323\234\007"
+ 835      7E01DB00 
+ 835      B6017069 
+ 835      26D39C07 
+ 836 027e 1F059D00 		.ascii	"\037\005\235\000\000\010\274\0057\372\242\001\252\001"
+ 836      0008BC05 
+ 836      37FAA201 
+ 836      AA01
+ 837 028c A101A801 		.ascii	"\241\001\250\001\240\001\250\005\264\001\264\001\316"
+ 837      A001A805 
+ 837      B401B401 
+ 837      CE
+ 838 0299 00D000FC 		.ascii	"\000\320\000\374\000\305\001\377\373\261\000\0008\000"
+ 838      00C501FF 
+ 838      FBB10000 
+ 838      3800
+ 839 02a7 30FDF5FC 		.ascii	"0\375\365\374\365\315\001\240\000_\377\000@\377\000"
+ 839      F5CD01A0 
+ 839      005FFF00 
+ 839      40FF00
+ 840 02b6 00806D0F 		.ascii	"\000\200m\017\353\000\177\377\302\365h\367\263\361g"
+ 840      EB007FFF 
+ 840      C2F568F7 
+ 840      B3F167
+ 841 02c5 0F5B0F61 		.ascii	"\017[\017a\017\200\017X\367[\367\203\017\206\000r\017"
+ 841      0F800F58 
+ 841      F75BF783 
+ 841      0F860072 
+ 841      0F
+ 842 02d6 850FC6F1 		.ascii	"\205\017\306\361\177\017l\367\000\340\000\377\321\365"
+ 842      7F0F6CF7 
+ 842      00E000FF 
+ 842      D1F5
+ 843 02e4 870F8A0F 		.ascii	"\207\017\212\017\377\003\360?\213\000\216\000\220\000"
+ 843      FF03F03F 
+ 843      8B008E00 
+ 843      9000
+ 844 02f2 B9002DF5 		.ascii	"\271\000-\365\312\365\313\001 \362\000\000\000\000\000"
+ 844      CAF5CB01 
+ 844      20F20000 
+ 844      000000
+ 845 0301 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 845      00000000 
+ 845      00000000 
+ 845      00
+ 846 030e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 846      00000000 
+ 846      00000000 
+ 846      00
+ 847 031b 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 847      00000000 
+ 847      00000000 
+ 847      00
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 32
+
+
+ 848 0328 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 848      00000000 
+ 848      00000000 
+ 848      00
+ 849 0335 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 849      00000000 
+ 849      00000000 
+ 849      00
+ 850 0342 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 850      00000000 
+ 850      00000000 
+ 850      00
+ 851 034f 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 851      00000000 
+ 851      00000000 
+ 851      00
+ 852 035c 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 852      00000000 
+ 852      00000000 
+ 852      00
+ 853 0369 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 853      00000000 
+ 853      00000000 
+ 853      00
+ 854 0376 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 854      00000000 
+ 854      00000000 
+ 854      00
+ 855 0383 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 855      00000000 
+ 855      00000000 
+ 855      00
+ 856 0390 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 856      00000000 
+ 856      00000000 
+ 856      00
+ 857 039d 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 857      00000000 
+ 857      00000000 
+ 857      00
+ 858 03aa 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 858      00000000 
+ 858      00000000 
+ 858      00
+ 859 03b7 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 859      00000000 
+ 859      00000000 
+ 859      00
+ 860 03c4 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 860      00000000 
+ 860      00000000 
+ 860      00
+ 861 03d1 00000000 		.ascii	"\000\000\000\000\000\000\0000P\230.\327\016P2\230.\372"
+ 861      00000030 
+ 861      50982ED7 
+ 861      0E503298 
+ 861      2EFA
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 33
+
+
+ 862 03e3 030030F0 		.ascii	"\003\0000\360\177\000.\000.\320.\000.\001\200\010\242"
+ 862      7F002E00 
+ 862      2ED02E00 
+ 862      2E018008 
+ 862      A2
+ 863 03f4 FB2F982E 		.ascii	"\373/\230.\272\003!.\031\000\001.\356\000\000\262\007"
+ 863      BA03212E 
+ 863      1900012E 
+ 863      EE0000B2 
+ 863      07
+ 864 0405 2F012E19 		.ascii	"/\001.\031\000\000\262\003/\001P\003R\230.\007\314\001"
+ 864      0000B203 
+ 864      2F015003 
+ 864      52982E07 
+ 864      CC01
+ 865 0417 2EDD0000 		.ascii	".\335\000\000\262'/\005.\212\000\005R\230.\307\301\003"
+ 865      B2272F05 
+ 865      2E8A0005 
+ 865      52982EC7 
+ 865      C103
+ 866 0429 2EE90040 		.ascii	".\351\000@\262\360\177\010/\001.\031\000\000\262\004"
+ 866      B2F07F08 
+ 866      2F012E19 
+ 866      0000B204 
+ 867 0439 2F003021 		.ascii	"/\0000!.\351\000\230.\264\261\001.\030\000\000\262\020"
+ 867      2EE90098 
+ 867      2EB4B101 
+ 867      2E180000 
+ 867      B210
+ 868 044b 2F055098 		.ascii	"/\005P\230.M\303\005P\230.Z\307\230.\371\264\230.T\262"
+ 868      2E4DC305 
+ 868      50982E5A 
+ 868      C7982EF9 
+ 868      B4982E54 
+ 869 0460 982E67B6 		.ascii	"\230.g\266\230.\027\262\0200!.w\000\001.\357\000\000"
+ 869      982E17B2 
+ 869      1030212E 
+ 869      7700012E 
+ 869      EF0000
+ 870 0473 B2042F98 		.ascii	"\262\004/\230.z\267\0000!.\357\000\001.\324\000\004"
+ 870      2E7AB700 
+ 870      30212EEF 
+ 870      00012ED4 
+ 870      0004
+ 871 0485 AE0B2F01 		.ascii	"\256\013/\001.\335\000\000\262\007/\005R\230.\216\016"
+ 871      2EDD0000 
+ 871      B2072F05 
+ 871      52982E8E 
+ 871      0E
+ 872 0496 00B2022F 		.ascii	"\000\262\002/\0200!.}\000\001.}\000\000\220\220.\361"
+ 872      1030212E 
+ 872      7D00012E 
+ 872      7D000090 
+ 872      902EF1
+ 873 04a9 02012ED7 		.ascii	"\002\001.\327\000\000\262\004/\230./\016\0000!.{\000"
+ 873      0000B204 
+ 873      2F982E2F 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 34
+
+
+ 873      0E003021 
+ 873      2E7B00
+ 874 04bc 012E7B00 		.ascii	"\001.{\000\000\262\022/\001.\324\000\000\220\002/\230"
+ 874      00B2122F 
+ 874      012ED400 
+ 874      0090022F 
+ 874      98
+ 875 04cd 2E1F0E09 		.ascii	".\037\016\011-\230.\201\015\001.\324\000\004\220\002"
+ 875      2D982E81 
+ 875      0D012ED4 
+ 875      00049002 
+ 876 04dd 2F503298 		.ascii	"/P2\230.\372\003\0000!.{\000\001.|\000\000\262\220."
+ 876      2EFA0300 
+ 876      30212E7B 
+ 876      00012E7C 
+ 876      0000B290 
+ 877 04f2 0903012E 		.ascii	"\011\003\001.|\000\0011\001\010\000\262\004/\230.G\313"
+ 877      7C000131 
+ 877      010800B2 
+ 877      042F982E 
+ 877      47CB
+ 878 0504 1030212E 		.ascii	"\0200!.w\000\2010\001.|\000\001\010\000\262a/\003.\211"
+ 878      77008130 
+ 878      012E7C00 
+ 878      010800B2 
+ 878      612F032E 
+ 879 0519 00012ED4 		.ascii	"\000\001.\324\000\230\274\230\270\005\262\017X#/\007"
+ 879      0098BC98 
+ 879      B805B20F 
+ 879      58232F07 
+ 880 0529 90095400 		.ascii	"\220\011T\00007/\025A\004A\334\276D\276\334\272,\001"
+ 880      30372F15 
+ 880      410441DC 
+ 880      BE44BEDC 
+ 880      BA2C01
+ 881 053c 61000F56 		.ascii	"a\000\017VJ\017\014/\321B\224\270\301B\0210\005.j\367"
+ 881      4A0F0C2F 
+ 881      D14294B8 
+ 881      C1421130 
+ 881      052E6AF7 
+ 882 0550 2CBD2FB9 		.ascii	",\275/\271\200\262\010\"\230.\303\267!-a0#.\324\000"
+ 882      80B20822 
+ 882      982EC3B7 
+ 882      212D6130 
+ 882      232ED400 
+ 883 0564 982EC3B7 		.ascii	"\230.\303\267\0000!.Z\365\030-\341\177P0\230.\372\003"
+ 883      0030212E 
+ 883      5AF5182D 
+ 883      E17F5030 
+ 883      982EFA03 
+ 884 0578 0F520750 		.ascii	"\017R\007PPBp0\015TBB~\202\342o\200\262BB\005/!.\324"
+ 884      50427030 
+ 884      0D544242 
+ 884      7E82E26F 
+ 884      80B24242 
+ 885 0591 00103098 		.ascii	"\000\0200\230.\303\267\003-`0!.\324\000\001.\324\000"
+ 885      2EC3B703 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 35
+
+
+ 885      2D603021 
+ 885      2ED40001 
+ 885      2ED400
+ 886 05a4 0690182F 		.ascii	"\006\220\030/\001.v\000\013T\007R\340\177\230.z\301"
+ 886      012E7600 
+ 886      0B540752 
+ 886      E07F982E 
+ 886      7AC1
+ 887 05b6 E16F081A 		.ascii	"\341o\010\032@0\010/!.\324\000 0\230.\257\267P2\230"
+ 887      4030082F 
+ 887      212ED400 
+ 887      2030982E 
+ 887      AFB75032 
+ 888 05cb 2EFA0305 		.ascii	".\372\003\005-\230.8\016\0000!.\324\000\0000!.|\000"
+ 888      2D982E38 
+ 888      0E003021 
+ 888      2ED40000 
+ 888      30212E7C 
+ 889 05e0 182D012E 		.ascii	"\030-\001.\324\000\003\252\001/\230.E\016\001.\324\000"
+ 889      D40003AA 
+ 889      012F982E 
+ 889      450E012E 
+ 889      D400
+ 890 05f2 3F8003A2 		.ascii	"?\200\003\242\001/\000.\002-\230.[\01600\230.\316\267"
+ 890      012F002E 
+ 890      022D982E 
+ 890      5B0E3030 
+ 890      982ECEB7 
+ 891 0606 0030212E 		.ascii	"\0000!.}\000P2\230.\372\003\001.w\000\000\262$/\230"
+ 891      7D005032 
+ 891      982EFA03 
+ 891      012E7700 
+ 891      00B2242F 
+ 892 061b 2EF5CB03 		.ascii	".\365\313\003.\325\000\021T\001\012\274\204\203\206"
+ 892      2ED50011 
+ 892      54010ABC 
+ 892      848386
+ 893 062a 212EC901 		.ascii	"!.\311\001\340@\023R\304@\202@\250\271RBC\276SB\004"
+ 893      E0401352 
+ 893      C4408240 
+ 893      A8B95242 
+ 893      43BE5342 
+ 894 063f 0A5042E1 		.ascii	"\012PB\341\177\3601A@\362o%\275\010\010\002\012\320"
+ 894      7FF03141 
+ 894      40F26F25 
+ 894      BD080802 
+ 894      0AD0
+ 895 0651 7F982EA8 		.ascii	"\177\230.\250\317\006\274\321o\342o\010\012\200B\230"
+ 895      CF06BCD1 
+ 895      6FE26F08 
+ 895      0A804298 
+ 896 0661 2E58B700 		.ascii	".X\267\0000!.\356\000!.w\000!.\335\000\200.\364\001"
+ 896      30212EEE 
+ 896      00212E77 
+ 896      00212EDD 
+ 896      00802EF4 
+ 897 0676 1A242200 		.ascii	"\032$\"\000\200.\354\001\020P\373\177\230.\363\003W"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 36
+
+
+ 897      802EEC01 
+ 897      1050FB7F 
+ 897      982EF303 
+ 897      57
+ 898 0687 50FB6F01 		.ascii	"P\373o\0010qT\021BB\016\374/\300.\001B\360_\200.\000"
+ 898      30715411 
+ 898      42420EFC 
+ 898      2FC02E01 
+ 898      42F05F80 
+ 899 069d C1FD2D01 		.ascii	"\301\375-\001\000\000\000\000\000\000\000\000\000\000"
+ 899      00000000 
+ 899      00000000 
+ 899      0000
+ 900 06ab 009A0134 		.ascii	"\000\232\0014\003\000\000\000\000\000\000\000\000\000"
+ 900      03000000 
+ 900      00000000 
+ 900      0000
+ 901 06b9 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 901      00000000 
+ 901      00000000 
+ 901      00
+ 902 06c6 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 902      00000000 
+ 902      00000000 
+ 902      00
+ 903 06d3 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 903      00000000 
+ 903      00000000 
+ 903      00
+ 904 06e0 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 904      00000000 
+ 904      00000000 
+ 904      00
+ 905 06ed 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 905      00000000 
+ 905      00000000 
+ 905      00
+ 906 06fa 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 906      00000000 
+ 906      00000000 
+ 906      00
+ 907 0707 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 907      00000000 
+ 907      00000000 
+ 907      00
+ 908 0714 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 908      00000000 
+ 908      00000000 
+ 908      00
+ 909 0721 002050E7 		.ascii	"\000 P\347\177\366\177\0062\017.a\365\376\011\300\263"
+ 909      7FF67F06 
+ 909      320F2E61 
+ 909      F5FE09C0 
+ 909      B3
+ 910 0732 042F1730 		.ascii	"\004/\0270/.\357\000-.a\365\366o\347o\340_\310. P\347"
+ 910      2F2EEF00 
+ 910      2D2E61F5 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 37
+
+
+ 910      F66FE76F 
+ 910      E05FC82E 
+ 911 0749 7FF67F46 		.ascii	"\177\366\177F0\017.\244\361\276\011\200\263\006/\015"
+ 911      300F2EA4 
+ 911      F1BE0980 
+ 911      B3062F0D 
+ 912 0759 2ED40084 		.ascii	".\324\000\204\257\002/\0260-.{\000\2060-.`\365\366o"
+ 912      AF022F16 
+ 912      302D2E7B 
+ 912      0086302D 
+ 912      2E60F5F6 
+ 913 076e E76FE05F 		.ascii	"\347o\340_\310.\001.w\367\011\274\017\270\000\262\020"
+ 913      C82E012E 
+ 913      77F709BC 
+ 913      0FB800B2 
+ 913      10
+ 914 077f 50FB7F10 		.ascii	"P\373\177\0200\013/\003.\212\000\226\274\237\270@\262"
+ 914      300B2F03 
+ 914      2E8A0096 
+ 914      BC9FB840 
+ 914      B2
+ 915 0790 052F032E 		.ascii	"\005/\003.h\367\236\274\237\270@\262\007/\003.~\000"
+ 915      68F79EBC 
+ 915      9FB840B2 
+ 915      072F032E 
+ 915      7E00
+ 916 07a2 4190012F 		.ascii	"A\220\001/\230.\334\003\003,\0000!.~\000\373o\360_\270"
+ 916      982EDC03 
+ 916      032C0030 
+ 916      212E7E00 
+ 916      FB6FF05F 
+ 917 07b7 2E2050E0 		.ascii	". P\340\177\373\177\000.'P\230.;\310)P\230.\247\310"
+ 917      7FFB7F00 
+ 917      2E275098 
+ 917      2E3BC829 
+ 917      50982EA7 
+ 918 07cc 0150982E 		.ascii	"\001P\230."
+ 919 07d0 55CCE16F 		.ascii	"U\314\341o+P\230.\340\311\373o\0000\340_!.~\000\270"
+ 919      2B50982E 
+ 919      E0C9FB6F 
+ 919      0030E05F 
+ 919      212E7E00 
+ 920 07e5 2E735001 		.ascii	".sP\0010WT\021BB\016\374/\270.!.Y\365\0200\300.!.J\361"
+ 920      30575411 
+ 920      42420EFC 
+ 920      2FB82E21 
+ 920      2E59F510 
+ 921 0800 9050F77F 		.ascii	"\220P\367\177\346\177\325\177\304\177\263\177\241\177"
+ 921      E67FD57F 
+ 921      C47FB37F 
+ 921      A17F
+ 922 080e 907F827F 		.ascii	"\220\177\202\177{\177\230.5\267\000\262\220.\227\260"
+ 922      7B7F982E 
+ 922      35B700B2 
+ 922      902E97B0 
+ 923 081e 032E8F00 		.ascii	"\003.\217\000\007.\221\000\005.\261\000?\272\237\270"
+ 923      072E9100 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 38
+
+
+ 923      052EB100 
+ 923      3FBA9FB8 
+ 924 082e 012EB100 		.ascii	"\001.\261\000\243\275L\012\005.\261\000\004\276\277"
+ 924      A3BD4C0A 
+ 924      052EB100 
+ 924      04BEBF
+ 925 083d B9CB0A4F 		.ascii	"\271\313\012O\272\"\275\001.\263\000\334\012/\271\003"
+ 925      BA22BD01 
+ 925      2EB300DC 
+ 925      0A2FB903 
+ 926 084d 2EB8000A 		.ascii	".\270\000\012\276\232\012\317\271\233\274\001.\227\000"
+ 926      BE9A0ACF 
+ 926      B99BBC01 
+ 926      2E9700
+ 927 085c 9FB8930A 		.ascii	"\237\270\223\012\017\274\221\012\017\270\220\012%.\030"
+ 927      0FBC910A 
+ 927      0FB8900A 
+ 927      252E18
+ 928 086b 00052EC1 		.ascii	"\000\005.\301\365.\275.\271\001.\031\00010\212\004\000"
+ 928      F52EBD2E 
+ 928      B9012E19 
+ 928      0031308A 
+ 928      0400
+ 929 087d 90072F01 		.ascii	"\220\007/\001.\324\000\004\242\003/\001.\030\000\000"
+ 929      2ED40004 
+ 929      A2032F01 
+ 929      2E180000 
+ 930 088d B20C2F19 		.ascii	"\262\014/\031P\005R\230.M\267\005.x\000\200\220\020"
+ 930      50055298 
+ 930      2E4DB705 
+ 930      2E780080 
+ 930      9010
+ 931 089f 30012F21 		.ascii	"0\001/!.x\000%.\335\000\230.>\267\000\262\0020\0010"
+ 931      2E780025 
+ 931      2EDD0098 
+ 931      2E3EB700 
+ 931      B2023001 
+ 932 08b4 042F012E 		.ascii	"\004/\001.\031\000\000\262\000/!0\001.\352\000\010\032"
+ 932      190000B2 
+ 932      002F2130 
+ 932      012EEA00 
+ 932      081A
+ 933 08c6 0E2F232E 		.ascii	"\016/#.\352\00030\033P\013\011\001@\027VF\276K\010L"
+ 933      EA003330 
+ 933      1B500B09 
+ 933      01401756 
+ 933      46BE4B08 
+ 934 08db 0A01420A 		.ascii	"\012\001B\012\200\025R\001B\000.\001.\030\000\000\262"
+ 934      80155201 
+ 934      42002E01 
+ 934      2E180000 
+ 934      B2
+ 935 08ec 1F2F032E 		.ascii	"\037/\003.\300\365\3600H\010G\252t0\007.z\000a\"K\032"
+ 935      C0F5F030 
+ 935      480847AA 
+ 935      7430072E 
+ 935      7A006122 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 39
+
+
+ 936 0902 052F072E 		.ascii	"\005/\007.f\365\277\275\277\271\300\220\013/\035V+0"
+ 936      66F5BFBD 
+ 936      BFB9C090 
+ 936      0B2F1D56 
+ 936      2B30
+ 937 0914 D242DB42 		.ascii	"\322B\333B\001\004\302B\004\275\376\200\201\204#.z\000"
+ 937      0104C242 
+ 937      04BDFE80 
+ 937      8184232E 
+ 937      7A00
+ 938 0926 02420232 		.ascii	"\002B\0022%.b\365\005.\326\000\201\204%.\326\000\002"
+ 938      252E62F5 
+ 938      052ED600 
+ 938      8184252E 
+ 938      D60002
+ 939 0939 31252E60 		.ascii	"1%.`\365\005.\212\000\013P\220\010\200\262\013/\005"
+ 939      F5052E8A 
+ 939      000B5090 
+ 939      0880B20B 
+ 939      2F05
+ 940 094b 2ECAF5F0 		.ascii	".\312\365\360>\220\010%.\312\365\005.Y\365\340?\220"
+ 940      3E900825 
+ 940      2ECAF505 
+ 940      2E59F5E0 
+ 940      3F90
+ 941 095d 08252E59 		.ascii	"\010%.Y\365\220o\241o\263o\304o\325o\346o\367o{o\202"
+ 941      F5906FA1 
+ 941      6FB36FC4 
+ 941      6FD56FE6 
+ 941      6FF76F7B 
+ 942 0973 6F705FC8 		.ascii	"op_\310.\300P\220\177\345\177\324\177\303\177\261\177"
+ 942      2EC05090 
+ 942      7FE57FD4 
+ 942      7FC37FB1 
+ 942      7F
+ 943 0984 A27F877F 		.ascii	"\242\177\207\177\366\177{\177\000.\001.`\365`\177\230"
+ 943      F67F7B7F 
+ 943      002E012E 
+ 943      60F5607F 
+ 943      98
+ 944 0995 2E35B702 		.ascii	".5\267\0020co\025RP\177b\177Z,\0022\032\011\000\263"
+ 944      30636F15 
+ 944      52507F62 
+ 944      7F5A2C02 
+ 944      321A0900 
+ 945 09aa 142F00B2 		.ascii	"\024/\000\262\003/\011.\030\000\000\221\014/C\177\230"
+ 945      032F092E 
+ 945      18000091 
+ 945      0C2F437F 
+ 945      98
+ 946 09bb 2E97B71F 		.ascii	".\227\267\037P\002\212\0022\0040%.d\365\025RPoCoDC%"
+ 946      50028A02 
+ 946      32043025 
+ 946      2E64F515 
+ 946      52506F43 
+ 947 09d3 2E60F5D9 		.ascii	".`\365\331\010\300\2626/\230.>\267\000\262\006/\001"
+ 947      08C0B236 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 40
+
+
+ 947      2F982E3E 
+ 947      B700B206 
+ 947      2F01
+ 948 09e5 2E190000 		.ascii	".\031\000\000\262\002/Po\000\220\012/\001.y\000\000"
+ 948      B2022F50 
+ 948      6F00900A 
+ 948      2F012E79 
+ 948      0000
+ 949 09f7 90192F10 		.ascii	"\220\031/\0200!.y\000\0000\230.\334\003\023-\001.\303"
+ 949      30212E79 
+ 949      00003098 
+ 949      2EDC0313 
+ 949      2D012EC3 
+ 950 0a0b F50CBC0F 		.ascii	"\365\014\274\017\270\0220\020\004\003\260&%!P\003R\230"
+ 950      B8123010 
+ 950      0403B026 
+ 950      25215003 
+ 950      5298
+ 951 0a1d 2E4DB710 		.ascii	".M\267\0200!.\356\000\0020`\177%.y\000`o\000\220\005"
+ 951      30212EEE 
+ 951      00023060 
+ 951      7F252E79 
+ 951      00606F00 
+ 952 0a33 2F003021 		.ascii	"/\0000!.\352\000\025P!.d\365\025R#.`\365\0022Po\000"
+ 952      2EEA0015 
+ 952      50212E64 
+ 952      F5155223 
+ 952      2E60F502 
+ 953 0a4b 90022F03 		.ascii	"\220\002/\0030'.x\000\007.`\365\032\011\000\221\243"
+ 953      30272E78 
+ 953      00072E60 
+ 953      F51A0900 
+ 953      91A3
+ 954 0a5d 2F190900 		.ascii	"/\031\011\000\221\240/\220o\242o\261o\303o\324o\345"
+ 954      91A02F90 
+ 954      6FA26FB1 
+ 954      6FC36FD4 
+ 954      6FE5
+ 955 0a6f 6F7B6FF6 		.ascii	"o{o\366o\207o@_\310.\300P\347\177\366\177&0\017.a\365"
+ 955      6F876F40 
+ 955      5FC82EC0 
+ 955      50E77FF6 
+ 955      7F26300F 
+ 956 0a86 2F2E7C00 		.ascii	"/.|\000\017.|\000\276\011\242\177\200\177\200\263\325"
+ 956      0F2E7C00 
+ 956      BE09A27F 
+ 956      807F80B3 
+ 956      D5
+ 957 0a97 7FC47FB3 		.ascii	"\177\304\177\263\177\221\177{\177\013/#P\032%\022@B"
+ 957      7F917F7B 
+ 957      7F0B2F23 
+ 957      501A2512 
+ 957      4042
+ 958 0aa9 7F748212 		.ascii	"\177t\202\022@R\177\000.\000@`\177\230.j\326\2010\001"
+ 958      40527F00 
+ 958      2E004060 
+ 958      7F982E6A 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 41
+
+
+ 958      D6813001 
+ 959 0abd 2E7C0001 		.ascii	".|\000\001\010\000\262B/\003.\211\000\001.\211\000\227"
+ 959      0800B242 
+ 959      2F032E89 
+ 959      00012E89 
+ 959      0097
+ 960 0acf BC06BC9F 		.ascii	"\274\006\274\237\270\017\270\000\220#.\330\000\0200"
+ 960      B80FB800 
+ 960      90232ED8 
+ 960      001030
+ 961 0ade 01302A2F 		.ascii	"\0010*/\003.\324\000D\262\005/G\262\0000-/!.|\000+-"
+ 961      032ED400 
+ 961      44B2052F 
+ 961      47B20030 
+ 961      2D2F212E 
+ 962 0af6 032EFDF5 		.ascii	"\003.\375\365\236\274\237\270@\220\024/\003.\374\365"
+ 962      9EBC9FB8 
+ 962      4090142F 
+ 962      032EFCF5 
+ 963 0b06 99BC9FB8 		.ascii	"\231\274\237\270@\220\016/\003.I\361%TJ\010@\220\010"
+ 963      40900E2F 
+ 963      032E49F1 
+ 963      25544A08 
+ 963      409008
+ 964 0b19 2F982E35 		.ascii	"/\230.5\267\000\262\0200\003/P0!.\324\000\020-\230."
+ 964      B700B210 
+ 964      30032F50 
+ 964      30212ED4 
+ 964      00102D98 
+ 965 0b2e AFB70030 		.ascii	"\257\267\0000!.|\000\012-\005.i\367-\275/\271\200\262"
+ 965      212E7C00 
+ 965      0A2D052E 
+ 965      69F72DBD 
+ 965      2FB980B2 
+ 966 0b42 012F212E 		.ascii	"\001/!.}\000#.|\000\3401!.a\365\366o\347o\200o\242o"
+ 966      7D00232E 
+ 966      7C00E031 
+ 966      212E61F5 
+ 966      F66FE76F 
+ 967 0b5a B36FC46F 		.ascii	"\263o\304o\325o{o\221o@_\310.`Q\012%6\210\364\177\353"
+ 967      D56F7B6F 
+ 967      916F405F 
+ 967      C82E6051 
+ 967      0A253688 
+ 968 0b71 7F003231 		.ascii	"\177\00021R20\0230\230.\025\313\012%3\204\322\177C0"
+ 968      52323013 
+ 968      30982E15 
+ 968      CB0A2533 
+ 968      84D27F43 
+ 969 0b86 05502D52 		.ascii	"\005P-R\230.\225\301\322o'R\230.\327\307*%\260\206\300"
+ 969      982E95C1 
+ 969      D26F2752 
+ 969      982ED7C7 
+ 969      2A25B086 
+ 970 0b9b 7FD37FAF 		.ascii	"\177\323\177\257\204)P\361o\230.M\310*%\256\212\252"
+ 970      842950F1 
+ 970      6F982E4D 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 42
+
+
+ 970      C82A25AE 
+ 970      8AAA
+ 971 0bad 88F26E2B 		.ascii	"\210\362n+P\301o\323o\364\177\230.\266\310\340n\000"
+ 971      50C16FD3 
+ 971      6FF47F98 
+ 971      2EB6C8E0 
+ 971      6E00
+ 972 0bbf B2322F33 		.ascii	"\2622/3T\203\206\361o\303\177\004000\364\177\320\177"
+ 972      548386F1 
+ 972      6FC37F04 
+ 972      303030F4 
+ 972      7FD07F
+ 973 0bd2 B27FE330 		.ascii	"\262\177\3430\305oV@EA(\010\003\024\016\264\010\274"
+ 973      C56F5640 
+ 973      45412808 
+ 973      03140EB4 
+ 973      08BC
+ 974 0be4 8240100A 		.ascii	"\202@\020\012/T&\005\221\177D(\243\177\230.\331\300"
+ 974      2F542605 
+ 974      917F4428 
+ 974      A37F982E 
+ 974      D9C0
+ 975 0bf6 08B93330 		.ascii	"\010\27130S\011\301o\323o\364o\203\027G@l\025\262o\276"
+ 975      5309C16F 
+ 975      D36FF46F 
+ 975      83174740 
+ 975      6C15B26F 
+ 976 0c0b 09750B90 		.ascii	"\011u\013\220BEBQ\0162\274\002\211\241o~\206\364\177"
+ 976      42454251 
+ 976      0E32BC02 
+ 976      89A16F7E 
+ 976      86F47F
+ 977 0c1e D07FB27F 		.ascii	"\320\177\262\177\0040\221o\326/\353o\240^\270.\003."
+ 977      0430916F 
+ 977      D62FEB6F 
+ 977      A05EB82E 
+ 977      032E
+ 978 0c30 97001BBC 		.ascii	"\227\000\033\274`P\237\274\014\270\360\177@\262\353"
+ 978      60509FBC 
+ 978      0CB8F07F 
+ 978      40B2EB
+ 979 0c3f 7F2B2F03 		.ascii	"\177+/\003.\177\000A@\001.\310\000\001\032\021/7X#."
+ 979      2E7F0041 
+ 979      40012EC8 
+ 979      00011A11 
+ 979      2F375823 
+ 980 0c54 C8001041 		.ascii	"\310\000\020A\240\1778\201\001A\320\177\261\177\230"
+ 980      A07F3881 
+ 980      0141D07F 
+ 980      B17F98
+ 981 0c63 2E64CFD0 		.ascii	".d\317\320o\007\200\241o\021B\000.\261o\001B\0210\001"
+ 981      6F0780A1 
+ 981      6F114200 
+ 981      2EB16F01 
+ 981      42113001 
+ 982 0c77 2EFC0000 		.ascii	".\374\000\000\250\0030\313\"J%\001.\177\000<\2115R\005"
+ 982      A80330CB 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 43
+
+
+ 982      224A2501 
+ 982      2E7F003C 
+ 982      89355205 
+ 983 0c8b 54982EC4 		.ascii	"T\230.\304\316\301o\360o\230.\225\317\004-\0010\360"
+ 983      CEC16FF0 
+ 983      6F982E95 
+ 983      CF042D01 
+ 983      30F0
+ 984 0c9d 6F982E95 		.ascii	"o\230.\225\317\353o\240_\270.\003.\263\000\0022\360"
+ 984      CFEB6FA0 
+ 984      5FB82E03 
+ 984      2EB30002 
+ 984      32F0
+ 985 0caf 30033130 		.ascii	"0\00310P\212\010\010\010\313\010\340\177\200\262\363"
+ 985      508A0808 
+ 985      08CB08E0 
+ 985      7F80B2F3 
+ 986 0cbf 7FDB7F25 		.ascii	"\177\333\177%/\003.\312\000A\220\004/\0010#.\312\000"
+ 986      2F032ECA 
+ 986      00419004 
+ 986      2F013023 
+ 986      2ECA00
+ 987 0cd2 982E3F03 		.ascii	"\230.?\003\300\262\005/\003.\332\000\0000A\004#.\332"
+ 987      C0B2052F 
+ 987      032EDA00 
+ 987      00304104 
+ 987      232EDA
+ 988 0ce5 00982E92 		.ascii	"\000\230.\222\262\020%\360o\000\262\005/\001.\332\000"
+ 988      B21025F0 
+ 988      6F00B205 
+ 988      2F012EDA 
+ 988      00
+ 989 0cf6 02301004 		.ascii	"\0020\020\004!.\332\000@\262\001/#.\310\001\333o\340"
+ 989      212EDA00 
+ 989      40B2012F 
+ 989      232EC801 
+ 989      DB6FE0
+ 990 0d09 6FD05F80 		.ascii	"o\320_\200.\225\317\0010\340o\230.\225\317\0210#.\312"
+ 990      2E95CF01 
+ 990      30E06F98 
+ 990      2E95CF11 
+ 990      30232ECA 
+ 991 0d1d 00DB6FD0 		.ascii	"\000\333o\320_\270.\320P\012%3\204UP\322\177\342\177"
+ 991      5FB82ED0 
+ 991      500A2533 
+ 991      845550D2 
+ 991      7FE27F
+ 992 0d30 038CC07F 		.ascii	"\003\214\300\177\273\177\0000\005Z9TQA\245\177\226\177"
+ 992      BB7F0030 
+ 992      055A3954 
+ 992      5141A57F 
+ 992      967F
+ 993 0d42 807F982E 		.ascii	"\200\177\230.\331\300\0050\365\177 %\221o;X=\\;V\230"
+ 993      D9C00530 
+ 993      F57F2025 
+ 993      916F3B58 
+ 993      3D5C3B56 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 44
+
+
+ 994 0d57 2E67CCC1 		.ascii	".g\314\301o\325oR@PC\301\177\325\177\020%\230.\376\311"
+ 994      6FD56F52 
+ 994      405043C1 
+ 994      7FD57F10 
+ 994      25982EFE 
+ 995 0d6c 1025982E 		.ascii	"\020%\230.t\300\206o0(\222o\202\214\245ooRi\0169T\333"
+ 995      74C0866F 
+ 995      3028926F 
+ 995      828CA56F 
+ 995      6F52690E 
+ 996 0d83 2F19A015 		.ascii	"/\031\240\0250\003/\0000!.\201\001\012-\001.\201\001"
+ 996      30032F00 
+ 996      30212E81 
+ 996      010A2D01 
+ 996      2E8101
+ 997 0d96 05284236 		.ascii	"\005(B6!.\201\001\002\016\001/\230.\363\003WP\0220\001"
+ 997      212E8101 
+ 997      020E012F 
+ 997      982EF303 
+ 997      57501230 
+ 998 0dab 40982EFE 		.ascii	"@\230.\376\311Qo\013\\\216\016;oWX\0020!.\225\001Eo"
+ 998      C9516F0B 
+ 998      5C8E0E3B 
+ 998      6F575802 
+ 998      30212E95 
+ 999 0dc2 2A8DD27F 		.ascii	"*\215\322\177\313\177\023/\0020?P\322\177\250\016\016"
+ 999      CB7F132F 
+ 999      02303F50 
+ 999      D27FA80E 
+ 999      0E
+ 1000 0dd3 2FC06F53 		.ascii	"/\300oST\002\000QTB\016\0200YR\0020\001/\000.\003-P"
+ 1000      54020051 
+ 1000      54420E10 
+ 1000      30595202 
+ 1000      30012F00 
+ 1001 0deb 42424212 		.ascii	"BBB\0220\322\177\200\262\003/\0000!.\200\001\022-\001"
+ 1001      30D27F80 
+ 1001      B2032F00 
+ 1001      30212E80 
+ 1001      01122D01 
+ 1002 0dff 2EC90002 		.ascii	".\311\000\002\200\005.\200\001\0210\221(\000@%.\200"
+ 1002      80052E80 
+ 1002      01113091 
+ 1002      28004025 
+ 1002      2E80
+ 1003 0e11 01100E05 		.ascii	"\001\020\016\005/\001.\177\001\001\220\001/\230.\363"
+ 1003      2F012E7F 
+ 1003      01019001 
+ 1003      2F982EF3 
+ 1004 0e21 03002EA0 		.ascii	"\003\000.\240A\001\220\246\177\220.\343\264\001.\225"
+ 1004      410190A6 
+ 1004      7F902EE3 
+ 1004      B4012E95 
+ 1005 0e31 0100A890 		.ascii	"\001\000\250\220.\343\264[T\225\200\202@\200\262\002"
+ 1005      2EE3B45B 
+ 1005      54958082 
+ 1005      4080B202 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 45
+
+
+ 1006 0e41 402D8C3F 		.ascii	"@-\214?R\226\177\220.\302\263)\016v/\001.\311\000\000"
+ 1006      52967F90 
+ 1006      2EC2B329 
+ 1006      0E762F01 
+ 1006      2EC90000 
+ 1007 0e55 40812845 		.ascii	"@\201(ER\2630\230.\017\312]T\200\177\000.\241@r\177"
+ 1007      52B33098 
+ 1007      2E0FCA5D 
+ 1007      54807F00 
+ 1007      2EA14072 
+ 1008 0e6a 82808240 		.ascii	"\202\200\202@`\177\230.\376\311\020%\230.t\300bo\005"
+ 1008      607F982E 
+ 1008      FEC91025 
+ 1008      982E74C0 
+ 1008      626F05
+ 1009 0e7d 308740C0 		.ascii	"0\207@\300\221\0040\005/\005.\203\001\200\262\0240\000"
+ 1009      91043005 
+ 1009      2F052E83 
+ 1009      0180B214 
+ 1009      3000
+ 1010 0e8f 2F043005 		.ascii	"/\0040\005.\311\000so\201@\342@i\004\021\017\341@\026"
+ 1010      2EC90073 
+ 1010      6F8140E2 
+ 1010      40690411 
+ 1010      0FE14016 
+ 1011 0ea3 30FE29CB 		.ascii	"0\376)\313@\002/\203o\203\017\"/GV\023\017\0220w/IT"
+ 1011      40022F83 
+ 1011      6F830F22 
+ 1011      2F475613 
+ 1011      0F123077 
+ 1012 0eba 420E1230 		.ascii	"B\016\0220s/\000\221\012/\001.\213\001\031\250\0020"
+ 1012      732F0091 
+ 1012      0A2F012E 
+ 1012      8B0119A8 
+ 1012      0230
+ 1013 0ecc 6C2F6350 		.ascii	"l/cP\000.\027B\005Bh,\0220\013%\010\017P0\002/!.\203"
+ 1013      002E1742 
+ 1013      0542682C 
+ 1013      12300B25 
+ 1013      080F5030 
+ 1014 0ee5 01032D40 		.ascii	"\001\003-@0!.\203\001+.\205\001Z,\0220\000\221+%\004"
+ 1014      30212E83 
+ 1014      012B2E85 
+ 1014      015A2C12 
+ 1014      3000912B 
+ 1015 0efb 2F635002 		.ascii	"/cP\0020\027B\027,\002B\230.\376\311\020%\230.t\300"
+ 1015      30174217 
+ 1015      2C024298 
+ 1015      2EFEC910 
+ 1015      25982E74 
+ 1016 0f10 052EC900 		.ascii	"\005.\311\000\201\204[0\202@7.\203\001\002\016\007/"
+ 1016      81845B30 
+ 1016      8240372E 
+ 1016      8301020E 
+ 1016      072F
+ 1017 0f22 5F524030 		.ascii	"_R@0b@A@\221\016\001/!.\203\001\0050+.\205\001\0220"
+ 1017      62404140 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 46
+
+
+ 1017      910E012F 
+ 1017      212E8301 
+ 1017      05302B2E 
+ 1018 0f3a 362C1630 		.ascii	"6,\0260\025%\201\177\230.\376\311\020%\230.t\300\031"
+ 1018      1525817F 
+ 1018      982EFEC9 
+ 1018      1025982E 
+ 1018      74C019
+ 1019 0f4d A2163015 		.ascii	"\242\0260\025/\005.\227\001\200o\202\016\005/\001.\206"
+ 1019      2F052E97 
+ 1019      01806F82 
+ 1019      0E052F01 
+ 1019      2E86
+ 1020 0f5f 01062821 		.ascii	"\001\006(!.\206\001\013-\003.\207\001_TN(\221B\000."
+ 1020      2E86010B 
+ 1020      2D032E87 
+ 1020      015F544E 
+ 1020      28914200 
+ 1021 0f74 8240900E 		.ascii	"\202@\220\016\001/!.\210\001\0020\023,\0050\300o\010"
+ 1021      012F212E 
+ 1021      88010230 
+ 1021      132C0530 
+ 1021      C06F08
+ 1022 0f87 1CA80F16 		.ascii	"\034\250\017\0260\0050[P\011/\002\200-.\202\001\005"
+ 1022      3005305B 
+ 1022      50092F02 
+ 1022      802D2E82 
+ 1022      0105
+ 1023 0f99 42058000 		.ascii	"B\005\200\000.\002B"
+ 1023      2E0242
+ 1024 0fa0 3E80002E 		.ascii	">\200\000.\006B\0020\220o>\210\001@\004AL(\001B\007"
+ 1024      06420230 
+ 1024      906F3E88 
+ 1024      01400441 
+ 1024      4C280142 
+ 1025 0fb5 80102524 		.ascii	"\200\020%$@\000@\000\250\365\"#)DBz\202~\210C@\004A"
+ 1025      40004000 
+ 1025      A8F52223 
+ 1025      2944427A 
+ 1025      827E8843 
+ 1026 0fcc 00ABF523 		.ascii	"\000\253\365#\337(CB\331\240\024/\000\220\002/\322o"
+ 1026      DF284342 
+ 1026      D9A0142F 
+ 1026      0090022F 
+ 1026      D26F
+ 1027 0fde 81B2052F 		.ascii	"\201\262\005/cT\006(\220B\205B\011,\0020[P\003\200)"
+ 1027      63540628 
+ 1027      90428542 
+ 1027      092C0230 
+ 1027      5B500380 
+ 1028 0ff3 2E7E012B 		.ascii	".~\001+.\202\001\005B\0220+.\203\001E\202\000.@@z\202"
+ 1028      2E820105 
+ 1028      4212302B 
+ 1028      2E830145 
+ 1028      82002E40 
+ 1029 100a 02A0082F 		.ascii	"\002\240\010/cP;0\025B\005B7\2007.~\001\005B\0220\001"
+ 1029      63503B30 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 47
+
+
+ 1029      15420542 
+ 1029      3780372E 
+ 1029      7E010542 
+ 1030 1021 2EC90002 		.ascii	".\311\000\002\214@@\204Az\214\004\017\003/\001.\213"
+ 1030      8C404084 
+ 1030      417A8C04 
+ 1030      0F032F01 
+ 1030      2E8B
+ 1031 1033 0119A404 		.ascii	"\001\031\244\004/+.\202\001\230.\363\003\0220\201\220"
+ 1031      2F2B2E82 
+ 1031      01982EF3 
+ 1031      03123081 
+ 1031      90
+ 1032 1044 6152082F 		.ascii	"aR\010/eBeBC\2009\204\202\210\005BEB\205B\005C\000."
+ 1032      65426542 
+ 1032      43803984 
+ 1032      82880542 
+ 1032      45428542 
+ 1033 105c 80410090 		.ascii	"\200A\000\220\220.\341\264eT\301o\200@\000\262CXiPD"
+ 1033      902EE1B4 
+ 1033      6554C16F 
+ 1033      804000B2 
+ 1033      43586950 
+ 1034 1071 2F555CB7 		.ascii	"/U\\\267\207\214\017\015.\226\001\304@6/AV\213\016*"
+ 1034      878C0F0D 
+ 1034      2E9601C4 
+ 1034      40362F41 
+ 1034      568B0E2A 
+ 1035 1085 2F0B52A1 		.ascii	"/\013R\241\016\012/\005.\217\001\024%\230.\376\311K"
+ 1035      0E0A2F05 
+ 1035      2E8F0114 
+ 1035      25982EFE 
+ 1035      C94B
+ 1036 1097 54020F69 		.ascii	"T\002\017iP\0050eT\025/\003.\216\001M\\\216\017:/\005"
+ 1036      50053065 
+ 1036      54152F03 
+ 1036      2E8E014D 
+ 1036      5C8E0F3A 
+ 1037 10ad 2E8F0198 		.ascii	".\217\001\230.\376\311OT\202\017\0050iPeT0/mR\0250B"
+ 1037      2EFEC94F 
+ 1037      54820F05 
+ 1037      30695065 
+ 1037      54302F6D 
+ 1038 10c5 8C454204 		.ascii	"\214EB\0040+,\204CkRB\214\000.\205C\0250$,EB\216\017"
+ 1038      302B2C84 
+ 1038      436B5242 
+ 1038      8C002E85 
+ 1038      43153024 
+ 1039 10de 202F0D2E 		.ascii	" /\015.\216\001\261\016\034/#.\216\001\032-\016\016"
+ 1039      8E01B10E 
+ 1039      1C2F232E 
+ 1039      8E011A2D 
+ 1039      0E0E
+ 1040 10f0 172FA10F 		.ascii	"\027/\241\017\025/#.\215\001\023-\230.t\300CT\302\016"
+ 1040      152F232E 
+ 1040      8D01132D 
+ 1040      982E74C0 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 48
+
+
+ 1040      4354C20E 
+ 1041 1104 0A2F6550 		.ascii	"\012/eP\004\200\0130\006\202\013By\200A@\0220%.\214"
+ 1041      04800B30 
+ 1041      06820B42 
+ 1041      79804140 
+ 1041      1230252E 
+ 1042 1119 01014205 		.ascii	"\001\001B\0050iPeT\204\202C\204\276\214\204@\206A&)"
+ 1042      30695065 
+ 1042      54848243 
+ 1042      84BE8C84 
+ 1042      40864126 
+ 1043 112e 9442BE8E 		.ascii	"\224B\276\216\325\177\031\241C@\013.\214\001\204@\307"
+ 1043      D57F19A1 
+ 1043      43400B2E 
+ 1043      8C018440 
+ 1043      C7
+ 1044 113f 415D2927 		.ascii	"A])')EB\204B\302\177\001/\300\263\035/\005.\224\001"
+ 1044      29454284 
+ 1044      42C27F01 
+ 1044      2FC0B31D 
+ 1044      2F052E94 
+ 1045 1154 99A0012F 		.ascii	"\231\240\001/\200\263\023/\200\263\030/\300\263\026"
+ 1045      80B3132F 
+ 1045      80B3182F 
+ 1045      C0B316
+ 1046 1163 2F124001 		.ascii	"/\022@\001@\222\177\230.t\300\222o\020\017 0\003/\020"
+ 1046      40927F98 
+ 1046      2E74C092 
+ 1046      6F100F20 
+ 1046      30032F10 
+ 1047 1177 30212E7E 		.ascii	"0!.~\001\012-!.~\001\007- 0!.~\001\003-\0200!.~\001"
+ 1047      010A2D21 
+ 1047      2E7E0107 
+ 1047      2D203021 
+ 1047      2E7E0103 
+ 1048 1192 C26F012E 		.ascii	"\302o\001.\311\000\274\204\002\200\202@\000@\220\016"
+ 1048      C900BC84 
+ 1048      02808240 
+ 1048      0040900E 
+ 1049 11a2 D56F022F 		.ascii	"\325o\002/\0250\230.\363\003A\221\0050\007/gP=\200+"
+ 1049      1530982E 
+ 1049      F3034191 
+ 1049      0530072F 
+ 1049      67503D80 
+ 1050 11b7 2E8F0105 		.ascii	".\217\001\005B\004\200\000.\005B\002,\0000\0000\242"
+ 1050      42048000 
+ 1050      2E054202 
+ 1050      2C003000 
+ 1050      30A2
+ 1051 11c9 6F988A86 		.ascii	"o\230\212\206@\200\247\005/\230.\363\003\3000!.\225"
+ 1051      4080A705 
+ 1051      2F982EF3 
+ 1051      03C03021 
+ 1051      2E95
+ 1052 11db 0106251A 		.ascii	"\001\006%\032%\342ov\202\226@VCQ\016\373/\273o0_\270"
+ 1052      25E26F76 
+ 1052      82964056 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 49
+
+
+ 1052      43510EFB 
+ 1052      2FBB6F30 
+ 1053 11f1 2E012EB8 		.ascii	".\001.\270\000\0011A\010@\262 P\3620\002\010\373\177"
+ 1053      00013141 
+ 1053      0840B220 
+ 1053      50F23002 
+ 1053      08FB7F
+ 1054 1204 0130102F 		.ascii	"\0010\020/\005.\314\000\201\220\340\177\003/#.\314\000"
+ 1054      052ECC00 
+ 1054      8190E07F 
+ 1054      032F232E 
+ 1054      CC00
+ 1055 1216 982E55B6 		.ascii	"\230.U\266\230.\035\265\020%\373o\340o\340_\200.\225"
+ 1055      982E1DB5 
+ 1055      1025FB6F 
+ 1055      E06FE05F 
+ 1055      802E95
+ 1056 1229 CF982E95 		.ascii	"\317\230.\225\317\0200!.\314\000\373o\340_\270.\000"
+ 1056      CF103021 
+ 1056      2ECC00FB 
+ 1056      6FE05FB8 
+ 1056      2E00
+ 1057 123b 510558EB 		.ascii	"Q\005X\353\177*%\211RoZ\211P\023A\006@\263\001\026B"
+ 1057      7F2A2589 
+ 1057      526F5A89 
+ 1057      50134106 
+ 1057      40B30116 
+ 1058 1250 CB160640 		.ascii	"\313\026\006@\363\002\023Be\016\365/\005@\0240,)\004"
+ 1058      F3021342 
+ 1058      650EF52F 
+ 1058      05401430 
+ 1058      2C2904
+ 1059 1263 4208A100 		.ascii	"B\010\241\0000\220.R\266\263\210\260\212\266\204\244"
+ 1059      30902E52 
+ 1059      B6B388B0 
+ 1059      8AB684A4 
+ 1060 1273 7FC47FB5 		.ascii	"\177\304\177\265\177\325\177\222\177s0\0040U@B@\212"
+ 1060      7FD57F92 
+ 1060      7F733004 
+ 1060      30554042 
+ 1060      408A
+ 1061 1285 17F3086B 		.ascii	"\027\363\010k\001\220\002S\270K\202\255\276q\177E\012"
+ 1061      01900253 
+ 1061      B84B82AD 
+ 1061      BE717F45 
+ 1061      0A
+ 1062 1296 0954847F 		.ascii	"\011T\204\177\230.\331\300\243o{T\320B\243\177\362\177"
+ 1062      982ED9C0 
+ 1062      A36F7B54 
+ 1062      D042A37F 
+ 1062      F27F
+ 1063 12a8 607F2025 		.ascii	"`\177 %qouZwXy\\uV\230.g\314\261oboPB\261\177\2630\020"
+ 1063      716F755A 
+ 1063      7758795C 
+ 1063      7556982E 
+ 1063      67CCB16F 
+ 1064 12c5 25982E0F 		.ascii	"%\230.\017\312\204o )qo\222o\245ov\202j\016s0\0000\320"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 50
+
+
+ 1064      CA846F20 
+ 1064      29716F92 
+ 1064      6FA56F76 
+ 1064      826A0E73 
+ 1065 12dd 2FD26FD1 		.ascii	"/\322o\321\177\264\177\230.+\267\025\275\013\270\002"
+ 1065      7FB47F98 
+ 1065      2E2BB715 
+ 1065      BD0BB802 
+ 1066 12ed 0AC26FC0 		.ascii	"\012\302o\300\177\230.+\267\025\275\013\270B\012\300"
+ 1066      7F982E2B 
+ 1066      B715BD0B 
+ 1066      B8420AC0 
+ 1067 12fd 6F081741 		.ascii	"o\010\027A\030\211\026\341\030\320\030\241\177'%\026"
+ 1067      188916E1 
+ 1067      18D018A1 
+ 1067      7F272516 
+ 1068 130d 25982E79 		.ascii	"%\230.y\300\213T\220\177\2630\202@\200\220\015/}R\222"
+ 1068      C08B5490 
+ 1068      7FB33082 
+ 1068      4080900D 
+ 1068      2F7D5292 
+ 1069 1321 6F982E0F 		.ascii	"o\230.\017\312\262o\220\016\006/\213P\0240BoQo\024B"
+ 1069      CAB26F90 
+ 1069      0E062F8B 
+ 1069      50143042 
+ 1069      6F516F14 
+ 1070 1336 12420142 		.ascii	"\022B\001B\000.1o\230.t\300Ao\200\177\230.t\300\202"
+ 1070      002E316F 
+ 1070      982E74C0 
+ 1070      416F807F 
+ 1070      982E74C0 
+ 1071 134b 6F100443 		.ascii	"o\020\004CR\001\017\005.\313\000\0000\0040!/QoCX\214"
+ 1071      52010F05 
+ 1071      2ECB0000 
+ 1071      30043021 
+ 1071      2F516F43 
+ 1072 1361 0E04301C 		.ascii	"\016\0040\034/\205\210Ao\004A\214\017\0040\026/\204"
+ 1072      2F858841 
+ 1072      6F04418C 
+ 1072      0F043016 
+ 1072      2F84
+ 1073 1373 88002E04 		.ascii	"\210\000.\004A\004\005\214\016\0040\017/\202\2101o\004"
+ 1073      4104058C 
+ 1073      0E04300F 
+ 1073      2F828831 
+ 1073      6F04
+ 1074 1385 4104058C 		.ascii	"A\004\005\214\016\0040\010/\203\210\000.\004A\214\017"
+ 1074      0E043008 
+ 1074      2F838800 
+ 1074      2E04418C 
+ 1074      0F
+ 1075 1396 0430022F 		.ascii	"\0040\002/!.\255\001\0240\000\221\024/\003.\241\001"
+ 1075      212EAD01 
+ 1075      14300091 
+ 1075      142F032E 
+ 1075      A101
+ 1076 13a8 41900E2F 		.ascii	"A\220\016/\003.\255\001\0240L(#.\255\001F\240\006/\201"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 51
+
+
+ 1076      032EAD01 
+ 1076      14304C28 
+ 1076      232EAD01 
+ 1076      46A0062F 
+ 1077 13bd 848D5248 		.ascii	"\204\215RH\202\202@!.\241\001BB\\,\0020\005.\252\001"
+ 1077      82824021 
+ 1077      2EA10142 
+ 1077      425C2C02 
+ 1077      30052EAA 
+ 1078 13d2 80B20230 		.ascii	"\200\262\0020U/\003.\251\001\222o\2630\230.\017\312"
+ 1078      552F032E 
+ 1078      A901926F 
+ 1078      B330982E 
+ 1078      0FCA
+ 1079 13e4 B26F900F 		.ascii	"\262o\220\017\0000\0020J/\242o\207R\221\000\205RQ\016"
+ 1079      00300230 
+ 1079      4A2FA26F 
+ 1079      87529100 
+ 1079      8552510E 
+ 1080 13f8 022F002E 		.ascii	"\002/\000.C,\0020\302o\177R\221\016\0020</Qo\201T\230"
+ 1080      432C0230 
+ 1080      C26F7F52 
+ 1080      910E0230 
+ 1080      3C2F516F 
+ 1081 140f 2EFEC910 		.ascii	".\376\311\020%\2630!%\230.\017\3122o\300\177\2630\022"
+ 1081      25B33021 
+ 1081      25982E0F 
+ 1081      CA326FC0 
+ 1081      7FB33012 
+ 1082 1423 25982E0F 		.ascii	"%\230.\017\312Bo\260\177\2630\022%\230.\017\312\262"
+ 1082      CA426FB0 
+ 1082      7FB33012 
+ 1082      25982E0F 
+ 1082      CAB2
+ 1083 1435 6F902883 		.ascii	"o\220(\203R\230.\376\311\302o\220\017\0000\0020\035"
+ 1083      52982EFE 
+ 1083      C9C26F90 
+ 1083      0F003002 
+ 1083      301D
+ 1084 1447 2F052EA1 		.ascii	"/\005.\241\001\200\262\0220\017/Bo\003.\253\001\221"
+ 1084      0180B212 
+ 1084      300F2F42 
+ 1084      6F032EAB 
+ 1084      0191
+ 1085 1459 0E023012 		.ascii	"\016\0020\022/Ro\003.\254\001\221\017\0020\014/!.\252"
+ 1085      2F526F03 
+ 1085      2EAC0191 
+ 1085      0F02300C 
+ 1085      2F212EAA 
+ 1086 146d 010A2C12 		.ascii	"\001\012,\0220\003.\313\000\215X\010\211A@\021C\000"
+ 1086      30032ECB 
+ 1086      008D5808 
+ 1086      89414011 
+ 1086      4300
+ 1087 147f 43252EA1 		.ascii	"C%.\241\001\324o\217R\000C:\211\000.\020C\020Ca\016"
+ 1087      01D46F8F 
+ 1087      5200433A 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 52
+
+
+ 1087      89002E10 
+ 1087      43104361 
+ 1088 1494 FB2F032E 		.ascii	"\373/\003.\240\001\021\032\002/\002%!.\240\001\353o"
+ 1088      A001111A 
+ 1088      022F0225 
+ 1088      212EA001 
+ 1088      EB6F
+ 1089 14a6 005FB82E 		.ascii	"\000_\270.\221R\0200\0020\225VRBK\016\374/\215T\210"
+ 1089      91521030 
+ 1089      02309556 
+ 1089      52424B0E 
+ 1089      FC2F8D54 
+ 1090 14bb 82935680 		.ascii	"\202\223V\200BSB@BB\206\203T\300.\302B\000.\243R\000"
+ 1090      42534240 
+ 1090      42428683 
+ 1090      54C02EC2 
+ 1090      42002EA3 
+ 1091 14d1 51524047 		.ascii	"QR@G@\032%\001.\227\000\217\276r\206\373\177\0130|\277"
+ 1091      401A2501 
+ 1091      2E97008F 
+ 1091      BE7286FB 
+ 1091      7F0B307C 
+ 1092 14e6 A5501008 		.ascii	"\245P\020\010\337\272p\210\370\277\313B\323\177l\273"
+ 1092      DFBA7088 
+ 1092      F8BFCB42 
+ 1092      D37F6CBB 
+ 1093 14f6 FCBBC50A 		.ascii	"\374\273\305\012\220\177\033\177\013C\300\262\345\177"
+ 1093      907F1B7F 
+ 1093      0B43C0B2 
+ 1093      E57F
+ 1094 1504 B77FA67F 		.ascii	"\267\177\246\177\304\177\220.\034\267\007.\322\000\300"
+ 1094      C47F902E 
+ 1094      1CB7072E 
+ 1094      D200C0
+ 1095 1513 B20B2F97 		.ascii	"\262\013/\227R\001.\315\000\202\177\230.\273\314\013"
+ 1095      52012ECD 
+ 1095      00827F98 
+ 1095      2EBBCC0B 
+ 1096 1523 30372ED2 		.ascii	"07.\322\000\202o\220o\032%\000\262\213\177\024/\246"
+ 1096      00826F90 
+ 1096      6F1A2500 
+ 1096      B28B7F14 
+ 1096      2FA6
+ 1097 1535 BD25BDB6 		.ascii	"\275%\275\266\271/\271\200\262\324\260\014/\231T\233"
+ 1097      B92FB980 
+ 1097      B2D4B00C 
+ 1097      2F99549B 
+ 1098 1545 560B300B 		.ascii	"V\0130\013.\261\000\241X\233B\333Bl\011+.\261\000\213"
+ 1098      2EB100A1 
+ 1098      589B42DB 
+ 1098      426C092B 
+ 1098      2EB1008B 
+ 1099 1559 42CB4286 		.ascii	"B\313B\206\177s\204\247V\303\0109R\005Pr\177c\177\230"
+ 1099      7F7384A7 
+ 1099      56C30839 
+ 1099      52055072 
+ 1099      7F637F98 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 53
+
+
+ 1100 156d 2EC2C0E1 		.ascii	".\302\300\341obo\321\012\001.\315\000\325o\304oro\227"
+ 1100      6F626FD1 
+ 1100      0A012ECD 
+ 1100      00D56FC4 
+ 1100      6F726F97 
+ 1101 1581 529D5C98 		.ascii	"R\235\\\230.\006\315#o\220o\231R\300\262\004\275T@\257"
+ 1101      2E06CD23 
+ 1101      6F906F99 
+ 1101      52C0B204 
+ 1101      BD5440AF 
+ 1102 1595 B94540E1 		.ascii	"\271E@\341\177\0020\006/\300\262\0020\003/\233\\\022"
+ 1102      7F023006 
+ 1102      2FC0B202 
+ 1102      30032F9B 
+ 1102      5C12
+ 1103 15a7 30944385 		.ascii	"0\224C\205C\003\277o\273\200\263 /\006o&\001\026on\003"
+ 1103      4303BF6F 
+ 1103      BB80B320 
+ 1103      2F066F26 
+ 1103      01166F6E 
+ 1104 15bc 4542C090 		.ascii	"EB\300\220).\316\000\233R\024/\233\\\000.\223A\206A"
+ 1104      292ECE00 
+ 1104      9B52142F 
+ 1104      9B5C002E 
+ 1104      93418641 
+ 1105 15d0 E304AE07 		.ascii	"\343\004\256\007\200\253\004/\200\221\012/\206os\017"
+ 1105      80AB042F 
+ 1105      80910A2F 
+ 1105      866F730F 
+ 1106 15e0 072F836F 		.ascii	"\007/\203o\300\262\004/TBEB\0220\004,\0210\002,\021"
+ 1106      C0B2042F 
+ 1106      54424542 
+ 1106      1230042C 
+ 1106      1130022C 
+ 1107 15f5 30113002 		.ascii	"0\0210\002\274\017\270\322\177\000\262\012/\001.\374"
+ 1107      BC0FB8D2 
+ 1107      7F00B20A 
+ 1107      2F012EFC 
+ 1108 1605 00052EC7 		.ascii	"\000\005.\307\001\020\032\002/!.\307\001\003-\002,\001"
+ 1108      01101A02 
+ 1108      2F212EC7 
+ 1108      01032D02 
+ 1108      2C01
+ 1109 1617 300130B0 		.ascii	"0\0010\260o\230.\225\317\321o\240o\230.\225\317\342"
+ 1109      6F982E95 
+ 1109      CFD16FA0 
+ 1109      6F982E95 
+ 1109      CFE2
+ 1110 1629 6F9F5201 		.ascii	"o\237R\001.\316\000\202@PB\014,BB\0210#.\322\000\001"
+ 1110      2ECE0082 
+ 1110      4050420C 
+ 1110      2C424211 
+ 1110      30232ED2 
+ 1111 163f 30B06F98 		.ascii	"0\260o\230.\225\317\240o\0010\230.\225\317\000.\373"
+ 1111      2E95CFA0 
+ 1111      6F013098 
+ 1111      2E95CF00 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 54
+
+
+ 1111      2EFB
+ 1112 1651 6F005FB8 		.ascii	"o\000_\270.\203\206\0010\0000\224@$\030\006\000S\016"
+ 1112      2E838601 
+ 1112      30003094 
+ 1112      40241806 
+ 1112      00530E
+ 1113 1664 4F02F92F 		.ascii	"O\002\371/\270.\251R\000.`@A@\015\274\230\274\300.\001"
+ 1113      B82EA952 
+ 1113      002E6040 
+ 1113      41400DBC 
+ 1113      98BCC02E 
+ 1114 1679 0A0FB8AB 		.ascii	"\012\017\270\253RS<R@@@K\000\202\026&\271\001\270A@"
+ 1114      52533C52 
+ 1114      4040404B 
+ 1114      00821626 
+ 1114      B901B841 
+ 1115 168e 100897B8 		.ascii	"\020\010\227\270\001\010\300.\0210\001\010C\206%@\004"
+ 1115      0108C02E 
+ 1115      11300108 
+ 1115      43862540 
+ 1115      04
+ 1116 169f 40D8BE2C 		.ascii	"@\330\276,\013\"\021TB\003\200K\016\366/\270.\237P\020"
+ 1116      0B221154 
+ 1116      4203804B 
+ 1116      0EF62FB8 
+ 1116      2E9F5010 
+ 1117 16b3 50AD5205 		.ascii	"P\255R\005.\323\000\373\177\000.\023@\223BA\016\373"
+ 1117      2ED300FB 
+ 1117      7F002E13 
+ 1117      40934241 
+ 1117      0EFB
+ 1118 16c5 2F982EA5 		.ascii	"/\230.\245\267\230.\207\317\001.\331\000\000\262\373"
+ 1118      B7982E87 
+ 1118      CF012ED9 
+ 1118      0000B2FB 
+ 1119 16d5 6F0B2F01 		.ascii	"o\013/\001.i\367\261?\001\010\0010\360_#.\331\000!."
+ 1119      2E69F7B1 
+ 1119      3F010801 
+ 1119      30F05F23 
+ 1119      2ED90021 
+ 1120 16ea 69F7802E 		.ascii	"i\367\200.z\267\360_\270.\001.\300\370\003.\374\365"
+ 1120      7AB7F05F 
+ 1120      B82E012E 
+ 1120      C0F8032E 
+ 1120      FCF5
+ 1121 16fc 1554AF56 		.ascii	"\025T\257V\202\010\013.i\367\313\012\261X\200\220\335"
+ 1121      82080B2E 
+ 1121      69F7CB0A 
+ 1121      B1588090 
+ 1121      DD
+ 1122 170d BE4C085F 		.ascii	"\276L\010_\271Y\"\200\220\007/\0034\303\010\362:\012"
+ 1122      B9592280 
+ 1122      90072F03 
+ 1122      34C308F2 
+ 1122      3A0A
+ 1123 171f 080235C0 		.ascii	"\010\0025\300\220J\012H\"\300.#.\374\365\020P\373\177"
+ 1123      904A0A48 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 55
+
+
+ 1123      22C02E23 
+ 1123      2EFCF510 
+ 1123      50FB7F
+ 1124 1732 982E56C7 		.ascii	"\230.V\307\230.I\303\0200\373o\360_!.\314\000!.\312"
+ 1124      982E49C3 
+ 1124      1030FB6F 
+ 1124      F05F212E 
+ 1124      CC00212E 
+ 1125 1747 00B82E03 		.ascii	"\000\270.\003.\323\000\026\270\0024J\014!.-\365\300"
+ 1125      2ED30016 
+ 1125      B802344A 
+ 1125      0C212E2D 
+ 1125      F5C0
+ 1126 1759 2E232ED3 		.ascii	".#.\323\000\003\274!.\325\000\003.\325\000@\262\020"
+ 1126      0003BC21 
+ 1126      2ED50003 
+ 1126      2ED50040 
+ 1126      B210
+ 1127 176b 30212E77 		.ascii	"0!.w\000"
+ 1127      00
+ 1128 1770 0130052F 		.ascii	"\0010\005/\005.\330\000\200\220\001/#.o\365\300.!.\331"
+ 1128      052ED800 
+ 1128      8090012F 
+ 1128      232E6FF5 
+ 1128      C02E212E 
+ 1129 1785 00113081 		.ascii	"\000\0210\201\010\001.j\367q?#\275\001\010\002\012\300"
+ 1129      08012E6A 
+ 1129      F7713F23 
+ 1129      BD010802 
+ 1129      0AC0
+ 1130 1797 2E212E6A 		.ascii	".!.j\3670%\0000!.Z\365\020P!.{\000!.|\000\373\177\230"
+ 1130      F7302500 
+ 1130      30212E5A 
+ 1130      F5105021 
+ 1130      2E7B0021 
+ 1131 17b1 2EC3B740 		.ascii	".\303\267@0!.\324\000\373o\360_\003%\200.\257\267\200"
+ 1131      30212ED4 
+ 1131      00FB6FF0 
+ 1131      5F032580 
+ 1131      2EAFB780 
+ 1132 17c5 2E00C180 		.ascii	".\000\301\200.\000\301\200.\000\301\200.\000\301\200"
+ 1132      2E00C180 
+ 1132      2E00C180 
+ 1132      2E00C180 
+ 1133 17d5 2E00C180 		.ascii	".\000\301\200.\000\301\200.\000\301\200.\000\301\200"
+ 1133      2E00C180 
+ 1133      2E00C180 
+ 1133      2E00C180 
+ 1134 17e5 2E00C180 		.ascii	".\000\301\200.\000\301\200.\000\301\200.\000\301\200"
+ 1134      2E00C180 
+ 1134      2E00C180 
+ 1134      2E00C180 
+ 1135 17f5 2E00C180 		.ascii	".\000\301\200.\000\301\200.\000\301\001.]\367\010\274"
+ 1135      2E00C180 
+ 1135      2E00C101 
+ 1135      2E5DF708 
+ 1135      BC
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 56
+
+
+ 1136 1806 80AC0EBB 		.ascii	"\200\254\016\273\002/\0000A\004\202\006\300\244\000"
+ 1136      022F0030 
+ 1136      41048206 
+ 1136      C0A400
+ 1137 1815 30112F40 		.ascii	"0\021/@\251\003/@\221\015/\000\247\013/\200\263\263"
+ 1137      A9032F40 
+ 1137      910D2F00 
+ 1137      A70B2F80 
+ 1137      B3B3
+ 1138 1827 58022F90 		.ascii	"X\002/\220\241&\023 #\200\220\0200\001/\314\016\000"
+ 1138      A1261320 
+ 1138      23809010 
+ 1138      30012FCC 
+ 1138      0E00
+ 1139 1839 2F0030B8 		.ascii	"/\0000\270.\265P\030\010\010\274\210\266\015\027\306"
+ 1139      2EB55018 
+ 1139      0808BC88 
+ 1139      B60D17C6 
+ 1140 1849 BD56BCB7 		.ascii	"\275V\274\267X\332\272\004\001\035\012\020P\00502%E"
+ 1140      58DABA04 
+ 1140      011D0A10 
+ 1140      50053032 
+ 1140      2545
+ 1141 185b 03FB7FF6 		.ascii	"\003\373\177\3660!%\230.7\312\026\265\232\274\006\270"
+ 1141      30212598 
+ 1141      2E37CA16 
+ 1141      B59ABC06 
+ 1141      B8
+ 1142 186c 80A8410A 		.ascii	"\200\250A\012\016/\200\220\002/-PH\017\011/\277\240"
+ 1142      0E2F8090 
+ 1142      022F2D50 
+ 1142      480F092F 
+ 1142      BFA0
+ 1143 187e 042FBF90 		.ascii	"\004/\277\220\006/\267T\312\017\003/\000.\002,\267R"
+ 1143      062FB754 
+ 1143      CA0F032F 
+ 1143      002E022C 
+ 1143      B752
+ 1144 1890 2D52F233 		.ascii	"-R\3623\230.\331\300\373o\3617\300.\001\010\360_\277"
+ 1144      982ED9C0 
+ 1144      FB6FF137 
+ 1144      C02E0108 
+ 1144      F05FBF
+ 1145 18a3 56B954D0 		.ascii	"V\271T\320@\304@\013.\375\363\277R\220B\224B\225B\005"
+ 1145      40C4400B 
+ 1145      2EFDF3BF 
+ 1145      52904294 
+ 1145      42954205 
+ 1146 18b7 30C1500F 		.ascii	"0\301P\017\210\006@\004A\226B\305BH\276s0\015.\330\000"
+ 1146      88064004 
+ 1146      419642C5 
+ 1146      4248BE73 
+ 1146      300D2ED8 
+ 1147 18cc 4FBA8442 		.ascii	"O\272\204B\003B\201\263\002/+.o\365\006-\005.w\367\275"
+ 1147      034281B3 
+ 1147      022F2B2E 
+ 1147      6FF5062D 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 57
+
+
+ 1147      052E77F7 
+ 1148 18e1 56930825 		.ascii	"V\223\010%.w\367\273T%.\302\365\007.\375\363B0\2643"
+ 1148      2E77F7BB 
+ 1148      54252EC2 
+ 1148      F5072EFD 
+ 1148      F34230B4 
+ 1149 18f6 DA0A4C00 		.ascii	"\332\012L\000'.\375\363C@\324?\334\010CB\000.\000.C"
+ 1149      272EFDF3 
+ 1149      4340D43F 
+ 1149      DC084342 
+ 1149      002E002E 
+ 1150 190b 402430DC 		.ascii	"@$0\334\012CB\004\200\003.\375\363J\012#.\375\363a4"
+ 1150      0A434204 
+ 1150      80032EFD 
+ 1150      F34A0A23 
+ 1150      2EFDF361 
+ 1151 1920 C02E0142 		.ascii	"\300.\001B\000.`P\032%z\206\340\177\363\177\003%\303"
+ 1151      002E6050 
+ 1151      1A257A86 
+ 1151      E07FF37F 
+ 1151      0325C3
+ 1152 1933 524184DB 		.ascii	"RA\204\333\17730\230.\026\302\032%}\202\360o\342o2%"
+ 1152      7F333098 
+ 1152      2E16C21A 
+ 1152      257D82F0 
+ 1152      6FE26F32 
+ 1153 1948 16409440 		.ascii	"\026@\224@&\001\205@\216\027\304Bn\003\225BA\016\364"
+ 1153      26018540 
+ 1153      8E17C442 
+ 1153      6E039542 
+ 1153      410EF4
+ 1154 195b 2FDB6FA0 		.ascii	"/\333o\240_\270.\260Q\373\177\230.\350\015Z%\230.\017"
+ 1154      5FB82EB0 
+ 1154      51FB7F98 
+ 1154      2EE80D5A 
+ 1154      25982E0F 
+ 1155 196f 0ECB5832 		.ascii	"\016\313X2\207\304\177e\211k\215\305Ze\177\341\177\203"
+ 1155      87C47F65 
+ 1155      896B8DC5 
+ 1155      5A657FE1 
+ 1155      7F83
+ 1156 1981 7FA67F74 		.ascii	"\177\246\177t\177\320\177\266\177\224\177\0270\307R"
+ 1156      7FD07FB6 
+ 1156      7F947F17 
+ 1156      30C752
+ 1157 1990 C954517F 		.ascii	"\311TQ\177\000.\205oB\177\000.QAE\201BA\023@;\212\000"
+ 1157      002E856F 
+ 1157      427F002E 
+ 1157      51414581 
+ 1157      42411340 
+ 1158 19a7 404B04D0 		.ascii	"@K\004\320\006\300\254\205\177\002/\0020Q\004\323\006"
+ 1158      06C0AC85 
+ 1158      7F022F02 
+ 1158      305104D3 
+ 1158      06
+ 1159 19b8 41840530 		.ascii	"A\204\0050]\002\311\026\337\010\323\000\215\002\257"
+ 1159      5D02C916 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 58
+
+
+ 1159      DF08D300 
+ 1159      8D02AF
+ 1160 19c7 BCB1B959 		.ascii	"\274\261\271Y\012eo\021C\241\264RASA\001C4\177e\177"
+ 1160      0A656F11 
+ 1160      43A1B452 
+ 1160      41534101 
+ 1160      43347F65 
+ 1161 19dc 2631E56F 		.ascii	"&1\345o\324o\230.7\3122ouo\203@BA#\177\022\177\3660"
+ 1161      D46F982E 
+ 1161      37CA326F 
+ 1161      756F8340 
+ 1161      4241237F 
+ 1162 19f4 40255125 		.ascii	"@%Q%\230.7\312\024o \005po%oi\007\242o1o\0130\004B\233"
+ 1162      982E37CA 
+ 1162      146F2005 
+ 1162      706F256F 
+ 1162      6907A26F 
+ 1163 1a0f 428B4255 		.ascii	"B\213BUB2\177@\251\303oq\177\0020\320@\303\177\003/"
+ 1163      42327F40 
+ 1163      A9C36F71 
+ 1163      7F0230D0 
+ 1163      40C37F03 
+ 1164 1a24 4091152F 		.ascii	"@\221\025/\000\247\023/\000\244\021/\204\275\230.y\312"
+ 1164      00A7132F 
+ 1164      00A4112F 
+ 1164      84BD982E 
+ 1164      79CA
+ 1165 1a36 556FB754 		.ascii	"Uo\267TTA\202\000\363?EA\313\002\3660\230.7\3125o\244"
+ 1165      54418200 
+ 1165      F33F4541 
+ 1165      CB02F630 
+ 1165      982E37CA 
+ 1166 1a4d 6F414303 		.ascii	"oAC\003,\000C\244o5o\0270BoQo\223@B\202\000A\303\000"
+ 1166      2C0043A4 
+ 1166      6F356F17 
+ 1166      30426F51 
+ 1166      6F934042 
+ 1167 1a66 0343517F 		.ascii	"\003CQ\177\000.\224@AAL\002\304o\321Vc\016toQC\245\177"
+ 1167      002E9440 
+ 1167      41414C02 
+ 1167      C46FD156 
+ 1167      630E746F 
+ 1168 1a7e 8A2F092E 		.ascii	"\212/\011.\330\000\001\263!/\313X\220o\023A\266o\344"
+ 1168      D80001B3 
+ 1168      212FCB58 
+ 1168      906F1341 
+ 1168      B66FE4
+ 1169 1a91 7F002E91 		.ascii	"\177\000.\221A\024@\222A\025@\027.o\365\266\177\320"
+ 1169      41144092 
+ 1169      41154017 
+ 1169      2E6FF5B6 
+ 1169      7FD0
+ 1170 1aa3 7FCB7F98 		.ascii	"\177\313\177\230.\000\014\007\025\302o\024\013).o\365"
+ 1170      2E000C07 
+ 1170      15C26F14 
+ 1170      0B292E6F 
+ 1170      F5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 59
+
+
+ 1171 1ab4 C3A3C18F 		.ascii	"\303\243\301\217\344o\320o\346/\0240\005.o\365\024\013"
+ 1171      E46FD06F 
+ 1171      E62F1430 
+ 1171      052E6FF5 
+ 1171      140B
+ 1172 1ac6 292E6FF5 		.ascii	").o\365\030-\315V\0042\265o\034\001QARA\303@\265\177"
+ 1172      182DCD56 
+ 1172      0432B56F 
+ 1172      1C015141 
+ 1172      5241C340 
+ 1173 1adc E47F982E 		.ascii	"\344\177\230.\037\014\344o!\207\000C\0042\317TZ\016"
+ 1173      1F0CE46F 
+ 1173      21870043 
+ 1173      0432CF54 
+ 1173      5A0E
+ 1174 1aee EF2F1554 		.ascii	"\357/\025T\011.w\367\"\013).w\367\373oP^\270.\020P\001"
+ 1174      092E77F7 
+ 1174      220B292E 
+ 1174      77F7FB6F 
+ 1174      505EB82E 
+ 1175 1b05 2ED40000 		.ascii	".\324\000\000\262\373\177Q/\001\262H/\002\262B/\003"
+ 1175      B2FB7F51 
+ 1175      2F01B248 
+ 1175      2F02B242 
+ 1175      2F03
+ 1176 1b17 90562FD7 		.ascii	"\220V/\327Ry\200B@\201\204\000@BB\230.\223\014\331T"
+ 1176      52798042 
+ 1176      40818400 
+ 1176      40424298 
+ 1176      2E930CD9 
+ 1177 1b2c D750A140 		.ascii	"\327P\241@\230\275\202@>\202\332\012D@\213\026\343\000"
+ 1177      98BD8240 
+ 1177      3E82DA0A 
+ 1177      44408B16 
+ 1177      E300
+ 1178 1b3e 5342002E 		.ascii	"SB\000.C@\232\002RB\000.A@\025TJ\016:/:\202\0000A@!"
+ 1178      43409A02 
+ 1178      5242002E 
+ 1178      41401554 
+ 1178      4A0E3A2F 
+ 1179 1b59 2E850F40 		.ascii	".\205\017@\262\012/\230.\261\014\230.E\016\230.[\016"
+ 1179      B20A2F98 
+ 1179      2EB10C98 
+ 1179      2E450E98 
+ 1179      2E5B0E
+ 1180 1b6c FB6FF05F 		.ascii	"\373o\360_\0000\200.\316\267\335R\323TBBO\204s0\333"
+ 1180      0030802E 
+ 1180      CEB7DD52 
+ 1180      D3544242 
+ 1180      4F847330 
+ 1181 1b81 5283421B 		.ascii	"R\203B\0330kB#0'.\327\0007.\324\000!.\326\000z\204\027"
+ 1181      306B4223 
+ 1181      30272ED7 
+ 1181      00372ED4 
+ 1181      00212ED6 
+ 1182 1b99 2C424230 		.ascii	",BB00!.\324\000\022-!0\0000#.\324\000!.{\367\013-\027"
+ 1182      30212ED4 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 60
+
+
+ 1182      00122D21 
+ 1182      30003023 
+ 1182      2ED40021 
+ 1183 1bb3 30982E51 		.ascii	"0\230.Q\014\325P\014\202r0/.\324\000%.{\367@B\000.\373"
+ 1183      0CD5500C 
+ 1183      8272302F 
+ 1183      2ED40025 
+ 1183      2E7BF740 
+ 1184 1bcb 6FF05FB8 		.ascii	"o\360_\270.pP\012%9\206\373\177\3412b0\230.\302\304"
+ 1184      2E70500A 
+ 1184      253986FB 
+ 1184      7FE13262 
+ 1184      30982EC2 
+ 1185 1be0 B556A56F 		.ascii	"\265V\245o\253\010\221oK\010\337V\304o#\011M\272\223"
+ 1185      AB08916F 
+ 1185      4B08DF56 
+ 1185      C46F2309 
+ 1185      4DBA93
+ 1186 1bf3 BC8C0BD1 		.ascii	"\274\214\013\321o\013\011\313R\341^VB\257\011M\272#"
+ 1186      6F0B09CB 
+ 1186      52E15E56 
+ 1186      42AF094D 
+ 1186      BA23
+ 1187 1c05 BD940AE5 		.ascii	"\275\224\012\345oh\273\353\010\275\271c\276\373oRB\343"
+ 1187      6F68BBEB 
+ 1187      08BDB963 
+ 1187      BEFB6F52 
+ 1187      42E3
+ 1188 1c17 0AC02E43 		.ascii	"\012\300.CB\220_\321P\003.%\363\023@\000@\233\274\233"
+ 1188      42905FD1 
+ 1188      50032E25 
+ 1188      F3134000 
+ 1188      409BBC9B 
+ 1189 1c2b B408BDB8 		.ascii	"\264\010\275\270\271\230\274\332\012\010\266\211\026"
+ 1189      B998BCDA 
+ 1189      0A08B689 
+ 1189      16
+ 1190 1c38 C02E1900 		.ascii	"\300.\031\000b\002\020P\373\177\230.\201\015\001.\324"
+ 1190      62021050 
+ 1190      FB7F982E 
+ 1190      810D012E 
+ 1190      D4
+ 1191 1c49 00313008 		.ascii	"\00010\010\004\373o\0010\360_#.\326\000!.\327\000\270"
+ 1191      04FB6F01 
+ 1191      30F05F23 
+ 1191      2ED60021 
+ 1191      2ED700B8 
+ 1192 1c5d 2E012ED7 		.ascii	".\001.\327\000\003.\326\000H\016\001/\200.\037\016\270"
+ 1192      00032ED6 
+ 1192      00480E01 
+ 1192      2F802E1F 
+ 1192      0EB8
+ 1193 1c6f 2EE35021 		.ascii	".\343P!4\001B\2020\3012%.b\365\001\000\"0\001@J\012"
+ 1193      34014282 
+ 1193      30C13225 
+ 1193      2E62F501 
+ 1193      00223001 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 61
+
+
+ 1194 1c86 0142B82E 		.ascii	"\001B\270.\343T\360;\203@\330\010\345R\203B\0000\203"
+ 1194      E354F03B 
+ 1194      8340D808 
+ 1194      E5528342 
+ 1194      003083
+ 1195 1c99 305042C4 		.ascii	"0PB\3042'.d\365\224\000PB@B\323?\204@}\202\343\010@"
+ 1195      32272E64 
+ 1195      F5940050 
+ 1195      424042D3 
+ 1195      3F84407D 
+ 1196 1cb1 428342B8 		.ascii	"B\203B\270.\335R\0000@B|\206\271R\011.p\017\277T\304"
+ 1196      2EDD5200 
+ 1196      3040427C 
+ 1196      86B95209 
+ 1196      2E700FBF 
+ 1197 1cc7 42D38654 		.ascii	"B\323\206T@U@\224B\205B!.\327\000B@%.\375\363\300B~"
+ 1197      40554094 
+ 1197      42854221 
+ 1197      2ED70042 
+ 1197      40252EFD 
+ 1198 1cdf 82052E7D 		.ascii	"\202\005.}\000\200\262\024/\005.\211\000'\275/\271\200"
+ 1198      0080B214 
+ 1198      2F052E89 
+ 1198      0027BD2F 
+ 1198      B980
+ 1199 1cf1 90022F21 		.ascii	"\220\002/!.o\365\014-\007.q\017\0240\034\011\005.w\367"
+ 1199      2E6FF50C 
+ 1199      2D072E71 
+ 1199      0F14301C 
+ 1199      09052E77 
+ 1200 1d06 BD5647BE 		.ascii	"\275VG\276\223\010\224\012%.w\367\347TPBJ\016\374/\270"
+ 1200      9308940A 
+ 1200      252E77F7 
+ 1200      E7545042 
+ 1200      4A0EFC2F 
+ 1201 1d1b 2E505002 		.ascii	".PP\0020C\206\345P\373\177\343\177\322\177\300\177\261"
+ 1201      304386E5 
+ 1201      50FB7FE3 
+ 1201      7FD27FC0 
+ 1201      7FB1
+ 1202 1d2d 7F002E41 		.ascii	"\177\000.A@\000@H\004\230.t\300\036\252\323o\0240\261"
+ 1202      40004048 
+ 1202      04982E74 
+ 1202      C01EAAD3 
+ 1202      6F1430B1 
+ 1203 1d41 6FE322C0 		.ascii	"o\343\"\300oR@\344oL\016\022B\323\177\353/\003.\206"
+ 1203      6F5240E4 
+ 1203      6F4C0E12 
+ 1203      42D37FEB 
+ 1203      2F032E86 
+ 1204 1d55 0F409011 		.ascii	"\017@\220\0210\003/#.\206\017\002,\0000\320o\373o\260"
+ 1204      30032F23 
+ 1204      2E860F02 
+ 1204      2C0030D0 
+ 1204      6FFB6FB0 
+ 1205 1d69 5FB82E40 		.ascii	"_\270.@P\361\177\012%<\206\353\177A3\"0\230.\302\304"
+ 1205      50F17F0A 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 62
+
+
+ 1205      253C86EB 
+ 1205      7F413322 
+ 1205      30982EC2 
+ 1206 1d7e D36FF430 		.ascii	"\323o\3640\334\011GX\302o\224\011\353Xj\273\334\010"
+ 1206      DC094758 
+ 1206      C26F9409 
+ 1206      EB586ABB 
+ 1206      DC08
+ 1207 1d90 B4B9B1BD 		.ascii	"\264\271\261\275\351Z\225\010!\275\366\277w\013Q\276"
+ 1207      E95A9508 
+ 1207      21BDF6BF 
+ 1207      770B51BE 
+ 1208 1da0 F16FEB6F 		.ascii	"\361o\353oRBTB\300.CB\300_PP\365P10\021B\373\177{0\013"
+ 1208      52425442 
+ 1208      C02E4342 
+ 1208      C05F5050 
+ 1208      F5503130 
+ 1209 1dbb 42113002 		.ascii	"B\0210\002\200#3\001B\003\000\007.\200\003\005.\323"
+ 1209      80233301 
+ 1209      42030007 
+ 1209      2E800305 
+ 1209      2ED3
+ 1210 1dcd 002352E2 		.ascii	"\000#R\342\177\323\177\300\177\230.\266\016\321o\010"
+ 1210      7FD37FC0 
+ 1210      7F982EB6 
+ 1210      0ED16F08 
+ 1211 1ddd 0A1A257B 		.ascii	"\012\032%{\206\320\177\0013\0220\230.\302\304\321o\010"
+ 1211      86D07F01 
+ 1211      33123098 
+ 1211      2EC2C4D1 
+ 1211      6F08
+ 1212 1def 0A00B20D 		.ascii	"\012\000\262\015/\343o\001.\200\003Q0\307\206#.!\362"
+ 1212      2FE36F01 
+ 1212      2E800351 
+ 1212      30C78623 
+ 1212      2E21F2
+ 1213 1e02 08BCC042 		.ascii	"\010\274\300B\230.\245\267\000.\000.\320.\260o\013\270"
+ 1213      982EA5B7 
+ 1213      002E002E 
+ 1213      D02EB06F 
+ 1213      0BB8
+ 1214 1e14 032E1B00 		.ascii	"\003.\033\000\010\032\260\177p0\004/!.!\362\000.\000"
+ 1214      081AB07F 
+ 1214      7030042F 
+ 1214      212E21F2 
+ 1214      002E00
+ 1215 1e27 2ED02E98 		.ascii	".\320.\230.m\300\230.]\300\355P\230.D\313\357P\230."
+ 1215      2E6DC098 
+ 1215      2E5DC0ED 
+ 1215      50982E44 
+ 1215      CBEF5098 
+ 1216 1e3c 46C3F150 		.ascii	"F\303\361P\230.S\3075P\230.d\317\0200\230.\334\003 "
+ 1216      982E53C7 
+ 1216      3550982E 
+ 1216      64CF1030 
+ 1216      982EDC03 
+ 1217 1e51 26C06F02 		.ascii	"&\300o\0021\022B\2533\013B7\200\0010\001B\3637\367R"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 63
+
+
+ 1217      311242AB 
+ 1217      330B4237 
+ 1217      80013001 
+ 1217      42F337F7 
+ 1218 1e66 FB504440 		.ascii	"\373PD@\242\012BB\2131\011.^\367\371T\343\010\203B\033"
+ 1218      A20A4242 
+ 1218      8B31092E 
+ 1218      5EF7F954 
+ 1218      E3088342 
+ 1219 1e7b 4223334B 		.ascii	"B#3K\000\274\204\013@30\203B\013B\340\177\321\177\230"
+ 1219      00BC840B 
+ 1219      40333083 
+ 1219      420B42E0 
+ 1219      7FD17F98 
+ 1220 1e8f 2E58B7D1 		.ascii	".X\267\321o\2000@B\0030\340o\363T\0040\000.\000.\001"
+ 1220      6F803040 
+ 1220      420330E0 
+ 1220      6FF35404 
+ 1220      30002E00 
+ 1221 1ea5 89620EFA 		.ascii	"\211b\016\372/CB\0210\373o\300.\001B\260_\301J\000\000"
+ 1221      2F434211 
+ 1221      30FB6FC0 
+ 1221      2E0142B0 
+ 1221      5FC14A00 
+ 1222 1eba 6D570000 		.ascii	"mW\000\000w\216\000\000\340\377\377\377\323\377\377"
+ 1222      778E0000 
+ 1222      E0FFFFFF 
+ 1222      D3FFFF
+ 1223 1ec9 FFE5FFFF 		.ascii	"\377\345\377\377\377\356\341\377\377|\023\000\000F\346"
+ 1223      FFEEE1FF 
+ 1223      FF7C1300 
+ 1223      0046E6
+ 1224 1ed8 FFFF0000 		.ascii	"\377\377\000\000\000\000\000\000\000\000\000\000\000"
+ 1224      00000000 
+ 1224      00000000 
+ 1224      00
+ 1225 1ee5 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1225      00000000 
+ 1225      00000000 
+ 1225      00
+ 1226 1ef2 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1226      00000000 
+ 1226      00000000 
+ 1226      00
+ 1227 1eff 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
+ 1227      00000000 
+ 1227      00000000 
+ 1227      00
+ 1228 1f0c 00000000 		.ascii	"\000\000\000\000\000\000\000\000\200.\000\301\200.\000"
+ 1228      00000000 
+ 1228      802E00C1 
+ 1228      802E00
+ 1229 1f1b C1802E00 		.ascii	"\301\200.\000\301\200.\000\301\200.\000\301\200.\000"
+ 1229      C1802E00 
+ 1229      C1802E00 
+ 1229      C1802E00 
+ 1230 1f2b C1802E00 		.ascii	"\301\200.\000\301\200.\000\301\200.\000\301\200.\000"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 64
+
+
+ 1230      C1802E00 
+ 1230      C1802E00 
+ 1230      C1802E00 
+ 1231 1f3b C1802E00 		.ascii	"\301\200.\000\301"
+ 1231      C1
+ 1232 1f40 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1232      802E00C1 
+ 1232      802E00C1 
+ 1232      802E00C1 
+ 1233 1f50 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1233      802E00C1 
+ 1233      802E00C1 
+ 1233      802E00C1 
+ 1234 1f60 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1234      802E00C1 
+ 1234      802E00C1 
+ 1234      802E00C1 
+ 1235 1f70 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1235      802E00C1 
+ 1235      802E00C1 
+ 1235      802E00C1 
+ 1236 1f80 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1236      802E00C1 
+ 1236      802E00C1 
+ 1236      802E00C1 
+ 1237 1f90 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1237      802E00C1 
+ 1237      802E00C1 
+ 1237      802E00C1 
+ 1238 1fa0 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1238      802E00C1 
+ 1238      802E00C1 
+ 1238      802E00C1 
+ 1239 1fb0 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1239      802E00C1 
+ 1239      802E00C1 
+ 1239      802E00C1 
+ 1240 1fc0 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1240      802E00C1 
+ 1240      802E00C1 
+ 1240      802E00C1 
+ 1241 1fd0 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1241      802E00C1 
+ 1241      802E00C1 
+ 1241      802E00C1 
+ 1242 1fe0 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1242      802E00C1 
+ 1242      802E00C1 
+ 1242      802E00C1 
+ 1243 1ff0 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
+ 1243      802E00C1 
+ 1243      802E00C1 
+ 1243      802E00C1 
+ 1244              		.global	raw_gz
+ 1245              		.section	.bss.raw_gz,"aw",%nobits
+ 1246              		.align	1
+ 1249              	raw_gz:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 65
+
+
+ 1250 0000 0000     		.space	2
+ 1251              		.global	raw_gy
+ 1252              		.section	.bss.raw_gy,"aw",%nobits
+ 1253              		.align	1
+ 1256              	raw_gy:
+ 1257 0000 0000     		.space	2
+ 1258              		.global	raw_gx
+ 1259              		.section	.bss.raw_gx,"aw",%nobits
+ 1260              		.align	1
+ 1263              	raw_gx:
+ 1264 0000 0000     		.space	2
+ 1265              		.global	raw_az
+ 1266              		.section	.bss.raw_az,"aw",%nobits
+ 1267              		.align	1
+ 1270              	raw_az:
+ 1271 0000 0000     		.space	2
+ 1272              		.global	raw_ay
+ 1273              		.section	.bss.raw_ay,"aw",%nobits
+ 1274              		.align	1
+ 1277              	raw_ay:
+ 1278 0000 0000     		.space	2
+ 1279              		.global	raw_ax
+ 1280              		.section	.bss.raw_ax,"aw",%nobits
+ 1281              		.align	1
+ 1284              	raw_ax:
+ 1285 0000 0000     		.space	2
+ 1286              		.text
+ 1287              	.Letext0:
+ 1288              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 1289              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 1290              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 1291              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 1292              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 1293              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h"
+ 1294              		.file 8 "Core/Inc/app_conf.h"
+ 1295              		.file 9 "Core/Inc/bmi270.h"
+ 1296              		.file 10 "Core/Inc/bme280.h"
+ 1297              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s 			page 66
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 bmi270.c
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:21     .text.BMI270_I2C_read:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:26     .text.BMI270_I2C_read:00000000 BMI270_I2C_read
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:76     .text.BMI270_I2C_read:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:81     .text.BMI270_WriteConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:86     .text.BMI270_WriteConfig:00000000 BMI270_WriteConfig
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:329    .text.BMI270_WriteConfig:0000014c $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:792    .rodata.bmi270_config_file:00000000 bmi270_config_file
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:335    .text.BMI270_Configure:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:341    .text.BMI270_Configure:00000000 BMI270_Configure
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:520    .text.BMI270_Configure:000000f8 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:525    .text.BMI270_ReadMeasurement:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:531    .text.BMI270_ReadMeasurement:00000000 BMI270_ReadMeasurement
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:725    .text.BMI270_ReadMeasurement:0000012c $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1263   .bss.raw_gx:00000000 raw_gx
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1256   .bss.raw_gy:00000000 raw_gy
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1249   .bss.raw_gz:00000000 raw_gz
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1284   .bss.raw_ax:00000000 raw_ax
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1277   .bss.raw_ay:00000000 raw_ay
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1270   .bss.raw_az:00000000 raw_az
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:738    .text.BMI270_ReadMeasurement_raw:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:744    .text.BMI270_ReadMeasurement_raw:00000000 BMI270_ReadMeasurement_raw
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:783    .text.BMI270_ReadMeasurement_raw:00000020 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:789    .rodata.bmi270_config_file:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1246   .bss.raw_gz:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1253   .bss.raw_gy:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1260   .bss.raw_gx:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1267   .bss.raw_az:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1274   .bss.raw_ay:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi88BK.s:1281   .bss.raw_ax:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_I2C_Mem_Read
+hi2c1
+HAL_I2C_Mem_Write
+HAL_Delay

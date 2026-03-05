@@ -1,0 +1,1612 @@
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"ble_l2cap_aci.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c"
+  20              		.section	.text.aci_l2cap_connection_parameter_update_req,"ax",%progbits
+  21              		.align	1
+  22              		.global	aci_l2cap_connection_parameter_update_req
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	aci_l2cap_connection_parameter_update_req:
+  28              	.LVL0:
+  29              	.LFB0:
+   1:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** /*****************************************************************************
+   2:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  * @file    ble_l2cap_aci.c
+   3:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  * @brief   STM32WB BLE API (l2cap_aci)
+   4:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  *          Auto-generated file: do not edit!
+   5:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  *****************************************************************************
+   6:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  * @attention
+   7:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  *
+   8:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  * Copyright (c) 2018-2025 STMicroelectronics.
+   9:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  * All rights reserved.
+  10:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  *
+  11:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  * This software is licensed under terms that can be found in the LICENSE file
+  12:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  * in the root directory of this software component.
+  13:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+  14:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  *
+  15:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  *****************************************************************************
+  16:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****  */
+  17:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** 
+  18:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** #include "auto/ble_l2cap_aci.h"
+  19:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** 
+  20:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** tBleStatus aci_l2cap_connection_parameter_update_req( uint16_t Connection_Handle,
+  21:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                       uint16_t Conn_Interval_Min,
+  22:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                       uint16_t Conn_Interval_Max,
+  23:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                       uint16_t Latency,
+  24:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                       uint16_t Timeout_Multiplier )
+  25:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** {
+  30              		.loc 1 25 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 4, pretend = 0, frame = 288
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 2
+
+
+  34              		.loc 1 25 1 is_stmt 0 view .LVU1
+  35 0000 70B5     		push	{r4, r5, r6, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 16
+  38              		.cfi_offset 4, -16
+  39              		.cfi_offset 5, -12
+  40              		.cfi_offset 6, -8
+  41              		.cfi_offset 14, -4
+  42 0002 C8B0     		sub	sp, sp, #288
+  43              	.LCFI1:
+  44              		.cfi_def_cfa_offset 304
+  26:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   struct hci_request rq;
+  45              		.loc 1 26 3 is_stmt 1 view .LVU2
+  27:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
+  46              		.loc 1 27 3 view .LVU3
+  28:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   aci_l2cap_connection_parameter_update_req_cp0 *cp0 = (aci_l2cap_connection_parameter_update_req_c
+  47              		.loc 1 28 3 view .LVU4
+  48              	.LVL1:
+  29:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   tBleStatus status = 0;
+  49              		.loc 1 29 3 view .LVU5
+  50              		.loc 1 29 14 is_stmt 0 view .LVU6
+  51 0004 0DF10706 		add	r6, sp, #7
+  52 0008 0025     		movs	r5, #0
+  53 000a 8DF80750 		strb	r5, [sp, #7]
+  30:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   int index_input = 0;
+  54              		.loc 1 30 3 is_stmt 1 view .LVU7
+  55              	.LVL2:
+  31:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Connection_Handle = Connection_Handle;
+  56              		.loc 1 31 3 view .LVU8
+  57              		.loc 1 31 26 is_stmt 0 view .LVU9
+  58 000e 02AC     		add	r4, sp, #8
+  59              	.LVL3:
+  60              		.loc 1 31 26 view .LVU10
+  61 0010 ADF80800 		strh	r0, [sp, #8]	@ movhi
+  32:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+  62              		.loc 1 32 3 is_stmt 1 view .LVU11
+  63              	.LVL4:
+  33:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Conn_Interval_Min = Conn_Interval_Min;
+  64              		.loc 1 33 3 view .LVU12
+  65              		.loc 1 33 26 is_stmt 0 view .LVU13
+  66 0014 ADF80A10 		strh	r1, [sp, #10]	@ movhi
+  34:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+  67              		.loc 1 34 3 is_stmt 1 view .LVU14
+  68              	.LVL5:
+  35:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Conn_Interval_Max = Conn_Interval_Max;
+  69              		.loc 1 35 3 view .LVU15
+  70              		.loc 1 35 26 is_stmt 0 view .LVU16
+  71 0018 ADF80C20 		strh	r2, [sp, #12]	@ movhi
+  36:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+  72              		.loc 1 36 3 is_stmt 1 view .LVU17
+  73              	.LVL6:
+  37:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Latency = Latency;
+  74              		.loc 1 37 3 view .LVU18
+  75              		.loc 1 37 16 is_stmt 0 view .LVU19
+  76 001c ADF80E30 		strh	r3, [sp, #14]	@ movhi
+  38:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+  77              		.loc 1 38 3 is_stmt 1 view .LVU20
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 3
+
+
+  78              	.LVL7:
+  39:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Timeout_Multiplier = Timeout_Multiplier;
+  79              		.loc 1 39 3 view .LVU21
+  80              		.loc 1 39 27 is_stmt 0 view .LVU22
+  81 0020 BDF83031 		ldrh	r3, [sp, #304]
+  82              	.LVL8:
+  83              		.loc 1 39 27 view .LVU23
+  84 0024 ADF81030 		strh	r3, [sp, #16]	@ movhi
+  40:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+  85              		.loc 1 40 3 is_stmt 1 view .LVU24
+  86              	.LVL9:
+  41:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
+  87              		.loc 1 41 3 view .LVU25
+  88 0028 1822     		movs	r2, #24
+  89              	.LVL10:
+  90              		.loc 1 41 3 is_stmt 0 view .LVU26
+  91 002a 2946     		mov	r1, r5
+  92              	.LVL11:
+  93              		.loc 1 41 3 view .LVU27
+  94 002c 42A8     		add	r0, sp, #264
+  95              	.LVL12:
+  96              		.loc 1 41 3 view .LVU28
+  97 002e FFF7FEFF 		bl	Osal_MemSet
+  98              	.LVL13:
+  42:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ogf = 0x3f;
+  99              		.loc 1 42 3 is_stmt 1 view .LVU29
+ 100              		.loc 1 42 10 is_stmt 0 view .LVU30
+ 101 0032 3F23     		movs	r3, #63
+ 102 0034 ADF80831 		strh	r3, [sp, #264]	@ movhi
+  43:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ocf = 0x181;
+ 103              		.loc 1 43 3 is_stmt 1 view .LVU31
+ 104              		.loc 1 43 10 is_stmt 0 view .LVU32
+ 105 0038 40F28113 		movw	r3, #385
+ 106 003c ADF80A31 		strh	r3, [sp, #266]	@ movhi
+  44:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.event = 0x0F;
+ 107              		.loc 1 44 3 is_stmt 1 view .LVU33
+ 108              		.loc 1 44 12 is_stmt 0 view .LVU34
+ 109 0040 0F23     		movs	r3, #15
+ 110 0042 4393     		str	r3, [sp, #268]
+  45:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.cparam = cmd_buffer;
+ 111              		.loc 1 45 3 is_stmt 1 view .LVU35
+ 112              		.loc 1 45 13 is_stmt 0 view .LVU36
+ 113 0044 4494     		str	r4, [sp, #272]
+  46:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.clen = index_input;
+ 114              		.loc 1 46 3 is_stmt 1 view .LVU37
+ 115              		.loc 1 46 11 is_stmt 0 view .LVU38
+ 116 0046 0A23     		movs	r3, #10
+ 117 0048 4593     		str	r3, [sp, #276]
+  47:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rparam = &status;
+ 118              		.loc 1 47 3 is_stmt 1 view .LVU39
+ 119              		.loc 1 47 13 is_stmt 0 view .LVU40
+ 120 004a 4696     		str	r6, [sp, #280]
+  48:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rlen = 1;
+ 121              		.loc 1 48 3 is_stmt 1 view .LVU41
+ 122              		.loc 1 48 11 is_stmt 0 view .LVU42
+ 123 004c 0123     		movs	r3, #1
+ 124 004e 4793     		str	r3, [sp, #284]
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 4
+
+
+  49:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
+ 125              		.loc 1 49 3 is_stmt 1 view .LVU43
+ 126              		.loc 1 49 8 is_stmt 0 view .LVU44
+ 127 0050 2946     		mov	r1, r5
+ 128 0052 42A8     		add	r0, sp, #264
+ 129 0054 FFF7FEFF 		bl	hci_send_req
+ 130              	.LVL14:
+ 131              		.loc 1 49 6 discriminator 1 view .LVU45
+ 132 0058 A842     		cmp	r0, r5
+ 133 005a 03DB     		blt	.L3
+  50:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+  51:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   return status;
+ 134              		.loc 1 51 3 is_stmt 1 view .LVU46
+ 135              		.loc 1 51 10 is_stmt 0 view .LVU47
+ 136 005c 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 137              	.L2:
+  52:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ 138              		.loc 1 52 1 view .LVU48
+ 139 0060 48B0     		add	sp, sp, #288
+ 140              	.LCFI2:
+ 141              		.cfi_remember_state
+ 142              		.cfi_def_cfa_offset 16
+ 143              		@ sp needed
+ 144 0062 70BD     		pop	{r4, r5, r6, pc}
+ 145              	.LVL15:
+ 146              	.L3:
+ 147              	.LCFI3:
+ 148              		.cfi_restore_state
+  50:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 149              		.loc 1 50 12 view .LVU49
+ 150 0064 FF20     		movs	r0, #255
+ 151 0066 FBE7     		b	.L2
+ 152              		.cfi_endproc
+ 153              	.LFE0:
+ 155              		.section	.text.aci_l2cap_connection_parameter_update_resp,"ax",%progbits
+ 156              		.align	1
+ 157              		.global	aci_l2cap_connection_parameter_update_resp
+ 158              		.syntax unified
+ 159              		.thumb
+ 160              		.thumb_func
+ 162              	aci_l2cap_connection_parameter_update_resp:
+ 163              	.LVL16:
+ 164              	.LFB1:
+  53:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** 
+  54:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** tBleStatus aci_l2cap_connection_parameter_update_resp( uint16_t Connection_Handle,
+  55:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                        uint16_t Conn_Interval_Min,
+  56:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                        uint16_t Conn_Interval_Max,
+  57:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                        uint16_t Latency,
+  58:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                        uint16_t Timeout_Multiplier,
+  59:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                        uint16_t Minimum_CE_Length,
+  60:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                        uint16_t Maximum_CE_Length,
+  61:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                        uint8_t Identifier,
+  62:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                                        uint8_t Accept )
+  63:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** {
+ 165              		.loc 1 63 1 is_stmt 1 view -0
+ 166              		.cfi_startproc
+ 167              		@ args = 20, pretend = 0, frame = 288
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 5
+
+
+ 168              		@ frame_needed = 0, uses_anonymous_args = 0
+ 169              		.loc 1 63 1 is_stmt 0 view .LVU51
+ 170 0000 70B5     		push	{r4, r5, r6, lr}
+ 171              	.LCFI4:
+ 172              		.cfi_def_cfa_offset 16
+ 173              		.cfi_offset 4, -16
+ 174              		.cfi_offset 5, -12
+ 175              		.cfi_offset 6, -8
+ 176              		.cfi_offset 14, -4
+ 177 0002 C8B0     		sub	sp, sp, #288
+ 178              	.LCFI5:
+ 179              		.cfi_def_cfa_offset 304
+  64:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   struct hci_request rq;
+ 180              		.loc 1 64 3 is_stmt 1 view .LVU52
+  65:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
+ 181              		.loc 1 65 3 view .LVU53
+  66:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   aci_l2cap_connection_parameter_update_resp_cp0 *cp0 = (aci_l2cap_connection_parameter_update_resp
+ 182              		.loc 1 66 3 view .LVU54
+ 183              	.LVL17:
+  67:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   tBleStatus status = 0;
+ 184              		.loc 1 67 3 view .LVU55
+ 185              		.loc 1 67 14 is_stmt 0 view .LVU56
+ 186 0004 0DF10706 		add	r6, sp, #7
+ 187 0008 0025     		movs	r5, #0
+ 188 000a 8DF80750 		strb	r5, [sp, #7]
+  68:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   int index_input = 0;
+ 189              		.loc 1 68 3 is_stmt 1 view .LVU57
+ 190              	.LVL18:
+  69:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Connection_Handle = Connection_Handle;
+ 191              		.loc 1 69 3 view .LVU58
+ 192              		.loc 1 69 26 is_stmt 0 view .LVU59
+ 193 000e 02AC     		add	r4, sp, #8
+ 194              	.LVL19:
+ 195              		.loc 1 69 26 view .LVU60
+ 196 0010 ADF80800 		strh	r0, [sp, #8]	@ movhi
+  70:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 197              		.loc 1 70 3 is_stmt 1 view .LVU61
+ 198              	.LVL20:
+  71:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Conn_Interval_Min = Conn_Interval_Min;
+ 199              		.loc 1 71 3 view .LVU62
+ 200              		.loc 1 71 26 is_stmt 0 view .LVU63
+ 201 0014 ADF80A10 		strh	r1, [sp, #10]	@ movhi
+  72:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 202              		.loc 1 72 3 is_stmt 1 view .LVU64
+ 203              	.LVL21:
+  73:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Conn_Interval_Max = Conn_Interval_Max;
+ 204              		.loc 1 73 3 view .LVU65
+ 205              		.loc 1 73 26 is_stmt 0 view .LVU66
+ 206 0018 ADF80C20 		strh	r2, [sp, #12]	@ movhi
+  74:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 207              		.loc 1 74 3 is_stmt 1 view .LVU67
+ 208              	.LVL22:
+  75:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Latency = Latency;
+ 209              		.loc 1 75 3 view .LVU68
+ 210              		.loc 1 75 16 is_stmt 0 view .LVU69
+ 211 001c ADF80E30 		strh	r3, [sp, #14]	@ movhi
+  76:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 6
+
+
+ 212              		.loc 1 76 3 is_stmt 1 view .LVU70
+ 213              	.LVL23:
+  77:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Timeout_Multiplier = Timeout_Multiplier;
+ 214              		.loc 1 77 3 view .LVU71
+ 215              		.loc 1 77 27 is_stmt 0 view .LVU72
+ 216 0020 BDF83031 		ldrh	r3, [sp, #304]
+ 217              	.LVL24:
+ 218              		.loc 1 77 27 view .LVU73
+ 219 0024 ADF81030 		strh	r3, [sp, #16]	@ movhi
+  78:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 220              		.loc 1 78 3 is_stmt 1 view .LVU74
+ 221              	.LVL25:
+  79:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Minimum_CE_Length = Minimum_CE_Length;
+ 222              		.loc 1 79 3 view .LVU75
+ 223              		.loc 1 79 26 is_stmt 0 view .LVU76
+ 224 0028 BDF83431 		ldrh	r3, [sp, #308]
+ 225 002c ADF81230 		strh	r3, [sp, #18]	@ movhi
+  80:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 226              		.loc 1 80 3 is_stmt 1 view .LVU77
+ 227              	.LVL26:
+  81:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Maximum_CE_Length = Maximum_CE_Length;
+ 228              		.loc 1 81 3 view .LVU78
+ 229              		.loc 1 81 26 is_stmt 0 view .LVU79
+ 230 0030 BDF83831 		ldrh	r3, [sp, #312]
+ 231 0034 ADF81430 		strh	r3, [sp, #20]	@ movhi
+  82:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 232              		.loc 1 82 3 is_stmt 1 view .LVU80
+ 233              	.LVL27:
+  83:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Identifier = Identifier;
+ 234              		.loc 1 83 3 view .LVU81
+ 235              		.loc 1 83 19 is_stmt 0 view .LVU82
+ 236 0038 9DF83C31 		ldrb	r3, [sp, #316]	@ zero_extendqisi2
+ 237 003c 8DF81630 		strb	r3, [sp, #22]
+  84:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 1;
+ 238              		.loc 1 84 3 is_stmt 1 view .LVU83
+ 239              	.LVL28:
+  85:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Accept = Accept;
+ 240              		.loc 1 85 3 view .LVU84
+ 241              		.loc 1 85 15 is_stmt 0 view .LVU85
+ 242 0040 9DF84031 		ldrb	r3, [sp, #320]	@ zero_extendqisi2
+ 243 0044 8DF81730 		strb	r3, [sp, #23]
+  86:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 1;
+ 244              		.loc 1 86 3 is_stmt 1 view .LVU86
+ 245              	.LVL29:
+  87:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
+ 246              		.loc 1 87 3 view .LVU87
+ 247 0048 1822     		movs	r2, #24
+ 248              	.LVL30:
+ 249              		.loc 1 87 3 is_stmt 0 view .LVU88
+ 250 004a 2946     		mov	r1, r5
+ 251              	.LVL31:
+ 252              		.loc 1 87 3 view .LVU89
+ 253 004c 42A8     		add	r0, sp, #264
+ 254              	.LVL32:
+ 255              		.loc 1 87 3 view .LVU90
+ 256 004e FFF7FEFF 		bl	Osal_MemSet
+ 257              	.LVL33:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 7
+
+
+  88:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ogf = 0x3f;
+ 258              		.loc 1 88 3 is_stmt 1 view .LVU91
+ 259              		.loc 1 88 10 is_stmt 0 view .LVU92
+ 260 0052 3F23     		movs	r3, #63
+ 261 0054 ADF80831 		strh	r3, [sp, #264]	@ movhi
+  89:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ocf = 0x182;
+ 262              		.loc 1 89 3 is_stmt 1 view .LVU93
+ 263              		.loc 1 89 10 is_stmt 0 view .LVU94
+ 264 0058 4FF4C173 		mov	r3, #386
+ 265 005c ADF80A31 		strh	r3, [sp, #266]	@ movhi
+  90:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.cparam = cmd_buffer;
+ 266              		.loc 1 90 3 is_stmt 1 view .LVU95
+ 267              		.loc 1 90 13 is_stmt 0 view .LVU96
+ 268 0060 4494     		str	r4, [sp, #272]
+  91:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.clen = index_input;
+ 269              		.loc 1 91 3 is_stmt 1 view .LVU97
+ 270              		.loc 1 91 11 is_stmt 0 view .LVU98
+ 271 0062 1023     		movs	r3, #16
+ 272 0064 4593     		str	r3, [sp, #276]
+  92:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rparam = &status;
+ 273              		.loc 1 92 3 is_stmt 1 view .LVU99
+ 274              		.loc 1 92 13 is_stmt 0 view .LVU100
+ 275 0066 4696     		str	r6, [sp, #280]
+  93:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rlen = 1;
+ 276              		.loc 1 93 3 is_stmt 1 view .LVU101
+ 277              		.loc 1 93 11 is_stmt 0 view .LVU102
+ 278 0068 0123     		movs	r3, #1
+ 279 006a 4793     		str	r3, [sp, #284]
+  94:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
+ 280              		.loc 1 94 3 is_stmt 1 view .LVU103
+ 281              		.loc 1 94 8 is_stmt 0 view .LVU104
+ 282 006c 2946     		mov	r1, r5
+ 283 006e 42A8     		add	r0, sp, #264
+ 284 0070 FFF7FEFF 		bl	hci_send_req
+ 285              	.LVL34:
+ 286              		.loc 1 94 6 discriminator 1 view .LVU105
+ 287 0074 A842     		cmp	r0, r5
+ 288 0076 03DB     		blt	.L7
+  95:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+  96:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   return status;
+ 289              		.loc 1 96 3 is_stmt 1 view .LVU106
+ 290              		.loc 1 96 10 is_stmt 0 view .LVU107
+ 291 0078 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 292              	.L6:
+  97:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ 293              		.loc 1 97 1 view .LVU108
+ 294 007c 48B0     		add	sp, sp, #288
+ 295              	.LCFI6:
+ 296              		.cfi_remember_state
+ 297              		.cfi_def_cfa_offset 16
+ 298              		@ sp needed
+ 299 007e 70BD     		pop	{r4, r5, r6, pc}
+ 300              	.LVL35:
+ 301              	.L7:
+ 302              	.LCFI7:
+ 303              		.cfi_restore_state
+  95:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 8
+
+
+ 304              		.loc 1 95 12 view .LVU109
+ 305 0080 FF20     		movs	r0, #255
+ 306 0082 FBE7     		b	.L6
+ 307              		.cfi_endproc
+ 308              	.LFE1:
+ 310              		.section	.text.aci_l2cap_coc_connect,"ax",%progbits
+ 311              		.align	1
+ 312              		.global	aci_l2cap_coc_connect
+ 313              		.syntax unified
+ 314              		.thumb
+ 315              		.thumb_func
+ 317              	aci_l2cap_coc_connect:
+ 318              	.LVL36:
+ 319              	.LFB2:
+  98:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** 
+  99:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** tBleStatus aci_l2cap_coc_connect( uint16_t Connection_Handle,
+ 100:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                   uint16_t SPSM,
+ 101:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                   uint16_t MTU,
+ 102:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                   uint16_t MPS,
+ 103:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                   uint16_t Initial_Credits,
+ 104:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                   uint8_t Channel_Number )
+ 105:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** {
+ 320              		.loc 1 105 1 is_stmt 1 view -0
+ 321              		.cfi_startproc
+ 322              		@ args = 8, pretend = 0, frame = 288
+ 323              		@ frame_needed = 0, uses_anonymous_args = 0
+ 324              		.loc 1 105 1 is_stmt 0 view .LVU111
+ 325 0000 70B5     		push	{r4, r5, r6, lr}
+ 326              	.LCFI8:
+ 327              		.cfi_def_cfa_offset 16
+ 328              		.cfi_offset 4, -16
+ 329              		.cfi_offset 5, -12
+ 330              		.cfi_offset 6, -8
+ 331              		.cfi_offset 14, -4
+ 332 0002 C8B0     		sub	sp, sp, #288
+ 333              	.LCFI9:
+ 334              		.cfi_def_cfa_offset 304
+ 106:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   struct hci_request rq;
+ 335              		.loc 1 106 3 is_stmt 1 view .LVU112
+ 107:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
+ 336              		.loc 1 107 3 view .LVU113
+ 108:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   aci_l2cap_coc_connect_cp0 *cp0 = (aci_l2cap_coc_connect_cp0*)(cmd_buffer);
+ 337              		.loc 1 108 3 view .LVU114
+ 338              	.LVL37:
+ 109:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   tBleStatus status = 0;
+ 339              		.loc 1 109 3 view .LVU115
+ 340              		.loc 1 109 14 is_stmt 0 view .LVU116
+ 341 0004 0DF10706 		add	r6, sp, #7
+ 342 0008 0025     		movs	r5, #0
+ 343 000a 8DF80750 		strb	r5, [sp, #7]
+ 110:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   int index_input = 0;
+ 344              		.loc 1 110 3 is_stmt 1 view .LVU117
+ 345              	.LVL38:
+ 111:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Connection_Handle = Connection_Handle;
+ 346              		.loc 1 111 3 view .LVU118
+ 347              		.loc 1 111 26 is_stmt 0 view .LVU119
+ 348 000e 02AC     		add	r4, sp, #8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 9
+
+
+ 349              	.LVL39:
+ 350              		.loc 1 111 26 view .LVU120
+ 351 0010 ADF80800 		strh	r0, [sp, #8]	@ movhi
+ 112:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 352              		.loc 1 112 3 is_stmt 1 view .LVU121
+ 353              	.LVL40:
+ 113:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->SPSM = SPSM;
+ 354              		.loc 1 113 3 view .LVU122
+ 355              		.loc 1 113 13 is_stmt 0 view .LVU123
+ 356 0014 ADF80A10 		strh	r1, [sp, #10]	@ movhi
+ 114:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 357              		.loc 1 114 3 is_stmt 1 view .LVU124
+ 358              	.LVL41:
+ 115:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->MTU = MTU;
+ 359              		.loc 1 115 3 view .LVU125
+ 360              		.loc 1 115 12 is_stmt 0 view .LVU126
+ 361 0018 ADF80C20 		strh	r2, [sp, #12]	@ movhi
+ 116:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 362              		.loc 1 116 3 is_stmt 1 view .LVU127
+ 363              	.LVL42:
+ 117:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->MPS = MPS;
+ 364              		.loc 1 117 3 view .LVU128
+ 365              		.loc 1 117 12 is_stmt 0 view .LVU129
+ 366 001c ADF80E30 		strh	r3, [sp, #14]	@ movhi
+ 118:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 367              		.loc 1 118 3 is_stmt 1 view .LVU130
+ 368              	.LVL43:
+ 119:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Initial_Credits = Initial_Credits;
+ 369              		.loc 1 119 3 view .LVU131
+ 370              		.loc 1 119 24 is_stmt 0 view .LVU132
+ 371 0020 BDF83031 		ldrh	r3, [sp, #304]
+ 372              	.LVL44:
+ 373              		.loc 1 119 24 view .LVU133
+ 374 0024 ADF81030 		strh	r3, [sp, #16]	@ movhi
+ 120:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 375              		.loc 1 120 3 is_stmt 1 view .LVU134
+ 376              	.LVL45:
+ 121:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Channel_Number = Channel_Number;
+ 377              		.loc 1 121 3 view .LVU135
+ 378              		.loc 1 121 23 is_stmt 0 view .LVU136
+ 379 0028 9DF83431 		ldrb	r3, [sp, #308]	@ zero_extendqisi2
+ 380 002c 8DF81230 		strb	r3, [sp, #18]
+ 122:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 1;
+ 381              		.loc 1 122 3 is_stmt 1 view .LVU137
+ 382              	.LVL46:
+ 123:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
+ 383              		.loc 1 123 3 view .LVU138
+ 384 0030 1822     		movs	r2, #24
+ 385              	.LVL47:
+ 386              		.loc 1 123 3 is_stmt 0 view .LVU139
+ 387 0032 2946     		mov	r1, r5
+ 388              	.LVL48:
+ 389              		.loc 1 123 3 view .LVU140
+ 390 0034 42A8     		add	r0, sp, #264
+ 391              	.LVL49:
+ 392              		.loc 1 123 3 view .LVU141
+ 393 0036 FFF7FEFF 		bl	Osal_MemSet
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 10
+
+
+ 394              	.LVL50:
+ 124:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ogf = 0x3f;
+ 395              		.loc 1 124 3 is_stmt 1 view .LVU142
+ 396              		.loc 1 124 10 is_stmt 0 view .LVU143
+ 397 003a 3F23     		movs	r3, #63
+ 398 003c ADF80831 		strh	r3, [sp, #264]	@ movhi
+ 125:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ocf = 0x188;
+ 399              		.loc 1 125 3 is_stmt 1 view .LVU144
+ 400              		.loc 1 125 10 is_stmt 0 view .LVU145
+ 401 0040 4FF4C473 		mov	r3, #392
+ 402 0044 ADF80A31 		strh	r3, [sp, #266]	@ movhi
+ 126:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.cparam = cmd_buffer;
+ 403              		.loc 1 126 3 is_stmt 1 view .LVU146
+ 404              		.loc 1 126 13 is_stmt 0 view .LVU147
+ 405 0048 4494     		str	r4, [sp, #272]
+ 127:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.clen = index_input;
+ 406              		.loc 1 127 3 is_stmt 1 view .LVU148
+ 407              		.loc 1 127 11 is_stmt 0 view .LVU149
+ 408 004a 0B23     		movs	r3, #11
+ 409 004c 4593     		str	r3, [sp, #276]
+ 128:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rparam = &status;
+ 410              		.loc 1 128 3 is_stmt 1 view .LVU150
+ 411              		.loc 1 128 13 is_stmt 0 view .LVU151
+ 412 004e 4696     		str	r6, [sp, #280]
+ 129:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rlen = 1;
+ 413              		.loc 1 129 3 is_stmt 1 view .LVU152
+ 414              		.loc 1 129 11 is_stmt 0 view .LVU153
+ 415 0050 0123     		movs	r3, #1
+ 416 0052 4793     		str	r3, [sp, #284]
+ 130:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
+ 417              		.loc 1 130 3 is_stmt 1 view .LVU154
+ 418              		.loc 1 130 8 is_stmt 0 view .LVU155
+ 419 0054 2946     		mov	r1, r5
+ 420 0056 42A8     		add	r0, sp, #264
+ 421 0058 FFF7FEFF 		bl	hci_send_req
+ 422              	.LVL51:
+ 423              		.loc 1 130 6 discriminator 1 view .LVU156
+ 424 005c A842     		cmp	r0, r5
+ 425 005e 03DB     		blt	.L11
+ 131:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 132:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   return status;
+ 426              		.loc 1 132 3 is_stmt 1 view .LVU157
+ 427              		.loc 1 132 10 is_stmt 0 view .LVU158
+ 428 0060 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 429              	.L10:
+ 133:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ 430              		.loc 1 133 1 view .LVU159
+ 431 0064 48B0     		add	sp, sp, #288
+ 432              	.LCFI10:
+ 433              		.cfi_remember_state
+ 434              		.cfi_def_cfa_offset 16
+ 435              		@ sp needed
+ 436 0066 70BD     		pop	{r4, r5, r6, pc}
+ 437              	.LVL52:
+ 438              	.L11:
+ 439              	.LCFI11:
+ 440              		.cfi_restore_state
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 11
+
+
+ 131:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 441              		.loc 1 131 12 view .LVU160
+ 442 0068 FF20     		movs	r0, #255
+ 443 006a FBE7     		b	.L10
+ 444              		.cfi_endproc
+ 445              	.LFE2:
+ 447              		.section	.text.aci_l2cap_coc_connect_confirm,"ax",%progbits
+ 448              		.align	1
+ 449              		.global	aci_l2cap_coc_connect_confirm
+ 450              		.syntax unified
+ 451              		.thumb
+ 452              		.thumb_func
+ 454              	aci_l2cap_coc_connect_confirm:
+ 455              	.LVL53:
+ 456              	.LFB3:
+ 134:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** 
+ 135:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** tBleStatus aci_l2cap_coc_connect_confirm( uint16_t Connection_Handle,
+ 136:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                           uint16_t MTU,
+ 137:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                           uint16_t MPS,
+ 138:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                           uint16_t Initial_Credits,
+ 139:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                           uint16_t Result,
+ 140:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                           uint8_t Max_Channel_Number,
+ 141:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                           uint8_t* Channel_Number,
+ 142:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                           uint8_t* Channel_Index_List )
+ 143:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** {
+ 457              		.loc 1 143 1 is_stmt 1 view -0
+ 458              		.cfi_startproc
+ 459              		@ args = 16, pretend = 0, frame = 536
+ 460              		@ frame_needed = 0, uses_anonymous_args = 0
+ 461              		.loc 1 143 1 is_stmt 0 view .LVU162
+ 462 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 463              	.LCFI12:
+ 464              		.cfi_def_cfa_offset 28
+ 465              		.cfi_offset 4, -28
+ 466              		.cfi_offset 5, -24
+ 467              		.cfi_offset 6, -20
+ 468              		.cfi_offset 7, -16
+ 469              		.cfi_offset 8, -12
+ 470              		.cfi_offset 9, -8
+ 471              		.cfi_offset 14, -4
+ 472 0004 ADF5077D 		sub	sp, sp, #540
+ 473              	.LCFI13:
+ 474              		.cfi_def_cfa_offset 568
+ 475 0008 8046     		mov	r8, r0
+ 476 000a 0F46     		mov	r7, r1
+ 477 000c 1646     		mov	r6, r2
+ 478 000e 1D46     		mov	r5, r3
+ 144:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   struct hci_request rq;
+ 479              		.loc 1 144 3 is_stmt 1 view .LVU163
+ 145:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
+ 480              		.loc 1 145 3 view .LVU164
+ 146:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   aci_l2cap_coc_connect_confirm_cp0 *cp0 = (aci_l2cap_coc_connect_confirm_cp0*)(cmd_buffer);
+ 481              		.loc 1 146 3 view .LVU165
+ 482              	.LVL54:
+ 147:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   aci_l2cap_coc_connect_confirm_rp0 resp;
+ 483              		.loc 1 147 3 view .LVU166
+ 148:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemSet( &resp, 0, sizeof(resp) );
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 12
+
+
+ 484              		.loc 1 148 3 view .LVU167
+ 485 0010 0DF10409 		add	r9, sp, #4
+ 486 0014 FC22     		movs	r2, #252
+ 487              	.LVL55:
+ 488              		.loc 1 148 3 is_stmt 0 view .LVU168
+ 489 0016 0021     		movs	r1, #0
+ 490              	.LVL56:
+ 491              		.loc 1 148 3 view .LVU169
+ 492 0018 4846     		mov	r0, r9
+ 493              	.LVL57:
+ 494              		.loc 1 148 3 view .LVU170
+ 495 001a FFF7FEFF 		bl	Osal_MemSet
+ 496              	.LVL58:
+ 149:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   int index_input = 0;
+ 497              		.loc 1 149 3 is_stmt 1 view .LVU171
+ 150:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Connection_Handle = Connection_Handle;
+ 498              		.loc 1 150 3 view .LVU172
+ 499              		.loc 1 150 26 is_stmt 0 view .LVU173
+ 500 001e 40AC     		add	r4, sp, #256
+ 501              	.LVL59:
+ 502              		.loc 1 150 26 view .LVU174
+ 503 0020 ADF80081 		strh	r8, [sp, #256]	@ movhi
+ 151:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 504              		.loc 1 151 3 is_stmt 1 view .LVU175
+ 505              	.LVL60:
+ 152:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->MTU = MTU;
+ 506              		.loc 1 152 3 view .LVU176
+ 507              		.loc 1 152 12 is_stmt 0 view .LVU177
+ 508 0024 ADF80271 		strh	r7, [sp, #258]	@ movhi
+ 153:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 509              		.loc 1 153 3 is_stmt 1 view .LVU178
+ 510              	.LVL61:
+ 154:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->MPS = MPS;
+ 511              		.loc 1 154 3 view .LVU179
+ 512              		.loc 1 154 12 is_stmt 0 view .LVU180
+ 513 0028 ADF80461 		strh	r6, [sp, #260]	@ movhi
+ 155:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 514              		.loc 1 155 3 is_stmt 1 view .LVU181
+ 515              	.LVL62:
+ 156:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Initial_Credits = Initial_Credits;
+ 516              		.loc 1 156 3 view .LVU182
+ 517              		.loc 1 156 24 is_stmt 0 view .LVU183
+ 518 002c ADF80651 		strh	r5, [sp, #262]	@ movhi
+ 157:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 519              		.loc 1 157 3 is_stmt 1 view .LVU184
+ 520              	.LVL63:
+ 158:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Result = Result;
+ 521              		.loc 1 158 3 view .LVU185
+ 522              		.loc 1 158 15 is_stmt 0 view .LVU186
+ 523 0030 BDF83832 		ldrh	r3, [sp, #568]
+ 524 0034 ADF80831 		strh	r3, [sp, #264]	@ movhi
+ 159:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 525              		.loc 1 159 3 is_stmt 1 view .LVU187
+ 526              	.LVL64:
+ 160:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Max_Channel_Number = Max_Channel_Number;
+ 527              		.loc 1 160 3 view .LVU188
+ 528              		.loc 1 160 27 is_stmt 0 view .LVU189
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 13
+
+
+ 529 0038 9DF83C32 		ldrb	r3, [sp, #572]	@ zero_extendqisi2
+ 530 003c 8DF80A31 		strb	r3, [sp, #266]
+ 161:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 1;
+ 531              		.loc 1 161 3 is_stmt 1 view .LVU190
+ 532              	.LVL65:
+ 162:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
+ 533              		.loc 1 162 3 view .LVU191
+ 534 0040 1822     		movs	r2, #24
+ 535 0042 0021     		movs	r1, #0
+ 536 0044 80A8     		add	r0, sp, #512
+ 537 0046 FFF7FEFF 		bl	Osal_MemSet
+ 538              	.LVL66:
+ 163:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ogf = 0x3f;
+ 539              		.loc 1 163 3 view .LVU192
+ 540              		.loc 1 163 10 is_stmt 0 view .LVU193
+ 541 004a 3F23     		movs	r3, #63
+ 542 004c ADF80032 		strh	r3, [sp, #512]	@ movhi
+ 164:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ocf = 0x189;
+ 543              		.loc 1 164 3 is_stmt 1 view .LVU194
+ 544              		.loc 1 164 10 is_stmt 0 view .LVU195
+ 545 0050 40F28913 		movw	r3, #393
+ 546 0054 ADF80232 		strh	r3, [sp, #514]	@ movhi
+ 165:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.cparam = cmd_buffer;
+ 547              		.loc 1 165 3 is_stmt 1 view .LVU196
+ 548              		.loc 1 165 13 is_stmt 0 view .LVU197
+ 549 0058 8294     		str	r4, [sp, #520]
+ 166:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.clen = index_input;
+ 550              		.loc 1 166 3 is_stmt 1 view .LVU198
+ 551              		.loc 1 166 11 is_stmt 0 view .LVU199
+ 552 005a 0B23     		movs	r3, #11
+ 553 005c 8393     		str	r3, [sp, #524]
+ 167:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rparam = &resp;
+ 554              		.loc 1 167 3 is_stmt 1 view .LVU200
+ 555              		.loc 1 167 13 is_stmt 0 view .LVU201
+ 556 005e CDF81092 		str	r9, [sp, #528]
+ 168:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rlen = sizeof(resp);
+ 557              		.loc 1 168 3 is_stmt 1 view .LVU202
+ 558              		.loc 1 168 11 is_stmt 0 view .LVU203
+ 559 0062 FC23     		movs	r3, #252
+ 560 0064 8593     		str	r3, [sp, #532]
+ 169:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
+ 561              		.loc 1 169 3 is_stmt 1 view .LVU204
+ 562              		.loc 1 169 8 is_stmt 0 view .LVU205
+ 563 0066 0021     		movs	r1, #0
+ 564 0068 80A8     		add	r0, sp, #512
+ 565 006a FFF7FEFF 		bl	hci_send_req
+ 566              	.LVL67:
+ 567              		.loc 1 169 6 discriminator 1 view .LVU206
+ 568 006e 0028     		cmp	r0, #0
+ 569 0070 11DB     		blt	.L15
+ 170:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 171:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( resp.Status )
+ 570              		.loc 1 171 3 is_stmt 1 view .LVU207
+ 571              		.loc 1 171 12 is_stmt 0 view .LVU208
+ 572 0072 9DF80440 		ldrb	r4, [sp, #4]	@ zero_extendqisi2
+ 573              	.LVL68:
+ 574              		.loc 1 171 6 view .LVU209
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 14
+
+
+ 575 0076 24B1     		cbz	r4, .L17
+ 576              	.L14:
+ 172:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return resp.Status;
+ 173:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   *Channel_Number = resp.Channel_Number;
+ 174:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemCpy( (void*)Channel_Index_List, (const void*)resp.Channel_Index_List, *Channel_Number);
+ 175:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   return BLE_STATUS_SUCCESS;
+ 176:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ 577              		.loc 1 176 1 view .LVU210
+ 578 0078 2046     		mov	r0, r4
+ 579 007a 0DF5077D 		add	sp, sp, #540
+ 580              	.LCFI14:
+ 581              		.cfi_remember_state
+ 582              		.cfi_def_cfa_offset 28
+ 583              		@ sp needed
+ 584 007e BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 585              	.LVL69:
+ 586              	.L17:
+ 587              	.LCFI15:
+ 588              		.cfi_restore_state
+ 173:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemCpy( (void*)Channel_Index_List, (const void*)resp.Channel_Index_List, *Channel_Number);
+ 589              		.loc 1 173 3 is_stmt 1 view .LVU211
+ 173:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemCpy( (void*)Channel_Index_List, (const void*)resp.Channel_Index_List, *Channel_Number);
+ 590              		.loc 1 173 25 is_stmt 0 view .LVU212
+ 591 0082 9DF80520 		ldrb	r2, [sp, #5]	@ zero_extendqisi2
+ 173:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemCpy( (void*)Channel_Index_List, (const void*)resp.Channel_Index_List, *Channel_Number);
+ 592              		.loc 1 173 19 view .LVU213
+ 593 0086 909B     		ldr	r3, [sp, #576]
+ 594 0088 1A70     		strb	r2, [r3]
+ 174:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   return BLE_STATUS_SUCCESS;
+ 595              		.loc 1 174 3 is_stmt 1 view .LVU214
+ 596 008a 0DF10601 		add	r1, sp, #6
+ 597 008e 9198     		ldr	r0, [sp, #580]
+ 598 0090 FFF7FEFF 		bl	Osal_MemCpy
+ 599              	.LVL70:
+ 175:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ 600              		.loc 1 175 3 view .LVU215
+ 175:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ 601              		.loc 1 175 10 is_stmt 0 view .LVU216
+ 602 0094 F0E7     		b	.L14
+ 603              	.LVL71:
+ 604              	.L15:
+ 170:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( resp.Status )
+ 605              		.loc 1 170 12 view .LVU217
+ 606 0096 FF24     		movs	r4, #255
+ 607              	.LVL72:
+ 170:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( resp.Status )
+ 608              		.loc 1 170 12 view .LVU218
+ 609 0098 EEE7     		b	.L14
+ 610              		.cfi_endproc
+ 611              	.LFE3:
+ 613              		.section	.text.aci_l2cap_coc_reconf,"ax",%progbits
+ 614              		.align	1
+ 615              		.global	aci_l2cap_coc_reconf
+ 616              		.syntax unified
+ 617              		.thumb
+ 618              		.thumb_func
+ 620              	aci_l2cap_coc_reconf:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 15
+
+
+ 621              	.LVL73:
+ 622              	.LFB4:
+ 177:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** 
+ 178:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** tBleStatus aci_l2cap_coc_reconf( uint16_t Connection_Handle,
+ 179:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                  uint16_t MTU,
+ 180:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                  uint16_t MPS,
+ 181:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                  uint8_t Channel_Number,
+ 182:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                  const uint8_t* Channel_Index_List )
+ 183:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** {
+ 623              		.loc 1 183 1 is_stmt 1 view -0
+ 624              		.cfi_startproc
+ 625              		@ args = 4, pretend = 0, frame = 288
+ 626              		@ frame_needed = 0, uses_anonymous_args = 0
+ 627              		.loc 1 183 1 is_stmt 0 view .LVU220
+ 628 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 629              	.LCFI16:
+ 630              		.cfi_def_cfa_offset 20
+ 631              		.cfi_offset 4, -20
+ 632              		.cfi_offset 5, -16
+ 633              		.cfi_offset 6, -12
+ 634              		.cfi_offset 7, -8
+ 635              		.cfi_offset 14, -4
+ 636 0002 C9B0     		sub	sp, sp, #292
+ 637              	.LCFI17:
+ 638              		.cfi_def_cfa_offset 312
+ 639 0004 1C46     		mov	r4, r3
+ 184:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   struct hci_request rq;
+ 640              		.loc 1 184 3 is_stmt 1 view .LVU221
+ 185:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
+ 641              		.loc 1 185 3 view .LVU222
+ 186:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   aci_l2cap_coc_reconf_cp0 *cp0 = (aci_l2cap_coc_reconf_cp0*)(cmd_buffer);
+ 642              		.loc 1 186 3 view .LVU223
+ 643              	.LVL74:
+ 187:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   tBleStatus status = 0;
+ 644              		.loc 1 187 3 view .LVU224
+ 645              		.loc 1 187 14 is_stmt 0 view .LVU225
+ 646 0006 0DF10707 		add	r7, sp, #7
+ 647 000a 0026     		movs	r6, #0
+ 648 000c 8DF80760 		strb	r6, [sp, #7]
+ 188:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   int index_input = 0;
+ 649              		.loc 1 188 3 is_stmt 1 view .LVU226
+ 650              	.LVL75:
+ 189:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Connection_Handle = Connection_Handle;
+ 651              		.loc 1 189 3 view .LVU227
+ 652              		.loc 1 189 26 is_stmt 0 view .LVU228
+ 653 0010 02AD     		add	r5, sp, #8
+ 654              	.LVL76:
+ 655              		.loc 1 189 26 view .LVU229
+ 656 0012 ADF80800 		strh	r0, [sp, #8]	@ movhi
+ 190:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 657              		.loc 1 190 3 is_stmt 1 view .LVU230
+ 658              	.LVL77:
+ 191:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->MTU = MTU;
+ 659              		.loc 1 191 3 view .LVU231
+ 660              		.loc 1 191 12 is_stmt 0 view .LVU232
+ 661 0016 ADF80A10 		strh	r1, [sp, #10]	@ movhi
+ 192:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 16
+
+
+ 662              		.loc 1 192 3 is_stmt 1 view .LVU233
+ 663              	.LVL78:
+ 193:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->MPS = MPS;
+ 664              		.loc 1 193 3 view .LVU234
+ 665              		.loc 1 193 12 is_stmt 0 view .LVU235
+ 666 001a ADF80C20 		strh	r2, [sp, #12]	@ movhi
+ 194:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 667              		.loc 1 194 3 is_stmt 1 view .LVU236
+ 668              	.LVL79:
+ 195:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Channel_Number = Channel_Number;
+ 669              		.loc 1 195 3 view .LVU237
+ 670              		.loc 1 195 23 is_stmt 0 view .LVU238
+ 671 001e 8DF80E30 		strb	r3, [sp, #14]
+ 196:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 1;
+ 672              		.loc 1 196 3 is_stmt 1 view .LVU239
+ 673              	.LVL80:
+ 197:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemCpy( (void*)&cp0->Channel_Index_List, (const void*)Channel_Index_List, Channel_Number );
+ 674              		.loc 1 197 3 view .LVU240
+ 675 0022 1A46     		mov	r2, r3
+ 676              	.LVL81:
+ 677              		.loc 1 197 3 is_stmt 0 view .LVU241
+ 678 0024 4E99     		ldr	r1, [sp, #312]
+ 679              	.LVL82:
+ 680              		.loc 1 197 3 view .LVU242
+ 681 0026 0DF10F00 		add	r0, sp, #15
+ 682              	.LVL83:
+ 683              		.loc 1 197 3 view .LVU243
+ 684 002a FFF7FEFF 		bl	Osal_MemCpy
+ 685              	.LVL84:
+ 198:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += Channel_Number;
+ 686              		.loc 1 198 3 is_stmt 1 view .LVU244
+ 687              		.loc 1 198 15 is_stmt 0 view .LVU245
+ 688 002e 0734     		adds	r4, r4, #7
+ 689              	.LVL85:
+ 199:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
+ 690              		.loc 1 199 3 is_stmt 1 view .LVU246
+ 691 0030 1822     		movs	r2, #24
+ 692 0032 3146     		mov	r1, r6
+ 693 0034 42A8     		add	r0, sp, #264
+ 694 0036 FFF7FEFF 		bl	Osal_MemSet
+ 695              	.LVL86:
+ 200:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ogf = 0x3f;
+ 696              		.loc 1 200 3 view .LVU247
+ 697              		.loc 1 200 10 is_stmt 0 view .LVU248
+ 698 003a 3F23     		movs	r3, #63
+ 699 003c ADF80831 		strh	r3, [sp, #264]	@ movhi
+ 201:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ocf = 0x18a;
+ 700              		.loc 1 201 3 is_stmt 1 view .LVU249
+ 701              		.loc 1 201 10 is_stmt 0 view .LVU250
+ 702 0040 4FF4C573 		mov	r3, #394
+ 703 0044 ADF80A31 		strh	r3, [sp, #266]	@ movhi
+ 202:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.cparam = cmd_buffer;
+ 704              		.loc 1 202 3 is_stmt 1 view .LVU251
+ 705              		.loc 1 202 13 is_stmt 0 view .LVU252
+ 706 0048 4495     		str	r5, [sp, #272]
+ 203:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.clen = index_input;
+ 707              		.loc 1 203 3 is_stmt 1 view .LVU253
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 17
+
+
+ 708              		.loc 1 203 11 is_stmt 0 view .LVU254
+ 709 004a 4594     		str	r4, [sp, #276]
+ 204:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rparam = &status;
+ 710              		.loc 1 204 3 is_stmt 1 view .LVU255
+ 711              		.loc 1 204 13 is_stmt 0 view .LVU256
+ 712 004c 4697     		str	r7, [sp, #280]
+ 205:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rlen = 1;
+ 713              		.loc 1 205 3 is_stmt 1 view .LVU257
+ 714              		.loc 1 205 11 is_stmt 0 view .LVU258
+ 715 004e 0123     		movs	r3, #1
+ 716 0050 4793     		str	r3, [sp, #284]
+ 206:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
+ 717              		.loc 1 206 3 is_stmt 1 view .LVU259
+ 718              		.loc 1 206 8 is_stmt 0 view .LVU260
+ 719 0052 3146     		mov	r1, r6
+ 720 0054 42A8     		add	r0, sp, #264
+ 721 0056 FFF7FEFF 		bl	hci_send_req
+ 722              	.LVL87:
+ 723              		.loc 1 206 6 discriminator 1 view .LVU261
+ 724 005a B042     		cmp	r0, r6
+ 725 005c 03DB     		blt	.L20
+ 207:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 208:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   return status;
+ 726              		.loc 1 208 3 is_stmt 1 view .LVU262
+ 727              		.loc 1 208 10 is_stmt 0 view .LVU263
+ 728 005e 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 729              	.L19:
+ 209:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ 730              		.loc 1 209 1 view .LVU264
+ 731 0062 49B0     		add	sp, sp, #292
+ 732              	.LCFI18:
+ 733              		.cfi_remember_state
+ 734              		.cfi_def_cfa_offset 20
+ 735              		@ sp needed
+ 736 0064 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 737              	.LVL88:
+ 738              	.L20:
+ 739              	.LCFI19:
+ 740              		.cfi_restore_state
+ 207:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 741              		.loc 1 207 12 view .LVU265
+ 742 0066 FF20     		movs	r0, #255
+ 743 0068 FBE7     		b	.L19
+ 744              		.cfi_endproc
+ 745              	.LFE4:
+ 747              		.section	.text.aci_l2cap_coc_reconf_confirm,"ax",%progbits
+ 748              		.align	1
+ 749              		.global	aci_l2cap_coc_reconf_confirm
+ 750              		.syntax unified
+ 751              		.thumb
+ 752              		.thumb_func
+ 754              	aci_l2cap_coc_reconf_confirm:
+ 755              	.LVL89:
+ 756              	.LFB5:
+ 210:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** 
+ 211:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** tBleStatus aci_l2cap_coc_reconf_confirm( uint16_t Connection_Handle,
+ 212:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                          uint16_t Result )
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 18
+
+
+ 213:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** {
+ 757              		.loc 1 213 1 is_stmt 1 view -0
+ 758              		.cfi_startproc
+ 759              		@ args = 0, pretend = 0, frame = 288
+ 760              		@ frame_needed = 0, uses_anonymous_args = 0
+ 761              		.loc 1 213 1 is_stmt 0 view .LVU267
+ 762 0000 70B5     		push	{r4, r5, r6, lr}
+ 763              	.LCFI20:
+ 764              		.cfi_def_cfa_offset 16
+ 765              		.cfi_offset 4, -16
+ 766              		.cfi_offset 5, -12
+ 767              		.cfi_offset 6, -8
+ 768              		.cfi_offset 14, -4
+ 769 0002 C8B0     		sub	sp, sp, #288
+ 770              	.LCFI21:
+ 771              		.cfi_def_cfa_offset 304
+ 214:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   struct hci_request rq;
+ 772              		.loc 1 214 3 is_stmt 1 view .LVU268
+ 215:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
+ 773              		.loc 1 215 3 view .LVU269
+ 216:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   aci_l2cap_coc_reconf_confirm_cp0 *cp0 = (aci_l2cap_coc_reconf_confirm_cp0*)(cmd_buffer);
+ 774              		.loc 1 216 3 view .LVU270
+ 775              	.LVL90:
+ 217:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   tBleStatus status = 0;
+ 776              		.loc 1 217 3 view .LVU271
+ 777              		.loc 1 217 14 is_stmt 0 view .LVU272
+ 778 0004 0DF10706 		add	r6, sp, #7
+ 779 0008 0024     		movs	r4, #0
+ 780 000a 8DF80740 		strb	r4, [sp, #7]
+ 218:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   int index_input = 0;
+ 781              		.loc 1 218 3 is_stmt 1 view .LVU273
+ 782              	.LVL91:
+ 219:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Connection_Handle = Connection_Handle;
+ 783              		.loc 1 219 3 view .LVU274
+ 784              		.loc 1 219 26 is_stmt 0 view .LVU275
+ 785 000e 02AD     		add	r5, sp, #8
+ 786              	.LVL92:
+ 787              		.loc 1 219 26 view .LVU276
+ 788 0010 ADF80800 		strh	r0, [sp, #8]	@ movhi
+ 220:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 789              		.loc 1 220 3 is_stmt 1 view .LVU277
+ 790              	.LVL93:
+ 221:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Result = Result;
+ 791              		.loc 1 221 3 view .LVU278
+ 792              		.loc 1 221 15 is_stmt 0 view .LVU279
+ 793 0014 ADF80A10 		strh	r1, [sp, #10]	@ movhi
+ 222:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 794              		.loc 1 222 3 is_stmt 1 view .LVU280
+ 795              	.LVL94:
+ 223:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
+ 796              		.loc 1 223 3 view .LVU281
+ 797 0018 1822     		movs	r2, #24
+ 798 001a 2146     		mov	r1, r4
+ 799              	.LVL95:
+ 800              		.loc 1 223 3 is_stmt 0 view .LVU282
+ 801 001c 42A8     		add	r0, sp, #264
+ 802              	.LVL96:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 19
+
+
+ 803              		.loc 1 223 3 view .LVU283
+ 804 001e FFF7FEFF 		bl	Osal_MemSet
+ 805              	.LVL97:
+ 224:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ogf = 0x3f;
+ 806              		.loc 1 224 3 is_stmt 1 view .LVU284
+ 807              		.loc 1 224 10 is_stmt 0 view .LVU285
+ 808 0022 3F23     		movs	r3, #63
+ 809 0024 ADF80831 		strh	r3, [sp, #264]	@ movhi
+ 225:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ocf = 0x18b;
+ 810              		.loc 1 225 3 is_stmt 1 view .LVU286
+ 811              		.loc 1 225 10 is_stmt 0 view .LVU287
+ 812 0028 40F28B13 		movw	r3, #395
+ 813 002c ADF80A31 		strh	r3, [sp, #266]	@ movhi
+ 226:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.cparam = cmd_buffer;
+ 814              		.loc 1 226 3 is_stmt 1 view .LVU288
+ 815              		.loc 1 226 13 is_stmt 0 view .LVU289
+ 816 0030 4495     		str	r5, [sp, #272]
+ 227:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.clen = index_input;
+ 817              		.loc 1 227 3 is_stmt 1 view .LVU290
+ 818              		.loc 1 227 11 is_stmt 0 view .LVU291
+ 819 0032 0423     		movs	r3, #4
+ 820 0034 4593     		str	r3, [sp, #276]
+ 228:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rparam = &status;
+ 821              		.loc 1 228 3 is_stmt 1 view .LVU292
+ 822              		.loc 1 228 13 is_stmt 0 view .LVU293
+ 823 0036 4696     		str	r6, [sp, #280]
+ 229:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rlen = 1;
+ 824              		.loc 1 229 3 is_stmt 1 view .LVU294
+ 825              		.loc 1 229 11 is_stmt 0 view .LVU295
+ 826 0038 0123     		movs	r3, #1
+ 827 003a 4793     		str	r3, [sp, #284]
+ 230:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
+ 828              		.loc 1 230 3 is_stmt 1 view .LVU296
+ 829              		.loc 1 230 8 is_stmt 0 view .LVU297
+ 830 003c 2146     		mov	r1, r4
+ 831 003e 42A8     		add	r0, sp, #264
+ 832 0040 FFF7FEFF 		bl	hci_send_req
+ 833              	.LVL98:
+ 834              		.loc 1 230 6 discriminator 1 view .LVU298
+ 835 0044 A042     		cmp	r0, r4
+ 836 0046 03DB     		blt	.L24
+ 231:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 232:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   return status;
+ 837              		.loc 1 232 3 is_stmt 1 view .LVU299
+ 838              		.loc 1 232 10 is_stmt 0 view .LVU300
+ 839 0048 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 840              	.L23:
+ 233:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ 841              		.loc 1 233 1 view .LVU301
+ 842 004c 48B0     		add	sp, sp, #288
+ 843              	.LCFI22:
+ 844              		.cfi_remember_state
+ 845              		.cfi_def_cfa_offset 16
+ 846              		@ sp needed
+ 847 004e 70BD     		pop	{r4, r5, r6, pc}
+ 848              	.LVL99:
+ 849              	.L24:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 20
+
+
+ 850              	.LCFI23:
+ 851              		.cfi_restore_state
+ 231:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 852              		.loc 1 231 12 view .LVU302
+ 853 0050 FF20     		movs	r0, #255
+ 854 0052 FBE7     		b	.L23
+ 855              		.cfi_endproc
+ 856              	.LFE5:
+ 858              		.section	.text.aci_l2cap_coc_disconnect,"ax",%progbits
+ 859              		.align	1
+ 860              		.global	aci_l2cap_coc_disconnect
+ 861              		.syntax unified
+ 862              		.thumb
+ 863              		.thumb_func
+ 865              	aci_l2cap_coc_disconnect:
+ 866              	.LVL100:
+ 867              	.LFB6:
+ 234:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** 
+ 235:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** tBleStatus aci_l2cap_coc_disconnect( uint8_t Channel_Index )
+ 236:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** {
+ 868              		.loc 1 236 1 is_stmt 1 view -0
+ 869              		.cfi_startproc
+ 870              		@ args = 0, pretend = 0, frame = 288
+ 871              		@ frame_needed = 0, uses_anonymous_args = 0
+ 872              		.loc 1 236 1 is_stmt 0 view .LVU304
+ 873 0000 70B5     		push	{r4, r5, r6, lr}
+ 874              	.LCFI24:
+ 875              		.cfi_def_cfa_offset 16
+ 876              		.cfi_offset 4, -16
+ 877              		.cfi_offset 5, -12
+ 878              		.cfi_offset 6, -8
+ 879              		.cfi_offset 14, -4
+ 880 0002 C8B0     		sub	sp, sp, #288
+ 881              	.LCFI25:
+ 882              		.cfi_def_cfa_offset 304
+ 237:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   struct hci_request rq;
+ 883              		.loc 1 237 3 is_stmt 1 view .LVU305
+ 238:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
+ 884              		.loc 1 238 3 view .LVU306
+ 239:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   aci_l2cap_coc_disconnect_cp0 *cp0 = (aci_l2cap_coc_disconnect_cp0*)(cmd_buffer);
+ 885              		.loc 1 239 3 view .LVU307
+ 886              	.LVL101:
+ 240:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   tBleStatus status = 0;
+ 887              		.loc 1 240 3 view .LVU308
+ 888              		.loc 1 240 14 is_stmt 0 view .LVU309
+ 889 0004 0DF10705 		add	r5, sp, #7
+ 890 0008 0024     		movs	r4, #0
+ 891 000a 8DF80740 		strb	r4, [sp, #7]
+ 241:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   int index_input = 0;
+ 892              		.loc 1 241 3 is_stmt 1 view .LVU310
+ 893              	.LVL102:
+ 242:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Channel_Index = Channel_Index;
+ 894              		.loc 1 242 3 view .LVU311
+ 895              		.loc 1 242 22 is_stmt 0 view .LVU312
+ 896 000e 02AE     		add	r6, sp, #8
+ 897              	.LVL103:
+ 898              		.loc 1 242 22 view .LVU313
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 21
+
+
+ 899 0010 8DF80800 		strb	r0, [sp, #8]
+ 243:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 1;
+ 900              		.loc 1 243 3 is_stmt 1 view .LVU314
+ 901              	.LVL104:
+ 244:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
+ 902              		.loc 1 244 3 view .LVU315
+ 903 0014 1822     		movs	r2, #24
+ 904 0016 2146     		mov	r1, r4
+ 905 0018 42A8     		add	r0, sp, #264
+ 906              	.LVL105:
+ 907              		.loc 1 244 3 is_stmt 0 view .LVU316
+ 908 001a FFF7FEFF 		bl	Osal_MemSet
+ 909              	.LVL106:
+ 245:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ogf = 0x3f;
+ 910              		.loc 1 245 3 is_stmt 1 view .LVU317
+ 911              		.loc 1 245 10 is_stmt 0 view .LVU318
+ 912 001e 3F23     		movs	r3, #63
+ 913 0020 ADF80831 		strh	r3, [sp, #264]	@ movhi
+ 246:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ocf = 0x18c;
+ 914              		.loc 1 246 3 is_stmt 1 view .LVU319
+ 915              		.loc 1 246 10 is_stmt 0 view .LVU320
+ 916 0024 4FF4C673 		mov	r3, #396
+ 917 0028 ADF80A31 		strh	r3, [sp, #266]	@ movhi
+ 247:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.cparam = cmd_buffer;
+ 918              		.loc 1 247 3 is_stmt 1 view .LVU321
+ 919              		.loc 1 247 13 is_stmt 0 view .LVU322
+ 920 002c 4496     		str	r6, [sp, #272]
+ 248:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.clen = index_input;
+ 921              		.loc 1 248 3 is_stmt 1 view .LVU323
+ 922              		.loc 1 248 11 is_stmt 0 view .LVU324
+ 923 002e 0123     		movs	r3, #1
+ 924 0030 4593     		str	r3, [sp, #276]
+ 249:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rparam = &status;
+ 925              		.loc 1 249 3 is_stmt 1 view .LVU325
+ 926              		.loc 1 249 13 is_stmt 0 view .LVU326
+ 927 0032 4695     		str	r5, [sp, #280]
+ 250:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rlen = 1;
+ 928              		.loc 1 250 3 is_stmt 1 view .LVU327
+ 929              		.loc 1 250 11 is_stmt 0 view .LVU328
+ 930 0034 4793     		str	r3, [sp, #284]
+ 251:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
+ 931              		.loc 1 251 3 is_stmt 1 view .LVU329
+ 932              		.loc 1 251 8 is_stmt 0 view .LVU330
+ 933 0036 2146     		mov	r1, r4
+ 934 0038 42A8     		add	r0, sp, #264
+ 935 003a FFF7FEFF 		bl	hci_send_req
+ 936              	.LVL107:
+ 937              		.loc 1 251 6 discriminator 1 view .LVU331
+ 938 003e A042     		cmp	r0, r4
+ 939 0040 03DB     		blt	.L28
+ 252:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 253:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   return status;
+ 940              		.loc 1 253 3 is_stmt 1 view .LVU332
+ 941              		.loc 1 253 10 is_stmt 0 view .LVU333
+ 942 0042 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 943              	.L27:
+ 254:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 22
+
+
+ 944              		.loc 1 254 1 view .LVU334
+ 945 0046 48B0     		add	sp, sp, #288
+ 946              	.LCFI26:
+ 947              		.cfi_remember_state
+ 948              		.cfi_def_cfa_offset 16
+ 949              		@ sp needed
+ 950 0048 70BD     		pop	{r4, r5, r6, pc}
+ 951              	.LVL108:
+ 952              	.L28:
+ 953              	.LCFI27:
+ 954              		.cfi_restore_state
+ 252:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 955              		.loc 1 252 12 view .LVU335
+ 956 004a FF20     		movs	r0, #255
+ 957 004c FBE7     		b	.L27
+ 958              		.cfi_endproc
+ 959              	.LFE6:
+ 961              		.section	.text.aci_l2cap_coc_flow_control,"ax",%progbits
+ 962              		.align	1
+ 963              		.global	aci_l2cap_coc_flow_control
+ 964              		.syntax unified
+ 965              		.thumb
+ 966              		.thumb_func
+ 968              	aci_l2cap_coc_flow_control:
+ 969              	.LVL109:
+ 970              	.LFB7:
+ 255:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** 
+ 256:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** tBleStatus aci_l2cap_coc_flow_control( uint8_t Channel_Index,
+ 257:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                        uint16_t Credits )
+ 258:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** {
+ 971              		.loc 1 258 1 is_stmt 1 view -0
+ 972              		.cfi_startproc
+ 973              		@ args = 0, pretend = 0, frame = 288
+ 974              		@ frame_needed = 0, uses_anonymous_args = 0
+ 975              		.loc 1 258 1 is_stmt 0 view .LVU337
+ 976 0000 70B5     		push	{r4, r5, r6, lr}
+ 977              	.LCFI28:
+ 978              		.cfi_def_cfa_offset 16
+ 979              		.cfi_offset 4, -16
+ 980              		.cfi_offset 5, -12
+ 981              		.cfi_offset 6, -8
+ 982              		.cfi_offset 14, -4
+ 983 0002 C8B0     		sub	sp, sp, #288
+ 984              	.LCFI29:
+ 985              		.cfi_def_cfa_offset 304
+ 259:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   struct hci_request rq;
+ 986              		.loc 1 259 3 is_stmt 1 view .LVU338
+ 260:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
+ 987              		.loc 1 260 3 view .LVU339
+ 261:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   aci_l2cap_coc_flow_control_cp0 *cp0 = (aci_l2cap_coc_flow_control_cp0*)(cmd_buffer);
+ 988              		.loc 1 261 3 view .LVU340
+ 989              	.LVL110:
+ 262:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   tBleStatus status = 0;
+ 990              		.loc 1 262 3 view .LVU341
+ 991              		.loc 1 262 14 is_stmt 0 view .LVU342
+ 992 0004 0DF10706 		add	r6, sp, #7
+ 993 0008 0024     		movs	r4, #0
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 23
+
+
+ 994 000a 8DF80740 		strb	r4, [sp, #7]
+ 263:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   int index_input = 0;
+ 995              		.loc 1 263 3 is_stmt 1 view .LVU343
+ 996              	.LVL111:
+ 264:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Channel_Index = Channel_Index;
+ 997              		.loc 1 264 3 view .LVU344
+ 998              		.loc 1 264 22 is_stmt 0 view .LVU345
+ 999 000e 02AD     		add	r5, sp, #8
+ 1000              	.LVL112:
+ 1001              		.loc 1 264 22 view .LVU346
+ 1002 0010 8DF80800 		strb	r0, [sp, #8]
+ 265:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 1;
+ 1003              		.loc 1 265 3 is_stmt 1 view .LVU347
+ 1004              	.LVL113:
+ 266:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Credits = Credits;
+ 1005              		.loc 1 266 3 view .LVU348
+ 1006              		.loc 1 266 16 is_stmt 0 view .LVU349
+ 1007 0014 ADF80910 		strh	r1, [sp, #9]	@ unaligned
+ 267:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 1008              		.loc 1 267 3 is_stmt 1 view .LVU350
+ 1009              	.LVL114:
+ 268:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
+ 1010              		.loc 1 268 3 view .LVU351
+ 1011 0018 1822     		movs	r2, #24
+ 1012 001a 2146     		mov	r1, r4
+ 1013              	.LVL115:
+ 1014              		.loc 1 268 3 is_stmt 0 view .LVU352
+ 1015 001c 42A8     		add	r0, sp, #264
+ 1016              	.LVL116:
+ 1017              		.loc 1 268 3 view .LVU353
+ 1018 001e FFF7FEFF 		bl	Osal_MemSet
+ 1019              	.LVL117:
+ 269:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ogf = 0x3f;
+ 1020              		.loc 1 269 3 is_stmt 1 view .LVU354
+ 1021              		.loc 1 269 10 is_stmt 0 view .LVU355
+ 1022 0022 3F23     		movs	r3, #63
+ 1023 0024 ADF80831 		strh	r3, [sp, #264]	@ movhi
+ 270:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ocf = 0x18d;
+ 1024              		.loc 1 270 3 is_stmt 1 view .LVU356
+ 1025              		.loc 1 270 10 is_stmt 0 view .LVU357
+ 1026 0028 40F28D13 		movw	r3, #397
+ 1027 002c ADF80A31 		strh	r3, [sp, #266]	@ movhi
+ 271:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.cparam = cmd_buffer;
+ 1028              		.loc 1 271 3 is_stmt 1 view .LVU358
+ 1029              		.loc 1 271 13 is_stmt 0 view .LVU359
+ 1030 0030 4495     		str	r5, [sp, #272]
+ 272:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.clen = index_input;
+ 1031              		.loc 1 272 3 is_stmt 1 view .LVU360
+ 1032              		.loc 1 272 11 is_stmt 0 view .LVU361
+ 1033 0032 0323     		movs	r3, #3
+ 1034 0034 4593     		str	r3, [sp, #276]
+ 273:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rparam = &status;
+ 1035              		.loc 1 273 3 is_stmt 1 view .LVU362
+ 1036              		.loc 1 273 13 is_stmt 0 view .LVU363
+ 1037 0036 4696     		str	r6, [sp, #280]
+ 274:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rlen = 1;
+ 1038              		.loc 1 274 3 is_stmt 1 view .LVU364
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 24
+
+
+ 1039              		.loc 1 274 11 is_stmt 0 view .LVU365
+ 1040 0038 0123     		movs	r3, #1
+ 1041 003a 4793     		str	r3, [sp, #284]
+ 275:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
+ 1042              		.loc 1 275 3 is_stmt 1 view .LVU366
+ 1043              		.loc 1 275 8 is_stmt 0 view .LVU367
+ 1044 003c 2146     		mov	r1, r4
+ 1045 003e 42A8     		add	r0, sp, #264
+ 1046 0040 FFF7FEFF 		bl	hci_send_req
+ 1047              	.LVL118:
+ 1048              		.loc 1 275 6 discriminator 1 view .LVU368
+ 1049 0044 A042     		cmp	r0, r4
+ 1050 0046 03DB     		blt	.L32
+ 276:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 277:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   return status;
+ 1051              		.loc 1 277 3 is_stmt 1 view .LVU369
+ 1052              		.loc 1 277 10 is_stmt 0 view .LVU370
+ 1053 0048 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 1054              	.L31:
+ 278:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ 1055              		.loc 1 278 1 view .LVU371
+ 1056 004c 48B0     		add	sp, sp, #288
+ 1057              	.LCFI30:
+ 1058              		.cfi_remember_state
+ 1059              		.cfi_def_cfa_offset 16
+ 1060              		@ sp needed
+ 1061 004e 70BD     		pop	{r4, r5, r6, pc}
+ 1062              	.LVL119:
+ 1063              	.L32:
+ 1064              	.LCFI31:
+ 1065              		.cfi_restore_state
+ 276:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 1066              		.loc 1 276 12 view .LVU372
+ 1067 0050 FF20     		movs	r0, #255
+ 1068 0052 FBE7     		b	.L31
+ 1069              		.cfi_endproc
+ 1070              	.LFE7:
+ 1072              		.section	.text.aci_l2cap_coc_tx_data,"ax",%progbits
+ 1073              		.align	1
+ 1074              		.global	aci_l2cap_coc_tx_data
+ 1075              		.syntax unified
+ 1076              		.thumb
+ 1077              		.thumb_func
+ 1079              	aci_l2cap_coc_tx_data:
+ 1080              	.LVL120:
+ 1081              	.LFB8:
+ 279:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** 
+ 280:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** tBleStatus aci_l2cap_coc_tx_data( uint8_t Channel_Index,
+ 281:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                   uint16_t Length,
+ 282:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****                                   const uint8_t* Data )
+ 283:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** {
+ 1082              		.loc 1 283 1 is_stmt 1 view -0
+ 1083              		.cfi_startproc
+ 1084              		@ args = 0, pretend = 0, frame = 288
+ 1085              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1086              		.loc 1 283 1 is_stmt 0 view .LVU374
+ 1087 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 25
+
+
+ 1088              	.LCFI32:
+ 1089              		.cfi_def_cfa_offset 20
+ 1090              		.cfi_offset 4, -20
+ 1091              		.cfi_offset 5, -16
+ 1092              		.cfi_offset 6, -12
+ 1093              		.cfi_offset 7, -8
+ 1094              		.cfi_offset 14, -4
+ 1095 0002 C9B0     		sub	sp, sp, #292
+ 1096              	.LCFI33:
+ 1097              		.cfi_def_cfa_offset 312
+ 1098 0004 0C46     		mov	r4, r1
+ 1099 0006 1146     		mov	r1, r2
+ 1100              	.LVL121:
+ 284:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   struct hci_request rq;
+ 1101              		.loc 1 284 3 is_stmt 1 view .LVU375
+ 285:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   uint8_t cmd_buffer[BLE_CMD_MAX_PARAM_LEN];
+ 1102              		.loc 1 285 3 view .LVU376
+ 286:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   aci_l2cap_coc_tx_data_cp0 *cp0 = (aci_l2cap_coc_tx_data_cp0*)(cmd_buffer);
+ 1103              		.loc 1 286 3 view .LVU377
+ 287:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   tBleStatus status = 0;
+ 1104              		.loc 1 287 3 view .LVU378
+ 1105              		.loc 1 287 14 is_stmt 0 view .LVU379
+ 1106 0008 0DF10707 		add	r7, sp, #7
+ 1107 000c 0025     		movs	r5, #0
+ 1108 000e 8DF80750 		strb	r5, [sp, #7]
+ 288:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   int index_input = 0;
+ 1109              		.loc 1 288 3 is_stmt 1 view .LVU380
+ 1110              	.LVL122:
+ 289:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Channel_Index = Channel_Index;
+ 1111              		.loc 1 289 3 view .LVU381
+ 1112              		.loc 1 289 22 is_stmt 0 view .LVU382
+ 1113 0012 02AE     		add	r6, sp, #8
+ 1114              	.LVL123:
+ 1115              		.loc 1 289 22 view .LVU383
+ 1116 0014 8DF80800 		strb	r0, [sp, #8]
+ 290:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 1;
+ 1117              		.loc 1 290 3 is_stmt 1 view .LVU384
+ 1118              	.LVL124:
+ 291:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   cp0->Length = Length;
+ 1119              		.loc 1 291 3 view .LVU385
+ 1120              		.loc 1 291 15 is_stmt 0 view .LVU386
+ 1121 0018 ADF80940 		strh	r4, [sp, #9]	@ unaligned
+ 292:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += 2;
+ 1122              		.loc 1 292 3 is_stmt 1 view .LVU387
+ 1123              	.LVL125:
+ 293:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemCpy( (void*)&cp0->Data, (const void*)Data, Length );
+ 1124              		.loc 1 293 3 view .LVU388
+ 1125 001c 2246     		mov	r2, r4
+ 1126              	.LVL126:
+ 1127              		.loc 1 293 3 is_stmt 0 view .LVU389
+ 1128 001e 0DF10B00 		add	r0, sp, #11
+ 1129              	.LVL127:
+ 1130              		.loc 1 293 3 view .LVU390
+ 1131 0022 FFF7FEFF 		bl	Osal_MemCpy
+ 1132              	.LVL128:
+ 294:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   index_input += Length;
+ 1133              		.loc 1 294 3 is_stmt 1 view .LVU391
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 26
+
+
+ 1134              		.loc 1 294 15 is_stmt 0 view .LVU392
+ 1135 0026 0334     		adds	r4, r4, #3
+ 1136              	.LVL129:
+ 295:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   Osal_MemSet( &rq, 0, sizeof(rq) );
+ 1137              		.loc 1 295 3 is_stmt 1 view .LVU393
+ 1138 0028 1822     		movs	r2, #24
+ 1139 002a 2946     		mov	r1, r5
+ 1140 002c 42A8     		add	r0, sp, #264
+ 1141 002e FFF7FEFF 		bl	Osal_MemSet
+ 1142              	.LVL130:
+ 296:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ogf = 0x3f;
+ 1143              		.loc 1 296 3 view .LVU394
+ 1144              		.loc 1 296 10 is_stmt 0 view .LVU395
+ 1145 0032 3F23     		movs	r3, #63
+ 1146 0034 ADF80831 		strh	r3, [sp, #264]	@ movhi
+ 297:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.ocf = 0x18e;
+ 1147              		.loc 1 297 3 is_stmt 1 view .LVU396
+ 1148              		.loc 1 297 10 is_stmt 0 view .LVU397
+ 1149 0038 4FF4C773 		mov	r3, #398
+ 1150 003c ADF80A31 		strh	r3, [sp, #266]	@ movhi
+ 298:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.cparam = cmd_buffer;
+ 1151              		.loc 1 298 3 is_stmt 1 view .LVU398
+ 1152              		.loc 1 298 13 is_stmt 0 view .LVU399
+ 1153 0040 4496     		str	r6, [sp, #272]
+ 299:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.clen = index_input;
+ 1154              		.loc 1 299 3 is_stmt 1 view .LVU400
+ 1155              		.loc 1 299 11 is_stmt 0 view .LVU401
+ 1156 0042 4594     		str	r4, [sp, #276]
+ 300:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rparam = &status;
+ 1157              		.loc 1 300 3 is_stmt 1 view .LVU402
+ 1158              		.loc 1 300 13 is_stmt 0 view .LVU403
+ 1159 0044 4697     		str	r7, [sp, #280]
+ 301:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   rq.rlen = 1;
+ 1160              		.loc 1 301 3 is_stmt 1 view .LVU404
+ 1161              		.loc 1 301 11 is_stmt 0 view .LVU405
+ 1162 0046 0123     		movs	r3, #1
+ 1163 0048 4793     		str	r3, [sp, #284]
+ 302:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   if ( hci_send_req(&rq, FALSE) < 0 )
+ 1164              		.loc 1 302 3 is_stmt 1 view .LVU406
+ 1165              		.loc 1 302 8 is_stmt 0 view .LVU407
+ 1166 004a 2946     		mov	r1, r5
+ 1167 004c 42A8     		add	r0, sp, #264
+ 1168 004e FFF7FEFF 		bl	hci_send_req
+ 1169              	.LVL131:
+ 1170              		.loc 1 302 6 discriminator 1 view .LVU408
+ 1171 0052 A842     		cmp	r0, r5
+ 1172 0054 03DB     		blt	.L36
+ 303:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 304:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****   return status;
+ 1173              		.loc 1 304 3 is_stmt 1 view .LVU409
+ 1174              		.loc 1 304 10 is_stmt 0 view .LVU410
+ 1175 0056 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 1176              	.L35:
+ 305:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c **** }
+ 1177              		.loc 1 305 1 view .LVU411
+ 1178 005a 49B0     		add	sp, sp, #292
+ 1179              	.LCFI34:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 27
+
+
+ 1180              		.cfi_remember_state
+ 1181              		.cfi_def_cfa_offset 20
+ 1182              		@ sp needed
+ 1183 005c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1184              	.LVL132:
+ 1185              	.L36:
+ 1186              	.LCFI35:
+ 1187              		.cfi_restore_state
+ 303:Middlewares/ST/STM32_WPAN/ble/core/auto/ble_l2cap_aci.c ****     return BLE_STATUS_TIMEOUT;
+ 1188              		.loc 1 303 12 view .LVU412
+ 1189 005e FF20     		movs	r0, #255
+ 1190 0060 FBE7     		b	.L35
+ 1191              		.cfi_endproc
+ 1192              	.LFE8:
+ 1194              		.text
+ 1195              	.Letext0:
+ 1196              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 1197              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 1198              		.file 4 "Middlewares/ST/STM32_WPAN/ble/core/template/ble_const.h"
+ 1199              		.file 5 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h"
+ 1200              		.file 6 "Middlewares/ST/STM32_WPAN/ble/core/template/osal.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s 			page 28
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ble_l2cap_aci.c
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:21     .text.aci_l2cap_connection_parameter_update_req:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:27     .text.aci_l2cap_connection_parameter_update_req:00000000 aci_l2cap_connection_parameter_update_req
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:156    .text.aci_l2cap_connection_parameter_update_resp:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:162    .text.aci_l2cap_connection_parameter_update_resp:00000000 aci_l2cap_connection_parameter_update_resp
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:311    .text.aci_l2cap_coc_connect:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:317    .text.aci_l2cap_coc_connect:00000000 aci_l2cap_coc_connect
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:448    .text.aci_l2cap_coc_connect_confirm:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:454    .text.aci_l2cap_coc_connect_confirm:00000000 aci_l2cap_coc_connect_confirm
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:614    .text.aci_l2cap_coc_reconf:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:620    .text.aci_l2cap_coc_reconf:00000000 aci_l2cap_coc_reconf
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:748    .text.aci_l2cap_coc_reconf_confirm:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:754    .text.aci_l2cap_coc_reconf_confirm:00000000 aci_l2cap_coc_reconf_confirm
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:859    .text.aci_l2cap_coc_disconnect:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:865    .text.aci_l2cap_coc_disconnect:00000000 aci_l2cap_coc_disconnect
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:962    .text.aci_l2cap_coc_flow_control:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:968    .text.aci_l2cap_coc_flow_control:00000000 aci_l2cap_coc_flow_control
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:1073   .text.aci_l2cap_coc_tx_data:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccj85zPZ.s:1079   .text.aci_l2cap_coc_tx_data:00000000 aci_l2cap_coc_tx_data
+
+UNDEFINED SYMBOLS
+Osal_MemSet
+hci_send_req
+Osal_MemCpy

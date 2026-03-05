@@ -1,0 +1,894 @@
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"hw_uart.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/hw_uart.c"
+  20              		.section	.text.HW_UART_Receive_IT,"ax",%progbits
+  21              		.align	1
+  22              		.global	HW_UART_Receive_IT
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	HW_UART_Receive_IT:
+  28              	.LVL0:
+  29              	.LFB1261:
+   1:Core/Src/hw_uart.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/hw_uart.c **** /**
+   3:Core/Src/hw_uart.c ****   ******************************************************************************
+   4:Core/Src/hw_uart.c ****   * @file    Src/hw_uart.c
+   5:Core/Src/hw_uart.c ****   * @author  MCD Application Team
+   6:Core/Src/hw_uart.c ****   * @brief   HW UART source file for STM32WPAN Middleware.
+   7:Core/Src/hw_uart.c ****   ******************************************************************************
+   8:Core/Src/hw_uart.c ****   * @attention
+   9:Core/Src/hw_uart.c ****   *
+  10:Core/Src/hw_uart.c ****   * Copyright (c) 2026 STMicroelectronics.
+  11:Core/Src/hw_uart.c ****   * All rights reserved.
+  12:Core/Src/hw_uart.c ****   *
+  13:Core/Src/hw_uart.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:Core/Src/hw_uart.c ****   * in the root directory of this software component.
+  15:Core/Src/hw_uart.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:Core/Src/hw_uart.c ****   *
+  17:Core/Src/hw_uart.c ****   ******************************************************************************
+  18:Core/Src/hw_uart.c ****   */
+  19:Core/Src/hw_uart.c **** /* USER CODE END Header */
+  20:Core/Src/hw_uart.c **** 
+  21:Core/Src/hw_uart.c **** /* Includes ------------------------------------------------------------------*/
+  22:Core/Src/hw_uart.c **** #include "app_common.h"
+  23:Core/Src/hw_uart.c **** #include "hw_conf.h"
+  24:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_ENABLED == 1)
+  25:Core/Src/hw_uart.c **** extern UART_HandleTypeDef hlpuart1;
+  26:Core/Src/hw_uart.c **** #endif
+  27:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_ENABLED == 1)
+  28:Core/Src/hw_uart.c **** extern UART_HandleTypeDef huart1;
+  29:Core/Src/hw_uart.c **** #endif
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 2
+
+
+  30:Core/Src/hw_uart.c **** 
+  31:Core/Src/hw_uart.c **** /* Macros --------------------------------------------------------------------*/
+  32:Core/Src/hw_uart.c **** #define HW_UART_RX_IT(__HANDLE__, __USART_BASE__)                                                  
+  33:Core/Src/hw_uart.c ****         do{                                                                                        
+  34:Core/Src/hw_uart.c ****             HW_##__HANDLE__##RxCb = cb;                                                            
+  35:Core/Src/hw_uart.c ****             (__HANDLE__).Instance = (__USART_BASE__);                                              
+  36:Core/Src/hw_uart.c ****             HAL_UART_Receive_IT(&(__HANDLE__), p_data, size);                                      
+  37:Core/Src/hw_uart.c ****         } while(0)
+  38:Core/Src/hw_uart.c **** 
+  39:Core/Src/hw_uart.c **** #define HW_UART_TX_IT(__HANDLE__, __USART_BASE__)                                                  
+  40:Core/Src/hw_uart.c ****         do{                                                                                        
+  41:Core/Src/hw_uart.c ****             HW_##__HANDLE__##TxCb = cb;                                                            
+  42:Core/Src/hw_uart.c ****             (__HANDLE__).Instance = (__USART_BASE__);                                              
+  43:Core/Src/hw_uart.c ****             HAL_UART_Transmit_IT(&(__HANDLE__), p_data, size);                                     
+  44:Core/Src/hw_uart.c ****         } while(0)
+  45:Core/Src/hw_uart.c **** 
+  46:Core/Src/hw_uart.c **** #define HW_UART_TX(__HANDLE__, __USART_BASE__)                                                     
+  47:Core/Src/hw_uart.c ****         do{                                                                                        
+  48:Core/Src/hw_uart.c ****             (__HANDLE__).Instance = (__USART_BASE__);                                              
+  49:Core/Src/hw_uart.c ****             hal_status = HAL_UART_Transmit(&(__HANDLE__), p_data, size, timeout);                  
+  50:Core/Src/hw_uart.c ****         } while(0)
+  51:Core/Src/hw_uart.c **** 
+  52:Core/Src/hw_uart.c **** /* Variables -----------------------------------------------------------------*/
+  53:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_ENABLED == 1)
+  54:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_DMA_TX_SUPPORTED == 1)
+  55:Core/Src/hw_uart.c ****     DMA_HandleTypeDef HW_hdma_huart1_tx ={0};
+  56:Core/Src/hw_uart.c **** #endif
+  57:Core/Src/hw_uart.c ****     void (*HW_huart1RxCb)(void);
+  58:Core/Src/hw_uart.c ****     void (*HW_huart1TxCb)(void);
+  59:Core/Src/hw_uart.c **** #endif
+  60:Core/Src/hw_uart.c **** 
+  61:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_ENABLED == 1)
+  62:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_DMA_TX_SUPPORTED == 1)
+  63:Core/Src/hw_uart.c ****     DMA_HandleTypeDef HW_hdma_hlpuart1_tx ={0};
+  64:Core/Src/hw_uart.c **** #endif
+  65:Core/Src/hw_uart.c ****     void (*HW_hlpuart1RxCb)(void);
+  66:Core/Src/hw_uart.c ****     void (*HW_hlpuart1TxCb)(void);
+  67:Core/Src/hw_uart.c **** #endif
+  68:Core/Src/hw_uart.c **** 
+  69:Core/Src/hw_uart.c **** void HW_UART_Receive_IT(hw_uart_id_t hw_uart_id, uint8_t *p_data, uint16_t size, void (*cb)(void))
+  70:Core/Src/hw_uart.c **** {
+  30              		.loc 1 70 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  71:Core/Src/hw_uart.c ****     switch (hw_uart_id)
+  34              		.loc 1 71 5 view .LVU1
+  35 0000 00B1     		cbz	r0, .L7
+  36 0002 7047     		bx	lr
+  37              	.L7:
+  70:Core/Src/hw_uart.c ****     switch (hw_uart_id)
+  38              		.loc 1 70 1 is_stmt 0 view .LVU2
+  39 0004 08B5     		push	{r3, lr}
+  40              	.LCFI0:
+  41              		.cfi_def_cfa_offset 8
+  42              		.cfi_offset 3, -8
+  43              		.cfi_offset 14, -4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 3
+
+
+  72:Core/Src/hw_uart.c ****     {
+  73:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_ENABLED == 1)
+  74:Core/Src/hw_uart.c ****         case hw_uart1:
+  75:Core/Src/hw_uart.c ****             HW_UART_RX_IT(huart1, USART1);
+  44              		.loc 1 75 13 is_stmt 1 view .LVU3
+  45              		.loc 1 75 13 view .LVU4
+  46 0006 0448     		ldr	r0, .L8
+  47              	.LVL1:
+  48              		.loc 1 75 13 is_stmt 0 view .LVU5
+  49 0008 0360     		str	r3, [r0]
+  50              		.loc 1 75 13 is_stmt 1 view .LVU6
+  51 000a 0448     		ldr	r0, .L8+4
+  52 000c 044B     		ldr	r3, .L8+8
+  53              	.LVL2:
+  54              		.loc 1 75 13 is_stmt 0 view .LVU7
+  55 000e 0360     		str	r3, [r0]
+  56              		.loc 1 75 13 is_stmt 1 view .LVU8
+  57 0010 FFF7FEFF 		bl	HAL_UART_Receive_IT
+  58              	.LVL3:
+  59              		.loc 1 75 13 discriminator 1 view .LVU9
+  76:Core/Src/hw_uart.c ****             break;
+  60              		.loc 1 76 13 view .LVU10
+  77:Core/Src/hw_uart.c **** #endif
+  78:Core/Src/hw_uart.c **** 
+  79:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_ENABLED == 1)
+  80:Core/Src/hw_uart.c ****         case hw_lpuart1:
+  81:Core/Src/hw_uart.c ****             HW_UART_RX_IT(hlpuart1, LPUART1);
+  82:Core/Src/hw_uart.c ****             break;
+  83:Core/Src/hw_uart.c **** #endif
+  84:Core/Src/hw_uart.c **** 
+  85:Core/Src/hw_uart.c ****         default:
+  86:Core/Src/hw_uart.c ****             break;
+  87:Core/Src/hw_uart.c ****     }
+  88:Core/Src/hw_uart.c **** 
+  89:Core/Src/hw_uart.c ****     return;
+  61              		.loc 1 89 5 view .LVU11
+  90:Core/Src/hw_uart.c **** }
+  62              		.loc 1 90 1 is_stmt 0 view .LVU12
+  63 0014 08BD     		pop	{r3, pc}
+  64              	.L9:
+  65 0016 00BF     		.align	2
+  66              	.L8:
+  67 0018 00000000 		.word	HW_huart1RxCb
+  68 001c 00000000 		.word	huart1
+  69 0020 00380140 		.word	1073821696
+  70              		.cfi_endproc
+  71              	.LFE1261:
+  73              		.section	.text.HW_UART_Transmit_IT,"ax",%progbits
+  74              		.align	1
+  75              		.global	HW_UART_Transmit_IT
+  76              		.syntax unified
+  77              		.thumb
+  78              		.thumb_func
+  80              	HW_UART_Transmit_IT:
+  81              	.LVL4:
+  82              	.LFB1262:
+  91:Core/Src/hw_uart.c **** 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 4
+
+
+  92:Core/Src/hw_uart.c **** void HW_UART_Transmit_IT(hw_uart_id_t hw_uart_id, uint8_t *p_data, uint16_t size,  void (*cb)(void)
+  93:Core/Src/hw_uart.c **** {
+  83              		.loc 1 93 1 is_stmt 1 view -0
+  84              		.cfi_startproc
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  94:Core/Src/hw_uart.c ****     switch (hw_uart_id)
+  87              		.loc 1 94 5 view .LVU14
+  88 0000 00B1     		cbz	r0, .L16
+  89 0002 7047     		bx	lr
+  90              	.L16:
+  93:Core/Src/hw_uart.c ****     switch (hw_uart_id)
+  91              		.loc 1 93 1 is_stmt 0 view .LVU15
+  92 0004 08B5     		push	{r3, lr}
+  93              	.LCFI1:
+  94              		.cfi_def_cfa_offset 8
+  95              		.cfi_offset 3, -8
+  96              		.cfi_offset 14, -4
+  95:Core/Src/hw_uart.c ****     {
+  96:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_ENABLED == 1)
+  97:Core/Src/hw_uart.c ****         case hw_uart1:
+  98:Core/Src/hw_uart.c ****             HW_UART_TX_IT(huart1, USART1);
+  97              		.loc 1 98 13 is_stmt 1 view .LVU16
+  98              		.loc 1 98 13 view .LVU17
+  99 0006 0448     		ldr	r0, .L17
+ 100              	.LVL5:
+ 101              		.loc 1 98 13 is_stmt 0 view .LVU18
+ 102 0008 0360     		str	r3, [r0]
+ 103              		.loc 1 98 13 is_stmt 1 view .LVU19
+ 104 000a 0448     		ldr	r0, .L17+4
+ 105 000c 044B     		ldr	r3, .L17+8
+ 106              	.LVL6:
+ 107              		.loc 1 98 13 is_stmt 0 view .LVU20
+ 108 000e 0360     		str	r3, [r0]
+ 109              		.loc 1 98 13 is_stmt 1 view .LVU21
+ 110 0010 FFF7FEFF 		bl	HAL_UART_Transmit_IT
+ 111              	.LVL7:
+ 112              		.loc 1 98 13 discriminator 1 view .LVU22
+  99:Core/Src/hw_uart.c ****             break;
+ 113              		.loc 1 99 13 view .LVU23
+ 100:Core/Src/hw_uart.c **** #endif
+ 101:Core/Src/hw_uart.c **** 
+ 102:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_ENABLED == 1)
+ 103:Core/Src/hw_uart.c ****         case hw_lpuart1:
+ 104:Core/Src/hw_uart.c ****             HW_UART_TX_IT(hlpuart1, LPUART1);
+ 105:Core/Src/hw_uart.c ****             break;
+ 106:Core/Src/hw_uart.c **** #endif
+ 107:Core/Src/hw_uart.c **** 
+ 108:Core/Src/hw_uart.c ****         default:
+ 109:Core/Src/hw_uart.c ****             break;
+ 110:Core/Src/hw_uart.c ****     }
+ 111:Core/Src/hw_uart.c **** 
+ 112:Core/Src/hw_uart.c ****     return;
+ 114              		.loc 1 112 5 view .LVU24
+ 113:Core/Src/hw_uart.c **** }
+ 115              		.loc 1 113 1 is_stmt 0 view .LVU25
+ 116 0014 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 5
+
+
+ 117              	.L18:
+ 118 0016 00BF     		.align	2
+ 119              	.L17:
+ 120 0018 00000000 		.word	HW_huart1TxCb
+ 121 001c 00000000 		.word	huart1
+ 122 0020 00380140 		.word	1073821696
+ 123              		.cfi_endproc
+ 124              	.LFE1262:
+ 126              		.section	.text.HW_UART_Transmit,"ax",%progbits
+ 127              		.align	1
+ 128              		.global	HW_UART_Transmit
+ 129              		.syntax unified
+ 130              		.thumb
+ 131              		.thumb_func
+ 133              	HW_UART_Transmit:
+ 134              	.LVL8:
+ 135              	.LFB1263:
+ 114:Core/Src/hw_uart.c **** 
+ 115:Core/Src/hw_uart.c **** hw_status_t HW_UART_Transmit(hw_uart_id_t hw_uart_id, uint8_t *p_data, uint16_t size,  uint32_t tim
+ 116:Core/Src/hw_uart.c **** {
+ 136              		.loc 1 116 1 is_stmt 1 view -0
+ 137              		.cfi_startproc
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 117:Core/Src/hw_uart.c ****     HAL_StatusTypeDef hal_status = HAL_OK;
+ 140              		.loc 1 117 5 view .LVU27
+ 118:Core/Src/hw_uart.c ****     hw_status_t hw_status = hw_uart_ok;
+ 141              		.loc 1 118 5 view .LVU28
+ 119:Core/Src/hw_uart.c **** 
+ 120:Core/Src/hw_uart.c ****     switch (hw_uart_id)
+ 142              		.loc 1 120 5 view .LVU29
+ 143 0000 08B1     		cbz	r0, .L27
+ 118:Core/Src/hw_uart.c ****     hw_status_t hw_status = hw_uart_ok;
+ 144              		.loc 1 118 17 is_stmt 0 view .LVU30
+ 145 0002 0020     		movs	r0, #0
+ 146              	.LVL9:
+ 121:Core/Src/hw_uart.c ****     {
+ 122:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_ENABLED == 1)
+ 123:Core/Src/hw_uart.c ****         case hw_uart1:
+ 124:Core/Src/hw_uart.c ****             HW_UART_TX(huart1, USART1);
+ 125:Core/Src/hw_uart.c ****             break;
+ 126:Core/Src/hw_uart.c **** #endif
+ 127:Core/Src/hw_uart.c **** 
+ 128:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_ENABLED == 1)
+ 129:Core/Src/hw_uart.c ****         case hw_lpuart1:
+ 130:Core/Src/hw_uart.c ****             HW_UART_TX(hlpuart1, LPUART1);
+ 131:Core/Src/hw_uart.c ****             break;
+ 132:Core/Src/hw_uart.c **** #endif
+ 133:Core/Src/hw_uart.c **** 
+ 134:Core/Src/hw_uart.c ****         default:
+ 135:Core/Src/hw_uart.c ****             break;
+ 136:Core/Src/hw_uart.c ****     }
+ 137:Core/Src/hw_uart.c **** 
+ 138:Core/Src/hw_uart.c ****     switch (hal_status)
+ 139:Core/Src/hw_uart.c ****     {
+ 140:Core/Src/hw_uart.c ****         case HAL_OK:
+ 141:Core/Src/hw_uart.c ****             hw_status = hw_uart_ok;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 6
+
+
+ 142:Core/Src/hw_uart.c ****             break;
+ 143:Core/Src/hw_uart.c **** 
+ 144:Core/Src/hw_uart.c ****         case HAL_ERROR:
+ 145:Core/Src/hw_uart.c ****             hw_status = hw_uart_error;
+ 146:Core/Src/hw_uart.c ****             break;
+ 147:Core/Src/hw_uart.c **** 
+ 148:Core/Src/hw_uart.c ****         case HAL_BUSY:
+ 149:Core/Src/hw_uart.c ****             hw_status = hw_uart_busy;
+ 150:Core/Src/hw_uart.c ****             break;
+ 151:Core/Src/hw_uart.c **** 
+ 152:Core/Src/hw_uart.c ****         case HAL_TIMEOUT:
+ 153:Core/Src/hw_uart.c ****             hw_status = hw_uart_to;
+ 154:Core/Src/hw_uart.c ****             break;
+ 155:Core/Src/hw_uart.c **** 
+ 156:Core/Src/hw_uart.c ****         default:
+ 157:Core/Src/hw_uart.c ****             break;
+ 158:Core/Src/hw_uart.c ****     }
+ 159:Core/Src/hw_uart.c **** 
+ 160:Core/Src/hw_uart.c ****     return hw_status;
+ 147              		.loc 1 160 5 is_stmt 1 view .LVU31
+ 161:Core/Src/hw_uart.c **** }
+ 148              		.loc 1 161 1 is_stmt 0 view .LVU32
+ 149 0004 7047     		bx	lr
+ 150              	.LVL10:
+ 151              	.L27:
+ 116:Core/Src/hw_uart.c ****     HAL_StatusTypeDef hal_status = HAL_OK;
+ 152              		.loc 1 116 1 view .LVU33
+ 153 0006 38B5     		push	{r3, r4, r5, lr}
+ 154              	.LCFI2:
+ 155              		.cfi_def_cfa_offset 16
+ 156              		.cfi_offset 3, -16
+ 157              		.cfi_offset 4, -12
+ 158              		.cfi_offset 5, -8
+ 159              		.cfi_offset 14, -4
+ 160 0008 0446     		mov	r4, r0
+ 124:Core/Src/hw_uart.c ****             break;
+ 161              		.loc 1 124 13 is_stmt 1 view .LVU34
+ 124:Core/Src/hw_uart.c ****             break;
+ 162              		.loc 1 124 13 view .LVU35
+ 163 000a 0748     		ldr	r0, .L28
+ 164              	.LVL11:
+ 124:Core/Src/hw_uart.c ****             break;
+ 165              		.loc 1 124 13 is_stmt 0 view .LVU36
+ 166 000c 074D     		ldr	r5, .L28+4
+ 167 000e 0560     		str	r5, [r0]
+ 124:Core/Src/hw_uart.c ****             break;
+ 168              		.loc 1 124 13 is_stmt 1 view .LVU37
+ 169 0010 FFF7FEFF 		bl	HAL_UART_Transmit
+ 170              	.LVL12:
+ 124:Core/Src/hw_uart.c ****             break;
+ 171              		.loc 1 124 13 discriminator 1 view .LVU38
+ 125:Core/Src/hw_uart.c **** #endif
+ 172              		.loc 1 125 13 view .LVU39
+ 138:Core/Src/hw_uart.c ****     {
+ 173              		.loc 1 138 5 view .LVU40
+ 174 0014 0228     		cmp	r0, #2
+ 175 0016 03D0     		beq	.L20
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 7
+
+
+ 176 0018 0328     		cmp	r0, #3
+ 177 001a 01D0     		beq	.L20
+ 178 001c 0128     		cmp	r0, #1
+ 179 001e 00D1     		bne	.L22
+ 180              	.LVL13:
+ 181              	.L20:
+ 160:Core/Src/hw_uart.c **** }
+ 182              		.loc 1 160 5 view .LVU41
+ 183              		.loc 1 161 1 is_stmt 0 view .LVU42
+ 184 0020 38BD     		pop	{r3, r4, r5, pc}
+ 185              	.LVL14:
+ 186              	.L22:
+ 138:Core/Src/hw_uart.c ****     {
+ 187              		.loc 1 138 5 view .LVU43
+ 188 0022 2046     		mov	r0, r4
+ 189              	.LVL15:
+ 138:Core/Src/hw_uart.c ****     {
+ 190              		.loc 1 138 5 view .LVU44
+ 191 0024 FCE7     		b	.L20
+ 192              	.L29:
+ 193 0026 00BF     		.align	2
+ 194              	.L28:
+ 195 0028 00000000 		.word	huart1
+ 196 002c 00380140 		.word	1073821696
+ 197              		.cfi_endproc
+ 198              	.LFE1263:
+ 200              		.section	.text.HW_UART_Transmit_DMA,"ax",%progbits
+ 201              		.align	1
+ 202              		.global	HW_UART_Transmit_DMA
+ 203              		.syntax unified
+ 204              		.thumb
+ 205              		.thumb_func
+ 207              	HW_UART_Transmit_DMA:
+ 208              	.LVL16:
+ 209              	.LFB1264:
+ 162:Core/Src/hw_uart.c **** 
+ 163:Core/Src/hw_uart.c **** hw_status_t HW_UART_Transmit_DMA(hw_uart_id_t hw_uart_id, uint8_t *p_data, uint16_t size, void (*cb
+ 164:Core/Src/hw_uart.c **** {
+ 210              		.loc 1 164 1 is_stmt 1 view -0
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165:Core/Src/hw_uart.c ****     HAL_StatusTypeDef hal_status = HAL_OK;
+ 214              		.loc 1 165 5 view .LVU46
+ 166:Core/Src/hw_uart.c ****     hw_status_t hw_status = hw_uart_ok;
+ 215              		.loc 1 166 5 view .LVU47
+ 167:Core/Src/hw_uart.c **** 
+ 168:Core/Src/hw_uart.c ****     switch (hw_uart_id)
+ 216              		.loc 1 168 5 view .LVU48
+ 217 0000 08B1     		cbz	r0, .L38
+ 166:Core/Src/hw_uart.c ****     hw_status_t hw_status = hw_uart_ok;
+ 218              		.loc 1 166 17 is_stmt 0 view .LVU49
+ 219 0002 0020     		movs	r0, #0
+ 220              	.LVL17:
+ 169:Core/Src/hw_uart.c ****     {
+ 170:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_ENABLED == 1)
+ 171:Core/Src/hw_uart.c ****         case hw_uart1:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 8
+
+
+ 172:Core/Src/hw_uart.c ****             HW_huart1TxCb = cb;
+ 173:Core/Src/hw_uart.c ****             huart1.Instance = USART1;
+ 174:Core/Src/hw_uart.c ****             hal_status = HAL_UART_Transmit_DMA(&huart1, p_data, size);
+ 175:Core/Src/hw_uart.c ****             break;
+ 176:Core/Src/hw_uart.c **** #endif
+ 177:Core/Src/hw_uart.c **** 
+ 178:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_ENABLED == 1)
+ 179:Core/Src/hw_uart.c ****         case hw_lpuart1:
+ 180:Core/Src/hw_uart.c ****             HW_hlpuart1TxCb = cb;
+ 181:Core/Src/hw_uart.c ****             hlpuart1.Instance = LPUART1;
+ 182:Core/Src/hw_uart.c ****             hal_status = HAL_UART_Transmit_DMA(&hlpuart1, p_data, size);
+ 183:Core/Src/hw_uart.c ****             break;
+ 184:Core/Src/hw_uart.c **** #endif
+ 185:Core/Src/hw_uart.c **** 
+ 186:Core/Src/hw_uart.c ****         default:
+ 187:Core/Src/hw_uart.c ****             break;
+ 188:Core/Src/hw_uart.c ****     }
+ 189:Core/Src/hw_uart.c **** 
+ 190:Core/Src/hw_uart.c ****     switch (hal_status)
+ 191:Core/Src/hw_uart.c ****     {
+ 192:Core/Src/hw_uart.c ****         case HAL_OK:
+ 193:Core/Src/hw_uart.c ****             hw_status = hw_uart_ok;
+ 194:Core/Src/hw_uart.c ****             break;
+ 195:Core/Src/hw_uart.c **** 
+ 196:Core/Src/hw_uart.c ****         case HAL_ERROR:
+ 197:Core/Src/hw_uart.c ****             hw_status = hw_uart_error;
+ 198:Core/Src/hw_uart.c ****             break;
+ 199:Core/Src/hw_uart.c **** 
+ 200:Core/Src/hw_uart.c ****         case HAL_BUSY:
+ 201:Core/Src/hw_uart.c ****             hw_status = hw_uart_busy;
+ 202:Core/Src/hw_uart.c ****             break;
+ 203:Core/Src/hw_uart.c **** 
+ 204:Core/Src/hw_uart.c ****         case HAL_TIMEOUT:
+ 205:Core/Src/hw_uart.c ****             hw_status = hw_uart_to;
+ 206:Core/Src/hw_uart.c ****             break;
+ 207:Core/Src/hw_uart.c **** 
+ 208:Core/Src/hw_uart.c ****         default:
+ 209:Core/Src/hw_uart.c ****             break;
+ 210:Core/Src/hw_uart.c ****     }
+ 211:Core/Src/hw_uart.c **** 
+ 212:Core/Src/hw_uart.c ****     return hw_status;
+ 221              		.loc 1 212 5 is_stmt 1 view .LVU50
+ 213:Core/Src/hw_uart.c **** }
+ 222              		.loc 1 213 1 is_stmt 0 view .LVU51
+ 223 0004 7047     		bx	lr
+ 224              	.LVL18:
+ 225              	.L38:
+ 164:Core/Src/hw_uart.c ****     HAL_StatusTypeDef hal_status = HAL_OK;
+ 226              		.loc 1 164 1 view .LVU52
+ 227 0006 10B5     		push	{r4, lr}
+ 228              	.LCFI3:
+ 229              		.cfi_def_cfa_offset 8
+ 230              		.cfi_offset 4, -8
+ 231              		.cfi_offset 14, -4
+ 232 0008 0446     		mov	r4, r0
+ 172:Core/Src/hw_uart.c ****             huart1.Instance = USART1;
+ 233              		.loc 1 172 13 is_stmt 1 view .LVU53
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 9
+
+
+ 172:Core/Src/hw_uart.c ****             huart1.Instance = USART1;
+ 234              		.loc 1 172 27 is_stmt 0 view .LVU54
+ 235 000a 0848     		ldr	r0, .L39
+ 236              	.LVL19:
+ 172:Core/Src/hw_uart.c ****             huart1.Instance = USART1;
+ 237              		.loc 1 172 27 view .LVU55
+ 238 000c 0360     		str	r3, [r0]
+ 173:Core/Src/hw_uart.c ****             hal_status = HAL_UART_Transmit_DMA(&huart1, p_data, size);
+ 239              		.loc 1 173 13 is_stmt 1 view .LVU56
+ 173:Core/Src/hw_uart.c ****             hal_status = HAL_UART_Transmit_DMA(&huart1, p_data, size);
+ 240              		.loc 1 173 29 is_stmt 0 view .LVU57
+ 241 000e 0848     		ldr	r0, .L39+4
+ 242 0010 084B     		ldr	r3, .L39+8
+ 243              	.LVL20:
+ 173:Core/Src/hw_uart.c ****             hal_status = HAL_UART_Transmit_DMA(&huart1, p_data, size);
+ 244              		.loc 1 173 29 view .LVU58
+ 245 0012 0360     		str	r3, [r0]
+ 174:Core/Src/hw_uart.c ****             break;
+ 246              		.loc 1 174 13 is_stmt 1 view .LVU59
+ 174:Core/Src/hw_uart.c ****             break;
+ 247              		.loc 1 174 26 is_stmt 0 view .LVU60
+ 248 0014 FFF7FEFF 		bl	HAL_UART_Transmit_DMA
+ 249              	.LVL21:
+ 175:Core/Src/hw_uart.c **** #endif
+ 250              		.loc 1 175 13 is_stmt 1 view .LVU61
+ 190:Core/Src/hw_uart.c ****     {
+ 251              		.loc 1 190 5 view .LVU62
+ 252 0018 0228     		cmp	r0, #2
+ 253 001a 03D0     		beq	.L31
+ 254 001c 0328     		cmp	r0, #3
+ 255 001e 01D0     		beq	.L31
+ 256 0020 0128     		cmp	r0, #1
+ 257 0022 00D1     		bne	.L33
+ 258              	.LVL22:
+ 259              	.L31:
+ 212:Core/Src/hw_uart.c **** }
+ 260              		.loc 1 212 5 view .LVU63
+ 261              		.loc 1 213 1 is_stmt 0 view .LVU64
+ 262 0024 10BD     		pop	{r4, pc}
+ 263              	.LVL23:
+ 264              	.L33:
+ 190:Core/Src/hw_uart.c ****     {
+ 265              		.loc 1 190 5 view .LVU65
+ 266 0026 2046     		mov	r0, r4
+ 267              	.LVL24:
+ 190:Core/Src/hw_uart.c ****     {
+ 268              		.loc 1 190 5 view .LVU66
+ 269 0028 FCE7     		b	.L31
+ 270              	.L40:
+ 271 002a 00BF     		.align	2
+ 272              	.L39:
+ 273 002c 00000000 		.word	HW_huart1TxCb
+ 274 0030 00000000 		.word	huart1
+ 275 0034 00380140 		.word	1073821696
+ 276              		.cfi_endproc
+ 277              	.LFE1264:
+ 279              		.section	.text.HW_UART_Interrupt_Handler,"ax",%progbits
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 10
+
+
+ 280              		.align	1
+ 281              		.global	HW_UART_Interrupt_Handler
+ 282              		.syntax unified
+ 283              		.thumb
+ 284              		.thumb_func
+ 286              	HW_UART_Interrupt_Handler:
+ 287              	.LVL25:
+ 288              	.LFB1265:
+ 214:Core/Src/hw_uart.c **** 
+ 215:Core/Src/hw_uart.c **** void HW_UART_Interrupt_Handler(hw_uart_id_t hw_uart_id)
+ 216:Core/Src/hw_uart.c **** {
+ 289              		.loc 1 216 1 is_stmt 1 view -0
+ 290              		.cfi_startproc
+ 291              		@ args = 0, pretend = 0, frame = 0
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 217:Core/Src/hw_uart.c ****     switch (hw_uart_id)
+ 293              		.loc 1 217 5 view .LVU68
+ 294 0000 00B1     		cbz	r0, .L47
+ 295 0002 7047     		bx	lr
+ 296              	.L47:
+ 216:Core/Src/hw_uart.c ****     switch (hw_uart_id)
+ 297              		.loc 1 216 1 is_stmt 0 view .LVU69
+ 298 0004 08B5     		push	{r3, lr}
+ 299              	.LCFI4:
+ 300              		.cfi_def_cfa_offset 8
+ 301              		.cfi_offset 3, -8
+ 302              		.cfi_offset 14, -4
+ 218:Core/Src/hw_uart.c ****     {
+ 219:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_ENABLED == 1)
+ 220:Core/Src/hw_uart.c ****         case hw_uart1:
+ 221:Core/Src/hw_uart.c ****             HAL_UART_IRQHandler(&huart1);
+ 303              		.loc 1 221 13 is_stmt 1 view .LVU70
+ 304 0006 0248     		ldr	r0, .L48
+ 305              	.LVL26:
+ 306              		.loc 1 221 13 is_stmt 0 view .LVU71
+ 307 0008 FFF7FEFF 		bl	HAL_UART_IRQHandler
+ 308              	.LVL27:
+ 222:Core/Src/hw_uart.c ****             break;
+ 309              		.loc 1 222 13 is_stmt 1 view .LVU72
+ 223:Core/Src/hw_uart.c **** #endif
+ 224:Core/Src/hw_uart.c **** 
+ 225:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_ENABLED == 1)
+ 226:Core/Src/hw_uart.c ****         case hw_lpuart1:
+ 227:Core/Src/hw_uart.c ****             HAL_UART_IRQHandler(&hlpuart1);
+ 228:Core/Src/hw_uart.c ****             break;
+ 229:Core/Src/hw_uart.c **** #endif
+ 230:Core/Src/hw_uart.c **** 
+ 231:Core/Src/hw_uart.c ****         default:
+ 232:Core/Src/hw_uart.c ****             break;
+ 233:Core/Src/hw_uart.c ****     }
+ 234:Core/Src/hw_uart.c **** 
+ 235:Core/Src/hw_uart.c ****     return;
+ 310              		.loc 1 235 5 view .LVU73
+ 236:Core/Src/hw_uart.c **** }
+ 311              		.loc 1 236 1 is_stmt 0 view .LVU74
+ 312 000c 08BD     		pop	{r3, pc}
+ 313              	.L49:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 11
+
+
+ 314 000e 00BF     		.align	2
+ 315              	.L48:
+ 316 0010 00000000 		.word	huart1
+ 317              		.cfi_endproc
+ 318              	.LFE1265:
+ 320              		.section	.text.HW_UART_DMA_Interrupt_Handler,"ax",%progbits
+ 321              		.align	1
+ 322              		.global	HW_UART_DMA_Interrupt_Handler
+ 323              		.syntax unified
+ 324              		.thumb
+ 325              		.thumb_func
+ 327              	HW_UART_DMA_Interrupt_Handler:
+ 328              	.LVL28:
+ 329              	.LFB1266:
+ 237:Core/Src/hw_uart.c **** 
+ 238:Core/Src/hw_uart.c **** void HW_UART_DMA_Interrupt_Handler(hw_uart_id_t hw_uart_id)
+ 239:Core/Src/hw_uart.c **** {
+ 330              		.loc 1 239 1 is_stmt 1 view -0
+ 331              		.cfi_startproc
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 0, uses_anonymous_args = 0
+ 334              		@ link register save eliminated.
+ 240:Core/Src/hw_uart.c ****     switch (hw_uart_id)
+ 335              		.loc 1 240 5 view .LVU76
+ 241:Core/Src/hw_uart.c ****     {
+ 242:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_DMA_TX_SUPPORTED == 1)
+ 243:Core/Src/hw_uart.c ****         case hw_uart1:
+ 244:Core/Src/hw_uart.c ****             HAL_DMA_IRQHandler(huart1.hdmatx);
+ 245:Core/Src/hw_uart.c ****             break;
+ 246:Core/Src/hw_uart.c **** #endif
+ 247:Core/Src/hw_uart.c **** 
+ 248:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_DMA_TX_SUPPORTED == 1)
+ 249:Core/Src/hw_uart.c ****         case hw_lpuart1:
+ 250:Core/Src/hw_uart.c ****             HAL_DMA_IRQHandler(hlpuart1.hdmatx);
+ 251:Core/Src/hw_uart.c ****             break;
+ 252:Core/Src/hw_uart.c **** #endif
+ 253:Core/Src/hw_uart.c **** 
+ 254:Core/Src/hw_uart.c ****         default:
+ 255:Core/Src/hw_uart.c ****             break;
+ 336              		.loc 1 255 13 view .LVU77
+ 256:Core/Src/hw_uart.c ****     }
+ 257:Core/Src/hw_uart.c **** 
+ 258:Core/Src/hw_uart.c ****     return;
+ 337              		.loc 1 258 5 view .LVU78
+ 259:Core/Src/hw_uart.c **** }
+ 338              		.loc 1 259 1 is_stmt 0 view .LVU79
+ 339 0000 7047     		bx	lr
+ 340              		.cfi_endproc
+ 341              	.LFE1266:
+ 343              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
+ 344              		.align	1
+ 345              		.global	HAL_UART_RxCpltCallback
+ 346              		.syntax unified
+ 347              		.thumb
+ 348              		.thumb_func
+ 350              	HAL_UART_RxCpltCallback:
+ 351              	.LVL29:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 12
+
+
+ 352              	.LFB1267:
+ 260:Core/Src/hw_uart.c **** 
+ 261:Core/Src/hw_uart.c **** void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+ 262:Core/Src/hw_uart.c **** {
+ 353              		.loc 1 262 1 is_stmt 1 view -0
+ 354              		.cfi_startproc
+ 355              		@ args = 0, pretend = 0, frame = 0
+ 356              		@ frame_needed = 0, uses_anonymous_args = 0
+ 357              		.loc 1 262 1 is_stmt 0 view .LVU81
+ 358 0000 08B5     		push	{r3, lr}
+ 359              	.LCFI5:
+ 360              		.cfi_def_cfa_offset 8
+ 361              		.cfi_offset 3, -8
+ 362              		.cfi_offset 14, -4
+ 263:Core/Src/hw_uart.c ****     switch ((uint32_t)huart->Instance)
+ 363              		.loc 1 263 5 is_stmt 1 view .LVU82
+ 364              		.loc 1 263 28 is_stmt 0 view .LVU83
+ 365 0002 0268     		ldr	r2, [r0]
+ 366              		.loc 1 263 5 view .LVU84
+ 367 0004 044B     		ldr	r3, .L55
+ 368 0006 9A42     		cmp	r2, r3
+ 369 0008 00D0     		beq	.L54
+ 370              	.LVL30:
+ 371              	.L51:
+ 264:Core/Src/hw_uart.c ****     {
+ 265:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_ENABLED == 1)
+ 266:Core/Src/hw_uart.c ****         case (uint32_t)USART1:
+ 267:Core/Src/hw_uart.c ****             if(HW_huart1RxCb)
+ 268:Core/Src/hw_uart.c ****             {
+ 269:Core/Src/hw_uart.c ****                 HW_huart1RxCb();
+ 270:Core/Src/hw_uart.c ****             }
+ 271:Core/Src/hw_uart.c ****             break;
+ 272:Core/Src/hw_uart.c **** #endif
+ 273:Core/Src/hw_uart.c **** 
+ 274:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_ENABLED == 1)
+ 275:Core/Src/hw_uart.c ****         case (uint32_t)LPUART1:
+ 276:Core/Src/hw_uart.c ****             if(HW_hlpuart1RxCb)
+ 277:Core/Src/hw_uart.c ****             {
+ 278:Core/Src/hw_uart.c ****                 HW_hlpuart1RxCb();
+ 279:Core/Src/hw_uart.c ****             }
+ 280:Core/Src/hw_uart.c ****             break;
+ 281:Core/Src/hw_uart.c **** #endif
+ 282:Core/Src/hw_uart.c **** 
+ 283:Core/Src/hw_uart.c ****         default:
+ 284:Core/Src/hw_uart.c ****             break;
+ 285:Core/Src/hw_uart.c ****     }
+ 286:Core/Src/hw_uart.c **** 
+ 287:Core/Src/hw_uart.c ****     return;
+ 288:Core/Src/hw_uart.c **** }
+ 372              		.loc 1 288 1 view .LVU85
+ 373 000a 08BD     		pop	{r3, pc}
+ 374              	.LVL31:
+ 375              	.L54:
+ 267:Core/Src/hw_uart.c ****             {
+ 376              		.loc 1 267 13 is_stmt 1 view .LVU86
+ 267:Core/Src/hw_uart.c ****             {
+ 377              		.loc 1 267 16 is_stmt 0 view .LVU87
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 13
+
+
+ 378 000c 034B     		ldr	r3, .L55+4
+ 379 000e 1B68     		ldr	r3, [r3]
+ 267:Core/Src/hw_uart.c ****             {
+ 380              		.loc 1 267 15 view .LVU88
+ 381 0010 002B     		cmp	r3, #0
+ 382 0012 FAD0     		beq	.L51
+ 269:Core/Src/hw_uart.c ****             }
+ 383              		.loc 1 269 17 is_stmt 1 view .LVU89
+ 384 0014 9847     		blx	r3
+ 385              	.LVL32:
+ 287:Core/Src/hw_uart.c **** }
+ 386              		.loc 1 287 5 view .LVU90
+ 387 0016 F8E7     		b	.L51
+ 388              	.L56:
+ 389              		.align	2
+ 390              	.L55:
+ 391 0018 00380140 		.word	1073821696
+ 392 001c 00000000 		.word	HW_huart1RxCb
+ 393              		.cfi_endproc
+ 394              	.LFE1267:
+ 396              		.section	.text.HAL_UART_TxCpltCallback,"ax",%progbits
+ 397              		.align	1
+ 398              		.global	HAL_UART_TxCpltCallback
+ 399              		.syntax unified
+ 400              		.thumb
+ 401              		.thumb_func
+ 403              	HAL_UART_TxCpltCallback:
+ 404              	.LVL33:
+ 405              	.LFB1268:
+ 289:Core/Src/hw_uart.c **** 
+ 290:Core/Src/hw_uart.c **** void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+ 291:Core/Src/hw_uart.c **** {
+ 406              		.loc 1 291 1 view -0
+ 407              		.cfi_startproc
+ 408              		@ args = 0, pretend = 0, frame = 0
+ 409              		@ frame_needed = 0, uses_anonymous_args = 0
+ 410              		.loc 1 291 1 is_stmt 0 view .LVU92
+ 411 0000 08B5     		push	{r3, lr}
+ 412              	.LCFI6:
+ 413              		.cfi_def_cfa_offset 8
+ 414              		.cfi_offset 3, -8
+ 415              		.cfi_offset 14, -4
+ 292:Core/Src/hw_uart.c ****     switch ((uint32_t)huart->Instance)
+ 416              		.loc 1 292 5 is_stmt 1 view .LVU93
+ 417              		.loc 1 292 28 is_stmt 0 view .LVU94
+ 418 0002 0268     		ldr	r2, [r0]
+ 419              		.loc 1 292 5 view .LVU95
+ 420 0004 044B     		ldr	r3, .L61
+ 421 0006 9A42     		cmp	r2, r3
+ 422 0008 00D0     		beq	.L60
+ 423              	.LVL34:
+ 424              	.L57:
+ 293:Core/Src/hw_uart.c ****     {
+ 294:Core/Src/hw_uart.c **** #if (CFG_HW_USART1_ENABLED == 1)
+ 295:Core/Src/hw_uart.c ****         case (uint32_t)USART1:
+ 296:Core/Src/hw_uart.c ****             if(HW_huart1TxCb)
+ 297:Core/Src/hw_uart.c ****             {
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 14
+
+
+ 298:Core/Src/hw_uart.c ****                 HW_huart1TxCb();
+ 299:Core/Src/hw_uart.c ****             }
+ 300:Core/Src/hw_uart.c ****             break;
+ 301:Core/Src/hw_uart.c **** #endif
+ 302:Core/Src/hw_uart.c **** 
+ 303:Core/Src/hw_uart.c **** #if (CFG_HW_LPUART1_ENABLED == 1)
+ 304:Core/Src/hw_uart.c ****         case (uint32_t)LPUART1:
+ 305:Core/Src/hw_uart.c ****             if(HW_hlpuart1TxCb)
+ 306:Core/Src/hw_uart.c ****             {
+ 307:Core/Src/hw_uart.c ****                 HW_hlpuart1TxCb();
+ 308:Core/Src/hw_uart.c ****             }
+ 309:Core/Src/hw_uart.c ****             break;
+ 310:Core/Src/hw_uart.c **** #endif
+ 311:Core/Src/hw_uart.c **** 
+ 312:Core/Src/hw_uart.c ****         default:
+ 313:Core/Src/hw_uart.c ****             break;
+ 314:Core/Src/hw_uart.c ****     }
+ 315:Core/Src/hw_uart.c **** 
+ 316:Core/Src/hw_uart.c ****     return;
+ 317:Core/Src/hw_uart.c **** }
+ 425              		.loc 1 317 1 view .LVU96
+ 426 000a 08BD     		pop	{r3, pc}
+ 427              	.LVL35:
+ 428              	.L60:
+ 296:Core/Src/hw_uart.c ****             {
+ 429              		.loc 1 296 13 is_stmt 1 view .LVU97
+ 296:Core/Src/hw_uart.c ****             {
+ 430              		.loc 1 296 16 is_stmt 0 view .LVU98
+ 431 000c 034B     		ldr	r3, .L61+4
+ 432 000e 1B68     		ldr	r3, [r3]
+ 296:Core/Src/hw_uart.c ****             {
+ 433              		.loc 1 296 15 view .LVU99
+ 434 0010 002B     		cmp	r3, #0
+ 435 0012 FAD0     		beq	.L57
+ 298:Core/Src/hw_uart.c ****             }
+ 436              		.loc 1 298 17 is_stmt 1 view .LVU100
+ 437 0014 9847     		blx	r3
+ 438              	.LVL36:
+ 316:Core/Src/hw_uart.c **** }
+ 439              		.loc 1 316 5 view .LVU101
+ 440 0016 F8E7     		b	.L57
+ 441              	.L62:
+ 442              		.align	2
+ 443              	.L61:
+ 444 0018 00380140 		.word	1073821696
+ 445 001c 00000000 		.word	HW_huart1TxCb
+ 446              		.cfi_endproc
+ 447              	.LFE1268:
+ 449              		.global	HW_huart1TxCb
+ 450              		.section	.bss.HW_huart1TxCb,"aw",%nobits
+ 451              		.align	2
+ 454              	HW_huart1TxCb:
+ 455 0000 00000000 		.space	4
+ 456              		.global	HW_huart1RxCb
+ 457              		.section	.bss.HW_huart1RxCb,"aw",%nobits
+ 458              		.align	2
+ 461              	HW_huart1RxCb:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 15
+
+
+ 462 0000 00000000 		.space	4
+ 463              		.text
+ 464              	.Letext0:
+ 465              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 466              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 467              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 468              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 469              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 470              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h"
+ 471              		.file 8 "Core/Inc/hw_if.h"
+ 472              		.file 9 "Core/Inc/app_conf.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 hw_uart.c
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:21     .text.HW_UART_Receive_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:27     .text.HW_UART_Receive_IT:00000000 HW_UART_Receive_IT
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:67     .text.HW_UART_Receive_IT:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:461    .bss.HW_huart1RxCb:00000000 HW_huart1RxCb
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:74     .text.HW_UART_Transmit_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:80     .text.HW_UART_Transmit_IT:00000000 HW_UART_Transmit_IT
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:120    .text.HW_UART_Transmit_IT:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:454    .bss.HW_huart1TxCb:00000000 HW_huart1TxCb
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:127    .text.HW_UART_Transmit:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:133    .text.HW_UART_Transmit:00000000 HW_UART_Transmit
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:195    .text.HW_UART_Transmit:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:201    .text.HW_UART_Transmit_DMA:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:207    .text.HW_UART_Transmit_DMA:00000000 HW_UART_Transmit_DMA
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:273    .text.HW_UART_Transmit_DMA:0000002c $d
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:280    .text.HW_UART_Interrupt_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:286    .text.HW_UART_Interrupt_Handler:00000000 HW_UART_Interrupt_Handler
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:316    .text.HW_UART_Interrupt_Handler:00000010 $d
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:321    .text.HW_UART_DMA_Interrupt_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:327    .text.HW_UART_DMA_Interrupt_Handler:00000000 HW_UART_DMA_Interrupt_Handler
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:344    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:350    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:391    .text.HAL_UART_RxCpltCallback:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:397    .text.HAL_UART_TxCpltCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:403    .text.HAL_UART_TxCpltCallback:00000000 HAL_UART_TxCpltCallback
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:444    .text.HAL_UART_TxCpltCallback:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:451    .bss.HW_huart1TxCb:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccSFJjIt.s:458    .bss.HW_huart1RxCb:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_UART_Receive_IT
+huart1
+HAL_UART_Transmit_IT
+HAL_UART_Transmit
+HAL_UART_Transmit_DMA
+HAL_UART_IRQHandler

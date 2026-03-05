@@ -1,0 +1,29 @@
+{
+    "cortex-debug.gdbPath": "C:/dev/tools/gcc-arm-none-eabi-13.3/bin/arm-none-eabi-gdb",
+    "cortex-debug.openocdPath": "C:/dev/tools/opencd/bin/openocd",
+    
+    "terminal.integrated.profiles.windows" : {
+        "msys mingw64": {
+            "path": "C:/msys64/msys2_shell.cmd",
+            "args": [
+                "-defterm",
+                "-here",
+                "-no-start",
+                "-mingw64"
+            ]
+        }
+    },
+
+    "terminal.integrated.defaultProfile.windows": "msys mingw64",
+
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c",
+        "compare": "c"
+    },
+
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "makefile.makefilePath": "${workspaceFolder}/Makefile",
+    "cortex-debug.variableUseNaturalFormat": true,
+
+}

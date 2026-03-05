@@ -1,0 +1,2123 @@
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"tl_mbox.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c"
+  20              		.section	.text.SendFreeBuf,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	SendFreeBuf:
+  27              	.LFB1274:
+   1:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /**
+   2:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************
+   3:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * @file    tl_mbox.c
+   4:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * @author  MCD Application Team
+   5:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * @brief   Transport layer for the mailbox interface
+   6:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************
+   7:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * @attention
+   8:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  *
+   9:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * Copyright (c) 2018-2021 STMicroelectronics.
+  10:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * All rights reserved.
+  11:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  *
+  12:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * This software is licensed under terms that can be found in the LICENSE file
+  13:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * in the root directory of this software component.
+  14:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  *
+  16:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************
+  17:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  */
+  18:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  19:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Includes ------------------------------------------------------------------*/
+  20:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #include "stm32_wpan_common.h"
+  21:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #include "hw.h"
+  22:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  23:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #include "stm_list.h"
+  24:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #include "tl.h"
+  25:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #include "mbox_def.h"
+  26:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #include "tl_dbg_conf.h"
+  27:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  28:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Private typedef -----------------------------------------------------------*/
+  29:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** typedef enum
+  30:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+  31:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MB_MM_RELEASE_BUFFER,
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 2
+
+
+  32:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MB_BLE_CMD,
+  33:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MB_BLE_CMD_RSP,
+  34:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MB_ACL_DATA,
+  35:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MB_ACL_DATA_RSP,
+  36:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MB_BLE_ASYNCH_EVT,
+  37:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MB_SYS_CMD,
+  38:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MB_SYS_CMD_RSP,
+  39:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MB_SYS_ASYNCH_EVT,
+  40:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** } TL_MB_PacketType_t;
+  41:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  42:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Private defines -----------------------------------------------------------*/
+  43:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Private macros ------------------------------------------------------------*/
+  44:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Private variables ---------------------------------------------------------*/
+  45:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  46:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /**< reference table */
+  47:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MAPPING_TABLE") static volatile MB_RefTable_t TL_RefTable;
+  48:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static MB_DeviceInfoTable_t TL_DeviceInfoTable;
+  49:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static MB_BleTable_t TL_BleTable;
+  50:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static MB_ThreadTable_t TL_ThreadTable;
+  51:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static MB_LldTestsTable_t TL_LldTestsTable;
+  52:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static MB_BleLldTable_t TL_BleLldTable;
+  53:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static MB_SysTable_t TL_SysTable;
+  54:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static MB_MemManagerTable_t TL_MemManagerTable;
+  55:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static MB_TracesTable_t TL_TracesTable;
+  56:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static MB_Mac_802_15_4_t TL_Mac_802_15_4_Table;
+  57:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static MB_ZigbeeTable_t TL_Zigbee_Table;
+  58:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  59:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /**< tables */
+  60:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static tListNode  FreeBufQueue;
+  61:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static tListNode  TracesEvtQueue;
+  62:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM2") ALIGN(4) static uint8_t    CsBuffer[sizeof(TL_PacketHeader_t) + TL_EVT_
+  63:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static tListNode  EvtQueue;
+  64:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** PLACE_IN_SECTION("MB_MEM1") ALIGN(4) static tListNode  SystemEvtQueue;
+  65:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  66:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  67:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** static tListNode  LocalFreeBufQueue;
+  68:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** static void (* BLE_IoBusEvtCallBackFunction) (TL_EvtPacket_t *phcievt);
+  69:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** static void (* BLE_IoBusAclDataTxAck) ( void );
+  70:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** static void (* SYS_CMD_IoBusCallBackFunction) (TL_EvtPacket_t *phcievt);
+  71:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** static void (* SYS_EVT_IoBusCallBackFunction) (TL_EvtPacket_t *phcievt);
+  72:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  73:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  74:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Global variables ----------------------------------------------------------*/
+  75:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Private function prototypes -----------------------------------------------*/
+  76:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** static void SendFreeBuf( void );
+  77:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** static void OutputDbgTrace(TL_MB_PacketType_t packet_type, uint8_t* buffer);
+  78:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  79:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Public Functions Definition ------------------------------------------------------*/
+  80:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  81:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /******************************************************************************
+  82:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * GENERAL - refer to AN5289 for functions description.
+  83:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************/
+  84:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_Enable( void )
+  85:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+  86:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_Enable();
+  87:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  88:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 3
+
+
+  89:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+  90:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  91:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  92:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_Init( void )
+  93:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+  94:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_device_info_table = &TL_DeviceInfoTable;
+  95:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_ble_table = &TL_BleTable;
+  96:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_thread_table = &TL_ThreadTable;
+  97:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_lld_tests_table = &TL_LldTestsTable;
+  98:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_ble_lld_table = &TL_BleLldTable;
+  99:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_sys_table = &TL_SysTable;
+ 100:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_mem_manager_table = &TL_MemManagerTable;
+ 101:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_traces_table = &TL_TracesTable;
+ 102:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_mac_802_15_4_table = &TL_Mac_802_15_4_Table;
+ 103:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_zigbee_table = &TL_Zigbee_Table;
+ 104:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_Init();
+ 105:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 106:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 107:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 108:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 109:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /******************************************************************************
+ 110:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * BLE
+ 111:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************/
+ 112:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** int32_t TL_BLE_Init( void* pConf )
+ 113:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 114:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_BleTable_t  * p_bletable;
+ 115:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 116:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_BLE_InitConf_t *pInitHciConf = (TL_BLE_InitConf_t *) pConf;
+ 117:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 118:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   LST_init_head (&EvtQueue);
+ 119:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 120:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable = TL_RefTable.p_ble_table;
+ 121:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 122:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->pcmd_buffer = pInitHciConf->p_cmdbuffer;
+ 123:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->phci_acl_data_buffer = pInitHciConf->p_AclDataBuffer;
+ 124:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->pcs_buffer  = (uint8_t*)CsBuffer;
+ 125:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->pevt_queue  = (uint8_t*)&EvtQueue;
+ 126:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 127:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_BLE_Init();
+ 128:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 129:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   BLE_IoBusEvtCallBackFunction = pInitHciConf->IoBusEvtCallBack;
+ 130:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   BLE_IoBusAclDataTxAck = pInitHciConf->IoBusAclDataTxAck;
+ 131:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 132:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return 0;
+ 133:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 134:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 135:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** int32_t TL_BLE_SendCmd( uint8_t* buffer, uint16_t size )
+ 136:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 137:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(buffer);
+ 138:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(size);
+ 139:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 140:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t*)(TL_RefTable.p_ble_table->pcmd_buffer))->cmdserial.type = TL_BLECMD_PKT_TYPE;
+ 141:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 142:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   OutputDbgTrace(TL_MB_BLE_CMD, TL_RefTable.p_ble_table->pcmd_buffer);
+ 143:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 144:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_BLE_SendCmd();
+ 145:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 4
+
+
+ 146:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return 0;
+ 147:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 148:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 149:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_BLE_RxEvtNot(void)
+ 150:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 151:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_EvtPacket_t *phcievt;
+ 152:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 153:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   while(LST_is_empty(&EvtQueue) == FALSE)
+ 154:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 155:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     LST_remove_head (&EvtQueue, (tListNode **)&phcievt);
+ 156:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 157:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     if ( ((phcievt->evtserial.evt.evtcode) == TL_BLEEVT_CS_OPCODE) || ((phcievt->evtserial.evt.evtc
+ 158:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     {
+ 159:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****       OutputDbgTrace(TL_MB_BLE_CMD_RSP, (uint8_t*)phcievt);
+ 160:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     }
+ 161:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     else
+ 162:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     {
+ 163:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****       OutputDbgTrace(TL_MB_BLE_ASYNCH_EVT, (uint8_t*)phcievt);
+ 164:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     }
+ 165:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 166:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     BLE_IoBusEvtCallBackFunction(phcievt);
+ 167:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   }
+ 168:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 169:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 170:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 171:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 172:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** int32_t TL_BLE_SendAclData( uint8_t* buffer, uint16_t size )
+ 173:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 174:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(buffer);
+ 175:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(size);
+ 176:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 177:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_AclDataPacket_t *)(TL_RefTable.p_ble_table->phci_acl_data_buffer))->AclDataSerial.type = TL_
+ 178:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 179:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   OutputDbgTrace(TL_MB_ACL_DATA, TL_RefTable.p_ble_table->phci_acl_data_buffer);
+ 180:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     
+ 181:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_BLE_SendAclData();
+ 182:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 183:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return 0;
+ 184:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 185:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 186:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_BLE_AclDataAckNot(void)
+ 187:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 188:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   OutputDbgTrace(TL_MB_ACL_DATA_RSP, (uint8_t*)NULL);
+ 189:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   
+ 190:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   BLE_IoBusAclDataTxAck( );
+ 191:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****        
+ 192:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 193:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 194:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 195:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /******************************************************************************
+ 196:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * SYSTEM
+ 197:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************/
+ 198:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** int32_t TL_SYS_Init( void* pConf  )
+ 199:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 200:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_SysTable_t  * p_systable;
+ 201:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 202:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_SYS_InitConf_t *pInitHciConf = (TL_SYS_InitConf_t *) pConf;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 5
+
+
+ 203:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 204:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   LST_init_head (&SystemEvtQueue);
+ 205:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_systable = TL_RefTable.p_sys_table;
+ 206:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_systable->pcmd_buffer = pInitHciConf->p_cmdbuffer;
+ 207:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_systable->sys_queue = (uint8_t*)&SystemEvtQueue;
+ 208:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 209:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_SYS_Init();
+ 210:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 211:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   SYS_CMD_IoBusCallBackFunction = pInitHciConf->IoBusCallBackCmdEvt;
+ 212:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   SYS_EVT_IoBusCallBackFunction = pInitHciConf->IoBusCallBackUserEvt;
+ 213:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 214:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return 0;
+ 215:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 216:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 217:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** int32_t TL_SYS_SendCmd( uint8_t* buffer, uint16_t size )
+ 218:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 219:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(buffer);
+ 220:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(size);
+ 221:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 222:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_sys_table->pcmd_buffer))->cmdserial.type = TL_SYSCMD_PKT_TYPE;
+ 223:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 224:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   OutputDbgTrace(TL_MB_SYS_CMD, TL_RefTable.p_sys_table->pcmd_buffer);
+ 225:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 226:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_SYS_SendCmd();
+ 227:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 228:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return 0;
+ 229:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 230:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 231:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_SYS_CmdEvtNot(void)
+ 232:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 233:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   OutputDbgTrace(TL_MB_SYS_CMD_RSP, (uint8_t*)(TL_RefTable.p_sys_table->pcmd_buffer) );
+ 234:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 235:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   SYS_CMD_IoBusCallBackFunction( (TL_EvtPacket_t*)(TL_RefTable.p_sys_table->pcmd_buffer) );
+ 236:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 237:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 238:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 239:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 240:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_SYS_EvtNot( void )
+ 241:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 242:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_EvtPacket_t *p_evt;
+ 243:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 244:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   while(LST_is_empty(&SystemEvtQueue) == FALSE)
+ 245:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 246:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     LST_remove_head (&SystemEvtQueue, (tListNode **)&p_evt);
+ 247:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 248:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     OutputDbgTrace(TL_MB_SYS_ASYNCH_EVT, (uint8_t*)p_evt );
+ 249:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 250:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     SYS_EVT_IoBusCallBackFunction( p_evt );
+ 251:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   }
+ 252:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 253:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 254:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 255:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 256:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /******************************************************************************
+ 257:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * THREAD
+ 258:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************/
+ 259:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #ifdef THREAD_WB
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 6
+
+
+ 260:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_THREAD_Init( TL_TH_Config_t *p_Config )
+ 261:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 262:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_ThreadTable_t  * p_thread_table;
+ 263:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 264:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_thread_table = TL_RefTable.p_thread_table;
+ 265:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 266:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_thread_table->clicmdrsp_buffer = p_Config->p_ThreadCliRspBuffer;
+ 267:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_thread_table->otcmdrsp_buffer = p_Config->p_ThreadOtCmdRspBuffer;
+ 268:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_thread_table->notack_buffer = p_Config->p_ThreadNotAckBuffer;
+ 269:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_thread_table->clinot_buffer = p_Config->p_ThreadCliNotBuffer;
+ 270:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 271:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_THREAD_Init();
+ 272:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 273:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 274:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 275:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 276:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_OT_SendCmd( void )
+ 277:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 278:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_thread_table->otcmdrsp_buffer))->cmdserial.type = TL_OTCMD_PKT_
+ 279:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 280:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_OT_SendCmd();
+ 281:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 282:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 283:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 284:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 285:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_CLI_SendCmd( void )
+ 286:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 287:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_thread_table->clicmdrsp_buffer))->cmdserial.type = TL_CLICMD_PK
+ 288:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 289:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_CLI_SendCmd();
+ 290:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 291:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 292:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 293:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 294:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_THREAD_SendAck ( void )
+ 295:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 296:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_thread_table->notack_buffer))->cmdserial.type = TL_OTACK_PKT_TY
+ 297:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 298:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_THREAD_SendAck();
+ 299:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 300:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 301:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 302:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 303:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_THREAD_CliSendAck ( void )
+ 304:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 305:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_thread_table->notack_buffer))->cmdserial.type = TL_OTACK_PKT_TY
+ 306:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 307:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_THREAD_CliSendAck();
+ 308:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 309:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 310:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 311:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 312:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_OT_CmdEvtNot(void)
+ 313:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 314:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_OT_CmdEvtReceived( (TL_EvtPacket_t*)(TL_RefTable.p_thread_table->otcmdrsp_buffer) );
+ 315:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 316:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 7
+
+
+ 317:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 318:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 319:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_THREAD_EvtNot( void )
+ 320:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 321:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_THREAD_NotReceived( (TL_EvtPacket_t*)(TL_RefTable.p_thread_table->notack_buffer) );
+ 322:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 323:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 324:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 325:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 326:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_THREAD_CliEvtNot( void )
+ 327:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 328:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_THREAD_CliNotReceived( (TL_EvtPacket_t*)(TL_RefTable.p_thread_table->clinot_buffer) );
+ 329:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 330:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 331:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 332:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 333:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_OT_CmdEvtReceived( TL_EvtPacket_t * Otbuffer  ){};
+ 334:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_THREAD_NotReceived( TL_EvtPacket_t * Notbuffer ){};
+ 335:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_THREAD_CliNotReceived( TL_EvtPacket_t * Notbuffer ){};
+ 336:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 337:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #endif /* THREAD_WB */
+ 338:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 339:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /******************************************************************************
+ 340:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * LLD TESTS
+ 341:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************/
+ 342:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #ifdef LLD_TESTS_WB
+ 343:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_LLDTESTS_Init( TL_LLD_tests_Config_t *p_Config )
+ 344:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 345:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_LldTestsTable_t  * p_lld_tests_table;
+ 346:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 347:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_lld_tests_table = TL_RefTable.p_lld_tests_table;
+ 348:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_lld_tests_table->clicmdrsp_buffer = p_Config->p_LldTestsCliCmdRspBuffer;
+ 349:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_lld_tests_table->m0cmd_buffer = p_Config->p_LldTestsM0CmdBuffer;
+ 350:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_LLDTESTS_Init();
+ 351:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 352:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 353:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 354:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_LLDTESTS_SendCliCmd( void )
+ 355:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 356:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_lld_tests_table->clicmdrsp_buffer))->cmdserial.type = TL_CLICMD
+ 357:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_LLDTESTS_SendCliCmd();
+ 358:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 359:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 360:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 361:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_LLDTESTS_ReceiveCliRsp( void )
+ 362:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 363:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_LLDTESTS_ReceiveCliRsp( (TL_CmdPacket_t*)(TL_RefTable.p_lld_tests_table->clicmdrsp_buffer) );
+ 364:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 365:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 366:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 367:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_LLDTESTS_SendCliRspAck( void )
+ 368:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 369:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_LLDTESTS_SendCliRspAck();
+ 370:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 371:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 372:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 373:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_LLDTESTS_ReceiveM0Cmd( void )
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 8
+
+
+ 374:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 375:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_LLDTESTS_ReceiveM0Cmd( (TL_CmdPacket_t*)(TL_RefTable.p_lld_tests_table->m0cmd_buffer) );
+ 376:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 377:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 378:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 379:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 380:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_LLDTESTS_SendM0CmdAck( void )
+ 381:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 382:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_LLDTESTS_SendM0CmdAck();
+ 383:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 384:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 385:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 386:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_LLDTESTS_ReceiveCliRsp( TL_CmdPacket_t * Notbuffer ){};
+ 387:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_LLDTESTS_ReceiveM0Cmd( TL_CmdPacket_t * Notbuffer ){};
+ 388:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #endif /* LLD_TESTS_WB */
+ 389:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 390:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /******************************************************************************
+ 391:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * BLE LLD
+ 392:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************/
+ 393:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #ifdef BLE_LLD_WB
+ 394:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_BLE_LLD_Init( TL_BLE_LLD_Config_t *p_Config )
+ 395:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 396:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_BleLldTable_t  * p_ble_lld_table;
+ 397:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 398:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_ble_lld_table = TL_RefTable.p_ble_lld_table;
+ 399:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_ble_lld_table->cmdrsp_buffer = p_Config->p_BleLldCmdRspBuffer;
+ 400:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_ble_lld_table->m0cmd_buffer = p_Config->p_BleLldM0CmdBuffer;
+ 401:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_BLE_LLD_Init();
+ 402:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 403:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 404:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 405:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_BLE_LLD_SendCliCmd( void )
+ 406:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 407:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_ble_lld_table->cmdrsp_buffer))->cmdserial.type = TL_CLICMD_PKT_
+ 408:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_BLE_LLD_SendCliCmd();
+ 409:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 410:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 411:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 412:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_BLE_LLD_ReceiveCliRsp( void )
+ 413:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 414:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_BLE_LLD_ReceiveCliRsp( (TL_CmdPacket_t*)(TL_RefTable.p_ble_lld_table->cmdrsp_buffer) );
+ 415:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 416:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 417:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 418:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_BLE_LLD_SendCliRspAck( void )
+ 419:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 420:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_BLE_LLD_SendCliRspAck();
+ 421:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 422:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 423:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 424:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_BLE_LLD_ReceiveM0Cmd( void )
+ 425:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 426:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_BLE_LLD_ReceiveM0Cmd( (TL_CmdPacket_t*)(TL_RefTable.p_ble_lld_table->m0cmd_buffer) );
+ 427:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 428:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 429:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 430:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 9
+
+
+ 431:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_BLE_LLD_SendM0CmdAck( void )
+ 432:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 433:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_BLE_LLD_SendM0CmdAck();
+ 434:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 435:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 436:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 437:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_BLE_LLD_ReceiveCliRsp( TL_CmdPacket_t * Notbuffer ){};
+ 438:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_BLE_LLD_ReceiveM0Cmd( TL_CmdPacket_t * Notbuffer ){};
+ 439:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 440:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Transparent Mode */
+ 441:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_BLE_LLD_SendCmd( void )
+ 442:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 443:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_ble_lld_table->cmdrsp_buffer))->cmdserial.type = TL_CLICMD_PKT_
+ 444:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_BLE_LLD_SendCmd();
+ 445:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 446:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 447:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 448:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_BLE_LLD_ReceiveRsp( void )
+ 449:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 450:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_BLE_LLD_ReceiveRsp( (TL_CmdPacket_t*)(TL_RefTable.p_ble_lld_table->cmdrsp_buffer) );
+ 451:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 452:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 453:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 454:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_BLE_LLD_SendRspAck( void )
+ 455:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 456:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_BLE_LLD_SendRspAck();
+ 457:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 458:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 459:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #endif /* BLE_LLD_WB */
+ 460:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 461:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #ifdef MAC_802_15_4_WB
+ 462:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /******************************************************************************
+ 463:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * MAC 802.15.4
+ 464:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************/
+ 465:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_MAC_802_15_4_Init( TL_MAC_802_15_4_Config_t *p_Config )
+ 466:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 467:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_Mac_802_15_4_t  * p_mac_802_15_4_table;
+ 468:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 469:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mac_802_15_4_table = TL_RefTable.p_mac_802_15_4_table;
+ 470:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 471:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mac_802_15_4_table->p_cmdrsp_buffer = p_Config->p_Mac_802_15_4_CmdRspBuffer;
+ 472:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mac_802_15_4_table->p_notack_buffer = p_Config->p_Mac_802_15_4_NotAckBuffer;
+ 473:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 474:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_MAC_802_15_4_Init();
+ 475:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 476:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 477:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 478:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 479:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_MAC_802_15_4_SendCmd( void )
+ 480:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 481:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_mac_802_15_4_table->p_cmdrsp_buffer))->cmdserial.type = TL_OTCM
+ 482:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 483:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_MAC_802_15_4_SendCmd();
+ 484:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 485:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 486:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 487:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 10
+
+
+ 488:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_MAC_802_15_4_SendAck ( void )
+ 489:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 490:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_mac_802_15_4_table->p_notack_buffer))->cmdserial.type = TL_OTAC
+ 491:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 492:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_MAC_802_15_4_SendAck();
+ 493:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 494:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 495:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 496:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 497:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_MAC_802_15_4_CmdEvtNot(void)
+ 498:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 499:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MAC_802_15_4_CmdEvtReceived( (TL_EvtPacket_t*)(TL_RefTable.p_mac_802_15_4_table->p_cmdrsp_buff
+ 500:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 501:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 502:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 503:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 504:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_MAC_802_15_4_EvtNot( void )
+ 505:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 506:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_MAC_802_15_4_NotReceived( (TL_EvtPacket_t*)(TL_RefTable.p_mac_802_15_4_table->p_notack_buffer)
+ 507:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 508:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 509:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 510:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 511:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_MAC_802_15_4_CmdEvtReceived( TL_EvtPacket_t * Otbuffer  ){};
+ 512:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_MAC_802_15_4_NotReceived( TL_EvtPacket_t * Notbuffer ){};
+ 513:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #endif
+ 514:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 515:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #ifdef ZIGBEE_WB
+ 516:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /******************************************************************************
+ 517:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * ZIGBEE
+ 518:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************/
+ 519:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_ZIGBEE_Init( TL_ZIGBEE_Config_t *p_Config )
+ 520:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 521:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_ZigbeeTable_t  * p_zigbee_table;
+ 522:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 523:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_zigbee_table = TL_RefTable.p_zigbee_table;
+ 524:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_zigbee_table->appliCmdM4toM0_buffer = p_Config->p_ZigbeeOtCmdRspBuffer;
+ 525:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_zigbee_table->notifM0toM4_buffer = p_Config->p_ZigbeeNotAckBuffer;
+ 526:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_zigbee_table->requestM0toM4_buffer = p_Config->p_ZigbeeNotifRequestBuffer;
+ 527:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 528:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_ZIGBEE_Init();
+ 529:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 530:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 531:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 532:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 533:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Zigbee M4 to M0 Request */
+ 534:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_ZIGBEE_SendM4RequestToM0( void )
+ 535:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 536:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_zigbee_table->appliCmdM4toM0_buffer))->cmdserial.type = TL_OTCM
+ 537:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 538:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_ZIGBEE_SendM4RequestToM0();
+ 539:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 540:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 541:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 542:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 543:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Used to receive an ACK from the M0 */
+ 544:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_ZIGBEE_RecvAppliAckFromM0(void)
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 11
+
+
+ 545:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 546:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_ZIGBEE_CmdEvtReceived( (TL_EvtPacket_t*)(TL_RefTable.p_zigbee_table->appliCmdM4toM0_buffer) );
+ 547:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 548:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 549:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 550:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 551:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Zigbee notification from M0 to M4 */
+ 552:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_ZIGBEE_RecvM0NotifyToM4( void )
+ 553:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 554:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_ZIGBEE_NotReceived( (TL_EvtPacket_t*)(TL_RefTable.p_zigbee_table->notifM0toM4_buffer) );
+ 555:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 556:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 557:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 558:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 559:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Send an ACK to the M0 for a Notification */
+ 560:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_ZIGBEE_SendM4AckToM0Notify ( void )
+ 561:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 562:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_zigbee_table->notifM0toM4_buffer))->cmdserial.type = TL_OTACK_P
+ 563:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 564:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_ZIGBEE_SendM4AckToM0Notify();
+ 565:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 566:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 567:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 568:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 569:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Zigbee M0 to M4 Request */
+ 570:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_ZIGBEE_RecvM0RequestToM4( void )
+ 571:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 572:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_ZIGBEE_M0RequestReceived( (TL_EvtPacket_t*)(TL_RefTable.p_zigbee_table->requestM0toM4_buffer) 
+ 573:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 574:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 575:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 576:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 577:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /* Send an ACK to the M0 for a Request */
+ 578:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_ZIGBEE_SendM4AckToM0Request(void)
+ 579:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 580:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   ((TL_CmdPacket_t *)(TL_RefTable.p_zigbee_table->requestM0toM4_buffer))->cmdserial.type = TL_OTACK
+ 581:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 582:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_ZIGBEE_SendM4AckToM0Request();
+ 583:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 584:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 585:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 586:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 587:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 588:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_ZIGBEE_CmdEvtReceived( TL_EvtPacket_t * Otbuffer  ){};
+ 589:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_ZIGBEE_NotReceived( TL_EvtPacket_t * Notbuffer ){};
+ 590:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** #endif
+ 591:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 592:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 593:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 594:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /******************************************************************************
+ 595:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * MEMORY MANAGER
+ 596:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************/
+ 597:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_MM_Init( TL_MM_Config_t *p_Config )
+ 598:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 599:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   static MB_MemManagerTable_t  * p_mem_manager_table;
+ 600:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 601:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   LST_init_head (&FreeBufQueue);
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 12
+
+
+ 602:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   LST_init_head (&LocalFreeBufQueue);
+ 603:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 604:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table = TL_RefTable.p_mem_manager_table;
+ 605:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 606:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->blepool = p_Config->p_AsynchEvtPool;
+ 607:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->blepoolsize = p_Config->AsynchEvtPoolSize;
+ 608:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->pevt_free_buffer_queue = (uint8_t*)&FreeBufQueue;
+ 609:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->spare_ble_buffer = p_Config->p_BleSpareEvtBuffer;
+ 610:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->spare_sys_buffer = p_Config->p_SystemSpareEvtBuffer;
+ 611:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->traces_evt_pool = p_Config->p_TracesEvtPool;
+ 612:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->tracespoolsize = p_Config->TracesEvtPoolSize;
+ 613:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 614:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 615:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 616:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 617:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_MM_EvtDone(TL_EvtPacket_t * phcievt)
+ 618:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 619:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   LST_insert_tail(&LocalFreeBufQueue, (tListNode *)phcievt);
+ 620:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 621:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   OutputDbgTrace(TL_MB_MM_RELEASE_BUFFER, (uint8_t*)phcievt);
+ 622:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 623:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_MM_SendFreeBuf( SendFreeBuf );
+ 624:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 625:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 626:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 627:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 628:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** static void SendFreeBuf( void )
+ 629:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+  28              		.loc 1 629 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 00B5     		push	{lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 14, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 16
+ 630:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   tListNode *p_node;
+  39              		.loc 1 630 3 view .LVU1
+ 631:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 632:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   while ( FALSE == LST_is_empty (&LocalFreeBufQueue) )
+  40              		.loc 1 632 3 view .LVU2
+  41              		.loc 1 632 9 is_stmt 0 view .LVU3
+  42 0004 09E0     		b	.L2
+  43              	.L3:
+ 633:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 634:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     LST_remove_head( &LocalFreeBufQueue, (tListNode **)&p_node );
+  44              		.loc 1 634 5 is_stmt 1 view .LVU4
+  45 0006 01A9     		add	r1, sp, #4
+  46 0008 0848     		ldr	r0, .L5
+  47 000a FFF7FEFF 		bl	LST_remove_head
+  48              	.LVL0:
+ 635:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     LST_insert_tail( (tListNode*)(TL_RefTable.p_mem_manager_table->pevt_free_buffer_queue), p_node 
+  49              		.loc 1 635 5 view .LVU5
+  50              		.loc 1 635 46 is_stmt 0 view .LVU6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 13
+
+
+  51 000e 084B     		ldr	r3, .L5+4
+  52 0010 1B69     		ldr	r3, [r3, #16]
+  53              		.loc 1 635 5 view .LVU7
+  54 0012 0199     		ldr	r1, [sp, #4]
+  55 0014 1869     		ldr	r0, [r3, #16]
+  56 0016 FFF7FEFF 		bl	LST_insert_tail
+  57              	.LVL1:
+  58              	.L2:
+ 632:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+  59              		.loc 1 632 17 is_stmt 1 view .LVU8
+ 632:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+  60              		.loc 1 632 20 is_stmt 0 view .LVU9
+  61 001a 0448     		ldr	r0, .L5
+  62 001c FFF7FEFF 		bl	LST_is_empty
+  63              	.LVL2:
+ 632:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+  64              		.loc 1 632 17 discriminator 1 view .LVU10
+  65 0020 0028     		cmp	r0, #0
+  66 0022 F0D0     		beq	.L3
+ 636:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   }
+ 637:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 638:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 639:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+  67              		.loc 1 639 1 view .LVU11
+  68 0024 03B0     		add	sp, sp, #12
+  69              	.LCFI2:
+  70              		.cfi_def_cfa_offset 4
+  71              		@ sp needed
+  72 0026 5DF804FB 		ldr	pc, [sp], #4
+  73              	.L6:
+  74 002a 00BF     		.align	2
+  75              	.L5:
+  76 002c 00000000 		.word	LocalFreeBufQueue
+  77 0030 00000000 		.word	TL_RefTable
+  78              		.cfi_endproc
+  79              	.LFE1274:
+  81              		.section	.text.TL_Enable,"ax",%progbits
+  82              		.align	1
+  83              		.global	TL_Enable
+  84              		.syntax unified
+  85              		.thumb
+  86              		.thumb_func
+  88              	TL_Enable:
+  89              	.LFB1261:
+  85:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_Enable();
+  90              		.loc 1 85 1 is_stmt 1 view -0
+  91              		.cfi_startproc
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94 0000 08B5     		push	{r3, lr}
+  95              	.LCFI3:
+  96              		.cfi_def_cfa_offset 8
+  97              		.cfi_offset 3, -8
+  98              		.cfi_offset 14, -4
+  86:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+  99              		.loc 1 86 3 view .LVU13
+ 100 0002 FFF7FEFF 		bl	HW_IPCC_Enable
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 14
+
+
+ 101              	.LVL3:
+  88:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 102              		.loc 1 88 3 view .LVU14
+  89:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 103              		.loc 1 89 1 is_stmt 0 view .LVU15
+ 104 0006 08BD     		pop	{r3, pc}
+ 105              		.cfi_endproc
+ 106              	.LFE1261:
+ 108              		.section	.text.TL_Init,"ax",%progbits
+ 109              		.align	1
+ 110              		.global	TL_Init
+ 111              		.syntax unified
+ 112              		.thumb
+ 113              		.thumb_func
+ 115              	TL_Init:
+ 116              	.LFB1262:
+  93:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_device_info_table = &TL_DeviceInfoTable;
+ 117              		.loc 1 93 1 is_stmt 1 view -0
+ 118              		.cfi_startproc
+ 119              		@ args = 0, pretend = 0, frame = 0
+ 120              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121 0000 08B5     		push	{r3, lr}
+ 122              	.LCFI4:
+ 123              		.cfi_def_cfa_offset 8
+ 124              		.cfi_offset 3, -8
+ 125              		.cfi_offset 14, -4
+  94:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_ble_table = &TL_BleTable;
+ 126              		.loc 1 94 3 view .LVU17
+  94:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_ble_table = &TL_BleTable;
+ 127              		.loc 1 94 35 is_stmt 0 view .LVU18
+ 128 0002 0C4B     		ldr	r3, .L11
+ 129 0004 0C4A     		ldr	r2, .L11+4
+ 130 0006 1A60     		str	r2, [r3]
+  95:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_thread_table = &TL_ThreadTable;
+ 131              		.loc 1 95 3 is_stmt 1 view .LVU19
+  95:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_thread_table = &TL_ThreadTable;
+ 132              		.loc 1 95 27 is_stmt 0 view .LVU20
+ 133 0008 0C4A     		ldr	r2, .L11+8
+ 134 000a 5A60     		str	r2, [r3, #4]
+  96:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_lld_tests_table = &TL_LldTestsTable;
+ 135              		.loc 1 96 3 is_stmt 1 view .LVU21
+  96:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_lld_tests_table = &TL_LldTestsTable;
+ 136              		.loc 1 96 30 is_stmt 0 view .LVU22
+ 137 000c 0C4A     		ldr	r2, .L11+12
+ 138 000e 9A60     		str	r2, [r3, #8]
+  97:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_ble_lld_table = &TL_BleLldTable;
+ 139              		.loc 1 97 3 is_stmt 1 view .LVU23
+  97:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_ble_lld_table = &TL_BleLldTable;
+ 140              		.loc 1 97 33 is_stmt 0 view .LVU24
+ 141 0010 0C4A     		ldr	r2, .L11+16
+ 142 0012 1A62     		str	r2, [r3, #32]
+  98:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_sys_table = &TL_SysTable;
+ 143              		.loc 1 98 3 is_stmt 1 view .LVU25
+  98:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_sys_table = &TL_SysTable;
+ 144              		.loc 1 98 31 is_stmt 0 view .LVU26
+ 145 0014 0C4A     		ldr	r2, .L11+20
+ 146 0016 5A62     		str	r2, [r3, #36]
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 15
+
+
+  99:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_mem_manager_table = &TL_MemManagerTable;
+ 147              		.loc 1 99 3 is_stmt 1 view .LVU27
+  99:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_mem_manager_table = &TL_MemManagerTable;
+ 148              		.loc 1 99 27 is_stmt 0 view .LVU28
+ 149 0018 0C4A     		ldr	r2, .L11+24
+ 150 001a DA60     		str	r2, [r3, #12]
+ 100:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_traces_table = &TL_TracesTable;
+ 151              		.loc 1 100 3 is_stmt 1 view .LVU29
+ 100:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_traces_table = &TL_TracesTable;
+ 152              		.loc 1 100 35 is_stmt 0 view .LVU30
+ 153 001c 0C4A     		ldr	r2, .L11+28
+ 154 001e 1A61     		str	r2, [r3, #16]
+ 101:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_mac_802_15_4_table = &TL_Mac_802_15_4_Table;
+ 155              		.loc 1 101 3 is_stmt 1 view .LVU31
+ 101:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_mac_802_15_4_table = &TL_Mac_802_15_4_Table;
+ 156              		.loc 1 101 30 is_stmt 0 view .LVU32
+ 157 0020 0C4A     		ldr	r2, .L11+32
+ 158 0022 5A61     		str	r2, [r3, #20]
+ 102:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_zigbee_table = &TL_Zigbee_Table;
+ 159              		.loc 1 102 3 is_stmt 1 view .LVU33
+ 102:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_zigbee_table = &TL_Zigbee_Table;
+ 160              		.loc 1 102 36 is_stmt 0 view .LVU34
+ 161 0024 0C4A     		ldr	r2, .L11+36
+ 162 0026 9A61     		str	r2, [r3, #24]
+ 103:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_Init();
+ 163              		.loc 1 103 3 is_stmt 1 view .LVU35
+ 103:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_Init();
+ 164              		.loc 1 103 30 is_stmt 0 view .LVU36
+ 165 0028 0C4A     		ldr	r2, .L11+40
+ 166 002a DA61     		str	r2, [r3, #28]
+ 104:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 167              		.loc 1 104 3 is_stmt 1 view .LVU37
+ 168 002c FFF7FEFF 		bl	HW_IPCC_Init
+ 169              	.LVL4:
+ 106:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 170              		.loc 1 106 3 view .LVU38
+ 107:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 171              		.loc 1 107 1 is_stmt 0 view .LVU39
+ 172 0030 08BD     		pop	{r3, pc}
+ 173              	.L12:
+ 174 0032 00BF     		.align	2
+ 175              	.L11:
+ 176 0034 00000000 		.word	TL_RefTable
+ 177 0038 90000000 		.word	TL_DeviceInfoTable
+ 178 003c 80000000 		.word	TL_BleTable
+ 179 0040 70000000 		.word	TL_ThreadTable
+ 180 0044 68000000 		.word	TL_LldTestsTable
+ 181 0048 60000000 		.word	TL_BleLldTable
+ 182 004c 58000000 		.word	TL_SysTable
+ 183 0050 3C000000 		.word	TL_MemManagerTable
+ 184 0054 38000000 		.word	TL_TracesTable
+ 185 0058 2C000000 		.word	TL_Mac_802_15_4_Table
+ 186 005c 20000000 		.word	TL_Zigbee_Table
+ 187              		.cfi_endproc
+ 188              	.LFE1262:
+ 190              		.section	.text.TL_BLE_Init,"ax",%progbits
+ 191              		.align	1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 16
+
+
+ 192              		.global	TL_BLE_Init
+ 193              		.syntax unified
+ 194              		.thumb
+ 195              		.thumb_func
+ 197              	TL_BLE_Init:
+ 198              	.LVL5:
+ 199              	.LFB1263:
+ 113:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_BleTable_t  * p_bletable;
+ 200              		.loc 1 113 1 is_stmt 1 view -0
+ 201              		.cfi_startproc
+ 202              		@ args = 0, pretend = 0, frame = 0
+ 203              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_BleTable_t  * p_bletable;
+ 204              		.loc 1 113 1 is_stmt 0 view .LVU41
+ 205 0000 38B5     		push	{r3, r4, r5, lr}
+ 206              	.LCFI5:
+ 207              		.cfi_def_cfa_offset 16
+ 208              		.cfi_offset 3, -16
+ 209              		.cfi_offset 4, -12
+ 210              		.cfi_offset 5, -8
+ 211              		.cfi_offset 14, -4
+ 212 0002 0446     		mov	r4, r0
+ 114:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 213              		.loc 1 114 3 is_stmt 1 view .LVU42
+ 116:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 214              		.loc 1 116 3 view .LVU43
+ 215              	.LVL6:
+ 118:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 216              		.loc 1 118 3 view .LVU44
+ 217 0004 0B4D     		ldr	r5, .L15
+ 218 0006 2846     		mov	r0, r5
+ 219              	.LVL7:
+ 118:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 220              		.loc 1 118 3 is_stmt 0 view .LVU45
+ 221 0008 FFF7FEFF 		bl	LST_init_head
+ 222              	.LVL8:
+ 120:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 223              		.loc 1 120 3 is_stmt 1 view .LVU46
+ 120:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 224              		.loc 1 120 14 is_stmt 0 view .LVU47
+ 225 000c 0A4B     		ldr	r3, .L15+4
+ 226 000e 5B68     		ldr	r3, [r3, #4]
+ 227              	.LVL9:
+ 122:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->phci_acl_data_buffer = pInitHciConf->p_AclDataBuffer;
+ 228              		.loc 1 122 3 is_stmt 1 view .LVU48
+ 122:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->phci_acl_data_buffer = pInitHciConf->p_AclDataBuffer;
+ 229              		.loc 1 122 41 is_stmt 0 view .LVU49
+ 230 0010 A268     		ldr	r2, [r4, #8]
+ 122:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->phci_acl_data_buffer = pInitHciConf->p_AclDataBuffer;
+ 231              		.loc 1 122 27 view .LVU50
+ 232 0012 1A60     		str	r2, [r3]
+ 123:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->pcs_buffer  = (uint8_t*)CsBuffer;
+ 233              		.loc 1 123 3 is_stmt 1 view .LVU51
+ 123:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->pcs_buffer  = (uint8_t*)CsBuffer;
+ 234              		.loc 1 123 50 is_stmt 0 view .LVU52
+ 235 0014 E268     		ldr	r2, [r4, #12]
+ 123:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->pcs_buffer  = (uint8_t*)CsBuffer;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 17
+
+
+ 236              		.loc 1 123 36 view .LVU53
+ 237 0016 DA60     		str	r2, [r3, #12]
+ 124:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->pevt_queue  = (uint8_t*)&EvtQueue;
+ 238              		.loc 1 124 3 is_stmt 1 view .LVU54
+ 124:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_bletable->pevt_queue  = (uint8_t*)&EvtQueue;
+ 239              		.loc 1 124 27 is_stmt 0 view .LVU55
+ 240 0018 084A     		ldr	r2, .L15+8
+ 241 001a 5A60     		str	r2, [r3, #4]
+ 125:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 242              		.loc 1 125 3 is_stmt 1 view .LVU56
+ 125:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 243              		.loc 1 125 27 is_stmt 0 view .LVU57
+ 244 001c 9D60     		str	r5, [r3, #8]
+ 127:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 245              		.loc 1 127 3 is_stmt 1 view .LVU58
+ 246 001e FFF7FEFF 		bl	HW_IPCC_BLE_Init
+ 247              	.LVL10:
+ 129:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   BLE_IoBusAclDataTxAck = pInitHciConf->IoBusAclDataTxAck;
+ 248              		.loc 1 129 3 view .LVU59
+ 129:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   BLE_IoBusAclDataTxAck = pInitHciConf->IoBusAclDataTxAck;
+ 249              		.loc 1 129 46 is_stmt 0 view .LVU60
+ 250 0022 2268     		ldr	r2, [r4]
+ 129:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   BLE_IoBusAclDataTxAck = pInitHciConf->IoBusAclDataTxAck;
+ 251              		.loc 1 129 32 view .LVU61
+ 252 0024 064B     		ldr	r3, .L15+12
+ 253 0026 1A60     		str	r2, [r3]
+ 130:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 254              		.loc 1 130 3 is_stmt 1 view .LVU62
+ 130:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 255              		.loc 1 130 39 is_stmt 0 view .LVU63
+ 256 0028 6268     		ldr	r2, [r4, #4]
+ 130:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 257              		.loc 1 130 25 view .LVU64
+ 258 002a 064B     		ldr	r3, .L15+16
+ 259 002c 1A60     		str	r2, [r3]
+ 132:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 260              		.loc 1 132 3 is_stmt 1 view .LVU65
+ 133:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 261              		.loc 1 133 1 is_stmt 0 view .LVU66
+ 262 002e 0020     		movs	r0, #0
+ 263 0030 38BD     		pop	{r3, r4, r5, pc}
+ 264              	.LVL11:
+ 265              	.L16:
+ 133:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 266              		.loc 1 133 1 view .LVU67
+ 267 0032 00BF     		.align	2
+ 268              	.L15:
+ 269 0034 08000000 		.word	EvtQueue
+ 270 0038 00000000 		.word	TL_RefTable
+ 271 003c 00000000 		.word	CsBuffer
+ 272 0040 00000000 		.word	BLE_IoBusEvtCallBackFunction
+ 273 0044 00000000 		.word	BLE_IoBusAclDataTxAck
+ 274              		.cfi_endproc
+ 275              	.LFE1263:
+ 277              		.section	.text.TL_BLE_SendCmd,"ax",%progbits
+ 278              		.align	1
+ 279              		.global	TL_BLE_SendCmd
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 18
+
+
+ 280              		.syntax unified
+ 281              		.thumb
+ 282              		.thumb_func
+ 284              	TL_BLE_SendCmd:
+ 285              	.LVL12:
+ 286              	.LFB1264:
+ 136:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(buffer);
+ 287              		.loc 1 136 1 is_stmt 1 view -0
+ 288              		.cfi_startproc
+ 289              		@ args = 0, pretend = 0, frame = 0
+ 290              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(buffer);
+ 291              		.loc 1 136 1 is_stmt 0 view .LVU69
+ 292 0000 08B5     		push	{r3, lr}
+ 293              	.LCFI6:
+ 294              		.cfi_def_cfa_offset 8
+ 295              		.cfi_offset 3, -8
+ 296              		.cfi_offset 14, -4
+ 137:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(size);
+ 297              		.loc 1 137 3 is_stmt 1 view .LVU70
+ 138:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 298              		.loc 1 138 3 view .LVU71
+ 140:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 299              		.loc 1 140 3 view .LVU72
+ 140:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 300              		.loc 1 140 33 is_stmt 0 view .LVU73
+ 301 0002 054B     		ldr	r3, .L19
+ 302 0004 5A68     		ldr	r2, [r3, #4]
+ 140:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 303              		.loc 1 140 45 view .LVU74
+ 304 0006 1268     		ldr	r2, [r2]
+ 140:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 305              		.loc 1 140 77 view .LVU75
+ 306 0008 0121     		movs	r1, #1
+ 307              	.LVL13:
+ 140:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 308              		.loc 1 140 77 view .LVU76
+ 309 000a 1172     		strb	r1, [r2, #8]
+ 142:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 310              		.loc 1 142 3 is_stmt 1 view .LVU77
+ 142:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 311              		.loc 1 142 44 is_stmt 0 view .LVU78
+ 312 000c 5B68     		ldr	r3, [r3, #4]
+ 144:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 313              		.loc 1 144 3 is_stmt 1 view .LVU79
+ 314 000e FFF7FEFF 		bl	HW_IPCC_BLE_SendCmd
+ 315              	.LVL14:
+ 146:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 316              		.loc 1 146 3 view .LVU80
+ 147:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 317              		.loc 1 147 1 is_stmt 0 view .LVU81
+ 318 0012 0020     		movs	r0, #0
+ 319 0014 08BD     		pop	{r3, pc}
+ 320              	.L20:
+ 321 0016 00BF     		.align	2
+ 322              	.L19:
+ 323 0018 00000000 		.word	TL_RefTable
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 19
+
+
+ 324              		.cfi_endproc
+ 325              	.LFE1264:
+ 327              		.section	.text.HW_IPCC_BLE_RxEvtNot,"ax",%progbits
+ 328              		.align	1
+ 329              		.global	HW_IPCC_BLE_RxEvtNot
+ 330              		.syntax unified
+ 331              		.thumb
+ 332              		.thumb_func
+ 334              	HW_IPCC_BLE_RxEvtNot:
+ 335              	.LFB1265:
+ 150:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_EvtPacket_t *phcievt;
+ 336              		.loc 1 150 1 is_stmt 1 view -0
+ 337              		.cfi_startproc
+ 338              		@ args = 0, pretend = 0, frame = 8
+ 339              		@ frame_needed = 0, uses_anonymous_args = 0
+ 340 0000 00B5     		push	{lr}
+ 341              	.LCFI7:
+ 342              		.cfi_def_cfa_offset 4
+ 343              		.cfi_offset 14, -4
+ 344 0002 83B0     		sub	sp, sp, #12
+ 345              	.LCFI8:
+ 346              		.cfi_def_cfa_offset 16
+ 151:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 347              		.loc 1 151 3 view .LVU83
+ 153:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 348              		.loc 1 153 3 view .LVU84
+ 153:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 349              		.loc 1 153 8 is_stmt 0 view .LVU85
+ 350 0004 07E0     		b	.L22
+ 351              	.L23:
+ 155:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 352              		.loc 1 155 5 is_stmt 1 view .LVU86
+ 353 0006 01A9     		add	r1, sp, #4
+ 354 0008 0748     		ldr	r0, .L25
+ 355 000a FFF7FEFF 		bl	LST_remove_head
+ 356              	.LVL15:
+ 157:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     {
+ 357              		.loc 1 157 5 view .LVU87
+ 163:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     }
+ 358              		.loc 1 163 7 view .LVU88
+ 166:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   }
+ 359              		.loc 1 166 5 view .LVU89
+ 360 000e 074B     		ldr	r3, .L25+4
+ 361 0010 1B68     		ldr	r3, [r3]
+ 362 0012 0198     		ldr	r0, [sp, #4]
+ 363 0014 9847     		blx	r3
+ 364              	.LVL16:
+ 365              	.L22:
+ 153:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 366              		.loc 1 153 33 view .LVU90
+ 153:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 367              		.loc 1 153 9 is_stmt 0 view .LVU91
+ 368 0016 0448     		ldr	r0, .L25
+ 369 0018 FFF7FEFF 		bl	LST_is_empty
+ 370              	.LVL17:
+ 153:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 371              		.loc 1 153 33 discriminator 1 view .LVU92
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 20
+
+
+ 372 001c 0028     		cmp	r0, #0
+ 373 001e F2D0     		beq	.L23
+ 170:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 374              		.loc 1 170 1 view .LVU93
+ 375 0020 03B0     		add	sp, sp, #12
+ 376              	.LCFI9:
+ 377              		.cfi_def_cfa_offset 4
+ 378              		@ sp needed
+ 379 0022 5DF804FB 		ldr	pc, [sp], #4
+ 380              	.L26:
+ 381 0026 00BF     		.align	2
+ 382              	.L25:
+ 383 0028 08000000 		.word	EvtQueue
+ 384 002c 00000000 		.word	BLE_IoBusEvtCallBackFunction
+ 385              		.cfi_endproc
+ 386              	.LFE1265:
+ 388              		.section	.text.TL_BLE_SendAclData,"ax",%progbits
+ 389              		.align	1
+ 390              		.global	TL_BLE_SendAclData
+ 391              		.syntax unified
+ 392              		.thumb
+ 393              		.thumb_func
+ 395              	TL_BLE_SendAclData:
+ 396              	.LVL18:
+ 397              	.LFB1266:
+ 173:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(buffer);
+ 398              		.loc 1 173 1 is_stmt 1 view -0
+ 399              		.cfi_startproc
+ 400              		@ args = 0, pretend = 0, frame = 0
+ 401              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(buffer);
+ 402              		.loc 1 173 1 is_stmt 0 view .LVU95
+ 403 0000 08B5     		push	{r3, lr}
+ 404              	.LCFI10:
+ 405              		.cfi_def_cfa_offset 8
+ 406              		.cfi_offset 3, -8
+ 407              		.cfi_offset 14, -4
+ 174:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(size);
+ 408              		.loc 1 174 3 is_stmt 1 view .LVU96
+ 175:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 409              		.loc 1 175 3 view .LVU97
+ 177:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 410              		.loc 1 177 3 view .LVU98
+ 177:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 411              		.loc 1 177 38 is_stmt 0 view .LVU99
+ 412 0002 054B     		ldr	r3, .L29
+ 413 0004 5A68     		ldr	r2, [r3, #4]
+ 177:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 414              		.loc 1 177 50 view .LVU100
+ 415 0006 D268     		ldr	r2, [r2, #12]
+ 177:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 416              		.loc 1 177 95 view .LVU101
+ 417 0008 0221     		movs	r1, #2
+ 418              	.LVL19:
+ 177:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 419              		.loc 1 177 95 view .LVU102
+ 420 000a 1172     		strb	r1, [r2, #8]
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 21
+
+
+ 179:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     
+ 421              		.loc 1 179 3 is_stmt 1 view .LVU103
+ 179:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     
+ 422              		.loc 1 179 45 is_stmt 0 view .LVU104
+ 423 000c 5B68     		ldr	r3, [r3, #4]
+ 181:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 424              		.loc 1 181 3 is_stmt 1 view .LVU105
+ 425 000e FFF7FEFF 		bl	HW_IPCC_BLE_SendAclData
+ 426              	.LVL20:
+ 183:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 427              		.loc 1 183 3 view .LVU106
+ 184:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 428              		.loc 1 184 1 is_stmt 0 view .LVU107
+ 429 0012 0020     		movs	r0, #0
+ 430 0014 08BD     		pop	{r3, pc}
+ 431              	.L30:
+ 432 0016 00BF     		.align	2
+ 433              	.L29:
+ 434 0018 00000000 		.word	TL_RefTable
+ 435              		.cfi_endproc
+ 436              	.LFE1266:
+ 438              		.section	.text.HW_IPCC_BLE_AclDataAckNot,"ax",%progbits
+ 439              		.align	1
+ 440              		.global	HW_IPCC_BLE_AclDataAckNot
+ 441              		.syntax unified
+ 442              		.thumb
+ 443              		.thumb_func
+ 445              	HW_IPCC_BLE_AclDataAckNot:
+ 446              	.LFB1267:
+ 187:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   OutputDbgTrace(TL_MB_ACL_DATA_RSP, (uint8_t*)NULL);
+ 447              		.loc 1 187 1 is_stmt 1 view -0
+ 448              		.cfi_startproc
+ 449              		@ args = 0, pretend = 0, frame = 0
+ 450              		@ frame_needed = 0, uses_anonymous_args = 0
+ 451 0000 08B5     		push	{r3, lr}
+ 452              	.LCFI11:
+ 453              		.cfi_def_cfa_offset 8
+ 454              		.cfi_offset 3, -8
+ 455              		.cfi_offset 14, -4
+ 188:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   
+ 456              		.loc 1 188 3 view .LVU109
+ 190:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****        
+ 457              		.loc 1 190 3 view .LVU110
+ 458 0002 024B     		ldr	r3, .L33
+ 459 0004 1B68     		ldr	r3, [r3]
+ 460 0006 9847     		blx	r3
+ 461              	.LVL21:
+ 192:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 462              		.loc 1 192 3 view .LVU111
+ 193:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 463              		.loc 1 193 1 is_stmt 0 view .LVU112
+ 464 0008 08BD     		pop	{r3, pc}
+ 465              	.L34:
+ 466 000a 00BF     		.align	2
+ 467              	.L33:
+ 468 000c 00000000 		.word	BLE_IoBusAclDataTxAck
+ 469              		.cfi_endproc
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 22
+
+
+ 470              	.LFE1267:
+ 472              		.section	.text.TL_SYS_Init,"ax",%progbits
+ 473              		.align	1
+ 474              		.global	TL_SYS_Init
+ 475              		.syntax unified
+ 476              		.thumb
+ 477              		.thumb_func
+ 479              	TL_SYS_Init:
+ 480              	.LVL22:
+ 481              	.LFB1268:
+ 199:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_SysTable_t  * p_systable;
+ 482              		.loc 1 199 1 is_stmt 1 view -0
+ 483              		.cfi_startproc
+ 484              		@ args = 0, pretend = 0, frame = 0
+ 485              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   MB_SysTable_t  * p_systable;
+ 486              		.loc 1 199 1 is_stmt 0 view .LVU114
+ 487 0000 38B5     		push	{r3, r4, r5, lr}
+ 488              	.LCFI12:
+ 489              		.cfi_def_cfa_offset 16
+ 490              		.cfi_offset 3, -16
+ 491              		.cfi_offset 4, -12
+ 492              		.cfi_offset 5, -8
+ 493              		.cfi_offset 14, -4
+ 494 0002 0446     		mov	r4, r0
+ 200:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 495              		.loc 1 200 3 is_stmt 1 view .LVU115
+ 202:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 496              		.loc 1 202 3 view .LVU116
+ 497              	.LVL23:
+ 204:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_systable = TL_RefTable.p_sys_table;
+ 498              		.loc 1 204 3 view .LVU117
+ 499 0004 094D     		ldr	r5, .L37
+ 500 0006 2846     		mov	r0, r5
+ 501              	.LVL24:
+ 204:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_systable = TL_RefTable.p_sys_table;
+ 502              		.loc 1 204 3 is_stmt 0 view .LVU118
+ 503 0008 FFF7FEFF 		bl	LST_init_head
+ 504              	.LVL25:
+ 205:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_systable->pcmd_buffer = pInitHciConf->p_cmdbuffer;
+ 505              		.loc 1 205 3 is_stmt 1 view .LVU119
+ 205:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_systable->pcmd_buffer = pInitHciConf->p_cmdbuffer;
+ 506              		.loc 1 205 14 is_stmt 0 view .LVU120
+ 507 000c 084B     		ldr	r3, .L37+4
+ 508 000e DB68     		ldr	r3, [r3, #12]
+ 509              	.LVL26:
+ 206:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_systable->sys_queue = (uint8_t*)&SystemEvtQueue;
+ 510              		.loc 1 206 3 is_stmt 1 view .LVU121
+ 206:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_systable->sys_queue = (uint8_t*)&SystemEvtQueue;
+ 511              		.loc 1 206 41 is_stmt 0 view .LVU122
+ 512 0010 A268     		ldr	r2, [r4, #8]
+ 206:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_systable->sys_queue = (uint8_t*)&SystemEvtQueue;
+ 513              		.loc 1 206 27 view .LVU123
+ 514 0012 1A60     		str	r2, [r3]
+ 207:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 515              		.loc 1 207 3 is_stmt 1 view .LVU124
+ 207:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 23
+
+
+ 516              		.loc 1 207 25 is_stmt 0 view .LVU125
+ 517 0014 5D60     		str	r5, [r3, #4]
+ 209:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 518              		.loc 1 209 3 is_stmt 1 view .LVU126
+ 519 0016 FFF7FEFF 		bl	HW_IPCC_SYS_Init
+ 520              	.LVL27:
+ 211:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   SYS_EVT_IoBusCallBackFunction = pInitHciConf->IoBusCallBackUserEvt;
+ 521              		.loc 1 211 3 view .LVU127
+ 211:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   SYS_EVT_IoBusCallBackFunction = pInitHciConf->IoBusCallBackUserEvt;
+ 522              		.loc 1 211 47 is_stmt 0 view .LVU128
+ 523 001a 2268     		ldr	r2, [r4]
+ 211:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   SYS_EVT_IoBusCallBackFunction = pInitHciConf->IoBusCallBackUserEvt;
+ 524              		.loc 1 211 33 view .LVU129
+ 525 001c 054B     		ldr	r3, .L37+8
+ 526 001e 1A60     		str	r2, [r3]
+ 212:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 527              		.loc 1 212 3 is_stmt 1 view .LVU130
+ 212:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 528              		.loc 1 212 47 is_stmt 0 view .LVU131
+ 529 0020 6268     		ldr	r2, [r4, #4]
+ 212:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 530              		.loc 1 212 33 view .LVU132
+ 531 0022 054B     		ldr	r3, .L37+12
+ 532 0024 1A60     		str	r2, [r3]
+ 214:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 533              		.loc 1 214 3 is_stmt 1 view .LVU133
+ 215:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 534              		.loc 1 215 1 is_stmt 0 view .LVU134
+ 535 0026 0020     		movs	r0, #0
+ 536 0028 38BD     		pop	{r3, r4, r5, pc}
+ 537              	.LVL28:
+ 538              	.L38:
+ 215:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 539              		.loc 1 215 1 view .LVU135
+ 540 002a 00BF     		.align	2
+ 541              	.L37:
+ 542 002c 00000000 		.word	SystemEvtQueue
+ 543 0030 00000000 		.word	TL_RefTable
+ 544 0034 00000000 		.word	SYS_CMD_IoBusCallBackFunction
+ 545 0038 00000000 		.word	SYS_EVT_IoBusCallBackFunction
+ 546              		.cfi_endproc
+ 547              	.LFE1268:
+ 549              		.section	.text.TL_SYS_SendCmd,"ax",%progbits
+ 550              		.align	1
+ 551              		.global	TL_SYS_SendCmd
+ 552              		.syntax unified
+ 553              		.thumb
+ 554              		.thumb_func
+ 556              	TL_SYS_SendCmd:
+ 557              	.LVL29:
+ 558              	.LFB1269:
+ 218:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(buffer);
+ 559              		.loc 1 218 1 is_stmt 1 view -0
+ 560              		.cfi_startproc
+ 561              		@ args = 0, pretend = 0, frame = 0
+ 562              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(buffer);
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 24
+
+
+ 563              		.loc 1 218 1 is_stmt 0 view .LVU137
+ 564 0000 08B5     		push	{r3, lr}
+ 565              	.LCFI13:
+ 566              		.cfi_def_cfa_offset 8
+ 567              		.cfi_offset 3, -8
+ 568              		.cfi_offset 14, -4
+ 219:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(size);
+ 569              		.loc 1 219 3 is_stmt 1 view .LVU138
+ 220:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 570              		.loc 1 220 3 view .LVU139
+ 222:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 571              		.loc 1 222 3 view .LVU140
+ 222:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 572              		.loc 1 222 34 is_stmt 0 view .LVU141
+ 573 0002 054B     		ldr	r3, .L41
+ 574 0004 DA68     		ldr	r2, [r3, #12]
+ 222:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 575              		.loc 1 222 46 view .LVU142
+ 576 0006 1268     		ldr	r2, [r2]
+ 222:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 577              		.loc 1 222 78 view .LVU143
+ 578 0008 1021     		movs	r1, #16
+ 579              	.LVL30:
+ 222:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 580              		.loc 1 222 78 view .LVU144
+ 581 000a 1172     		strb	r1, [r2, #8]
+ 224:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 582              		.loc 1 224 3 is_stmt 1 view .LVU145
+ 224:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 583              		.loc 1 224 44 is_stmt 0 view .LVU146
+ 584 000c DB68     		ldr	r3, [r3, #12]
+ 226:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 585              		.loc 1 226 3 is_stmt 1 view .LVU147
+ 586 000e FFF7FEFF 		bl	HW_IPCC_SYS_SendCmd
+ 587              	.LVL31:
+ 228:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 588              		.loc 1 228 3 view .LVU148
+ 229:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 589              		.loc 1 229 1 is_stmt 0 view .LVU149
+ 590 0012 0020     		movs	r0, #0
+ 591 0014 08BD     		pop	{r3, pc}
+ 592              	.L42:
+ 593 0016 00BF     		.align	2
+ 594              	.L41:
+ 595 0018 00000000 		.word	TL_RefTable
+ 596              		.cfi_endproc
+ 597              	.LFE1269:
+ 599              		.section	.text.HW_IPCC_SYS_CmdEvtNot,"ax",%progbits
+ 600              		.align	1
+ 601              		.global	HW_IPCC_SYS_CmdEvtNot
+ 602              		.syntax unified
+ 603              		.thumb
+ 604              		.thumb_func
+ 606              	HW_IPCC_SYS_CmdEvtNot:
+ 607              	.LFB1270:
+ 232:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   OutputDbgTrace(TL_MB_SYS_CMD_RSP, (uint8_t*)(TL_RefTable.p_sys_table->pcmd_buffer) );
+ 608              		.loc 1 232 1 is_stmt 1 view -0
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 25
+
+
+ 609              		.cfi_startproc
+ 610              		@ args = 0, pretend = 0, frame = 0
+ 611              		@ frame_needed = 0, uses_anonymous_args = 0
+ 612 0000 08B5     		push	{r3, lr}
+ 613              	.LCFI14:
+ 614              		.cfi_def_cfa_offset 8
+ 615              		.cfi_offset 3, -8
+ 616              		.cfi_offset 14, -4
+ 233:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 617              		.loc 1 233 3 view .LVU151
+ 233:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 618              		.loc 1 233 59 is_stmt 0 view .LVU152
+ 619 0002 044B     		ldr	r3, .L45
+ 620 0004 DA68     		ldr	r2, [r3, #12]
+ 235:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 621              		.loc 1 235 3 is_stmt 1 view .LVU153
+ 235:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 622              		.loc 1 235 63 is_stmt 0 view .LVU154
+ 623 0006 DA68     		ldr	r2, [r3, #12]
+ 235:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 624              		.loc 1 235 3 view .LVU155
+ 625 0008 034B     		ldr	r3, .L45+4
+ 626 000a 1B68     		ldr	r3, [r3]
+ 627 000c 1068     		ldr	r0, [r2]
+ 628 000e 9847     		blx	r3
+ 629              	.LVL32:
+ 237:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 630              		.loc 1 237 3 is_stmt 1 view .LVU156
+ 238:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 631              		.loc 1 238 1 is_stmt 0 view .LVU157
+ 632 0010 08BD     		pop	{r3, pc}
+ 633              	.L46:
+ 634 0012 00BF     		.align	2
+ 635              	.L45:
+ 636 0014 00000000 		.word	TL_RefTable
+ 637 0018 00000000 		.word	SYS_CMD_IoBusCallBackFunction
+ 638              		.cfi_endproc
+ 639              	.LFE1270:
+ 641              		.section	.text.HW_IPCC_SYS_EvtNot,"ax",%progbits
+ 642              		.align	1
+ 643              		.global	HW_IPCC_SYS_EvtNot
+ 644              		.syntax unified
+ 645              		.thumb
+ 646              		.thumb_func
+ 648              	HW_IPCC_SYS_EvtNot:
+ 649              	.LFB1271:
+ 241:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_EvtPacket_t *p_evt;
+ 650              		.loc 1 241 1 is_stmt 1 view -0
+ 651              		.cfi_startproc
+ 652              		@ args = 0, pretend = 0, frame = 8
+ 653              		@ frame_needed = 0, uses_anonymous_args = 0
+ 654 0000 00B5     		push	{lr}
+ 655              	.LCFI15:
+ 656              		.cfi_def_cfa_offset 4
+ 657              		.cfi_offset 14, -4
+ 658 0002 83B0     		sub	sp, sp, #12
+ 659              	.LCFI16:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 26
+
+
+ 660              		.cfi_def_cfa_offset 16
+ 242:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 661              		.loc 1 242 3 view .LVU159
+ 244:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 662              		.loc 1 244 3 view .LVU160
+ 244:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 663              		.loc 1 244 8 is_stmt 0 view .LVU161
+ 664 0004 07E0     		b	.L48
+ 665              	.L49:
+ 246:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 666              		.loc 1 246 5 is_stmt 1 view .LVU162
+ 667 0006 01A9     		add	r1, sp, #4
+ 668 0008 0748     		ldr	r0, .L51
+ 669 000a FFF7FEFF 		bl	LST_remove_head
+ 670              	.LVL33:
+ 248:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 671              		.loc 1 248 5 view .LVU163
+ 250:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   }
+ 672              		.loc 1 250 5 view .LVU164
+ 673 000e 074B     		ldr	r3, .L51+4
+ 674 0010 1B68     		ldr	r3, [r3]
+ 675 0012 0198     		ldr	r0, [sp, #4]
+ 676 0014 9847     		blx	r3
+ 677              	.LVL34:
+ 678              	.L48:
+ 244:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 679              		.loc 1 244 39 view .LVU165
+ 244:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 680              		.loc 1 244 9 is_stmt 0 view .LVU166
+ 681 0016 0448     		ldr	r0, .L51
+ 682 0018 FFF7FEFF 		bl	LST_is_empty
+ 683              	.LVL35:
+ 244:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 684              		.loc 1 244 39 discriminator 1 view .LVU167
+ 685 001c 0028     		cmp	r0, #0
+ 686 001e F2D0     		beq	.L49
+ 254:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 687              		.loc 1 254 1 view .LVU168
+ 688 0020 03B0     		add	sp, sp, #12
+ 689              	.LCFI17:
+ 690              		.cfi_def_cfa_offset 4
+ 691              		@ sp needed
+ 692 0022 5DF804FB 		ldr	pc, [sp], #4
+ 693              	.L52:
+ 694 0026 00BF     		.align	2
+ 695              	.L51:
+ 696 0028 00000000 		.word	SystemEvtQueue
+ 697 002c 00000000 		.word	SYS_EVT_IoBusCallBackFunction
+ 698              		.cfi_endproc
+ 699              	.LFE1271:
+ 701              		.section	.text.TL_MM_Init,"ax",%progbits
+ 702              		.align	1
+ 703              		.global	TL_MM_Init
+ 704              		.syntax unified
+ 705              		.thumb
+ 706              		.thumb_func
+ 708              	TL_MM_Init:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 27
+
+
+ 709              	.LVL36:
+ 710              	.LFB1272:
+ 598:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   static MB_MemManagerTable_t  * p_mem_manager_table;
+ 711              		.loc 1 598 1 is_stmt 1 view -0
+ 712              		.cfi_startproc
+ 713              		@ args = 0, pretend = 0, frame = 0
+ 714              		@ frame_needed = 0, uses_anonymous_args = 0
+ 598:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   static MB_MemManagerTable_t  * p_mem_manager_table;
+ 715              		.loc 1 598 1 is_stmt 0 view .LVU170
+ 716 0000 38B5     		push	{r3, r4, r5, lr}
+ 717              	.LCFI18:
+ 718              		.cfi_def_cfa_offset 16
+ 719              		.cfi_offset 3, -16
+ 720              		.cfi_offset 4, -12
+ 721              		.cfi_offset 5, -8
+ 722              		.cfi_offset 14, -4
+ 723 0002 0446     		mov	r4, r0
+ 599:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 724              		.loc 1 599 3 is_stmt 1 view .LVU171
+ 601:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   LST_init_head (&LocalFreeBufQueue);
+ 725              		.loc 1 601 3 view .LVU172
+ 726 0004 0C4D     		ldr	r5, .L55
+ 727 0006 2846     		mov	r0, r5
+ 728              	.LVL37:
+ 601:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   LST_init_head (&LocalFreeBufQueue);
+ 729              		.loc 1 601 3 is_stmt 0 view .LVU173
+ 730 0008 FFF7FEFF 		bl	LST_init_head
+ 731              	.LVL38:
+ 602:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 732              		.loc 1 602 3 is_stmt 1 view .LVU174
+ 733 000c 0B48     		ldr	r0, .L55+4
+ 734 000e FFF7FEFF 		bl	LST_init_head
+ 735              	.LVL39:
+ 604:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 736              		.loc 1 604 3 view .LVU175
+ 604:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 737              		.loc 1 604 36 is_stmt 0 view .LVU176
+ 738 0012 0B4B     		ldr	r3, .L55+8
+ 739 0014 1B69     		ldr	r3, [r3, #16]
+ 604:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 740              		.loc 1 604 23 view .LVU177
+ 741 0016 0B4A     		ldr	r2, .L55+12
+ 742 0018 1360     		str	r3, [r2]
+ 606:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->blepoolsize = p_Config->AsynchEvtPoolSize;
+ 743              		.loc 1 606 3 is_stmt 1 view .LVU178
+ 606:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->blepoolsize = p_Config->AsynchEvtPoolSize;
+ 744              		.loc 1 606 42 is_stmt 0 view .LVU179
+ 745 001a A268     		ldr	r2, [r4, #8]
+ 606:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->blepoolsize = p_Config->AsynchEvtPoolSize;
+ 746              		.loc 1 606 32 view .LVU180
+ 747 001c 9A60     		str	r2, [r3, #8]
+ 607:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->pevt_free_buffer_queue = (uint8_t*)&FreeBufQueue;
+ 748              		.loc 1 607 3 is_stmt 1 view .LVU181
+ 607:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->pevt_free_buffer_queue = (uint8_t*)&FreeBufQueue;
+ 749              		.loc 1 607 46 is_stmt 0 view .LVU182
+ 750 001e E268     		ldr	r2, [r4, #12]
+ 607:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->pevt_free_buffer_queue = (uint8_t*)&FreeBufQueue;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 28
+
+
+ 751              		.loc 1 607 36 view .LVU183
+ 752 0020 DA60     		str	r2, [r3, #12]
+ 608:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->spare_ble_buffer = p_Config->p_BleSpareEvtBuffer;
+ 753              		.loc 1 608 3 is_stmt 1 view .LVU184
+ 608:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->spare_ble_buffer = p_Config->p_BleSpareEvtBuffer;
+ 754              		.loc 1 608 47 is_stmt 0 view .LVU185
+ 755 0022 1D61     		str	r5, [r3, #16]
+ 609:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->spare_sys_buffer = p_Config->p_SystemSpareEvtBuffer;
+ 756              		.loc 1 609 3 is_stmt 1 view .LVU186
+ 609:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->spare_sys_buffer = p_Config->p_SystemSpareEvtBuffer;
+ 757              		.loc 1 609 51 is_stmt 0 view .LVU187
+ 758 0024 2268     		ldr	r2, [r4]
+ 609:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->spare_sys_buffer = p_Config->p_SystemSpareEvtBuffer;
+ 759              		.loc 1 609 41 view .LVU188
+ 760 0026 1A60     		str	r2, [r3]
+ 610:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->traces_evt_pool = p_Config->p_TracesEvtPool;
+ 761              		.loc 1 610 3 is_stmt 1 view .LVU189
+ 610:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->traces_evt_pool = p_Config->p_TracesEvtPool;
+ 762              		.loc 1 610 51 is_stmt 0 view .LVU190
+ 763 0028 6268     		ldr	r2, [r4, #4]
+ 610:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->traces_evt_pool = p_Config->p_TracesEvtPool;
+ 764              		.loc 1 610 41 view .LVU191
+ 765 002a 5A60     		str	r2, [r3, #4]
+ 611:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->tracespoolsize = p_Config->TracesEvtPoolSize;
+ 766              		.loc 1 611 3 is_stmt 1 view .LVU192
+ 611:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->tracespoolsize = p_Config->TracesEvtPoolSize;
+ 767              		.loc 1 611 50 is_stmt 0 view .LVU193
+ 768 002c 2269     		ldr	r2, [r4, #16]
+ 611:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   p_mem_manager_table->tracespoolsize = p_Config->TracesEvtPoolSize;
+ 769              		.loc 1 611 40 view .LVU194
+ 770 002e 5A61     		str	r2, [r3, #20]
+ 612:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 771              		.loc 1 612 3 is_stmt 1 view .LVU195
+ 612:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 772              		.loc 1 612 49 is_stmt 0 view .LVU196
+ 773 0030 6269     		ldr	r2, [r4, #20]
+ 612:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 774              		.loc 1 612 39 view .LVU197
+ 775 0032 9A61     		str	r2, [r3, #24]
+ 614:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 776              		.loc 1 614 3 is_stmt 1 view .LVU198
+ 615:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 777              		.loc 1 615 1 is_stmt 0 view .LVU199
+ 778 0034 38BD     		pop	{r3, r4, r5, pc}
+ 779              	.LVL40:
+ 780              	.L56:
+ 615:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 781              		.loc 1 615 1 view .LVU200
+ 782 0036 00BF     		.align	2
+ 783              	.L55:
+ 784 0038 18000000 		.word	FreeBufQueue
+ 785 003c 00000000 		.word	LocalFreeBufQueue
+ 786 0040 00000000 		.word	TL_RefTable
+ 787 0044 00000000 		.word	p_mem_manager_table.0
+ 788              		.cfi_endproc
+ 789              	.LFE1272:
+ 791              		.section	.text.TL_MM_EvtDone,"ax",%progbits
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 29
+
+
+ 792              		.align	1
+ 793              		.global	TL_MM_EvtDone
+ 794              		.syntax unified
+ 795              		.thumb
+ 796              		.thumb_func
+ 798              	TL_MM_EvtDone:
+ 799              	.LVL41:
+ 800              	.LFB1273:
+ 618:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   LST_insert_tail(&LocalFreeBufQueue, (tListNode *)phcievt);
+ 801              		.loc 1 618 1 is_stmt 1 view -0
+ 802              		.cfi_startproc
+ 803              		@ args = 0, pretend = 0, frame = 0
+ 804              		@ frame_needed = 0, uses_anonymous_args = 0
+ 618:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   LST_insert_tail(&LocalFreeBufQueue, (tListNode *)phcievt);
+ 805              		.loc 1 618 1 is_stmt 0 view .LVU202
+ 806 0000 08B5     		push	{r3, lr}
+ 807              	.LCFI19:
+ 808              		.cfi_def_cfa_offset 8
+ 809              		.cfi_offset 3, -8
+ 810              		.cfi_offset 14, -4
+ 811 0002 0146     		mov	r1, r0
+ 619:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 812              		.loc 1 619 3 is_stmt 1 view .LVU203
+ 813 0004 0348     		ldr	r0, .L59
+ 814              	.LVL42:
+ 619:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 815              		.loc 1 619 3 is_stmt 0 view .LVU204
+ 816 0006 FFF7FEFF 		bl	LST_insert_tail
+ 817              	.LVL43:
+ 621:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 818              		.loc 1 621 3 is_stmt 1 view .LVU205
+ 623:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 819              		.loc 1 623 3 view .LVU206
+ 820 000a 0348     		ldr	r0, .L59+4
+ 821 000c FFF7FEFF 		bl	HW_IPCC_MM_SendFreeBuf
+ 822              	.LVL44:
+ 625:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 823              		.loc 1 625 3 view .LVU207
+ 626:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 824              		.loc 1 626 1 is_stmt 0 view .LVU208
+ 825 0010 08BD     		pop	{r3, pc}
+ 826              	.L60:
+ 827 0012 00BF     		.align	2
+ 828              	.L59:
+ 829 0014 00000000 		.word	LocalFreeBufQueue
+ 830 0018 00000000 		.word	SendFreeBuf
+ 831              		.cfi_endproc
+ 832              	.LFE1273:
+ 834              		.section	.text.TL_TRACES_Init,"ax",%progbits
+ 835              		.align	1
+ 836              		.global	TL_TRACES_Init
+ 837              		.syntax unified
+ 838              		.thumb
+ 839              		.thumb_func
+ 841              	TL_TRACES_Init:
+ 842              	.LFB1275:
+ 640:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 30
+
+
+ 641:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** /******************************************************************************
+ 642:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  * TRACES
+ 643:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****  ******************************************************************************/
+ 644:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void TL_TRACES_Init( void )
+ 645:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 843              		.loc 1 645 1 is_stmt 1 view -0
+ 844              		.cfi_startproc
+ 845              		@ args = 0, pretend = 0, frame = 0
+ 846              		@ frame_needed = 0, uses_anonymous_args = 0
+ 847 0000 10B5     		push	{r4, lr}
+ 848              	.LCFI20:
+ 849              		.cfi_def_cfa_offset 8
+ 850              		.cfi_offset 4, -8
+ 851              		.cfi_offset 14, -4
+ 646:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   LST_init_head (&TracesEvtQueue);
+ 852              		.loc 1 646 3 view .LVU210
+ 853 0002 054C     		ldr	r4, .L63
+ 854 0004 2046     		mov	r0, r4
+ 855 0006 FFF7FEFF 		bl	LST_init_head
+ 856              	.LVL45:
+ 647:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 648:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_RefTable.p_traces_table->traces_queue = (uint8_t*)&TracesEvtQueue;
+ 857              		.loc 1 648 3 view .LVU211
+ 858              		.loc 1 648 14 is_stmt 0 view .LVU212
+ 859 000a 044B     		ldr	r3, .L63+4
+ 860 000c 5B69     		ldr	r3, [r3, #20]
+ 861              		.loc 1 648 44 view .LVU213
+ 862 000e 1C60     		str	r4, [r3]
+ 649:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 650:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   HW_IPCC_TRACES_Init();
+ 863              		.loc 1 650 3 is_stmt 1 view .LVU214
+ 864 0010 FFF7FEFF 		bl	HW_IPCC_TRACES_Init
+ 865              	.LVL46:
+ 651:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 652:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 866              		.loc 1 652 3 view .LVU215
+ 653:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 867              		.loc 1 653 1 is_stmt 0 view .LVU216
+ 868 0014 10BD     		pop	{r4, pc}
+ 869              	.L64:
+ 870 0016 00BF     		.align	2
+ 871              	.L63:
+ 872 0018 10000000 		.word	TracesEvtQueue
+ 873 001c 00000000 		.word	TL_RefTable
+ 874              		.cfi_endproc
+ 875              	.LFE1275:
+ 877              		.section	.text.TL_TRACES_EvtReceived,"ax",%progbits
+ 878              		.align	1
+ 879              		.weak	TL_TRACES_EvtReceived
+ 880              		.syntax unified
+ 881              		.thumb
+ 882              		.thumb_func
+ 884              	TL_TRACES_EvtReceived:
+ 885              	.LVL47:
+ 886              	.LFB1277:
+ 654:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 655:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** void HW_IPCC_TRACES_EvtNot(void)
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 31
+
+
+ 656:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 657:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_EvtPacket_t *phcievt;
+ 658:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 659:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   while(LST_is_empty(&TracesEvtQueue) == FALSE)
+ 660:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 661:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     LST_remove_head (&TracesEvtQueue, (tListNode **)&phcievt);
+ 662:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     TL_TRACES_EvtReceived( phcievt );
+ 663:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   }
+ 664:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 665:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   return;
+ 666:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 667:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 668:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** __WEAK void TL_TRACES_EvtReceived( TL_EvtPacket_t * hcievt )
+ 669:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** {
+ 887              		.loc 1 669 1 is_stmt 1 view -0
+ 888              		.cfi_startproc
+ 889              		@ args = 0, pretend = 0, frame = 0
+ 890              		@ frame_needed = 0, uses_anonymous_args = 0
+ 891              		@ link register save eliminated.
+ 670:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   (void)(hcievt);
+ 892              		.loc 1 670 3 view .LVU218
+ 671:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** }
+ 893              		.loc 1 671 1 is_stmt 0 view .LVU219
+ 894 0000 7047     		bx	lr
+ 895              		.cfi_endproc
+ 896              	.LFE1277:
+ 898              		.section	.text.HW_IPCC_TRACES_EvtNot,"ax",%progbits
+ 899              		.align	1
+ 900              		.global	HW_IPCC_TRACES_EvtNot
+ 901              		.syntax unified
+ 902              		.thumb
+ 903              		.thumb_func
+ 905              	HW_IPCC_TRACES_EvtNot:
+ 906              	.LFB1276:
+ 656:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   TL_EvtPacket_t *phcievt;
+ 907              		.loc 1 656 1 is_stmt 1 view -0
+ 908              		.cfi_startproc
+ 909              		@ args = 0, pretend = 0, frame = 8
+ 910              		@ frame_needed = 0, uses_anonymous_args = 0
+ 911 0000 00B5     		push	{lr}
+ 912              	.LCFI21:
+ 913              		.cfi_def_cfa_offset 4
+ 914              		.cfi_offset 14, -4
+ 915 0002 83B0     		sub	sp, sp, #12
+ 916              	.LCFI22:
+ 917              		.cfi_def_cfa_offset 16
+ 657:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 918              		.loc 1 657 3 view .LVU221
+ 659:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 919              		.loc 1 659 3 view .LVU222
+ 659:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 920              		.loc 1 659 8 is_stmt 0 view .LVU223
+ 921 0004 06E0     		b	.L67
+ 922              	.L68:
+ 661:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****     TL_TRACES_EvtReceived( phcievt );
+ 923              		.loc 1 661 5 is_stmt 1 view .LVU224
+ 924 0006 01A9     		add	r1, sp, #4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 32
+
+
+ 925 0008 0648     		ldr	r0, .L70
+ 926 000a FFF7FEFF 		bl	LST_remove_head
+ 927              	.LVL48:
+ 662:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   }
+ 928              		.loc 1 662 5 view .LVU225
+ 929 000e 0198     		ldr	r0, [sp, #4]
+ 930 0010 FFF7FEFF 		bl	TL_TRACES_EvtReceived
+ 931              	.LVL49:
+ 932              	.L67:
+ 659:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 933              		.loc 1 659 39 view .LVU226
+ 659:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 934              		.loc 1 659 9 is_stmt 0 view .LVU227
+ 935 0014 0348     		ldr	r0, .L70
+ 936 0016 FFF7FEFF 		bl	LST_is_empty
+ 937              	.LVL50:
+ 659:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c ****   {
+ 938              		.loc 1 659 39 discriminator 1 view .LVU228
+ 939 001a 0028     		cmp	r0, #0
+ 940 001c F3D0     		beq	.L68
+ 666:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl_mbox.c **** 
+ 941              		.loc 1 666 1 view .LVU229
+ 942 001e 03B0     		add	sp, sp, #12
+ 943              	.LCFI23:
+ 944              		.cfi_def_cfa_offset 4
+ 945              		@ sp needed
+ 946 0020 5DF804FB 		ldr	pc, [sp], #4
+ 947              	.L71:
+ 948              		.align	2
+ 949              	.L70:
+ 950 0024 10000000 		.word	TracesEvtQueue
+ 951              		.cfi_endproc
+ 952              	.LFE1276:
+ 954              		.section	.bss.p_mem_manager_table.0,"aw",%nobits
+ 955              		.align	2
+ 958              	p_mem_manager_table.0:
+ 959 0000 00000000 		.space	4
+ 960              		.section	.bss.SYS_EVT_IoBusCallBackFunction,"aw",%nobits
+ 961              		.align	2
+ 964              	SYS_EVT_IoBusCallBackFunction:
+ 965 0000 00000000 		.space	4
+ 966              		.section	.bss.SYS_CMD_IoBusCallBackFunction,"aw",%nobits
+ 967              		.align	2
+ 970              	SYS_CMD_IoBusCallBackFunction:
+ 971 0000 00000000 		.space	4
+ 972              		.section	.bss.BLE_IoBusAclDataTxAck,"aw",%nobits
+ 973              		.align	2
+ 976              	BLE_IoBusAclDataTxAck:
+ 977 0000 00000000 		.space	4
+ 978              		.section	.bss.BLE_IoBusEvtCallBackFunction,"aw",%nobits
+ 979              		.align	2
+ 982              	BLE_IoBusEvtCallBackFunction:
+ 983 0000 00000000 		.space	4
+ 984              		.section	.bss.LocalFreeBufQueue,"aw",%nobits
+ 985              		.align	2
+ 988              	LocalFreeBufQueue:
+ 989 0000 00000000 		.space	8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 33
+
+
+ 989      00000000 
+ 990              		.section	MB_MEM1,"aw"
+ 991              		.align	2
+ 994              	SystemEvtQueue:
+ 995 0000 00000000 		.space	8
+ 995      00000000 
+ 996              		.align	2
+ 999              	EvtQueue:
+ 1000 0008 00000000 		.space	8
+ 1000      00000000 
+ 1001              		.section	MB_MEM2,"aw"
+ 1002              		.align	2
+ 1005              	CsBuffer:
+ 1006 0000 00000000 		.space	15
+ 1006      00000000 
+ 1006      00000000 
+ 1006      000000
+ 1007              		.section	MB_MEM1
+ 1008              		.align	2
+ 1011              	TracesEvtQueue:
+ 1012 0010 00000000 		.space	8
+ 1012      00000000 
+ 1013              		.align	2
+ 1016              	FreeBufQueue:
+ 1017 0018 00000000 		.space	8
+ 1017      00000000 
+ 1018              		.align	2
+ 1021              	TL_Zigbee_Table:
+ 1022 0020 00000000 		.space	12
+ 1022      00000000 
+ 1022      00000000 
+ 1023              		.align	2
+ 1026              	TL_Mac_802_15_4_Table:
+ 1027 002c 00000000 		.space	12
+ 1027      00000000 
+ 1027      00000000 
+ 1028              		.align	2
+ 1031              	TL_TracesTable:
+ 1032 0038 00000000 		.space	4
+ 1033              		.align	2
+ 1036              	TL_MemManagerTable:
+ 1037 003c 00000000 		.space	28
+ 1037      00000000 
+ 1037      00000000 
+ 1037      00000000 
+ 1037      00000000 
+ 1038              		.align	2
+ 1041              	TL_SysTable:
+ 1042 0058 00000000 		.space	8
+ 1042      00000000 
+ 1043              		.align	2
+ 1046              	TL_BleLldTable:
+ 1047 0060 00000000 		.space	8
+ 1047      00000000 
+ 1048              		.align	2
+ 1051              	TL_LldTestsTable:
+ 1052 0068 00000000 		.space	8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 34
+
+
+ 1052      00000000 
+ 1053              		.align	2
+ 1056              	TL_ThreadTable:
+ 1057 0070 00000000 		.space	16
+ 1057      00000000 
+ 1057      00000000 
+ 1057      00000000 
+ 1058              		.align	2
+ 1061              	TL_BleTable:
+ 1062 0080 00000000 		.space	16
+ 1062      00000000 
+ 1062      00000000 
+ 1062      00000000 
+ 1063              		.align	2
+ 1066              	TL_DeviceInfoTable:
+ 1067 0090 00000000 		.space	32
+ 1067      00000000 
+ 1067      00000000 
+ 1067      00000000 
+ 1067      00000000 
+ 1068              		.section	MAPPING_TABLE,"aw"
+ 1069              		.align	2
+ 1072              	TL_RefTable:
+ 1073 0000 00000000 		.space	40
+ 1073      00000000 
+ 1073      00000000 
+ 1073      00000000 
+ 1073      00000000 
+ 1074              		.text
+ 1075              	.Letext0:
+ 1076              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 1077              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 1078              		.file 4 "Middlewares/ST/STM32_WPAN/utilities/stm_list.h"
+ 1079              		.file 5 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl.h"
+ 1080              		.file 6 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/mbox_def.h"
+ 1081              		.file 7 "Core/Inc/app_conf.h"
+ 1082              		.file 8 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/hw.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 35
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 tl_mbox.c
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:21     .text.SendFreeBuf:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:26     .text.SendFreeBuf:00000000 SendFreeBuf
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:76     .text.SendFreeBuf:0000002c $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:988    .bss.LocalFreeBufQueue:00000000 LocalFreeBufQueue
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1072   MAPPING_TABLE:00000000 TL_RefTable
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:82     .text.TL_Enable:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:88     .text.TL_Enable:00000000 TL_Enable
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:109    .text.TL_Init:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:115    .text.TL_Init:00000000 TL_Init
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:176    .text.TL_Init:00000034 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1066   MB_MEM1:00000090 TL_DeviceInfoTable
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1061   MB_MEM1:00000080 TL_BleTable
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1056   MB_MEM1:00000070 TL_ThreadTable
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1051   MB_MEM1:00000068 TL_LldTestsTable
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1046   MB_MEM1:00000060 TL_BleLldTable
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1041   MB_MEM1:00000058 TL_SysTable
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1036   MB_MEM1:0000003c TL_MemManagerTable
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1031   MB_MEM1:00000038 TL_TracesTable
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1026   MB_MEM1:0000002c TL_Mac_802_15_4_Table
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1021   MB_MEM1:00000020 TL_Zigbee_Table
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:191    .text.TL_BLE_Init:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:197    .text.TL_BLE_Init:00000000 TL_BLE_Init
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:269    .text.TL_BLE_Init:00000034 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:999    MB_MEM1:00000008 EvtQueue
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1005   MB_MEM2:00000000 CsBuffer
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:982    .bss.BLE_IoBusEvtCallBackFunction:00000000 BLE_IoBusEvtCallBackFunction
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:976    .bss.BLE_IoBusAclDataTxAck:00000000 BLE_IoBusAclDataTxAck
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:278    .text.TL_BLE_SendCmd:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:284    .text.TL_BLE_SendCmd:00000000 TL_BLE_SendCmd
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:323    .text.TL_BLE_SendCmd:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:328    .text.HW_IPCC_BLE_RxEvtNot:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:334    .text.HW_IPCC_BLE_RxEvtNot:00000000 HW_IPCC_BLE_RxEvtNot
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:383    .text.HW_IPCC_BLE_RxEvtNot:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:389    .text.TL_BLE_SendAclData:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:395    .text.TL_BLE_SendAclData:00000000 TL_BLE_SendAclData
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:434    .text.TL_BLE_SendAclData:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:439    .text.HW_IPCC_BLE_AclDataAckNot:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:445    .text.HW_IPCC_BLE_AclDataAckNot:00000000 HW_IPCC_BLE_AclDataAckNot
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:468    .text.HW_IPCC_BLE_AclDataAckNot:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:473    .text.TL_SYS_Init:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:479    .text.TL_SYS_Init:00000000 TL_SYS_Init
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:542    .text.TL_SYS_Init:0000002c $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:994    MB_MEM1:00000000 SystemEvtQueue
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:970    .bss.SYS_CMD_IoBusCallBackFunction:00000000 SYS_CMD_IoBusCallBackFunction
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:964    .bss.SYS_EVT_IoBusCallBackFunction:00000000 SYS_EVT_IoBusCallBackFunction
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:550    .text.TL_SYS_SendCmd:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:556    .text.TL_SYS_SendCmd:00000000 TL_SYS_SendCmd
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:595    .text.TL_SYS_SendCmd:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:600    .text.HW_IPCC_SYS_CmdEvtNot:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:606    .text.HW_IPCC_SYS_CmdEvtNot:00000000 HW_IPCC_SYS_CmdEvtNot
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:636    .text.HW_IPCC_SYS_CmdEvtNot:00000014 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:642    .text.HW_IPCC_SYS_EvtNot:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:648    .text.HW_IPCC_SYS_EvtNot:00000000 HW_IPCC_SYS_EvtNot
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:696    .text.HW_IPCC_SYS_EvtNot:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:702    .text.TL_MM_Init:00000000 $t
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s 			page 36
+
+
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:708    .text.TL_MM_Init:00000000 TL_MM_Init
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:784    .text.TL_MM_Init:00000038 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1016   MB_MEM1:00000018 FreeBufQueue
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:958    .bss.p_mem_manager_table.0:00000000 p_mem_manager_table.0
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:792    .text.TL_MM_EvtDone:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:798    .text.TL_MM_EvtDone:00000000 TL_MM_EvtDone
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:829    .text.TL_MM_EvtDone:00000014 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:835    .text.TL_TRACES_Init:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:841    .text.TL_TRACES_Init:00000000 TL_TRACES_Init
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:872    .text.TL_TRACES_Init:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1011   MB_MEM1:00000010 TracesEvtQueue
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:878    .text.TL_TRACES_EvtReceived:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:884    .text.TL_TRACES_EvtReceived:00000000 TL_TRACES_EvtReceived
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:899    .text.HW_IPCC_TRACES_EvtNot:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:905    .text.HW_IPCC_TRACES_EvtNot:00000000 HW_IPCC_TRACES_EvtNot
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:950    .text.HW_IPCC_TRACES_EvtNot:00000024 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:955    .bss.p_mem_manager_table.0:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:961    .bss.SYS_EVT_IoBusCallBackFunction:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:967    .bss.SYS_CMD_IoBusCallBackFunction:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:973    .bss.BLE_IoBusAclDataTxAck:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:979    .bss.BLE_IoBusEvtCallBackFunction:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:985    .bss.LocalFreeBufQueue:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:991    MB_MEM1:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1002   MB_MEM2:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc3L1I04.s:1069   MAPPING_TABLE:00000000 $d
+
+UNDEFINED SYMBOLS
+LST_remove_head
+LST_insert_tail
+LST_is_empty
+HW_IPCC_Enable
+HW_IPCC_Init
+LST_init_head
+HW_IPCC_BLE_Init
+HW_IPCC_BLE_SendCmd
+HW_IPCC_BLE_SendAclData
+HW_IPCC_SYS_Init
+HW_IPCC_SYS_SendCmd
+HW_IPCC_MM_SendFreeBuf
+HW_IPCC_TRACES_Init

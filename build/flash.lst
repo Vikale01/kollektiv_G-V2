@@ -1,0 +1,1839 @@
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"flash.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/flash.c"
+  20              		.section	.text.Flash_ReadJEDEC,"ax",%progbits
+  21              		.align	1
+  22              		.global	Flash_ReadJEDEC
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	Flash_ReadJEDEC:
+  28              	.LFB1262:
+   1:Core/Src/flash.c **** #include "flash.h"
+   2:Core/Src/flash.c **** 
+   3:Core/Src/flash.c **** 
+   4:Core/Src/flash.c **** //   uint32_t Instruction;        /* Specifies the Instruction to be sent
+   5:Core/Src/flash.c **** //                                   This parameter can be a value (8-bit) between 0x00 and 0xFF */
+   6:Core/Src/flash.c **** //   uint32_t Address;            /* Specifies the Address to be sent (Size from 1 to 4 bytes accor
+   7:Core/Src/flash.c **** //                                   This parameter can be a value (32-bits) between 0x0 and 0xFFFF
+   8:Core/Src/flash.c **** //   uint32_t AlternateBytes;     /* Specifies the Alternate Bytes to be sent (Size from 1 to 4 byt
+   9:Core/Src/flash.c **** //                                   This parameter can be a value (32-bits) between 0x0 and 0xFFFF
+  10:Core/Src/flash.c **** //   uint32_t AddressSize;        /* Specifies the Address Size
+  11:Core/Src/flash.c **** //                                   This parameter can be a value of @ref QSPI_AddressSize */
+  12:Core/Src/flash.c **** //   uint32_t AlternateBytesSize; /* Specifies the Alternate Bytes Size
+  13:Core/Src/flash.c **** //                                   This parameter can be a value of @ref QSPI_AlternateBytesSize 
+  14:Core/Src/flash.c **** //   uint32_t DummyCycles;        /* Specifies the Number of Dummy Cycles.
+  15:Core/Src/flash.c **** //                                   This parameter can be a number between 0 and 31 */
+  16:Core/Src/flash.c **** //   uint32_t InstructionMode;    /* Specifies the Instruction Mode
+  17:Core/Src/flash.c **** //                                   This parameter can be a value of @ref QSPI_InstructionMode */
+  18:Core/Src/flash.c **** //   uint32_t AddressMode;        /* Specifies the Address Mode
+  19:Core/Src/flash.c **** //                                   This parameter can be a value of @ref QSPI_AddressMode */
+  20:Core/Src/flash.c **** //   uint32_t AlternateByteMode;  /* Specifies the Alternate Bytes Mode
+  21:Core/Src/flash.c **** //                                   This parameter can be a value of @ref QSPI_AlternateBytesMode 
+  22:Core/Src/flash.c **** //   uint32_t DataMode;           /* Specifies the Data Mode (used for dummy cycles and data phases
+  23:Core/Src/flash.c **** //                                   This parameter can be a value of @ref QSPI_DataMode */
+  24:Core/Src/flash.c **** //   uint32_t NbData;             /* Specifies the number of data to transfer. (This is the number 
+  25:Core/Src/flash.c **** //                                   This parameter can be any value between 0 and 0xFFFFFFFF (0 me
+  26:Core/Src/flash.c **** //                                   until end of memory)*/
+  27:Core/Src/flash.c **** //   uint32_t DdrMode;            /* Specifies the double data rate mode for address, alternate byt
+  28:Core/Src/flash.c **** //                                   This parameter can be a value of @ref QSPI_DdrMode */
+  29:Core/Src/flash.c **** //   uint32_t SIOOMode;           /* Specifies the send instruction only once mode
+  30:Core/Src/flash.c **** //                                   This parameter can be a value of @ref QSPI_SIOOMode */
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 2
+
+
+  31:Core/Src/flash.c **** 
+  32:Core/Src/flash.c **** void Flash_WaitWhileBusy(void)
+  33:Core/Src/flash.c **** {
+  34:Core/Src/flash.c ****     while (Flash_ReadStatusReg() & 0x01);
+  35:Core/Src/flash.c **** }
+  36:Core/Src/flash.c **** 
+  37:Core/Src/flash.c **** void Flash_ReadJEDEC(void)
+  38:Core/Src/flash.c **** {
+  29              		.loc 1 38 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 56
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 00B5     		push	{lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 4
+  36              		.cfi_offset 14, -4
+  37 0002 8FB0     		sub	sp, sp, #60
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 64
+  39:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+  40              		.loc 1 39 5 view .LVU1
+  41              		.loc 1 39 25 is_stmt 0 view .LVU2
+  42 0004 3422     		movs	r2, #52
+  43 0006 0021     		movs	r1, #0
+  44 0008 01A8     		add	r0, sp, #4
+  45 000a FFF7FEFF 		bl	memset
+  46              	.LVL0:
+  40:Core/Src/flash.c **** 
+  41:Core/Src/flash.c ****     uint8_t jedec_id[3];
+  47              		.loc 1 41 5 is_stmt 1 view .LVU3
+  42:Core/Src/flash.c **** 
+  43:Core/Src/flash.c ****     // Config command
+  44:Core/Src/flash.c ****     cmd.Instruction     = READ_IDENTIFICATION_CMD;                   
+  48              		.loc 1 44 5 view .LVU4
+  49              		.loc 1 44 25 is_stmt 0 view .LVU5
+  50 000e 9F23     		movs	r3, #159
+  51 0010 0193     		str	r3, [sp, #4]
+  45:Core/Src/flash.c ****     cmd.InstructionMode = QSPI_INSTRUCTION_1_LINE; 
+  52              		.loc 1 45 5 is_stmt 1 view .LVU6
+  53              		.loc 1 45 25 is_stmt 0 view .LVU7
+  54 0012 4FF48073 		mov	r3, #256
+  55 0016 0793     		str	r3, [sp, #28]
+  46:Core/Src/flash.c ****     cmd.AddressMode     = QSPI_ADDRESS_NONE;       
+  56              		.loc 1 46 5 is_stmt 1 view .LVU8
+  47:Core/Src/flash.c ****     cmd.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;
+  57              		.loc 1 47 5 view .LVU9
+  48:Core/Src/flash.c ****     cmd.DataMode        = QSPI_DATA_1_LINE;       
+  58              		.loc 1 48 5 view .LVU10
+  59              		.loc 1 48 25 is_stmt 0 view .LVU11
+  60 0018 4FF08073 		mov	r3, #16777216
+  61 001c 0A93     		str	r3, [sp, #40]
+  49:Core/Src/flash.c ****     cmd.DummyCycles     = 0;                       
+  62              		.loc 1 49 5 is_stmt 1 view .LVU12
+  50:Core/Src/flash.c ****     cmd.NbData          = 3;                       
+  63              		.loc 1 50 5 view .LVU13
+  64              		.loc 1 50 25 is_stmt 0 view .LVU14
+  65 001e 0323     		movs	r3, #3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 3
+
+
+  66 0020 0B93     		str	r3, [sp, #44]
+  51:Core/Src/flash.c ****     cmd.DdrMode         = QSPI_DDR_MODE_DISABLE;
+  67              		.loc 1 51 5 is_stmt 1 view .LVU15
+  52:Core/Src/flash.c ****     cmd.SIOOMode        = QSPI_SIOO_INST_EVERY_CMD;
+  68              		.loc 1 52 5 view .LVU16
+  53:Core/Src/flash.c **** 
+  54:Core/Src/flash.c ****     if(HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+  69              		.loc 1 54 5 view .LVU17
+  70              		.loc 1 54 8 is_stmt 0 view .LVU18
+  71 0022 41F28832 		movw	r2, #5000
+  72 0026 01A9     		add	r1, sp, #4
+  73 0028 0948     		ldr	r0, .L7
+  74 002a FFF7FEFF 		bl	HAL_QSPI_Command
+  75              	.LVL1:
+  76              		.loc 1 54 7 discriminator 1 view .LVU19
+  77 002e 48B9     		cbnz	r0, .L5
+  78              	.L2:
+  55:Core/Src/flash.c ****     {
+  56:Core/Src/flash.c ****         Error_Handler();
+  57:Core/Src/flash.c ****     }
+  58:Core/Src/flash.c **** 
+  59:Core/Src/flash.c ****     if(HAL_QSPI_Receive(&hqspi, jedec_id, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+  79              		.loc 1 59 5 is_stmt 1 view .LVU20
+  80              		.loc 1 59 8 is_stmt 0 view .LVU21
+  81 0030 41F28832 		movw	r2, #5000
+  82 0034 6946     		mov	r1, sp
+  83 0036 0648     		ldr	r0, .L7
+  84 0038 FFF7FEFF 		bl	HAL_QSPI_Receive
+  85              	.LVL2:
+  86              		.loc 1 59 7 discriminator 1 view .LVU22
+  87 003c 28B9     		cbnz	r0, .L6
+  88              	.L1:
+  60:Core/Src/flash.c ****     {
+  61:Core/Src/flash.c ****         Error_Handler();
+  62:Core/Src/flash.c ****     }
+  63:Core/Src/flash.c **** }
+  89              		.loc 1 63 1 view .LVU23
+  90 003e 0FB0     		add	sp, sp, #60
+  91              	.LCFI2:
+  92              		.cfi_remember_state
+  93              		.cfi_def_cfa_offset 4
+  94              		@ sp needed
+  95 0040 5DF804FB 		ldr	pc, [sp], #4
+  96              	.L5:
+  97              	.LCFI3:
+  98              		.cfi_restore_state
+  56:Core/Src/flash.c ****     }
+  99              		.loc 1 56 9 is_stmt 1 view .LVU24
+ 100 0044 FFF7FEFF 		bl	Error_Handler
+ 101              	.LVL3:
+ 102 0048 F2E7     		b	.L2
+ 103              	.L6:
+  61:Core/Src/flash.c ****     }
+ 104              		.loc 1 61 9 view .LVU25
+ 105 004a FFF7FEFF 		bl	Error_Handler
+ 106              	.LVL4:
+ 107              		.loc 1 63 1 is_stmt 0 view .LVU26
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 4
+
+
+ 108 004e F6E7     		b	.L1
+ 109              	.L8:
+ 110              		.align	2
+ 111              	.L7:
+ 112 0050 00000000 		.word	hqspi
+ 113              		.cfi_endproc
+ 114              	.LFE1262:
+ 116              		.section	.text.Flash_WriteEnable,"ax",%progbits
+ 117              		.align	1
+ 118              		.global	Flash_WriteEnable
+ 119              		.syntax unified
+ 120              		.thumb
+ 121              		.thumb_func
+ 123              	Flash_WriteEnable:
+ 124              	.LFB1263:
+  64:Core/Src/flash.c **** 
+  65:Core/Src/flash.c **** void Flash_WriteEnable(void)
+  66:Core/Src/flash.c **** {
+ 125              		.loc 1 66 1 is_stmt 1 view -0
+ 126              		.cfi_startproc
+ 127              		@ args = 0, pretend = 0, frame = 56
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129 0000 00B5     		push	{lr}
+ 130              	.LCFI4:
+ 131              		.cfi_def_cfa_offset 4
+ 132              		.cfi_offset 14, -4
+ 133 0002 8FB0     		sub	sp, sp, #60
+ 134              	.LCFI5:
+ 135              		.cfi_def_cfa_offset 64
+  67:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 136              		.loc 1 67 5 view .LVU28
+ 137              		.loc 1 67 25 is_stmt 0 view .LVU29
+ 138 0004 3422     		movs	r2, #52
+ 139 0006 0021     		movs	r1, #0
+ 140 0008 01A8     		add	r0, sp, #4
+ 141 000a FFF7FEFF 		bl	memset
+ 142              	.LVL5:
+  68:Core/Src/flash.c **** 
+  69:Core/Src/flash.c ****     cmd.Instruction         = WRITE_ENABLE_CMD;
+ 143              		.loc 1 69 5 is_stmt 1 view .LVU30
+ 144              		.loc 1 69 29 is_stmt 0 view .LVU31
+ 145 000e 0623     		movs	r3, #6
+ 146 0010 0193     		str	r3, [sp, #4]
+  70:Core/Src/flash.c ****     cmd.Address             = 0;
+ 147              		.loc 1 70 5 is_stmt 1 view .LVU32
+  71:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 148              		.loc 1 71 5 view .LVU33
+  72:Core/Src/flash.c ****     cmd.AddressSize         = 0;
+ 149              		.loc 1 72 5 view .LVU34
+  73:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 150              		.loc 1 73 5 view .LVU35
+  74:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 151              		.loc 1 74 5 view .LVU36
+  75:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 152              		.loc 1 75 5 view .LVU37
+ 153              		.loc 1 75 29 is_stmt 0 view .LVU38
+ 154 0012 4FF48073 		mov	r3, #256
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 5
+
+
+ 155 0016 0793     		str	r3, [sp, #28]
+  76:Core/Src/flash.c ****     cmd.AddressMode         = 0;
+ 156              		.loc 1 76 5 is_stmt 1 view .LVU39
+  77:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 157              		.loc 1 77 5 view .LVU40
+  78:Core/Src/flash.c ****     cmd.DataMode            = 0;
+ 158              		.loc 1 78 5 view .LVU41
+  79:Core/Src/flash.c ****     cmd.NbData              = 0;
+ 159              		.loc 1 79 5 view .LVU42
+  80:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 160              		.loc 1 80 5 view .LVU43
+  81:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 161              		.loc 1 81 5 view .LVU44
+  82:Core/Src/flash.c **** 
+  83:Core/Src/flash.c ****     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 162              		.loc 1 83 5 view .LVU45
+ 163              		.loc 1 83 9 is_stmt 0 view .LVU46
+ 164 0018 41F28832 		movw	r2, #5000
+ 165 001c 01A9     		add	r1, sp, #4
+ 166 001e 0548     		ldr	r0, .L13
+ 167 0020 FFF7FEFF 		bl	HAL_QSPI_Command
+ 168              	.LVL6:
+ 169              		.loc 1 83 8 discriminator 1 view .LVU47
+ 170 0024 10B9     		cbnz	r0, .L12
+ 171              	.L9:
+  84:Core/Src/flash.c ****     {
+  85:Core/Src/flash.c ****         Error_Handler();
+  86:Core/Src/flash.c ****     }
+  87:Core/Src/flash.c **** }
+ 172              		.loc 1 87 1 view .LVU48
+ 173 0026 0FB0     		add	sp, sp, #60
+ 174              	.LCFI6:
+ 175              		.cfi_remember_state
+ 176              		.cfi_def_cfa_offset 4
+ 177              		@ sp needed
+ 178 0028 5DF804FB 		ldr	pc, [sp], #4
+ 179              	.L12:
+ 180              	.LCFI7:
+ 181              		.cfi_restore_state
+  85:Core/Src/flash.c ****     }
+ 182              		.loc 1 85 9 is_stmt 1 view .LVU49
+ 183 002c FFF7FEFF 		bl	Error_Handler
+ 184              	.LVL7:
+ 185              		.loc 1 87 1 is_stmt 0 view .LVU50
+ 186 0030 F9E7     		b	.L9
+ 187              	.L14:
+ 188 0032 00BF     		.align	2
+ 189              	.L13:
+ 190 0034 00000000 		.word	hqspi
+ 191              		.cfi_endproc
+ 192              	.LFE1263:
+ 194              		.section	.text.Flash_WriteDisable,"ax",%progbits
+ 195              		.align	1
+ 196              		.global	Flash_WriteDisable
+ 197              		.syntax unified
+ 198              		.thumb
+ 199              		.thumb_func
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 6
+
+
+ 201              	Flash_WriteDisable:
+ 202              	.LFB1266:
+  88:Core/Src/flash.c **** 
+  89:Core/Src/flash.c **** void Flash_WritePage(uint32_t adress, uint8_t *buffer, uint32_t size)
+  90:Core/Src/flash.c **** {
+  91:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+  92:Core/Src/flash.c **** 
+  93:Core/Src/flash.c ****     if (size > 256) { size = 256; }
+  94:Core/Src/flash.c **** 
+  95:Core/Src/flash.c ****     Flash_WriteEnable();
+  96:Core/Src/flash.c **** 
+  97:Core/Src/flash.c ****     cmd.Instruction         = PAGE_WRITE;
+  98:Core/Src/flash.c ****     cmd.Address             = adress;
+  99:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 100:Core/Src/flash.c ****     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
+ 101:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 102:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 103:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 104:Core/Src/flash.c ****     cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+ 105:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 106:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_1_LINE;
+ 107:Core/Src/flash.c ****     cmd.NbData              = size;
+ 108:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 109:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 110:Core/Src/flash.c **** 
+ 111:Core/Src/flash.c ****     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 112:Core/Src/flash.c ****     {
+ 113:Core/Src/flash.c ****         Error_Handler();
+ 114:Core/Src/flash.c ****     }
+ 115:Core/Src/flash.c **** 
+ 116:Core/Src/flash.c ****     if (HAL_QSPI_Transmit(&hqspi, buffer, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 117:Core/Src/flash.c ****     {
+ 118:Core/Src/flash.c ****         Error_Handler();
+ 119:Core/Src/flash.c ****     }
+ 120:Core/Src/flash.c **** 
+ 121:Core/Src/flash.c ****     Flash_WaitWhileBusy();
+ 122:Core/Src/flash.c ****     Flash_WriteDisable();
+ 123:Core/Src/flash.c **** }
+ 124:Core/Src/flash.c **** 
+ 125:Core/Src/flash.c **** void Flash_Write4Page(uint32_t section, uint8_t *buffer, uint32_t size)
+ 126:Core/Src/flash.c **** {
+ 127:Core/Src/flash.c ****     uint32_t adress = section * 256;
+ 128:Core/Src/flash.c **** 
+ 129:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 130:Core/Src/flash.c **** 
+ 131:Core/Src/flash.c ****     if (size > 256) { size = 256; }
+ 132:Core/Src/flash.c **** 
+ 133:Core/Src/flash.c ****     Flash_WriteEnable();
+ 134:Core/Src/flash.c **** 
+ 135:Core/Src/flash.c ****     cmd.Instruction         = FOUR_PAGE_WRITE;
+ 136:Core/Src/flash.c ****     cmd.Address             = adress;
+ 137:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 138:Core/Src/flash.c ****     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
+ 139:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 140:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 141:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 142:Core/Src/flash.c ****     cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 7
+
+
+ 143:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 144:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_4_LINES;
+ 145:Core/Src/flash.c ****     cmd.NbData              = size;
+ 146:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 147:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 148:Core/Src/flash.c **** 
+ 149:Core/Src/flash.c ****     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 150:Core/Src/flash.c ****     {
+ 151:Core/Src/flash.c ****         Error_Handler();
+ 152:Core/Src/flash.c ****     }
+ 153:Core/Src/flash.c **** 
+ 154:Core/Src/flash.c ****     if (HAL_QSPI_Transmit(&hqspi, buffer, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 155:Core/Src/flash.c ****     {
+ 156:Core/Src/flash.c ****         Error_Handler();
+ 157:Core/Src/flash.c ****     }
+ 158:Core/Src/flash.c **** 
+ 159:Core/Src/flash.c ****     Flash_WaitWhileBusy();
+ 160:Core/Src/flash.c ****     Flash_WriteDisable();
+ 161:Core/Src/flash.c **** }
+ 162:Core/Src/flash.c **** 
+ 163:Core/Src/flash.c **** void Flash_WriteDisable(void)
+ 164:Core/Src/flash.c **** {
+ 203              		.loc 1 164 1 is_stmt 1 view -0
+ 204              		.cfi_startproc
+ 205              		@ args = 0, pretend = 0, frame = 56
+ 206              		@ frame_needed = 0, uses_anonymous_args = 0
+ 207 0000 00B5     		push	{lr}
+ 208              	.LCFI8:
+ 209              		.cfi_def_cfa_offset 4
+ 210              		.cfi_offset 14, -4
+ 211 0002 8FB0     		sub	sp, sp, #60
+ 212              	.LCFI9:
+ 213              		.cfi_def_cfa_offset 64
+ 165:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 214              		.loc 1 165 5 view .LVU52
+ 215              		.loc 1 165 25 is_stmt 0 view .LVU53
+ 216 0004 3422     		movs	r2, #52
+ 217 0006 0021     		movs	r1, #0
+ 218 0008 01A8     		add	r0, sp, #4
+ 219 000a FFF7FEFF 		bl	memset
+ 220              	.LVL8:
+ 166:Core/Src/flash.c **** 
+ 167:Core/Src/flash.c **** 
+ 168:Core/Src/flash.c ****     cmd.Instruction         = WRITE_DISABLE_CMD;
+ 221              		.loc 1 168 5 is_stmt 1 view .LVU54
+ 222              		.loc 1 168 29 is_stmt 0 view .LVU55
+ 223 000e 0423     		movs	r3, #4
+ 224 0010 0193     		str	r3, [sp, #4]
+ 169:Core/Src/flash.c ****     cmd.Address             = 0;
+ 225              		.loc 1 169 5 is_stmt 1 view .LVU56
+ 170:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 226              		.loc 1 170 5 view .LVU57
+ 171:Core/Src/flash.c ****     cmd.AddressSize         = 0;
+ 227              		.loc 1 171 5 view .LVU58
+ 172:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 228              		.loc 1 172 5 view .LVU59
+ 173:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 8
+
+
+ 229              		.loc 1 173 5 view .LVU60
+ 174:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 230              		.loc 1 174 5 view .LVU61
+ 231              		.loc 1 174 29 is_stmt 0 view .LVU62
+ 232 0012 4FF48073 		mov	r3, #256
+ 233 0016 0793     		str	r3, [sp, #28]
+ 175:Core/Src/flash.c ****     cmd.AddressMode         = 0;
+ 234              		.loc 1 175 5 is_stmt 1 view .LVU63
+ 176:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 235              		.loc 1 176 5 view .LVU64
+ 177:Core/Src/flash.c ****     cmd.DataMode            = 0;
+ 236              		.loc 1 177 5 view .LVU65
+ 178:Core/Src/flash.c ****     cmd.NbData              = 0;
+ 237              		.loc 1 178 5 view .LVU66
+ 179:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 238              		.loc 1 179 5 view .LVU67
+ 180:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 239              		.loc 1 180 5 view .LVU68
+ 181:Core/Src/flash.c **** 
+ 182:Core/Src/flash.c ****     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 240              		.loc 1 182 5 view .LVU69
+ 241              		.loc 1 182 9 is_stmt 0 view .LVU70
+ 242 0018 41F28832 		movw	r2, #5000
+ 243 001c 01A9     		add	r1, sp, #4
+ 244 001e 0548     		ldr	r0, .L19
+ 245 0020 FFF7FEFF 		bl	HAL_QSPI_Command
+ 246              	.LVL9:
+ 247              		.loc 1 182 8 discriminator 1 view .LVU71
+ 248 0024 10B9     		cbnz	r0, .L18
+ 249              	.L15:
+ 183:Core/Src/flash.c ****     {
+ 184:Core/Src/flash.c ****         Error_Handler();
+ 185:Core/Src/flash.c ****     }
+ 186:Core/Src/flash.c **** }
+ 250              		.loc 1 186 1 view .LVU72
+ 251 0026 0FB0     		add	sp, sp, #60
+ 252              	.LCFI10:
+ 253              		.cfi_remember_state
+ 254              		.cfi_def_cfa_offset 4
+ 255              		@ sp needed
+ 256 0028 5DF804FB 		ldr	pc, [sp], #4
+ 257              	.L18:
+ 258              	.LCFI11:
+ 259              		.cfi_restore_state
+ 184:Core/Src/flash.c ****     }
+ 260              		.loc 1 184 9 is_stmt 1 view .LVU73
+ 261 002c FFF7FEFF 		bl	Error_Handler
+ 262              	.LVL10:
+ 263              		.loc 1 186 1 is_stmt 0 view .LVU74
+ 264 0030 F9E7     		b	.L15
+ 265              	.L20:
+ 266 0032 00BF     		.align	2
+ 267              	.L19:
+ 268 0034 00000000 		.word	hqspi
+ 269              		.cfi_endproc
+ 270              	.LFE1266:
+ 272              		.section	.text.Flash_ReadStatusReg,"ax",%progbits
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 9
+
+
+ 273              		.align	1
+ 274              		.global	Flash_ReadStatusReg
+ 275              		.syntax unified
+ 276              		.thumb
+ 277              		.thumb_func
+ 279              	Flash_ReadStatusReg:
+ 280              	.LFB1267:
+ 187:Core/Src/flash.c **** 
+ 188:Core/Src/flash.c **** uint8_t Flash_ReadStatusReg(void)
+ 189:Core/Src/flash.c **** {
+ 281              		.loc 1 189 1 is_stmt 1 view -0
+ 282              		.cfi_startproc
+ 283              		@ args = 0, pretend = 0, frame = 56
+ 284              		@ frame_needed = 0, uses_anonymous_args = 0
+ 285 0000 00B5     		push	{lr}
+ 286              	.LCFI12:
+ 287              		.cfi_def_cfa_offset 4
+ 288              		.cfi_offset 14, -4
+ 289 0002 8FB0     		sub	sp, sp, #60
+ 290              	.LCFI13:
+ 291              		.cfi_def_cfa_offset 64
+ 190:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 292              		.loc 1 190 5 view .LVU76
+ 293              		.loc 1 190 25 is_stmt 0 view .LVU77
+ 294 0004 3422     		movs	r2, #52
+ 295 0006 0021     		movs	r1, #0
+ 296 0008 01A8     		add	r0, sp, #4
+ 297 000a FFF7FEFF 		bl	memset
+ 298              	.LVL11:
+ 191:Core/Src/flash.c **** 
+ 192:Core/Src/flash.c ****     uint8_t status = 0;
+ 299              		.loc 1 192 5 is_stmt 1 view .LVU78
+ 300              		.loc 1 192 13 is_stmt 0 view .LVU79
+ 301 000e 0023     		movs	r3, #0
+ 302 0010 8DF80330 		strb	r3, [sp, #3]
+ 193:Core/Src/flash.c **** 
+ 194:Core/Src/flash.c ****     cmd.Instruction         = READ_STATUSREG_CMD;
+ 303              		.loc 1 194 5 is_stmt 1 view .LVU80
+ 304              		.loc 1 194 29 is_stmt 0 view .LVU81
+ 305 0014 0523     		movs	r3, #5
+ 306 0016 0193     		str	r3, [sp, #4]
+ 195:Core/Src/flash.c ****     cmd.Address             = 0;
+ 307              		.loc 1 195 5 is_stmt 1 view .LVU82
+ 196:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 308              		.loc 1 196 5 view .LVU83
+ 197:Core/Src/flash.c ****     cmd.AddressSize         = 0;
+ 309              		.loc 1 197 5 view .LVU84
+ 198:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 310              		.loc 1 198 5 view .LVU85
+ 199:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 311              		.loc 1 199 5 view .LVU86
+ 200:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 312              		.loc 1 200 5 view .LVU87
+ 313              		.loc 1 200 29 is_stmt 0 view .LVU88
+ 314 0018 4FF48073 		mov	r3, #256
+ 315 001c 0793     		str	r3, [sp, #28]
+ 201:Core/Src/flash.c ****     cmd.AddressMode         = 0;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 10
+
+
+ 316              		.loc 1 201 5 is_stmt 1 view .LVU89
+ 202:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 317              		.loc 1 202 5 view .LVU90
+ 203:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_1_LINE;
+ 318              		.loc 1 203 5 view .LVU91
+ 319              		.loc 1 203 29 is_stmt 0 view .LVU92
+ 320 001e 4FF08073 		mov	r3, #16777216
+ 321 0022 0A93     		str	r3, [sp, #40]
+ 204:Core/Src/flash.c ****     cmd.NbData              = 1;
+ 322              		.loc 1 204 5 is_stmt 1 view .LVU93
+ 323              		.loc 1 204 29 is_stmt 0 view .LVU94
+ 324 0024 0123     		movs	r3, #1
+ 325 0026 0B93     		str	r3, [sp, #44]
+ 205:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 326              		.loc 1 205 5 is_stmt 1 view .LVU95
+ 206:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 327              		.loc 1 206 5 view .LVU96
+ 207:Core/Src/flash.c **** 
+ 208:Core/Src/flash.c ****     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 328              		.loc 1 208 5 view .LVU97
+ 329              		.loc 1 208 9 is_stmt 0 view .LVU98
+ 330 0028 41F28832 		movw	r2, #5000
+ 331 002c 01A9     		add	r1, sp, #4
+ 332 002e 0B48     		ldr	r0, .L27
+ 333 0030 FFF7FEFF 		bl	HAL_QSPI_Command
+ 334              	.LVL12:
+ 335              		.loc 1 208 8 discriminator 1 view .LVU99
+ 336 0034 60B9     		cbnz	r0, .L25
+ 337              	.L22:
+ 209:Core/Src/flash.c ****     {
+ 210:Core/Src/flash.c ****         Error_Handler();
+ 211:Core/Src/flash.c ****     }
+ 212:Core/Src/flash.c **** 
+ 213:Core/Src/flash.c ****     if (HAL_QSPI_Receive(&hqspi, &status, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 338              		.loc 1 213 5 is_stmt 1 view .LVU100
+ 339              		.loc 1 213 9 is_stmt 0 view .LVU101
+ 340 0036 41F28832 		movw	r2, #5000
+ 341 003a 0DF10301 		add	r1, sp, #3
+ 342 003e 0748     		ldr	r0, .L27
+ 343 0040 FFF7FEFF 		bl	HAL_QSPI_Receive
+ 344              	.LVL13:
+ 345              		.loc 1 213 8 discriminator 1 view .LVU102
+ 346 0044 38B9     		cbnz	r0, .L26
+ 347              	.L23:
+ 214:Core/Src/flash.c ****     {
+ 215:Core/Src/flash.c ****         Error_Handler();
+ 216:Core/Src/flash.c ****     }
+ 217:Core/Src/flash.c **** 
+ 218:Core/Src/flash.c ****     return status;
+ 348              		.loc 1 218 5 is_stmt 1 view .LVU103
+ 219:Core/Src/flash.c **** }
+ 349              		.loc 1 219 1 is_stmt 0 view .LVU104
+ 350 0046 9DF80300 		ldrb	r0, [sp, #3]	@ zero_extendqisi2
+ 351 004a 0FB0     		add	sp, sp, #60
+ 352              	.LCFI14:
+ 353              		.cfi_remember_state
+ 354              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 11
+
+
+ 355              		@ sp needed
+ 356 004c 5DF804FB 		ldr	pc, [sp], #4
+ 357              	.L25:
+ 358              	.LCFI15:
+ 359              		.cfi_restore_state
+ 210:Core/Src/flash.c ****     }
+ 360              		.loc 1 210 9 is_stmt 1 view .LVU105
+ 361 0050 FFF7FEFF 		bl	Error_Handler
+ 362              	.LVL14:
+ 363 0054 EFE7     		b	.L22
+ 364              	.L26:
+ 215:Core/Src/flash.c ****     }
+ 365              		.loc 1 215 9 view .LVU106
+ 366 0056 FFF7FEFF 		bl	Error_Handler
+ 367              	.LVL15:
+ 368 005a F4E7     		b	.L23
+ 369              	.L28:
+ 370              		.align	2
+ 371              	.L27:
+ 372 005c 00000000 		.word	hqspi
+ 373              		.cfi_endproc
+ 374              	.LFE1267:
+ 376              		.section	.text.Flash_WaitWhileBusy,"ax",%progbits
+ 377              		.align	1
+ 378              		.global	Flash_WaitWhileBusy
+ 379              		.syntax unified
+ 380              		.thumb
+ 381              		.thumb_func
+ 383              	Flash_WaitWhileBusy:
+ 384              	.LFB1261:
+  33:Core/Src/flash.c ****     while (Flash_ReadStatusReg() & 0x01);
+ 385              		.loc 1 33 1 view -0
+ 386              		.cfi_startproc
+ 387              		@ args = 0, pretend = 0, frame = 0
+ 388              		@ frame_needed = 0, uses_anonymous_args = 0
+ 389 0000 08B5     		push	{r3, lr}
+ 390              	.LCFI16:
+ 391              		.cfi_def_cfa_offset 8
+ 392              		.cfi_offset 3, -8
+ 393              		.cfi_offset 14, -4
+ 394              	.L30:
+  34:Core/Src/flash.c **** }
+ 395              		.loc 1 34 12 discriminator 1 view .LVU108
+ 396 0002 FFF7FEFF 		bl	Flash_ReadStatusReg
+ 397              	.LVL16:
+ 398 0006 10F0010F 		tst	r0, #1
+ 399 000a FAD1     		bne	.L30
+  35:Core/Src/flash.c **** 
+ 400              		.loc 1 35 1 is_stmt 0 view .LVU109
+ 401 000c 08BD     		pop	{r3, pc}
+ 402              		.cfi_endproc
+ 403              	.LFE1261:
+ 405              		.section	.text.Flash_WritePage,"ax",%progbits
+ 406              		.align	1
+ 407              		.global	Flash_WritePage
+ 408              		.syntax unified
+ 409              		.thumb
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 12
+
+
+ 410              		.thumb_func
+ 412              	Flash_WritePage:
+ 413              	.LVL17:
+ 414              	.LFB1264:
+  90:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 415              		.loc 1 90 1 is_stmt 1 view -0
+ 416              		.cfi_startproc
+ 417              		@ args = 0, pretend = 0, frame = 56
+ 418              		@ frame_needed = 0, uses_anonymous_args = 0
+  90:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 419              		.loc 1 90 1 is_stmt 0 view .LVU111
+ 420 0000 70B5     		push	{r4, r5, r6, lr}
+ 421              	.LCFI17:
+ 422              		.cfi_def_cfa_offset 16
+ 423              		.cfi_offset 4, -16
+ 424              		.cfi_offset 5, -12
+ 425              		.cfi_offset 6, -8
+ 426              		.cfi_offset 14, -4
+ 427 0002 8EB0     		sub	sp, sp, #56
+ 428              	.LCFI18:
+ 429              		.cfi_def_cfa_offset 72
+ 430 0004 0646     		mov	r6, r0
+ 431 0006 0D46     		mov	r5, r1
+ 432 0008 1446     		mov	r4, r2
+  91:Core/Src/flash.c **** 
+ 433              		.loc 1 91 5 is_stmt 1 view .LVU112
+  91:Core/Src/flash.c **** 
+ 434              		.loc 1 91 25 is_stmt 0 view .LVU113
+ 435 000a 3422     		movs	r2, #52
+ 436              	.LVL18:
+  91:Core/Src/flash.c **** 
+ 437              		.loc 1 91 25 view .LVU114
+ 438 000c 0021     		movs	r1, #0
+ 439              	.LVL19:
+  91:Core/Src/flash.c **** 
+ 440              		.loc 1 91 25 view .LVU115
+ 441 000e 01A8     		add	r0, sp, #4
+ 442              	.LVL20:
+  91:Core/Src/flash.c **** 
+ 443              		.loc 1 91 25 view .LVU116
+ 444 0010 FFF7FEFF 		bl	memset
+ 445              	.LVL21:
+  93:Core/Src/flash.c **** 
+ 446              		.loc 1 93 5 is_stmt 1 view .LVU117
+  93:Core/Src/flash.c **** 
+ 447              		.loc 1 93 8 is_stmt 0 view .LVU118
+ 448 0014 B4F5807F 		cmp	r4, #256
+ 449 0018 01D9     		bls	.L33
+  93:Core/Src/flash.c **** 
+ 450              		.loc 1 93 28 discriminator 1 view .LVU119
+ 451 001a 4FF48074 		mov	r4, #256
+ 452              	.LVL22:
+ 453              	.L33:
+  95:Core/Src/flash.c **** 
+ 454              		.loc 1 95 5 is_stmt 1 view .LVU120
+ 455 001e FFF7FEFF 		bl	Flash_WriteEnable
+ 456              	.LVL23:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 13
+
+
+  97:Core/Src/flash.c ****     cmd.Address             = adress;
+ 457              		.loc 1 97 5 view .LVU121
+  97:Core/Src/flash.c ****     cmd.Address             = adress;
+ 458              		.loc 1 97 29 is_stmt 0 view .LVU122
+ 459 0022 0223     		movs	r3, #2
+ 460 0024 0193     		str	r3, [sp, #4]
+  98:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 461              		.loc 1 98 5 is_stmt 1 view .LVU123
+  98:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 462              		.loc 1 98 29 is_stmt 0 view .LVU124
+ 463 0026 0296     		str	r6, [sp, #8]
+  99:Core/Src/flash.c ****     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
+ 464              		.loc 1 99 5 is_stmt 1 view .LVU125
+  99:Core/Src/flash.c ****     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
+ 465              		.loc 1 99 29 is_stmt 0 view .LVU126
+ 466 0028 0023     		movs	r3, #0
+ 467 002a 0393     		str	r3, [sp, #12]
+ 100:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 468              		.loc 1 100 5 is_stmt 1 view .LVU127
+ 100:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 469              		.loc 1 100 29 is_stmt 0 view .LVU128
+ 470 002c 4FF44052 		mov	r2, #12288
+ 471 0030 0492     		str	r2, [sp, #16]
+ 101:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 472              		.loc 1 101 5 is_stmt 1 view .LVU129
+ 101:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 473              		.loc 1 101 29 is_stmt 0 view .LVU130
+ 474 0032 0593     		str	r3, [sp, #20]
+ 102:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 475              		.loc 1 102 5 is_stmt 1 view .LVU131
+ 102:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 476              		.loc 1 102 29 is_stmt 0 view .LVU132
+ 477 0034 0693     		str	r3, [sp, #24]
+ 103:Core/Src/flash.c ****     cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+ 478              		.loc 1 103 5 is_stmt 1 view .LVU133
+ 103:Core/Src/flash.c ****     cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+ 479              		.loc 1 103 29 is_stmt 0 view .LVU134
+ 480 0036 4FF48072 		mov	r2, #256
+ 481 003a 0792     		str	r2, [sp, #28]
+ 104:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 482              		.loc 1 104 5 is_stmt 1 view .LVU135
+ 104:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 483              		.loc 1 104 29 is_stmt 0 view .LVU136
+ 484 003c 4FF48062 		mov	r2, #1024
+ 485 0040 0892     		str	r2, [sp, #32]
+ 105:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_1_LINE;
+ 486              		.loc 1 105 5 is_stmt 1 view .LVU137
+ 105:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_1_LINE;
+ 487              		.loc 1 105 29 is_stmt 0 view .LVU138
+ 488 0042 0993     		str	r3, [sp, #36]
+ 106:Core/Src/flash.c ****     cmd.NbData              = size;
+ 489              		.loc 1 106 5 is_stmt 1 view .LVU139
+ 106:Core/Src/flash.c ****     cmd.NbData              = size;
+ 490              		.loc 1 106 29 is_stmt 0 view .LVU140
+ 491 0044 4FF08072 		mov	r2, #16777216
+ 492 0048 0A92     		str	r2, [sp, #40]
+ 107:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 14
+
+
+ 493              		.loc 1 107 5 is_stmt 1 view .LVU141
+ 107:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 494              		.loc 1 107 29 is_stmt 0 view .LVU142
+ 495 004a 0B94     		str	r4, [sp, #44]
+ 108:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 496              		.loc 1 108 5 is_stmt 1 view .LVU143
+ 108:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 497              		.loc 1 108 29 is_stmt 0 view .LVU144
+ 498 004c 0C93     		str	r3, [sp, #48]
+ 109:Core/Src/flash.c **** 
+ 499              		.loc 1 109 5 is_stmt 1 view .LVU145
+ 109:Core/Src/flash.c **** 
+ 500              		.loc 1 109 29 is_stmt 0 view .LVU146
+ 501 004e 0D93     		str	r3, [sp, #52]
+ 111:Core/Src/flash.c ****     {
+ 502              		.loc 1 111 5 is_stmt 1 view .LVU147
+ 111:Core/Src/flash.c ****     {
+ 503              		.loc 1 111 9 is_stmt 0 view .LVU148
+ 504 0050 41F28832 		movw	r2, #5000
+ 505 0054 01A9     		add	r1, sp, #4
+ 506 0056 0B48     		ldr	r0, .L40
+ 507 0058 FFF7FEFF 		bl	HAL_QSPI_Command
+ 508              	.LVL24:
+ 111:Core/Src/flash.c ****     {
+ 509              		.loc 1 111 8 discriminator 1 view .LVU149
+ 510 005c 60B9     		cbnz	r0, .L38
+ 511              	.L34:
+ 116:Core/Src/flash.c ****     {
+ 512              		.loc 1 116 5 is_stmt 1 view .LVU150
+ 116:Core/Src/flash.c ****     {
+ 513              		.loc 1 116 9 is_stmt 0 view .LVU151
+ 514 005e 41F28832 		movw	r2, #5000
+ 515 0062 2946     		mov	r1, r5
+ 516 0064 0748     		ldr	r0, .L40
+ 517 0066 FFF7FEFF 		bl	HAL_QSPI_Transmit
+ 518              	.LVL25:
+ 116:Core/Src/flash.c ****     {
+ 519              		.loc 1 116 8 discriminator 1 view .LVU152
+ 520 006a 40B9     		cbnz	r0, .L39
+ 521              	.L35:
+ 121:Core/Src/flash.c ****     Flash_WriteDisable();
+ 522              		.loc 1 121 5 is_stmt 1 view .LVU153
+ 523 006c FFF7FEFF 		bl	Flash_WaitWhileBusy
+ 524              	.LVL26:
+ 122:Core/Src/flash.c **** }
+ 525              		.loc 1 122 5 view .LVU154
+ 526 0070 FFF7FEFF 		bl	Flash_WriteDisable
+ 527              	.LVL27:
+ 123:Core/Src/flash.c **** 
+ 528              		.loc 1 123 1 is_stmt 0 view .LVU155
+ 529 0074 0EB0     		add	sp, sp, #56
+ 530              	.LCFI19:
+ 531              		.cfi_remember_state
+ 532              		.cfi_def_cfa_offset 16
+ 533              		@ sp needed
+ 534 0076 70BD     		pop	{r4, r5, r6, pc}
+ 535              	.LVL28:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 15
+
+
+ 536              	.L38:
+ 537              	.LCFI20:
+ 538              		.cfi_restore_state
+ 113:Core/Src/flash.c ****     }
+ 539              		.loc 1 113 9 is_stmt 1 view .LVU156
+ 540 0078 FFF7FEFF 		bl	Error_Handler
+ 541              	.LVL29:
+ 542 007c EFE7     		b	.L34
+ 543              	.L39:
+ 118:Core/Src/flash.c ****     }
+ 544              		.loc 1 118 9 view .LVU157
+ 545 007e FFF7FEFF 		bl	Error_Handler
+ 546              	.LVL30:
+ 547 0082 F3E7     		b	.L35
+ 548              	.L41:
+ 549              		.align	2
+ 550              	.L40:
+ 551 0084 00000000 		.word	hqspi
+ 552              		.cfi_endproc
+ 553              	.LFE1264:
+ 555              		.section	.text.Flash_Write4Page,"ax",%progbits
+ 556              		.align	1
+ 557              		.global	Flash_Write4Page
+ 558              		.syntax unified
+ 559              		.thumb
+ 560              		.thumb_func
+ 562              	Flash_Write4Page:
+ 563              	.LVL31:
+ 564              	.LFB1265:
+ 126:Core/Src/flash.c ****     uint32_t adress = section * 256;
+ 565              		.loc 1 126 1 view -0
+ 566              		.cfi_startproc
+ 567              		@ args = 0, pretend = 0, frame = 56
+ 568              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126:Core/Src/flash.c ****     uint32_t adress = section * 256;
+ 569              		.loc 1 126 1 is_stmt 0 view .LVU159
+ 570 0000 70B5     		push	{r4, r5, r6, lr}
+ 571              	.LCFI21:
+ 572              		.cfi_def_cfa_offset 16
+ 573              		.cfi_offset 4, -16
+ 574              		.cfi_offset 5, -12
+ 575              		.cfi_offset 6, -8
+ 576              		.cfi_offset 14, -4
+ 577 0002 8EB0     		sub	sp, sp, #56
+ 578              	.LCFI22:
+ 579              		.cfi_def_cfa_offset 72
+ 580 0004 0D46     		mov	r5, r1
+ 581 0006 1446     		mov	r4, r2
+ 127:Core/Src/flash.c **** 
+ 582              		.loc 1 127 5 is_stmt 1 view .LVU160
+ 127:Core/Src/flash.c **** 
+ 583              		.loc 1 127 14 is_stmt 0 view .LVU161
+ 584 0008 0602     		lsls	r6, r0, #8
+ 585              	.LVL32:
+ 129:Core/Src/flash.c **** 
+ 586              		.loc 1 129 5 is_stmt 1 view .LVU162
+ 129:Core/Src/flash.c **** 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 16
+
+
+ 587              		.loc 1 129 25 is_stmt 0 view .LVU163
+ 588 000a 3422     		movs	r2, #52
+ 589              	.LVL33:
+ 129:Core/Src/flash.c **** 
+ 590              		.loc 1 129 25 view .LVU164
+ 591 000c 0021     		movs	r1, #0
+ 592              	.LVL34:
+ 129:Core/Src/flash.c **** 
+ 593              		.loc 1 129 25 view .LVU165
+ 594 000e 01A8     		add	r0, sp, #4
+ 595              	.LVL35:
+ 129:Core/Src/flash.c **** 
+ 596              		.loc 1 129 25 view .LVU166
+ 597 0010 FFF7FEFF 		bl	memset
+ 598              	.LVL36:
+ 131:Core/Src/flash.c **** 
+ 599              		.loc 1 131 5 is_stmt 1 view .LVU167
+ 131:Core/Src/flash.c **** 
+ 600              		.loc 1 131 8 is_stmt 0 view .LVU168
+ 601 0014 B4F5807F 		cmp	r4, #256
+ 602 0018 01D9     		bls	.L43
+ 131:Core/Src/flash.c **** 
+ 603              		.loc 1 131 28 discriminator 1 view .LVU169
+ 604 001a 4FF48074 		mov	r4, #256
+ 605              	.LVL37:
+ 606              	.L43:
+ 133:Core/Src/flash.c **** 
+ 607              		.loc 1 133 5 is_stmt 1 view .LVU170
+ 608 001e FFF7FEFF 		bl	Flash_WriteEnable
+ 609              	.LVL38:
+ 135:Core/Src/flash.c ****     cmd.Address             = adress;
+ 610              		.loc 1 135 5 view .LVU171
+ 135:Core/Src/flash.c ****     cmd.Address             = adress;
+ 611              		.loc 1 135 29 is_stmt 0 view .LVU172
+ 612 0022 3823     		movs	r3, #56
+ 613 0024 0193     		str	r3, [sp, #4]
+ 136:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 614              		.loc 1 136 5 is_stmt 1 view .LVU173
+ 136:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 615              		.loc 1 136 29 is_stmt 0 view .LVU174
+ 616 0026 0296     		str	r6, [sp, #8]
+ 137:Core/Src/flash.c ****     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
+ 617              		.loc 1 137 5 is_stmt 1 view .LVU175
+ 137:Core/Src/flash.c ****     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
+ 618              		.loc 1 137 29 is_stmt 0 view .LVU176
+ 619 0028 0023     		movs	r3, #0
+ 620 002a 0393     		str	r3, [sp, #12]
+ 138:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 621              		.loc 1 138 5 is_stmt 1 view .LVU177
+ 138:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 622              		.loc 1 138 29 is_stmt 0 view .LVU178
+ 623 002c 4FF44052 		mov	r2, #12288
+ 624 0030 0492     		str	r2, [sp, #16]
+ 139:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 625              		.loc 1 139 5 is_stmt 1 view .LVU179
+ 139:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 626              		.loc 1 139 29 is_stmt 0 view .LVU180
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 17
+
+
+ 627 0032 0593     		str	r3, [sp, #20]
+ 140:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 628              		.loc 1 140 5 is_stmt 1 view .LVU181
+ 140:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 629              		.loc 1 140 29 is_stmt 0 view .LVU182
+ 630 0034 0693     		str	r3, [sp, #24]
+ 141:Core/Src/flash.c ****     cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+ 631              		.loc 1 141 5 is_stmt 1 view .LVU183
+ 141:Core/Src/flash.c ****     cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+ 632              		.loc 1 141 29 is_stmt 0 view .LVU184
+ 633 0036 4FF48072 		mov	r2, #256
+ 634 003a 0792     		str	r2, [sp, #28]
+ 142:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 635              		.loc 1 142 5 is_stmt 1 view .LVU185
+ 142:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 636              		.loc 1 142 29 is_stmt 0 view .LVU186
+ 637 003c 4FF48062 		mov	r2, #1024
+ 638 0040 0892     		str	r2, [sp, #32]
+ 143:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_4_LINES;
+ 639              		.loc 1 143 5 is_stmt 1 view .LVU187
+ 143:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_4_LINES;
+ 640              		.loc 1 143 29 is_stmt 0 view .LVU188
+ 641 0042 0993     		str	r3, [sp, #36]
+ 144:Core/Src/flash.c ****     cmd.NbData              = size;
+ 642              		.loc 1 144 5 is_stmt 1 view .LVU189
+ 144:Core/Src/flash.c ****     cmd.NbData              = size;
+ 643              		.loc 1 144 29 is_stmt 0 view .LVU190
+ 644 0044 4FF04072 		mov	r2, #50331648
+ 645 0048 0A92     		str	r2, [sp, #40]
+ 145:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 646              		.loc 1 145 5 is_stmt 1 view .LVU191
+ 145:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 647              		.loc 1 145 29 is_stmt 0 view .LVU192
+ 648 004a 0B94     		str	r4, [sp, #44]
+ 146:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 649              		.loc 1 146 5 is_stmt 1 view .LVU193
+ 146:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 650              		.loc 1 146 29 is_stmt 0 view .LVU194
+ 651 004c 0C93     		str	r3, [sp, #48]
+ 147:Core/Src/flash.c **** 
+ 652              		.loc 1 147 5 is_stmt 1 view .LVU195
+ 147:Core/Src/flash.c **** 
+ 653              		.loc 1 147 29 is_stmt 0 view .LVU196
+ 654 004e 0D93     		str	r3, [sp, #52]
+ 149:Core/Src/flash.c ****     {
+ 655              		.loc 1 149 5 is_stmt 1 view .LVU197
+ 149:Core/Src/flash.c ****     {
+ 656              		.loc 1 149 9 is_stmt 0 view .LVU198
+ 657 0050 41F28832 		movw	r2, #5000
+ 658 0054 01A9     		add	r1, sp, #4
+ 659 0056 0B48     		ldr	r0, .L50
+ 660 0058 FFF7FEFF 		bl	HAL_QSPI_Command
+ 661              	.LVL39:
+ 149:Core/Src/flash.c ****     {
+ 662              		.loc 1 149 8 discriminator 1 view .LVU199
+ 663 005c 60B9     		cbnz	r0, .L48
+ 664              	.L44:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 18
+
+
+ 154:Core/Src/flash.c ****     {
+ 665              		.loc 1 154 5 is_stmt 1 view .LVU200
+ 154:Core/Src/flash.c ****     {
+ 666              		.loc 1 154 9 is_stmt 0 view .LVU201
+ 667 005e 41F28832 		movw	r2, #5000
+ 668 0062 2946     		mov	r1, r5
+ 669 0064 0748     		ldr	r0, .L50
+ 670 0066 FFF7FEFF 		bl	HAL_QSPI_Transmit
+ 671              	.LVL40:
+ 154:Core/Src/flash.c ****     {
+ 672              		.loc 1 154 8 discriminator 1 view .LVU202
+ 673 006a 40B9     		cbnz	r0, .L49
+ 674              	.L45:
+ 159:Core/Src/flash.c ****     Flash_WriteDisable();
+ 675              		.loc 1 159 5 is_stmt 1 view .LVU203
+ 676 006c FFF7FEFF 		bl	Flash_WaitWhileBusy
+ 677              	.LVL41:
+ 160:Core/Src/flash.c **** }
+ 678              		.loc 1 160 5 view .LVU204
+ 679 0070 FFF7FEFF 		bl	Flash_WriteDisable
+ 680              	.LVL42:
+ 161:Core/Src/flash.c **** 
+ 681              		.loc 1 161 1 is_stmt 0 view .LVU205
+ 682 0074 0EB0     		add	sp, sp, #56
+ 683              	.LCFI23:
+ 684              		.cfi_remember_state
+ 685              		.cfi_def_cfa_offset 16
+ 686              		@ sp needed
+ 687 0076 70BD     		pop	{r4, r5, r6, pc}
+ 688              	.LVL43:
+ 689              	.L48:
+ 690              	.LCFI24:
+ 691              		.cfi_restore_state
+ 151:Core/Src/flash.c ****     }
+ 692              		.loc 1 151 9 is_stmt 1 view .LVU206
+ 693 0078 FFF7FEFF 		bl	Error_Handler
+ 694              	.LVL44:
+ 695 007c EFE7     		b	.L44
+ 696              	.L49:
+ 156:Core/Src/flash.c ****     }
+ 697              		.loc 1 156 9 view .LVU207
+ 698 007e FFF7FEFF 		bl	Error_Handler
+ 699              	.LVL45:
+ 700 0082 F3E7     		b	.L45
+ 701              	.L51:
+ 702              		.align	2
+ 703              	.L50:
+ 704 0084 00000000 		.word	hqspi
+ 705              		.cfi_endproc
+ 706              	.LFE1265:
+ 708              		.section	.text.Flash_ConfigRegister,"ax",%progbits
+ 709              		.align	1
+ 710              		.global	Flash_ConfigRegister
+ 711              		.syntax unified
+ 712              		.thumb
+ 713              		.thumb_func
+ 715              	Flash_ConfigRegister:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 19
+
+
+ 716              	.LFB1268:
+ 220:Core/Src/flash.c **** 
+ 221:Core/Src/flash.c **** uint8_t Flash_ConfigRegister(void)
+ 222:Core/Src/flash.c **** {
+ 717              		.loc 1 222 1 view -0
+ 718              		.cfi_startproc
+ 719              		@ args = 0, pretend = 0, frame = 56
+ 720              		@ frame_needed = 0, uses_anonymous_args = 0
+ 721 0000 00B5     		push	{lr}
+ 722              	.LCFI25:
+ 723              		.cfi_def_cfa_offset 4
+ 724              		.cfi_offset 14, -4
+ 725 0002 8FB0     		sub	sp, sp, #60
+ 726              	.LCFI26:
+ 727              		.cfi_def_cfa_offset 64
+ 223:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 728              		.loc 1 223 5 view .LVU209
+ 729              		.loc 1 223 25 is_stmt 0 view .LVU210
+ 730 0004 3422     		movs	r2, #52
+ 731 0006 0021     		movs	r1, #0
+ 732 0008 01A8     		add	r0, sp, #4
+ 733 000a FFF7FEFF 		bl	memset
+ 734              	.LVL46:
+ 224:Core/Src/flash.c **** 
+ 225:Core/Src/flash.c ****     uint8_t status = 0;
+ 735              		.loc 1 225 5 is_stmt 1 view .LVU211
+ 736              		.loc 1 225 13 is_stmt 0 view .LVU212
+ 737 000e 0023     		movs	r3, #0
+ 738 0010 8DF80330 		strb	r3, [sp, #3]
+ 226:Core/Src/flash.c **** 
+ 227:Core/Src/flash.c ****     cmd.Instruction         = READ_CONFIGREG_CMD;
+ 739              		.loc 1 227 5 is_stmt 1 view .LVU213
+ 740              		.loc 1 227 29 is_stmt 0 view .LVU214
+ 741 0014 1523     		movs	r3, #21
+ 742 0016 0193     		str	r3, [sp, #4]
+ 228:Core/Src/flash.c ****     cmd.Address             = 0;
+ 743              		.loc 1 228 5 is_stmt 1 view .LVU215
+ 229:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 744              		.loc 1 229 5 view .LVU216
+ 230:Core/Src/flash.c ****     cmd.AddressSize         = 0;
+ 745              		.loc 1 230 5 view .LVU217
+ 231:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 746              		.loc 1 231 5 view .LVU218
+ 232:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 747              		.loc 1 232 5 view .LVU219
+ 233:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 748              		.loc 1 233 5 view .LVU220
+ 749              		.loc 1 233 29 is_stmt 0 view .LVU221
+ 750 0018 4FF48073 		mov	r3, #256
+ 751 001c 0793     		str	r3, [sp, #28]
+ 234:Core/Src/flash.c ****     cmd.AddressMode         = 0;
+ 752              		.loc 1 234 5 is_stmt 1 view .LVU222
+ 235:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 753              		.loc 1 235 5 view .LVU223
+ 236:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_1_LINE;
+ 754              		.loc 1 236 5 view .LVU224
+ 755              		.loc 1 236 29 is_stmt 0 view .LVU225
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 20
+
+
+ 756 001e 4FF08073 		mov	r3, #16777216
+ 757 0022 0A93     		str	r3, [sp, #40]
+ 237:Core/Src/flash.c ****     cmd.NbData              = 1;
+ 758              		.loc 1 237 5 is_stmt 1 view .LVU226
+ 759              		.loc 1 237 29 is_stmt 0 view .LVU227
+ 760 0024 0123     		movs	r3, #1
+ 761 0026 0B93     		str	r3, [sp, #44]
+ 238:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 762              		.loc 1 238 5 is_stmt 1 view .LVU228
+ 239:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 763              		.loc 1 239 5 view .LVU229
+ 240:Core/Src/flash.c **** 
+ 241:Core/Src/flash.c ****     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 764              		.loc 1 241 5 view .LVU230
+ 765              		.loc 1 241 9 is_stmt 0 view .LVU231
+ 766 0028 41F28832 		movw	r2, #5000
+ 767 002c 01A9     		add	r1, sp, #4
+ 768 002e 0B48     		ldr	r0, .L58
+ 769 0030 FFF7FEFF 		bl	HAL_QSPI_Command
+ 770              	.LVL47:
+ 771              		.loc 1 241 8 discriminator 1 view .LVU232
+ 772 0034 60B9     		cbnz	r0, .L56
+ 773              	.L53:
+ 242:Core/Src/flash.c ****     {
+ 243:Core/Src/flash.c ****         Error_Handler();
+ 244:Core/Src/flash.c ****     }
+ 245:Core/Src/flash.c **** 
+ 246:Core/Src/flash.c ****     if (HAL_QSPI_Receive(&hqspi, &status, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 774              		.loc 1 246 5 is_stmt 1 view .LVU233
+ 775              		.loc 1 246 9 is_stmt 0 view .LVU234
+ 776 0036 41F28832 		movw	r2, #5000
+ 777 003a 0DF10301 		add	r1, sp, #3
+ 778 003e 0748     		ldr	r0, .L58
+ 779 0040 FFF7FEFF 		bl	HAL_QSPI_Receive
+ 780              	.LVL48:
+ 781              		.loc 1 246 8 discriminator 1 view .LVU235
+ 782 0044 38B9     		cbnz	r0, .L57
+ 783              	.L54:
+ 247:Core/Src/flash.c ****     {
+ 248:Core/Src/flash.c ****         Error_Handler();
+ 249:Core/Src/flash.c ****     }
+ 250:Core/Src/flash.c **** 
+ 251:Core/Src/flash.c ****     return status;
+ 784              		.loc 1 251 5 is_stmt 1 view .LVU236
+ 252:Core/Src/flash.c **** }
+ 785              		.loc 1 252 1 is_stmt 0 view .LVU237
+ 786 0046 9DF80300 		ldrb	r0, [sp, #3]	@ zero_extendqisi2
+ 787 004a 0FB0     		add	sp, sp, #60
+ 788              	.LCFI27:
+ 789              		.cfi_remember_state
+ 790              		.cfi_def_cfa_offset 4
+ 791              		@ sp needed
+ 792 004c 5DF804FB 		ldr	pc, [sp], #4
+ 793              	.L56:
+ 794              	.LCFI28:
+ 795              		.cfi_restore_state
+ 243:Core/Src/flash.c ****     }
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 21
+
+
+ 796              		.loc 1 243 9 is_stmt 1 view .LVU238
+ 797 0050 FFF7FEFF 		bl	Error_Handler
+ 798              	.LVL49:
+ 799 0054 EFE7     		b	.L53
+ 800              	.L57:
+ 248:Core/Src/flash.c ****     }
+ 801              		.loc 1 248 9 view .LVU239
+ 802 0056 FFF7FEFF 		bl	Error_Handler
+ 803              	.LVL50:
+ 804 005a F4E7     		b	.L54
+ 805              	.L59:
+ 806              		.align	2
+ 807              	.L58:
+ 808 005c 00000000 		.word	hqspi
+ 809              		.cfi_endproc
+ 810              	.LFE1268:
+ 812              		.section	.text.Enable_4BYTEMODE,"ax",%progbits
+ 813              		.align	1
+ 814              		.global	Enable_4BYTEMODE
+ 815              		.syntax unified
+ 816              		.thumb
+ 817              		.thumb_func
+ 819              	Enable_4BYTEMODE:
+ 820              	.LFB1269:
+ 253:Core/Src/flash.c **** 
+ 254:Core/Src/flash.c **** void Enable_4BYTEMODE(void)
+ 255:Core/Src/flash.c **** {
+ 821              		.loc 1 255 1 view -0
+ 822              		.cfi_startproc
+ 823              		@ args = 0, pretend = 0, frame = 56
+ 824              		@ frame_needed = 0, uses_anonymous_args = 0
+ 825 0000 00B5     		push	{lr}
+ 826              	.LCFI29:
+ 827              		.cfi_def_cfa_offset 4
+ 828              		.cfi_offset 14, -4
+ 829 0002 8FB0     		sub	sp, sp, #60
+ 830              	.LCFI30:
+ 831              		.cfi_def_cfa_offset 64
+ 256:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 832              		.loc 1 256 5 view .LVU241
+ 833              		.loc 1 256 25 is_stmt 0 view .LVU242
+ 834 0004 3422     		movs	r2, #52
+ 835 0006 0021     		movs	r1, #0
+ 836 0008 01A8     		add	r0, sp, #4
+ 837 000a FFF7FEFF 		bl	memset
+ 838              	.LVL51:
+ 257:Core/Src/flash.c **** 
+ 258:Core/Src/flash.c ****     cmd.Instruction         = FOUR_BYTE_MODE;
+ 839              		.loc 1 258 5 is_stmt 1 view .LVU243
+ 840              		.loc 1 258 29 is_stmt 0 view .LVU244
+ 841 000e B723     		movs	r3, #183
+ 842 0010 0193     		str	r3, [sp, #4]
+ 259:Core/Src/flash.c ****     cmd.Address             = 0;
+ 843              		.loc 1 259 5 is_stmt 1 view .LVU245
+ 260:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 844              		.loc 1 260 5 view .LVU246
+ 261:Core/Src/flash.c ****     cmd.AddressSize         = 0;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 22
+
+
+ 845              		.loc 1 261 5 view .LVU247
+ 262:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 846              		.loc 1 262 5 view .LVU248
+ 263:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 847              		.loc 1 263 5 view .LVU249
+ 264:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 848              		.loc 1 264 5 view .LVU250
+ 849              		.loc 1 264 29 is_stmt 0 view .LVU251
+ 850 0012 4FF48073 		mov	r3, #256
+ 851 0016 0793     		str	r3, [sp, #28]
+ 265:Core/Src/flash.c ****     cmd.AddressMode         = 0;
+ 852              		.loc 1 265 5 is_stmt 1 view .LVU252
+ 266:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 853              		.loc 1 266 5 view .LVU253
+ 267:Core/Src/flash.c ****     cmd.DataMode            = 0;
+ 854              		.loc 1 267 5 view .LVU254
+ 268:Core/Src/flash.c ****     cmd.NbData              = 0;
+ 855              		.loc 1 268 5 view .LVU255
+ 269:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 856              		.loc 1 269 5 view .LVU256
+ 270:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 857              		.loc 1 270 5 view .LVU257
+ 271:Core/Src/flash.c **** 
+ 272:Core/Src/flash.c ****     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 858              		.loc 1 272 5 view .LVU258
+ 859              		.loc 1 272 9 is_stmt 0 view .LVU259
+ 860 0018 41F28832 		movw	r2, #5000
+ 861 001c 01A9     		add	r1, sp, #4
+ 862 001e 0548     		ldr	r0, .L64
+ 863 0020 FFF7FEFF 		bl	HAL_QSPI_Command
+ 864              	.LVL52:
+ 865              		.loc 1 272 8 discriminator 1 view .LVU260
+ 866 0024 10B9     		cbnz	r0, .L63
+ 867              	.L60:
+ 273:Core/Src/flash.c ****     {
+ 274:Core/Src/flash.c ****         Error_Handler();
+ 275:Core/Src/flash.c ****     }    
+ 276:Core/Src/flash.c **** }
+ 868              		.loc 1 276 1 view .LVU261
+ 869 0026 0FB0     		add	sp, sp, #60
+ 870              	.LCFI31:
+ 871              		.cfi_remember_state
+ 872              		.cfi_def_cfa_offset 4
+ 873              		@ sp needed
+ 874 0028 5DF804FB 		ldr	pc, [sp], #4
+ 875              	.L63:
+ 876              	.LCFI32:
+ 877              		.cfi_restore_state
+ 274:Core/Src/flash.c ****     }    
+ 878              		.loc 1 274 9 is_stmt 1 view .LVU262
+ 879 002c FFF7FEFF 		bl	Error_Handler
+ 880              	.LVL53:
+ 881              		.loc 1 276 1 is_stmt 0 view .LVU263
+ 882 0030 F9E7     		b	.L60
+ 883              	.L65:
+ 884 0032 00BF     		.align	2
+ 885              	.L64:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 23
+
+
+ 886 0034 00000000 		.word	hqspi
+ 887              		.cfi_endproc
+ 888              	.LFE1269:
+ 890              		.section	.text.Flash_NormalRead,"ax",%progbits
+ 891              		.align	1
+ 892              		.global	Flash_NormalRead
+ 893              		.syntax unified
+ 894              		.thumb
+ 895              		.thumb_func
+ 897              	Flash_NormalRead:
+ 898              	.LVL54:
+ 899              	.LFB1270:
+ 277:Core/Src/flash.c **** 
+ 278:Core/Src/flash.c **** void Flash_NormalRead(uint32_t adress, uint8_t *buffer, uint32_t size)
+ 279:Core/Src/flash.c **** {
+ 900              		.loc 1 279 1 is_stmt 1 view -0
+ 901              		.cfi_startproc
+ 902              		@ args = 0, pretend = 0, frame = 56
+ 903              		@ frame_needed = 0, uses_anonymous_args = 0
+ 904              		.loc 1 279 1 is_stmt 0 view .LVU265
+ 905 0000 70B5     		push	{r4, r5, r6, lr}
+ 906              	.LCFI33:
+ 907              		.cfi_def_cfa_offset 16
+ 908              		.cfi_offset 4, -16
+ 909              		.cfi_offset 5, -12
+ 910              		.cfi_offset 6, -8
+ 911              		.cfi_offset 14, -4
+ 912 0002 8EB0     		sub	sp, sp, #56
+ 913              	.LCFI34:
+ 914              		.cfi_def_cfa_offset 72
+ 915 0004 0646     		mov	r6, r0
+ 916 0006 0C46     		mov	r4, r1
+ 917 0008 1546     		mov	r5, r2
+ 280:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 918              		.loc 1 280 5 is_stmt 1 view .LVU266
+ 919              		.loc 1 280 25 is_stmt 0 view .LVU267
+ 920 000a 3422     		movs	r2, #52
+ 921              	.LVL55:
+ 922              		.loc 1 280 25 view .LVU268
+ 923 000c 0021     		movs	r1, #0
+ 924              	.LVL56:
+ 925              		.loc 1 280 25 view .LVU269
+ 926 000e 01A8     		add	r0, sp, #4
+ 927              	.LVL57:
+ 928              		.loc 1 280 25 view .LVU270
+ 929 0010 FFF7FEFF 		bl	memset
+ 930              	.LVL58:
+ 281:Core/Src/flash.c **** 
+ 282:Core/Src/flash.c ****     cmd.Instruction         = NORMAL_READ_CMD;
+ 931              		.loc 1 282 5 is_stmt 1 view .LVU271
+ 932              		.loc 1 282 29 is_stmt 0 view .LVU272
+ 933 0014 0323     		movs	r3, #3
+ 934 0016 0193     		str	r3, [sp, #4]
+ 283:Core/Src/flash.c ****     cmd.Address             = adress;
+ 935              		.loc 1 283 5 is_stmt 1 view .LVU273
+ 936              		.loc 1 283 29 is_stmt 0 view .LVU274
+ 937 0018 0296     		str	r6, [sp, #8]
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 24
+
+
+ 284:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 938              		.loc 1 284 5 is_stmt 1 view .LVU275
+ 285:Core/Src/flash.c ****     cmd.AddressSize         = 0;
+ 939              		.loc 1 285 5 view .LVU276
+ 286:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 940              		.loc 1 286 5 view .LVU277
+ 287:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 941              		.loc 1 287 5 view .LVU278
+ 288:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 942              		.loc 1 288 5 view .LVU279
+ 943              		.loc 1 288 29 is_stmt 0 view .LVU280
+ 944 001a 4FF48073 		mov	r3, #256
+ 945 001e 0793     		str	r3, [sp, #28]
+ 289:Core/Src/flash.c ****     cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+ 946              		.loc 1 289 5 is_stmt 1 view .LVU281
+ 947              		.loc 1 289 29 is_stmt 0 view .LVU282
+ 948 0020 4FF48063 		mov	r3, #1024
+ 949 0024 0893     		str	r3, [sp, #32]
+ 290:Core/Src/flash.c ****     cmd.AlternateByteMode   = 0;
+ 950              		.loc 1 290 5 is_stmt 1 view .LVU283
+ 291:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_1_LINE;
+ 951              		.loc 1 291 5 view .LVU284
+ 952              		.loc 1 291 29 is_stmt 0 view .LVU285
+ 953 0026 4FF08073 		mov	r3, #16777216
+ 954 002a 0A93     		str	r3, [sp, #40]
+ 292:Core/Src/flash.c ****     cmd.NbData              = size;
+ 955              		.loc 1 292 5 is_stmt 1 view .LVU286
+ 956              		.loc 1 292 29 is_stmt 0 view .LVU287
+ 957 002c 0B95     		str	r5, [sp, #44]
+ 293:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 958              		.loc 1 293 5 is_stmt 1 view .LVU288
+ 294:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 959              		.loc 1 294 5 view .LVU289
+ 295:Core/Src/flash.c **** 
+ 296:Core/Src/flash.c ****     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 960              		.loc 1 296 5 view .LVU290
+ 961              		.loc 1 296 9 is_stmt 0 view .LVU291
+ 962 002e 41F28832 		movw	r2, #5000
+ 963 0032 01A9     		add	r1, sp, #4
+ 964 0034 0948     		ldr	r0, .L72
+ 965 0036 FFF7FEFF 		bl	HAL_QSPI_Command
+ 966              	.LVL59:
+ 967              		.loc 1 296 8 discriminator 1 view .LVU292
+ 968 003a 40B9     		cbnz	r0, .L70
+ 969              	.L67:
+ 297:Core/Src/flash.c ****     {
+ 298:Core/Src/flash.c ****         Error_Handler();
+ 299:Core/Src/flash.c ****     }
+ 300:Core/Src/flash.c **** 
+ 301:Core/Src/flash.c ****     if (HAL_QSPI_Receive(&hqspi, buffer, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 970              		.loc 1 301 5 is_stmt 1 view .LVU293
+ 971              		.loc 1 301 9 is_stmt 0 view .LVU294
+ 972 003c 41F28832 		movw	r2, #5000
+ 973 0040 2146     		mov	r1, r4
+ 974 0042 0648     		ldr	r0, .L72
+ 975 0044 FFF7FEFF 		bl	HAL_QSPI_Receive
+ 976              	.LVL60:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 25
+
+
+ 977              		.loc 1 301 8 discriminator 1 view .LVU295
+ 978 0048 20B9     		cbnz	r0, .L71
+ 979              	.L66:
+ 302:Core/Src/flash.c ****     {
+ 303:Core/Src/flash.c ****         Error_Handler();
+ 304:Core/Src/flash.c ****     }
+ 305:Core/Src/flash.c **** }
+ 980              		.loc 1 305 1 view .LVU296
+ 981 004a 0EB0     		add	sp, sp, #56
+ 982              	.LCFI35:
+ 983              		.cfi_remember_state
+ 984              		.cfi_def_cfa_offset 16
+ 985              		@ sp needed
+ 986 004c 70BD     		pop	{r4, r5, r6, pc}
+ 987              	.LVL61:
+ 988              	.L70:
+ 989              	.LCFI36:
+ 990              		.cfi_restore_state
+ 298:Core/Src/flash.c ****     }
+ 991              		.loc 1 298 9 is_stmt 1 view .LVU297
+ 992 004e FFF7FEFF 		bl	Error_Handler
+ 993              	.LVL62:
+ 994 0052 F3E7     		b	.L67
+ 995              	.L71:
+ 303:Core/Src/flash.c ****     }
+ 996              		.loc 1 303 9 view .LVU298
+ 997 0054 FFF7FEFF 		bl	Error_Handler
+ 998              	.LVL63:
+ 999              		.loc 1 305 1 is_stmt 0 view .LVU299
+ 1000 0058 F7E7     		b	.L66
+ 1001              	.L73:
+ 1002 005a 00BF     		.align	2
+ 1003              	.L72:
+ 1004 005c 00000000 		.word	hqspi
+ 1005              		.cfi_endproc
+ 1006              	.LFE1270:
+ 1008              		.section	.text.Flash_4ByteRead,"ax",%progbits
+ 1009              		.align	1
+ 1010              		.global	Flash_4ByteRead
+ 1011              		.syntax unified
+ 1012              		.thumb
+ 1013              		.thumb_func
+ 1015              	Flash_4ByteRead:
+ 1016              	.LVL64:
+ 1017              	.LFB1271:
+ 306:Core/Src/flash.c **** 
+ 307:Core/Src/flash.c **** void Flash_4ByteRead(uint32_t adress, uint8_t *buffer, uint32_t size)
+ 308:Core/Src/flash.c **** {
+ 1018              		.loc 1 308 1 is_stmt 1 view -0
+ 1019              		.cfi_startproc
+ 1020              		@ args = 0, pretend = 0, frame = 56
+ 1021              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1022              		.loc 1 308 1 is_stmt 0 view .LVU301
+ 1023 0000 70B5     		push	{r4, r5, r6, lr}
+ 1024              	.LCFI37:
+ 1025              		.cfi_def_cfa_offset 16
+ 1026              		.cfi_offset 4, -16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 26
+
+
+ 1027              		.cfi_offset 5, -12
+ 1028              		.cfi_offset 6, -8
+ 1029              		.cfi_offset 14, -4
+ 1030 0002 8EB0     		sub	sp, sp, #56
+ 1031              	.LCFI38:
+ 1032              		.cfi_def_cfa_offset 72
+ 1033 0004 0646     		mov	r6, r0
+ 1034 0006 0C46     		mov	r4, r1
+ 1035 0008 1546     		mov	r5, r2
+ 309:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 1036              		.loc 1 309 5 is_stmt 1 view .LVU302
+ 1037              		.loc 1 309 25 is_stmt 0 view .LVU303
+ 1038 000a 3422     		movs	r2, #52
+ 1039              	.LVL65:
+ 1040              		.loc 1 309 25 view .LVU304
+ 1041 000c 0021     		movs	r1, #0
+ 1042              	.LVL66:
+ 1043              		.loc 1 309 25 view .LVU305
+ 1044 000e 01A8     		add	r0, sp, #4
+ 1045              	.LVL67:
+ 1046              		.loc 1 309 25 view .LVU306
+ 1047 0010 FFF7FEFF 		bl	memset
+ 1048              	.LVL68:
+ 310:Core/Src/flash.c **** 
+ 311:Core/Src/flash.c ****     cmd.Instruction         = FOUR_BYTE_READ_CMD;
+ 1049              		.loc 1 311 5 is_stmt 1 view .LVU307
+ 1050              		.loc 1 311 29 is_stmt 0 view .LVU308
+ 1051 0014 1323     		movs	r3, #19
+ 1052 0016 0193     		str	r3, [sp, #4]
+ 312:Core/Src/flash.c ****     cmd.Address             = adress;
+ 1053              		.loc 1 312 5 is_stmt 1 view .LVU309
+ 1054              		.loc 1 312 29 is_stmt 0 view .LVU310
+ 1055 0018 0296     		str	r6, [sp, #8]
+ 313:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 1056              		.loc 1 313 5 is_stmt 1 view .LVU311
+ 314:Core/Src/flash.c ****     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
+ 1057              		.loc 1 314 5 view .LVU312
+ 1058              		.loc 1 314 29 is_stmt 0 view .LVU313
+ 1059 001a 4FF44053 		mov	r3, #12288
+ 1060 001e 0493     		str	r3, [sp, #16]
+ 315:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 1061              		.loc 1 315 5 is_stmt 1 view .LVU314
+ 316:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 1062              		.loc 1 316 5 view .LVU315
+ 317:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 1063              		.loc 1 317 5 view .LVU316
+ 1064              		.loc 1 317 29 is_stmt 0 view .LVU317
+ 1065 0020 4FF48073 		mov	r3, #256
+ 1066 0024 0793     		str	r3, [sp, #28]
+ 318:Core/Src/flash.c ****     cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+ 1067              		.loc 1 318 5 is_stmt 1 view .LVU318
+ 1068              		.loc 1 318 29 is_stmt 0 view .LVU319
+ 1069 0026 4FF48063 		mov	r3, #1024
+ 1070 002a 0893     		str	r3, [sp, #32]
+ 319:Core/Src/flash.c ****     cmd.AlternateByteMode   = QSPI_ALTERNATE_BYTES_NONE;
+ 1071              		.loc 1 319 5 is_stmt 1 view .LVU320
+ 320:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_1_LINE;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 27
+
+
+ 1072              		.loc 1 320 5 view .LVU321
+ 1073              		.loc 1 320 29 is_stmt 0 view .LVU322
+ 1074 002c 4FF08073 		mov	r3, #16777216
+ 1075 0030 0A93     		str	r3, [sp, #40]
+ 321:Core/Src/flash.c ****     cmd.NbData              = size;
+ 1076              		.loc 1 321 5 is_stmt 1 view .LVU323
+ 1077              		.loc 1 321 29 is_stmt 0 view .LVU324
+ 1078 0032 0B95     		str	r5, [sp, #44]
+ 322:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 1079              		.loc 1 322 5 is_stmt 1 view .LVU325
+ 323:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 1080              		.loc 1 323 5 view .LVU326
+ 324:Core/Src/flash.c **** 
+ 325:Core/Src/flash.c ****     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 1081              		.loc 1 325 5 view .LVU327
+ 1082              		.loc 1 325 9 is_stmt 0 view .LVU328
+ 1083 0034 41F28832 		movw	r2, #5000
+ 1084 0038 01A9     		add	r1, sp, #4
+ 1085 003a 0A48     		ldr	r0, .L80
+ 1086 003c FFF7FEFF 		bl	HAL_QSPI_Command
+ 1087              	.LVL69:
+ 1088              		.loc 1 325 8 discriminator 1 view .LVU329
+ 1089 0040 50B9     		cbnz	r0, .L78
+ 1090              	.L75:
+ 326:Core/Src/flash.c ****     {
+ 327:Core/Src/flash.c ****         Error_Handler();
+ 328:Core/Src/flash.c ****     }
+ 329:Core/Src/flash.c **** 
+ 330:Core/Src/flash.c ****     if (HAL_QSPI_Receive(&hqspi, buffer, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 1091              		.loc 1 330 5 is_stmt 1 view .LVU330
+ 1092              		.loc 1 330 9 is_stmt 0 view .LVU331
+ 1093 0042 41F28832 		movw	r2, #5000
+ 1094 0046 2146     		mov	r1, r4
+ 1095 0048 0648     		ldr	r0, .L80
+ 1096 004a FFF7FEFF 		bl	HAL_QSPI_Receive
+ 1097              	.LVL70:
+ 1098              		.loc 1 330 8 discriminator 1 view .LVU332
+ 1099 004e 30B9     		cbnz	r0, .L79
+ 1100              	.L76:
+ 331:Core/Src/flash.c ****     {
+ 332:Core/Src/flash.c ****         Error_Handler();
+ 333:Core/Src/flash.c ****     }
+ 334:Core/Src/flash.c ****     Flash_WaitWhileBusy();
+ 1101              		.loc 1 334 5 is_stmt 1 view .LVU333
+ 1102 0050 FFF7FEFF 		bl	Flash_WaitWhileBusy
+ 1103              	.LVL71:
+ 335:Core/Src/flash.c **** }
+ 1104              		.loc 1 335 1 is_stmt 0 view .LVU334
+ 1105 0054 0EB0     		add	sp, sp, #56
+ 1106              	.LCFI39:
+ 1107              		.cfi_remember_state
+ 1108              		.cfi_def_cfa_offset 16
+ 1109              		@ sp needed
+ 1110 0056 70BD     		pop	{r4, r5, r6, pc}
+ 1111              	.LVL72:
+ 1112              	.L78:
+ 1113              	.LCFI40:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 28
+
+
+ 1114              		.cfi_restore_state
+ 327:Core/Src/flash.c ****     }
+ 1115              		.loc 1 327 9 is_stmt 1 view .LVU335
+ 1116 0058 FFF7FEFF 		bl	Error_Handler
+ 1117              	.LVL73:
+ 1118 005c F1E7     		b	.L75
+ 1119              	.L79:
+ 332:Core/Src/flash.c ****     }
+ 1120              		.loc 1 332 9 view .LVU336
+ 1121 005e FFF7FEFF 		bl	Error_Handler
+ 1122              	.LVL74:
+ 1123 0062 F5E7     		b	.L76
+ 1124              	.L81:
+ 1125              		.align	2
+ 1126              	.L80:
+ 1127 0064 00000000 		.word	hqspi
+ 1128              		.cfi_endproc
+ 1129              	.LFE1271:
+ 1131              		.section	.text.Flash_SectorErase,"ax",%progbits
+ 1132              		.align	1
+ 1133              		.global	Flash_SectorErase
+ 1134              		.syntax unified
+ 1135              		.thumb
+ 1136              		.thumb_func
+ 1138              	Flash_SectorErase:
+ 1139              	.LVL75:
+ 1140              	.LFB1272:
+ 336:Core/Src/flash.c **** 
+ 337:Core/Src/flash.c **** void Flash_SectorErase(uint32_t sector)
+ 338:Core/Src/flash.c **** {
+ 1141              		.loc 1 338 1 view -0
+ 1142              		.cfi_startproc
+ 1143              		@ args = 0, pretend = 0, frame = 56
+ 1144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1145              		.loc 1 338 1 is_stmt 0 view .LVU338
+ 1146 0000 10B5     		push	{r4, lr}
+ 1147              	.LCFI41:
+ 1148              		.cfi_def_cfa_offset 8
+ 1149              		.cfi_offset 4, -8
+ 1150              		.cfi_offset 14, -4
+ 1151 0002 8EB0     		sub	sp, sp, #56
+ 1152              	.LCFI42:
+ 1153              		.cfi_def_cfa_offset 64
+ 1154 0004 0446     		mov	r4, r0
+ 339:Core/Src/flash.c ****     Flash_WriteEnable();
+ 1155              		.loc 1 339 5 is_stmt 1 view .LVU339
+ 1156 0006 FFF7FEFF 		bl	Flash_WriteEnable
+ 1157              	.LVL76:
+ 340:Core/Src/flash.c **** 
+ 341:Core/Src/flash.c ****     uint32_t adress = sector * 4096;
+ 1158              		.loc 1 341 5 view .LVU340
+ 1159              		.loc 1 341 14 is_stmt 0 view .LVU341
+ 1160 000a 2403     		lsls	r4, r4, #12
+ 1161              	.LVL77:
+ 342:Core/Src/flash.c **** 
+ 343:Core/Src/flash.c ****     QSPI_CommandTypeDef cmd = {0};
+ 1162              		.loc 1 343 5 is_stmt 1 view .LVU342
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 29
+
+
+ 1163              		.loc 1 343 25 is_stmt 0 view .LVU343
+ 1164 000c 3422     		movs	r2, #52
+ 1165 000e 0021     		movs	r1, #0
+ 1166 0010 01A8     		add	r0, sp, #4
+ 1167 0012 FFF7FEFF 		bl	memset
+ 1168              	.LVL78:
+ 344:Core/Src/flash.c **** 
+ 345:Core/Src/flash.c ****     cmd.Instruction         = SECTOR_ERASE_CMD;
+ 1169              		.loc 1 345 5 is_stmt 1 view .LVU344
+ 1170              		.loc 1 345 29 is_stmt 0 view .LVU345
+ 1171 0016 2123     		movs	r3, #33
+ 1172 0018 0193     		str	r3, [sp, #4]
+ 346:Core/Src/flash.c ****     cmd.Address             = adress;
+ 1173              		.loc 1 346 5 is_stmt 1 view .LVU346
+ 1174              		.loc 1 346 29 is_stmt 0 view .LVU347
+ 1175 001a 0294     		str	r4, [sp, #8]
+ 347:Core/Src/flash.c ****     cmd.AlternateBytes      = 0;
+ 1176              		.loc 1 347 5 is_stmt 1 view .LVU348
+ 348:Core/Src/flash.c ****     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
+ 1177              		.loc 1 348 5 view .LVU349
+ 1178              		.loc 1 348 29 is_stmt 0 view .LVU350
+ 1179 001c 4FF44053 		mov	r3, #12288
+ 1180 0020 0493     		str	r3, [sp, #16]
+ 349:Core/Src/flash.c ****     cmd.AlternateBytesSize  = 0;
+ 1181              		.loc 1 349 5 is_stmt 1 view .LVU351
+ 350:Core/Src/flash.c ****     cmd.DummyCycles         = 0;
+ 1182              		.loc 1 350 5 view .LVU352
+ 351:Core/Src/flash.c ****     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+ 1183              		.loc 1 351 5 view .LVU353
+ 1184              		.loc 1 351 29 is_stmt 0 view .LVU354
+ 1185 0022 4FF48073 		mov	r3, #256
+ 1186 0026 0793     		str	r3, [sp, #28]
+ 352:Core/Src/flash.c ****     cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+ 1187              		.loc 1 352 5 is_stmt 1 view .LVU355
+ 1188              		.loc 1 352 29 is_stmt 0 view .LVU356
+ 1189 0028 4FF48063 		mov	r3, #1024
+ 1190 002c 0893     		str	r3, [sp, #32]
+ 353:Core/Src/flash.c ****     cmd.AlternateByteMode   = QSPI_ALTERNATE_BYTES_NONE;
+ 1191              		.loc 1 353 5 is_stmt 1 view .LVU357
+ 354:Core/Src/flash.c ****     cmd.DataMode            = QSPI_DATA_NONE;
+ 1192              		.loc 1 354 5 view .LVU358
+ 355:Core/Src/flash.c ****     cmd.NbData              = 0;
+ 1193              		.loc 1 355 5 view .LVU359
+ 356:Core/Src/flash.c ****     cmd.DdrMode             = 0;
+ 1194              		.loc 1 356 5 view .LVU360
+ 357:Core/Src/flash.c ****     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+ 1195              		.loc 1 357 5 view .LVU361
+ 358:Core/Src/flash.c **** 
+ 359:Core/Src/flash.c ****     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+ 1196              		.loc 1 359 5 view .LVU362
+ 1197              		.loc 1 359 9 is_stmt 0 view .LVU363
+ 1198 002e 41F28832 		movw	r2, #5000
+ 1199 0032 01A9     		add	r1, sp, #4
+ 1200 0034 0648     		ldr	r0, .L86
+ 1201 0036 FFF7FEFF 		bl	HAL_QSPI_Command
+ 1202              	.LVL79:
+ 1203              		.loc 1 359 8 discriminator 1 view .LVU364
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 30
+
+
+ 1204 003a 28B9     		cbnz	r0, .L85
+ 1205              	.L83:
+ 360:Core/Src/flash.c ****     {
+ 361:Core/Src/flash.c ****         Error_Handler();
+ 362:Core/Src/flash.c ****     }
+ 363:Core/Src/flash.c **** 
+ 364:Core/Src/flash.c ****     Flash_WaitWhileBusy();
+ 1206              		.loc 1 364 5 is_stmt 1 view .LVU365
+ 1207 003c FFF7FEFF 		bl	Flash_WaitWhileBusy
+ 1208              	.LVL80:
+ 365:Core/Src/flash.c ****     Flash_WriteDisable();
+ 1209              		.loc 1 365 5 view .LVU366
+ 1210 0040 FFF7FEFF 		bl	Flash_WriteDisable
+ 1211              	.LVL81:
+ 366:Core/Src/flash.c **** }...
+ 1212              		.loc 1 366 1 is_stmt 0 view .LVU367
+ 1213 0044 0EB0     		add	sp, sp, #56
+ 1214              	.LCFI43:
+ 1215              		.cfi_remember_state
+ 1216              		.cfi_def_cfa_offset 8
+ 1217              		@ sp needed
+ 1218 0046 10BD     		pop	{r4, pc}
+ 1219              	.LVL82:
+ 1220              	.L85:
+ 1221              	.LCFI44:
+ 1222              		.cfi_restore_state
+ 361:Core/Src/flash.c ****         Error_Handler();
+ 1223              		.loc 1 361 9 is_stmt 1 view .LVU368
+ 1224 0048 FFF7FEFF 		bl	Error_Handler
+ 1225              	.LVL83:
+ 1226 004c F6E7     		b	.L83
+ 1227              	.L87:
+ 1228 004e 00BF     		.align	2
+ 1229              	.L86:
+ 1230 0050 00000000 		.word	hqspi
+ 1231              		.cfi_endproc
+ 1232              	.LFE1272:
+ 1234              		.text
+ 1235              	.Letext0:
+ 1236              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 1237              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 1238              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 1239              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 1240              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 1241              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_qspi.h"
+ 1242              		.file 8 "Core/Inc/flash.h"
+ 1243              		.file 9 "Core/Inc/main.h"
+ 1244              		.file 10 "<built-in>"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s 			page 31
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 flash.c
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:21     .text.Flash_ReadJEDEC:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:27     .text.Flash_ReadJEDEC:00000000 Flash_ReadJEDEC
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:112    .text.Flash_ReadJEDEC:00000050 $d
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:117    .text.Flash_WriteEnable:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:123    .text.Flash_WriteEnable:00000000 Flash_WriteEnable
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:190    .text.Flash_WriteEnable:00000034 $d
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:195    .text.Flash_WriteDisable:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:201    .text.Flash_WriteDisable:00000000 Flash_WriteDisable
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:268    .text.Flash_WriteDisable:00000034 $d
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:273    .text.Flash_ReadStatusReg:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:279    .text.Flash_ReadStatusReg:00000000 Flash_ReadStatusReg
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:372    .text.Flash_ReadStatusReg:0000005c $d
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:377    .text.Flash_WaitWhileBusy:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:383    .text.Flash_WaitWhileBusy:00000000 Flash_WaitWhileBusy
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:406    .text.Flash_WritePage:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:412    .text.Flash_WritePage:00000000 Flash_WritePage
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:551    .text.Flash_WritePage:00000084 $d
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:556    .text.Flash_Write4Page:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:562    .text.Flash_Write4Page:00000000 Flash_Write4Page
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:704    .text.Flash_Write4Page:00000084 $d
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:709    .text.Flash_ConfigRegister:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:715    .text.Flash_ConfigRegister:00000000 Flash_ConfigRegister
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:808    .text.Flash_ConfigRegister:0000005c $d
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:813    .text.Enable_4BYTEMODE:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:819    .text.Enable_4BYTEMODE:00000000 Enable_4BYTEMODE
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:886    .text.Enable_4BYTEMODE:00000034 $d
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:891    .text.Flash_NormalRead:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:897    .text.Flash_NormalRead:00000000 Flash_NormalRead
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:1004   .text.Flash_NormalRead:0000005c $d
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:1009   .text.Flash_4ByteRead:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:1015   .text.Flash_4ByteRead:00000000 Flash_4ByteRead
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:1127   .text.Flash_4ByteRead:00000064 $d
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:1132   .text.Flash_SectorErase:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:1138   .text.Flash_SectorErase:00000000 Flash_SectorErase
+C:\Users\bku598\AppData\Local\Temp\ccN0CnOG.s:1230   .text.Flash_SectorErase:00000050 $d
+
+UNDEFINED SYMBOLS
+memset
+HAL_QSPI_Command
+HAL_QSPI_Receive
+Error_Handler
+hqspi
+HAL_QSPI_Transmit

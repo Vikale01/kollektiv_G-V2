@@ -1,0 +1,936 @@
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"sensordata.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/sensordata.c"
+  20              		.section	.text.packageHeader,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	packageHeader:
+  27              	.LFB1262:
+   1:Core/Src/sensordata.c **** /***********************************************************
+   2:Core/Src/sensordata.c ****  * @file    sensordata.c
+   3:Core/Src/sensordata.c ****  * @author  Viktor Alexandersson & Niklas Christensen 
+   4:Core/Src/sensordata.c ****  * @date    2025-02-27
+   5:Core/Src/sensordata.c ****  ***********************************************************/
+   6:Core/Src/sensordata.c **** 
+   7:Core/Src/sensordata.c **** /* Includes -----------------------------------------------*/
+   8:Core/Src/sensordata.c **** #include "sensordata.h"
+   9:Core/Src/sensordata.c **** 
+  10:Core/Src/sensordata.c **** /* Defines -----------------------------------------*/
+  11:Core/Src/sensordata.c **** #define BUFFER_SIZE 256
+  12:Core/Src/sensordata.c **** #define SECTION_SIZE 4096
+  13:Core/Src/sensordata.c **** 
+  14:Core/Src/sensordata.c **** /* Variables -----------------------------------------------*/
+  15:Core/Src/sensordata.c **** uint8_t bufferPointer = 0;
+  16:Core/Src/sensordata.c **** uint8_t dataCounter = 0;
+  17:Core/Src/sensordata.c **** 
+  18:Core/Src/sensordata.c **** uint8_t pageCounter = 0;
+  19:Core/Src/sensordata.c **** uint16_t sectorCounter = 0;
+  20:Core/Src/sensordata.c **** 
+  21:Core/Src/sensordata.c **** bool header_sent = false;
+  22:Core/Src/sensordata.c **** bool bufferFull = false; 
+  23:Core/Src/sensordata.c **** 
+  24:Core/Src/sensordata.c **** uint8_t headerBuffer[25];
+  25:Core/Src/sensordata.c **** 
+  26:Core/Src/sensordata.c **** uint8_t GPSraw_data[15]; 
+  27:Core/Src/sensordata.c **** uint8_t BMEraw_data[8]; 
+  28:Core/Src/sensordata.c **** 
+  29:Core/Src/sensordata.c **** uint8_t BMIraw_data[12]; 
+  30:Core/Src/sensordata.c **** 
+  31:Core/Src/sensordata.c **** uint16_t bleSector = 0;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 2
+
+
+  32:Core/Src/sensordata.c **** uint8_t ble_page = 0;
+  33:Core/Src/sensordata.c **** 
+  34:Core/Src/sensordata.c **** uint8_t buffer[BUFFER_SIZE];
+  35:Core/Src/sensordata.c **** uint8_t readbuffer[BUFFER_SIZE];
+  36:Core/Src/sensordata.c **** 
+  37:Core/Src/sensordata.c **** uint16_t pageNumber = 0;
+  38:Core/Src/sensordata.c **** 
+  39:Core/Src/sensordata.c **** 
+  40:Core/Src/sensordata.c **** 
+  41:Core/Src/sensordata.c **** 
+  42:Core/Src/sensordata.c **** /* Private functions -----------------------------------------------*/
+  43:Core/Src/sensordata.c **** 
+  44:Core/Src/sensordata.c **** static void sendPage_ble(uint8_t pageBuffer[256]) 
+  45:Core/Src/sensordata.c **** { 
+  46:Core/Src/sensordata.c ****     tBleStatus status;
+  47:Core/Src/sensordata.c **** 
+  48:Core/Src/sensordata.c ****     // send first 128 bytes
+  49:Core/Src/sensordata.c ****     do {
+  50:Core/Src/sensordata.c ****         status = Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, pageBuffer, 128);
+  51:Core/Src/sensordata.c ****         if(status != BLE_STATUS_SUCCESS)
+  52:Core/Src/sensordata.c ****             HAL_Delay(10);
+  53:Core/Src/sensordata.c ****     } while(status != BLE_STATUS_SUCCESS);
+  54:Core/Src/sensordata.c **** 
+  55:Core/Src/sensordata.c ****     // send second 128 bytes
+  56:Core/Src/sensordata.c ****     do {
+  57:Core/Src/sensordata.c ****         status = Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, pageBuffer + 128, 128);
+  58:Core/Src/sensordata.c ****         if(status != BLE_STATUS_SUCCESS)
+  59:Core/Src/sensordata.c ****             HAL_Delay(10);
+  60:Core/Src/sensordata.c ****     } while(status != BLE_STATUS_SUCCESS);
+  61:Core/Src/sensordata.c **** }
+  62:Core/Src/sensordata.c **** 
+  63:Core/Src/sensordata.c **** static void packageHeader(void)
+  64:Core/Src/sensordata.c **** {
+  28              		.loc 1 64 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  65:Core/Src/sensordata.c ****   BME280_ReadMeasurement_Raw(BMEraw_data);
+  37              		.loc 1 65 3 view .LVU1
+  38 0002 104C     		ldr	r4, .L3
+  39 0004 2046     		mov	r0, r4
+  40 0006 FFF7FEFF 		bl	BME280_ReadMeasurement_Raw
+  41              	.LVL0:
+  66:Core/Src/sensordata.c **** 
+  67:Core/Src/sensordata.c ****   headerBuffer[0] = 0xAA;
+  42              		.loc 1 67 3 view .LVU2
+  43              		.loc 1 67 19 is_stmt 0 view .LVU3
+  44 000a 0F4B     		ldr	r3, .L3+4
+  45 000c 4FF0AA0E 		mov	lr, #170
+  46 0010 9C46     		mov	ip, r3
+  47 0012 0CF801EB 		strb	lr, [ip], #1
+  68:Core/Src/sensordata.c **** 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 3
+
+
+  69:Core/Src/sensordata.c ****   memcpy(&headerBuffer[1], BMEraw_data, sizeof(BMEraw_data));
+  48              		.loc 1 69 3 is_stmt 1 view .LVU4
+  49 0016 2246     		mov	r2, r4
+  50 0018 03CA     		ldmia	r2!, {r0, r1}
+  51 001a C3F80100 		str	r0, [r3, #1]	@ unaligned
+  52 001e CCF80410 		str	r1, [ip, #4]	@ unaligned
+  70:Core/Src/sensordata.c **** 
+  71:Core/Src/sensordata.c ****   memcpy(&headerBuffer[9], GPSraw_data, sizeof(GPSraw_data));
+  53              		.loc 1 71 3 view .LVU5
+  54 0022 0A4C     		ldr	r4, .L3+8
+  55 0024 07CC     		ldmia	r4!, {r0, r1, r2}
+  56 0026 C3F80900 		str	r0, [r3, #9]	@ unaligned
+  57 002a C3F80D10 		str	r1, [r3, #13]	@ unaligned
+  58 002e C3F81120 		str	r2, [r3, #17]	@ unaligned
+  59 0032 2188     		ldrh	r1, [r4]	@ unaligned
+  60 0034 A278     		ldrb	r2, [r4, #2]	@ zero_extendqisi2
+  61 0036 A3F81510 		strh	r1, [r3, #21]	@ unaligned
+  62 003a DA75     		strb	r2, [r3, #23]
+  72:Core/Src/sensordata.c **** 
+  73:Core/Src/sensordata.c ****   headerBuffer[24] = 0xAA;
+  63              		.loc 1 73 3 view .LVU6
+  64              		.loc 1 73 20 is_stmt 0 view .LVU7
+  65 003c 83F818E0 		strb	lr, [r3, #24]
+  74:Core/Src/sensordata.c **** }
+  66              		.loc 1 74 1 view .LVU8
+  67 0040 10BD     		pop	{r4, pc}
+  68              	.L4:
+  69 0042 00BF     		.align	2
+  70              	.L3:
+  71 0044 00000000 		.word	BMEraw_data
+  72 0048 00000000 		.word	headerBuffer
+  73 004c 00000000 		.word	GPSraw_data
+  74              		.cfi_endproc
+  75              	.LFE1262:
+  77              		.section	.text.newSectionCheck,"ax",%progbits
+  78              		.align	1
+  79              		.syntax unified
+  80              		.thumb
+  81              		.thumb_func
+  83              	newSectionCheck:
+  84              	.LFB1263:
+  75:Core/Src/sensordata.c **** 
+  76:Core/Src/sensordata.c **** static void newSectionCheck(void)
+  77:Core/Src/sensordata.c **** {
+  85              		.loc 1 77 1 is_stmt 1 view -0
+  86              		.cfi_startproc
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89 0000 08B5     		push	{r3, lr}
+  90              	.LCFI1:
+  91              		.cfi_def_cfa_offset 8
+  92              		.cfi_offset 3, -8
+  93              		.cfi_offset 14, -4
+  78:Core/Src/sensordata.c ****   if(pageCounter >= 16)
+  94              		.loc 1 78 3 view .LVU10
+  95              		.loc 1 78 18 is_stmt 0 view .LVU11
+  96 0002 0C4B     		ldr	r3, .L9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 4
+
+
+  97 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  98              		.loc 1 78 5 view .LVU12
+  99 0006 0F2B     		cmp	r3, #15
+ 100 0008 12D9     		bls	.L5
+  79:Core/Src/sensordata.c ****   {
+  80:Core/Src/sensordata.c ****     pageCounter = 0;
+ 101              		.loc 1 80 5 is_stmt 1 view .LVU13
+ 102              		.loc 1 80 17 is_stmt 0 view .LVU14
+ 103 000a 0A4B     		ldr	r3, .L9
+ 104 000c 0022     		movs	r2, #0
+ 105 000e 1A70     		strb	r2, [r3]
+  81:Core/Src/sensordata.c ****     sectorCounter++;
+ 106              		.loc 1 81 5 is_stmt 1 view .LVU15
+ 107              		.loc 1 81 18 is_stmt 0 view .LVU16
+ 108 0010 094A     		ldr	r2, .L9+4
+ 109 0012 1388     		ldrh	r3, [r2]
+ 110 0014 0133     		adds	r3, r3, #1
+ 111 0016 9BB2     		uxth	r3, r3
+ 112 0018 1380     		strh	r3, [r2]	@ movhi
+  82:Core/Src/sensordata.c ****     
+  83:Core/Src/sensordata.c ****     if (sectorCounter >= 15625)
+ 113              		.loc 1 83 5 is_stmt 1 view .LVU17
+ 114              		.loc 1 83 8 is_stmt 0 view .LVU18
+ 115 001a 43F60852 		movw	r2, #15624
+ 116 001e 9342     		cmp	r3, r2
+ 117 0020 02D9     		bls	.L7
+  84:Core/Src/sensordata.c ****     {
+  85:Core/Src/sensordata.c ****       sectorCounter = 0;
+ 118              		.loc 1 85 7 is_stmt 1 view .LVU19
+ 119              		.loc 1 85 21 is_stmt 0 view .LVU20
+ 120 0022 054B     		ldr	r3, .L9+4
+ 121 0024 0022     		movs	r2, #0
+ 122 0026 1A80     		strh	r2, [r3]	@ movhi
+ 123              	.L7:
+  86:Core/Src/sensordata.c ****     }  
+  87:Core/Src/sensordata.c **** 
+  88:Core/Src/sensordata.c ****     Flash_SectorErase(sectorCounter);
+ 124              		.loc 1 88 5 is_stmt 1 view .LVU21
+ 125 0028 034B     		ldr	r3, .L9+4
+ 126 002a 1888     		ldrh	r0, [r3]
+ 127 002c FFF7FEFF 		bl	Flash_SectorErase
+ 128              	.LVL1:
+ 129              	.L5:
+  89:Core/Src/sensordata.c ****   }
+  90:Core/Src/sensordata.c **** }
+ 130              		.loc 1 90 1 is_stmt 0 view .LVU22
+ 131 0030 08BD     		pop	{r3, pc}
+ 132              	.L10:
+ 133 0032 00BF     		.align	2
+ 134              	.L9:
+ 135 0034 00000000 		.word	pageCounter
+ 136 0038 00000000 		.word	sectorCounter
+ 137              		.cfi_endproc
+ 138              	.LFE1263:
+ 140              		.section	.text.sendPage_ble,"ax",%progbits
+ 141              		.align	1
+ 142              		.syntax unified
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 5
+
+
+ 143              		.thumb
+ 144              		.thumb_func
+ 146              	sendPage_ble:
+ 147              	.LVL2:
+ 148              	.LFB1261:
+  45:Core/Src/sensordata.c ****     tBleStatus status;
+ 149              		.loc 1 45 1 is_stmt 1 view -0
+ 150              		.cfi_startproc
+ 151              		@ args = 0, pretend = 0, frame = 0
+ 152              		@ frame_needed = 0, uses_anonymous_args = 0
+  45:Core/Src/sensordata.c ****     tBleStatus status;
+ 153              		.loc 1 45 1 is_stmt 0 view .LVU24
+ 154 0000 38B5     		push	{r3, r4, r5, lr}
+ 155              	.LCFI2:
+ 156              		.cfi_def_cfa_offset 16
+ 157              		.cfi_offset 3, -16
+ 158              		.cfi_offset 4, -12
+ 159              		.cfi_offset 5, -8
+ 160              		.cfi_offset 14, -4
+ 161 0002 0446     		mov	r4, r0
+ 162 0004 00E0     		b	.L13
+ 163              	.LVL3:
+ 164              	.L12:
+  53:Core/Src/sensordata.c **** 
+ 165              		.loc 1 53 20 is_stmt 1 view .LVU25
+ 166 0006 65B1     		cbz	r5, .L15
+ 167              	.LVL4:
+ 168              	.L13:
+  46:Core/Src/sensordata.c **** 
+ 169              		.loc 1 46 5 view .LVU26
+  49:Core/Src/sensordata.c ****         status = Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, pageBuffer, 128);
+ 170              		.loc 1 49 5 view .LVU27
+  50:Core/Src/sensordata.c ****         if(status != BLE_STATUS_SUCCESS)
+ 171              		.loc 1 50 9 view .LVU28
+  50:Core/Src/sensordata.c ****         if(status != BLE_STATUS_SUCCESS)
+ 172              		.loc 1 50 18 is_stmt 0 view .LVU29
+ 173 0008 8022     		movs	r2, #128
+ 174 000a 2146     		mov	r1, r4
+ 175 000c 0020     		movs	r0, #0
+ 176 000e FFF7FEFF 		bl	Custom_STM_App_Update_Char_Variable_Length
+ 177              	.LVL5:
+  51:Core/Src/sensordata.c ****             HAL_Delay(10);
+ 178              		.loc 1 51 9 is_stmt 1 view .LVU30
+  51:Core/Src/sensordata.c ****             HAL_Delay(10);
+ 179              		.loc 1 51 11 is_stmt 0 view .LVU31
+ 180 0012 0546     		mov	r5, r0
+ 181 0014 0028     		cmp	r0, #0
+ 182 0016 F6D0     		beq	.L12
+  52:Core/Src/sensordata.c ****     } while(status != BLE_STATUS_SUCCESS);
+ 183              		.loc 1 52 13 is_stmt 1 view .LVU32
+ 184 0018 0A20     		movs	r0, #10
+ 185              	.LVL6:
+  52:Core/Src/sensordata.c ****     } while(status != BLE_STATUS_SUCCESS);
+ 186              		.loc 1 52 13 is_stmt 0 view .LVU33
+ 187 001a FFF7FEFF 		bl	HAL_Delay
+ 188              	.LVL7:
+ 189 001e F2E7     		b	.L12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 6
+
+
+ 190              	.L14:
+  60:Core/Src/sensordata.c **** }
+ 191              		.loc 1 60 20 is_stmt 1 view .LVU34
+ 192 0020 5DB1     		cbz	r5, .L17
+ 193              	.LVL8:
+ 194              	.L15:
+  56:Core/Src/sensordata.c ****         status = Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, pageBuffer + 128, 128);
+ 195              		.loc 1 56 5 view .LVU35
+  57:Core/Src/sensordata.c ****         if(status != BLE_STATUS_SUCCESS)
+ 196              		.loc 1 57 9 view .LVU36
+  57:Core/Src/sensordata.c ****         if(status != BLE_STATUS_SUCCESS)
+ 197              		.loc 1 57 18 is_stmt 0 view .LVU37
+ 198 0022 8022     		movs	r2, #128
+ 199 0024 A118     		adds	r1, r4, r2
+ 200 0026 0020     		movs	r0, #0
+ 201 0028 FFF7FEFF 		bl	Custom_STM_App_Update_Char_Variable_Length
+ 202              	.LVL9:
+  58:Core/Src/sensordata.c ****             HAL_Delay(10);
+ 203              		.loc 1 58 9 is_stmt 1 view .LVU38
+  58:Core/Src/sensordata.c ****             HAL_Delay(10);
+ 204              		.loc 1 58 11 is_stmt 0 view .LVU39
+ 205 002c 0546     		mov	r5, r0
+ 206 002e 0028     		cmp	r0, #0
+ 207 0030 F6D0     		beq	.L14
+  59:Core/Src/sensordata.c ****     } while(status != BLE_STATUS_SUCCESS);
+ 208              		.loc 1 59 13 is_stmt 1 view .LVU40
+ 209 0032 0A20     		movs	r0, #10
+ 210              	.LVL10:
+  59:Core/Src/sensordata.c ****     } while(status != BLE_STATUS_SUCCESS);
+ 211              		.loc 1 59 13 is_stmt 0 view .LVU41
+ 212 0034 FFF7FEFF 		bl	HAL_Delay
+ 213              	.LVL11:
+ 214 0038 F2E7     		b	.L14
+ 215              	.L17:
+  61:Core/Src/sensordata.c **** 
+ 216              		.loc 1 61 1 view .LVU42
+ 217 003a 38BD     		pop	{r3, r4, r5, pc}
+  61:Core/Src/sensordata.c **** 
+ 218              		.loc 1 61 1 view .LVU43
+ 219              		.cfi_endproc
+ 220              	.LFE1261:
+ 222              		.section	.text.packageDataToMem,"ax",%progbits
+ 223              		.align	1
+ 224              		.global	packageDataToMem
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 229              	packageDataToMem:
+ 230              	.LFB1264:
+  91:Core/Src/sensordata.c **** 
+  92:Core/Src/sensordata.c **** void packageDataToMem(void)
+  93:Core/Src/sensordata.c **** {
+ 231              		.loc 1 93 1 is_stmt 1 view -0
+ 232              		.cfi_startproc
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 7
+
+
+ 236              	.LCFI3:
+ 237              		.cfi_def_cfa_offset 24
+ 238              		.cfi_offset 3, -24
+ 239              		.cfi_offset 4, -20
+ 240              		.cfi_offset 5, -16
+ 241              		.cfi_offset 6, -12
+ 242              		.cfi_offset 7, -8
+ 243              		.cfi_offset 14, -4
+  94:Core/Src/sensordata.c ****   // Put header values ONCE first in buffer
+  95:Core/Src/sensordata.c ****   if(bufferPointer == 0)
+ 244              		.loc 1 95 3 view .LVU45
+ 245              		.loc 1 95 20 is_stmt 0 view .LVU46
+ 246 0002 1C4B     		ldr	r3, .L25
+ 247 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 248              		.loc 1 95 5 view .LVU47
+ 249 0006 63B1     		cbz	r3, .L23
+ 250              	.L19:
+  96:Core/Src/sensordata.c ****   {
+  97:Core/Src/sensordata.c ****     packageHeader(); 
+  98:Core/Src/sensordata.c ****     memcpy(buffer, headerBuffer, sizeof(headerBuffer));
+  99:Core/Src/sensordata.c ****     bufferPointer += 25;
+ 100:Core/Src/sensordata.c ****     dataCounter = 0;
+ 101:Core/Src/sensordata.c ****   }
+ 102:Core/Src/sensordata.c **** 
+ 103:Core/Src/sensordata.c ****   if(dataCounter < 19)
+ 251              		.loc 1 103 3 is_stmt 1 view .LVU48
+ 252              		.loc 1 103 18 is_stmt 0 view .LVU49
+ 253 0008 1B4B     		ldr	r3, .L25+4
+ 254 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 255              		.loc 1 103 5 view .LVU50
+ 256 000c 122B     		cmp	r3, #18
+ 257 000e 1AD9     		bls	.L24
+ 104:Core/Src/sensordata.c ****   {
+ 105:Core/Src/sensordata.c ****     BMI270_ReadMeasurement_raw(BMIraw_data);  // Read data from sensor
+ 106:Core/Src/sensordata.c **** 
+ 107:Core/Src/sensordata.c ****     memcpy(buffer + bufferPointer, BMIraw_data, sizeof(BMIraw_data)); // put data on the buffer. 
+ 108:Core/Src/sensordata.c **** 
+ 109:Core/Src/sensordata.c ****     bufferPointer += 12; 
+ 110:Core/Src/sensordata.c ****     dataCounter++;
+ 111:Core/Src/sensordata.c ****   }
+ 112:Core/Src/sensordata.c ****   else
+ 113:Core/Src/sensordata.c ****   {
+ 114:Core/Src/sensordata.c ****     buffer[255] = pageNumber;
+ 258              		.loc 1 114 5 is_stmt 1 view .LVU51
+ 259              		.loc 1 114 17 is_stmt 0 view .LVU52
+ 260 0010 1A4B     		ldr	r3, .L25+8
+ 261 0012 1A88     		ldrh	r2, [r3]
+ 262 0014 1A4B     		ldr	r3, .L25+12
+ 263 0016 83F8FF20 		strb	r2, [r3, #255]
+ 115:Core/Src/sensordata.c ****     
+ 116:Core/Src/sensordata.c ****     bufferFull = true;
+ 264              		.loc 1 116 5 is_stmt 1 view .LVU53
+ 265              		.loc 1 116 16 is_stmt 0 view .LVU54
+ 266 001a 1A4B     		ldr	r3, .L25+16
+ 267 001c 0122     		movs	r2, #1
+ 268 001e 1A70     		strb	r2, [r3]
+ 269              	.L18:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 8
+
+
+ 117:Core/Src/sensordata.c ****   }
+ 118:Core/Src/sensordata.c **** }
+ 270              		.loc 1 118 1 view .LVU55
+ 271 0020 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 272              	.L23:
+  97:Core/Src/sensordata.c ****     memcpy(buffer, headerBuffer, sizeof(headerBuffer));
+ 273              		.loc 1 97 5 is_stmt 1 view .LVU56
+ 274 0022 FFF7FEFF 		bl	packageHeader
+ 275              	.LVL12:
+  98:Core/Src/sensordata.c ****     bufferPointer += 25;
+ 276              		.loc 1 98 5 view .LVU57
+ 277 0026 164C     		ldr	r4, .L25+12
+ 278 0028 174D     		ldr	r5, .L25+20
+ 279 002a 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 280 002c 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 281 002e 95E80700 		ldm	r5, {r0, r1, r2}
+ 282 0032 03C4     		stmia	r4!, {r0, r1}
+ 283 0034 2270     		strb	r2, [r4]
+  99:Core/Src/sensordata.c ****     dataCounter = 0;
+ 284              		.loc 1 99 5 view .LVU58
+  99:Core/Src/sensordata.c ****     dataCounter = 0;
+ 285              		.loc 1 99 19 is_stmt 0 view .LVU59
+ 286 0036 0F4A     		ldr	r2, .L25
+ 287 0038 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 288 003a 1933     		adds	r3, r3, #25
+ 289 003c 1370     		strb	r3, [r2]
+ 100:Core/Src/sensordata.c ****   }
+ 290              		.loc 1 100 5 is_stmt 1 view .LVU60
+ 100:Core/Src/sensordata.c ****   }
+ 291              		.loc 1 100 17 is_stmt 0 view .LVU61
+ 292 003e 0E4B     		ldr	r3, .L25+4
+ 293 0040 0022     		movs	r2, #0
+ 294 0042 1A70     		strb	r2, [r3]
+ 295 0044 E0E7     		b	.L19
+ 296              	.L24:
+ 105:Core/Src/sensordata.c **** 
+ 297              		.loc 1 105 5 is_stmt 1 view .LVU62
+ 298 0046 114C     		ldr	r4, .L25+24
+ 299 0048 2046     		mov	r0, r4
+ 300 004a FFF7FEFF 		bl	BMI270_ReadMeasurement_raw
+ 301              	.LVL13:
+ 107:Core/Src/sensordata.c **** 
+ 302              		.loc 1 107 5 view .LVU63
+ 303 004e 094E     		ldr	r6, .L25
+ 304 0050 3578     		ldrb	r5, [r6]	@ zero_extendqisi2
+ 305 0052 0B4F     		ldr	r7, .L25+12
+ 306 0054 05EB070C 		add	ip, r5, r7
+ 307 0058 2346     		mov	r3, r4
+ 308 005a 07CB     		ldmia	r3!, {r0, r1, r2}
+ 309 005c 7851     		str	r0, [r7, r5]	@ unaligned
+ 310 005e CCF80410 		str	r1, [ip, #4]	@ unaligned
+ 311 0062 CCF80820 		str	r2, [ip, #8]	@ unaligned
+ 109:Core/Src/sensordata.c ****     dataCounter++;
+ 312              		.loc 1 109 5 view .LVU64
+ 109:Core/Src/sensordata.c ****     dataCounter++;
+ 313              		.loc 1 109 19 is_stmt 0 view .LVU65
+ 314 0066 0C35     		adds	r5, r5, #12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 9
+
+
+ 315 0068 3570     		strb	r5, [r6]
+ 110:Core/Src/sensordata.c ****   }
+ 316              		.loc 1 110 5 is_stmt 1 view .LVU66
+ 110:Core/Src/sensordata.c ****   }
+ 317              		.loc 1 110 16 is_stmt 0 view .LVU67
+ 318 006a 034A     		ldr	r2, .L25+4
+ 319 006c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 320 006e 0133     		adds	r3, r3, #1
+ 321 0070 1370     		strb	r3, [r2]
+ 322 0072 D5E7     		b	.L18
+ 323              	.L26:
+ 324              		.align	2
+ 325              	.L25:
+ 326 0074 00000000 		.word	bufferPointer
+ 327 0078 00000000 		.word	dataCounter
+ 328 007c 00000000 		.word	pageNumber
+ 329 0080 00000000 		.word	buffer
+ 330 0084 00000000 		.word	bufferFull
+ 331 0088 00000000 		.word	headerBuffer
+ 332 008c 00000000 		.word	BMIraw_data
+ 333              		.cfi_endproc
+ 334              	.LFE1264:
+ 336              		.section	.text.sendPackageToMem,"ax",%progbits
+ 337              		.align	1
+ 338              		.global	sendPackageToMem
+ 339              		.syntax unified
+ 340              		.thumb
+ 341              		.thumb_func
+ 343              	sendPackageToMem:
+ 344              	.LFB1265:
+ 119:Core/Src/sensordata.c **** 
+ 120:Core/Src/sensordata.c **** void sendPackageToMem(void)
+ 121:Core/Src/sensordata.c **** {
+ 345              		.loc 1 121 1 is_stmt 1 view -0
+ 346              		.cfi_startproc
+ 347              		@ args = 0, pretend = 0, frame = 0
+ 348              		@ frame_needed = 0, uses_anonymous_args = 0
+ 349 0000 38B5     		push	{r3, r4, r5, lr}
+ 350              	.LCFI4:
+ 351              		.cfi_def_cfa_offset 16
+ 352              		.cfi_offset 3, -16
+ 353              		.cfi_offset 4, -12
+ 354              		.cfi_offset 5, -8
+ 355              		.cfi_offset 14, -4
+ 122:Core/Src/sensordata.c ****   if (bufferFull) // Buffer is full of 256 bytes
+ 356              		.loc 1 122 3 view .LVU69
+ 357              		.loc 1 122 7 is_stmt 0 view .LVU70
+ 358 0002 144B     		ldr	r3, .L31
+ 359 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 360              		.loc 1 122 6 view .LVU71
+ 361 0006 03B9     		cbnz	r3, .L30
+ 362              	.L27:
+ 123:Core/Src/sensordata.c ****   {
+ 124:Core/Src/sensordata.c ****     newSectionCheck();  // Check if we are in a new section in the memory (One section is 4096 byte
+ 125:Core/Src/sensordata.c **** 
+ 126:Core/Src/sensordata.c ****     Flash_WritePage((sectorCounter * SECTION_SIZE) + (BUFFER_SIZE * pageCounter), buffer, BUFFER_SI
+ 127:Core/Src/sensordata.c ****     pageCounter++;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 10
+
+
+ 128:Core/Src/sensordata.c ****     pageNumber++;
+ 129:Core/Src/sensordata.c **** 
+ 130:Core/Src/sensordata.c ****     bufferPointer = 0;
+ 131:Core/Src/sensordata.c ****     dataCounter = 0;
+ 132:Core/Src/sensordata.c **** 
+ 133:Core/Src/sensordata.c ****     bufferFull = false;
+ 134:Core/Src/sensordata.c ****     
+ 135:Core/Src/sensordata.c ****     memset(buffer, 0xFF, BUFFER_SIZE);
+ 136:Core/Src/sensordata.c ****   }
+ 137:Core/Src/sensordata.c **** }
+ 363              		.loc 1 137 1 view .LVU72
+ 364 0008 38BD     		pop	{r3, r4, r5, pc}
+ 365              	.L30:
+ 124:Core/Src/sensordata.c **** 
+ 366              		.loc 1 124 5 is_stmt 1 view .LVU73
+ 367 000a FFF7FEFF 		bl	newSectionCheck
+ 368              	.LVL14:
+ 126:Core/Src/sensordata.c ****     pageCounter++;
+ 369              		.loc 1 126 5 view .LVU74
+ 126:Core/Src/sensordata.c ****     pageCounter++;
+ 370              		.loc 1 126 52 is_stmt 0 view .LVU75
+ 371 000e 124B     		ldr	r3, .L31+4
+ 372 0010 1B88     		ldrh	r3, [r3]
+ 373 0012 124C     		ldr	r4, .L31+8
+ 374 0014 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 375 0016 00EB0310 		add	r0, r0, r3, lsl #4
+ 126:Core/Src/sensordata.c ****     pageCounter++;
+ 376              		.loc 1 126 5 view .LVU76
+ 377 001a 114D     		ldr	r5, .L31+12
+ 378 001c 4FF48072 		mov	r2, #256
+ 379 0020 2946     		mov	r1, r5
+ 380 0022 0002     		lsls	r0, r0, #8
+ 381 0024 FFF7FEFF 		bl	Flash_WritePage
+ 382              	.LVL15:
+ 127:Core/Src/sensordata.c ****     pageNumber++;
+ 383              		.loc 1 127 5 is_stmt 1 view .LVU77
+ 127:Core/Src/sensordata.c ****     pageNumber++;
+ 384              		.loc 1 127 16 is_stmt 0 view .LVU78
+ 385 0028 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 386 002a 0133     		adds	r3, r3, #1
+ 387 002c 2370     		strb	r3, [r4]
+ 128:Core/Src/sensordata.c **** 
+ 388              		.loc 1 128 5 is_stmt 1 view .LVU79
+ 128:Core/Src/sensordata.c **** 
+ 389              		.loc 1 128 15 is_stmt 0 view .LVU80
+ 390 002e 0D4A     		ldr	r2, .L31+16
+ 391 0030 1388     		ldrh	r3, [r2]
+ 392 0032 0133     		adds	r3, r3, #1
+ 393 0034 1380     		strh	r3, [r2]	@ movhi
+ 130:Core/Src/sensordata.c ****     dataCounter = 0;
+ 394              		.loc 1 130 5 is_stmt 1 view .LVU81
+ 130:Core/Src/sensordata.c ****     dataCounter = 0;
+ 395              		.loc 1 130 19 is_stmt 0 view .LVU82
+ 396 0036 0023     		movs	r3, #0
+ 397 0038 0B4A     		ldr	r2, .L31+20
+ 398 003a 1370     		strb	r3, [r2]
+ 131:Core/Src/sensordata.c **** 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 11
+
+
+ 399              		.loc 1 131 5 is_stmt 1 view .LVU83
+ 131:Core/Src/sensordata.c **** 
+ 400              		.loc 1 131 17 is_stmt 0 view .LVU84
+ 401 003c 0B4A     		ldr	r2, .L31+24
+ 402 003e 1370     		strb	r3, [r2]
+ 133:Core/Src/sensordata.c ****     
+ 403              		.loc 1 133 5 is_stmt 1 view .LVU85
+ 133:Core/Src/sensordata.c ****     
+ 404              		.loc 1 133 16 is_stmt 0 view .LVU86
+ 405 0040 044A     		ldr	r2, .L31
+ 406 0042 1370     		strb	r3, [r2]
+ 135:Core/Src/sensordata.c ****   }
+ 407              		.loc 1 135 5 is_stmt 1 view .LVU87
+ 408 0044 4FF48072 		mov	r2, #256
+ 409 0048 FF21     		movs	r1, #255
+ 410 004a 2846     		mov	r0, r5
+ 411 004c FFF7FEFF 		bl	memset
+ 412              	.LVL16:
+ 413              		.loc 1 137 1 is_stmt 0 view .LVU88
+ 414 0050 DAE7     		b	.L27
+ 415              	.L32:
+ 416 0052 00BF     		.align	2
+ 417              	.L31:
+ 418 0054 00000000 		.word	bufferFull
+ 419 0058 00000000 		.word	sectorCounter
+ 420 005c 00000000 		.word	pageCounter
+ 421 0060 00000000 		.word	buffer
+ 422 0064 00000000 		.word	pageNumber
+ 423 0068 00000000 		.word	bufferPointer
+ 424 006c 00000000 		.word	dataCounter
+ 425              		.cfi_endproc
+ 426              	.LFE1265:
+ 428              		.section	.text.readMemSendBle,"ax",%progbits
+ 429              		.align	1
+ 430              		.global	readMemSendBle
+ 431              		.syntax unified
+ 432              		.thumb
+ 433              		.thumb_func
+ 435              	readMemSendBle:
+ 436              	.LFB1266:
+ 138:Core/Src/sensordata.c **** 
+ 139:Core/Src/sensordata.c **** void readMemSendBle(void)
+ 140:Core/Src/sensordata.c **** {
+ 437              		.loc 1 140 1 is_stmt 1 view -0
+ 438              		.cfi_startproc
+ 439              		@ args = 0, pretend = 0, frame = 0
+ 440              		@ frame_needed = 0, uses_anonymous_args = 0
+ 441 0000 38B5     		push	{r3, r4, r5, lr}
+ 442              	.LCFI5:
+ 443              		.cfi_def_cfa_offset 16
+ 444              		.cfi_offset 3, -16
+ 445              		.cfi_offset 4, -12
+ 446              		.cfi_offset 5, -8
+ 447              		.cfi_offset 14, -4
+ 141:Core/Src/sensordata.c ****   if (bleSector < sectorCounter || (bleSector == sectorCounter && ble_page < pageCounter))
+ 448              		.loc 1 141 3 view .LVU90
+ 449              		.loc 1 141 17 is_stmt 0 view .LVU91
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 12
+
+
+ 450 0002 144B     		ldr	r3, .L38
+ 451 0004 1B88     		ldrh	r3, [r3]
+ 452 0006 144A     		ldr	r2, .L38+4
+ 453 0008 1288     		ldrh	r2, [r2]
+ 454              		.loc 1 141 6 view .LVU92
+ 455 000a 9342     		cmp	r3, r2
+ 456 000c 07D3     		bcc	.L34
+ 457              		.loc 1 141 33 discriminator 1 view .LVU93
+ 458 000e 00D0     		beq	.L37
+ 459              	.L33:
+ 142:Core/Src/sensordata.c ****   {
+ 143:Core/Src/sensordata.c ****     Flash_4ByteRead((bleSector *  SECTION_SIZE) + (BUFFER_SIZE * ble_page), readbuffer, sizeof(read
+ 144:Core/Src/sensordata.c **** 
+ 145:Core/Src/sensordata.c ****     sendPage_ble(readbuffer);
+ 146:Core/Src/sensordata.c **** 
+ 147:Core/Src/sensordata.c ****     ble_page++;
+ 148:Core/Src/sensordata.c **** 
+ 149:Core/Src/sensordata.c ****     if(ble_page >= 16)
+ 150:Core/Src/sensordata.c ****     {
+ 151:Core/Src/sensordata.c ****       bleSector++;
+ 152:Core/Src/sensordata.c ****       ble_page = 0;
+ 153:Core/Src/sensordata.c ****     }
+ 154:Core/Src/sensordata.c ****   }
+ 155:Core/Src/sensordata.c **** }
+ 460              		.loc 1 155 1 view .LVU94
+ 461 0010 38BD     		pop	{r3, r4, r5, pc}
+ 462              	.L37:
+ 141:Core/Src/sensordata.c ****   if (bleSector < sectorCounter || (bleSector == sectorCounter && ble_page < pageCounter))
+ 463              		.loc 1 141 76 discriminator 2 view .LVU95
+ 464 0012 124A     		ldr	r2, .L38+8
+ 465 0014 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
+ 466 0016 124A     		ldr	r2, .L38+12
+ 467 0018 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 141:Core/Src/sensordata.c ****   if (bleSector < sectorCounter || (bleSector == sectorCounter && ble_page < pageCounter))
+ 468              		.loc 1 141 64 discriminator 2 view .LVU96
+ 469 001a 9142     		cmp	r1, r2
+ 470 001c F8D2     		bcs	.L33
+ 471              	.L34:
+ 143:Core/Src/sensordata.c **** 
+ 472              		.loc 1 143 5 is_stmt 1 view .LVU97
+ 143:Core/Src/sensordata.c **** 
+ 473              		.loc 1 143 49 is_stmt 0 view .LVU98
+ 474 001e 0F4C     		ldr	r4, .L38+8
+ 475 0020 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 476 0022 00EB0310 		add	r0, r0, r3, lsl #4
+ 143:Core/Src/sensordata.c **** 
+ 477              		.loc 1 143 5 view .LVU99
+ 478 0026 0F4D     		ldr	r5, .L38+16
+ 479 0028 4FF48072 		mov	r2, #256
+ 480 002c 2946     		mov	r1, r5
+ 481 002e 0002     		lsls	r0, r0, #8
+ 482 0030 FFF7FEFF 		bl	Flash_4ByteRead
+ 483              	.LVL17:
+ 145:Core/Src/sensordata.c **** 
+ 484              		.loc 1 145 5 is_stmt 1 view .LVU100
+ 485 0034 2846     		mov	r0, r5
+ 486 0036 FFF7FEFF 		bl	sendPage_ble
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 13
+
+
+ 487              	.LVL18:
+ 147:Core/Src/sensordata.c **** 
+ 488              		.loc 1 147 5 view .LVU101
+ 147:Core/Src/sensordata.c **** 
+ 489              		.loc 1 147 13 is_stmt 0 view .LVU102
+ 490 003a 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 491 003c 0133     		adds	r3, r3, #1
+ 492 003e DBB2     		uxtb	r3, r3
+ 493 0040 2370     		strb	r3, [r4]
+ 149:Core/Src/sensordata.c ****     {
+ 494              		.loc 1 149 5 is_stmt 1 view .LVU103
+ 149:Core/Src/sensordata.c ****     {
+ 495              		.loc 1 149 7 is_stmt 0 view .LVU104
+ 496 0042 0F2B     		cmp	r3, #15
+ 497 0044 E4D9     		bls	.L33
+ 151:Core/Src/sensordata.c ****       ble_page = 0;
+ 498              		.loc 1 151 7 is_stmt 1 view .LVU105
+ 151:Core/Src/sensordata.c ****       ble_page = 0;
+ 499              		.loc 1 151 16 is_stmt 0 view .LVU106
+ 500 0046 034A     		ldr	r2, .L38
+ 501 0048 1388     		ldrh	r3, [r2]
+ 502 004a 0133     		adds	r3, r3, #1
+ 503 004c 1380     		strh	r3, [r2]	@ movhi
+ 152:Core/Src/sensordata.c ****     }
+ 504              		.loc 1 152 7 is_stmt 1 view .LVU107
+ 152:Core/Src/sensordata.c ****     }
+ 505              		.loc 1 152 16 is_stmt 0 view .LVU108
+ 506 004e 0022     		movs	r2, #0
+ 507 0050 2270     		strb	r2, [r4]
+ 508              		.loc 1 155 1 view .LVU109
+ 509 0052 DDE7     		b	.L33
+ 510              	.L39:
+ 511              		.align	2
+ 512              	.L38:
+ 513 0054 00000000 		.word	bleSector
+ 514 0058 00000000 		.word	sectorCounter
+ 515 005c 00000000 		.word	ble_page
+ 516 0060 00000000 		.word	pageCounter
+ 517 0064 00000000 		.word	readbuffer
+ 518              		.cfi_endproc
+ 519              	.LFE1266:
+ 521              		.global	pageNumber
+ 522              		.section	.bss.pageNumber,"aw",%nobits
+ 523              		.align	1
+ 526              	pageNumber:
+ 527 0000 0000     		.space	2
+ 528              		.global	readbuffer
+ 529              		.section	.bss.readbuffer,"aw",%nobits
+ 530              		.align	2
+ 533              	readbuffer:
+ 534 0000 00000000 		.space	256
+ 534      00000000 
+ 534      00000000 
+ 534      00000000 
+ 534      00000000 
+ 535              		.global	buffer
+ 536              		.section	.bss.buffer,"aw",%nobits
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 14
+
+
+ 537              		.align	2
+ 540              	buffer:
+ 541 0000 00000000 		.space	256
+ 541      00000000 
+ 541      00000000 
+ 541      00000000 
+ 541      00000000 
+ 542              		.global	ble_page
+ 543              		.section	.bss.ble_page,"aw",%nobits
+ 546              	ble_page:
+ 547 0000 00       		.space	1
+ 548              		.global	bleSector
+ 549              		.section	.bss.bleSector,"aw",%nobits
+ 550              		.align	1
+ 553              	bleSector:
+ 554 0000 0000     		.space	2
+ 555              		.global	BMIraw_data
+ 556              		.section	.bss.BMIraw_data,"aw",%nobits
+ 557              		.align	2
+ 560              	BMIraw_data:
+ 561 0000 00000000 		.space	12
+ 561      00000000 
+ 561      00000000 
+ 562              		.global	BMEraw_data
+ 563              		.section	.bss.BMEraw_data,"aw",%nobits
+ 564              		.align	2
+ 567              	BMEraw_data:
+ 568 0000 00000000 		.space	8
+ 568      00000000 
+ 569              		.global	GPSraw_data
+ 570              		.section	.bss.GPSraw_data,"aw",%nobits
+ 571              		.align	2
+ 574              	GPSraw_data:
+ 575 0000 00000000 		.space	15
+ 575      00000000 
+ 575      00000000 
+ 575      000000
+ 576              		.global	headerBuffer
+ 577              		.section	.bss.headerBuffer,"aw",%nobits
+ 578              		.align	2
+ 581              	headerBuffer:
+ 582 0000 00000000 		.space	25
+ 582      00000000 
+ 582      00000000 
+ 582      00000000 
+ 582      00000000 
+ 583              		.global	bufferFull
+ 584              		.section	.bss.bufferFull,"aw",%nobits
+ 587              	bufferFull:
+ 588 0000 00       		.space	1
+ 589              		.global	header_sent
+ 590              		.section	.bss.header_sent,"aw",%nobits
+ 593              	header_sent:
+ 594 0000 00       		.space	1
+ 595              		.global	sectorCounter
+ 596              		.section	.bss.sectorCounter,"aw",%nobits
+ 597              		.align	1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 15
+
+
+ 600              	sectorCounter:
+ 601 0000 0000     		.space	2
+ 602              		.global	pageCounter
+ 603              		.section	.bss.pageCounter,"aw",%nobits
+ 606              	pageCounter:
+ 607 0000 00       		.space	1
+ 608              		.global	dataCounter
+ 609              		.section	.bss.dataCounter,"aw",%nobits
+ 612              	dataCounter:
+ 613 0000 00       		.space	1
+ 614              		.global	bufferPointer
+ 615              		.section	.bss.bufferPointer,"aw",%nobits
+ 618              	bufferPointer:
+ 619 0000 00       		.space	1
+ 620              		.text
+ 621              	.Letext0:
+ 622              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 623              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 624              		.file 4 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/include/stdd
+ 625              		.file 5 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h"
+ 626              		.file 6 "Core/Inc/app_conf.h"
+ 627              		.file 7 "STM32_WPAN/App/custom_stm.h"
+ 628              		.file 8 "Core/Inc/gps.h"
+ 629              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
+ 630              		.file 10 "Core/Inc/flash.h"
+ 631              		.file 11 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../..
+ 632              		.file 12 "Core/Inc/bme280.h"
+ 633              		.file 13 "Core/Inc/bmi270.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 sensordata.c
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:21     .text.packageHeader:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:26     .text.packageHeader:00000000 packageHeader
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:71     .text.packageHeader:00000044 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:567    .bss.BMEraw_data:00000000 BMEraw_data
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:581    .bss.headerBuffer:00000000 headerBuffer
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:574    .bss.GPSraw_data:00000000 GPSraw_data
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:78     .text.newSectionCheck:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:83     .text.newSectionCheck:00000000 newSectionCheck
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:135    .text.newSectionCheck:00000034 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:606    .bss.pageCounter:00000000 pageCounter
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:600    .bss.sectorCounter:00000000 sectorCounter
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:141    .text.sendPage_ble:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:146    .text.sendPage_ble:00000000 sendPage_ble
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:223    .text.packageDataToMem:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:229    .text.packageDataToMem:00000000 packageDataToMem
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:326    .text.packageDataToMem:00000074 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:618    .bss.bufferPointer:00000000 bufferPointer
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:612    .bss.dataCounter:00000000 dataCounter
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:526    .bss.pageNumber:00000000 pageNumber
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:540    .bss.buffer:00000000 buffer
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:587    .bss.bufferFull:00000000 bufferFull
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:560    .bss.BMIraw_data:00000000 BMIraw_data
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:337    .text.sendPackageToMem:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:343    .text.sendPackageToMem:00000000 sendPackageToMem
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:418    .text.sendPackageToMem:00000054 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:429    .text.readMemSendBle:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:435    .text.readMemSendBle:00000000 readMemSendBle
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:513    .text.readMemSendBle:00000054 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:553    .bss.bleSector:00000000 bleSector
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:546    .bss.ble_page:00000000 ble_page
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:533    .bss.readbuffer:00000000 readbuffer
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:523    .bss.pageNumber:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:530    .bss.readbuffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:537    .bss.buffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:547    .bss.ble_page:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:550    .bss.bleSector:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:557    .bss.BMIraw_data:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:564    .bss.BMEraw_data:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:571    .bss.GPSraw_data:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:578    .bss.headerBuffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:588    .bss.bufferFull:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:593    .bss.header_sent:00000000 header_sent
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:594    .bss.header_sent:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:597    .bss.sectorCounter:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:607    .bss.pageCounter:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:613    .bss.dataCounter:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s:619    .bss.bufferPointer:00000000 $d
+
+UNDEFINED SYMBOLS
+BME280_ReadMeasurement_Raw
+Flash_SectorErase
+Custom_STM_App_Update_Char_Variable_Length
+HAL_Delay
+BMI270_ReadMeasurement_raw
+Flash_WritePage
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccb2wPT8.s 			page 17
+
+
+memset
+Flash_4ByteRead

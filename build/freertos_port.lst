@@ -1,0 +1,221 @@
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjnWHed.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"freertos_port.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/freertos_port.c"
+  20              		.section	.text.vPortSuppressTicksAndSleep,"ax",%progbits
+  21              		.align	1
+  22              		.global	vPortSuppressTicksAndSleep
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	vPortSuppressTicksAndSleep:
+  28              	.LVL0:
+  29              	.LFB1265:
+   1:Core/Src/freertos_port.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/freertos_port.c **** /**
+   3:Core/Src/freertos_port.c ****   ******************************************************************************
+   4:Core/Src/freertos_port.c ****   * @file    freertos_port.c
+   5:Core/Src/freertos_port.c ****   * @author  MCD Application Team
+   6:Core/Src/freertos_port.c ****   * @brief   Custom porting of FreeRTOS functionalities
+   7:Core/Src/freertos_port.c ****   ******************************************************************************
+   8:Core/Src/freertos_port.c ****   * @attention
+   9:Core/Src/freertos_port.c ****   *
+  10:Core/Src/freertos_port.c ****   * Copyright (c) 2026 STMicroelectronics.
+  11:Core/Src/freertos_port.c ****   * All rights reserved.
+  12:Core/Src/freertos_port.c ****   *
+  13:Core/Src/freertos_port.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:Core/Src/freertos_port.c ****   * in the root directory of this software component.
+  15:Core/Src/freertos_port.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:Core/Src/freertos_port.c ****   *
+  17:Core/Src/freertos_port.c ****   ******************************************************************************
+  18:Core/Src/freertos_port.c ****   */
+  19:Core/Src/freertos_port.c **** /* USER CODE END Header */
+  20:Core/Src/freertos_port.c **** 
+  21:Core/Src/freertos_port.c **** /* Includes ------------------------------------------------------------------*/
+  22:Core/Src/freertos_port.c **** #include "app_common.h"
+  23:Core/Src/freertos_port.c **** 
+  24:Core/Src/freertos_port.c **** #include "FreeRTOS.h"
+  25:Core/Src/freertos_port.c **** #include "task.h"
+  26:Core/Src/freertos_port.c **** #include "stm32_lpm.h"
+  27:Core/Src/freertos_port.c **** #include <limits.h>
+  28:Core/Src/freertos_port.c **** 
+  29:Core/Src/freertos_port.c **** /* Private typedef -----------------------------------------------------------*/
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjnWHed.s 			page 2
+
+
+  30:Core/Src/freertos_port.c **** typedef struct
+  31:Core/Src/freertos_port.c **** {
+  32:Core/Src/freertos_port.c ****   uint32_t LpTimeLeftOnEntry;
+  33:Core/Src/freertos_port.c ****   uint8_t LpTimerFreeRTOS_Id;
+  34:Core/Src/freertos_port.c **** } LpTimerContext_t;
+  35:Core/Src/freertos_port.c **** 
+  36:Core/Src/freertos_port.c **** /* Private defines -----------------------------------------------------------*/
+  37:Core/Src/freertos_port.c **** #ifndef configSYSTICK_CLOCK_HZ
+  38:Core/Src/freertos_port.c **** #define configSYSTICK_CLOCK_HZ configCPU_CLOCK_HZ
+  39:Core/Src/freertos_port.c **** /* Ensure the SysTick is clocked at the same frequency as the core. */
+  40:Core/Src/freertos_port.c **** #define portNVIC_SYSTICK_CLK_BIT        ( 1UL << 2UL )
+  41:Core/Src/freertos_port.c **** #else
+  42:Core/Src/freertos_port.c **** /* The way the SysTick is clocked is not modified in case it is not the same
+  43:Core/Src/freertos_port.c ****         as the core. */
+  44:Core/Src/freertos_port.c **** #define portNVIC_SYSTICK_CLK_BIT        ( 0 )
+  45:Core/Src/freertos_port.c **** #endif
+  46:Core/Src/freertos_port.c **** 
+  47:Core/Src/freertos_port.c **** #define CPU_CLOCK_KHZ   ( configCPU_CLOCK_HZ / 1000 )
+  48:Core/Src/freertos_port.c **** 
+  49:Core/Src/freertos_port.c **** /* Constants required to manipulate the core.  Registers first... */
+  50:Core/Src/freertos_port.c **** #define portNVIC_SYSTICK_CTRL_REG               ( * ( ( volatile uint32_t * ) 0xe000e010 ) )
+  51:Core/Src/freertos_port.c **** #define portNVIC_SYSTICK_LOAD_REG               ( * ( ( volatile uint32_t * ) 0xe000e014 ) )
+  52:Core/Src/freertos_port.c **** #define portNVIC_SYSTICK_CURRENT_VALUE_REG      ( * ( ( volatile uint32_t * ) 0xe000e018 ) )
+  53:Core/Src/freertos_port.c **** #define portNVIC_SYSTICK_INT_BIT                ( 1UL << 1UL )
+  54:Core/Src/freertos_port.c **** #define portNVIC_SYSTICK_ENABLE_BIT             ( 1UL << 0UL )
+  55:Core/Src/freertos_port.c **** #define portNVIC_SYSTICK_COUNT_FLAG_BIT         ( 1UL << 16UL )
+  56:Core/Src/freertos_port.c **** 
+  57:Core/Src/freertos_port.c **** /* Private macros ------------------------------------------------------------*/
+  58:Core/Src/freertos_port.c **** /* Private variables ---------------------------------------------------------*/
+  59:Core/Src/freertos_port.c **** /*
+  60:Core/Src/freertos_port.c ****  * The number of SysTick increments that make up one tick period.
+  61:Core/Src/freertos_port.c ****  */
+  62:Core/Src/freertos_port.c **** #if ( CFG_LPM_SUPPORTED != 0)
+  63:Core/Src/freertos_port.c **** static uint32_t ulTimerCountsForOneTick;
+  64:Core/Src/freertos_port.c **** 
+  65:Core/Src/freertos_port.c **** static LpTimerContext_t LpTimerContext;
+  66:Core/Src/freertos_port.c **** #endif
+  67:Core/Src/freertos_port.c **** /* Global variables ----------------------------------------------------------*/
+  68:Core/Src/freertos_port.c **** /* Private function prototypes -----------------------------------------------*/
+  69:Core/Src/freertos_port.c **** #if ( CFG_LPM_SUPPORTED != 0)
+  70:Core/Src/freertos_port.c **** static void LpTimerInit( void );
+  71:Core/Src/freertos_port.c **** static void LpTimerCb( void );
+  72:Core/Src/freertos_port.c **** static void LpTimerStart( uint32_t time_to_sleep );
+  73:Core/Src/freertos_port.c **** static void LpEnter( void );
+  74:Core/Src/freertos_port.c **** static uint32_t LpGetElapsedTime( void );
+  75:Core/Src/freertos_port.c **** void vPortSetupTimerInterrupt( void );
+  76:Core/Src/freertos_port.c **** #endif
+  77:Core/Src/freertos_port.c **** 
+  78:Core/Src/freertos_port.c **** /* Functions Definition ------------------------------------------------------*/
+  79:Core/Src/freertos_port.c **** 
+  80:Core/Src/freertos_port.c **** /**
+  81:Core/Src/freertos_port.c ****  * @brief Implement the tickless feature
+  82:Core/Src/freertos_port.c ****  *
+  83:Core/Src/freertos_port.c ****  *
+  84:Core/Src/freertos_port.c ****  * @param: xExpectedIdleTime is given in number of FreeRTOS Ticks
+  85:Core/Src/freertos_port.c ****  * @retval: None
+  86:Core/Src/freertos_port.c ****  */
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjnWHed.s 			page 3
+
+
+  87:Core/Src/freertos_port.c **** void vPortSuppressTicksAndSleep( TickType_t xExpectedIdleTime )
+  88:Core/Src/freertos_port.c **** {
+  30              		.loc 1 88 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  89:Core/Src/freertos_port.c ****   /* If low power is not used, do not stop the SysTick and continue execution */
+  90:Core/Src/freertos_port.c **** #if ( CFG_LPM_SUPPORTED != 0)
+  91:Core/Src/freertos_port.c ****   /**
+  92:Core/Src/freertos_port.c ****    * Although this is not documented as such, when xExpectedIdleTime = 0xFFFFFFFF = (~0),
+  93:Core/Src/freertos_port.c ****    * it likely means the system may enter low power for ever ( from a FreeRTOS point of view ).
+  94:Core/Src/freertos_port.c ****    * Otherwise, for a FreeRTOS tick set to 1ms, that would mean it is requested to wakeup in 8 year
+  95:Core/Src/freertos_port.c ****    * When the system may enter low power mode for ever, FreeRTOS is not really interested to mainta
+  96:Core/Src/freertos_port.c ****    * systick count and when the system exits from low power mode, there is no need to update the co
+  97:Core/Src/freertos_port.c ****    * the time spent in low power mode
+  98:Core/Src/freertos_port.c ****    */
+  99:Core/Src/freertos_port.c ****     uint32_t ulCompleteTickPeriods;
+ 100:Core/Src/freertos_port.c **** 
+ 101:Core/Src/freertos_port.c ****   /* Stop the SysTick  to avoid the interrupt to occur while in the critical section.
+ 102:Core/Src/freertos_port.c ****    * Otherwise, this will prevent the device to enter low power mode
+ 103:Core/Src/freertos_port.c ****    * At this time, an update of the systick will not be considered
+ 104:Core/Src/freertos_port.c ****    *
+ 105:Core/Src/freertos_port.c ****    */
+ 106:Core/Src/freertos_port.c ****   portNVIC_SYSTICK_CTRL_REG &= ~portNVIC_SYSTICK_ENABLE_BIT;
+ 107:Core/Src/freertos_port.c **** 
+ 108:Core/Src/freertos_port.c ****   /* Enter a critical section but don't use the taskENTER_CRITICAL()
+ 109:Core/Src/freertos_port.c ****         method as that will mask interrupts that should exit sleep mode. */
+ 110:Core/Src/freertos_port.c ****   __disable_irq();
+ 111:Core/Src/freertos_port.c ****   __DSB();
+ 112:Core/Src/freertos_port.c ****   __ISB();
+ 113:Core/Src/freertos_port.c **** 
+ 114:Core/Src/freertos_port.c ****   /* If a context switch is pending or a task is waiting for the scheduler
+ 115:Core/Src/freertos_port.c ****         to be unsuspended then abandon the low power entry. */
+ 116:Core/Src/freertos_port.c ****   if( eTaskConfirmSleepModeStatus() == eAbortSleep )
+ 117:Core/Src/freertos_port.c ****   {
+ 118:Core/Src/freertos_port.c ****     /* Restart SysTick. */
+ 119:Core/Src/freertos_port.c ****     portNVIC_SYSTICK_CTRL_REG |= portNVIC_SYSTICK_ENABLE_BIT;
+ 120:Core/Src/freertos_port.c **** 
+ 121:Core/Src/freertos_port.c ****     /* Re-enable interrupts - see comments above __disable_interrupt()
+ 122:Core/Src/freertos_port.c ****                 call above. */
+ 123:Core/Src/freertos_port.c ****     __enable_irq();
+ 124:Core/Src/freertos_port.c ****   }
+ 125:Core/Src/freertos_port.c ****   else
+ 126:Core/Src/freertos_port.c ****   {
+ 127:Core/Src/freertos_port.c ****     if (xExpectedIdleTime != (~0))
+ 128:Core/Src/freertos_port.c ****     {
+ 129:Core/Src/freertos_port.c ****       /* Remove one tick to wake up before the event occurs */
+ 130:Core/Src/freertos_port.c ****       xExpectedIdleTime--;
+ 131:Core/Src/freertos_port.c ****       /* Start the low power timer */
+ 132:Core/Src/freertos_port.c ****       LpTimerStart( xExpectedIdleTime );
+ 133:Core/Src/freertos_port.c ****     }
+ 134:Core/Src/freertos_port.c **** 
+ 135:Core/Src/freertos_port.c ****     /* Enter low power mode */
+ 136:Core/Src/freertos_port.c ****     LpEnter( );
+ 137:Core/Src/freertos_port.c **** 
+ 138:Core/Src/freertos_port.c ****     if (xExpectedIdleTime != (~0))
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjnWHed.s 			page 4
+
+
+ 139:Core/Src/freertos_port.c ****     {
+ 140:Core/Src/freertos_port.c ****       /**
+ 141:Core/Src/freertos_port.c ****        * Get the number of FreeRTOS ticks that has been suppressed
+ 142:Core/Src/freertos_port.c ****        * In the current implementation, this shall be kept in critical section
+ 143:Core/Src/freertos_port.c ****        * so that the timer server return the correct elapsed time
+ 144:Core/Src/freertos_port.c ****        */
+ 145:Core/Src/freertos_port.c ****       ulCompleteTickPeriods = LpGetElapsedTime( );
+ 146:Core/Src/freertos_port.c ****       vTaskStepTick( ulCompleteTickPeriods );
+ 147:Core/Src/freertos_port.c ****     }
+ 148:Core/Src/freertos_port.c **** 
+ 149:Core/Src/freertos_port.c ****     /* Restart SysTick */
+ 150:Core/Src/freertos_port.c ****     portNVIC_SYSTICK_CURRENT_VALUE_REG = 0UL;
+ 151:Core/Src/freertos_port.c ****     portNVIC_SYSTICK_CTRL_REG |= portNVIC_SYSTICK_ENABLE_BIT;
+ 152:Core/Src/freertos_port.c ****     portNVIC_SYSTICK_LOAD_REG = ulTimerCountsForOneTick - 1UL;
+ 153:Core/Src/freertos_port.c **** 
+ 154:Core/Src/freertos_port.c ****     /* Exit with interrUpts enabled. */
+ 155:Core/Src/freertos_port.c ****     __enable_irq();
+ 156:Core/Src/freertos_port.c ****   }
+ 157:Core/Src/freertos_port.c **** #endif
+ 158:Core/Src/freertos_port.c **** }
+  35              		.loc 1 158 1 view .LVU1
+  36 0000 7047     		bx	lr
+  37              		.cfi_endproc
+  38              	.LFE1265:
+  40              		.text
+  41              	.Letext0:
+  42              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+  43              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+  44              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjnWHed.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 freertos_port.c
+C:\Users\bku598\AppData\Local\Temp\ccjnWHed.s:21     .text.vPortSuppressTicksAndSleep:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccjnWHed.s:27     .text.vPortSuppressTicksAndSleep:00000000 vPortSuppressTicksAndSleep
+
+NO UNDEFINED SYMBOLS
