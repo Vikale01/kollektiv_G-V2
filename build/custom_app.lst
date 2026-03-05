@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,15 +20,14 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.file 1 "STM32_WPAN/App/custom_app.c"
-  20              		.section	.text.Custom_STM_App_Notification,"ax",%progbits
+  20              		.section	.text.Custom_STN_NotificationEnabled,"ax",%progbits
   21              		.align	1
-  22              		.global	Custom_STM_App_Notification
+  22              		.global	Custom_STN_NotificationEnabled
   23              		.syntax unified
   24              		.thumb
   25              		.thumb_func
-  27              	Custom_STM_App_Notification:
-  28              	.LVL0:
-  29              	.LFB1269:
+  27              	Custom_STN_NotificationEnabled:
+  28              	.LFB1269:
    1:STM32_WPAN/App/custom_app.c **** /* USER CODE BEGIN Header */
    2:STM32_WPAN/App/custom_app.c **** /**
    3:STM32_WPAN/App/custom_app.c ****   ******************************************************************************
@@ -58,10 +57,10 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s 			page 1
   27:STM32_WPAN/App/custom_app.c **** #include "custom_stm.h"
   28:STM32_WPAN/App/custom_app.c **** #include "stm32_seq.h"
   29:STM32_WPAN/App/custom_app.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s 			page 2
-
-
   30:STM32_WPAN/App/custom_app.c **** /* Private includes ----------------------------------------------------------*/
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s 			page 2
+
+
   31:STM32_WPAN/App/custom_app.c **** /* USER CODE BEGIN Includes */
   32:STM32_WPAN/App/custom_app.c **** 
   33:STM32_WPAN/App/custom_app.c **** /* USER CODE END Includes */
@@ -107,208 +106,273 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s 			page 1
   73:STM32_WPAN/App/custom_app.c **** uint8_t NotifyCharData[512];
   74:STM32_WPAN/App/custom_app.c **** uint16_t Connection_Handle;
   75:STM32_WPAN/App/custom_app.c **** /* USER CODE BEGIN PV */
-  76:STM32_WPAN/App/custom_app.c **** 
+  76:STM32_WPAN/App/custom_app.c **** static uint8_t notifications_enable = 0;
   77:STM32_WPAN/App/custom_app.c **** /* USER CODE END PV */
   78:STM32_WPAN/App/custom_app.c **** 
   79:STM32_WPAN/App/custom_app.c **** /* Private function prototypes -----------------------------------------------*/
   80:STM32_WPAN/App/custom_app.c **** /* dataSend */
   81:STM32_WPAN/App/custom_app.c **** 
   82:STM32_WPAN/App/custom_app.c **** /* USER CODE BEGIN PFP */
-  83:STM32_WPAN/App/custom_app.c **** 
-  84:STM32_WPAN/App/custom_app.c **** /* USER CODE END PFP */
-  85:STM32_WPAN/App/custom_app.c **** 
-  86:STM32_WPAN/App/custom_app.c **** /* Functions Definition ------------------------------------------------------*/
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s 			page 3
+  83:STM32_WPAN/App/custom_app.c **** uint8_t Custom_STN_NotificationEnabled(void)
+  84:STM32_WPAN/App/custom_app.c **** {
+  29              		.loc 1 84 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s 			page 3
 
 
-  87:STM32_WPAN/App/custom_app.c **** void Custom_STM_App_Notification(Custom_STM_App_Notification_evt_t *pNotification)
-  88:STM32_WPAN/App/custom_app.c **** {
-  30              		.loc 1 88 1 view -0
-  31              		.cfi_startproc
-  32              		@ args = 0, pretend = 0, frame = 0
-  33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		@ link register save eliminated.
-  89:STM32_WPAN/App/custom_app.c ****   /* USER CODE BEGIN CUSTOM_STM_App_Notification_1 */
-  90:STM32_WPAN/App/custom_app.c **** 
-  91:STM32_WPAN/App/custom_app.c ****   /* USER CODE END CUSTOM_STM_App_Notification_1 */
-  92:STM32_WPAN/App/custom_app.c ****   switch (pNotification->Custom_Evt_Opcode)
-  35              		.loc 1 92 3 view .LVU1
-  93:STM32_WPAN/App/custom_app.c ****   {
-  94:STM32_WPAN/App/custom_app.c ****     /* USER CODE BEGIN CUSTOM_STM_App_Notification_Custom_Evt_Opcode */
-  95:STM32_WPAN/App/custom_app.c **** 
-  96:STM32_WPAN/App/custom_app.c ****     /* USER CODE END CUSTOM_STM_App_Notification_Custom_Evt_Opcode */
-  97:STM32_WPAN/App/custom_app.c **** 
-  98:STM32_WPAN/App/custom_app.c ****     /* dataSend */
-  99:STM32_WPAN/App/custom_app.c ****     case CUSTOM_STM_DP_NOTIFY_ENABLED_EVT:
- 100:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_STM_DP_NOTIFY_ENABLED_EVT */
- 101:STM32_WPAN/App/custom_app.c ****       
- 102:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_STM_DP_NOTIFY_ENABLED_EVT */
- 103:STM32_WPAN/App/custom_app.c ****       break;
- 104:STM32_WPAN/App/custom_app.c **** 
- 105:STM32_WPAN/App/custom_app.c ****     case CUSTOM_STM_DP_NOTIFY_DISABLED_EVT:
- 106:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_STM_DP_NOTIFY_DISABLED_EVT */
- 107:STM32_WPAN/App/custom_app.c ****       
- 108:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_STM_DP_NOTIFY_DISABLED_EVT */
- 109:STM32_WPAN/App/custom_app.c ****       break;
- 110:STM32_WPAN/App/custom_app.c **** 
- 111:STM32_WPAN/App/custom_app.c ****     case CUSTOM_STM_NOTIFICATION_COMPLETE_EVT:
- 112:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_STM_NOTIFICATION_COMPLETE_EVT */
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  85:STM32_WPAN/App/custom_app.c ****   return notifications_enable;
+  34              		.loc 1 85 3 view .LVU1
+  86:STM32_WPAN/App/custom_app.c **** }
+  35              		.loc 1 86 1 is_stmt 0 view .LVU2
+  36 0000 014B     		ldr	r3, .L2
+  37 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+  38 0004 7047     		bx	lr
+  39              	.L3:
+  40 0006 00BF     		.align	2
+  41              	.L2:
+  42 0008 00000000 		.word	notifications_enable
+  43              		.cfi_endproc
+  44              	.LFE1269:
+  46              		.section	.text.Custom_STM_App_Notification,"ax",%progbits
+  47              		.align	1
+  48              		.global	Custom_STM_App_Notification
+  49              		.syntax unified
+  50              		.thumb
+  51              		.thumb_func
+  53              	Custom_STM_App_Notification:
+  54              	.LVL0:
+  55              	.LFB1270:
+  87:STM32_WPAN/App/custom_app.c **** /* USER CODE END PFP */
+  88:STM32_WPAN/App/custom_app.c **** 
+  89:STM32_WPAN/App/custom_app.c **** /* Functions Definition ------------------------------------------------------*/
+  90:STM32_WPAN/App/custom_app.c **** void Custom_STM_App_Notification(Custom_STM_App_Notification_evt_t *pNotification)
+  91:STM32_WPAN/App/custom_app.c **** {
+  56              		.loc 1 91 1 is_stmt 1 view -0
+  57              		.cfi_startproc
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60              		@ link register save eliminated.
+  92:STM32_WPAN/App/custom_app.c ****   /* USER CODE BEGIN CUSTOM_STM_App_Notification_1 */
+  93:STM32_WPAN/App/custom_app.c **** 
+  94:STM32_WPAN/App/custom_app.c ****   /* USER CODE END CUSTOM_STM_App_Notification_1 */
+  95:STM32_WPAN/App/custom_app.c ****   switch (pNotification->Custom_Evt_Opcode)
+  61              		.loc 1 95 3 view .LVU4
+  62              		.loc 1 95 24 is_stmt 0 view .LVU5
+  63 0000 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+  64              		.loc 1 95 3 view .LVU6
+  65 0002 13B1     		cbz	r3, .L5
+  66 0004 012B     		cmp	r3, #1
+  67 0006 04D0     		beq	.L6
+  68 0008 7047     		bx	lr
+  69              	.L5:
+  96:STM32_WPAN/App/custom_app.c ****   {
+  97:STM32_WPAN/App/custom_app.c ****     /* USER CODE BEGIN CUSTOM_STM_App_Notification_Custom_Evt_Opcode */
+  98:STM32_WPAN/App/custom_app.c **** 
+  99:STM32_WPAN/App/custom_app.c ****     /* USER CODE END CUSTOM_STM_App_Notification_Custom_Evt_Opcode */
+ 100:STM32_WPAN/App/custom_app.c **** 
+ 101:STM32_WPAN/App/custom_app.c ****     /* dataSend */
+ 102:STM32_WPAN/App/custom_app.c ****     case CUSTOM_STM_DP_NOTIFY_ENABLED_EVT:
+ 103:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_STM_DP_NOTIFY_ENABLED_EVT */
+ 104:STM32_WPAN/App/custom_app.c ****       notifications_enable = 1;
+  70              		.loc 1 104 7 is_stmt 1 view .LVU7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s 			page 4
+
+
+  71              		.loc 1 104 28 is_stmt 0 view .LVU8
+  72 000a 044B     		ldr	r3, .L8
+  73 000c 0122     		movs	r2, #1
+  74 000e 1A70     		strb	r2, [r3]
+ 105:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_STM_DP_NOTIFY_ENABLED_EVT */
+ 106:STM32_WPAN/App/custom_app.c ****       break;
+  75              		.loc 1 106 7 is_stmt 1 view .LVU9
+  76 0010 7047     		bx	lr
+  77              	.L6:
+ 107:STM32_WPAN/App/custom_app.c **** 
+ 108:STM32_WPAN/App/custom_app.c ****     case CUSTOM_STM_DP_NOTIFY_DISABLED_EVT:
+ 109:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_STM_DP_NOTIFY_DISABLED_EVT */
+ 110:STM32_WPAN/App/custom_app.c ****       notifications_enable = 0;
+  78              		.loc 1 110 7 view .LVU10
+  79              		.loc 1 110 28 is_stmt 0 view .LVU11
+  80 0012 024B     		ldr	r3, .L8
+  81 0014 0022     		movs	r2, #0
+  82 0016 1A70     		strb	r2, [r3]
+ 111:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_STM_DP_NOTIFY_DISABLED_EVT */
+ 112:STM32_WPAN/App/custom_app.c ****       break;
+  83              		.loc 1 112 7 is_stmt 1 view .LVU12
  113:STM32_WPAN/App/custom_app.c **** 
- 114:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_STM_NOTIFICATION_COMPLETE_EVT */
- 115:STM32_WPAN/App/custom_app.c ****       break;
+ 114:STM32_WPAN/App/custom_app.c ****     case CUSTOM_STM_NOTIFICATION_COMPLETE_EVT:
+ 115:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_STM_NOTIFICATION_COMPLETE_EVT */
  116:STM32_WPAN/App/custom_app.c **** 
- 117:STM32_WPAN/App/custom_app.c ****     default:
- 118:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_STM_App_Notification_default */
+ 117:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_STM_NOTIFICATION_COMPLETE_EVT */
+ 118:STM32_WPAN/App/custom_app.c ****       break;
  119:STM32_WPAN/App/custom_app.c **** 
- 120:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_STM_App_Notification_default */
- 121:STM32_WPAN/App/custom_app.c ****       break;
-  36              		.loc 1 121 7 view .LVU2
- 122:STM32_WPAN/App/custom_app.c ****   }
- 123:STM32_WPAN/App/custom_app.c ****   /* USER CODE BEGIN CUSTOM_STM_App_Notification_2 */
- 124:STM32_WPAN/App/custom_app.c **** 
- 125:STM32_WPAN/App/custom_app.c ****   /* USER CODE END CUSTOM_STM_App_Notification_2 */
- 126:STM32_WPAN/App/custom_app.c ****   return;
-  37              		.loc 1 126 3 view .LVU3
- 127:STM32_WPAN/App/custom_app.c **** }
-  38              		.loc 1 127 1 is_stmt 0 view .LVU4
-  39 0000 7047     		bx	lr
-  40              		.cfi_endproc
-  41              	.LFE1269:
-  43              		.section	.text.Custom_APP_Notification,"ax",%progbits
-  44              		.align	1
-  45              		.global	Custom_APP_Notification
-  46              		.syntax unified
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s 			page 4
+ 120:STM32_WPAN/App/custom_app.c ****     default:
+ 121:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_STM_App_Notification_default */
+ 122:STM32_WPAN/App/custom_app.c **** 
+ 123:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_STM_App_Notification_default */
+ 124:STM32_WPAN/App/custom_app.c ****       break;
+ 125:STM32_WPAN/App/custom_app.c ****   }
+ 126:STM32_WPAN/App/custom_app.c ****   /* USER CODE BEGIN CUSTOM_STM_App_Notification_2 */
+ 127:STM32_WPAN/App/custom_app.c **** 
+ 128:STM32_WPAN/App/custom_app.c ****   /* USER CODE END CUSTOM_STM_App_Notification_2 */
+ 129:STM32_WPAN/App/custom_app.c ****   return;
+  84              		.loc 1 129 3 view .LVU13
+ 130:STM32_WPAN/App/custom_app.c **** }
+  85              		.loc 1 130 1 is_stmt 0 view .LVU14
+  86 0018 7047     		bx	lr
+  87              	.L9:
+  88 001a 00BF     		.align	2
+  89              	.L8:
+  90 001c 00000000 		.word	notifications_enable
+  91              		.cfi_endproc
+  92              	.LFE1270:
+  94              		.section	.text.Custom_APP_Notification,"ax",%progbits
+  95              		.align	1
+  96              		.global	Custom_APP_Notification
+  97              		.syntax unified
+  98              		.thumb
+  99              		.thumb_func
+ 101              	Custom_APP_Notification:
+ 102              	.LVL1:
+ 103              	.LFB1271:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s 			page 5
 
 
-  47              		.thumb
-  48              		.thumb_func
-  50              	Custom_APP_Notification:
-  51              	.LVL1:
-  52              	.LFB1270:
- 128:STM32_WPAN/App/custom_app.c **** 
- 129:STM32_WPAN/App/custom_app.c **** void Custom_APP_Notification(Custom_App_ConnHandle_Not_evt_t *pNotification)
- 130:STM32_WPAN/App/custom_app.c **** {
-  53              		.loc 1 130 1 is_stmt 1 view -0
-  54              		.cfi_startproc
-  55              		@ args = 0, pretend = 0, frame = 0
-  56              		@ frame_needed = 0, uses_anonymous_args = 0
-  57              		@ link register save eliminated.
- 131:STM32_WPAN/App/custom_app.c ****   /* USER CODE BEGIN CUSTOM_APP_Notification_1 */
- 132:STM32_WPAN/App/custom_app.c **** 
- 133:STM32_WPAN/App/custom_app.c ****   /* USER CODE END CUSTOM_APP_Notification_1 */
- 134:STM32_WPAN/App/custom_app.c **** 
- 135:STM32_WPAN/App/custom_app.c ****   switch (pNotification->Custom_Evt_Opcode)
-  58              		.loc 1 135 3 view .LVU6
- 136:STM32_WPAN/App/custom_app.c ****   {
- 137:STM32_WPAN/App/custom_app.c ****     /* USER CODE BEGIN CUSTOM_APP_Notification_Custom_Evt_Opcode */
- 138:STM32_WPAN/App/custom_app.c **** 
- 139:STM32_WPAN/App/custom_app.c ****     /* USER CODE END P2PS_CUSTOM_Notification_Custom_Evt_Opcode */
- 140:STM32_WPAN/App/custom_app.c ****     case CUSTOM_CONN_HANDLE_EVT :
- 141:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_CONN_HANDLE_EVT */
- 142:STM32_WPAN/App/custom_app.c ****       
- 143:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_CONN_HANDLE_EVT */
- 144:STM32_WPAN/App/custom_app.c ****       break;
- 145:STM32_WPAN/App/custom_app.c **** 
- 146:STM32_WPAN/App/custom_app.c ****     case CUSTOM_DISCON_HANDLE_EVT :
- 147:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_DISCON_HANDLE_EVT */
+ 131:STM32_WPAN/App/custom_app.c **** 
+ 132:STM32_WPAN/App/custom_app.c **** void Custom_APP_Notification(Custom_App_ConnHandle_Not_evt_t *pNotification)
+ 133:STM32_WPAN/App/custom_app.c **** {
+ 104              		.loc 1 133 1 is_stmt 1 view -0
+ 105              		.cfi_startproc
+ 106              		@ args = 0, pretend = 0, frame = 0
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108              		@ link register save eliminated.
+ 134:STM32_WPAN/App/custom_app.c ****   /* USER CODE BEGIN CUSTOM_APP_Notification_1 */
+ 135:STM32_WPAN/App/custom_app.c **** 
+ 136:STM32_WPAN/App/custom_app.c ****   /* USER CODE END CUSTOM_APP_Notification_1 */
+ 137:STM32_WPAN/App/custom_app.c **** 
+ 138:STM32_WPAN/App/custom_app.c ****   switch (pNotification->Custom_Evt_Opcode)
+ 109              		.loc 1 138 3 view .LVU16
+ 139:STM32_WPAN/App/custom_app.c ****   {
+ 140:STM32_WPAN/App/custom_app.c ****     /* USER CODE BEGIN CUSTOM_APP_Notification_Custom_Evt_Opcode */
+ 141:STM32_WPAN/App/custom_app.c **** 
+ 142:STM32_WPAN/App/custom_app.c ****     /* USER CODE END P2PS_CUSTOM_Notification_Custom_Evt_Opcode */
+ 143:STM32_WPAN/App/custom_app.c ****     case CUSTOM_CONN_HANDLE_EVT :
+ 144:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_CONN_HANDLE_EVT */
+ 145:STM32_WPAN/App/custom_app.c ****       
+ 146:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_CONN_HANDLE_EVT */
+ 147:STM32_WPAN/App/custom_app.c ****       break;
  148:STM32_WPAN/App/custom_app.c **** 
- 149:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_DISCON_HANDLE_EVT */
- 150:STM32_WPAN/App/custom_app.c ****       break;
+ 149:STM32_WPAN/App/custom_app.c ****     case CUSTOM_DISCON_HANDLE_EVT :
+ 150:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_DISCON_HANDLE_EVT */
  151:STM32_WPAN/App/custom_app.c **** 
- 152:STM32_WPAN/App/custom_app.c ****     default:
- 153:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_APP_Notification_default */
+ 152:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_DISCON_HANDLE_EVT */
+ 153:STM32_WPAN/App/custom_app.c ****       break;
  154:STM32_WPAN/App/custom_app.c **** 
- 155:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_APP_Notification_default */
- 156:STM32_WPAN/App/custom_app.c ****       break;
-  59              		.loc 1 156 7 view .LVU7
- 157:STM32_WPAN/App/custom_app.c ****   }
- 158:STM32_WPAN/App/custom_app.c **** 
- 159:STM32_WPAN/App/custom_app.c ****   /* USER CODE BEGIN CUSTOM_APP_Notification_2 */
- 160:STM32_WPAN/App/custom_app.c **** 
- 161:STM32_WPAN/App/custom_app.c ****   /* USER CODE END CUSTOM_APP_Notification_2 */
- 162:STM32_WPAN/App/custom_app.c **** 
- 163:STM32_WPAN/App/custom_app.c ****   return;
-  60              		.loc 1 163 3 view .LVU8
- 164:STM32_WPAN/App/custom_app.c **** }
-  61              		.loc 1 164 1 is_stmt 0 view .LVU9
-  62 0000 7047     		bx	lr
-  63              		.cfi_endproc
-  64              	.LFE1270:
-  66              		.section	.text.Custom_APP_Init,"ax",%progbits
-  67              		.align	1
-  68              		.global	Custom_APP_Init
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s 			page 5
-
-
-  69              		.syntax unified
-  70              		.thumb
-  71              		.thumb_func
-  73              	Custom_APP_Init:
-  74              	.LFB1271:
+ 155:STM32_WPAN/App/custom_app.c ****     default:
+ 156:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_APP_Notification_default */
+ 157:STM32_WPAN/App/custom_app.c **** 
+ 158:STM32_WPAN/App/custom_app.c ****       /* USER CODE END CUSTOM_APP_Notification_default */
+ 159:STM32_WPAN/App/custom_app.c ****       break;
+ 110              		.loc 1 159 7 view .LVU17
+ 160:STM32_WPAN/App/custom_app.c ****   }
+ 161:STM32_WPAN/App/custom_app.c **** 
+ 162:STM32_WPAN/App/custom_app.c ****   /* USER CODE BEGIN CUSTOM_APP_Notification_2 */
+ 163:STM32_WPAN/App/custom_app.c **** 
+ 164:STM32_WPAN/App/custom_app.c ****   /* USER CODE END CUSTOM_APP_Notification_2 */
  165:STM32_WPAN/App/custom_app.c **** 
- 166:STM32_WPAN/App/custom_app.c **** void Custom_APP_Init(void)
- 167:STM32_WPAN/App/custom_app.c **** {
-  75              		.loc 1 167 1 is_stmt 1 view -0
-  76              		.cfi_startproc
-  77              		@ args = 0, pretend = 0, frame = 0
-  78              		@ frame_needed = 0, uses_anonymous_args = 0
-  79              		@ link register save eliminated.
- 168:STM32_WPAN/App/custom_app.c ****   /* USER CODE BEGIN CUSTOM_APP_Init */
- 169:STM32_WPAN/App/custom_app.c **** 
- 170:STM32_WPAN/App/custom_app.c ****   /* USER CODE END CUSTOM_APP_Init */
- 171:STM32_WPAN/App/custom_app.c ****   return;
-  80              		.loc 1 171 3 view .LVU11
- 172:STM32_WPAN/App/custom_app.c **** }
-  81              		.loc 1 172 1 is_stmt 0 view .LVU12
-  82 0000 7047     		bx	lr
-  83              		.cfi_endproc
-  84              	.LFE1271:
-  86              		.global	Connection_Handle
-  87              		.section	.bss.Connection_Handle,"aw",%nobits
-  88              		.align	1
-  91              	Connection_Handle:
-  92 0000 0000     		.space	2
-  93              		.global	NotifyCharData
-  94              		.section	.bss.NotifyCharData,"aw",%nobits
-  95              		.align	2
-  98              	NotifyCharData:
-  99 0000 00000000 		.space	512
-  99      00000000 
-  99      00000000 
-  99      00000000 
-  99      00000000 
- 100              		.global	UpdateCharData
- 101              		.section	.bss.UpdateCharData,"aw",%nobits
- 102              		.align	2
- 105              	UpdateCharData:
- 106 0000 00000000 		.space	512
- 106      00000000 
- 106      00000000 
- 106      00000000 
- 106      00000000 
- 107              		.text
- 108              	.Letext0:
- 109              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
- 110              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
- 111              		.file 4 "STM32_WPAN/App/custom_stm.h"
- 112              		.file 5 "STM32_WPAN/App/custom_app.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s 			page 6
+ 166:STM32_WPAN/App/custom_app.c ****   return;
+ 111              		.loc 1 166 3 view .LVU18
+ 167:STM32_WPAN/App/custom_app.c **** }
+ 112              		.loc 1 167 1 is_stmt 0 view .LVU19
+ 113 0000 7047     		bx	lr
+ 114              		.cfi_endproc
+ 115              	.LFE1271:
+ 117              		.section	.text.Custom_APP_Init,"ax",%progbits
+ 118              		.align	1
+ 119              		.global	Custom_APP_Init
+ 120              		.syntax unified
+ 121              		.thumb
+ 122              		.thumb_func
+ 124              	Custom_APP_Init:
+ 125              	.LFB1272:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s 			page 6
+
+
+ 168:STM32_WPAN/App/custom_app.c **** 
+ 169:STM32_WPAN/App/custom_app.c **** void Custom_APP_Init(void)
+ 170:STM32_WPAN/App/custom_app.c **** {
+ 126              		.loc 1 170 1 is_stmt 1 view -0
+ 127              		.cfi_startproc
+ 128              		@ args = 0, pretend = 0, frame = 0
+ 129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 130              		@ link register save eliminated.
+ 171:STM32_WPAN/App/custom_app.c ****   /* USER CODE BEGIN CUSTOM_APP_Init */
+ 172:STM32_WPAN/App/custom_app.c **** 
+ 173:STM32_WPAN/App/custom_app.c ****   /* USER CODE END CUSTOM_APP_Init */
+ 174:STM32_WPAN/App/custom_app.c ****   return;
+ 131              		.loc 1 174 3 view .LVU21
+ 175:STM32_WPAN/App/custom_app.c **** }
+ 132              		.loc 1 175 1 is_stmt 0 view .LVU22
+ 133 0000 7047     		bx	lr
+ 134              		.cfi_endproc
+ 135              	.LFE1272:
+ 137              		.section	.bss.notifications_enable,"aw",%nobits
+ 140              	notifications_enable:
+ 141 0000 00       		.space	1
+ 142              		.global	Connection_Handle
+ 143              		.section	.bss.Connection_Handle,"aw",%nobits
+ 144              		.align	1
+ 147              	Connection_Handle:
+ 148 0000 0000     		.space	2
+ 149              		.global	NotifyCharData
+ 150              		.section	.bss.NotifyCharData,"aw",%nobits
+ 151              		.align	2
+ 154              	NotifyCharData:
+ 155 0000 00000000 		.space	512
+ 155      00000000 
+ 155      00000000 
+ 155      00000000 
+ 155      00000000 
+ 156              		.global	UpdateCharData
+ 157              		.section	.bss.UpdateCharData,"aw",%nobits
+ 158              		.align	2
+ 161              	UpdateCharData:
+ 162 0000 00000000 		.space	512
+ 162      00000000 
+ 162      00000000 
+ 162      00000000 
+ 162      00000000 
+ 163              		.text
+ 164              	.Letext0:
+ 165              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 166              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 167              		.file 4 "STM32_WPAN/App/custom_stm.h"
+ 168              		.file 5 "STM32_WPAN/App/custom_app.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 custom_app.c
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:21     .text.Custom_STM_App_Notification:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:27     .text.Custom_STM_App_Notification:00000000 Custom_STM_App_Notification
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:44     .text.Custom_APP_Notification:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:50     .text.Custom_APP_Notification:00000000 Custom_APP_Notification
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:67     .text.Custom_APP_Init:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:73     .text.Custom_APP_Init:00000000 Custom_APP_Init
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:91     .bss.Connection_Handle:00000000 Connection_Handle
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:88     .bss.Connection_Handle:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:98     .bss.NotifyCharData:00000000 NotifyCharData
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:95     .bss.NotifyCharData:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:105    .bss.UpdateCharData:00000000 UpdateCharData
-C:\Users\bku598\AppData\Local\Temp\ccSlkFuu.s:102    .bss.UpdateCharData:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:21     .text.Custom_STN_NotificationEnabled:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:27     .text.Custom_STN_NotificationEnabled:00000000 Custom_STN_NotificationEnabled
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:42     .text.Custom_STN_NotificationEnabled:00000008 $d
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:140    .bss.notifications_enable:00000000 notifications_enable
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:47     .text.Custom_STM_App_Notification:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:53     .text.Custom_STM_App_Notification:00000000 Custom_STM_App_Notification
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:90     .text.Custom_STM_App_Notification:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:95     .text.Custom_APP_Notification:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:101    .text.Custom_APP_Notification:00000000 Custom_APP_Notification
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:118    .text.Custom_APP_Init:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:124    .text.Custom_APP_Init:00000000 Custom_APP_Init
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:141    .bss.notifications_enable:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:147    .bss.Connection_Handle:00000000 Connection_Handle
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:144    .bss.Connection_Handle:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:154    .bss.NotifyCharData:00000000 NotifyCharData
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:151    .bss.NotifyCharData:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:161    .bss.UpdateCharData:00000000 UpdateCharData
+C:\Users\bku598\AppData\Local\Temp\ccRLFYbW.s:158    .bss.UpdateCharData:00000000 $d
 
 NO UNDEFINED SYMBOLS

@@ -73,14 +73,17 @@ uint8_t UpdateCharData[512];
 uint8_t NotifyCharData[512];
 uint16_t Connection_Handle;
 /* USER CODE BEGIN PV */
-
+static uint8_t notifications_enable = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 /* dataSend */
 
 /* USER CODE BEGIN PFP */
-
+uint8_t Custom_STN_NotificationEnabled(void)
+{
+  return notifications_enable;
+}
 /* USER CODE END PFP */
 
 /* Functions Definition ------------------------------------------------------*/
@@ -98,13 +101,13 @@ void Custom_STM_App_Notification(Custom_STM_App_Notification_evt_t *pNotificatio
     /* dataSend */
     case CUSTOM_STM_DP_NOTIFY_ENABLED_EVT:
       /* USER CODE BEGIN CUSTOM_STM_DP_NOTIFY_ENABLED_EVT */
-      
+      notifications_enable = 1;
       /* USER CODE END CUSTOM_STM_DP_NOTIFY_ENABLED_EVT */
       break;
 
     case CUSTOM_STM_DP_NOTIFY_DISABLED_EVT:
       /* USER CODE BEGIN CUSTOM_STM_DP_NOTIFY_DISABLED_EVT */
-      
+      notifications_enable = 0;
       /* USER CODE END CUSTOM_STM_DP_NOTIFY_DISABLED_EVT */
       break;
 

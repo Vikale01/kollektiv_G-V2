@@ -169,8 +169,10 @@ int main(void)
         }
         break;
       case STATE_3:
-        
-        readMemSendBle();
+        if(Custom_STN_NotificationEnabled()) // Check if someone is connected and ha notification enabled
+        {
+          readMemSendBle();
+        }
 
         HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 1);
         HAL_GPIO_WritePin(GPIOB, LED_R_Pin, 0);  
