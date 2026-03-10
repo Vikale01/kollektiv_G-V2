@@ -364,3 +364,4 @@ void Flash_SectorErase(uint32_t sector)
     Flash_WaitWhileBusy();
     Flash_WriteDisable();
 }
+

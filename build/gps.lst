@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -52,495 +52,496 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 1
   21:Core/Src/gps.c **** GPS_DATA_t myGpsData = {0};
   22:Core/Src/gps.c **** uint8_t GPS_connected = 0;
   23:Core/Src/gps.c **** 
-  24:Core/Src/gps.c **** 
+  24:Core/Src/gps.c **** uint8_t logoSwitched = 0;
   25:Core/Src/gps.c **** 
-  26:Core/Src/gps.c **** uint8_t start_pos = 0;
-  27:Core/Src/gps.c **** 
-  28:Core/Src/gps.c **** /**
-  29:Core/Src/gps.c ****  * @brief  Verify UBX checksum
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 2
+  26:Core/Src/gps.c **** 
+  27:Core/Src/gps.c **** uint8_t start_pos = 0;
+  28:Core/Src/gps.c **** 
+  29:Core/Src/gps.c **** /**
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 2
 
 
-  30:Core/Src/gps.c ****  * @return True if checksum is valid
-  31:Core/Src/gps.c ****  */
-  32:Core/Src/gps.c **** static uint8_t checkSum(volatile uint8_t *p)
-  33:Core/Src/gps.c **** {
-  34:Core/Src/gps.c ****     uint8_t ck_a = 0, ck_b = 0;
-  35:Core/Src/gps.c **** 
-  36:Core/Src/gps.c ****     /* Checking if buffer received is correctly structured */
-  37:Core/Src/gps.c ****     for (int i = CHECKSUM_SP; i <= CHECKSUM_EP; i++) {
-  38:Core/Src/gps.c ****         ck_a += p[i];
-  39:Core/Src/gps.c ****         ck_b += ck_a;
-  40:Core/Src/gps.c ****     }
-  41:Core/Src/gps.c ****     if((ck_a == p[98]) && (ck_b == p[99])) return 1;
-  42:Core/Src/gps.c ****     return 0;
-  43:Core/Src/gps.c **** }
-  44:Core/Src/gps.c **** 
-  45:Core/Src/gps.c **** /**
-  46:Core/Src/gps.c ****  * @brief  Parse a complete UBX-NAV-PVT message and populate myGpsData
-  47:Core/Src/gps.c ****  * @note   Called from UART RX callback when a full message has been received
-  48:Core/Src/gps.c ****  */
-  49:Core/Src/gps.c **** void processGPS(volatile uint8_t *p)
-  50:Core/Src/gps.c **** {   
-  30              		.loc 1 50 1 view -0
+  30:Core/Src/gps.c ****  * @brief  Verify UBX checksum
+  31:Core/Src/gps.c ****  * @return True if checksum is valid
+  32:Core/Src/gps.c ****  */
+  33:Core/Src/gps.c **** static uint8_t checkSum(volatile uint8_t *p)
+  34:Core/Src/gps.c **** {
+  35:Core/Src/gps.c ****     uint8_t ck_a = 0, ck_b = 0;
+  36:Core/Src/gps.c **** 
+  37:Core/Src/gps.c ****     /* Checking if buffer received is correctly structured */
+  38:Core/Src/gps.c ****     for (int i = CHECKSUM_SP; i <= CHECKSUM_EP; i++) {
+  39:Core/Src/gps.c ****         ck_a += p[i];
+  40:Core/Src/gps.c ****         ck_b += ck_a;
+  41:Core/Src/gps.c ****     }
+  42:Core/Src/gps.c ****     if((ck_a == p[98]) && (ck_b == p[99])) return 1;
+  43:Core/Src/gps.c ****     return 0;
+  44:Core/Src/gps.c **** }
+  45:Core/Src/gps.c **** 
+  46:Core/Src/gps.c **** /**
+  47:Core/Src/gps.c ****  * @brief  Parse a complete UBX-NAV-PVT message and populate myGpsData
+  48:Core/Src/gps.c ****  * @note   Called from UART RX callback when a full message has been received
+  49:Core/Src/gps.c ****  */
+  50:Core/Src/gps.c **** void processGPS(volatile uint8_t *p)
+  51:Core/Src/gps.c **** {   
+  30              		.loc 1 51 1 view -0
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
   34              		@ link register save eliminated.
-  51:Core/Src/gps.c **** 
-  52:Core/Src/gps.c ****     /* Header validation */
-  53:Core/Src/gps.c ****     if(p[0] == 0xB5 && p[1] == 0x62 && p[2] == 0x01 && p[3] == 0x07){
-  35              		.loc 1 53 5 view .LVU1
-  36              		.loc 1 53 9 is_stmt 0 view .LVU2
+  52:Core/Src/gps.c **** 
+  53:Core/Src/gps.c ****     /* Header validation */
+  54:Core/Src/gps.c ****     if(p[0] == 0xB5 && p[1] == 0x62 && p[2] == 0x01 && p[3] == 0x07){
+  35              		.loc 1 54 5 view .LVU1
+  36              		.loc 1 54 9 is_stmt 0 view .LVU2
   37 0000 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
   38 0002 DBB2     		uxtb	r3, r3
-  39              		.loc 1 53 7 view .LVU3
+  39              		.loc 1 54 7 view .LVU3
   40 0004 B52B     		cmp	r3, #181
   41 0006 00D0     		beq	.L7
   42              	.L1:
-  54:Core/Src/gps.c **** 
-  55:Core/Src/gps.c ****         /* Checksum validation */
-  56:Core/Src/gps.c ****         //if(checkSum(p) == 1){
-  57:Core/Src/gps.c **** 
-  58:Core/Src/gps.c ****         myGpsData.newData   = true;
-  59:Core/Src/gps.c **** 
-  60:Core/Src/gps.c ****         /* Time & Date */
-  61:Core/Src/gps.c ****         myGpsData.year      = p[YER_POS] | (p[YER_POS+1] << 8);
-  62:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
-  63:Core/Src/gps.c ****         myGpsData.day       = p[DAY_POS];
-  64:Core/Src/gps.c ****         myGpsData.hour      = p[HOR_POS];
-  65:Core/Src/gps.c ****         myGpsData.minute    = p[MIN_POS];
-  66:Core/Src/gps.c ****         myGpsData.ITOW      = p[ITOW_POS] | (p[ITOW_POS+1] << 8) | (p[ITOW_POS+2] << 16) | (p[ITOW_
-  67:Core/Src/gps.c ****                     
-  68:Core/Src/gps.c ****         if (p[17] & 0x01) // Valid flag
-  69:Core/Src/gps.c ****         {
-  70:Core/Src/gps.c ****             myGpsData.second = p[SEC_POS];
-  71:Core/Src/gps.c ****         }
-  72:Core/Src/gps.c ****         else
-  73:Core/Src/gps.c ****         {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 3
+  55:Core/Src/gps.c **** 
+  56:Core/Src/gps.c ****         /* Checksum validation */
+  57:Core/Src/gps.c ****         //if(checkSum(p) == 1){
+  58:Core/Src/gps.c **** 
+  59:Core/Src/gps.c ****         myGpsData.newData   = true;
+  60:Core/Src/gps.c **** 
+  61:Core/Src/gps.c ****         /* Time & Date */
+  62:Core/Src/gps.c ****         myGpsData.year      = p[YER_POS] | (p[YER_POS+1] << 8);
+  63:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
+  64:Core/Src/gps.c ****         myGpsData.day       = p[DAY_POS];
+  65:Core/Src/gps.c ****         myGpsData.hour      = p[HOR_POS];
+  66:Core/Src/gps.c ****         myGpsData.minute    = p[MIN_POS];
+  67:Core/Src/gps.c ****         myGpsData.ITOW      = p[ITOW_POS] | (p[ITOW_POS+1] << 8) | (p[ITOW_POS+2] << 16) | (p[ITOW_
+  68:Core/Src/gps.c ****                     
+  69:Core/Src/gps.c ****         if (p[17] & 0x01) // Valid flag
+  70:Core/Src/gps.c ****         {
+  71:Core/Src/gps.c ****             myGpsData.second = p[SEC_POS];
+  72:Core/Src/gps.c ****         }
+  73:Core/Src/gps.c ****         else
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 3
 
 
-  74:Core/Src/gps.c ****             myGpsData.second = myGpsData.ITOW / 1000 % 60;
-  75:Core/Src/gps.c ****         }
-  76:Core/Src/gps.c **** 
-  77:Core/Src/gps.c ****         /* Fix Quality */
-  78:Core/Src/gps.c ****         myGpsData.fixType   = p[FIX_POS];
-  79:Core/Src/gps.c ****         myGpsData.numSV     = p[SAT_POS];
-  80:Core/Src/gps.c **** 
-  81:Core/Src/gps.c ****         /* Position */
-  82:Core/Src/gps.c ****         myGpsData.lon       = (float)*(int32_t *)&p[LNG_POS] * COORD_FACTOR;
-  83:Core/Src/gps.c ****         myGpsData.lat       = (float)*(int32_t *)&p[LAT_POS] * COORD_FACTOR;
-  84:Core/Src/gps.c **** 
-  85:Core/Src/gps.c ****         /* Speed & Heading */
-  86:Core/Src/gps.c ****         myGpsData.gSpeed    = (float)*(int32_t *)&p[GSPEED_POS];
-  87:Core/Src/gps.c ****         myGpsData.headMot   = p[HEADMOT_POS];
-  88:Core/Src/gps.c **** 
-  89:Core/Src/gps.c ****         if(myGpsData.numSV >= 3)
-  90:Core/Src/gps.c ****         {
-  91:Core/Src/gps.c ****             GPS_connected = 1;
-  92:Core/Src/gps.c ****         }
-  93:Core/Src/gps.c ****         else{
-  94:Core/Src/gps.c ****             GPS_connected = 0;
-  95:Core/Src/gps.c ****             }
-  96:Core/Src/gps.c ****         //}
-  97:Core/Src/gps.c **** 
-  98:Core/Src/gps.c ****         GPSraw_data[0] =     p[YER_POS];
-  99:Core/Src/gps.c ****         GPSraw_data[1] =     p[YER_POS + 1];
- 100:Core/Src/gps.c ****         GPSraw_data[2] =     p[MON_POS];
- 101:Core/Src/gps.c ****         GPSraw_data[3] =     p[DAY_POS];
- 102:Core/Src/gps.c ****         GPSraw_data[4] =     p[HOR_POS];
- 103:Core/Src/gps.c ****         GPSraw_data[5] =     p[MIN_POS];
- 104:Core/Src/gps.c ****         GPSraw_data[6] =     p[SEC_POS];
- 105:Core/Src/gps.c **** 
- 106:Core/Src/gps.c ****         GPSraw_data[7] =     p[LNG_POS];
- 107:Core/Src/gps.c ****         GPSraw_data[8] =     p[LNG_POS + 1];
- 108:Core/Src/gps.c ****         GPSraw_data[9] =     p[LNG_POS + 2];
- 109:Core/Src/gps.c ****         GPSraw_data[10] =    p[LNG_POS + 3];
- 110:Core/Src/gps.c **** 
- 111:Core/Src/gps.c ****         GPSraw_data[11] =    p[LAT_POS];
- 112:Core/Src/gps.c ****         GPSraw_data[12] =    p[LAT_POS + 1];
- 113:Core/Src/gps.c ****         GPSraw_data[13] =    p[LAT_POS + 2];
- 114:Core/Src/gps.c ****         GPSraw_data[14] =    p[LAT_POS + 3];
- 115:Core/Src/gps.c ****     }    
- 116:Core/Src/gps.c **** }
-  43              		.loc 1 116 1 view .LVU4
+  74:Core/Src/gps.c ****         {
+  75:Core/Src/gps.c ****             myGpsData.second = myGpsData.ITOW / 1000 % 60;
+  76:Core/Src/gps.c ****         }
+  77:Core/Src/gps.c **** 
+  78:Core/Src/gps.c ****         /* Fix Quality */
+  79:Core/Src/gps.c ****         myGpsData.fixType   = p[FIX_POS];
+  80:Core/Src/gps.c ****         myGpsData.numSV     = p[SAT_POS];
+  81:Core/Src/gps.c **** 
+  82:Core/Src/gps.c ****         /* Position */
+  83:Core/Src/gps.c ****         myGpsData.lon       = (float)*(int32_t *)&p[LNG_POS] * COORD_FACTOR;
+  84:Core/Src/gps.c ****         myGpsData.lat       = (float)*(int32_t *)&p[LAT_POS] * COORD_FACTOR;
+  85:Core/Src/gps.c **** 
+  86:Core/Src/gps.c ****         /* Speed & Heading */
+  87:Core/Src/gps.c ****         myGpsData.gSpeed    = (float)*(int32_t *)&p[GSPEED_POS];
+  88:Core/Src/gps.c ****         myGpsData.headMot   = p[HEADMOT_POS];
+  89:Core/Src/gps.c **** 
+  90:Core/Src/gps.c ****         if(myGpsData.numSV >= 3)
+  91:Core/Src/gps.c ****         {
+  92:Core/Src/gps.c ****             GPS_connected = 1;
+  93:Core/Src/gps.c ****         }
+  94:Core/Src/gps.c ****         else{
+  95:Core/Src/gps.c ****             GPS_connected = 0;
+  96:Core/Src/gps.c ****             }
+  97:Core/Src/gps.c ****         //}
+  98:Core/Src/gps.c **** 
+  99:Core/Src/gps.c ****         GPSraw_data[0] =     p[YER_POS];
+ 100:Core/Src/gps.c ****         GPSraw_data[1] =     p[YER_POS + 1];
+ 101:Core/Src/gps.c ****         GPSraw_data[2] =     p[MON_POS];
+ 102:Core/Src/gps.c ****         GPSraw_data[3] =     p[DAY_POS];
+ 103:Core/Src/gps.c ****         GPSraw_data[4] =     p[HOR_POS];
+ 104:Core/Src/gps.c ****         GPSraw_data[5] =     p[MIN_POS];
+ 105:Core/Src/gps.c ****         GPSraw_data[6] =     p[SEC_POS];
+ 106:Core/Src/gps.c **** 
+ 107:Core/Src/gps.c ****         GPSraw_data[7] =     p[LNG_POS];
+ 108:Core/Src/gps.c ****         GPSraw_data[8] =     p[LNG_POS + 1];
+ 109:Core/Src/gps.c ****         GPSraw_data[9] =     p[LNG_POS + 2];
+ 110:Core/Src/gps.c ****         GPSraw_data[10] =    p[LNG_POS + 3];
+ 111:Core/Src/gps.c **** 
+ 112:Core/Src/gps.c ****         GPSraw_data[11] =    p[LAT_POS];
+ 113:Core/Src/gps.c ****         GPSraw_data[12] =    p[LAT_POS + 1];
+ 114:Core/Src/gps.c ****         GPSraw_data[13] =    p[LAT_POS + 2];
+ 115:Core/Src/gps.c ****         GPSraw_data[14] =    p[LAT_POS + 3];
+ 116:Core/Src/gps.c ****     }    
+ 117:Core/Src/gps.c **** }
+  43              		.loc 1 117 1 view .LVU4
   44 0008 7047     		bx	lr
   45              	.L7:
-  53:Core/Src/gps.c **** 
-  46              		.loc 1 53 25 discriminator 1 view .LVU5
+  54:Core/Src/gps.c **** 
+  46              		.loc 1 54 25 discriminator 1 view .LVU5
   47 000a 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
   48 000c DBB2     		uxtb	r3, r3
-  53:Core/Src/gps.c **** 
-  49              		.loc 1 53 21 discriminator 1 view .LVU6
+  54:Core/Src/gps.c **** 
+  49              		.loc 1 54 21 discriminator 1 view .LVU6
   50 000e 622B     		cmp	r3, #98
   51 0010 FAD1     		bne	.L1
-  53:Core/Src/gps.c **** 
-  52              		.loc 1 53 41 discriminator 2 view .LVU7
+  54:Core/Src/gps.c **** 
+  52              		.loc 1 54 41 discriminator 2 view .LVU7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 4
+
+
   53 0012 8378     		ldrb	r3, [r0, #2]	@ zero_extendqisi2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 4
-
-
   54 0014 DBB2     		uxtb	r3, r3
-  53:Core/Src/gps.c **** 
-  55              		.loc 1 53 37 discriminator 2 view .LVU8
+  54:Core/Src/gps.c **** 
+  55              		.loc 1 54 37 discriminator 2 view .LVU8
   56 0016 012B     		cmp	r3, #1
   57 0018 F6D1     		bne	.L1
-  53:Core/Src/gps.c **** 
-  58              		.loc 1 53 57 discriminator 3 view .LVU9
+  54:Core/Src/gps.c **** 
+  58              		.loc 1 54 57 discriminator 3 view .LVU9
   59 001a C378     		ldrb	r3, [r0, #3]	@ zero_extendqisi2
   60 001c DBB2     		uxtb	r3, r3
-  53:Core/Src/gps.c **** 
-  61              		.loc 1 53 53 discriminator 3 view .LVU10
+  54:Core/Src/gps.c **** 
+  61              		.loc 1 54 53 discriminator 3 view .LVU10
   62 001e 072B     		cmp	r3, #7
   63 0020 F2D1     		bne	.L1
-  58:Core/Src/gps.c **** 
-  64              		.loc 1 58 9 is_stmt 1 view .LVU11
-  58:Core/Src/gps.c **** 
-  65              		.loc 1 58 29 is_stmt 0 view .LVU12
+  59:Core/Src/gps.c **** 
+  64              		.loc 1 59 9 is_stmt 1 view .LVU11
+  59:Core/Src/gps.c **** 
+  65              		.loc 1 59 29 is_stmt 0 view .LVU12
   66 0022 464A     		ldr	r2, .L8
   67 0024 0123     		movs	r3, #1
   68 0026 1370     		strb	r3, [r2]
-  61:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
-  69              		.loc 1 61 9 is_stmt 1 view .LVU13
-  61:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
-  70              		.loc 1 61 32 is_stmt 0 view .LVU14
+  62:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
+  69              		.loc 1 62 9 is_stmt 1 view .LVU13
+  62:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
+  70              		.loc 1 62 32 is_stmt 0 view .LVU14
   71 0028 837A     		ldrb	r3, [r0, #10]	@ zero_extendqisi2
-  61:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
-  72              		.loc 1 61 46 view .LVU15
+  62:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
+  72              		.loc 1 62 46 view .LVU15
   73 002a C17A     		ldrb	r1, [r0, #11]	@ zero_extendqisi2
-  61:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
-  74              		.loc 1 61 42 view .LVU16
+  62:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
+  74              		.loc 1 62 42 view .LVU16
   75 002c 43EA0123 		orr	r3, r3, r1, lsl #8
-  61:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
-  76              		.loc 1 61 29 view .LVU17
+  62:Core/Src/gps.c ****         myGpsData.month     = p[MON_POS];
+  76              		.loc 1 62 29 view .LVU17
   77 0030 1381     		strh	r3, [r2, #8]	@ movhi
-  62:Core/Src/gps.c ****         myGpsData.day       = p[DAY_POS];
-  78              		.loc 1 62 9 is_stmt 1 view .LVU18
-  62:Core/Src/gps.c ****         myGpsData.day       = p[DAY_POS];
-  79              		.loc 1 62 32 is_stmt 0 view .LVU19
+  63:Core/Src/gps.c ****         myGpsData.day       = p[DAY_POS];
+  78              		.loc 1 63 9 is_stmt 1 view .LVU18
+  63:Core/Src/gps.c ****         myGpsData.day       = p[DAY_POS];
+  79              		.loc 1 63 32 is_stmt 0 view .LVU19
   80 0032 037B     		ldrb	r3, [r0, #12]	@ zero_extendqisi2
-  62:Core/Src/gps.c ****         myGpsData.day       = p[DAY_POS];
-  81              		.loc 1 62 29 view .LVU20
+  63:Core/Src/gps.c ****         myGpsData.day       = p[DAY_POS];
+  81              		.loc 1 63 29 view .LVU20
   82 0034 9372     		strb	r3, [r2, #10]
-  63:Core/Src/gps.c ****         myGpsData.hour      = p[HOR_POS];
-  83              		.loc 1 63 9 is_stmt 1 view .LVU21
-  63:Core/Src/gps.c ****         myGpsData.hour      = p[HOR_POS];
-  84              		.loc 1 63 32 is_stmt 0 view .LVU22
+  64:Core/Src/gps.c ****         myGpsData.hour      = p[HOR_POS];
+  83              		.loc 1 64 9 is_stmt 1 view .LVU21
+  64:Core/Src/gps.c ****         myGpsData.hour      = p[HOR_POS];
+  84              		.loc 1 64 32 is_stmt 0 view .LVU22
   85 0036 437B     		ldrb	r3, [r0, #13]	@ zero_extendqisi2
-  63:Core/Src/gps.c ****         myGpsData.hour      = p[HOR_POS];
-  86              		.loc 1 63 29 view .LVU23
+  64:Core/Src/gps.c ****         myGpsData.hour      = p[HOR_POS];
+  86              		.loc 1 64 29 view .LVU23
   87 0038 D372     		strb	r3, [r2, #11]
-  64:Core/Src/gps.c ****         myGpsData.minute    = p[MIN_POS];
-  88              		.loc 1 64 9 is_stmt 1 view .LVU24
-  64:Core/Src/gps.c ****         myGpsData.minute    = p[MIN_POS];
-  89              		.loc 1 64 32 is_stmt 0 view .LVU25
+  65:Core/Src/gps.c ****         myGpsData.minute    = p[MIN_POS];
+  88              		.loc 1 65 9 is_stmt 1 view .LVU24
+  65:Core/Src/gps.c ****         myGpsData.minute    = p[MIN_POS];
+  89              		.loc 1 65 32 is_stmt 0 view .LVU25
   90 003a 837B     		ldrb	r3, [r0, #14]	@ zero_extendqisi2
-  64:Core/Src/gps.c ****         myGpsData.minute    = p[MIN_POS];
-  91              		.loc 1 64 29 view .LVU26
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 5
+  65:Core/Src/gps.c ****         myGpsData.minute    = p[MIN_POS];
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 5
 
 
+  91              		.loc 1 65 29 view .LVU26
   92 003c 1373     		strb	r3, [r2, #12]
-  65:Core/Src/gps.c ****         myGpsData.ITOW      = p[ITOW_POS] | (p[ITOW_POS+1] << 8) | (p[ITOW_POS+2] << 16) | (p[ITOW_
-  93              		.loc 1 65 9 is_stmt 1 view .LVU27
-  65:Core/Src/gps.c ****         myGpsData.ITOW      = p[ITOW_POS] | (p[ITOW_POS+1] << 8) | (p[ITOW_POS+2] << 16) | (p[ITOW_
-  94              		.loc 1 65 32 is_stmt 0 view .LVU28
+  66:Core/Src/gps.c ****         myGpsData.ITOW      = p[ITOW_POS] | (p[ITOW_POS+1] << 8) | (p[ITOW_POS+2] << 16) | (p[ITOW_
+  93              		.loc 1 66 9 is_stmt 1 view .LVU27
+  66:Core/Src/gps.c ****         myGpsData.ITOW      = p[ITOW_POS] | (p[ITOW_POS+1] << 8) | (p[ITOW_POS+2] << 16) | (p[ITOW_
+  94              		.loc 1 66 32 is_stmt 0 view .LVU28
   95 003e C37B     		ldrb	r3, [r0, #15]	@ zero_extendqisi2
-  65:Core/Src/gps.c ****         myGpsData.ITOW      = p[ITOW_POS] | (p[ITOW_POS+1] << 8) | (p[ITOW_POS+2] << 16) | (p[ITOW_
-  96              		.loc 1 65 29 view .LVU29
+  66:Core/Src/gps.c ****         myGpsData.ITOW      = p[ITOW_POS] | (p[ITOW_POS+1] << 8) | (p[ITOW_POS+2] << 16) | (p[ITOW_
+  96              		.loc 1 66 29 view .LVU29
   97 0040 5373     		strb	r3, [r2, #13]
-  66:Core/Src/gps.c ****                     
-  98              		.loc 1 66 9 is_stmt 1 view .LVU30
-  66:Core/Src/gps.c ****                     
-  99              		.loc 1 66 32 is_stmt 0 view .LVU31
+  67:Core/Src/gps.c ****                     
+  98              		.loc 1 67 9 is_stmt 1 view .LVU30
+  67:Core/Src/gps.c ****                     
+  99              		.loc 1 67 32 is_stmt 0 view .LVU31
  100 0042 8379     		ldrb	r3, [r0, #6]	@ zero_extendqisi2
-  66:Core/Src/gps.c ****                     
- 101              		.loc 1 66 47 view .LVU32
+  67:Core/Src/gps.c ****                     
+ 101              		.loc 1 67 47 view .LVU32
  102 0044 C179     		ldrb	r1, [r0, #7]	@ zero_extendqisi2
-  66:Core/Src/gps.c ****                     
- 103              		.loc 1 66 43 view .LVU33
+  67:Core/Src/gps.c ****                     
+ 103              		.loc 1 67 43 view .LVU33
  104 0046 43EA0123 		orr	r3, r3, r1, lsl #8
-  66:Core/Src/gps.c ****                     
- 105              		.loc 1 66 70 view .LVU34
+  67:Core/Src/gps.c ****                     
+ 105              		.loc 1 67 70 view .LVU34
  106 004a 017A     		ldrb	r1, [r0, #8]	@ zero_extendqisi2
-  66:Core/Src/gps.c ****                     
- 107              		.loc 1 66 66 view .LVU35
+  67:Core/Src/gps.c ****                     
+ 107              		.loc 1 67 66 view .LVU35
  108 004c 43EA0143 		orr	r3, r3, r1, lsl #16
-  66:Core/Src/gps.c ****                     
- 109              		.loc 1 66 94 view .LVU36
+  67:Core/Src/gps.c ****                     
+ 109              		.loc 1 67 94 view .LVU36
  110 0050 417A     		ldrb	r1, [r0, #9]	@ zero_extendqisi2
-  66:Core/Src/gps.c ****                     
- 111              		.loc 1 66 90 view .LVU37
+  67:Core/Src/gps.c ****                     
+ 111              		.loc 1 67 90 view .LVU37
  112 0052 43EA0163 		orr	r3, r3, r1, lsl #24
-  66:Core/Src/gps.c ****                     
- 113              		.loc 1 66 29 view .LVU38
+  67:Core/Src/gps.c ****                     
+ 113              		.loc 1 67 29 view .LVU38
  114 0056 5360     		str	r3, [r2, #4]
-  68:Core/Src/gps.c ****         {
- 115              		.loc 1 68 9 is_stmt 1 view .LVU39
-  68:Core/Src/gps.c ****         {
- 116              		.loc 1 68 14 is_stmt 0 view .LVU40
+  69:Core/Src/gps.c ****         {
+ 115              		.loc 1 69 9 is_stmt 1 view .LVU39
+  69:Core/Src/gps.c ****         {
+ 116              		.loc 1 69 14 is_stmt 0 view .LVU40
  117 0058 427C     		ldrb	r2, [r0, #17]	@ zero_extendqisi2
-  68:Core/Src/gps.c ****         {
- 118              		.loc 1 68 12 view .LVU41
+  69:Core/Src/gps.c ****         {
+ 118              		.loc 1 69 12 view .LVU41
  119 005a 12F0010F 		tst	r2, #1
  120 005e 5AD0     		beq	.L3
-  70:Core/Src/gps.c ****         }
- 121              		.loc 1 70 13 is_stmt 1 view .LVU42
-  70:Core/Src/gps.c ****         }
- 122              		.loc 1 70 33 is_stmt 0 view .LVU43
+  71:Core/Src/gps.c ****         }
+ 121              		.loc 1 71 13 is_stmt 1 view .LVU42
+  71:Core/Src/gps.c ****         }
+ 122              		.loc 1 71 33 is_stmt 0 view .LVU43
  123 0060 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2
-  70:Core/Src/gps.c ****         }
- 124              		.loc 1 70 30 view .LVU44
+  71:Core/Src/gps.c ****         }
+ 124              		.loc 1 71 30 view .LVU44
  125 0062 364B     		ldr	r3, .L8
  126 0064 9A73     		strb	r2, [r3, #14]
  127              	.L4:
-  78:Core/Src/gps.c ****         myGpsData.numSV     = p[SAT_POS];
- 128              		.loc 1 78 9 is_stmt 1 view .LVU45
-  78:Core/Src/gps.c ****         myGpsData.numSV     = p[SAT_POS];
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 6
+  79:Core/Src/gps.c ****         myGpsData.numSV     = p[SAT_POS];
+ 128              		.loc 1 79 9 is_stmt 1 view .LVU45
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 6
 
 
- 129              		.loc 1 78 32 is_stmt 0 view .LVU46
+  79:Core/Src/gps.c ****         myGpsData.numSV     = p[SAT_POS];
+ 129              		.loc 1 79 32 is_stmt 0 view .LVU46
  130 0066 827E     		ldrb	r2, [r0, #26]	@ zero_extendqisi2
-  78:Core/Src/gps.c ****         myGpsData.numSV     = p[SAT_POS];
- 131              		.loc 1 78 29 view .LVU47
+  79:Core/Src/gps.c ****         myGpsData.numSV     = p[SAT_POS];
+ 131              		.loc 1 79 29 view .LVU47
  132 0068 344B     		ldr	r3, .L8
  133 006a DA73     		strb	r2, [r3, #15]
-  79:Core/Src/gps.c **** 
- 134              		.loc 1 79 9 is_stmt 1 view .LVU48
-  79:Core/Src/gps.c **** 
- 135              		.loc 1 79 32 is_stmt 0 view .LVU49
+  80:Core/Src/gps.c **** 
+ 134              		.loc 1 80 9 is_stmt 1 view .LVU48
+  80:Core/Src/gps.c **** 
+ 135              		.loc 1 80 32 is_stmt 0 view .LVU49
  136 006c 417F     		ldrb	r1, [r0, #29]	@ zero_extendqisi2
  137 006e C9B2     		uxtb	r1, r1
-  79:Core/Src/gps.c **** 
- 138              		.loc 1 79 29 view .LVU50
+  80:Core/Src/gps.c **** 
+ 138              		.loc 1 80 29 view .LVU50
  139 0070 1974     		strb	r1, [r3, #16]
-  82:Core/Src/gps.c ****         myGpsData.lat       = (float)*(int32_t *)&p[LAT_POS] * COORD_FACTOR;
- 140              		.loc 1 82 9 is_stmt 1 view .LVU51
-  82:Core/Src/gps.c ****         myGpsData.lat       = (float)*(int32_t *)&p[LAT_POS] * COORD_FACTOR;
- 141              		.loc 1 82 31 is_stmt 0 view .LVU52
+  83:Core/Src/gps.c ****         myGpsData.lat       = (float)*(int32_t *)&p[LAT_POS] * COORD_FACTOR;
+ 140              		.loc 1 83 9 is_stmt 1 view .LVU51
+  83:Core/Src/gps.c ****         myGpsData.lat       = (float)*(int32_t *)&p[LAT_POS] * COORD_FACTOR;
+ 141              		.loc 1 83 31 is_stmt 0 view .LVU52
  142 0072 D0F81E20 		ldr	r2, [r0, #30]
  143 0076 07EE902A 		vmov	s15, r2	@ int
  144 007a F8EEE77A 		vcvt.f32.s32	s15, s15
-  82:Core/Src/gps.c ****         myGpsData.lat       = (float)*(int32_t *)&p[LAT_POS] * COORD_FACTOR;
- 145              		.loc 1 82 62 view .LVU53
+  83:Core/Src/gps.c ****         myGpsData.lat       = (float)*(int32_t *)&p[LAT_POS] * COORD_FACTOR;
+ 145              		.loc 1 83 62 view .LVU53
  146 007e 9FED307A 		vldr.32	s14, .L8+4
  147 0082 67EE877A 		vmul.f32	s15, s15, s14
-  82:Core/Src/gps.c ****         myGpsData.lat       = (float)*(int32_t *)&p[LAT_POS] * COORD_FACTOR;
- 148              		.loc 1 82 29 view .LVU54
+  83:Core/Src/gps.c ****         myGpsData.lat       = (float)*(int32_t *)&p[LAT_POS] * COORD_FACTOR;
+ 148              		.loc 1 83 29 view .LVU54
  149 0086 C3ED057A 		vstr.32	s15, [r3, #20]
-  83:Core/Src/gps.c **** 
- 150              		.loc 1 83 9 is_stmt 1 view .LVU55
-  83:Core/Src/gps.c **** 
- 151              		.loc 1 83 31 is_stmt 0 view .LVU56
+  84:Core/Src/gps.c **** 
+ 150              		.loc 1 84 9 is_stmt 1 view .LVU55
+  84:Core/Src/gps.c **** 
+ 151              		.loc 1 84 31 is_stmt 0 view .LVU56
  152 008a D0F82220 		ldr	r2, [r0, #34]
  153 008e 07EE902A 		vmov	s15, r2	@ int
  154 0092 F8EEE77A 		vcvt.f32.s32	s15, s15
-  83:Core/Src/gps.c **** 
- 155              		.loc 1 83 62 view .LVU57
+  84:Core/Src/gps.c **** 
+ 155              		.loc 1 84 62 view .LVU57
  156 0096 67EE877A 		vmul.f32	s15, s15, s14
-  83:Core/Src/gps.c **** 
- 157              		.loc 1 83 29 view .LVU58
+  84:Core/Src/gps.c **** 
+ 157              		.loc 1 84 29 view .LVU58
  158 009a C3ED067A 		vstr.32	s15, [r3, #24]
-  86:Core/Src/gps.c ****         myGpsData.headMot   = p[HEADMOT_POS];
- 159              		.loc 1 86 9 is_stmt 1 view .LVU59
-  86:Core/Src/gps.c ****         myGpsData.headMot   = p[HEADMOT_POS];
- 160              		.loc 1 86 31 is_stmt 0 view .LVU60
+  87:Core/Src/gps.c ****         myGpsData.headMot   = p[HEADMOT_POS];
+ 159              		.loc 1 87 9 is_stmt 1 view .LVU59
+  87:Core/Src/gps.c ****         myGpsData.headMot   = p[HEADMOT_POS];
+ 160              		.loc 1 87 31 is_stmt 0 view .LVU60
  161 009e D0F84220 		ldr	r2, [r0, #66]
  162 00a2 07EE902A 		vmov	s15, r2	@ int
  163 00a6 F8EEE77A 		vcvt.f32.s32	s15, s15
-  86:Core/Src/gps.c ****         myGpsData.headMot   = p[HEADMOT_POS];
- 164              		.loc 1 86 29 view .LVU61
+  87:Core/Src/gps.c ****         myGpsData.headMot   = p[HEADMOT_POS];
+ 164              		.loc 1 87 29 view .LVU61
  165 00aa C3ED0D7A 		vstr.32	s15, [r3, #52]
-  87:Core/Src/gps.c **** 
- 166              		.loc 1 87 9 is_stmt 1 view .LVU62
-  87:Core/Src/gps.c **** 
- 167              		.loc 1 87 32 is_stmt 0 view .LVU63
+  88:Core/Src/gps.c **** 
+ 166              		.loc 1 88 9 is_stmt 1 view .LVU62
+  88:Core/Src/gps.c **** 
+ 167              		.loc 1 88 32 is_stmt 0 view .LVU63
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 7
+
+
  168 00ae 90F84620 		ldrb	r2, [r0, #70]	@ zero_extendqisi2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 7
-
-
  169 00b2 D2B2     		uxtb	r2, r2
-  87:Core/Src/gps.c **** 
- 170              		.loc 1 87 29 view .LVU64
+  88:Core/Src/gps.c **** 
+ 170              		.loc 1 88 29 view .LVU64
  171 00b4 07EE902A 		vmov	s15, r2	@ int
  172 00b8 F8EE677A 		vcvt.f32.u32	s15, s15
  173 00bc C3ED0E7A 		vstr.32	s15, [r3, #56]
-  89:Core/Src/gps.c ****         {
- 174              		.loc 1 89 9 is_stmt 1 view .LVU65
-  89:Core/Src/gps.c ****         {
- 175              		.loc 1 89 11 is_stmt 0 view .LVU66
+  90:Core/Src/gps.c ****         {
+ 174              		.loc 1 90 9 is_stmt 1 view .LVU65
+  90:Core/Src/gps.c ****         {
+ 175              		.loc 1 90 11 is_stmt 0 view .LVU66
  176 00c0 0229     		cmp	r1, #2
  177 00c2 37D9     		bls	.L5
-  91:Core/Src/gps.c ****         }
- 178              		.loc 1 91 13 is_stmt 1 view .LVU67
-  91:Core/Src/gps.c ****         }
- 179              		.loc 1 91 27 is_stmt 0 view .LVU68
+  92:Core/Src/gps.c ****         }
+ 178              		.loc 1 92 13 is_stmt 1 view .LVU67
+  92:Core/Src/gps.c ****         }
+ 179              		.loc 1 92 27 is_stmt 0 view .LVU68
  180 00c4 1F4B     		ldr	r3, .L8+8
  181 00c6 0122     		movs	r2, #1
  182 00c8 1A70     		strb	r2, [r3]
  183              	.L6:
-  98:Core/Src/gps.c ****         GPSraw_data[1] =     p[YER_POS + 1];
- 184              		.loc 1 98 9 is_stmt 1 view .LVU69
-  98:Core/Src/gps.c ****         GPSraw_data[1] =     p[YER_POS + 1];
- 185              		.loc 1 98 31 is_stmt 0 view .LVU70
+  99:Core/Src/gps.c ****         GPSraw_data[1] =     p[YER_POS + 1];
+ 184              		.loc 1 99 9 is_stmt 1 view .LVU69
+  99:Core/Src/gps.c ****         GPSraw_data[1] =     p[YER_POS + 1];
+ 185              		.loc 1 99 31 is_stmt 0 view .LVU70
  186 00ca 827A     		ldrb	r2, [r0, #10]	@ zero_extendqisi2
-  98:Core/Src/gps.c ****         GPSraw_data[1] =     p[YER_POS + 1];
- 187              		.loc 1 98 24 view .LVU71
+  99:Core/Src/gps.c ****         GPSraw_data[1] =     p[YER_POS + 1];
+ 187              		.loc 1 99 24 view .LVU71
  188 00cc 1E4B     		ldr	r3, .L8+12
  189 00ce 1A70     		strb	r2, [r3]
-  99:Core/Src/gps.c ****         GPSraw_data[2] =     p[MON_POS];
- 190              		.loc 1 99 9 is_stmt 1 view .LVU72
-  99:Core/Src/gps.c ****         GPSraw_data[2] =     p[MON_POS];
- 191              		.loc 1 99 31 is_stmt 0 view .LVU73
+ 100:Core/Src/gps.c ****         GPSraw_data[2] =     p[MON_POS];
+ 190              		.loc 1 100 9 is_stmt 1 view .LVU72
+ 100:Core/Src/gps.c ****         GPSraw_data[2] =     p[MON_POS];
+ 191              		.loc 1 100 31 is_stmt 0 view .LVU73
  192 00d0 C27A     		ldrb	r2, [r0, #11]	@ zero_extendqisi2
-  99:Core/Src/gps.c ****         GPSraw_data[2] =     p[MON_POS];
- 193              		.loc 1 99 24 view .LVU74
+ 100:Core/Src/gps.c ****         GPSraw_data[2] =     p[MON_POS];
+ 193              		.loc 1 100 24 view .LVU74
  194 00d2 5A70     		strb	r2, [r3, #1]
- 100:Core/Src/gps.c ****         GPSraw_data[3] =     p[DAY_POS];
- 195              		.loc 1 100 9 is_stmt 1 view .LVU75
- 100:Core/Src/gps.c ****         GPSraw_data[3] =     p[DAY_POS];
- 196              		.loc 1 100 31 is_stmt 0 view .LVU76
+ 101:Core/Src/gps.c ****         GPSraw_data[3] =     p[DAY_POS];
+ 195              		.loc 1 101 9 is_stmt 1 view .LVU75
+ 101:Core/Src/gps.c ****         GPSraw_data[3] =     p[DAY_POS];
+ 196              		.loc 1 101 31 is_stmt 0 view .LVU76
  197 00d4 027B     		ldrb	r2, [r0, #12]	@ zero_extendqisi2
- 100:Core/Src/gps.c ****         GPSraw_data[3] =     p[DAY_POS];
- 198              		.loc 1 100 24 view .LVU77
+ 101:Core/Src/gps.c ****         GPSraw_data[3] =     p[DAY_POS];
+ 198              		.loc 1 101 24 view .LVU77
  199 00d6 9A70     		strb	r2, [r3, #2]
- 101:Core/Src/gps.c ****         GPSraw_data[4] =     p[HOR_POS];
- 200              		.loc 1 101 9 is_stmt 1 view .LVU78
- 101:Core/Src/gps.c ****         GPSraw_data[4] =     p[HOR_POS];
- 201              		.loc 1 101 31 is_stmt 0 view .LVU79
+ 102:Core/Src/gps.c ****         GPSraw_data[4] =     p[HOR_POS];
+ 200              		.loc 1 102 9 is_stmt 1 view .LVU78
+ 102:Core/Src/gps.c ****         GPSraw_data[4] =     p[HOR_POS];
+ 201              		.loc 1 102 31 is_stmt 0 view .LVU79
  202 00d8 427B     		ldrb	r2, [r0, #13]	@ zero_extendqisi2
- 101:Core/Src/gps.c ****         GPSraw_data[4] =     p[HOR_POS];
- 203              		.loc 1 101 24 view .LVU80
+ 102:Core/Src/gps.c ****         GPSraw_data[4] =     p[HOR_POS];
+ 203              		.loc 1 102 24 view .LVU80
  204 00da DA70     		strb	r2, [r3, #3]
- 102:Core/Src/gps.c ****         GPSraw_data[5] =     p[MIN_POS];
- 205              		.loc 1 102 9 is_stmt 1 view .LVU81
- 102:Core/Src/gps.c ****         GPSraw_data[5] =     p[MIN_POS];
- 206              		.loc 1 102 31 is_stmt 0 view .LVU82
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 8
+ 103:Core/Src/gps.c ****         GPSraw_data[5] =     p[MIN_POS];
+ 205              		.loc 1 103 9 is_stmt 1 view .LVU81
+ 103:Core/Src/gps.c ****         GPSraw_data[5] =     p[MIN_POS];
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 8
 
 
+ 206              		.loc 1 103 31 is_stmt 0 view .LVU82
  207 00dc 827B     		ldrb	r2, [r0, #14]	@ zero_extendqisi2
- 102:Core/Src/gps.c ****         GPSraw_data[5] =     p[MIN_POS];
- 208              		.loc 1 102 24 view .LVU83
+ 103:Core/Src/gps.c ****         GPSraw_data[5] =     p[MIN_POS];
+ 208              		.loc 1 103 24 view .LVU83
  209 00de 1A71     		strb	r2, [r3, #4]
- 103:Core/Src/gps.c ****         GPSraw_data[6] =     p[SEC_POS];
- 210              		.loc 1 103 9 is_stmt 1 view .LVU84
- 103:Core/Src/gps.c ****         GPSraw_data[6] =     p[SEC_POS];
- 211              		.loc 1 103 31 is_stmt 0 view .LVU85
+ 104:Core/Src/gps.c ****         GPSraw_data[6] =     p[SEC_POS];
+ 210              		.loc 1 104 9 is_stmt 1 view .LVU84
+ 104:Core/Src/gps.c ****         GPSraw_data[6] =     p[SEC_POS];
+ 211              		.loc 1 104 31 is_stmt 0 view .LVU85
  212 00e0 C27B     		ldrb	r2, [r0, #15]	@ zero_extendqisi2
- 103:Core/Src/gps.c ****         GPSraw_data[6] =     p[SEC_POS];
- 213              		.loc 1 103 24 view .LVU86
+ 104:Core/Src/gps.c ****         GPSraw_data[6] =     p[SEC_POS];
+ 213              		.loc 1 104 24 view .LVU86
  214 00e2 5A71     		strb	r2, [r3, #5]
- 104:Core/Src/gps.c **** 
- 215              		.loc 1 104 9 is_stmt 1 view .LVU87
- 104:Core/Src/gps.c **** 
- 216              		.loc 1 104 31 is_stmt 0 view .LVU88
+ 105:Core/Src/gps.c **** 
+ 215              		.loc 1 105 9 is_stmt 1 view .LVU87
+ 105:Core/Src/gps.c **** 
+ 216              		.loc 1 105 31 is_stmt 0 view .LVU88
  217 00e4 027C     		ldrb	r2, [r0, #16]	@ zero_extendqisi2
- 104:Core/Src/gps.c **** 
- 218              		.loc 1 104 24 view .LVU89
+ 105:Core/Src/gps.c **** 
+ 218              		.loc 1 105 24 view .LVU89
  219 00e6 9A71     		strb	r2, [r3, #6]
- 106:Core/Src/gps.c ****         GPSraw_data[8] =     p[LNG_POS + 1];
- 220              		.loc 1 106 9 is_stmt 1 view .LVU90
- 106:Core/Src/gps.c ****         GPSraw_data[8] =     p[LNG_POS + 1];
- 221              		.loc 1 106 31 is_stmt 0 view .LVU91
+ 107:Core/Src/gps.c ****         GPSraw_data[8] =     p[LNG_POS + 1];
+ 220              		.loc 1 107 9 is_stmt 1 view .LVU90
+ 107:Core/Src/gps.c ****         GPSraw_data[8] =     p[LNG_POS + 1];
+ 221              		.loc 1 107 31 is_stmt 0 view .LVU91
  222 00e8 827F     		ldrb	r2, [r0, #30]	@ zero_extendqisi2
- 106:Core/Src/gps.c ****         GPSraw_data[8] =     p[LNG_POS + 1];
- 223              		.loc 1 106 24 view .LVU92
+ 107:Core/Src/gps.c ****         GPSraw_data[8] =     p[LNG_POS + 1];
+ 223              		.loc 1 107 24 view .LVU92
  224 00ea DA71     		strb	r2, [r3, #7]
- 107:Core/Src/gps.c ****         GPSraw_data[9] =     p[LNG_POS + 2];
- 225              		.loc 1 107 9 is_stmt 1 view .LVU93
- 107:Core/Src/gps.c ****         GPSraw_data[9] =     p[LNG_POS + 2];
- 226              		.loc 1 107 31 is_stmt 0 view .LVU94
+ 108:Core/Src/gps.c ****         GPSraw_data[9] =     p[LNG_POS + 2];
+ 225              		.loc 1 108 9 is_stmt 1 view .LVU93
+ 108:Core/Src/gps.c ****         GPSraw_data[9] =     p[LNG_POS + 2];
+ 226              		.loc 1 108 31 is_stmt 0 view .LVU94
  227 00ec C27F     		ldrb	r2, [r0, #31]	@ zero_extendqisi2
- 107:Core/Src/gps.c ****         GPSraw_data[9] =     p[LNG_POS + 2];
- 228              		.loc 1 107 24 view .LVU95
+ 108:Core/Src/gps.c ****         GPSraw_data[9] =     p[LNG_POS + 2];
+ 228              		.loc 1 108 24 view .LVU95
  229 00ee 1A72     		strb	r2, [r3, #8]
- 108:Core/Src/gps.c ****         GPSraw_data[10] =    p[LNG_POS + 3];
- 230              		.loc 1 108 9 is_stmt 1 view .LVU96
- 108:Core/Src/gps.c ****         GPSraw_data[10] =    p[LNG_POS + 3];
- 231              		.loc 1 108 31 is_stmt 0 view .LVU97
+ 109:Core/Src/gps.c ****         GPSraw_data[10] =    p[LNG_POS + 3];
+ 230              		.loc 1 109 9 is_stmt 1 view .LVU96
+ 109:Core/Src/gps.c ****         GPSraw_data[10] =    p[LNG_POS + 3];
+ 231              		.loc 1 109 31 is_stmt 0 view .LVU97
  232 00f0 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
- 108:Core/Src/gps.c ****         GPSraw_data[10] =    p[LNG_POS + 3];
- 233              		.loc 1 108 24 view .LVU98
+ 109:Core/Src/gps.c ****         GPSraw_data[10] =    p[LNG_POS + 3];
+ 233              		.loc 1 109 24 view .LVU98
  234 00f4 5A72     		strb	r2, [r3, #9]
- 109:Core/Src/gps.c **** 
- 235              		.loc 1 109 9 is_stmt 1 view .LVU99
- 109:Core/Src/gps.c **** 
- 236              		.loc 1 109 31 is_stmt 0 view .LVU100
+ 110:Core/Src/gps.c **** 
+ 235              		.loc 1 110 9 is_stmt 1 view .LVU99
+ 110:Core/Src/gps.c **** 
+ 236              		.loc 1 110 31 is_stmt 0 view .LVU100
  237 00f6 90F82120 		ldrb	r2, [r0, #33]	@ zero_extendqisi2
- 109:Core/Src/gps.c **** 
- 238              		.loc 1 109 25 view .LVU101
+ 110:Core/Src/gps.c **** 
+ 238              		.loc 1 110 25 view .LVU101
  239 00fa 9A72     		strb	r2, [r3, #10]
- 111:Core/Src/gps.c ****         GPSraw_data[12] =    p[LAT_POS + 1];
- 240              		.loc 1 111 9 is_stmt 1 view .LVU102
- 111:Core/Src/gps.c ****         GPSraw_data[12] =    p[LAT_POS + 1];
- 241              		.loc 1 111 31 is_stmt 0 view .LVU103
+ 112:Core/Src/gps.c ****         GPSraw_data[12] =    p[LAT_POS + 1];
+ 240              		.loc 1 112 9 is_stmt 1 view .LVU102
+ 112:Core/Src/gps.c ****         GPSraw_data[12] =    p[LAT_POS + 1];
+ 241              		.loc 1 112 31 is_stmt 0 view .LVU103
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 9
+
+
  242 00fc 90F82220 		ldrb	r2, [r0, #34]	@ zero_extendqisi2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 9
-
-
- 111:Core/Src/gps.c ****         GPSraw_data[12] =    p[LAT_POS + 1];
- 243              		.loc 1 111 25 view .LVU104
+ 112:Core/Src/gps.c ****         GPSraw_data[12] =    p[LAT_POS + 1];
+ 243              		.loc 1 112 25 view .LVU104
  244 0100 DA72     		strb	r2, [r3, #11]
- 112:Core/Src/gps.c ****         GPSraw_data[13] =    p[LAT_POS + 2];
- 245              		.loc 1 112 9 is_stmt 1 view .LVU105
- 112:Core/Src/gps.c ****         GPSraw_data[13] =    p[LAT_POS + 2];
- 246              		.loc 1 112 31 is_stmt 0 view .LVU106
+ 113:Core/Src/gps.c ****         GPSraw_data[13] =    p[LAT_POS + 2];
+ 245              		.loc 1 113 9 is_stmt 1 view .LVU105
+ 113:Core/Src/gps.c ****         GPSraw_data[13] =    p[LAT_POS + 2];
+ 246              		.loc 1 113 31 is_stmt 0 view .LVU106
  247 0102 90F82320 		ldrb	r2, [r0, #35]	@ zero_extendqisi2
- 112:Core/Src/gps.c ****         GPSraw_data[13] =    p[LAT_POS + 2];
- 248              		.loc 1 112 25 view .LVU107
+ 113:Core/Src/gps.c ****         GPSraw_data[13] =    p[LAT_POS + 2];
+ 248              		.loc 1 113 25 view .LVU107
  249 0106 1A73     		strb	r2, [r3, #12]
- 113:Core/Src/gps.c ****         GPSraw_data[14] =    p[LAT_POS + 3];
- 250              		.loc 1 113 9 is_stmt 1 view .LVU108
- 113:Core/Src/gps.c ****         GPSraw_data[14] =    p[LAT_POS + 3];
- 251              		.loc 1 113 31 is_stmt 0 view .LVU109
+ 114:Core/Src/gps.c ****         GPSraw_data[14] =    p[LAT_POS + 3];
+ 250              		.loc 1 114 9 is_stmt 1 view .LVU108
+ 114:Core/Src/gps.c ****         GPSraw_data[14] =    p[LAT_POS + 3];
+ 251              		.loc 1 114 31 is_stmt 0 view .LVU109
  252 0108 90F82420 		ldrb	r2, [r0, #36]	@ zero_extendqisi2
- 113:Core/Src/gps.c ****         GPSraw_data[14] =    p[LAT_POS + 3];
- 253              		.loc 1 113 25 view .LVU110
+ 114:Core/Src/gps.c ****         GPSraw_data[14] =    p[LAT_POS + 3];
+ 253              		.loc 1 114 25 view .LVU110
  254 010c 5A73     		strb	r2, [r3, #13]
- 114:Core/Src/gps.c ****     }    
- 255              		.loc 1 114 9 is_stmt 1 view .LVU111
- 114:Core/Src/gps.c ****     }    
- 256              		.loc 1 114 31 is_stmt 0 view .LVU112
+ 115:Core/Src/gps.c ****     }    
+ 255              		.loc 1 115 9 is_stmt 1 view .LVU111
+ 115:Core/Src/gps.c ****     }    
+ 256              		.loc 1 115 31 is_stmt 0 view .LVU112
  257 010e 90F82520 		ldrb	r2, [r0, #37]	@ zero_extendqisi2
- 114:Core/Src/gps.c ****     }    
- 258              		.loc 1 114 25 view .LVU113
+ 115:Core/Src/gps.c ****     }    
+ 258              		.loc 1 115 25 view .LVU113
  259 0112 9A73     		strb	r2, [r3, #14]
- 260              		.loc 1 116 1 view .LVU114
+ 260              		.loc 1 117 1 view .LVU114
  261 0114 78E7     		b	.L1
  262              	.L3:
-  74:Core/Src/gps.c ****         }
- 263              		.loc 1 74 13 is_stmt 1 view .LVU115
-  74:Core/Src/gps.c ****         }
- 264              		.loc 1 74 47 is_stmt 0 view .LVU116
+  75:Core/Src/gps.c ****         }
+ 263              		.loc 1 75 13 is_stmt 1 view .LVU115
+  75:Core/Src/gps.c ****         }
+ 264              		.loc 1 75 47 is_stmt 0 view .LVU116
  265 0116 0D4A     		ldr	r2, .L8+16
  266 0118 A2FB0323 		umull	r2, r3, r2, r3
  267 011c 9B09     		lsrs	r3, r3, #6
-  74:Core/Src/gps.c ****         }
- 268              		.loc 1 74 54 view .LVU117
+  75:Core/Src/gps.c ****         }
+ 268              		.loc 1 75 54 view .LVU117
  269 011e 0C4A     		ldr	r2, .L8+20
  270 0120 A2FB0312 		umull	r1, r2, r2, r3
  271 0124 5209     		lsrs	r2, r2, #5
  272 0126 C2EB0212 		rsb	r2, r2, r2, lsl #4
  273 012a A3EB8202 		sub	r2, r3, r2, lsl #2
-  74:Core/Src/gps.c ****         }
- 274              		.loc 1 74 30 view .LVU118
+  75:Core/Src/gps.c ****         }
+ 274              		.loc 1 75 30 view .LVU118
  275 012e 034B     		ldr	r3, .L8
  276 0130 9A73     		strb	r2, [r3, #14]
  277 0132 98E7     		b	.L4
  278              	.L5:
-  94:Core/Src/gps.c ****             }
- 279              		.loc 1 94 13 is_stmt 1 view .LVU119
-  94:Core/Src/gps.c ****             }
- 280              		.loc 1 94 27 is_stmt 0 view .LVU120
+  95:Core/Src/gps.c ****             }
+ 279              		.loc 1 95 13 is_stmt 1 view .LVU119
+  95:Core/Src/gps.c ****             }
+ 280              		.loc 1 95 27 is_stmt 0 view .LVU120
  281 0134 034B     		ldr	r3, .L8+8
  282 0136 0022     		movs	r2, #0
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 10
+
+
  283 0138 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 10
-
-
  284 013a C6E7     		b	.L6
  285              	.L9:
  286              		.align	2
@@ -561,13 +562,13 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 1
  302              		.thumb_func
  304              	GPS_Start:
  305              	.LFB1263:
- 117:Core/Src/gps.c **** 
- 118:Core/Src/gps.c **** /**
- 119:Core/Src/gps.c ****  * @brief  Start continuous GPS reception using DMA
- 120:Core/Src/gps.c ****  */
- 121:Core/Src/gps.c **** void GPS_Start(void)
- 122:Core/Src/gps.c **** {
- 306              		.loc 1 122 1 is_stmt 1 view -0
+ 118:Core/Src/gps.c **** 
+ 119:Core/Src/gps.c **** /**
+ 120:Core/Src/gps.c ****  * @brief  Start continuous GPS reception using DMA
+ 121:Core/Src/gps.c ****  */
+ 122:Core/Src/gps.c **** void GPS_Start(void)
+ 123:Core/Src/gps.c **** {
+ 306              		.loc 1 123 1 is_stmt 1 view -0
  307              		.cfi_startproc
  308              		@ args = 0, pretend = 0, frame = 0
  309              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -576,45 +577,45 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 1
  312              		.cfi_def_cfa_offset 8
  313              		.cfi_offset 4, -8
  314              		.cfi_offset 14, -4
- 123:Core/Src/gps.c ****     HAL_HalfDuplex_EnableReceiver(&hlpuart1);
- 315              		.loc 1 123 5 view .LVU122
+ 124:Core/Src/gps.c ****     HAL_HalfDuplex_EnableReceiver(&hlpuart1);
+ 315              		.loc 1 124 5 view .LVU122
  316 0002 0A4C     		ldr	r4, .L14
  317 0004 2046     		mov	r0, r4
  318 0006 FFF7FEFF 		bl	HAL_HalfDuplex_EnableReceiver
  319              	.LVL1:
- 124:Core/Src/gps.c **** 
- 125:Core/Src/gps.c ****     if (HAL_UART_Receive_DMA(&hlpuart1, (uint8_t*)gpsRxBuffer, RX_BUFFER_LEN) != HAL_OK)
- 320              		.loc 1 125 5 view .LVU123
- 321              		.loc 1 125 9 is_stmt 0 view .LVU124
+ 125:Core/Src/gps.c **** 
+ 126:Core/Src/gps.c ****     if (HAL_UART_Receive_DMA(&hlpuart1, (uint8_t*)gpsRxBuffer, RX_BUFFER_LEN) != HAL_OK)
+ 320              		.loc 1 126 5 view .LVU123
+ 321              		.loc 1 126 9 is_stmt 0 view .LVU124
  322 000a 6422     		movs	r2, #100
  323 000c 0849     		ldr	r1, .L14+4
  324 000e 2046     		mov	r0, r4
  325 0010 FFF7FEFF 		bl	HAL_UART_Receive_DMA
  326              	.LVL2:
- 327              		.loc 1 125 8 discriminator 1 view .LVU125
+ 327              		.loc 1 126 8 discriminator 1 view .LVU125
  328 0014 30B9     		cbnz	r0, .L13
  329              	.L11:
- 126:Core/Src/gps.c ****     {
- 127:Core/Src/gps.c ****         Error_Handler();
- 128:Core/Src/gps.c ****     }
- 129:Core/Src/gps.c ****     
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 11
+ 127:Core/Src/gps.c ****     {
+ 128:Core/Src/gps.c ****         Error_Handler();
+ 129:Core/Src/gps.c ****     }
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 11
 
 
- 130:Core/Src/gps.c ****     __HAL_DMA_DISABLE_IT(&hdma_lpuart1_rx, DMA_IT_HT); 
- 330              		.loc 1 130 5 is_stmt 1 view .LVU126
+ 130:Core/Src/gps.c ****     
+ 131:Core/Src/gps.c ****     __HAL_DMA_DISABLE_IT(&hdma_lpuart1_rx, DMA_IT_HT); 
+ 330              		.loc 1 131 5 is_stmt 1 view .LVU126
  331 0016 074B     		ldr	r3, .L14+8
  332 0018 1A68     		ldr	r2, [r3]
  333 001a 1368     		ldr	r3, [r2]
  334 001c 23F00403 		bic	r3, r3, #4
  335 0020 1360     		str	r3, [r2]
- 131:Core/Src/gps.c **** 
- 132:Core/Src/gps.c **** }
- 336              		.loc 1 132 1 is_stmt 0 view .LVU127
+ 132:Core/Src/gps.c **** 
+ 133:Core/Src/gps.c **** }
+ 336              		.loc 1 133 1 is_stmt 0 view .LVU127
  337 0022 10BD     		pop	{r4, pc}
  338              	.L13:
- 127:Core/Src/gps.c ****     }
- 339              		.loc 1 127 9 is_stmt 1 view .LVU128
+ 128:Core/Src/gps.c ****     }
+ 339              		.loc 1 128 9 is_stmt 1 view .LVU128
  340 0024 FFF7FEFF 		bl	Error_Handler
  341              	.LVL3:
  342 0028 F5E7     		b	.L11
@@ -634,10 +635,10 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 1
  357              		.thumb_func
  359              	Find_start:
  360              	.LFB1264:
- 133:Core/Src/gps.c **** 
- 134:Core/Src/gps.c **** void Find_start(void)
- 135:Core/Src/gps.c **** {
- 361              		.loc 1 135 1 view -0
+ 134:Core/Src/gps.c **** 
+ 135:Core/Src/gps.c **** void Find_start(void)
+ 136:Core/Src/gps.c **** {
+ 361              		.loc 1 136 1 view -0
  362              		.cfi_startproc
  363              		@ args = 0, pretend = 0, frame = 0
  364              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -646,61 +647,61 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 1
  367              		.cfi_def_cfa_offset 8
  368              		.cfi_offset 3, -8
  369              		.cfi_offset 14, -4
- 136:Core/Src/gps.c ****     for (int i = 0; i < RX_BUFFER_LEN - 1; i++)
- 370              		.loc 1 136 5 view .LVU130
+ 137:Core/Src/gps.c ****     for (int i = 0; i < RX_BUFFER_LEN - 1; i++)
+ 370              		.loc 1 137 5 view .LVU130
  371              	.LBB2:
- 372              		.loc 1 136 10 view .LVU131
+ 372              		.loc 1 137 10 view .LVU131
  373              	.LVL4:
- 374              		.loc 1 136 14 is_stmt 0 view .LVU132
+ 374              		.loc 1 137 14 is_stmt 0 view .LVU132
  375 0002 0023     		movs	r3, #0
- 376              		.loc 1 136 5 view .LVU133
+ 376              		.loc 1 137 5 view .LVU133
  377 0004 00E0     		b	.L17
  378              	.LVL5:
  379              	.L18:
- 380              		.loc 1 136 45 is_stmt 1 discriminator 2 view .LVU134
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 12
 
 
+ 380              		.loc 1 137 45 is_stmt 1 discriminator 2 view .LVU134
  381 0006 0133     		adds	r3, r3, #1
  382              	.LVL6:
  383              	.L17:
- 384              		.loc 1 136 23 discriminator 1 view .LVU135
+ 384              		.loc 1 137 23 discriminator 1 view .LVU135
  385 0008 622B     		cmp	r3, #98
  386 000a 0EDC     		bgt	.L16
- 137:Core/Src/gps.c ****     {
- 138:Core/Src/gps.c ****         if (gpsRxBuffer[i] == 0xB5 && gpsRxBuffer[i + 1] == 0x62)
- 387              		.loc 1 138 9 view .LVU136
- 388              		.loc 1 138 24 is_stmt 0 view .LVU137
+ 138:Core/Src/gps.c ****     {
+ 139:Core/Src/gps.c ****         if (gpsRxBuffer[i] == 0xB5 && gpsRxBuffer[i + 1] == 0x62)
+ 387              		.loc 1 139 9 view .LVU136
+ 388              		.loc 1 139 24 is_stmt 0 view .LVU137
  389 000c 074A     		ldr	r2, .L22
  390 000e D25C     		ldrb	r2, [r2, r3]	@ zero_extendqisi2
  391 0010 D2B2     		uxtb	r2, r2
- 392              		.loc 1 138 12 view .LVU138
+ 392              		.loc 1 139 12 view .LVU138
  393 0012 B52A     		cmp	r2, #181
  394 0014 F7D1     		bne	.L18
- 395              		.loc 1 138 53 discriminator 1 view .LVU139
+ 395              		.loc 1 139 53 discriminator 1 view .LVU139
  396 0016 5A1C     		adds	r2, r3, #1
- 397              		.loc 1 138 50 discriminator 1 view .LVU140
+ 397              		.loc 1 139 50 discriminator 1 view .LVU140
  398 0018 0449     		ldr	r1, .L22
  399 001a 8A5C     		ldrb	r2, [r1, r2]	@ zero_extendqisi2
  400 001c D2B2     		uxtb	r2, r2
- 401              		.loc 1 138 36 discriminator 1 view .LVU141
+ 401              		.loc 1 139 36 discriminator 1 view .LVU141
  402 001e 622A     		cmp	r2, #98
  403 0020 F1D1     		bne	.L18
- 139:Core/Src/gps.c ****         {
- 140:Core/Src/gps.c ****             processGPS(&gpsRxBuffer[i]);    
- 404              		.loc 1 140 13 is_stmt 1 view .LVU142
+ 140:Core/Src/gps.c ****         {
+ 141:Core/Src/gps.c ****             processGPS(&gpsRxBuffer[i]);    
+ 404              		.loc 1 141 13 is_stmt 1 view .LVU142
  405 0022 0846     		mov	r0, r1
  406 0024 1844     		add	r0, r0, r3
  407 0026 FFF7FEFF 		bl	processGPS
  408              	.LVL7:
- 141:Core/Src/gps.c ****             break;
- 409              		.loc 1 141 13 view .LVU143
+ 142:Core/Src/gps.c ****             break;
+ 409              		.loc 1 142 13 view .LVU143
  410              	.L16:
  411              	.LBE2:
- 142:Core/Src/gps.c ****         }
- 143:Core/Src/gps.c ****     }
- 144:Core/Src/gps.c **** }
- 412              		.loc 1 144 1 is_stmt 0 view .LVU144
+ 143:Core/Src/gps.c ****         }
+ 144:Core/Src/gps.c ****     }
+ 145:Core/Src/gps.c **** }
+ 412              		.loc 1 145 1 is_stmt 0 view .LVU144
  413 002a 08BD     		pop	{r3, pc}
  414              	.L23:
  415              		.align	2
@@ -717,57 +718,57 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 1
  428              	HAL_UART_RxCpltCallback:
  429              	.LVL8:
  430              	.LFB1265:
- 145:Core/Src/gps.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 13
 
 
- 146:Core/Src/gps.c **** /**
- 147:Core/Src/gps.c ****  * @brief  UART RX callback – triggered when line is detected (frame complete)
- 148:Core/Src/gps.c ****  * @param  huart  UART handle
- 149:Core/Src/gps.c ****  * @param  Size   Number of bytes received since last start (not strictly needed)
- 150:Core/Src/gps.c ****  */
- 151:Core/Src/gps.c **** 
- 152:Core/Src/gps.c **** void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
- 153:Core/Src/gps.c **** {
- 431              		.loc 1 153 1 is_stmt 1 view -0
+ 146:Core/Src/gps.c **** 
+ 147:Core/Src/gps.c **** /**
+ 148:Core/Src/gps.c ****  * @brief  UART RX callback – triggered when line is detected (frame complete)
+ 149:Core/Src/gps.c ****  * @param  huart  UART handle
+ 150:Core/Src/gps.c ****  * @param  Size   Number of bytes received since last start (not strictly needed)
+ 151:Core/Src/gps.c ****  */
+ 152:Core/Src/gps.c **** 
+ 153:Core/Src/gps.c **** void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+ 154:Core/Src/gps.c **** {
+ 431              		.loc 1 154 1 is_stmt 1 view -0
  432              		.cfi_startproc
  433              		@ args = 0, pretend = 0, frame = 0
  434              		@ frame_needed = 0, uses_anonymous_args = 0
- 435              		.loc 1 153 1 is_stmt 0 view .LVU146
+ 435              		.loc 1 154 1 is_stmt 0 view .LVU146
  436 0000 08B5     		push	{r3, lr}
  437              	.LCFI2:
  438              		.cfi_def_cfa_offset 8
  439              		.cfi_offset 3, -8
  440              		.cfi_offset 14, -4
- 154:Core/Src/gps.c ****     if (huart == &hlpuart1)
- 441              		.loc 1 154 5 is_stmt 1 view .LVU147
- 442              		.loc 1 154 8 is_stmt 0 view .LVU148
+ 155:Core/Src/gps.c ****     if (huart == &hlpuart1)
+ 441              		.loc 1 155 5 is_stmt 1 view .LVU147
+ 442              		.loc 1 155 8 is_stmt 0 view .LVU148
  443 0002 064B     		ldr	r3, .L28
  444 0004 8342     		cmp	r3, r0
  445 0006 00D0     		beq	.L27
  446              	.LVL9:
  447              	.L24:
- 155:Core/Src/gps.c ****     {
- 156:Core/Src/gps.c ****         Find_start();
- 157:Core/Src/gps.c ****         HAL_UART_Receive_DMA(&hlpuart1, (uint8_t*)gpsRxBuffer, RX_BUFFER_LEN);      
- 158:Core/Src/gps.c ****     }
- 159:Core/Src/gps.c **** }
- 448              		.loc 1 159 1 view .LVU149
+ 156:Core/Src/gps.c ****     {
+ 157:Core/Src/gps.c ****         Find_start();
+ 158:Core/Src/gps.c ****         HAL_UART_Receive_DMA(&hlpuart1, (uint8_t*)gpsRxBuffer, RX_BUFFER_LEN);      
+ 159:Core/Src/gps.c ****     }
+ 160:Core/Src/gps.c **** }
+ 448              		.loc 1 160 1 view .LVU149
  449 0008 08BD     		pop	{r3, pc}
  450              	.LVL10:
  451              	.L27:
- 156:Core/Src/gps.c ****         HAL_UART_Receive_DMA(&hlpuart1, (uint8_t*)gpsRxBuffer, RX_BUFFER_LEN);      
- 452              		.loc 1 156 9 is_stmt 1 view .LVU150
+ 157:Core/Src/gps.c ****         HAL_UART_Receive_DMA(&hlpuart1, (uint8_t*)gpsRxBuffer, RX_BUFFER_LEN);      
+ 452              		.loc 1 157 9 is_stmt 1 view .LVU150
  453 000a FFF7FEFF 		bl	Find_start
  454              	.LVL11:
- 157:Core/Src/gps.c ****     }
- 455              		.loc 1 157 9 view .LVU151
+ 158:Core/Src/gps.c ****     }
+ 455              		.loc 1 158 9 view .LVU151
  456 000e 6422     		movs	r2, #100
  457 0010 0349     		ldr	r1, .L28+4
  458 0012 0248     		ldr	r0, .L28
  459 0014 FFF7FEFF 		bl	HAL_UART_Receive_DMA
  460              	.LVL12:
- 461              		.loc 1 159 1 is_stmt 0 view .LVU152
+ 461              		.loc 1 160 1 is_stmt 0 view .LVU152
  462 0018 F6E7     		b	.L24
  463              	.L29:
  464 001a 00BF     		.align	2
@@ -776,71 +777,232 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 1
  467 0020 00000000 		.word	gpsRxBuffer
  468              		.cfi_endproc
  469              	.LFE1265:
- 471              		.global	start_pos
- 472              		.section	.bss.start_pos,"aw",%nobits
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 14
+ 471              		.section	.text.gpsLogo,"ax",%progbits
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 14
 
 
- 475              	start_pos:
- 476 0000 00       		.space	1
- 477              		.global	GPS_connected
- 478              		.section	.bss.GPS_connected,"aw",%nobits
- 481              	GPS_connected:
- 482 0000 00       		.space	1
- 483              		.global	myGpsData
- 484              		.section	.bss.myGpsData,"aw",%nobits
- 485              		.align	2
- 488              	myGpsData:
- 489 0000 00000000 		.space	72
- 489      00000000 
- 489      00000000 
- 489      00000000 
- 489      00000000 
- 490              		.global	gpsRxBuffer
- 491              		.section	.bss.gpsRxBuffer,"aw",%nobits
- 492              		.align	2
- 495              	gpsRxBuffer:
- 496 0000 00000000 		.space	100
- 496      00000000 
- 496      00000000 
- 496      00000000 
- 496      00000000 
- 497              		.text
- 498              	.Letext0:
- 499              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
- 500              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
- 501              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
- 502              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
- 503              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
- 504              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h"
- 505              		.file 8 "Core/Inc/app_conf.h"
- 506              		.file 9 "Core/Inc/gps.h"
- 507              		.file 10 "Core/Inc/main.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s 			page 15
+ 472              		.align	1
+ 473              		.global	gpsLogo
+ 474              		.syntax unified
+ 475              		.thumb
+ 476              		.thumb_func
+ 478              	gpsLogo:
+ 479              	.LFB1266:
+ 161:Core/Src/gps.c **** 
+ 162:Core/Src/gps.c **** // void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
+ 163:Core/Src/gps.c **** // {
+ 164:Core/Src/gps.c **** //     if (huart == &hlpuart1)
+ 165:Core/Src/gps.c **** //     {
+ 166:Core/Src/gps.c **** //         processGPS();
+ 167:Core/Src/gps.c **** //         HAL_UARTEx_ReceiveToIdle_DMA(&hlpuart1, (uint8_t*)gpsRxBuffer, RX_BUFFER_LEN);
+ 168:Core/Src/gps.c **** //     }
+ 169:Core/Src/gps.c **** // }
+ 170:Core/Src/gps.c **** 
+ 171:Core/Src/gps.c **** 
+ 172:Core/Src/gps.c **** 
+ 173:Core/Src/gps.c **** void gpsLogo()
+ 174:Core/Src/gps.c **** {
+ 480              		.loc 1 174 1 is_stmt 1 view -0
+ 481              		.cfi_startproc
+ 482              		@ args = 0, pretend = 0, frame = 0
+ 483              		@ frame_needed = 0, uses_anonymous_args = 0
+ 484 0000 30B5     		push	{r4, r5, lr}
+ 485              	.LCFI3:
+ 486              		.cfi_def_cfa_offset 12
+ 487              		.cfi_offset 4, -12
+ 488              		.cfi_offset 5, -8
+ 489              		.cfi_offset 14, -4
+ 490 0002 83B0     		sub	sp, sp, #12
+ 491              	.LCFI4:
+ 492              		.cfi_def_cfa_offset 24
+ 175:Core/Src/gps.c ****     if (GPS_connected && logoSwitched == 0)
+ 493              		.loc 1 175 5 view .LVU154
+ 494              		.loc 1 175 9 is_stmt 0 view .LVU155
+ 495 0004 194B     		ldr	r3, .L36
+ 496 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 497              		.loc 1 175 8 view .LVU156
+ 498 0008 13B1     		cbz	r3, .L31
+ 499              		.loc 1 175 39 discriminator 1 view .LVU157
+ 500 000a 194A     		ldr	r2, .L36+4
+ 501 000c 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 502              		.loc 1 175 23 discriminator 1 view .LVU158
+ 503 000e 12B1     		cbz	r2, .L34
+ 504              	.L31:
+ 176:Core/Src/gps.c ****     {
+ 177:Core/Src/gps.c ****         Oled_Draw1BitImage(107,0, icon_gps_20x20, ICON_GPS_W, ICON_GPS_H, 0x0F);
+ 178:Core/Src/gps.c ****         SSD1327_UpdateArea(107, 0, 127, 20, NULL);
+ 179:Core/Src/gps.c ****         logoSwitched = 1;
+ 180:Core/Src/gps.c ****     }
+ 181:Core/Src/gps.c ****     else if (!GPS_connected)
+ 505              		.loc 1 181 10 is_stmt 1 view .LVU159
+ 506              		.loc 1 181 13 is_stmt 0 view .LVU160
+ 507 0010 B3B1     		cbz	r3, .L35
+ 508              	.L30:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 15
+
+
+ 182:Core/Src/gps.c ****     {
+ 183:Core/Src/gps.c ****         Oled_Draw1BitImage(107,0, icon_gps_20x20, ICON_GPS_W, ICON_GPS_H, 0x05);
+ 184:Core/Src/gps.c ****         SSD1327_UpdateArea(107, 0, 127, 20, NULL);
+ 185:Core/Src/gps.c ****         logoSwitched = 0;
+ 186:Core/Src/gps.c ****     }
+ 187:Core/Src/gps.c **** }
+ 509              		.loc 1 187 1 view .LVU161
+ 510 0012 03B0     		add	sp, sp, #12
+ 511              	.LCFI5:
+ 512              		.cfi_remember_state
+ 513              		.cfi_def_cfa_offset 12
+ 514              		@ sp needed
+ 515 0014 30BD     		pop	{r4, r5, pc}
+ 516              	.L34:
+ 517              	.LCFI6:
+ 518              		.cfi_restore_state
+ 177:Core/Src/gps.c ****         SSD1327_UpdateArea(107, 0, 127, 20, NULL);
+ 519              		.loc 1 177 9 is_stmt 1 view .LVU162
+ 520 0016 0F23     		movs	r3, #15
+ 521 0018 0193     		str	r3, [sp, #4]
+ 522 001a 1424     		movs	r4, #20
+ 523 001c 0094     		str	r4, [sp]
+ 524 001e 2346     		mov	r3, r4
+ 525 0020 144A     		ldr	r2, .L36+8
+ 526 0022 0021     		movs	r1, #0
+ 527 0024 6B20     		movs	r0, #107
+ 528 0026 FFF7FEFF 		bl	Oled_Draw1BitImage
+ 529              	.LVL13:
+ 178:Core/Src/gps.c ****         logoSwitched = 1;
+ 530              		.loc 1 178 9 view .LVU163
+ 531 002a 0021     		movs	r1, #0
+ 532 002c 0091     		str	r1, [sp]
+ 533 002e 2346     		mov	r3, r4
+ 534 0030 7F22     		movs	r2, #127
+ 535 0032 6B20     		movs	r0, #107
+ 536 0034 FFF7FEFF 		bl	SSD1327_UpdateArea
+ 537              	.LVL14:
+ 179:Core/Src/gps.c ****     }
+ 538              		.loc 1 179 9 view .LVU164
+ 179:Core/Src/gps.c ****     }
+ 539              		.loc 1 179 22 is_stmt 0 view .LVU165
+ 540 0038 0D4B     		ldr	r3, .L36+4
+ 541 003a 0122     		movs	r2, #1
+ 542 003c 1A70     		strb	r2, [r3]
+ 543 003e E8E7     		b	.L30
+ 544              	.L35:
+ 183:Core/Src/gps.c ****         SSD1327_UpdateArea(107, 0, 127, 20, NULL);
+ 545              		.loc 1 183 9 is_stmt 1 view .LVU166
+ 546 0040 0523     		movs	r3, #5
+ 547 0042 0193     		str	r3, [sp, #4]
+ 548 0044 1425     		movs	r5, #20
+ 549 0046 0095     		str	r5, [sp]
+ 550 0048 2B46     		mov	r3, r5
+ 551 004a 0A4A     		ldr	r2, .L36+8
+ 552 004c 0021     		movs	r1, #0
+ 553 004e 6B20     		movs	r0, #107
+ 554 0050 FFF7FEFF 		bl	Oled_Draw1BitImage
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 16
+
+
+ 555              	.LVL15:
+ 184:Core/Src/gps.c ****         logoSwitched = 0;
+ 556              		.loc 1 184 9 view .LVU167
+ 557 0054 0024     		movs	r4, #0
+ 558 0056 0094     		str	r4, [sp]
+ 559 0058 2B46     		mov	r3, r5
+ 560 005a 7F22     		movs	r2, #127
+ 561 005c 2146     		mov	r1, r4
+ 562 005e 6B20     		movs	r0, #107
+ 563 0060 FFF7FEFF 		bl	SSD1327_UpdateArea
+ 564              	.LVL16:
+ 185:Core/Src/gps.c ****     }
+ 565              		.loc 1 185 9 view .LVU168
+ 185:Core/Src/gps.c ****     }
+ 566              		.loc 1 185 22 is_stmt 0 view .LVU169
+ 567 0064 024B     		ldr	r3, .L36+4
+ 568 0066 1C70     		strb	r4, [r3]
+ 569              		.loc 1 187 1 view .LVU170
+ 570 0068 D3E7     		b	.L30
+ 571              	.L37:
+ 572 006a 00BF     		.align	2
+ 573              	.L36:
+ 574 006c 00000000 		.word	GPS_connected
+ 575 0070 00000000 		.word	logoSwitched
+ 576 0074 00000000 		.word	icon_gps_20x20
+ 577              		.cfi_endproc
+ 578              	.LFE1266:
+ 580              		.global	start_pos
+ 581              		.section	.bss.start_pos,"aw",%nobits
+ 584              	start_pos:
+ 585 0000 00       		.space	1
+ 586              		.global	logoSwitched
+ 587              		.section	.bss.logoSwitched,"aw",%nobits
+ 590              	logoSwitched:
+ 591 0000 00       		.space	1
+ 592              		.global	GPS_connected
+ 593              		.section	.bss.GPS_connected,"aw",%nobits
+ 596              	GPS_connected:
+ 597 0000 00       		.space	1
+ 598              		.global	myGpsData
+ 599              		.section	.bss.myGpsData,"aw",%nobits
+ 600              		.align	2
+ 603              	myGpsData:
+ 604 0000 00000000 		.space	72
+ 604      00000000 
+ 604      00000000 
+ 604      00000000 
+ 604      00000000 
+ 605              		.global	gpsRxBuffer
+ 606              		.section	.bss.gpsRxBuffer,"aw",%nobits
+ 607              		.align	2
+ 610              	gpsRxBuffer:
+ 611 0000 00000000 		.space	100
+ 611      00000000 
+ 611      00000000 
+ 611      00000000 
+ 611      00000000 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 17
+
+
+ 612              		.text
+ 613              	.Letext0:
+ 614              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 615              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 616              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 617              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 618              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 619              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_uart.h"
+ 620              		.file 8 "Core/Inc/app_conf.h"
+ 621              		.file 9 "Core/Inc/gps.h"
+ 622              		.file 10 "Core/Inc/oled_display.h"
+ 623              		.file 11 "Core/Inc/main.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cckq99oe.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gps.c
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:21     .text.processGPS:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:27     .text.processGPS:00000000 processGPS
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:288    .text.processGPS:0000013c $d
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:488    .bss.myGpsData:00000000 myGpsData
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:481    .bss.GPS_connected:00000000 GPS_connected
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:298    .text.GPS_Start:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:304    .text.GPS_Start:00000000 GPS_Start
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:346    .text.GPS_Start:0000002c $d
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:495    .bss.gpsRxBuffer:00000000 gpsRxBuffer
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:353    .text.Find_start:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:359    .text.Find_start:00000000 Find_start
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:417    .text.Find_start:0000002c $d
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:422    .text.HAL_UART_RxCpltCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:428    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:466    .text.HAL_UART_RxCpltCallback:0000001c $d
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:475    .bss.start_pos:00000000 start_pos
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:476    .bss.start_pos:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:482    .bss.GPS_connected:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:485    .bss.myGpsData:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccfLecWn.s:492    .bss.gpsRxBuffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:21     .text.processGPS:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:27     .text.processGPS:00000000 processGPS
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:288    .text.processGPS:0000013c $d
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:603    .bss.myGpsData:00000000 myGpsData
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:596    .bss.GPS_connected:00000000 GPS_connected
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:298    .text.GPS_Start:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:304    .text.GPS_Start:00000000 GPS_Start
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:346    .text.GPS_Start:0000002c $d
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:610    .bss.gpsRxBuffer:00000000 gpsRxBuffer
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:353    .text.Find_start:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:359    .text.Find_start:00000000 Find_start
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:417    .text.Find_start:0000002c $d
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:422    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:428    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:466    .text.HAL_UART_RxCpltCallback:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:472    .text.gpsLogo:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:478    .text.gpsLogo:00000000 gpsLogo
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:574    .text.gpsLogo:0000006c $d
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:590    .bss.logoSwitched:00000000 logoSwitched
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:584    .bss.start_pos:00000000 start_pos
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:585    .bss.start_pos:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:591    .bss.logoSwitched:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:597    .bss.GPS_connected:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:600    .bss.myGpsData:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cckq99oe.s:607    .bss.gpsRxBuffer:00000000 $d
 
 UNDEFINED SYMBOLS
 GPSraw_data
@@ -849,3 +1011,6 @@ HAL_UART_Receive_DMA
 Error_Handler
 hlpuart1
 hdma_lpuart1_rx
+Oled_Draw1BitImage
+SSD1327_UpdateArea
+icon_gps_20x20

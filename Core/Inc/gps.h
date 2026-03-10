@@ -1,4 +1,4 @@
-// NEO_M9N.h – byt namn till NEO_M9V.h om du vill
+
 #ifndef __NEO_M9V_H
 #define __NEO_M9V_H
 
@@ -73,5 +73,6 @@ extern uint8_t GPS_connected;
 extern uint8_t GPSraw_data[15];
 
 void GPS_Start(void);
+void gpsLogo();
 
 #endif

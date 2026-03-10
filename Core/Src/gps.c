@@ -21,6 +21,7 @@ volatile uint8_t gpsRxBuffer[RX_BUFFER_LEN] __attribute__((aligned(4)));
 GPS_DATA_t myGpsData = {0};
 uint8_t GPS_connected = 0;
 
+uint8_t logoSwitched = 0;
 
 
 uint8_t start_pos = 0;
@@ -166,3 +167,21 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 //         HAL_UARTEx_ReceiveToIdle_DMA(&hlpuart1, (uint8_t*)gpsRxBuffer, RX_BUFFER_LEN);
 //     }
 // }
+
+
+
+void gpsLogo()
+{
+    if (GPS_connected && logoSwitched == 0)
+    {
+        Oled_Draw1BitImage(107,0, icon_gps_20x20, ICON_GPS_W, ICON_GPS_H, 0x0F);
+        SSD1327_UpdateArea(107, 0, 127, 20, NULL);
+        logoSwitched = 1;
+    }
+    else if (!GPS_connected)
+    {
+        Oled_Draw1BitImage(107,0, icon_gps_20x20, ICON_GPS_W, ICON_GPS_H, 0x05);
+        SSD1327_UpdateArea(107, 0, 127, 20, NULL);
+        logoSwitched = 0;
+    }
+}

@@ -171,7 +171,7 @@
 #define CONN_P(x) ((int)((x)/1.25f))
 
   /*  L2CAP Connection Update request parameters used for test only with smart Phone */
-#define L2CAP_REQUEST_NEW_CONN_PARAM             0
+#define L2CAP_REQUEST_NEW_CONN_PARAM             1
 
 #define L2CAP_INTERVAL_MIN              CONN_P(1000) /* 1s */
 #define L2CAP_INTERVAL_MAX              CONN_P(1000) /* 1s */

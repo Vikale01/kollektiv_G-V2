@@ -140,11 +140,11 @@ int main(void)
   // Flash configuration
   Enable_4BYTEMODE();
 
-  Flash_SectorErase(0);
-
   //Display initiation
   Oled_init();
   Oled_introScreen();
+
+  sensordata_init();
 
   /* USER CODE END 2 */
 
@@ -165,7 +165,8 @@ int main(void)
       case STATE_2:
 
         if (tastScheduler >= 1){
-
+          gpsLogo();
+          
           if(GPS_connected) // Check if GPS has good connection before storing data
           {
             packageDataToMem();
@@ -295,7 +296,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.Timing = 0x10B17DB5;
+  hi2c1.Init.Timing = 0x00910B1C;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
@@ -321,6 +322,10 @@ static void MX_I2C1_Init(void)
   {
     Error_Handler();
   }
+
+  /** I2C Enable Fast Mode Plus
+  */
+  HAL_I2CEx_EnableFastModePlus(I2C_FASTMODEPLUS_I2C1);
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */
