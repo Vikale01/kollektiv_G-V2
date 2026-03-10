@@ -32,6 +32,9 @@ enum {
   STATE_3
 }btnState;
 
+
+uint8_t readbuffer[256];
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -144,7 +147,7 @@ int main(void)
   Oled_init();
   Oled_introScreen();
 
-  sensordata_init();
+  findStartPos();
 
   /* USER CODE END 2 */
 
@@ -166,12 +169,8 @@ int main(void)
 
         if (tastScheduler >= 1){
           gpsLogo();
-          
-          if(GPS_connected) // Check if GPS has good connection before storing data
-          {
-            packageDataToMem();
-            sendPackageToMem();
-          }
+          packageDataToMem();
+          sendPackageToMem();
 
           HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 0);
           HAL_GPIO_WritePin(GPIOB, LED_R_Pin, 0);  
@@ -182,7 +181,7 @@ int main(void)
       case STATE_3:
         if(Custom_STN_NotificationEnabled()) // Check if someone is connected and has notification enabled
         {
-          readMemSendBle();
+          
         }
 
         HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 1);

@@ -8,80 +8,32 @@
 /* Includes -----------------------------------------------*/
 #include "sensordata.h"
 
-/* Defines -----------------------------------------*/
+#define BMI_SAMPLES_PER_PAGE    18
 #define BUFFER_SIZE             256
-#define SECTION_SIZE            4096
 #define HEADER_SIZE             25
-#define BMI_SAMPLES_PER_PAGE    19
-
+#define SECTION_SIZE            4096
 #define PAGE_PER_SECTION        16
 
-/* Variables -----------------------------------------------*/
-
-static uint8_t ble_sub_page = 0; // 0 = första 128 bytes, 1 = andra 128 bytes
-
-static uint8_t bufferPointer = 0;
-static uint8_t dataCounter = 0;
-
-static uint8_t pageCounter = 0;
-static uint16_t sectorCounter = 0;
+#define PAGE_IN_MEMORY          250000
 
 static bool bufferFull = false; 
-
-static uint8_t headerBuffer[25];
 
 uint8_t GPSraw_data[15]; 
 uint8_t BMEraw_data[8]; 
 uint8_t BMIraw_data[12]; 
 
-static uint16_t bleSector = 0;
-static uint8_t ble_page = 0;
+static uint8_t headerBuffer[HEADER_SIZE];
+
+static uint8_t bufferPointer = 0;
+static uint8_t dataCounter = 0;
 
 static uint8_t buffer[BUFFER_SIZE];
-static uint8_t readbuffer[BUFFER_SIZE];
+static uint32_t addInc = 0;
+static uint8_t pageCounter = 0;
+static uint16_t sectorCounter = 0;
 
-static uint32_t pageNumber = 0;
+static uint8_t readBuffer[BUFFER_SIZE];
 
-/* Private functions -----------------------------------------------*/
-
-static void saveFlashIndex(void)
-{
-    FlashIndex_t index;
-    index.pageNumber = pageNumber;
-    index.pageCounter = pageCounter;
-    index.sectorCounter = sectorCounter;
-
-    Flash_SectorErase(INDEX_SECTOR); // Radera innan skrivning
-    Flash_WritePage(INDEX_ADDRESS, (uint8_t*)&index, sizeof(index));
-}
-
-static bool loadFlashIndex(void)
-{
-    FlashIndex_t index;
-    Flash_4ByteRead(INDEX_ADDRESS, (uint8_t*)&index, sizeof(index));
-
-    if(index.pageCounter != 0xFF && index.sectorCounter != 0xFFFF)
-    {
-        pageNumber = index.pageNumber;
-        pageCounter = index.pageCounter;
-        sectorCounter = index.sectorCounter;
-        return true;
-    }
-    return false;
-}
-
-/**
- * @brief  Non-blocking half-page sender BLE
- * @return tBleStatus status from the stack
- */
-static tBleStatus sendHalfPage_ble(uint8_t *data, uint16_t length) 
-{ 
-
-    return Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, data, length);
-}
-/**
- * @brief  Structure the header-package.
- */
 static void packageHeader(void)
 {
   BME280_ReadMeasurement_Raw(BMEraw_data);
@@ -95,29 +47,6 @@ static void packageHeader(void)
   headerBuffer[24] = 0xAA;
 }
 
-/**
- * @brief  Checks whether its a new section in the memory and prevents overflow
- */
-static void newSectionCheck(void)
-{
-  if(pageCounter >= PAGE_PER_SECTION)
-  {
-    pageCounter = 0;
-    sectorCounter++;
-    
-    if (sectorCounter >= 15624)
-    {
-      sectorCounter = 0;
-    }  
-
-    Flash_SectorErase(sectorCounter);
-  }
-}
-
-
-/**
- * @brief  Main memory function for packaging and sending data
- */
 void packageDataToMem(void)
 {
   // Put header values ONCE first in buffer
@@ -143,82 +72,96 @@ void packageDataToMem(void)
     bufferFull = true;
   }
 }
-
-/**
- * @brief  Sends the structured package to memory
- */
-void sendPackageToMem(void)
+static void newSectionCheck(void)
 {
-  if (bufferFull) // Buffer is full of 256 bytes
+  if(pageCounter >= PAGE_PER_SECTION)
   {
-    newSectionCheck();  // Check if we are in a new section in the memory (One section is 4096 bytes)
+    pageCounter = 0;
+    sectorCounter++;
+    
+    if (sectorCounter >= 15624)
+    {
+      sectorCounter = 0;
+    }  
 
-    buffer[BUFFER_SIZE - 4] = (pageNumber >> 24) & 0xFF;
-    buffer[BUFFER_SIZE - 3] = (pageNumber >> 16) & 0xFF;
-    buffer[BUFFER_SIZE - 2] = (pageNumber >> 8) & 0xFF;
-    buffer[BUFFER_SIZE - 1] = pageNumber & 0xFF;
-
-    Flash_WritePage((sectorCounter * SECTION_SIZE) + (BUFFER_SIZE * pageCounter), buffer, BUFFER_SIZE);
-
-    saveFlashIndex();
-
-    pageCounter++;
-    pageNumber++;
-
-    bufferPointer = 0;
-    dataCounter = 0;
-    bufferFull = false;
-    memset(buffer, 0xFF, BUFFER_SIZE);
+    Flash_SectorErase(sectorCounter);
   }
 }
 
-void readMemSendBle(void)
+void sendPackageToMem(void)
 {
-    if ((bleSector < sectorCounter) || (bleSector == sectorCounter && ble_page < pageCounter))
+  if(!bufferFull){return;}
+
+  newSectionCheck();  // Check if we are in a new section in the memory (One section is 4096 bytes)
+
+  buffer[BUFFER_SIZE - 4] = (addInc >> 24) & 0xFF;
+  buffer[BUFFER_SIZE - 3] = (addInc >> 16) & 0xFF;
+  buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
+  buffer[BUFFER_SIZE - 1] = addInc & 0xFF;
+
+  Flash_WritePage((sectorCounter * SECTION_SIZE) + (BUFFER_SIZE * pageCounter), buffer, BUFFER_SIZE);
+
+  pageCounter++;
+  addInc++;
+
+  bufferPointer = 0;
+  dataCounter = 0;
+  bufferFull = false;
+  memset(buffer, 0xFF, BUFFER_SIZE);
+}
+
+// Function to find the last written page in flash
+void findStartPos(void)
+{
+    for (uint32_t i = 0; i < PAGE_IN_MEMORY; i++)
     {
-        if (ble_sub_page == 0) 
+        Flash_4ByteRead(i * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+
+        uint32_t pageId = ((uint32_t)readBuffer[BUFFER_SIZE-4] << 24) |
+                          ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+                          ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
+                          ((uint32_t)readBuffer[BUFFER_SIZE-1]);
+
+        if (pageId == 0xFFFFFFFF)
         {
-            Flash_4ByteRead((bleSector * SECTION_SIZE) + (BUFFER_SIZE * ble_page),
-                            readbuffer, sizeof(readbuffer));
-        }
-
-        // Buffer pointer to send either first or second half
-        uint8_t *dataPtr = readbuffer + (ble_sub_page * 128);
-
-        tBleStatus status = sendHalfPage_ble(dataPtr, 128);
-
-        if (status == BLE_STATUS_SUCCESS) 
-        {
-            ble_sub_page++;
-
-            // If both halves are sent, move on to the next one
-            if (ble_sub_page >= 2) 
+            if (i == 0)
             {
-                ble_sub_page = 0;
-                ble_page++;
-
-                if (ble_page >= PAGE_PER_SECTION)
-                {
-                    bleSector++;
-                    ble_page = 0;
-                }
+                // Flash is empty
+                addInc = 0;
+                pageCounter = 0;
+                sectorCounter = 0;
             }
+            else
+            {
+
+                Flash_4ByteRead((i - 1) * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+
+                uint32_t pageId = ((uint32_t)readBuffer[BUFFER_SIZE-4] << 24) |
+                                  ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+                                  ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
+                                  ((uint32_t)readBuffer[BUFFER_SIZE-1]);
+
+                // Last written page is i-1
+                addInc = pageId + 1; // optional: continue numbering
+                pageCounter = (i % PAGE_PER_SECTION);
+                sectorCounter = (i / PAGE_PER_SECTION);
+            }
+            return;
         }
     }
+
+    // All pages used
+    addInc = PAGE_IN_MEMORY;
+    pageCounter = PAGE_IN_MEMORY % PAGE_PER_SECTION;
+    sectorCounter = PAGE_IN_MEMORY / PAGE_PER_SECTION;
 }
 
-void sensordata_init(void)
+static tBleStatus sendHalfPage_ble(uint8_t *data, uint16_t length) 
+{ 
+    return Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, data, length);
+}
+
+void sendAllDataViaBle()
 {
-    if(!loadFlashIndex())
-    {
-        pageNumber = 0;
-        pageCounter = 0;
-        sectorCounter = 0;
-    }
-
-    bufferPointer = 0;
-    dataCounter = 0;
-    bufferFull = false;
-    memset(buffer, 0xFF, BUFFER_SIZE);
+  
 }
-
