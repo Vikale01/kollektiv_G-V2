@@ -142,7 +142,7 @@ typedef struct
   BleGlobalContext_t BleApplicationContext_legacy;
   APP_BLE_ConnStatus_t Device_Connection_Status;
   /* USER CODE BEGIN PTD_1*/
-
+  
   /* USER CODE END PTD_1 */
 }BleApplicationContext_t;
 

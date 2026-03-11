@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****                       ##### TIMER Extended features #####
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   ==============================================================================
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   [..]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 2
 
 
   31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     The Timer Extended features include:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** /** @addtogroup STM32WBxx_HAL_Driver
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @{
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 3
 
 
   88:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** /** @defgroup TIMEx_Exported_Functions TIM Extended Exported Functions
  143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @{
  144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 4
 
 
  145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  199:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     htim->Lock = HAL_UNLOCKED;
  200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** #if (USE_HAL_TIM_REGISTER_CALLBACKS == 1)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 5
 
 
  202:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     /* Reset interrupt callbacks to legacy week callbacks */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  256:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   htim->Instance->CR2 |= TIM_TRGO_OC2REF;
  257:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  258:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Initialize the DMA burst operation state */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 6
 
 
  259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   htim->DMABurstState = HAL_DMA_BURST_STATE_READY;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  313:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   __HAL_UNLOCK(htim);
  314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   return HAL_OK;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 7
 
 
  316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  370:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     return HAL_ERROR;
  371:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
  372:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 8
 
 
  373:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Set the TIM channels state */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  427:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   return HAL_OK;
  428:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** }
  429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 9
 
 
  430:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** /**
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  484:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   return HAL_OK;
  485:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** }
  486:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 10
 
 
  487:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** /**
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  541:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****            && (complementary_channel_1_state == HAL_TIM_CHANNEL_STATE_READY))
  542:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  543:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     if ((pData == NULL) || (Length == 0U))
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 11
 
 
  544:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  598:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @param  htim TIM Hall Sensor Interface handle
  599:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @retval HAL status
  600:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 12
 
 
  601:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** HAL_StatusTypeDef HAL_TIMEx_HallSensor_Stop_DMA(TIM_HandleTypeDef *htim)
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  655:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @param  htim TIM Output Compare handle
  656:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @param  Channel TIM Channel to be enabled
  657:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *          This parameter can be one of the following values:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 13
 
 
  658:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *            @arg TIM_CHANNEL_1: TIM Channel 1 selected
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  712:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @retval HAL status
  713:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   */
  714:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** HAL_StatusTypeDef HAL_TIMEx_OCN_Stop(TIM_HandleTypeDef *htim, uint32_t Channel)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 14
 
 
  715:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  769:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       break;
  770:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     }
  771:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 15
 
 
  772:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     case TIM_CHANNEL_2:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  826:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @param  Channel TIM Channel to be disabled
  827:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *          This parameter can be one of the following values:
  828:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *            @arg TIM_CHANNEL_1: TIM Channel 1 selected
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 16
 
 
  829:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *            @arg TIM_CHANNEL_2: TIM Channel 2 selected
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  883:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  884:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     /* Disable the Peripheral */
  885:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     __HAL_TIM_DISABLE(htim);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 17
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 17
 
 
  886:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  940:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     case TIM_CHANNEL_1:
  941:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     {
  942:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       /* Set the DMA compare callbacks */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 18
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 18
 
 
  943:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       htim->hdma[TIM_DMA_ID_CC1]->XferCpltCallback = TIM_DMADelayPulseNCplt;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  997:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       }
  998:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       /* Enable the TIM Output Compare DMA request */
  999:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       __HAL_TIM_ENABLE_DMA(htim, TIM_DMA_CC3);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 19
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 19
 
 
 1000:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       break;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1054:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
 1055:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     case TIM_CHANNEL_1:
 1056:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 20
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 20
 
 
 1057:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       /* Disable the TIM Output Compare DMA request */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1111:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   ==============================================================================
 1112:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****                  ##### Timer Complementary PWM functions #####
 1113:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   ==============================================================================
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 21
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 21
 
 
 1114:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   [..]
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1168:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
 1169:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     __HAL_TIM_ENABLE(htim);
 1170:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 22
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 22
 
 
 1171:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1225:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
 1226:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Check the TIM complementary channel state */
 1227:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   if (TIM_CHANNEL_N_STATE_GET(htim, Channel) != HAL_TIM_CHANNEL_STATE_READY)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 23
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 23
 
 
 1228:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1282:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     }
 1283:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     else
 1284:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 24
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 24
 
 
 1285:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       __HAL_TIM_ENABLE(htim);
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1339:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
 1340:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   if (status == HAL_OK)
 1341:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 25
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 25
 
 
 1342:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     /* Disable the complementary PWM output  */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1396:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     {
 1397:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       return HAL_ERROR;
 1398:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 26
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 26
 
 
 1399:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     else
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1453:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     case TIM_CHANNEL_3:
 1454:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     {
 1455:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       /* Set the DMA compare callbacks */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 27
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 27
 
 
 1456:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       htim->hdma[TIM_DMA_ID_CC3]->XferCpltCallback = TIM_DMADelayPulseNCplt;
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1510:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @param  Channel TIM Channel to be disabled
 1511:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *          This parameter can be one of the following values:
 1512:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *            @arg TIM_CHANNEL_1: TIM Channel 1 selected
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 28
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 28
 
 
 1513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *            @arg TIM_CHANNEL_2: TIM Channel 2 selected
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1567:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     TIM_CHANNEL_N_STATE_SET(htim, Channel, HAL_TIM_CHANNEL_STATE_READY);
 1568:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
 1569:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 29
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 29
 
 
 1570:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Return function status */
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1624:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
 1625:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     return HAL_ERROR;
 1626:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 30
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 30
 
 
 1627:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1681:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   return HAL_OK;
 1682:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** }
 1683:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 31
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 31
 
 
 1684:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** /**
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1738:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
 1739:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** /**
 1740:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @brief  Stops the TIM One Pulse signal generation in interrupt mode on the
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 32
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 32
 
 
 1741:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *         complementary channel.
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1795:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   [..]
 1796:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     This section provides functions allowing to:
 1797:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       (+) Configure the commutation event in case of use of the Hall sensor interface.
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 33
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 33
 
 
 1798:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       (+) Configure Output channels for OC and PWM mode.
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1852:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   htim->Instance->CR2 |= CommutationSource;
 1853:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
 1854:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Disable Commutation Interrupt */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 34
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 34
 
 
 1855:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   __HAL_TIM_DISABLE_IT(htim, TIM_IT_COM);
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1909:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
 1910:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Disable Commutation DMA request */
 1911:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   __HAL_TIM_DISABLE_DMA(htim, TIM_DMA_COM);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 35
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 35
 
 
 1912:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1966:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
 1967:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Enable the Commutation DMA Request */
 1968:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Set the DMA Commutation Callback */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 36
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 36
 
 
 1969:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   htim->hdma[TIM_DMA_ID_COMMUTATION]->XferCpltCallback = TIMEx_DMACommutationCplt;
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2023:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     tmpcr2 &= ~TIM_CR2_MMS2;
 2024:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     /* Select the TRGO2 source*/
 2025:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     tmpcr2 |= sMasterConfig->MasterOutputTrigger2;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 37
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 37
 
 
 2026:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2080:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   assert_param(IS_TIM_BREAK_FILTER(sBreakDeadTimeConfig->BreakFilter));
 2081:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   assert_param(IS_TIM_AUTOMATIC_OUTPUT_STATE(sBreakDeadTimeConfig->AutomaticOutput));
 2082:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   assert_param(IS_TIM_BREAK_AFMODE(sBreakDeadTimeConfig->BreakAFMode));
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 38
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 38
 
 
 2083:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2137:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** {
 2138:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
 2139:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   uint32_t tmporx;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 39
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 39
 
 
 2140:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   uint32_t bkin_enable_mask;
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2194:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   switch (BreakInput)
 2195:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
 2196:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     case TIM_BREAKINPUT_BRK:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 40
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 40
 
 
 2197:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     {
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2251:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *            @arg TIM_TIM1_ETR_COMP1:               TIM1_ETR is connected to COMP1 output (*)
 2252:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *            @arg TIM_TIM1_ETR_COMP2:               TIM1_ETR is connected to COMP2 output (*)
 2253:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *       field2 can have the following values:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 41
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 41
 
 
 2254:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   *            @arg TIM_TIM1_TI1_GPIO:                TIM1 TI1 is connected to I/O
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2308:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   if (IS_TIM_ETRSEL_INSTANCE(htim->Instance))
 2309:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
 2310:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     if ((Remap & TIM1_AF1_ETRSEL) != (uint32_t)RESET)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 42
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 42
 
 
 2311:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     {
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2365:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   htim->State = HAL_TIM_STATE_READY;
 2366:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
 2367:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   __HAL_UNLOCK(htim);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 43
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 43
 
 
 2368:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2422:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       break;
 2423:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
 2424:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 44
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 44
 
 
 2425:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   return status;
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2479:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****         /* Init tickstart for timeout management */
 2480:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****         tickstart = HAL_GetTick();
 2481:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****         while (READ_BIT(htim->Instance->BDTR, TIM_BDTR_BK2DSRM) != 0UL)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 45
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 45
 
 
 2482:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****         {
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2536:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** }
 2537:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** /**
 2538:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @brief  Commutation half complete callback in non-blocking mode
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 46
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 46
 
 
 2539:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   * @param  htim TIM handle
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2593:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     This subsection permits to get in run-time the status of the peripheral
 2594:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     and the data flow.
 2595:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 47
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 47
 
 
 2596:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** @endverbatim
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2650:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** {
 2651:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   TIM_HandleTypeDef *htim = (TIM_HandleTypeDef *)((DMA_HandleTypeDef *)hdma)->Parent;
 2652:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 48
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 48
 
 
 2653:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Change the htim state */
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2707:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       TIM_CHANNEL_N_STATE_SET(htim, TIM_CHANNEL_2, HAL_TIM_CHANNEL_STATE_READY);
 2708:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     }
 2709:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 49
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 49
 
 
 2710:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   else if (hdma == htim->hdma[TIM_DMA_ID_CC3])
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2764:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** #else
 2765:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   HAL_TIM_ErrorCallback(htim);
 2766:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 50
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 50
 
 
 2767:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
   56 0018 1343     		orrs	r3, r3, r2
   57 001a 0362     		str	r3, [r0, #32]
 2794:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 51
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 51
 
 
   58              		.loc 1 2794 1 view .LVU12
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  101              		.loc 1 2752 11 view .LVU25
  102 0012 8342     		cmp	r3, r0
  103 0014 10D0     		beq	.L9
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 52
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 52
 
 
  104              	.L4:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  143 003e 84F84630 		strb	r3, [r4, #70]
  144 0042 E8E7     		b	.L4
  145              		.cfi_endproc
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 53
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 53
 
 
  146              	.LFE995:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  189              	.L12:
 2722:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  190              		.loc 1 2722 3 is_stmt 1 view .LVU54
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 54
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 54
 
 
 2727:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  229 003c EBD1     		bne	.L12
 2707:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     }
  230              		.loc 1 2707 7 is_stmt 1 view .LVU71
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 55
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 55
 
 
  231 003e 0123     		movs	r3, #1
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  280              	HAL_TIMEx_HallSensor_Init:
  281              	.LVL15:
  282              	.LFB950:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 56
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 56
 
 
  177:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   TIM_OC_InitTypeDef OC_Config;
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  218:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  321              		.loc 1 218 3 is_stmt 1 view .LVU97
  218:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 57
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 57
 
 
  322              		.loc 1 218 15 is_stmt 0 view .LVU98
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  360              		.loc 1 232 17 view .LVU114
  361 0046 5368     		ldr	r3, [r2, #4]
  232:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 58
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 58
 
 
  362              		.loc 1 232 23 view .LVU115
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  399              		.loc 1 243 3 is_stmt 1 view .LVU132
  243:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   OC_Config.OCIdleState = TIM_OCIDLESTATE_RESET;
  400              		.loc 1 243 24 is_stmt 0 view .LVU133
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 59
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 59
 
 
  401 007e 0025     		movs	r5, #0
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  256:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  437              		.loc 1 256 3 is_stmt 1 view .LVU152
  256:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 60
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 60
 
 
  438              		.loc 1 256 7 is_stmt 0 view .LVU153
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  213:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
  477              		.loc 1 213 5 is_stmt 1 view .LVU169
  478 00d2 FFF7FEFF 		bl	HAL_TIMEx_HallSensor_MspInit
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 61
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 61
 
 
  479              	.LVL21:
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  530              		.cfi_startproc
  531              		@ args = 0, pretend = 0, frame = 0
  532              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 62
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 62
 
 
  279:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Check the parameters */
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  573              		.loc 1 304 3 is_stmt 1 view .LVU190
  574 0036 84F83E00 		strb	r0, [r4, #62]
  305:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   TIM_CHANNEL_N_STATE_SET(htim, TIM_CHANNEL_1, HAL_TIM_CHANNEL_STATE_RESET);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 63
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 63
 
 
  575              		.loc 1 305 3 view .LVU191
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  617              		.loc 1 356 3 view .LVU205
  356:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_2_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_2);
  618              		.loc 1 356 31 is_stmt 0 view .LVU206
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 64
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 64
 
 
  619 0004 90F83E00 		ldrb	r0, [r0, #62]	@ zero_extendqisi2
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  657              	.LVL34:
  370:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
  658              		.loc 1 370 12 view .LVU223
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 65
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 65
 
 
  659 002e 28E0     		b	.L33
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  699              	.L34:
  387:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     if (!IS_TIM_SLAVEMODE_TRIGGER_ENABLED(tmpsmcr))
  700              		.loc 1 387 5 is_stmt 1 view .LVU238
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 66
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 66
 
 
  387:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     if (!IS_TIM_SLAVEMODE_TRIGGER_ENABLED(tmpsmcr))
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  742 008a FAE7     		b	.L33
  743              	.L40:
  744 008c 0020     		movs	r0, #0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 67
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 67
 
 
  745 008e F8E7     		b	.L33
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  793 001e 40F24443 		movw	r3, #1092
  794 0022 1942     		tst	r1, r3
  795 0024 03D1     		bne	.L46
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 68
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 68
 
 
  418:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  840              		.loc 1 437 3 is_stmt 1 view .LVU271
  438:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_2_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_2);
  841              		.loc 1 438 3 view .LVU272
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 69
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 69
 
 
  438:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_2_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_2);
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  879              		.loc 1 452 12 view .LVU289
  880 002c 1046     		mov	r0, r2
  881              	.LVL56:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 70
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 70
 
 
  452:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  921              		.loc 1 470 7 discriminator 1 view .LVU304
  922 005e B3F1804F 		cmp	r3, #1073741824
  923 0062 05D0     		beq	.L50
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 71
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 71
 
 
  480:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  452:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
  965              		.loc 1 452 12 view .LVU318
  966 0090 1846     		mov	r0, r3
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 72
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 72
 
 
  967              	.LVL68:
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  503:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  1016              		.loc 1 503 3 is_stmt 1 view .LVU326
  1017 000e 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 73
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 73
 
 
  1018 0010 D368     		ldr	r3, [r2, #12]
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1061              		.thumb_func
  1063              	HAL_TIMEx_HallSensor_Start_DMA:
  1064              	.LVL73:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 74
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 74
 
 
  1065              	.LFB958:
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  541:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  1106              		.loc 1 541 12 view .LVU352
  1107 0024 012D     		cmp	r5, #1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 75
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 75
 
 
  1108 0026 40D1     		bne	.L65
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1146              		.loc 1 565 13 is_stmt 0 view .LVU368
  1147 004c 636A     		ldr	r3, [r4, #36]
  565:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Set the DMA error callback */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 76
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 76
 
 
  1148              		.loc 1 565 52 view .LVU369
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1189              	.L66:
  581:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     if (!IS_TIM_SLAVEMODE_TRIGGER_ENABLED(tmpsmcr))
  1190              		.loc 1 581 5 view .LVU383
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 77
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 77
 
 
  581:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     if (!IS_TIM_SLAVEMODE_TRIGGER_ENABLED(tmpsmcr))
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1232 00ae FCE7     		b	.L65
  1233              	.LVL91:
  1234              	.L72:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 78
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 78
 
 
  573:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  615:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  1284              		.loc 1 615 3 view .LVU404
  615:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 79
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 79
 
 
  1285              		.loc 1 615 9 is_stmt 0 view .LVU405
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1330              		.loc 1 664 1 is_stmt 1 view -0
  1331              		.cfi_startproc
  1332              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 80
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 80
 
 
  1333              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  680:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  1374              		.loc 1 680 3 view .LVU430
  1375 0028 FFF7FEFF 		bl	TIM_CCxNChannelCmd
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 81
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 81
 
 
  1376              	.LVL100:
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1418 006a DBB2     		uxtb	r3, r3
  671:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  1419              		.loc 1 671 46 discriminator 4 view .LVU443
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 82
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 82
 
 
  1420 006c 013B     		subs	r3, r3, #1
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1463              		.loc 1 689 5 is_stmt 1 view .LVU454
  689:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     {
  1464              		.loc 1 689 8 is_stmt 0 view .LVU455
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 83
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 83
 
 
  1465 00a8 062A     		cmp	r2, #6
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1513              		.loc 1 715 1 is_stmt 1 view -0
  1514              		.cfi_startproc
  1515              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 84
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 84
 
 
  1516              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1559 003a 43B9     		cbnz	r3, .L104
  726:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  1560              		.loc 1 726 3 discriminator 1 view .LVU475
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 85
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 85
 
 
  1561 003c 116A     		ldr	r1, [r2, #32]
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1604              	.LFE961:
  1606              		.section	.text.HAL_TIMEx_OCN_Start_IT,"ax",%progbits
  1607              		.align	1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 86
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 86
 
 
  1608              		.global	HAL_TIMEx_OCN_Start_IT
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1651 001c 3CD1     		bne	.L118
  761:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  1652              		.loc 1 761 3 is_stmt 0 discriminator 1 view .LVU499
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 87
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 87
 
 
  1653 001e 0223     		movs	r3, #2
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1694 0058 3FD0     		beq	.L125
  814:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     }
  1695              		.loc 1 814 7 is_stmt 1 view .LVU513
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 88
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 88
 
 
  1696 005a 1A68     		ldr	r2, [r3]
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1740 009c 0828     		cmp	r0, #8
  1741 009e 13D0     		beq	.L135
  761:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 89
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 89
 
 
  1742              		.loc 1 761 3 discriminator 7 view .LVU524
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1784 00d8 A9E7     		b	.L124
  1785              	.LVL121:
  1786              	.L125:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 90
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 90
 
 
  806:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       if (!IS_TIM_SLAVEMODE_TRIGGER_ENABLED(tmpsmcr))
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1830              		.cfi_endproc
  1831              	.LFE962:
  1833              		.section	.text.HAL_TIMEx_OCN_Stop_IT,"ax",%progbits
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 91
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 91
 
 
  1834              		.align	1
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1879              	.LVL129:
  872:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  1880              		.loc 1 872 5 is_stmt 0 view .LVU558
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 92
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 92
 
 
  1881 0020 2068     		ldr	r0, [r4]
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  885:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  1922              		.loc 1 885 5 view .LVU572
  885:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 93
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 93
 
 
  1923              		.loc 1 885 5 view .LVU573
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  1966 009a D360     		str	r3, [r2, #12]
  861:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     }
  1967              		.loc 1 861 7 view .LVU585
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 94
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 94
 
 
  869:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2015              		.loc 1 910 1 is_stmt 1 view -0
  2016              		.cfi_startproc
  2017              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 95
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 95
 
 
  2018              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  922:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  2059              		.loc 1 922 12 discriminator 1 view .LVU608
  2060 0028 D2B2     		uxtb	r2, r2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 96
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 96
 
 
  922:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2099              		.loc 1 947 7 is_stmt 1 view .LVU624
  947:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  2100              		.loc 1 947 17 is_stmt 0 view .LVU625
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 97
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 97
 
 
  2101 005a 626A     		ldr	r2, [r4, #36]
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2142 0096 00F08380 		beq	.L170
 1017:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     {
  2143              		.loc 1 1017 9 discriminator 1 view .LVU639
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 98
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 98
 
 
  2144 009a B3F1804F 		cmp	r3, #1073741824
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2188              	.LVL151:
  918:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  2189              		.loc 1 918 7 discriminator 7 view .LVU650
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 99
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 99
 
 
  2190 00d8 C0B2     		uxtb	r0, r0
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2233              		.loc 1 922 12 discriminator 7 view .LVU661
  2234 0110 D2B2     		uxtb	r2, r2
  922:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 100
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 100
 
 
  2235              		.loc 1 922 51 discriminator 7 view .LVU662
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  965:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  2277              		.loc 1 965 56 view .LVU675
  2278 0148 2649     		ldr	r1, .L189+4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 101
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 101
 
 
  2279 014a 1163     		str	r1, [r2, #48]
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2318              	.LVL160:
  985:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       htim->hdma[TIM_DMA_ID_CC3]->XferHalfCpltCallback = TIM_DMADelayPulseHalfCplt;
  2319              		.loc 1 985 52 view .LVU691
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 102
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 102
 
 
  2320 0178 D162     		str	r1, [r2, #44]
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2358 01a4 0A40     		ands	r2, r2, r1
  2359              	.LVL162:
 1020:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 103
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 103
 
 
  2360              		.loc 1 1020 7 is_stmt 1 view .LVU708
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2404 01d2 F6E7     		b	.L158
  2405              	.L179:
  996:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 104
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 104
 
 
  2406              		.loc 1 996 16 view .LVU719
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2456 0006 0429     		cmp	r1, #4
  2457 0008 36D0     		beq	.L192
  2458 000a 0829     		cmp	r1, #8
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 105
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 105
 
 
  2459 000c 3DD0     		beq	.L193
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1093:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  2501              		.loc 1 1093 5 view .LVU738
 1093:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 106
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 106
 
 
  2502              		.loc 1 1093 5 view .LVU739
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2544              		.loc 1 1068 7 is_stmt 1 view .LVU751
 1084:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  2545              		.loc 1 1084 3 view .LVU752
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 107
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 107
 
 
  2546 0088 CBE7     		b	.L195
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2589              	.L201:
 1053:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  2590              		.loc 1 1053 3 view .LVU764
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 108
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 108
 
 
  2591 00c2 0120     		movs	r0, #1
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2636 0014 002B     		cmp	r3, #0
  2637 0016 52D1     		bne	.L217
 1150:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 109
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 109
 
 
  2638              		.loc 1 1150 3 is_stmt 1 view .LVU776
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2680 0050 0429     		cmp	r1, #4
  2681 0052 08D0     		beq	.L221
 1144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 110
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 110
 
 
  2682              		.loc 1 1144 46 discriminator 5 view .LVU789
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2726 0098 C3E7     		b	.L212
  2727              	.L224:
 1150:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 111
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 111
 
 
  2728              		.loc 1 1150 3 discriminator 6 view .LVU800
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2770              	.L219:
  2771 00c6 0020     		movs	r0, #0
  2772 00c8 FAE7     		b	.L210
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 112
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 112
 
 
  2773              	.L226:
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2821 001c 116A     		ldr	r1, [r2, #32]
  2822 001e 40F24443 		movw	r3, #1092
  2823 0022 1942     		tst	r1, r3
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 113
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 113
 
 
  2824 0024 03D1     		bne	.L228
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2865 005e 082D     		cmp	r5, #8
  2866 0060 07D0     		beq	.L236
 1201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 114
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 114
 
 
  2867              		.loc 1 1201 3 discriminator 7 view .LVU834
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2913              		.loc 1 1227 46 view .LVU844
  2914 0006 0029     		cmp	r1, #0
  2915 0008 2DD1     		bne	.L238
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 115
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 115
 
 
 1227:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  2957              	.LVL205:
 1272:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  2958              		.loc 1 1272 5 is_stmt 1 view .LVU858
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 116
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 116
 
 
  2959 0042 2268     		ldr	r2, [r4]
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3002 0086 0123     		movne	r3, #1
  3003 0088 C5E7     		b	.L239
  3004              	.L258:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 117
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 117
 
 
 1227:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3047              		.loc 1 1263 3 view .LVU881
  3048 00c6 B2E7     		b	.L249
  3049              	.L260:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 118
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 118
 
 
 1233:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3090 00f6 0120     		movs	r0, #1
  3091              	.LVL213:
  3092              	.L242:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 119
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 119
 
 
 1291:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3141 0008 3DD0     		beq	.L264
  3142 000a 0829     		cmp	r1, #8
  3143 000c 41D0     		beq	.L265
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 120
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 120
 
 
  3144 000e 0029     		cmp	r1, #0
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3184 003e 03F01133 		and	r3, r3, #286331153
  3185 0042 23F08853 		bic	r3, r3, #285212672
  3186 0046 43B9     		cbnz	r3, .L269
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 121
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 121
 
 
 1353:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3228 0084 38BD     		pop	{r3, r4, r5, pc}
  3229              	.LVL223:
  3230              	.L264:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 122
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 122
 
 
 1324:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       break;
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3274              	.L274:
 1312:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  3275              		.loc 1 1312 3 view .LVU942
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 123
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 123
 
 
  3276 00c4 0120     		movs	r0, #1
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3321              		.loc 1 1389 46 discriminator 1 view .LVU953
  3322 0012 0228     		cmp	r0, #2
  3323 0014 14BF     		ite	ne
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 124
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 124
 
 
  3324 0016 0020     		movne	r0, #0
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1414:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       htim->hdma[TIM_DMA_ID_CC1]->XferHalfCpltCallback = TIM_DMADelayPulseHalfCplt;
  3364              		.loc 1 1414 17 is_stmt 0 view .LVU968
  3365 004e 626A     		ldr	r2, [r4, #36]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 125
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 125
 
 
 1414:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       htim->hdma[TIM_DMA_ID_CC1]->XferHalfCpltCallback = TIM_DMADelayPulseHalfCplt;
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3404 007c 0422     		movs	r2, #4
  3405 007e 2946     		mov	r1, r5
  3406 0080 2068     		ldr	r0, [r4]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 126
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 126
 
 
  3407 0082 FFF7FEFF 		bl	TIM_CCxNChannelCmd
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3450              	.L308:
 1389:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  3451              		.loc 1 1389 7 discriminator 4 view .LVU996
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 127
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 127
 
 
  3452 00c4 90F84500 		ldrb	r0, [r0, #69]	@ zero_extendqisi2
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3495              		.loc 1 1393 12 discriminator 4 view .LVU1007
  3496 00fc 94F84520 		ldrb	r2, [r4, #69]	@ zero_extendqisi2
  3497              	.LVL242:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 128
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 128
 
 
 1393:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1409:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  3542              		.loc 1 1409 3 is_stmt 1 view .LVU1018
  3543              	.L291:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 129
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 129
 
 
 1435:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       htim->hdma[TIM_DMA_ID_CC2]->XferHalfCpltCallback = TIM_DMADelayPulseHalfCplt;
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1479:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   {
  3582              		.loc 1 1479 3 view .LVU1035
  3583 016c 86E7     		b	.L294
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 130
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 130
 
 
  3584              	.LVL247:
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1470:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       break;
  3622              		.loc 1 1470 7 is_stmt 1 view .LVU1052
  3623 0194 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 131
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 131
 
 
  3624 0196 D368     		ldr	r3, [r2, #12]
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3665 01c2 70BD     		pop	{r4, r5, r6, pc}
  3666              	.LVL255:
  3667              	.L299:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 132
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 132
 
 
 1397:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     }
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3718              		@ args = 0, pretend = 0, frame = 0
  3719              		@ frame_needed = 0, uses_anonymous_args = 0
 1518:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 133
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 133
 
 
  3720              		.loc 1 1518 1 is_stmt 0 view .LVU1072
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3762              		.loc 1 1561 5 view .LVU1084
  3763 002c 2268     		ldr	r2, [r4]
  3764 002e 136A     		ldr	r3, [r2, #32]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 134
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 134
 
 
  3765 0030 03F01133 		and	r3, r3, #286331153
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3807 0076 38BD     		pop	{r3, r4, r5, pc}
  3808              	.LVL264:
  3809              	.L317:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 135
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 135
 
 
 1537:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       (void)HAL_DMA_Abort_IT(htim->hdma[TIM_DMA_ID_CC2]);
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3849              		.loc 1 1567 5 discriminator 7 view .LVU1111
  3850 00a4 0123     		movs	r3, #1
  3851 00a6 84F84730 		strb	r3, [r4, #71]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 136
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 136
 
 
  3852 00aa 0020     		movs	r0, #0
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3900              		.loc 1 1610 77 is_stmt 0 view .LVU1119
  3901 0004 8E46     		mov	lr, r1
  3902 0006 C1B9     		cbnz	r1, .L333
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 137
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 137
 
 
 1610:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_1_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_1);
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3941 0030 BCF1010F 		cmp	ip, #1
  3942 0034 03D0     		beq	.L338
 1625:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 138
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 138
 
 
  3943              		.loc 1 1625 12 view .LVU1136
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  3984              		.loc 1 1639 3 view .LVU1149
  3985 0064 2268     		ldr	r2, [r4]
  3986 0066 536C     		ldr	r3, [r2, #68]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 139
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 139
 
 
  3987 0068 43F40043 		orr	r3, r3, #32768
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4034              		.loc 1 1659 3 is_stmt 1 view .LVU1158
 1659:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  4035              		.loc 1 1659 77 is_stmt 0 view .LVU1159
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 140
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 140
 
 
  4036 0004 0029     		cmp	r1, #0
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4078 0040 03F01133 		and	r3, r3, #286331153
  4079 0044 23F08853 		bic	r3, r3, #285212672
  4080 0048 43B9     		cbnz	r3, .L342
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 141
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 141
 
 
 1672:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4126              		@ frame_needed = 0, uses_anonymous_args = 0
 1697:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   uint32_t input_channel = (OutputChannel == TIM_CHANNEL_1) ? TIM_CHANNEL_2 : TIM_CHANNEL_1;
  4127              		.loc 1 1697 1 is_stmt 0 view .LVU1183
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 142
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 142
 
 
  4128 0000 38B5     		push	{r3, r4, r5, lr}
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1708:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       || (channel_2_state != HAL_TIM_CHANNEL_STATE_READY)
  4168              		.loc 1 1708 6 is_stmt 0 view .LVU1198
  4169 0024 0128     		cmp	r0, #1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 143
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 143
 
 
  4170 0026 2ED1     		bne	.L349
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4210              		.loc 1 1726 3 is_stmt 1 view .LVU1212
  4211 005a 2268     		ldr	r2, [r4]
  4212 005c D368     		ldr	r3, [r2, #12]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 144
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 144
 
 
  4213 005e 43F00403 		orr	r3, r3, #4
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4256              	.LFE974:
  4258              		.section	.text.HAL_TIMEx_OnePulseN_Stop_IT,"ax",%progbits
  4259              		.align	1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 145
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 145
 
 
  4260              		.global	HAL_TIMEx_OnePulseN_Stop_IT
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4305 0022 FFF7FEFF 		bl	TIM_CCxNChannelCmd
  4306              	.LVL321:
 1766:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 146
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 146
 
 
  4307              		.loc 1 1766 3 is_stmt 1 view .LVU1234
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4350 0070 0123     		movs	r3, #1
  4351 0072 84F83E30 		strb	r3, [r4, #62]
 1776:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   TIM_CHANNEL_N_STATE_SET(htim, TIM_CHANNEL_1, HAL_TIM_CHANNEL_STATE_READY);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 147
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 147
 
 
  4352              		.loc 1 1776 3 view .LVU1246
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1833:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Check the parameters */
  4396              		.loc 1 1833 1 view .LVU1259
  4397 000a 10B4     		push	{r4}
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 148
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 148
 
 
  4398              	.LCFI30:
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4437 0036 4168     		ldr	r1, [r0, #4]
 1849:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Select the Commutation event source */
  4438              		.loc 1 1849 23 view .LVU1275
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 149
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 149
 
 
  4439 0038 41F00101 		orr	r1, r1, #1
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4477              	.LCFI31:
  4478              		.cfi_remember_state
  4479              		.cfi_restore 4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 150
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 150
 
 
  4480              		.cfi_def_cfa_offset 0
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4526 0008 35D0     		beq	.L375
 1889:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Check the parameters */
  4527              		.loc 1 1889 1 view .LVU1302
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 151
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 151
 
 
  4528 000a 10B4     		push	{r4}
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4567              		.loc 1 1905 17 view .LVU1317
  4568 0036 4168     		ldr	r1, [r0, #4]
 1905:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Select the Commutation event source */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 152
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 152
 
 
  4569              		.loc 1 1905 23 view .LVU1318
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4607 006a 5DF8044B 		ldr	r4, [sp], #4
  4608              	.LCFI35:
  4609              		.cfi_remember_state
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 153
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 153
 
 
  4610              		.cfi_restore 4
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4656 0006 0128     		cmp	r0, #1
  4657 0008 3ED0     		beq	.L385
 1946:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Check the parameters */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 154
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 154
 
 
  4658              		.loc 1 1946 1 view .LVU1345
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1962:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Select the Commutation event source */
  4698              		.loc 1 1962 17 view .LVU1360
  4699 0036 4168     		ldr	r1, [r0, #4]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 155
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 155
 
 
 1962:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Select the Commutation event source */
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 1972:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  4736              		.loc 1 1972 57 view .LVU1379
  4737 005e 0D49     		ldr	r1, .L390+8
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 156
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 156
 
 
  4738 0060 5163     		str	r1, [r2, #52]
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4782 0090 00000000 		.word	TIMEx_DMACommutationHalfCplt
  4783 0094 00000000 		.word	TIM_DMAError
  4784              		.cfi_endproc
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 157
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 157
 
 
  4785              	.LFE978:
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4827              		.loc 1 2011 3 is_stmt 1 view .LVU1403
 2011:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  4828              		.loc 1 2011 16 is_stmt 0 view .LVU1404
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 158
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 158
 
 
  4829 0018 0068     		ldr	r0, [r0]
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4867 0036 B2F1804F 		cmp	r2, #1073741824
  4868 003a 04D1     		bne	.L396
  4869              	.L395:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 159
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 159
 
 
 2039:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     /* Set master mode */
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2023:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     /* Select the TRGO2 source*/
  4909              		.loc 1 2023 5 view .LVU1436
 2023:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****     /* Select the TRGO2 source*/
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 160
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 160
 
 
  4910              		.loc 1 2023 12 is_stmt 0 view .LVU1437
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  4956              		.loc 1 2074 3 view .LVU1447
 2075:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   assert_param(IS_TIM_LOCK_LEVEL(sBreakDeadTimeConfig->LockLevel));
  4957              		.loc 1 2075 3 view .LVU1448
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 161
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 161
 
 
 2076:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   assert_param(IS_TIM_DEADTIME(sBreakDeadTimeConfig->DeadTime));
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2093:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   MODIFY_REG(tmpbdtr, TIM_BDTR_OSSR, sBreakDeadTimeConfig->OffStateRunMode);
  4995              		.loc 1 2093 3 is_stmt 0 view .LVU1466
  4996 0020 4868     		ldr	r0, [r1, #4]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 162
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 162
 
 
  4997              	.LVL362:
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5037              		.loc 1 2098 3 is_stmt 1 view .LVU1480
  5038 0044 23F47023 		bic	r3, r3, #983040
  5039              	.LVL376:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 163
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 163
 
 
 2098:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   MODIFY_REG(tmpbdtr, TIM_BDTR_BKBID, sBreakDeadTimeConfig->BreakAFMode);
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5079 006a 7047     		bx	lr
  5080              	.LVL383:
  5081              	.L413:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 164
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 164
 
 
  5082              	.LCFI48:
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5121              	.LVL394:
 2113:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   }
  5122              		.loc 1 2113 5 view .LVU1511
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 165
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 165
 
 
  5123 008e E6E7     		b	.L407
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5166              		.loc 1 2148 3 view .LVU1524
 2149:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   assert_param(IS_TIM_BREAKINPUTSOURCE_POLARITY(sBreakInputConfig->Polarity));
  5167              		.loc 1 2149 3 view .LVU1525
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 166
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 166
 
 
 2150:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5209 0036 04E0     		b	.L418
  5210              	.L424:
 2179:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****       break;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 167
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 167
 
 
  5211              		.loc 1 2179 28 view .LVU1539
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5251              	.LVL405:
 2203:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  5252              		.loc 1 2203 44 view .LVU1554
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 168
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 168
 
 
  5253 0060 A940     		lsls	r1, r1, r5
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5290              		.loc 1 2216 20 is_stmt 0 view .LVU1571
  5291 0082 1C68     		ldr	r4, [r3]
 2216:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 169
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 169
 
 
  5292              		.loc 1 2216 14 view .LVU1572
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5331              		.cfi_def_cfa_offset 0
  5332              		.cfi_restore 4
  5333              		.cfi_restore 5
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 170
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 170
 
 
  5334              		.cfi_restore 6
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2302:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  5378              		.loc 1 2302 11 is_stmt 0 view .LVU1600
  5379 0012 0268     		ldr	r2, [r0]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 171
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 171
 
 
 2302:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2326:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  5420              		.loc 1 2326 3 discriminator 4 view .LVU1615
  5421 0040 6FF00302 		mvn	r2, #3
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 172
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 172
 
 
  5422              	.L436:
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5464              	.LVL429:
  5465              	.L437:
  5466              	.LCFI55:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 173
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 173
 
 
  5467              		.cfi_def_cfa_offset 0
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2356:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  5513              		.loc 1 2356 3 view .LVU1638
 2356:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 174
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 174
 
 
  5514              		.loc 1 2356 15 is_stmt 0 view .LVU1639
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5552              	.L449:
 2354:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
  5553              		.loc 1 2354 3 discriminator 1 view .LVU1656
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 175
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 175
 
 
  5554 003a 0220     		movs	r0, #2
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2400:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****           (READ_BIT(tmpbdtr, TIM_BDTR_MOE) == 0U))
  5598              		.loc 1 2400 65 is_stmt 0 view .LVU1669
  5599 0010 0D4B     		ldr	r3, .L462
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 176
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 176
 
 
  5600 0012 0B40     		ands	r3, r3, r1
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5639              		.loc 1 2426 1 is_stmt 0 view .LVU1684
  5640 003a 7047     		bx	lr
  5641              	.LVL445:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 177
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 177
 
 
  5642              	.L461:
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5688              		.loc 1 2448 3 view .LVU1694
  5689 0004 0129     		cmp	r1, #1
  5690 0006 03D0     		beq	.L465
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 178
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 178
 
 
  5691 0008 0229     		cmp	r1, #2
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2460:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****           {
  5731              		.loc 1 2460 16 is_stmt 0 view .LVU1709
  5732 002e FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 179
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 179
 
 
  5733              	.LVL455:
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
 2480:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****         while (READ_BIT(htim->Instance->BDTR, TIM_BDTR_BK2DSRM) != 0UL)
  5773              		.loc 1 2480 21 view .LVU1724
  5774 005c 0546     		mov	r5, r0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 180
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 180
 
 
  5775              	.LVL460:
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5818              	HAL_TIMEx_CommutCallback:
  5819              	.LVL462:
  5820              	.LFB986:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 181
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 181
 
 
 2529:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c ****   /* Prevent unused argument(s) compilation warning */
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5866              	.LFE992:
  5868              		.section	.text.HAL_TIMEx_CommutHalfCpltCallback,"ax",%progbits
  5869              		.align	1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 182
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 182
 
 
  5870              		.weak	HAL_TIMEx_CommutHalfCpltCallback
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5917              		.loc 1 2678 3 is_stmt 1 view .LVU1758
  5918 000a FFF7FEFF 		bl	HAL_TIMEx_CommutHalfCpltCallback
  5919              	.LVL469:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 183
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 183
 
 
 2680:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  5972              		.thumb_func
  5974              	HAL_TIMEx_HallSensor_GetState:
  5975              	.LVL472:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 184
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 184
 
 
  5976              	.LFB990:
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  6020 000a 0429     		cmp	r1, #4
  6021 000c 05D0     		beq	.L495
 2627:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 185
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 185
 
 
  6022              		.loc 1 2627 19 discriminator 5 view .LVU1778
@@ -11090,127 +11090,127 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 1
  6061              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h"
  6062              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim_ex.h"
  6063              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 186
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 186
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_tim_ex.c
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:21     .text.TIM_CCxNChannelCmd:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:26     .text.TIM_CCxNChannelCmd:00000000 TIM_CCxNChannelCmd
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:64     .text.TIM_DMAErrorCCxN:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:69     .text.TIM_DMAErrorCCxN:00000000 TIM_DMAErrorCCxN
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:149    .text.TIM_DMADelayPulseNCplt:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:154    .text.TIM_DMADelayPulseNCplt:00000000 TIM_DMADelayPulseNCplt
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:253    .text.HAL_TIMEx_HallSensor_MspInit:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:259    .text.HAL_TIMEx_HallSensor_MspInit:00000000 HAL_TIMEx_HallSensor_MspInit
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:274    .text.HAL_TIMEx_HallSensor_Init:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:280    .text.HAL_TIMEx_HallSensor_Init:00000000 HAL_TIMEx_HallSensor_Init
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:499    .text.HAL_TIMEx_HallSensor_MspDeInit:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:505    .text.HAL_TIMEx_HallSensor_MspDeInit:00000000 HAL_TIMEx_HallSensor_MspDeInit
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:520    .text.HAL_TIMEx_HallSensor_DeInit:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:526    .text.HAL_TIMEx_HallSensor_DeInit:00000000 HAL_TIMEx_HallSensor_DeInit
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:596    .text.HAL_TIMEx_HallSensor_Start:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:602    .text.HAL_TIMEx_HallSensor_Start:00000000 HAL_TIMEx_HallSensor_Start
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:749    .text.HAL_TIMEx_HallSensor_Start:00000090 $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:755    .text.HAL_TIMEx_HallSensor_Stop:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:761    .text.HAL_TIMEx_HallSensor_Stop:00000000 HAL_TIMEx_HallSensor_Stop
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:820    .text.HAL_TIMEx_HallSensor_Start_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:826    .text.HAL_TIMEx_HallSensor_Start_IT:00000000 HAL_TIMEx_HallSensor_Start_IT
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:981    .text.HAL_TIMEx_HallSensor_Start_IT:0000009c $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:987    .text.HAL_TIMEx_HallSensor_Stop_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:993    .text.HAL_TIMEx_HallSensor_Stop_IT:00000000 HAL_TIMEx_HallSensor_Stop_IT
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1057   .text.HAL_TIMEx_HallSensor_Start_DMA:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1063   .text.HAL_TIMEx_HallSensor_Start_DMA:00000000 HAL_TIMEx_HallSensor_Start_DMA
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1241   .text.HAL_TIMEx_HallSensor_Start_DMA:000000b4 $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1250   .text.HAL_TIMEx_HallSensor_Stop_DMA:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1256   .text.HAL_TIMEx_HallSensor_Stop_DMA:00000000 HAL_TIMEx_HallSensor_Stop_DMA
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1321   .text.HAL_TIMEx_OCN_Start:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1327   .text.HAL_TIMEx_OCN_Start:00000000 HAL_TIMEx_OCN_Start
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1498   .text.HAL_TIMEx_OCN_Start:000000cc $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1504   .text.HAL_TIMEx_OCN_Stop:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1510   .text.HAL_TIMEx_OCN_Stop:00000000 HAL_TIMEx_OCN_Stop
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1607   .text.HAL_TIMEx_OCN_Start_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1613   .text.HAL_TIMEx_OCN_Start_IT:00000000 HAL_TIMEx_OCN_Start_IT
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1828   .text.HAL_TIMEx_OCN_Start_IT:00000104 $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1834   .text.HAL_TIMEx_OCN_Stop_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:1840   .text.HAL_TIMEx_OCN_Stop_IT:00000000 HAL_TIMEx_OCN_Stop_IT
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2006   .text.HAL_TIMEx_OCN_Start_DMA:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2012   .text.HAL_TIMEx_OCN_Start_DMA:00000000 HAL_TIMEx_OCN_Start_DMA
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2420   .text.HAL_TIMEx_OCN_Start_DMA:000001e0 $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2429   .text.HAL_TIMEx_OCN_Stop_DMA:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2435   .text.HAL_TIMEx_OCN_Stop_DMA:00000000 HAL_TIMEx_OCN_Stop_DMA
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2599   .text.HAL_TIMEx_PWMN_Start:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2605   .text.HAL_TIMEx_PWMN_Start:00000000 HAL_TIMEx_PWMN_Start
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2776   .text.HAL_TIMEx_PWMN_Start:000000cc $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2782   .text.HAL_TIMEx_PWMN_Stop:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2788   .text.HAL_TIMEx_PWMN_Stop:00000000 HAL_TIMEx_PWMN_Stop
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2885   .text.HAL_TIMEx_PWMN_Start_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:2891   .text.HAL_TIMEx_PWMN_Start_IT:00000000 HAL_TIMEx_PWMN_Start_IT
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:3106   .text.HAL_TIMEx_PWMN_Start_IT:00000104 $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:3112   .text.HAL_TIMEx_PWMN_Stop_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:3118   .text.HAL_TIMEx_PWMN_Stop_IT:00000000 HAL_TIMEx_PWMN_Stop_IT
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:3284   .text.HAL_TIMEx_PWMN_Start_DMA:00000000 $t
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 187
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:21     .text.TIM_CCxNChannelCmd:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:26     .text.TIM_CCxNChannelCmd:00000000 TIM_CCxNChannelCmd
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:64     .text.TIM_DMAErrorCCxN:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:69     .text.TIM_DMAErrorCCxN:00000000 TIM_DMAErrorCCxN
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:149    .text.TIM_DMADelayPulseNCplt:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:154    .text.TIM_DMADelayPulseNCplt:00000000 TIM_DMADelayPulseNCplt
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:253    .text.HAL_TIMEx_HallSensor_MspInit:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:259    .text.HAL_TIMEx_HallSensor_MspInit:00000000 HAL_TIMEx_HallSensor_MspInit
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:274    .text.HAL_TIMEx_HallSensor_Init:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:280    .text.HAL_TIMEx_HallSensor_Init:00000000 HAL_TIMEx_HallSensor_Init
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:499    .text.HAL_TIMEx_HallSensor_MspDeInit:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:505    .text.HAL_TIMEx_HallSensor_MspDeInit:00000000 HAL_TIMEx_HallSensor_MspDeInit
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:520    .text.HAL_TIMEx_HallSensor_DeInit:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:526    .text.HAL_TIMEx_HallSensor_DeInit:00000000 HAL_TIMEx_HallSensor_DeInit
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:596    .text.HAL_TIMEx_HallSensor_Start:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:602    .text.HAL_TIMEx_HallSensor_Start:00000000 HAL_TIMEx_HallSensor_Start
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:749    .text.HAL_TIMEx_HallSensor_Start:00000090 $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:755    .text.HAL_TIMEx_HallSensor_Stop:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:761    .text.HAL_TIMEx_HallSensor_Stop:00000000 HAL_TIMEx_HallSensor_Stop
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:820    .text.HAL_TIMEx_HallSensor_Start_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:826    .text.HAL_TIMEx_HallSensor_Start_IT:00000000 HAL_TIMEx_HallSensor_Start_IT
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:981    .text.HAL_TIMEx_HallSensor_Start_IT:0000009c $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:987    .text.HAL_TIMEx_HallSensor_Stop_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:993    .text.HAL_TIMEx_HallSensor_Stop_IT:00000000 HAL_TIMEx_HallSensor_Stop_IT
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1057   .text.HAL_TIMEx_HallSensor_Start_DMA:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1063   .text.HAL_TIMEx_HallSensor_Start_DMA:00000000 HAL_TIMEx_HallSensor_Start_DMA
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1241   .text.HAL_TIMEx_HallSensor_Start_DMA:000000b4 $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1250   .text.HAL_TIMEx_HallSensor_Stop_DMA:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1256   .text.HAL_TIMEx_HallSensor_Stop_DMA:00000000 HAL_TIMEx_HallSensor_Stop_DMA
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1321   .text.HAL_TIMEx_OCN_Start:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1327   .text.HAL_TIMEx_OCN_Start:00000000 HAL_TIMEx_OCN_Start
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1498   .text.HAL_TIMEx_OCN_Start:000000cc $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1504   .text.HAL_TIMEx_OCN_Stop:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1510   .text.HAL_TIMEx_OCN_Stop:00000000 HAL_TIMEx_OCN_Stop
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1607   .text.HAL_TIMEx_OCN_Start_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1613   .text.HAL_TIMEx_OCN_Start_IT:00000000 HAL_TIMEx_OCN_Start_IT
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1828   .text.HAL_TIMEx_OCN_Start_IT:00000104 $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1834   .text.HAL_TIMEx_OCN_Stop_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:1840   .text.HAL_TIMEx_OCN_Stop_IT:00000000 HAL_TIMEx_OCN_Stop_IT
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2006   .text.HAL_TIMEx_OCN_Start_DMA:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2012   .text.HAL_TIMEx_OCN_Start_DMA:00000000 HAL_TIMEx_OCN_Start_DMA
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2420   .text.HAL_TIMEx_OCN_Start_DMA:000001e0 $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2429   .text.HAL_TIMEx_OCN_Stop_DMA:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2435   .text.HAL_TIMEx_OCN_Stop_DMA:00000000 HAL_TIMEx_OCN_Stop_DMA
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2599   .text.HAL_TIMEx_PWMN_Start:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2605   .text.HAL_TIMEx_PWMN_Start:00000000 HAL_TIMEx_PWMN_Start
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2776   .text.HAL_TIMEx_PWMN_Start:000000cc $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2782   .text.HAL_TIMEx_PWMN_Stop:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2788   .text.HAL_TIMEx_PWMN_Stop:00000000 HAL_TIMEx_PWMN_Stop
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2885   .text.HAL_TIMEx_PWMN_Start_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:2891   .text.HAL_TIMEx_PWMN_Start_IT:00000000 HAL_TIMEx_PWMN_Start_IT
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:3106   .text.HAL_TIMEx_PWMN_Start_IT:00000104 $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:3112   .text.HAL_TIMEx_PWMN_Stop_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:3118   .text.HAL_TIMEx_PWMN_Stop_IT:00000000 HAL_TIMEx_PWMN_Stop_IT
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:3284   .text.HAL_TIMEx_PWMN_Start_DMA:00000000 $t
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 187
 
 
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:3290   .text.HAL_TIMEx_PWMN_Start_DMA:00000000 HAL_TIMEx_PWMN_Start_DMA
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:3698   .text.HAL_TIMEx_PWMN_Start_DMA:000001e0 $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:3707   .text.HAL_TIMEx_PWMN_Stop_DMA:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:3713   .text.HAL_TIMEx_PWMN_Stop_DMA:00000000 HAL_TIMEx_PWMN_Stop_DMA
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:3877   .text.HAL_TIMEx_OnePulseN_Start:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:3883   .text.HAL_TIMEx_OnePulseN_Start:00000000 HAL_TIMEx_OnePulseN_Start
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4012   .text.HAL_TIMEx_OnePulseN_Stop:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4018   .text.HAL_TIMEx_OnePulseN_Stop:00000000 HAL_TIMEx_OnePulseN_Stop
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4114   .text.HAL_TIMEx_OnePulseN_Start_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4120   .text.HAL_TIMEx_OnePulseN_Start_IT:00000000 HAL_TIMEx_OnePulseN_Start_IT
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4259   .text.HAL_TIMEx_OnePulseN_Stop_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4265   .text.HAL_TIMEx_OnePulseN_Stop_IT:00000000 HAL_TIMEx_OnePulseN_Stop_IT
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4371   .text.HAL_TIMEx_ConfigCommutEvent:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4377   .text.HAL_TIMEx_ConfigCommutEvent:00000000 HAL_TIMEx_ConfigCommutEvent
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4502   .text.HAL_TIMEx_ConfigCommutEvent_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4508   .text.HAL_TIMEx_ConfigCommutEvent_IT:00000000 HAL_TIMEx_ConfigCommutEvent_IT
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4633   .text.HAL_TIMEx_ConfigCommutEvent_DMA:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4639   .text.HAL_TIMEx_ConfigCommutEvent_DMA:00000000 HAL_TIMEx_ConfigCommutEvent_DMA
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4781   .text.HAL_TIMEx_ConfigCommutEvent_DMA:0000008c $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5839   .text.TIMEx_DMACommutationCplt:00000000 TIMEx_DMACommutationCplt
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5896   .text.TIMEx_DMACommutationHalfCplt:00000000 TIMEx_DMACommutationHalfCplt
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4788   .text.HAL_TIMEx_MasterConfigSynchronization:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4794   .text.HAL_TIMEx_MasterConfigSynchronization:00000000 HAL_TIMEx_MasterConfigSynchronization
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4935   .text.HAL_TIMEx_MasterConfigSynchronization:00000064 $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4940   .text.HAL_TIMEx_ConfigBreakDeadTime:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:4946   .text.HAL_TIMEx_ConfigBreakDeadTime:00000000 HAL_TIMEx_ConfigBreakDeadTime
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5137   .text.HAL_TIMEx_ConfigBreakDeadTime:00000094 $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5142   .text.HAL_TIMEx_ConfigBreakInput:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5148   .text.HAL_TIMEx_ConfigBreakInput:00000000 HAL_TIMEx_ConfigBreakInput
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5344   .text.HAL_TIMEx_RemapConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5350   .text.HAL_TIMEx_RemapConfig:00000000 HAL_TIMEx_RemapConfig
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5478   .text.HAL_TIMEx_RemapConfig:00000070 $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5483   .text.HAL_TIMEx_GroupChannel5:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5489   .text.HAL_TIMEx_GroupChannel5:00000000 HAL_TIMEx_GroupChannel5
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5562   .text.HAL_TIMEx_DisarmBreakInput:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5568   .text.HAL_TIMEx_DisarmBreakInput:00000000 HAL_TIMEx_DisarmBreakInput
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5655   .text.HAL_TIMEx_DisarmBreakInput:00000048 $d
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5661   .text.HAL_TIMEx_ReArmBreakInput:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5667   .text.HAL_TIMEx_ReArmBreakInput:00000000 HAL_TIMEx_ReArmBreakInput
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5812   .text.HAL_TIMEx_CommutCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5818   .text.HAL_TIMEx_CommutCallback:00000000 HAL_TIMEx_CommutCallback
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5833   .text.TIMEx_DMACommutationCplt:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5869   .text.HAL_TIMEx_CommutHalfCpltCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5875   .text.HAL_TIMEx_CommutHalfCpltCallback:00000000 HAL_TIMEx_CommutHalfCpltCallback
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5890   .text.TIMEx_DMACommutationHalfCplt:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5926   .text.HAL_TIMEx_BreakCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5932   .text.HAL_TIMEx_BreakCallback:00000000 HAL_TIMEx_BreakCallback
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5947   .text.HAL_TIMEx_Break2Callback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5953   .text.HAL_TIMEx_Break2Callback:00000000 HAL_TIMEx_Break2Callback
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5968   .text.HAL_TIMEx_HallSensor_GetState:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5974   .text.HAL_TIMEx_HallSensor_GetState:00000000 HAL_TIMEx_HallSensor_GetState
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5992   .text.HAL_TIMEx_GetChannelNState:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s:5998   .text.HAL_TIMEx_GetChannelNState:00000000 HAL_TIMEx_GetChannelNState
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:3290   .text.HAL_TIMEx_PWMN_Start_DMA:00000000 HAL_TIMEx_PWMN_Start_DMA
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:3698   .text.HAL_TIMEx_PWMN_Start_DMA:000001e0 $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:3707   .text.HAL_TIMEx_PWMN_Stop_DMA:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:3713   .text.HAL_TIMEx_PWMN_Stop_DMA:00000000 HAL_TIMEx_PWMN_Stop_DMA
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:3877   .text.HAL_TIMEx_OnePulseN_Start:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:3883   .text.HAL_TIMEx_OnePulseN_Start:00000000 HAL_TIMEx_OnePulseN_Start
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4012   .text.HAL_TIMEx_OnePulseN_Stop:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4018   .text.HAL_TIMEx_OnePulseN_Stop:00000000 HAL_TIMEx_OnePulseN_Stop
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4114   .text.HAL_TIMEx_OnePulseN_Start_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4120   .text.HAL_TIMEx_OnePulseN_Start_IT:00000000 HAL_TIMEx_OnePulseN_Start_IT
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4259   .text.HAL_TIMEx_OnePulseN_Stop_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4265   .text.HAL_TIMEx_OnePulseN_Stop_IT:00000000 HAL_TIMEx_OnePulseN_Stop_IT
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4371   .text.HAL_TIMEx_ConfigCommutEvent:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4377   .text.HAL_TIMEx_ConfigCommutEvent:00000000 HAL_TIMEx_ConfigCommutEvent
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4502   .text.HAL_TIMEx_ConfigCommutEvent_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4508   .text.HAL_TIMEx_ConfigCommutEvent_IT:00000000 HAL_TIMEx_ConfigCommutEvent_IT
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4633   .text.HAL_TIMEx_ConfigCommutEvent_DMA:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4639   .text.HAL_TIMEx_ConfigCommutEvent_DMA:00000000 HAL_TIMEx_ConfigCommutEvent_DMA
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4781   .text.HAL_TIMEx_ConfigCommutEvent_DMA:0000008c $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5839   .text.TIMEx_DMACommutationCplt:00000000 TIMEx_DMACommutationCplt
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5896   .text.TIMEx_DMACommutationHalfCplt:00000000 TIMEx_DMACommutationHalfCplt
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4788   .text.HAL_TIMEx_MasterConfigSynchronization:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4794   .text.HAL_TIMEx_MasterConfigSynchronization:00000000 HAL_TIMEx_MasterConfigSynchronization
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4935   .text.HAL_TIMEx_MasterConfigSynchronization:00000064 $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4940   .text.HAL_TIMEx_ConfigBreakDeadTime:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:4946   .text.HAL_TIMEx_ConfigBreakDeadTime:00000000 HAL_TIMEx_ConfigBreakDeadTime
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5137   .text.HAL_TIMEx_ConfigBreakDeadTime:00000094 $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5142   .text.HAL_TIMEx_ConfigBreakInput:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5148   .text.HAL_TIMEx_ConfigBreakInput:00000000 HAL_TIMEx_ConfigBreakInput
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5344   .text.HAL_TIMEx_RemapConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5350   .text.HAL_TIMEx_RemapConfig:00000000 HAL_TIMEx_RemapConfig
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5478   .text.HAL_TIMEx_RemapConfig:00000070 $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5483   .text.HAL_TIMEx_GroupChannel5:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5489   .text.HAL_TIMEx_GroupChannel5:00000000 HAL_TIMEx_GroupChannel5
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5562   .text.HAL_TIMEx_DisarmBreakInput:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5568   .text.HAL_TIMEx_DisarmBreakInput:00000000 HAL_TIMEx_DisarmBreakInput
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5655   .text.HAL_TIMEx_DisarmBreakInput:00000048 $d
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5661   .text.HAL_TIMEx_ReArmBreakInput:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5667   .text.HAL_TIMEx_ReArmBreakInput:00000000 HAL_TIMEx_ReArmBreakInput
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5812   .text.HAL_TIMEx_CommutCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5818   .text.HAL_TIMEx_CommutCallback:00000000 HAL_TIMEx_CommutCallback
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5833   .text.TIMEx_DMACommutationCplt:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5869   .text.HAL_TIMEx_CommutHalfCpltCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5875   .text.HAL_TIMEx_CommutHalfCpltCallback:00000000 HAL_TIMEx_CommutHalfCpltCallback
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5890   .text.TIMEx_DMACommutationHalfCplt:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5926   .text.HAL_TIMEx_BreakCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5932   .text.HAL_TIMEx_BreakCallback:00000000 HAL_TIMEx_BreakCallback
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5947   .text.HAL_TIMEx_Break2Callback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5953   .text.HAL_TIMEx_Break2Callback:00000000 HAL_TIMEx_Break2Callback
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5968   .text.HAL_TIMEx_HallSensor_GetState:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5974   .text.HAL_TIMEx_HallSensor_GetState:00000000 HAL_TIMEx_HallSensor_GetState
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5992   .text.HAL_TIMEx_GetChannelNState:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s:5998   .text.HAL_TIMEx_GetChannelNState:00000000 HAL_TIMEx_GetChannelNState
 
 UNDEFINED SYMBOLS
 HAL_TIM_ErrorCallback
 HAL_TIM_PWM_PulseFinishedCallback
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccYiBPWM.s 			page 188
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccilPFxw.s 			page 188
 
 
 TIM_Base_SetConfig

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
   27:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****                         ##### How to use this driver #####
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   ==============================================================================
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   [..]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 2
 
 
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     (+) Enable the RTC domain access.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
   84:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   *** Smooth Digital Calibration configuration ***
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   ================================================
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 3
 
 
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   [..]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  141:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   */
  142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
  143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** /** @defgroup RTCEx_Exported_Functions_Group1 RTC Timestamp and Tamper functions
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 4
 
 
  144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @brief    RTC Timestamp and Tamper functions
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  189:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   __HAL_LOCK(hrtc);
   39              		.loc 1 189 3 view .LVU5
   40              		.loc 1 189 3 view .LVU6
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 5
 
 
   41 0000 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
   82 002a 1968     		ldr	r1, [r3]
   83 002c 5324     		movs	r4, #83
   84 002e 4C62     		str	r4, [r1, #36]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 6
 
 
   85              		.loc 1 201 3 view .LVU24
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  222:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   __HAL_UNLOCK(hrtc);
  119              		.loc 1 222 3 is_stmt 1 view .LVU37
  120              		.loc 1 222 3 view .LVU38
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 7
 
 
  121 0060 0020     		movs	r0, #0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  151              		.loc 1 247 1 is_stmt 1 view -0
  152              		.cfi_startproc
  153              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 8
 
 
  154              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  189 001c 22F40062 		bic	r2, r2, #2048
  190 0020 22F00802 		bic	r2, r2, #8
  191              	.LVL12:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 9
 
 
  266:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  228 004e 8A68     		ldr	r2, [r1, #8]
  229 0050 42F40062 		orr	r2, r2, #2048
  230 0054 8A60     		str	r2, [r1, #8]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 10
 
 
  284:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  266              	.LVL16:
  267              	.L10:
  259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 11
 
 
  268              		.loc 1 259 3 discriminator 1 view .LVU89
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  309              		.loc 1 317 15 is_stmt 0 view .LVU99
  310 0010 0222     		movs	r2, #2
  311 0012 80F82120 		strb	r2, [r0, #33]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 12
 
 
  318:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  333:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
  334:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
  351              		.loc 1 334 3 view .LVU117
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 13
 
 
  352              		.loc 1 334 15 is_stmt 0 view .LVU118
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  389 0000 90F82020 		ldrb	r2, [r0, #32]	@ zero_extendqisi2
  390 0004 012A     		cmp	r2, #1
  391 0006 23D0     		beq	.L22
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 14
 
 
  350:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   /* Process Locked */
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  431              		.loc 1 366 3 view .LVU142
  432 003a 1A68     		ldr	r2, [r3]
  433 003c FF21     		movs	r1, #255
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 15
 
 
  434 003e 5162     		str	r1, [r2, #36]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  381:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @retval HAL status
  382:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   */
  383:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** HAL_StatusTypeDef HAL_RTCEx_DeactivateInternalTimeStamp(RTC_HandleTypeDef *hrtc)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 16
 
 
  384:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** {
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  399:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
  514              		.loc 1 399 3 view .LVU168
  515              		.loc 1 399 15 is_stmt 0 view .LVU169
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 17
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 17
 
 
  516 0030 80F82120 		strb	r2, [r0, #33]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  550              		@ args = 0, pretend = 0, frame = 0
  551              		@ frame_needed = 0, uses_anonymous_args = 0
  552              		.loc 1 420 1 is_stmt 0 view .LVU179
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 18
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 18
 
 
  553 0000 70B5     		push	{r4, r5, r6, lr}
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  593 001e A070     		strb	r0, [r4, #2]
  435:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   sTimeStamp->TimeFormat = (uint8_t)((tmptime & (RTC_TSTR_PM))                 >> RTC_TSTR_PM_Pos);
  594              		.loc 1 435 3 is_stmt 1 view .LVU197
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 19
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 19
 
 
  595              		.loc 1 435 28 is_stmt 0 view .LVU198
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  453:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     sTimeStampDate->Month   = (uint8_t)RTC_Bcd2ToByte(sTimeStampDate->Month);
  454:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     sTimeStampDate->Date    = (uint8_t)RTC_Bcd2ToByte(sTimeStampDate->Date);
  455:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     sTimeStampDate->WeekDay = (uint8_t)RTC_Bcd2ToByte(sTimeStampDate->WeekDay);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 20
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 20
 
 
  456:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  668 0072 FFF7FEFF 		bl	RTC_Bcd2ToByte
  669              	.LVL46:
  450:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 21
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 21
 
 
  670              		.loc 1 450 25 discriminator 1 view .LVU229
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  472:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   *                the configuration information for RTC.
  473:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @param  sTamper Pointer to Tamper Structure.
  474:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @retval HAL status
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 22
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 22
 
 
  475:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   */
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  743              		.loc 1 495 3 view .LVU256
  744              		.loc 1 495 15 is_stmt 0 view .LVU257
  745 0012 0223     		movs	r3, #2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 23
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 23
 
 
  746 0014 80F82130 		strb	r3, [r0, #33]
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  519:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** #if defined(RTC_TAMPER1_SUPPORT)
  520:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     if ((sTamper->Tamper & RTC_TAMPER_1) != 0U)
  777              		.loc 1 520 5 is_stmt 1 view .LVU272
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 24
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 24
 
 
  778              		.loc 1 520 8 is_stmt 0 view .LVU273
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  549:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     if ((sTamper->Tamper & RTC_TAMPER_3) != 0U)
  550:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     {
  551:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****       tmpreg &= (uint32_t)~(RTC_TAMPCR_TAMP3NOERASE);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 25
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 25
 
 
  552:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     }
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  573:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     }
  574:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** #endif /* RTC_TAMPER3_SUPPORT */
  575:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 26
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 26
 
 
  576:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   else
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  857              		.loc 1 607 51 view .LVU307
  858 008a 0B43     		orrs	r3, r3, r1
  604:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****              (uint32_t)sTamper->SamplingFrequency | \
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 27
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 27
 
 
  859              		.loc 1 604 10 view .LVU308
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  892              	.LVL67:
  630:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
  631:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   /* Copy desired configuration into configuration register */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 28
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 28
 
 
  632:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   hrtc->Instance->TAMPCR = tmpreg;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  932              		.loc 1 541 7 is_stmt 1 view .LVU338
  541:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     }
  933              		.loc 1 541 14 is_stmt 0 view .LVU339
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 29
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 29
 
 
  934 00ce 23F40033 		bic	r3, r3, #131072
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  971              		.loc 1 586 14 is_stmt 0 view .LVU356
  972 00f8 23F40013 		bic	r3, r3, #2097152
  973              	.LVL76:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 30
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 30
 
 
  974              	.L53:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1012              		@ frame_needed = 0, uses_anonymous_args = 0
  1013              		@ link register save eliminated.
  653:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   uint32_t tmpreg = 0U;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 31
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 31
 
 
  1014              		.loc 1 653 3 view .LVU365
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1046              		.loc 1 674 16 is_stmt 0 view .LVU385
  1047 0018 0068     		ldr	r0, [r0]
  1048              	.LVL81:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 32
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 32
 
 
  1049              		.loc 1 674 10 view .LVU386
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1079 0036 43F40033 		orr	r3, r3, #131072
  1080              	.LVL85:
  1081              	.L68:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 33
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 33
 
 
  699:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     }
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1101              		.loc 1 733 6 is_stmt 0 view .LVU409
  1102 004e 0C69     		ldr	r4, [r1, #16]
  1103 0050 002C     		cmp	r4, #0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 34
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 34
 
 
  1104 0052 44D0     		beq	.L73
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  760:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     if ((sTamper->Tamper & RTC_TAMPER_2) != 0U)
  761:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     {
  762:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****       tmpreg &= (uint32_t)~(RTC_TAMPCR_TAMP2MF);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 35
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 35
 
 
  763:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     }
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  788:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
  789:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   /* Copy desired configuration into configuration register */
  790:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   hrtc->Instance->TAMPCR = tmpreg;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 36
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 36
 
 
  1160              		.loc 1 790 3 is_stmt 1 view .LVU434
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  684:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   }
  1200              		.loc 1 684 12 view .LVU448
  1201 00bc B5E7     		b	.L66
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 37
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 37
 
 
  1202              	.L67:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1239              	.LVL101:
  1240              	.L77:
  760:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 38
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 38
 
 
  1241              		.loc 1 760 5 is_stmt 1 view .LVU466
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  804:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** /**
  805:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @brief  Deactivates Tamper.
  806:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @note   By calling this API the tamper global interrupt will be disabled.
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 39
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 39
 
 
  807:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @param  hrtc pointer to a RTC_HandleTypeDef structure that contains
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  831:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   if ((Tamper & RTC_TAMPER_1) != 0U)
  1317              		.loc 1 831 3 is_stmt 1 view .LVU490
  1318              		.loc 1 831 6 is_stmt 0 view .LVU491
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 40
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 40
 
 
  1319 0020 11F0010F 		tst	r1, #1
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1358 005a 0A64     		str	r2, [r1, #64]
  1359              	.L91:
  847:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 41
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 41
 
 
  848:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** #endif /* RTC_TAMPER3_SUPPORT */
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  871:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   {
  872:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     /* Get the pending status of the Timestamp Interrupt */
  873:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     if (__HAL_RTC_TIMESTAMP_GET_FLAG(hrtc, RTC_FLAG_TSF) != 0U)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 42
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 42
 
 
  874:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     {
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  928:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   if (__HAL_RTC_TAMPER_GET_IT_SOURCE(hrtc, RTC_IT_TAMP | RTC_IT_TAMP3) != 0U)
  929:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   {
  930:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     /* Get the pending status of the Tamper 3 Interrupt */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 43
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 43
 
 
  931:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     if (__HAL_RTC_TAMPER_GET_FLAG(hrtc, RTC_FLAG_TAMP3F) != 0U)
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  966:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** #if defined(RTC_TAMPER1_SUPPORT)
  967:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** /**
  968:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @brief  Tamper 1 callback.
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 44
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 44
 
 
  969:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @param  hrtc pointer to a RTC_HandleTypeDef structure that contains
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  998:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** }
  1440              		.loc 1 998 1 is_stmt 0 view .LVU525
  1441 0000 7047     		bx	lr
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 45
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 45
 
 
  1442              		.cfi_endproc
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1481 0000 10B5     		push	{r4, lr}
  1482              	.LCFI15:
  1483              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 46
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 46
 
 
  1484              		.cfi_offset 4, -8
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1523 0030 2268     		ldr	r2, [r4]
  1524 0032 116C     		ldr	r1, [r2, #64]
  1525 0034 204B     		ldr	r3, .L107+8
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 47
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 47
 
 
  1526 0036 0B40     		ands	r3, r3, r1
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1565 0064 DBB2     		uxtb	r3, r3
  1566 0066 63F40863 		orn	r3, r3, #2176
  1567 006a D360     		str	r3, [r2, #12]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 48
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 48
 
 
  1568 006c D7E7     		b	.L98
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1617              		.global	HAL_RTCEx_PollForTimeStampEvent
  1618              		.syntax unified
  1619              		.thumb
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 49
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 49
 
 
  1620              		.thumb_func
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1038:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****         hrtc->State = HAL_RTC_STATE_TIMEOUT;
 1039:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****         return HAL_TIMEOUT;
 1040:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****       }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 50
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 50
 
 
 1041:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     }
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1690              		.loc 1 1039 16 is_stmt 0 view .LVU591
  1691 003c 0DE0     		b	.L113
  1692              	.L116:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 51
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 51
 
 
 1044:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     {
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1062:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** /**
 1063:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @brief  Handles Tamper 1 Polling.
 1064:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @param  hrtc pointer to a RTC_HandleTypeDef structure that contains
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 52
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 52
 
 
 1065:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   *                the configuration information for RTC.
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1768              		.loc 1 1081 13 is_stmt 0 view .LVU616
  1769 001c FFF7FEFF 		bl	HAL_GetTick
  1770              	.LVL132:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 53
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 53
 
 
  1771              		.loc 1 1081 27 discriminator 1 view .LVU617
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1811              		.thumb
  1812              		.thumb_func
  1814              	HAL_RTCEx_PollForTamper2Event:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 54
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 54
 
 
  1815              	.LVL133:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1849              		.loc 1 1116 5 is_stmt 1 view .LVU641
  1850              		.loc 1 1116 8 is_stmt 0 view .LVU642
  1851 0016 B5F1FF3F 		cmp	r5, #-1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 55
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 55
 
 
  1852 001a F7D0     		beq	.L128
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1889              		.loc 1 1133 1 view .LVU658
  1890              		.cfi_endproc
  1891              	.LFE966:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 56
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 56
 
 
  1893              		.section	.text.HAL_RTCEx_PollForTamper3Event,"ax",%progbits
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1149:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   {
 1150:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     if (Timeout != HAL_MAX_DELAY)
  1933              		.loc 1 1150 5 is_stmt 1 view .LVU668
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 57
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 57
 
 
  1934              		.loc 1 1150 8 is_stmt 0 view .LVU669
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  1972 004e 0020     		movs	r0, #0
  1973              	.L138:
 1167:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 58
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 58
 
 
  1974              		.loc 1 1167 1 view .LVU684
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2000              		.cfi_offset 5, -16
  2001              		.cfi_offset 6, -12
  2002              		.cfi_offset 7, -8
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 59
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 59
 
 
  2003              		.cfi_offset 14, -4
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2041              		.loc 1 1213 6 view .LVU705
  2042 002c 13F4806F 		tst	r3, #1024
  2043 0030 17D0     		beq	.L144
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 60
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 60
 
 
 1214:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   {
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2083              		.loc 1 1228 9 view .LVU724
 1229:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
 1230:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****         return HAL_TIMEOUT;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 61
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 61
 
 
  2084              		.loc 1 1230 9 view .LVU725
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2121              		.loc 1 1247 8 discriminator 1 view .LVU738
  2122 008e B0F57A7F 		cmp	r0, #1000
  2123 0092 F4D9     		bls	.L147
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 62
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 62
 
 
 1248:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     {
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2157              		.loc 1 1268 3 is_stmt 1 view .LVU756
  2158              		.loc 1 1268 7 is_stmt 0 view .LVU757
  2159 00b8 2368     		ldr	r3, [r4]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 63
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 63
 
 
  2160              		.loc 1 1268 24 view .LVU758
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2199              		.global	HAL_RTCEx_SetWakeUpTimer_IT
  2200              		.syntax unified
  2201              		.thumb
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 64
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 64
 
 
  2202              		.thumb_func
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2238              		.loc 1 1301 3 view .LVU782
  2239 001c 9CF82030 		ldrb	r3, [ip, #32]	@ zero_extendqisi2
  2240 0020 012B     		cmp	r3, #1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 65
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 65
 
 
  2241 0022 7AD0     		beq	.L159
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2281 0056 49D0     		beq	.L161
 1316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****       {
 1317:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****         /* Enable the write protection for RTC registers */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 66
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 66
 
 
 1318:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****         __HAL_RTC_WRITEPROTECTION_ENABLE(hrtc);
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2310              		.loc 1 1343 5 is_stmt 1 view .LVU813
  2311              		.loc 1 1343 15 is_stmt 0 view .LVU814
  2312 007e 019B     		ldr	r3, [sp, #4]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 67
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 67
 
 
  2313              		.loc 1 1343 8 view .LVU815
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2343 00a8 1F4B     		ldr	r3, .L163+8
  2344 00aa D3F88020 		ldr	r2, [r3, #128]
  2345              	.LVL157:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 68
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 68
 
 
  2346              		.loc 1 1367 3 is_stmt 0 view .LVU830
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1318:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
  2383              		.loc 1 1318 9 is_stmt 1 view .LVU844
 1318:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 69
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 69
 
 
  2384              		.loc 1 1318 9 view .LVU845
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1385:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** }
  2420              		.loc 1 1385 1 is_stmt 0 view .LVU864
  2421 0112 03B0     		add	sp, sp, #12
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 70
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 70
 
 
  2422              	.LCFI23:
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2468              		.cfi_offset 14, -4
 1395:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   uint32_t tickstart = 0U;
  2469              		.loc 1 1395 3 is_stmt 1 view .LVU868
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 71
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 71
 
 
  2470              	.LVL162:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2507 0038 FFF7FEFF 		bl	HAL_GetTick
  2508              	.LVL163:
  2509              		.loc 1 1412 15 view .LVU883
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 72
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 72
 
 
  2510 003c 0546     		mov	r5, r0
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1428:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     }
 1429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   }
 1430:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 73
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 73
 
 
 1431:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   /* Enable the write protection for RTC registers */
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1446:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @retval Counter value
 1447:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   */
 1448:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** uint32_t HAL_RTCEx_GetWakeUpTimer(RTC_HandleTypeDef *hrtc)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 74
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 74
 
 
 1449:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** {
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1478:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     hrtc->WakeUpTimerEventCallback(hrtc);
 1479:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** #else
 1480:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     HAL_RTCEx_WakeUpTimerEventCallback(hrtc);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 75
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 75
 
 
 1481:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** #endif /* USE_HAL_RTC_REGISTER_CALLBACKS */
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1468:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
  2647              		.loc 1 1468 3 is_stmt 1 view .LVU924
  2648 0004 0A4B     		ldr	r3, .L178
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 76
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 76
 
 
  2649 0006 4FF40022 		mov	r2, #524288
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1504:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** /**
 1505:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @brief  Handles Wakeup Timer Polling.
 1506:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @param  hrtc pointer to a RTC_HandleTypeDef structure that contains
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 77
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 77
 
 
 1507:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   *                the configuration information for RTC.
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2733 001c FFF7FEFF 		bl	HAL_GetTick
  2734              	.LVL180:
  2735              		.loc 1 1522 27 discriminator 1 view .LVU948
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 78
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 78
 
 
  2736 0020 801B     		subs	r0, r0, r6
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2776              		.thumb_func
  2778              	HAL_RTCEx_BKUPWrite:
  2779              	.LVL181:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 79
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 79
 
 
  2780              	.LFB975:
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1584:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   tmp = (uint32_t) &(hrtc->Instance->BKP0R);
  2788              		.loc 1 1584 3 view .LVU965
  2789              		.loc 1 1584 26 is_stmt 0 view .LVU966
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 80
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 80
 
 
  2790 0000 0368     		ldr	r3, [r0]
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2823              		.loc 1 1607 20 view .LVU977
  2824 0002 5033     		adds	r3, r3, #80
  2825              	.LVL184:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 81
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 81
 
 
 1608:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   tmp += (BackupRegister * 4U);
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2854              		.cfi_offset 4, -24
  2855              		.cfi_offset 5, -20
  2856              		.cfi_offset 6, -16
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 82
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 82
 
 
  2857              		.cfi_offset 7, -12
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1651:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   /* check if a calibration is pending*/
 1652:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   if ((hrtc->Instance->ISR & RTC_ISR_RECALPF) != 0U)
  2896              		.loc 1 1652 3 view .LVU1000
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 83
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 83
 
 
  2897              		.loc 1 1652 12 is_stmt 0 view .LVU1001
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  2921              		.loc 1 1682 3 view .LVU1011
 1683:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
 1684:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   /* Change RTC state */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 84
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 84
 
 
 1685:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1660:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****       {
  2959              		.loc 1 1660 26 discriminator 1 view .LVU1029
  2960 0068 A0EB0800 		sub	r0, r0, r8
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 85
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 85
 
 
 1660:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****       {
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1694:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @brief  Configures the Synchronization Shift Control Settings.
 1695:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @note   When REFCKON is set, firmware must not write to Shift control register.
 1696:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @param  hrtc pointer to a RTC_HandleTypeDef structure that contains
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 86
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 86
 
 
 1697:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   *                the configuration information for RTC.
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3034 001a 80F82130 		strb	r3, [r0, #33]
 1718:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
 1719:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   /* Disable the write protection for RTC registers */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 87
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 87
 
 
 1720:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   __HAL_RTC_WRITEPROTECTION_DISABLE(hrtc);
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3077 004a 5A62     		str	r2, [r3, #36]
  3078              		.loc 1 1731 7 view .LVU1073
 1732:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 88
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 88
 
 
 1733:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****       hrtc->State = HAL_RTC_STATE_TIMEOUT;
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1775:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
 1776:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****     return HAL_ERROR;
 1777:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 89
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 89
 
 
 1778:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1780:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
  3121              		.loc 1 1780 3 view .LVU1093
 1783:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 90
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 90
 
 
  3122              		.loc 1 1783 3 view .LVU1094
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3158              		.loc 1 1761 9 view .LVU1112
 1761:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****       }
  3159              		.loc 1 1761 16 is_stmt 0 view .LVU1113
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 91
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 91
 
 
  3160 00a4 0120     		movs	r0, #1
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3204              		.thumb
  3205              		.thumb_func
  3207              	HAL_RTCEx_SetCalibrationOutPut:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 92
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 92
 
 
  3208              	.LVL211:
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3238              		.loc 1 1812 3 view .LVU1137
  3239 0018 1A68     		ldr	r2, [r3]
  3240 001a CA24     		movs	r4, #202
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 93
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 93
 
 
  3241 001c 5462     		str	r4, [r2, #36]
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1829:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   __HAL_UNLOCK(hrtc);
  3279              		.loc 1 1829 3 is_stmt 1 view .LVU1155
  3280              		.loc 1 1829 3 view .LVU1156
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 94
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 94
 
 
  3281 004a 0020     		movs	r0, #0
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3322 0008 0122     		movs	r2, #1
  3323 000a 80F82020 		strb	r2, [r0, #32]
  3324              		.loc 1 1843 3 discriminator 2 view .LVU1166
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 95
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 95
 
 
 1844:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3361              	.LVL217:
  3362              		.loc 1 1861 10 view .LVU1184
  3363 003c 7047     		bx	lr
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 96
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 96
 
 
  3364              	.LVL218:
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3404              		.loc 1 1875 3 discriminator 2 view .LVU1193
 1876:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
 1877:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_BUSY;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 97
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 97
 
 
  3405              		.loc 1 1877 3 view .LVU1194
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1903:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   __HAL_UNLOCK(hrtc);
  3434              		.loc 1 1903 3 view .LVU1207
  3435              		.loc 1 1903 3 view .LVU1208
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 98
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 98
 
 
  3436 0030 0023     		movs	r3, #0
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3479              		.section	.text.HAL_RTCEx_DeactivateRefClock,"ax",%progbits
  3480              		.align	1
  3481              		.global	HAL_RTCEx_DeactivateRefClock
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 99
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 99
 
 
  3482              		.syntax unified
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3518 001c 5A62     		str	r2, [r3, #36]
  3519              		.loc 1 1924 3 view .LVU1233
  3520 001e 0368     		ldr	r3, [r0]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 100
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 100
 
 
  3521 0020 5322     		movs	r2, #83
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1932:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
  3549              		.loc 1 1932 5 is_stmt 1 view .LVU1247
  3550 0038 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 101
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 101
 
 
  3551 003a 9368     		ldr	r3, [r2, #8]
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 1956:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @note   When the Bypass Shadow is enabled the calendar value are taken
 1957:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   *         directly from the Calendar counter.
 1958:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @retval HAL status
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 102
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 102
 
 
 1959:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   */
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3632 002a 0368     		ldr	r3, [r0]
  3633 002c FF21     		movs	r1, #255
  3634 002e 5962     		str	r1, [r3, #36]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 103
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 103
 
 
  3635              		.loc 1 1974 3 view .LVU1274
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3670              		.loc 1 1994 1 is_stmt 1 view -0
  3671              		.cfi_startproc
  3672              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 104
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 104
 
 
  3673              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 2010:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   hrtc->State = HAL_RTC_STATE_READY;
  3712              		.loc 1 2010 3 view .LVU1303
  3713              		.loc 1 2010 15 is_stmt 0 view .LVU1304
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 105
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 105
 
 
  3714 0030 80F82120 		strb	r2, [r0, #33]
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
 2034:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   * @{
 2035:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c ****   */
 2036:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 106
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 106
 
 
 2037:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rtc_ex.c **** /**
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3777              		.cfi_offset 6, -8
  3778              		.cfi_offset 14, -4
  3779 0002 0446     		mov	r4, r0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 107
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 107
 
 
  3780 0004 0D46     		mov	r5, r1
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3820              		.loc 1 2075 9 is_stmt 1 view .LVU1335
  3821              		.loc 1 2075 16 is_stmt 0 view .LVU1336
  3822 0030 08E0     		b	.L250
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 108
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 108
 
 
  3823              	.L253:
@@ -6462,95 +6462,95 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 1
  3850              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rtc_ex.h"
  3851              		.file 8 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/system_stm32wbxx.h"
  3852              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 109
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 109
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_rtc_ex.c
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:21     .text.HAL_RTCEx_SetTimeStamp:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:27     .text.HAL_RTCEx_SetTimeStamp:00000000 HAL_RTCEx_SetTimeStamp
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:142    .text.HAL_RTCEx_SetTimeStamp_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:148    .text.HAL_RTCEx_SetTimeStamp_IT:00000000 HAL_RTCEx_SetTimeStamp_IT
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:276    .text.HAL_RTCEx_SetTimeStamp_IT:00000090 $d
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:281    .text.HAL_RTCEx_DeactivateTimeStamp:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:287    .text.HAL_RTCEx_DeactivateTimeStamp:00000000 HAL_RTCEx_DeactivateTimeStamp
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:373    .text.HAL_RTCEx_SetInternalTimeStamp:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:379    .text.HAL_RTCEx_SetInternalTimeStamp:00000000 HAL_RTCEx_SetInternalTimeStamp
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:461    .text.HAL_RTCEx_SetInternalTimeStamp:00000054 $d
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:466    .text.HAL_RTCEx_DeactivateInternalTimeStamp:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:472    .text.HAL_RTCEx_DeactivateInternalTimeStamp:00000000 HAL_RTCEx_DeactivateInternalTimeStamp
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:539    .text.HAL_RTCEx_GetTimeStamp:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:545    .text.HAL_RTCEx_GetTimeStamp:00000000 HAL_RTCEx_GetTimeStamp
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:697    .text.HAL_RTCEx_GetTimeStamp:00000094 $d
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:702    .text.HAL_RTCEx_SetTamper:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:708    .text.HAL_RTCEx_SetTamper:00000000 HAL_RTCEx_SetTamper
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1000   .text.HAL_RTCEx_SetTamper_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1006   .text.HAL_RTCEx_SetTamper_IT:00000000 HAL_RTCEx_SetTamper_IT
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1273   .text.HAL_RTCEx_SetTamper_IT:00000104 $d
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1278   .text.HAL_RTCEx_DeactivateTamper:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1284   .text.HAL_RTCEx_DeactivateTamper:00000000 HAL_RTCEx_DeactivateTamper
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1383   .text.HAL_RTCEx_TimeStampEventCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1389   .text.HAL_RTCEx_TimeStampEventCallback:00000000 HAL_RTCEx_TimeStampEventCallback
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1404   .text.HAL_RTCEx_Tamper1EventCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1410   .text.HAL_RTCEx_Tamper1EventCallback:00000000 HAL_RTCEx_Tamper1EventCallback
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1425   .text.HAL_RTCEx_Tamper2EventCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1431   .text.HAL_RTCEx_Tamper2EventCallback:00000000 HAL_RTCEx_Tamper2EventCallback
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1446   .text.HAL_RTCEx_Tamper3EventCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1452   .text.HAL_RTCEx_Tamper3EventCallback:00000000 HAL_RTCEx_Tamper3EventCallback
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1467   .text.HAL_RTCEx_TamperTimeStampIRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1473   .text.HAL_RTCEx_TamperTimeStampIRQHandler:00000000 HAL_RTCEx_TamperTimeStampIRQHandler
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1608   .text.HAL_RTCEx_TamperTimeStampIRQHandler:000000b0 $d
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1616   .text.HAL_RTCEx_PollForTimeStampEvent:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1622   .text.HAL_RTCEx_PollForTimeStampEvent:00000000 HAL_RTCEx_PollForTimeStampEvent
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1722   .text.HAL_RTCEx_PollForTamper1Event:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1728   .text.HAL_RTCEx_PollForTamper1Event:00000000 HAL_RTCEx_PollForTamper1Event
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1808   .text.HAL_RTCEx_PollForTamper2Event:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1814   .text.HAL_RTCEx_PollForTamper2Event:00000000 HAL_RTCEx_PollForTamper2Event
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1894   .text.HAL_RTCEx_PollForTamper3Event:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1900   .text.HAL_RTCEx_PollForTamper3Event:00000000 HAL_RTCEx_PollForTamper3Event
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1981   .text.HAL_RTCEx_SetWakeUpTimer:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:1987   .text.HAL_RTCEx_SetWakeUpTimer:00000000 HAL_RTCEx_SetWakeUpTimer
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2198   .text.HAL_RTCEx_SetWakeUpTimer_IT:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2204   .text.HAL_RTCEx_SetWakeUpTimer_IT:00000000 HAL_RTCEx_SetWakeUpTimer_IT
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2441   .text.HAL_RTCEx_SetWakeUpTimer_IT:00000120 $d
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2448   .text.HAL_RTCEx_DeactivateWakeUpTimer:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2454   .text.HAL_RTCEx_DeactivateWakeUpTimer:00000000 HAL_RTCEx_DeactivateWakeUpTimer
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2579   .text.HAL_RTCEx_GetWakeUpTimer:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2585   .text.HAL_RTCEx_GetWakeUpTimer:00000000 HAL_RTCEx_GetWakeUpTimer
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2606   .text.HAL_RTCEx_WakeUpTimerEventCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2612   .text.HAL_RTCEx_WakeUpTimerEventCallback:00000000 HAL_RTCEx_WakeUpTimerEventCallback
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2627   .text.HAL_RTCEx_WakeUpTimerIRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2633   .text.HAL_RTCEx_WakeUpTimerIRQHandler:00000000 HAL_RTCEx_WakeUpTimerIRQHandler
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2681   .text.HAL_RTCEx_WakeUpTimerIRQHandler:00000030 $d
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s 			page 110
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:21     .text.HAL_RTCEx_SetTimeStamp:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:27     .text.HAL_RTCEx_SetTimeStamp:00000000 HAL_RTCEx_SetTimeStamp
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:142    .text.HAL_RTCEx_SetTimeStamp_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:148    .text.HAL_RTCEx_SetTimeStamp_IT:00000000 HAL_RTCEx_SetTimeStamp_IT
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:276    .text.HAL_RTCEx_SetTimeStamp_IT:00000090 $d
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:281    .text.HAL_RTCEx_DeactivateTimeStamp:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:287    .text.HAL_RTCEx_DeactivateTimeStamp:00000000 HAL_RTCEx_DeactivateTimeStamp
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:373    .text.HAL_RTCEx_SetInternalTimeStamp:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:379    .text.HAL_RTCEx_SetInternalTimeStamp:00000000 HAL_RTCEx_SetInternalTimeStamp
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:461    .text.HAL_RTCEx_SetInternalTimeStamp:00000054 $d
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:466    .text.HAL_RTCEx_DeactivateInternalTimeStamp:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:472    .text.HAL_RTCEx_DeactivateInternalTimeStamp:00000000 HAL_RTCEx_DeactivateInternalTimeStamp
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:539    .text.HAL_RTCEx_GetTimeStamp:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:545    .text.HAL_RTCEx_GetTimeStamp:00000000 HAL_RTCEx_GetTimeStamp
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:697    .text.HAL_RTCEx_GetTimeStamp:00000094 $d
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:702    .text.HAL_RTCEx_SetTamper:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:708    .text.HAL_RTCEx_SetTamper:00000000 HAL_RTCEx_SetTamper
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1000   .text.HAL_RTCEx_SetTamper_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1006   .text.HAL_RTCEx_SetTamper_IT:00000000 HAL_RTCEx_SetTamper_IT
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1273   .text.HAL_RTCEx_SetTamper_IT:00000104 $d
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1278   .text.HAL_RTCEx_DeactivateTamper:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1284   .text.HAL_RTCEx_DeactivateTamper:00000000 HAL_RTCEx_DeactivateTamper
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1383   .text.HAL_RTCEx_TimeStampEventCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1389   .text.HAL_RTCEx_TimeStampEventCallback:00000000 HAL_RTCEx_TimeStampEventCallback
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1404   .text.HAL_RTCEx_Tamper1EventCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1410   .text.HAL_RTCEx_Tamper1EventCallback:00000000 HAL_RTCEx_Tamper1EventCallback
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1425   .text.HAL_RTCEx_Tamper2EventCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1431   .text.HAL_RTCEx_Tamper2EventCallback:00000000 HAL_RTCEx_Tamper2EventCallback
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1446   .text.HAL_RTCEx_Tamper3EventCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1452   .text.HAL_RTCEx_Tamper3EventCallback:00000000 HAL_RTCEx_Tamper3EventCallback
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1467   .text.HAL_RTCEx_TamperTimeStampIRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1473   .text.HAL_RTCEx_TamperTimeStampIRQHandler:00000000 HAL_RTCEx_TamperTimeStampIRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1608   .text.HAL_RTCEx_TamperTimeStampIRQHandler:000000b0 $d
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1616   .text.HAL_RTCEx_PollForTimeStampEvent:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1622   .text.HAL_RTCEx_PollForTimeStampEvent:00000000 HAL_RTCEx_PollForTimeStampEvent
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1722   .text.HAL_RTCEx_PollForTamper1Event:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1728   .text.HAL_RTCEx_PollForTamper1Event:00000000 HAL_RTCEx_PollForTamper1Event
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1808   .text.HAL_RTCEx_PollForTamper2Event:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1814   .text.HAL_RTCEx_PollForTamper2Event:00000000 HAL_RTCEx_PollForTamper2Event
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1894   .text.HAL_RTCEx_PollForTamper3Event:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1900   .text.HAL_RTCEx_PollForTamper3Event:00000000 HAL_RTCEx_PollForTamper3Event
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1981   .text.HAL_RTCEx_SetWakeUpTimer:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:1987   .text.HAL_RTCEx_SetWakeUpTimer:00000000 HAL_RTCEx_SetWakeUpTimer
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2198   .text.HAL_RTCEx_SetWakeUpTimer_IT:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2204   .text.HAL_RTCEx_SetWakeUpTimer_IT:00000000 HAL_RTCEx_SetWakeUpTimer_IT
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2441   .text.HAL_RTCEx_SetWakeUpTimer_IT:00000120 $d
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2448   .text.HAL_RTCEx_DeactivateWakeUpTimer:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2454   .text.HAL_RTCEx_DeactivateWakeUpTimer:00000000 HAL_RTCEx_DeactivateWakeUpTimer
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2579   .text.HAL_RTCEx_GetWakeUpTimer:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2585   .text.HAL_RTCEx_GetWakeUpTimer:00000000 HAL_RTCEx_GetWakeUpTimer
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2606   .text.HAL_RTCEx_WakeUpTimerEventCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2612   .text.HAL_RTCEx_WakeUpTimerEventCallback:00000000 HAL_RTCEx_WakeUpTimerEventCallback
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2627   .text.HAL_RTCEx_WakeUpTimerIRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2633   .text.HAL_RTCEx_WakeUpTimerIRQHandler:00000000 HAL_RTCEx_WakeUpTimerIRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2681   .text.HAL_RTCEx_WakeUpTimerIRQHandler:00000030 $d
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s 			page 110
 
 
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2686   .text.HAL_RTCEx_PollForWakeUpTimerEvent:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2692   .text.HAL_RTCEx_PollForWakeUpTimerEvent:00000000 HAL_RTCEx_PollForWakeUpTimerEvent
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2772   .text.HAL_RTCEx_BKUPWrite:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2778   .text.HAL_RTCEx_BKUPWrite:00000000 HAL_RTCEx_BKUPWrite
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2804   .text.HAL_RTCEx_BKUPRead:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2810   .text.HAL_RTCEx_BKUPRead:00000000 HAL_RTCEx_BKUPRead
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2837   .text.HAL_RTCEx_SetSmoothCalib:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2843   .text.HAL_RTCEx_SetSmoothCalib:00000000 HAL_RTCEx_SetSmoothCalib
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2993   .text.HAL_RTCEx_SetSynchroShift:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:2999   .text.HAL_RTCEx_SetSynchroShift:00000000 HAL_RTCEx_SetSynchroShift
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3201   .text.HAL_RTCEx_SetCalibrationOutPut:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3207   .text.HAL_RTCEx_SetCalibrationOutPut:00000000 HAL_RTCEx_SetCalibrationOutPut
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3302   .text.HAL_RTCEx_DeactivateCalibrationOutPut:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3308   .text.HAL_RTCEx_DeactivateCalibrationOutPut:00000000 HAL_RTCEx_DeactivateCalibrationOutPut
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3375   .text.HAL_RTCEx_SetRefClock:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3381   .text.HAL_RTCEx_SetRefClock:00000000 HAL_RTCEx_SetRefClock
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3480   .text.HAL_RTCEx_DeactivateRefClock:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3486   .text.HAL_RTCEx_DeactivateRefClock:00000000 HAL_RTCEx_DeactivateRefClock
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3585   .text.HAL_RTCEx_EnableBypassShadow:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3591   .text.HAL_RTCEx_EnableBypassShadow:00000000 HAL_RTCEx_EnableBypassShadow
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3661   .text.HAL_RTCEx_DisableBypassShadow:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3667   .text.HAL_RTCEx_DisableBypassShadow:00000000 HAL_RTCEx_DisableBypassShadow
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3737   .text.HAL_RTCEx_AlarmBEventCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3743   .text.HAL_RTCEx_AlarmBEventCallback:00000000 HAL_RTCEx_AlarmBEventCallback
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3758   .text.HAL_RTCEx_PollForAlarmBEvent:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccl5kynW.s:3764   .text.HAL_RTCEx_PollForAlarmBEvent:00000000 HAL_RTCEx_PollForAlarmBEvent
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2686   .text.HAL_RTCEx_PollForWakeUpTimerEvent:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2692   .text.HAL_RTCEx_PollForWakeUpTimerEvent:00000000 HAL_RTCEx_PollForWakeUpTimerEvent
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2772   .text.HAL_RTCEx_BKUPWrite:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2778   .text.HAL_RTCEx_BKUPWrite:00000000 HAL_RTCEx_BKUPWrite
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2804   .text.HAL_RTCEx_BKUPRead:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2810   .text.HAL_RTCEx_BKUPRead:00000000 HAL_RTCEx_BKUPRead
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2837   .text.HAL_RTCEx_SetSmoothCalib:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2843   .text.HAL_RTCEx_SetSmoothCalib:00000000 HAL_RTCEx_SetSmoothCalib
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2993   .text.HAL_RTCEx_SetSynchroShift:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:2999   .text.HAL_RTCEx_SetSynchroShift:00000000 HAL_RTCEx_SetSynchroShift
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3201   .text.HAL_RTCEx_SetCalibrationOutPut:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3207   .text.HAL_RTCEx_SetCalibrationOutPut:00000000 HAL_RTCEx_SetCalibrationOutPut
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3302   .text.HAL_RTCEx_DeactivateCalibrationOutPut:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3308   .text.HAL_RTCEx_DeactivateCalibrationOutPut:00000000 HAL_RTCEx_DeactivateCalibrationOutPut
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3375   .text.HAL_RTCEx_SetRefClock:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3381   .text.HAL_RTCEx_SetRefClock:00000000 HAL_RTCEx_SetRefClock
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3480   .text.HAL_RTCEx_DeactivateRefClock:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3486   .text.HAL_RTCEx_DeactivateRefClock:00000000 HAL_RTCEx_DeactivateRefClock
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3585   .text.HAL_RTCEx_EnableBypassShadow:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3591   .text.HAL_RTCEx_EnableBypassShadow:00000000 HAL_RTCEx_EnableBypassShadow
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3661   .text.HAL_RTCEx_DisableBypassShadow:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3667   .text.HAL_RTCEx_DisableBypassShadow:00000000 HAL_RTCEx_DisableBypassShadow
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3737   .text.HAL_RTCEx_AlarmBEventCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3743   .text.HAL_RTCEx_AlarmBEventCallback:00000000 HAL_RTCEx_AlarmBEventCallback
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3758   .text.HAL_RTCEx_PollForAlarmBEvent:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccH4dM3x.s:3764   .text.HAL_RTCEx_PollForAlarmBEvent:00000000 HAL_RTCEx_PollForAlarmBEvent
 
 UNDEFINED SYMBOLS
 RTC_Bcd2ToByte

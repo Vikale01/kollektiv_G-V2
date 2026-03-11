@@ -10,4 +10,7 @@ void sendPackageToMem(void);
 
 void findStartPos(void);
 
+
+void sendDataStepByStep(void);
+
 #endif

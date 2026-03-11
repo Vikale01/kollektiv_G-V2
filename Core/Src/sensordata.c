@@ -34,6 +34,9 @@ static uint16_t sectorCounter = 0;
 
 static uint8_t readBuffer[BUFFER_SIZE];
 
+static uint32_t currentBlePage = 0;
+static uint8_t  currentSubPage = 0; // 0 for first half, 1 for second half
+
 static void packageHeader(void)
 {
   BME280_ReadMeasurement_Raw(BMEraw_data);
@@ -161,7 +164,26 @@ static tBleStatus sendHalfPage_ble(uint8_t *data, uint16_t length)
     return Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, data, length);
 }
 
-void sendAllDataViaBle()
-{
-  
+void sendDataStepByStep(void) {
+    if (currentBlePage < addInc) {
+        
+        // 1. Only read from flash if we are starting a fresh page
+        if (currentSubPage == 0) {
+            Flash_4ByteRead(currentBlePage * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+        }
+        
+        // 2. Determine which half to send
+        uint8_t *dataPtr = (currentSubPage == 0) ? readBuffer : (readBuffer + 128);
+        
+        // 3. Try to send the current piece
+        if (sendHalfPage_ble(dataPtr, 128) == BLE_STATUS_SUCCESS) {
+            currentSubPage++; 
+            
+            // 4. If both halves are done, move to the next flash page
+            if (currentSubPage >= 2) {
+                currentSubPage = 0;
+                currentBlePage++;
+            }
+        }
+    }
 }
