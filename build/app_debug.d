@@ -16,6 +16,9 @@ build/app_debug.o: Core/Src/app_debug.c Core/Inc/app_common.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_dma.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_dmamux.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma_ex.h \
+ Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_adc.h \
+ Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_adc.h \
+ Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_adc_ex.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_cortex.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_exti.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_flash.h \
@@ -87,6 +90,9 @@ Drivers/STM32WBxx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_dma.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_dmamux.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma_ex.h:
+Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_adc.h:
+Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_adc.h:
+Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_adc_ex.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_cortex.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_exti.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_flash.h:

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -28,7 +28,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
   25              		.thumb_func
   27              	HAL_DMAEx_ConfigMuxSync:
   28              	.LVL0:
-  29              	.LFB950:
+  29              	.LFB1104:
    1:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** /**
    2:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****   ******************************************************************************
    3:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****   * @file    stm32wbxx_hal_dma_ex.c
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
   27:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** 
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****    (+) Configure the DMA_MUX Synchronization Block using HAL_DMAEx_ConfigMuxSync function.
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****    (+) Configure the DMA_MUX Request Generator Block using HAL_DMAEx_ConfigMuxRequestGenerator func
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 2
 
 
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****        Functions HAL_DMAEx_EnableMuxRequestGenerator and HAL_DMAEx_DisableMuxRequestGenerator can t
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
   84:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** @endverbatim
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****   * @{
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****   */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 3
 
 
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
   59              		.loc 1 110 5 is_stmt 1 discriminator 2 view .LVU13
   60 0014 0123     		movs	r3, #1
   61 0016 80F82430 		strb	r3, [r0, #36]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 4
 
 
   62              		.loc 1 110 5 discriminator 2 view .LVU14
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
   95              		.cfi_restore 4
   96              		.cfi_def_cfa_offset 0
   97 004e 7047     		bx	lr
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 5
 
 
   98              	.LVL3:
@@ -263,7 +263,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  114              	.L9:
  115 0058 FFFD00E0 		.word	-536805889
  116              		.cfi_endproc
- 117              	.LFE950:
+ 117              	.LFE1104:
  119              		.section	.text.HAL_DMAEx_ConfigMuxRequestGenerator,"ax",%progbits
  120              		.align	1
  121              		.global	HAL_DMAEx_ConfigMuxRequestGenerator
@@ -272,7 +272,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  124              		.thumb_func
  126              	HAL_DMAEx_ConfigMuxRequestGenerator:
  127              	.LVL7:
- 128              	.LFB951:
+ 128              	.LFB1105:
  132:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** 
  133:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** /**
  134:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****   * @brief  Configure the DMAMUX request generator block used by the given DMA channel (instance).
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  136              		.loc 1 146 3 is_stmt 1 view .LVU29
  147:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** 
  148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****   assert_param(IS_DMAMUX_REQUEST_GEN_SIGNAL_ID(pRequestGeneratorConfig->SignalID));
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 6
 
 
  137              		.loc 1 148 3 view .LVU30
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  163:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****                                              ((pRequestGeneratorConfig->RequestNumber - 1U) << DMAM
  164:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** 
  165:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****     /* Process UnLocked */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 7
 
 
  166:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****     __HAL_UNLOCK(hdma);
@@ -399,7 +399,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  200 0040 0220     		movs	r0, #2
  201 0042 F8E7     		b	.L12
  202              		.cfi_endproc
- 203              	.LFE951:
+ 203              	.LFE1105:
  205              		.section	.text.HAL_DMAEx_EnableMuxRequestGenerator,"ax",%progbits
  206              		.align	1
  207              		.global	HAL_DMAEx_EnableMuxRequestGenerator
@@ -408,7 +408,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  210              		.thumb_func
  212              	HAL_DMAEx_EnableMuxRequestGenerator:
  213              	.LVL11:
- 214              	.LFB952:
+ 214              	.LFB1106:
  175:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** 
  176:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** /**
  177:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****   * @brief  Enable the DMAMUX request generator block used by the given DMA channel (instance).
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  181:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****   */
  182:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** HAL_StatusTypeDef HAL_DMAEx_EnableMuxRequestGenerator(DMA_HandleTypeDef *hdma)
  183:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 8
 
 
  215              		.loc 1 183 1 is_stmt 1 view -0
@@ -478,11 +478,11 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** }
  252              		.loc 1 201 1 view .LVU67
  253 001c 7047     		bx	lr
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 9
 
 
  254              		.cfi_endproc
- 255              	.LFE952:
+ 255              	.LFE1106:
  257              		.section	.text.HAL_DMAEx_DisableMuxRequestGenerator,"ax",%progbits
  258              		.align	1
  259              		.global	HAL_DMAEx_DisableMuxRequestGenerator
@@ -491,7 +491,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  262              		.thumb_func
  264              	HAL_DMAEx_DisableMuxRequestGenerator:
  265              	.LVL17:
- 266              	.LFB953:
+ 266              	.LFB1107:
  202:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** 
  203:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** /**
  204:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****   * @brief  Disable the DMAMUX request generator block used by the given DMA channel (instance).
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  289              	.LVL18:
  290              		.loc 1 222 12 view .LVU78
  291 0014 7047     		bx	lr
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 10
 
 
  292              	.LVL19:
@@ -562,7 +562,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  304              		.loc 1 228 1 view .LVU82
  305 001c 7047     		bx	lr
  306              		.cfi_endproc
- 307              	.LFE953:
+ 307              	.LFE1107:
  309              		.section	.text.HAL_DMAEx_MUX_IRQHandler,"ax",%progbits
  310              		.align	1
  311              		.global	HAL_DMAEx_MUX_IRQHandler
@@ -571,7 +571,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  314              		.thumb_func
  316              	HAL_DMAEx_MUX_IRQHandler:
  317              	.LVL23:
- 318              	.LFB954:
+ 318              	.LFB1108:
  229:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** 
  230:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c **** /**
  231:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****   * @brief  Handles DMAMUX interrupt request.
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  331              		.loc 1 239 12 is_stmt 0 view .LVU86
  332 0004 C36C     		ldr	r3, [r0, #76]
  333              		.loc 1 239 33 view .LVU87
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 11
 
 
  334 0006 1A68     		ldr	r2, [r3]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****     /* if using a DMAMUX request generator block Check for DMAMUX request generator overrun */
  260:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma_ex.c ****     if ((hdma->DMAmuxRequestGenStatus->RGSR & hdma->DMAmuxRequestGenStatusMask) != 0U)
  369              		.loc 1 260 5 is_stmt 1 view .LVU102
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 12
 
 
  370              		.loc 1 260 14 is_stmt 0 view .LVU103
@@ -716,9 +716,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  404 0058 10BD     		pop	{r4, pc}
  405              		.loc 1 278 1 view .LVU117
  406              		.cfi_endproc
- 407              	.LFE954:
+ 407              	.LFE1108:
  409              		.text
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 13
 
 
  410              	.Letext0:
@@ -729,21 +729,21 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 1
  415              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
  416              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
  417              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma_ex.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_dma_ex.c
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:21     .text.HAL_DMAEx_ConfigMuxSync:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:27     .text.HAL_DMAEx_ConfigMuxSync:00000000 HAL_DMAEx_ConfigMuxSync
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:115    .text.HAL_DMAEx_ConfigMuxSync:00000058 $d
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:120    .text.HAL_DMAEx_ConfigMuxRequestGenerator:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:126    .text.HAL_DMAEx_ConfigMuxRequestGenerator:00000000 HAL_DMAEx_ConfigMuxRequestGenerator
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:206    .text.HAL_DMAEx_EnableMuxRequestGenerator:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:212    .text.HAL_DMAEx_EnableMuxRequestGenerator:00000000 HAL_DMAEx_EnableMuxRequestGenerator
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:258    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:264    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000000 HAL_DMAEx_DisableMuxRequestGenerator
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:310    .text.HAL_DMAEx_MUX_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccHa50MC.s:316    .text.HAL_DMAEx_MUX_IRQHandler:00000000 HAL_DMAEx_MUX_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:21     .text.HAL_DMAEx_ConfigMuxSync:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:27     .text.HAL_DMAEx_ConfigMuxSync:00000000 HAL_DMAEx_ConfigMuxSync
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:115    .text.HAL_DMAEx_ConfigMuxSync:00000058 $d
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:120    .text.HAL_DMAEx_ConfigMuxRequestGenerator:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:126    .text.HAL_DMAEx_ConfigMuxRequestGenerator:00000000 HAL_DMAEx_ConfigMuxRequestGenerator
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:206    .text.HAL_DMAEx_EnableMuxRequestGenerator:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:212    .text.HAL_DMAEx_EnableMuxRequestGenerator:00000000 HAL_DMAEx_EnableMuxRequestGenerator
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:258    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:264    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000000 HAL_DMAEx_DisableMuxRequestGenerator
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:310    .text.HAL_DMAEx_MUX_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccl7JB2S.s:316    .text.HAL_DMAEx_MUX_IRQHandler:00000000 HAL_DMAEx_MUX_IRQHandler
 
 NO UNDEFINED SYMBOLS

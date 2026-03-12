@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "usbd_cdc_if.h"
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -35,6 +36,8 @@ enum {
 
 
 uint8_t readbuffer[256];
+
+uint8_t *data = "Hello from stm32\n";
 
 /* USER CODE END PTD */
 
@@ -50,6 +53,8 @@ uint8_t tastScheduler = 0;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+ADC_HandleTypeDef hadc1;
+
 I2C_HandleTypeDef hi2c1;
 
 IPCC_HandleTypeDef hipcc;
@@ -78,6 +83,7 @@ static void MX_IPCC_Init(void);
 static void MX_RTC_Init(void);
 static void MX_LPUART1_UART_Init(void);
 static void MX_QUADSPI_Init(void);
+static void MX_ADC1_Init(void);
 static void MX_RF_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -132,6 +138,7 @@ int main(void)
   MX_LPUART1_UART_Init();
   MX_QUADSPI_Init();
   MX_USB_Device_Init();
+  MX_ADC1_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */
   
@@ -162,7 +169,10 @@ int main(void)
     switch(btnState)
     {
       case STATE_1:
-        HAL_GPIO_TogglePin(GPIOB, LED_R_Pin);
+
+        CDC_Transmit_FS(data, strlen(data));
+
+        HAL_GPIO_TogglePin(GPIOB, LED_R_Pin);  
         HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 0);
         HAL_GPIO_WritePin(GPIOB, LED_G_Pin, 0); 
         
@@ -170,9 +180,13 @@ int main(void)
       case STATE_2:
 
         if (tastScheduler >= 1){
+
           gpsLogo();
-          packageDataToMem();
-          sendPackageToMem();
+          if(GPS_connected)  // Check if gps has good connection before storing data.
+          {
+            packageDataToMem();
+            sendPackageToMem();
+          }
 
           HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 0);
           HAL_GPIO_WritePin(GPIOB, LED_R_Pin, 0);  
@@ -207,6 +221,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_CRSInitTypeDef RCC_CRSInitStruct = {0};
 
   /** Configure LSE Drive Capability
   */
@@ -257,6 +272,21 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
+  /** Enable the SYSCFG APB clock
+  */
+  __HAL_RCC_CRS_CLK_ENABLE();
+
+  /** Configures CRS
+  */
+  RCC_CRSInitStruct.Prescaler = RCC_CRS_SYNC_DIV1;
+  RCC_CRSInitStruct.Source = RCC_CRS_SYNC_SOURCE_USB;
+  RCC_CRSInitStruct.Polarity = RCC_CRS_SYNC_POLARITY_RISING;
+  RCC_CRSInitStruct.ReloadValue = __HAL_RCC_CRS_RELOADVALUE_CALCULATE(48000000,1000);
+  RCC_CRSInitStruct.ErrorLimitValue = 34;
+  RCC_CRSInitStruct.HSI48CalibrationValue = 32;
+
+  HAL_RCCEx_CRSConfig(&RCC_CRSInitStruct);
 }
 
 /**
@@ -281,6 +311,64 @@ void PeriphCommonClock_Config(void)
   /* USER CODE BEGIN Smps */
 
   /* USER CODE END Smps */
+}
+
+/**
+  * @brief ADC1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_ADC1_Init(void)
+{
+
+  /* USER CODE BEGIN ADC1_Init 0 */
+
+  /* USER CODE END ADC1_Init 0 */
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /* USER CODE BEGIN ADC1_Init 1 */
+
+  /* USER CODE END ADC1_Init 1 */
+
+  /** Common config
+  */
+  hadc1.Instance = ADC1;
+  hadc1.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
+  hadc1.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
+  hadc1.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc1.Init.LowPowerAutoWait = DISABLE;
+  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.NbrOfConversion = 1;
+  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc1.Init.DMAContinuousRequests = DISABLE;
+  hadc1.Init.Overrun = ADC_OVR_DATA_PRESERVED;
+  hadc1.Init.OversamplingMode = DISABLE;
+  if (HAL_ADC_Init(&hadc1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure Regular Channel
+  */
+  sConfig.Channel = ADC_CHANNEL_VREFINT;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+  sConfig.SingleDiff = ADC_SINGLE_ENDED;
+  sConfig.OffsetNumber = ADC_OFFSET_NONE;
+  sConfig.Offset = 0;
+  if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN ADC1_Init 2 */
+
+  /* USER CODE END ADC1_Init 2 */
+
 }
 
 /**

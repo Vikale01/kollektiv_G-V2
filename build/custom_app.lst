@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
   24              		.thumb
   25              		.thumb_func
   27              	Custom_STN_NotificationEnabled:
-  28              	.LFB1269:
+  28              	.LFB1423:
    1:STM32_WPAN/App/custom_app.c **** /* USER CODE BEGIN Header */
    2:STM32_WPAN/App/custom_app.c **** /**
    3:STM32_WPAN/App/custom_app.c ****   ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
   28:STM32_WPAN/App/custom_app.c **** #include "stm32_seq.h"
   29:STM32_WPAN/App/custom_app.c **** 
   30:STM32_WPAN/App/custom_app.c **** /* Private includes ----------------------------------------------------------*/
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s 			page 2
 
 
   31:STM32_WPAN/App/custom_app.c **** /* USER CODE BEGIN Includes */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
   29              		.loc 1 84 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s 			page 3
 
 
   32              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -135,7 +135,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
   41              	.L2:
   42 0008 00000000 		.word	notifications_enable
   43              		.cfi_endproc
-  44              	.LFE1269:
+  44              	.LFE1423:
   46              		.section	.text.Custom_STM_App_Notification,"ax",%progbits
   47              		.align	1
   48              		.global	Custom_STM_App_Notification
@@ -144,7 +144,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
   51              		.thumb_func
   53              	Custom_STM_App_Notification:
   54              	.LVL0:
-  55              	.LFB1270:
+  55              	.LFB1424:
   87:STM32_WPAN/App/custom_app.c **** /* USER CODE END PFP */
   88:STM32_WPAN/App/custom_app.c **** 
   89:STM32_WPAN/App/custom_app.c **** /* Functions Definition ------------------------------------------------------*/
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
  103:STM32_WPAN/App/custom_app.c ****       /* USER CODE BEGIN CUSTOM_STM_DP_NOTIFY_ENABLED_EVT */
  104:STM32_WPAN/App/custom_app.c ****       notifications_enable = 1;
   70              		.loc 1 104 7 is_stmt 1 view .LVU7
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s 			page 4
 
 
   71              		.loc 1 104 28 is_stmt 0 view .LVU8
@@ -228,7 +228,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
   89              	.L8:
   90 001c 00000000 		.word	notifications_enable
   91              		.cfi_endproc
-  92              	.LFE1270:
+  92              	.LFE1424:
   94              		.section	.text.Custom_APP_Notification,"ax",%progbits
   95              		.align	1
   96              		.global	Custom_APP_Notification
@@ -237,8 +237,8 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
   99              		.thumb_func
  101              	Custom_APP_Notification:
  102              	.LVL1:
- 103              	.LFB1271:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 5
+ 103              	.LFB1425:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s 			page 5
 
 
  131:STM32_WPAN/App/custom_app.c **** 
@@ -289,7 +289,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
  112              		.loc 1 167 1 is_stmt 0 view .LVU19
  113 0000 7047     		bx	lr
  114              		.cfi_endproc
- 115              	.LFE1271:
+ 115              	.LFE1425:
  117              		.section	.text.Custom_APP_Init,"ax",%progbits
  118              		.align	1
  119              		.global	Custom_APP_Init
@@ -297,8 +297,8 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
  121              		.thumb
  122              		.thumb_func
  124              	Custom_APP_Init:
- 125              	.LFB1272:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 6
+ 125              	.LFB1426:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s 			page 6
 
 
  168:STM32_WPAN/App/custom_app.c **** 
@@ -318,7 +318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
  132              		.loc 1 175 1 is_stmt 0 view .LVU22
  133 0000 7047     		bx	lr
  134              		.cfi_endproc
- 135              	.LFE1272:
+ 135              	.LFE1426:
  137              		.section	.bss.notifications_enable,"aw",%nobits
  140              	notifications_enable:
  141 0000 00       		.space	1
@@ -351,28 +351,28 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 1
  166              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
  167              		.file 4 "STM32_WPAN/App/custom_stm.h"
  168              		.file 5 "STM32_WPAN/App/custom_app.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 custom_app.c
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:21     .text.Custom_STN_NotificationEnabled:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:27     .text.Custom_STN_NotificationEnabled:00000000 Custom_STN_NotificationEnabled
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:42     .text.Custom_STN_NotificationEnabled:00000008 $d
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:140    .bss.notifications_enable:00000000 notifications_enable
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:47     .text.Custom_STM_App_Notification:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:53     .text.Custom_STM_App_Notification:00000000 Custom_STM_App_Notification
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:90     .text.Custom_STM_App_Notification:0000001c $d
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:95     .text.Custom_APP_Notification:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:101    .text.Custom_APP_Notification:00000000 Custom_APP_Notification
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:118    .text.Custom_APP_Init:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:124    .text.Custom_APP_Init:00000000 Custom_APP_Init
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:141    .bss.notifications_enable:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:147    .bss.Connection_Handle:00000000 Connection_Handle
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:144    .bss.Connection_Handle:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:154    .bss.NotifyCharData:00000000 NotifyCharData
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:151    .bss.NotifyCharData:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:161    .bss.UpdateCharData:00000000 UpdateCharData
-C:\Users\bku598\AppData\Local\Temp\ccg0jTx5.s:158    .bss.UpdateCharData:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:21     .text.Custom_STN_NotificationEnabled:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:27     .text.Custom_STN_NotificationEnabled:00000000 Custom_STN_NotificationEnabled
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:42     .text.Custom_STN_NotificationEnabled:00000008 $d
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:140    .bss.notifications_enable:00000000 notifications_enable
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:47     .text.Custom_STM_App_Notification:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:53     .text.Custom_STM_App_Notification:00000000 Custom_STM_App_Notification
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:90     .text.Custom_STM_App_Notification:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:95     .text.Custom_APP_Notification:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:101    .text.Custom_APP_Notification:00000000 Custom_APP_Notification
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:118    .text.Custom_APP_Init:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:124    .text.Custom_APP_Init:00000000 Custom_APP_Init
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:141    .bss.notifications_enable:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:147    .bss.Connection_Handle:00000000 Connection_Handle
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:144    .bss.Connection_Handle:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:154    .bss.NotifyCharData:00000000 NotifyCharData
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:151    .bss.NotifyCharData:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:161    .bss.UpdateCharData:00000000 UpdateCharData
+C:\Users\bku598\AppData\Local\Temp\cc2PWY57.s:158    .bss.UpdateCharData:00000000 $d
 
 NO UNDEFINED SYMBOLS

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
   24              		.thumb
   25              		.thumb_func
   27              	UTIL_SEQ_Init:
-  28              	.LFB1258:
+  28              	.LFB1412:
    1:Utilities/sequencer/stm32_seq.c **** /**
    2:Utilities/sequencer/stm32_seq.c ****   ******************************************************************************
    3:Utilities/sequencer/stm32_seq.c ****   * @file    stm32_seq.c
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
   28:Utilities/sequencer/stm32_seq.c **** /** @defgroup SEQUENCER_Private_type SEQUENCER private type
   29:Utilities/sequencer/stm32_seq.c ****   *  @{
   30:Utilities/sequencer/stm32_seq.c ****   */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 2
 
 
   31:Utilities/sequencer/stm32_seq.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
   85:Utilities/sequencer/stm32_seq.c **** 
   86:Utilities/sequencer/stm32_seq.c **** /**
   87:Utilities/sequencer/stm32_seq.c ****   * @brief default number of task is default 32 (maximum), can be reduced by redefining in utilitie
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 3
 
 
   88:Utilities/sequencer/stm32_seq.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  142:Utilities/sequencer/stm32_seq.c ****   * @brief evt expected mask.
  143:Utilities/sequencer/stm32_seq.c ****   */
  144:Utilities/sequencer/stm32_seq.c **** static volatile UTIL_SEQ_bm_t EvtWaited = UTIL_SEQ_NO_BIT_SET;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 4
 
 
  145:Utilities/sequencer/stm32_seq.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
   38              		.loc 1 189 5 view .LVU1
   39              		.loc 1 189 13 is_stmt 0 view .LVU2
   40 0002 0024     		movs	r4, #0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 5
 
 
   41 0004 104B     		ldr	r3, .L5
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
   82 002c 0D4B     		ldr	r3, .L5+28
   83 002e 0022     		movs	r2, #0
   84 0030 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 6
 
 
  203:Utilities/sequencer/stm32_seq.c **** }
@@ -341,7 +341,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  115 0068 00000000 		.word	TaskPrio
  116              	.LBE81:
  117              		.cfi_endproc
- 118              	.LFE1258:
+ 118              	.LFE1412:
  120              		.section	.text.UTIL_SEQ_DeInit,"ax",%progbits
  121              		.align	1
  122              		.global	UTIL_SEQ_DeInit
@@ -349,7 +349,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  124              		.thumb
  125              		.thumb_func
  127              	UTIL_SEQ_DeInit:
- 128              	.LFB1259:
+ 128              	.LFB1413:
  204:Utilities/sequencer/stm32_seq.c **** 
  205:Utilities/sequencer/stm32_seq.c **** void UTIL_SEQ_DeInit( void )
  206:Utilities/sequencer/stm32_seq.c **** {
@@ -358,14 +358,14 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  131              		@ args = 0, pretend = 0, frame = 0
  132              		@ frame_needed = 0, uses_anonymous_args = 0
  133              		@ link register save eliminated.
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 7
 
 
  207:Utilities/sequencer/stm32_seq.c **** }
  134              		.loc 1 207 1 view .LVU30
  135 0000 7047     		bx	lr
  136              		.cfi_endproc
- 137              	.LFE1259:
+ 137              	.LFE1413:
  139              		.section	.text.UTIL_SEQ_SetTask,"ax",%progbits
  140              		.align	1
  141              		.global	UTIL_SEQ_SetTask
@@ -374,7 +374,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  144              		.thumb_func
  146              	UTIL_SEQ_SetTask:
  147              	.LVL3:
- 148              	.LFB1263:
+ 148              	.LFB1417:
  208:Utilities/sequencer/stm32_seq.c **** 
  209:Utilities/sequencer/stm32_seq.c **** /**
  210:Utilities/sequencer/stm32_seq.c ****   * This function can be nested.
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  248:Utilities/sequencer/stm32_seq.c ****         counter = 0U;
  249:Utilities/sequencer/stm32_seq.c ****         /*
  250:Utilities/sequencer/stm32_seq.c ****          * When a flag is set, the associated bit is set in TaskPrio[counter].priority mask dependi
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 8
 
 
  251:Utilities/sequencer/stm32_seq.c ****          * on the priority parameter given from UTIL_SEQ_SetTask()
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  305:Utilities/sequencer/stm32_seq.c ****         else
  306:Utilities/sequencer/stm32_seq.c ****         {
  307:Utilities/sequencer/stm32_seq.c ****           /* nothing to do */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 9
 
 
  308:Utilities/sequencer/stm32_seq.c ****         }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  362:Utilities/sequencer/stm32_seq.c ****             TaskPrio[index].round_robin &= round_robin[index];
  363:Utilities/sequencer/stm32_seq.c ****           }
  364:Utilities/sequencer/stm32_seq.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 10
 
 
  365:Utilities/sequencer/stm32_seq.c ****           UTIL_SEQ_PostTask(CurrentTaskIdx);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  419:Utilities/sequencer/stm32_seq.c **** 
  420:Utilities/sequencer/stm32_seq.c ****     TaskCb[SEQ_BitPosition(TaskId_bm)] = Task;
  421:Utilities/sequencer/stm32_seq.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 11
 
 
  422:Utilities/sequencer/stm32_seq.c ****     UTIL_SEQ_EXIT_CRITICAL_SECTION();
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
   24:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
   26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 12
 
 
   27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
   81:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
   83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 13
 
 
   84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  138:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
  139:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __copy_table_t;
  140:Drivers/CMSIS/Include/cmsis_gcc.h ****   
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 14
 
 
  141:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  195:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  196:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
  197:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 15
 
 
  198:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  252:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  253:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  254:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 16
 
 
  255:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  309:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  310:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get Process Stack Pointer
  311:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer (PSP).
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 17
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 17
 
 
  312:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               PSP Register value
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  366:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               MSP Register value
  367:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  368:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __get_MSP(void)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 18
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 18
 
 
  369:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  423:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_SP_NS(void)
  424:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  425:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t result;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 19
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 19
 
 
  426:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  181 0004 72B6     		cpsid i
  182              	@ 0 "" 2
  183              		.thumb
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 20
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 20
 
 
  184              		.syntax unified
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  206              		.loc 2 481 3 view .LVU48
  207              		.syntax unified
  208              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 21
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 21
 
 
  209 001a 8CF31088 		MSR primask, ip
@@ -1221,7 +1221,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  223 0020 00000000 		.word	TaskSet
  224 0024 00000000 		.word	TaskPrio
  225              		.cfi_endproc
- 226              	.LFE1263:
+ 226              	.LFE1417:
  228              		.section	.text.UTIL_SEQ_IsSchedulableTask,"ax",%progbits
  229              		.align	1
  230              		.global	UTIL_SEQ_IsSchedulableTask
@@ -1230,7 +1230,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  233              		.thumb_func
  235              	UTIL_SEQ_IsSchedulableTask:
  236              	.LVL7:
- 237              	.LFB1264:
+ 237              	.LFB1418:
  452:Utilities/sequencer/stm32_seq.c **** 
  453:Utilities/sequencer/stm32_seq.c **** uint32_t UTIL_SEQ_IsSchedulableTask( UTIL_SEQ_bm_t TaskId_bm)
  454:Utilities/sequencer/stm32_seq.c **** {
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  252              		.syntax unified
  253              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  254 0000 EFF31082 		MRS r2, primask
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 22
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 22
 
 
  255              	@ 0 "" 2
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  462:Utilities/sequencer/stm32_seq.c **** 
  463:Utilities/sequencer/stm32_seq.c ****     UTIL_SEQ_EXIT_CRITICAL_SECTION();
  302              		.loc 1 463 5 is_stmt 1 view .LVU73
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 23
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 23
 
 
  303              	.LBB92:
@@ -1353,7 +1353,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  328 002c 00000000 		.word	TaskMask
  329 0030 00000000 		.word	SuperMask
  330              		.cfi_endproc
- 331              	.LFE1264:
+ 331              	.LFE1418:
  333              		.section	.text.UTIL_SEQ_PauseTask,"ax",%progbits
  334              		.align	1
  335              		.global	UTIL_SEQ_PauseTask
@@ -1362,7 +1362,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  338              		.thumb_func
  340              	UTIL_SEQ_PauseTask:
  341              	.LVL14:
- 342              	.LFB1265:
+ 342              	.LFB1419:
  466:Utilities/sequencer/stm32_seq.c **** 
  467:Utilities/sequencer/stm32_seq.c **** void UTIL_SEQ_PauseTask( UTIL_SEQ_bm_t TaskId_bm )
  468:Utilities/sequencer/stm32_seq.c **** {
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  449:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  351              		.loc 2 449 31 view .LVU81
  352              	.LBB95:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 24
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 24
 
 
  451:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  396              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  397 0010 81F31088 		MSR primask, r1
  398              	@ 0 "" 2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 25
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 25
 
 
  399              	.LVL18:
@@ -1458,7 +1458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  410              	.L18:
  411 0018 00000000 		.word	TaskMask
  412              		.cfi_endproc
- 413              	.LFE1265:
+ 413              	.LFE1419:
  415              		.section	.text.UTIL_SEQ_IsPauseTask,"ax",%progbits
  416              		.align	1
  417              		.global	UTIL_SEQ_IsPauseTask
@@ -1467,7 +1467,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  420              		.thumb_func
  422              	UTIL_SEQ_IsPauseTask:
  423              	.LVL19:
- 424              	.LFB1266:
+ 424              	.LFB1420:
  477:Utilities/sequencer/stm32_seq.c **** 
  478:Utilities/sequencer/stm32_seq.c **** uint32_t UTIL_SEQ_IsPauseTask( UTIL_SEQ_bm_t TaskId_bm )
  479:Utilities/sequencer/stm32_seq.c **** {
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  443              		.loc 2 454 3 view .LVU104
  454:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  444              		.loc 2 454 3 is_stmt 0 view .LVU105
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 26
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 26
 
 
  445              		.thumb
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  491              		.loc 1 486 5 is_stmt 1 view .LVU117
  487:Utilities/sequencer/stm32_seq.c **** }
  492              		.loc 1 487 1 is_stmt 0 view .LVU118
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 27
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 27
 
 
  493 0016 7047     		bx	lr
@@ -1567,7 +1567,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  496              	.L21:
  497 0018 00000000 		.word	TaskMask
  498              		.cfi_endproc
- 499              	.LFE1266:
+ 499              	.LFE1420:
  501              		.section	.text.UTIL_SEQ_ResumeTask,"ax",%progbits
  502              		.align	1
  503              		.global	UTIL_SEQ_ResumeTask
@@ -1576,7 +1576,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  506              		.thumb_func
  508              	UTIL_SEQ_ResumeTask:
  509              	.LVL24:
- 510              	.LFB1267:
+ 510              	.LFB1421:
  488:Utilities/sequencer/stm32_seq.c **** 
  489:Utilities/sequencer/stm32_seq.c **** void UTIL_SEQ_ResumeTask( UTIL_SEQ_bm_t TaskId_bm )
  490:Utilities/sequencer/stm32_seq.c **** {
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  209:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  539              		.loc 2 209 3 view .LVU128
  540              		.syntax unified
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 28
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 28
 
 
  541              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
@@ -1669,7 +1669,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  578              	.L24:
  579 0014 00000000 		.word	TaskMask
  580              		.cfi_endproc
- 581              	.LFE1267:
+ 581              	.LFE1421:
  583              		.section	.text.UTIL_SEQ_SetEvt,"ax",%progbits
  584              		.align	1
  585              		.global	UTIL_SEQ_SetEvt
@@ -1678,10 +1678,10 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  588              		.thumb_func
  590              	UTIL_SEQ_SetEvt:
  591              	.LVL29:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 29
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 29
 
 
- 592              	.LFB1268:
+ 592              	.LFB1422:
  499:Utilities/sequencer/stm32_seq.c **** 
  500:Utilities/sequencer/stm32_seq.c **** void UTIL_SEQ_SetEvt( UTIL_SEQ_bm_t EvtId_bm )
  501:Utilities/sequencer/stm32_seq.c **** {
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  633 0008 1368     		ldr	r3, [r2]
  634 000a 1843     		orrs	r0, r0, r3
  635              	.LVL31:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 30
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 30
 
 
  636              		.loc 1 504 12 view .LVU150
@@ -1774,7 +1774,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  660              	.L27:
  661 0014 00000000 		.word	EvtSet
  662              		.cfi_endproc
- 663              	.LFE1268:
+ 663              	.LFE1422:
  665              		.section	.text.UTIL_SEQ_ClrEvt,"ax",%progbits
  666              		.align	1
  667              		.global	UTIL_SEQ_ClrEvt
@@ -1783,7 +1783,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  670              		.thumb_func
  672              	UTIL_SEQ_ClrEvt:
  673              	.LVL34:
- 674              	.LFB1269:
+ 674              	.LFB1423:
  510:Utilities/sequencer/stm32_seq.c **** 
  511:Utilities/sequencer/stm32_seq.c **** void UTIL_SEQ_ClrEvt( UTIL_SEQ_bm_t EvtId_bm )
  512:Utilities/sequencer/stm32_seq.c **** {
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  682              	.LBI118:
  449:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  683              		.loc 2 449 31 view .LVU159
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 31
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 31
 
 
  684              	.LBB119:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  727              		.syntax unified
  728              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  729 0010 81F31088 		MSR primask, r1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 32
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 32
 
 
  730              	@ 0 "" 2
@@ -1879,7 +1879,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  742              	.L30:
  743 0018 00000000 		.word	EvtSet
  744              		.cfi_endproc
- 745              	.LFE1269:
+ 745              	.LFE1423:
  747              		.section	.text.UTIL_SEQ_IsEvtPend,"ax",%progbits
  748              		.align	1
  749              		.global	UTIL_SEQ_IsEvtPend
@@ -1887,7 +1887,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  751              		.thumb
  752              		.thumb_func
  754              	UTIL_SEQ_IsEvtPend:
- 755              	.LFB1271:
+ 755              	.LFB1425:
  521:Utilities/sequencer/stm32_seq.c **** 
  522:Utilities/sequencer/stm32_seq.c **** void UTIL_SEQ_WaitEvt(UTIL_SEQ_bm_t EvtId_bm)
  523:Utilities/sequencer/stm32_seq.c **** {
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  548:Utilities/sequencer/stm32_seq.c ****      * The system is waiting only for the last waited event.
  549:Utilities/sequencer/stm32_seq.c ****      * When it will go out, it will wait again from the previous one.
  550:Utilities/sequencer/stm32_seq.c ****      * It case it occurs while waiting for the second one, the while loop will exit immediately
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 33
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 33
 
 
  551:Utilities/sequencer/stm32_seq.c ****      */
@@ -1973,18 +1973,18 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  776 000c 00000000 		.word	EvtWaited
  777 0010 00000000 		.word	EvtSet
  778              		.cfi_endproc
- 779              	.LFE1271:
+ 779              	.LFE1425:
  781              		.section	.text.UTIL_SEQ_Idle,"ax",%progbits
  782              		.align	1
  783              		.weak	UTIL_SEQ_Idle
  784              		.syntax unified
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 34
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 34
 
 
  785              		.thumb
  786              		.thumb_func
  788              	UTIL_SEQ_Idle:
- 789              	.LFB1273:
+ 789              	.LFB1427:
  580:Utilities/sequencer/stm32_seq.c **** 
  581:Utilities/sequencer/stm32_seq.c **** __WEAK void UTIL_SEQ_EvtIdle( UTIL_SEQ_bm_t TaskId_bm, UTIL_SEQ_bm_t EvtWaited_bm )
  582:Utilities/sequencer/stm32_seq.c **** {
@@ -2006,7 +2006,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  796              		.loc 1 591 1 is_stmt 0 view .LVU184
  797 0000 7047     		bx	lr
  798              		.cfi_endproc
- 799              	.LFE1273:
+ 799              	.LFE1427:
  801              		.section	.text.UTIL_SEQ_PreIdle,"ax",%progbits
  802              		.align	1
  803              		.weak	UTIL_SEQ_PreIdle
@@ -2014,7 +2014,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  805              		.thumb
  806              		.thumb_func
  808              	UTIL_SEQ_PreIdle:
- 809              	.LFB1274:
+ 809              	.LFB1428:
  592:Utilities/sequencer/stm32_seq.c **** 
  593:Utilities/sequencer/stm32_seq.c **** __WEAK void UTIL_SEQ_PreIdle( void )
  594:Utilities/sequencer/stm32_seq.c **** {
@@ -2032,18 +2032,18 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  816              		.loc 1 599 1 is_stmt 0 view .LVU187
  817 0000 7047     		bx	lr
  818              		.cfi_endproc
- 819              	.LFE1274:
+ 819              	.LFE1428:
  821              		.section	.text.UTIL_SEQ_PostIdle,"ax",%progbits
  822              		.align	1
  823              		.weak	UTIL_SEQ_PostIdle
  824              		.syntax unified
  825              		.thumb
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 35
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 35
 
 
  826              		.thumb_func
  828              	UTIL_SEQ_PostIdle:
- 829              	.LFB1275:
+ 829              	.LFB1429:
  600:Utilities/sequencer/stm32_seq.c **** 
  601:Utilities/sequencer/stm32_seq.c **** __WEAK void UTIL_SEQ_PostIdle( void )
  602:Utilities/sequencer/stm32_seq.c **** {
@@ -2061,7 +2061,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  836              		.loc 1 607 1 is_stmt 0 view .LVU190
  837 0000 7047     		bx	lr
  838              		.cfi_endproc
- 839              	.LFE1275:
+ 839              	.LFE1429:
  841              		.section	.text.UTIL_SEQ_PreTask,"ax",%progbits
  842              		.align	1
  843              		.weak	UTIL_SEQ_PreTask
@@ -2070,7 +2070,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  846              		.thumb_func
  848              	UTIL_SEQ_PreTask:
  849              	.LVL40:
- 850              	.LFB1276:
+ 850              	.LFB1430:
  608:Utilities/sequencer/stm32_seq.c **** 
  609:Utilities/sequencer/stm32_seq.c **** __WEAK void UTIL_SEQ_PreTask( uint32_t TaskId )
  610:Utilities/sequencer/stm32_seq.c **** {
@@ -2087,7 +2087,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  858              		.loc 1 613 1 is_stmt 0 view .LVU194
  859 0000 7047     		bx	lr
  860              		.cfi_endproc
- 861              	.LFE1276:
+ 861              	.LFE1430:
  863              		.section	.text.UTIL_SEQ_PostTask,"ax",%progbits
  864              		.align	1
  865              		.weak	UTIL_SEQ_PostTask
@@ -2096,9 +2096,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  868              		.thumb_func
  870              	UTIL_SEQ_PostTask:
  871              	.LVL41:
- 872              	.LFB1277:
+ 872              	.LFB1431:
  614:Utilities/sequencer/stm32_seq.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 36
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 36
 
 
  615:Utilities/sequencer/stm32_seq.c **** __WEAK void UTIL_SEQ_PostTask( uint32_t TaskId )
@@ -2116,7 +2116,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  880              		.loc 1 619 1 is_stmt 0 view .LVU198
  881 0000 7047     		bx	lr
  882              		.cfi_endproc
- 883              	.LFE1277:
+ 883              	.LFE1431:
  885              		.section	.text.UTIL_SEQ_CatchWarning,"ax",%progbits
  886              		.align	1
  887              		.weak	UTIL_SEQ_CatchWarning
@@ -2125,7 +2125,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  890              		.thumb_func
  892              	UTIL_SEQ_CatchWarning:
  893              	.LVL42:
- 894              	.LFB1278:
+ 894              	.LFB1432:
  620:Utilities/sequencer/stm32_seq.c **** 
  621:Utilities/sequencer/stm32_seq.c **** __WEAK void UTIL_SEQ_CatchWarning(UTIL_SEQ_WARNING WarningId)
  622:Utilities/sequencer/stm32_seq.c **** {
@@ -2142,7 +2142,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  902              		.loc 1 625 1 is_stmt 0 view .LVU202
  903 0000 7047     		bx	lr
  904              		.cfi_endproc
- 905              	.LFE1278:
+ 905              	.LFE1432:
  907              		.section	.text.SEQ_BitPosition,"ax",%progbits
  908              		.align	1
  909              		.global	SEQ_BitPosition
@@ -2151,14 +2151,14 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  912              		.thumb_func
  914              	SEQ_BitPosition:
  915              	.LVL43:
- 916              	.LFB1279:
+ 916              	.LFB1433:
  626:Utilities/sequencer/stm32_seq.c **** 
  627:Utilities/sequencer/stm32_seq.c **** /**
  628:Utilities/sequencer/stm32_seq.c ****   * @}
  629:Utilities/sequencer/stm32_seq.c ****   */
  630:Utilities/sequencer/stm32_seq.c **** 
  631:Utilities/sequencer/stm32_seq.c **** /** @addtogroup SEQUENCER_Private_function
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 37
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 37
 
 
  632:Utilities/sequencer/stm32_seq.c ****   *  @{
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  484:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  485:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (defined (__ARM_FEATURE_CMSE ) && (__ARM_FEATURE_CMSE == 3))
  486:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 38
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 38
 
 
  487:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Set Priority Mask (non-secure)
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  541:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Base Priority register value
  542:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  543:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_BASEPRI_NS(void)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 39
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 39
 
 
  544:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  598:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("MRS %0, faultmask" : "=r" (result) );
  599:Drivers/CMSIS/Include/cmsis_gcc.h ****   return(result);
  600:Drivers/CMSIS/Include/cmsis_gcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 40
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 40
 
 
  601:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  655:Drivers/CMSIS/Include/cmsis_gcc.h ****   
  656:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Returns the current value of the Process Stack Pointer Limit (PSPLIM).
  657:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               PSPLIM Register value
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 41
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 41
 
 
  658:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  712:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  713:Drivers/CMSIS/Include/cmsis_gcc.h **** }
  714:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 42
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 42
 
 
  715:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  769:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE uint32_t __TZ_get_MSPLIM_NS(void)
  770:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  771:Drivers/CMSIS/Include/cmsis_gcc.h **** #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)))
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 43
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 43
 
 
  772:Drivers/CMSIS/Include/cmsis_gcc.h ****   // without main extensions, the non-secure MSPLIM is RAZ/WI
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  826:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  827:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  828:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 44
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 44
 
 
  829:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Get FPSCR
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  883:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
  884:Drivers/CMSIS/Include/cmsis_gcc.h **** */
  885:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 45
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 45
 
 
  886:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Define macros for porting to both thumb1 and thumb2.
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  940:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Data Synchronization Barrier
  941:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Acts as a special kind of Data Memory Barrier.
  942:Drivers/CMSIS/Include/cmsis_gcc.h ****            It completes when all explicit memory accesses before this instruction complete.
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 46
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 46
 
 
  943:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  997:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Reverses the byte order in a 16-bit value and returns the signed 16-bit result. For exam
  998:Drivers/CMSIS/Include/cmsis_gcc.h ****   \param [in]    value  Value to reverse
  999:Drivers/CMSIS/Include/cmsis_gcc.h ****   \return               Reversed value
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 47
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 47
 
 
 1000:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
 1054:Drivers/CMSIS/Include/cmsis_gcc.h ****      (defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1))    )
 1055:Drivers/CMSIS/Include/cmsis_gcc.h ****    __ASM volatile ("rbit %0, %1" : "=r" (result) : "r" (value) );
 1056:Drivers/CMSIS/Include/cmsis_gcc.h **** #else
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 48
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 48
 
 
 1057:Drivers/CMSIS/Include/cmsis_gcc.h ****   uint32_t s = (4U /*sizeof(v)*/ * 8U) - 1U; /* extra shift needed at end */
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  941 000a C0B2     		uxtb	r0, r0
  942 000c 7047     		bx	lr
  943              	.LVL45:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 49
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 49
 
 
  944              	.L43:
@@ -2894,7 +2894,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  952              	.LBE126:
  953              	.LBE127:
  954              		.cfi_endproc
- 955              	.LFE1279:
+ 955              	.LFE1433:
  957              		.section	.text.UTIL_SEQ_Run,"ax",%progbits
  958              		.align	1
  959              		.global	UTIL_SEQ_Run
@@ -2903,7 +2903,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  962              		.thumb_func
  964              	UTIL_SEQ_Run:
  965              	.LVL47:
- 966              	.LFB1260:
+ 966              	.LFB1414:
  216:Utilities/sequencer/stm32_seq.c ****     uint32_t counter;
  967              		.loc 1 216 1 is_stmt 1 view -0
  968              		.cfi_startproc
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  991              		.loc 1 221 5 view .LVU221
  222:Utilities/sequencer/stm32_seq.c ****     UTIL_SEQ_bm_t local_evtwaited;
  992              		.loc 1 222 5 view .LVU222
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 50
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 50
 
 
  223:Utilities/sequencer/stm32_seq.c ****     uint32_t round_robin[UTIL_SEQ_CONF_PRIO_NBR];
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1029 0026 31E0     		b	.L45
  1030              	.LVL54:
  1031              	.L46:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 51
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 51
 
 
  1032              	.LBB128:
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1072              		.syntax unified
  1073              	.LBE130:
  1074              	.LBE129:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 52
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 52
 
 
  325:Utilities/sequencer/stm32_seq.c ****         /* remove from the list or pending task the one that has been selected to be executed */
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1117              		.thumb
  1118              		.syntax unified
  1119              	.LBE134:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 53
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 53
 
 
  1120              	.LBE133:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  254:Utilities/sequencer/stm32_seq.c ****         {
  1161              		.loc 1 254 72 is_stmt 1 view .LVU280
  254:Utilities/sequencer/stm32_seq.c ****         {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 54
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 54
 
 
  1162              		.loc 1 254 33 is_stmt 0 view .LVU281
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1201 00d0 00EBC200 		add	r0, r0, r2, lsl #3
  1202 00d4 4068     		ldr	r0, [r0, #4]
  294:Utilities/sequencer/stm32_seq.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 55
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 55
 
 
  1203              		.loc 1 294 23 view .LVU297
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1242 0104 ACE7     		b	.L49
  1243              	.LVL70:
  1244              	.L53:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 56
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 56
 
 
  1245              	.LBB135:
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  365:Utilities/sequencer/stm32_seq.c **** 
  1285              		.loc 1 365 11 is_stmt 0 view .LVU327
  1286 0130 2068     		ldr	r0, [r4]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 57
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 57
 
 
  1287 0132 FFF7FEFF 		bl	UTIL_SEQ_PostTask
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1328              		.loc 1 348 25 view .LVU340
  1329              	.LBE137:
  1330              	.LBB138:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 58
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 58
 
 
  362:Utilities/sequencer/stm32_seq.c ****           }
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  412:Utilities/sequencer/stm32_seq.c **** }
  1371              		.loc 1 412 5 is_stmt 1 view .LVU355
  413:Utilities/sequencer/stm32_seq.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 59
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 59
 
 
  1372              		.loc 1 413 1 is_stmt 0 view .LVU356
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1416              		.syntax unified
  1417              	.LBE144:
  1418              	.LBE143:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 60
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 60
 
 
  394:Utilities/sequencer/stm32_seq.c ****         local_evtset = EvtSet;
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  479:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  1458              		.loc 2 479 27 view .LVU382
  1459              	.LBB146:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 61
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 61
 
 
  481:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -3639,7 +3639,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1491 01ec 00000000 		.word	TaskClearList
  1492              	.LBE140:
  1493              		.cfi_endproc
- 1494              	.LFE1260:
+ 1494              	.LFE1414:
  1496              		.section	.text.UTIL_SEQ_EvtIdle,"ax",%progbits
  1497              		.align	1
  1498              		.weak	UTIL_SEQ_EvtIdle
@@ -3648,7 +3648,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1501              		.thumb_func
  1503              	UTIL_SEQ_EvtIdle:
  1504              	.LVL96:
- 1505              	.LFB1272:
+ 1505              	.LFB1426:
  582:Utilities/sequencer/stm32_seq.c ****     (void)EvtWaited_bm;
  1506              		.loc 1 582 1 is_stmt 1 view -0
  1507              		.cfi_startproc
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1510              		.loc 1 582 1 is_stmt 0 view .LVU388
  1511 0000 08B5     		push	{r3, lr}
  1512              	.LCFI5:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 62
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 62
 
 
  1513              		.cfi_def_cfa_offset 8
@@ -3680,7 +3680,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1524              		.loc 1 586 1 is_stmt 0 view .LVU393
  1525 0008 08BD     		pop	{r3, pc}
  1526              		.cfi_endproc
- 1527              	.LFE1272:
+ 1527              	.LFE1426:
  1529              		.section	.text.UTIL_SEQ_WaitEvt,"ax",%progbits
  1530              		.align	1
  1531              		.global	UTIL_SEQ_WaitEvt
@@ -3689,7 +3689,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1534              		.thumb_func
  1536              	UTIL_SEQ_WaitEvt:
  1537              	.LVL99:
- 1538              	.LFB1270:
+ 1538              	.LFB1424:
  523:Utilities/sequencer/stm32_seq.c ****     UTIL_SEQ_bm_t event_waited_id_backup;
  1539              		.loc 1 523 1 is_stmt 1 view -0
  1540              		.cfi_startproc
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  531:Utilities/sequencer/stm32_seq.c ****     if(UTIL_SEQ_NOTASKRUNNING == CurrentTaskIdx)
  1558              		.loc 1 531 22 is_stmt 0 view .LVU400
  1559 0004 114B     		ldr	r3, .L77
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 63
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 63
 
 
  1560 0006 1E68     		ldr	r6, [r3]
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  553:Utilities/sequencer/stm32_seq.c ****     {
  1600              		.loc 1 553 32 view .LVU415
  1601 002a 2342     		tst	r3, r4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 64
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 64
 
 
  1602 002c F7D0     		beq	.L74
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1643 003c 23EA0403 		bic	r3, r3, r4
  1644 0040 1360     		str	r3, [r2]
  569:Utilities/sequencer/stm32_seq.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 65
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 65
 
 
  1645              		.loc 1 569 5 is_stmt 1 view .LVU429
@@ -3882,7 +3882,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1675 0050 00000000 		.word	EvtWaited
  1676 0054 00000000 		.word	EvtSet
  1677              		.cfi_endproc
- 1678              	.LFE1270:
+ 1678              	.LFE1424:
  1680              		.section	.text.UTIL_SEQ_RegTask,"ax",%progbits
  1681              		.align	1
  1682              		.global	UTIL_SEQ_RegTask
@@ -3891,14 +3891,14 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1685              		.thumb_func
  1687              	UTIL_SEQ_RegTask:
  1688              	.LVL110:
- 1689              	.LFB1261:
+ 1689              	.LFB1415:
  416:Utilities/sequencer/stm32_seq.c ****     (void)Flags;
  1690              		.loc 1 416 1 is_stmt 1 view -0
  1691              		.cfi_startproc
  1692              		@ args = 0, pretend = 0, frame = 0
  1693              		@ frame_needed = 0, uses_anonymous_args = 0
  416:Utilities/sequencer/stm32_seq.c ****     (void)Flags;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 66
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 66
 
 
  1694              		.loc 1 416 1 is_stmt 0 view .LVU439
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  420:Utilities/sequencer/stm32_seq.c **** 
  1737              		.loc 1 420 12 is_stmt 0 view .LVU451
  1738 000a FFF7FEFF 		bl	SEQ_BitPosition
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 67
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 67
 
 
  1739              	.LVL112:
@@ -4000,7 +4000,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1767              	.L81:
  1768 001c 00000000 		.word	TaskCb
  1769              		.cfi_endproc
- 1770              	.LFE1261:
+ 1770              	.LFE1415:
  1772              		.section	.text.UTIL_SEQ_IsRegisteredTask,"ax",%progbits
  1773              		.align	1
  1774              		.global	UTIL_SEQ_IsRegisteredTask
@@ -4009,7 +4009,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1777              		.thumb_func
  1779              	UTIL_SEQ_IsRegisteredTask:
  1780              	.LVL116:
- 1781              	.LFB1262:
+ 1781              	.LFB1416:
  428:Utilities/sequencer/stm32_seq.c ****     uint32_t _status = 0;
  1782              		.loc 1 428 1 is_stmt 1 view -0
  1783              		.cfi_startproc
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  428:Utilities/sequencer/stm32_seq.c ****     uint32_t _status = 0;
  1786              		.loc 1 428 1 is_stmt 0 view .LVU461
  1787 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 68
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 68
 
 
  1788              	.LCFI8:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  432:Utilities/sequencer/stm32_seq.c ****     {
  1830              		.loc 1 432 16 discriminator 1 view .LVU474
  1831 000c 044B     		ldr	r3, .L88
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 69
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 69
 
 
  1832 000e 53F82030 		ldr	r3, [r3, r0, lsl #2]
@@ -4123,7 +4123,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1863              	.L88:
  1864 0020 00000000 		.word	TaskCb
  1865              		.cfi_endproc
- 1866              	.LFE1262:
+ 1866              	.LFE1416:
  1868              		.section	.bss.TaskClearList,"aw",%nobits
  1869              		.align	2
  1872              	TaskClearList:
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1884              	TaskCb:
  1885 0000 00000000 		.space	128
  1885      00000000 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 70
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 70
 
 
  1885      00000000 
@@ -4177,89 +4177,89 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 1
  1928              		.file 7 "Core/Inc/app_conf.h"
  1929              		.file 8 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
  1930              		.file 9 "<built-in>"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 71
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 71
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32_seq.c
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:21     .text.UTIL_SEQ_Init:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:27     .text.UTIL_SEQ_Init:00000000 UTIL_SEQ_Init
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:107    .text.UTIL_SEQ_Init:00000048 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1920   .bss.TaskSet:00000000 TaskSet
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1914   .data.TaskMask:00000000 TaskMask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1908   .data.SuperMask:00000000 SuperMask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1902   .bss.EvtSet:00000000 EvtSet
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1896   .bss.EvtWaited:00000000 EvtWaited
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1890   .bss.CurrentTaskIdx:00000000 CurrentTaskIdx
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1884   .bss.TaskCb:00000000 TaskCb
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1872   .bss.TaskClearList:00000000 TaskClearList
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1878   .bss.TaskPrio:00000000 TaskPrio
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:121    .text.UTIL_SEQ_DeInit:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:127    .text.UTIL_SEQ_DeInit:00000000 UTIL_SEQ_DeInit
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:140    .text.UTIL_SEQ_SetTask:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:146    .text.UTIL_SEQ_SetTask:00000000 UTIL_SEQ_SetTask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:223    .text.UTIL_SEQ_SetTask:00000020 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:229    .text.UTIL_SEQ_IsSchedulableTask:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:235    .text.UTIL_SEQ_IsSchedulableTask:00000000 UTIL_SEQ_IsSchedulableTask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:327    .text.UTIL_SEQ_IsSchedulableTask:00000028 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:334    .text.UTIL_SEQ_PauseTask:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:340    .text.UTIL_SEQ_PauseTask:00000000 UTIL_SEQ_PauseTask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:411    .text.UTIL_SEQ_PauseTask:00000018 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:416    .text.UTIL_SEQ_IsPauseTask:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:422    .text.UTIL_SEQ_IsPauseTask:00000000 UTIL_SEQ_IsPauseTask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:497    .text.UTIL_SEQ_IsPauseTask:00000018 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:502    .text.UTIL_SEQ_ResumeTask:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:508    .text.UTIL_SEQ_ResumeTask:00000000 UTIL_SEQ_ResumeTask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:579    .text.UTIL_SEQ_ResumeTask:00000014 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:584    .text.UTIL_SEQ_SetEvt:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:590    .text.UTIL_SEQ_SetEvt:00000000 UTIL_SEQ_SetEvt
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:661    .text.UTIL_SEQ_SetEvt:00000014 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:666    .text.UTIL_SEQ_ClrEvt:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:672    .text.UTIL_SEQ_ClrEvt:00000000 UTIL_SEQ_ClrEvt
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:743    .text.UTIL_SEQ_ClrEvt:00000018 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:748    .text.UTIL_SEQ_IsEvtPend:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:754    .text.UTIL_SEQ_IsEvtPend:00000000 UTIL_SEQ_IsEvtPend
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:776    .text.UTIL_SEQ_IsEvtPend:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:782    .text.UTIL_SEQ_Idle:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:788    .text.UTIL_SEQ_Idle:00000000 UTIL_SEQ_Idle
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:802    .text.UTIL_SEQ_PreIdle:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:808    .text.UTIL_SEQ_PreIdle:00000000 UTIL_SEQ_PreIdle
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:822    .text.UTIL_SEQ_PostIdle:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:828    .text.UTIL_SEQ_PostIdle:00000000 UTIL_SEQ_PostIdle
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:842    .text.UTIL_SEQ_PreTask:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:848    .text.UTIL_SEQ_PreTask:00000000 UTIL_SEQ_PreTask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:864    .text.UTIL_SEQ_PostTask:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:870    .text.UTIL_SEQ_PostTask:00000000 UTIL_SEQ_PostTask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:886    .text.UTIL_SEQ_CatchWarning:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:892    .text.UTIL_SEQ_CatchWarning:00000000 UTIL_SEQ_CatchWarning
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:908    .text.SEQ_BitPosition:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:914    .text.SEQ_BitPosition:00000000 SEQ_BitPosition
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:958    .text.UTIL_SEQ_Run:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:964    .text.UTIL_SEQ_Run:00000000 UTIL_SEQ_Run
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1483   .text.UTIL_SEQ_Run:000001cc $d
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s 			page 72
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:21     .text.UTIL_SEQ_Init:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:27     .text.UTIL_SEQ_Init:00000000 UTIL_SEQ_Init
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:107    .text.UTIL_SEQ_Init:00000048 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1920   .bss.TaskSet:00000000 TaskSet
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1914   .data.TaskMask:00000000 TaskMask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1908   .data.SuperMask:00000000 SuperMask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1902   .bss.EvtSet:00000000 EvtSet
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1896   .bss.EvtWaited:00000000 EvtWaited
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1890   .bss.CurrentTaskIdx:00000000 CurrentTaskIdx
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1884   .bss.TaskCb:00000000 TaskCb
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1872   .bss.TaskClearList:00000000 TaskClearList
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1878   .bss.TaskPrio:00000000 TaskPrio
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:121    .text.UTIL_SEQ_DeInit:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:127    .text.UTIL_SEQ_DeInit:00000000 UTIL_SEQ_DeInit
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:140    .text.UTIL_SEQ_SetTask:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:146    .text.UTIL_SEQ_SetTask:00000000 UTIL_SEQ_SetTask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:223    .text.UTIL_SEQ_SetTask:00000020 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:229    .text.UTIL_SEQ_IsSchedulableTask:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:235    .text.UTIL_SEQ_IsSchedulableTask:00000000 UTIL_SEQ_IsSchedulableTask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:327    .text.UTIL_SEQ_IsSchedulableTask:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:334    .text.UTIL_SEQ_PauseTask:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:340    .text.UTIL_SEQ_PauseTask:00000000 UTIL_SEQ_PauseTask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:411    .text.UTIL_SEQ_PauseTask:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:416    .text.UTIL_SEQ_IsPauseTask:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:422    .text.UTIL_SEQ_IsPauseTask:00000000 UTIL_SEQ_IsPauseTask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:497    .text.UTIL_SEQ_IsPauseTask:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:502    .text.UTIL_SEQ_ResumeTask:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:508    .text.UTIL_SEQ_ResumeTask:00000000 UTIL_SEQ_ResumeTask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:579    .text.UTIL_SEQ_ResumeTask:00000014 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:584    .text.UTIL_SEQ_SetEvt:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:590    .text.UTIL_SEQ_SetEvt:00000000 UTIL_SEQ_SetEvt
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:661    .text.UTIL_SEQ_SetEvt:00000014 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:666    .text.UTIL_SEQ_ClrEvt:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:672    .text.UTIL_SEQ_ClrEvt:00000000 UTIL_SEQ_ClrEvt
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:743    .text.UTIL_SEQ_ClrEvt:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:748    .text.UTIL_SEQ_IsEvtPend:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:754    .text.UTIL_SEQ_IsEvtPend:00000000 UTIL_SEQ_IsEvtPend
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:776    .text.UTIL_SEQ_IsEvtPend:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:782    .text.UTIL_SEQ_Idle:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:788    .text.UTIL_SEQ_Idle:00000000 UTIL_SEQ_Idle
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:802    .text.UTIL_SEQ_PreIdle:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:808    .text.UTIL_SEQ_PreIdle:00000000 UTIL_SEQ_PreIdle
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:822    .text.UTIL_SEQ_PostIdle:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:828    .text.UTIL_SEQ_PostIdle:00000000 UTIL_SEQ_PostIdle
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:842    .text.UTIL_SEQ_PreTask:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:848    .text.UTIL_SEQ_PreTask:00000000 UTIL_SEQ_PreTask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:864    .text.UTIL_SEQ_PostTask:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:870    .text.UTIL_SEQ_PostTask:00000000 UTIL_SEQ_PostTask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:886    .text.UTIL_SEQ_CatchWarning:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:892    .text.UTIL_SEQ_CatchWarning:00000000 UTIL_SEQ_CatchWarning
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:908    .text.SEQ_BitPosition:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:914    .text.SEQ_BitPosition:00000000 SEQ_BitPosition
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:958    .text.UTIL_SEQ_Run:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:964    .text.UTIL_SEQ_Run:00000000 UTIL_SEQ_Run
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1483   .text.UTIL_SEQ_Run:000001cc $d
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s 			page 72
 
 
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1497   .text.UTIL_SEQ_EvtIdle:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1503   .text.UTIL_SEQ_EvtIdle:00000000 UTIL_SEQ_EvtIdle
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1530   .text.UTIL_SEQ_WaitEvt:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1536   .text.UTIL_SEQ_WaitEvt:00000000 UTIL_SEQ_WaitEvt
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1674   .text.UTIL_SEQ_WaitEvt:0000004c $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1681   .text.UTIL_SEQ_RegTask:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1687   .text.UTIL_SEQ_RegTask:00000000 UTIL_SEQ_RegTask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1768   .text.UTIL_SEQ_RegTask:0000001c $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1773   .text.UTIL_SEQ_IsRegisteredTask:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1779   .text.UTIL_SEQ_IsRegisteredTask:00000000 UTIL_SEQ_IsRegisteredTask
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1864   .text.UTIL_SEQ_IsRegisteredTask:00000020 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1869   .bss.TaskClearList:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1875   .bss.TaskPrio:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1881   .bss.TaskCb:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1887   .bss.CurrentTaskIdx:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1893   .bss.EvtWaited:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1899   .bss.EvtSet:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1905   .data.SuperMask:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1911   .data.TaskMask:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccoL9LPc.s:1917   .bss.TaskSet:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1497   .text.UTIL_SEQ_EvtIdle:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1503   .text.UTIL_SEQ_EvtIdle:00000000 UTIL_SEQ_EvtIdle
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1530   .text.UTIL_SEQ_WaitEvt:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1536   .text.UTIL_SEQ_WaitEvt:00000000 UTIL_SEQ_WaitEvt
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1674   .text.UTIL_SEQ_WaitEvt:0000004c $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1681   .text.UTIL_SEQ_RegTask:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1687   .text.UTIL_SEQ_RegTask:00000000 UTIL_SEQ_RegTask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1768   .text.UTIL_SEQ_RegTask:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1773   .text.UTIL_SEQ_IsRegisteredTask:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1779   .text.UTIL_SEQ_IsRegisteredTask:00000000 UTIL_SEQ_IsRegisteredTask
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1864   .text.UTIL_SEQ_IsRegisteredTask:00000020 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1869   .bss.TaskClearList:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1875   .bss.TaskPrio:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1881   .bss.TaskCb:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1887   .bss.CurrentTaskIdx:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1893   .bss.EvtWaited:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1899   .bss.EvtSet:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1905   .data.SuperMask:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1911   .data.TaskMask:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccCehg6C.s:1917   .bss.TaskSet:00000000 $d
 
 UNDEFINED SYMBOLS
 memset

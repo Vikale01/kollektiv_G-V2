@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -28,7 +28,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
   25              		.thumb_func
   27              	USBD_CDC_DeviceDescriptor:
   28              	.LVL0:
-  29              	.LFB954:
+  29              	.LFB1108:
    1:USB_Device/App/usbd_desc.c **** /* USER CODE BEGIN Header */
    2:USB_Device/App/usbd_desc.c **** /**
    3:USB_Device/App/usbd_desc.c ****   ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
   27:USB_Device/App/usbd_desc.c **** 
   28:USB_Device/App/usbd_desc.c **** /* USER CODE END INCLUDE */
   29:USB_Device/App/usbd_desc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 2
 
 
   30:USB_Device/App/usbd_desc.c **** /* Private typedef -----------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
   84:USB_Device/App/usbd_desc.c **** 
   85:USB_Device/App/usbd_desc.c **** /** @defgroup USBD_DESC_Private_Macros USBD_DESC_Private_Macros
   86:USB_Device/App/usbd_desc.c ****   * @brief Private macros.
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 3
 
 
   87:USB_Device/App/usbd_desc.c ****   * @{
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  141:USB_Device/App/usbd_desc.c **** };
  142:USB_Device/App/usbd_desc.c **** 
  143:USB_Device/App/usbd_desc.c **** #if defined ( __ICCARM__ ) /* IAR Compiler */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 4
 
 
  144:USB_Device/App/usbd_desc.c ****   #pragma data_alignment=4
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  198:USB_Device/App/usbd_desc.c **** 
  199:USB_Device/App/usbd_desc.c **** #if defined ( __ICCARM__ ) /*!< IAR Compiler */
  200:USB_Device/App/usbd_desc.c ****   #pragma data_alignment=4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 5
 
 
  201:USB_Device/App/usbd_desc.c **** #endif
@@ -289,7 +289,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
   48              	.L2:
   49 0008 00000000 		.word	USBD_CDC_DeviceDesc
   50              		.cfi_endproc
-  51              	.LFE954:
+  51              	.LFE1108:
   53              		.section	.text.USBD_CDC_LangIDStrDescriptor,"ax",%progbits
   54              		.align	1
   55              		.global	USBD_CDC_LangIDStrDescriptor
@@ -298,10 +298,10 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
   58              		.thumb_func
   60              	USBD_CDC_LangIDStrDescriptor:
   61              	.LVL2:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 6
 
 
-  62              	.LFB955:
+  62              	.LFB1109:
  228:USB_Device/App/usbd_desc.c **** 
  229:USB_Device/App/usbd_desc.c **** /**
  230:USB_Device/App/usbd_desc.c ****   * @brief  Return the LangID string descriptor
@@ -336,7 +336,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
   81              	.L5:
   82 0008 00000000 		.word	USBD_LangIDDesc
   83              		.cfi_endproc
-  84              	.LFE955:
+  84              	.LFE1109:
   86              		.section	.text.IntToUnicode,"ax",%progbits
   87              		.align	1
   88              		.syntax unified
@@ -344,7 +344,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
   90              		.thumb_func
   92              	IntToUnicode:
   93              	.LVL4:
-  94              	.LFB962:
+  94              	.LFB1116:
  241:USB_Device/App/usbd_desc.c **** 
  242:USB_Device/App/usbd_desc.c **** /**
  243:USB_Device/App/usbd_desc.c ****   * @brief  Return the product string descriptor
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  251:USB_Device/App/usbd_desc.c ****   {
  252:USB_Device/App/usbd_desc.c ****     USBD_GetString((uint8_t *)USBD_PRODUCT_STRING, USBD_StrDesc, length);
  253:USB_Device/App/usbd_desc.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 7
 
 
  254:USB_Device/App/usbd_desc.c ****   else
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  308:USB_Device/App/usbd_desc.c ****   else
  309:USB_Device/App/usbd_desc.c ****   {
  310:USB_Device/App/usbd_desc.c ****     USBD_GetString((uint8_t *)USBD_CONFIGURATION_STRING, USBD_StrDesc, length);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 8
 
 
  311:USB_Device/App/usbd_desc.c ****   }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  365:USB_Device/App/usbd_desc.c **** static void IntToUnicode(uint32_t value, uint8_t * pbuf, uint8_t len)
  366:USB_Device/App/usbd_desc.c **** {
   95              		.loc 1 366 1 is_stmt 1 view -0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 9
 
 
   96              		.cfi_startproc
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  132              		.loc 1 369 31 is_stmt 1 discriminator 2 view .LVU29
  133 0024 0133     		adds	r3, r3, #1
  134              	.LVL7:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 10
 
 
  369:USB_Device/App/usbd_desc.c ****   {
@@ -580,14 +580,14 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  161              		.loc 1 384 1 view .LVU39
  162 0044 7047     		bx	lr
  163              		.cfi_endproc
- 164              	.LFE962:
+ 164              	.LFE1116:
  166              		.section	.text.Get_SerialNum,"ax",%progbits
  167              		.align	1
  168              		.syntax unified
  169              		.thumb
  170              		.thumb_func
  172              	Get_SerialNum:
- 173              	.LFB961:
+ 173              	.LFB1115:
  340:USB_Device/App/usbd_desc.c ****   uint32_t deviceserial0;
  174              		.loc 1 340 1 is_stmt 1 view -0
  175              		.cfi_startproc
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  180              		.cfi_def_cfa_offset 16
  181              		.cfi_offset 3, -16
  182              		.cfi_offset 4, -12
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 11
 
 
  183              		.cfi_offset 5, -8
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  221 0020 0422     		movs	r2, #4
  222 0022 05F11001 		add	r1, r5, #16
  223 0026 2046     		mov	r0, r4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 12
 
 
  224 0028 FFF7FEFF 		bl	IntToUnicode
@@ -672,7 +672,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  231 0030 0070FF1F 		.word	536834048
  232 0034 02000000 		.word	USBD_StringSerial+2
  233              		.cfi_endproc
- 234              	.LFE961:
+ 234              	.LFE1115:
  236              		.section	.text.USBD_CDC_SerialStrDescriptor,"ax",%progbits
  237              		.align	1
  238              		.global	USBD_CDC_SerialStrDescriptor
@@ -681,7 +681,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  241              		.thumb_func
  243              	USBD_CDC_SerialStrDescriptor:
  244              	.LVL17:
- 245              	.LFB958:
+ 245              	.LFB1112:
  281:USB_Device/App/usbd_desc.c ****   UNUSED(speed);
  246              		.loc 1 281 1 is_stmt 1 view -0
  247              		.cfi_startproc
@@ -717,8 +717,8 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  270              	.L25:
  271 0010 00000000 		.word	USBD_StringSerial
  272              		.cfi_endproc
- 273              	.LFE958:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 13
+ 273              	.LFE1112:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 13
 
 
  275              		.section	.rodata.USBD_CDC_ProductStrDescriptor.str1.4,"aMS",%progbits,1
@@ -737,7 +737,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  284              		.thumb_func
  286              	USBD_CDC_ProductStrDescriptor:
  287              	.LVL19:
- 288              	.LFB956:
+ 288              	.LFB1110:
  249:USB_Device/App/usbd_desc.c ****   if(speed == 0)
  289              		.loc 1 249 1 is_stmt 1 view -0
  290              		.cfi_startproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  317              	.LVL23:
  318              	.L28:
  256:USB_Device/App/usbd_desc.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 14
 
 
  319              		.loc 1 256 5 is_stmt 1 view .LVU75
@@ -801,7 +801,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  333 001c 00000000 		.word	USBD_StrDesc
  334 0020 00000000 		.word	.LC0
  335              		.cfi_endproc
- 336              	.LFE956:
+ 336              	.LFE1110:
  338              		.section	.rodata.USBD_CDC_ManufacturerStrDescriptor.str1.4,"aMS",%progbits,1
  339              		.align	2
  340              	.LC1:
@@ -818,7 +818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  347              		.thumb_func
  349              	USBD_CDC_ManufacturerStrDescriptor:
  350              	.LVL27:
- 351              	.LFB957:
+ 351              	.LFB1111:
  268:USB_Device/App/usbd_desc.c ****   UNUSED(speed);
  352              		.loc 1 268 1 is_stmt 1 view -0
  353              		.cfi_startproc
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  364              		.loc 1 270 3 view .LVU82
  365 0004 034C     		ldr	r4, .L35
  366 0006 2146     		mov	r1, r4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 15
 
 
  367              	.LVL28:
@@ -862,7 +862,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  381 0014 00000000 		.word	USBD_StrDesc
  382 0018 00000000 		.word	.LC1
  383              		.cfi_endproc
- 384              	.LFE957:
+ 384              	.LFE1111:
  386              		.section	.rodata.USBD_CDC_ConfigStrDescriptor.str1.4,"aMS",%progbits,1
  387              		.align	2
  388              	.LC2:
@@ -877,7 +877,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  395              		.thumb_func
  397              	USBD_CDC_ConfigStrDescriptor:
  398              	.LVL31:
- 399              	.LFB959:
+ 399              	.LFB1113:
  303:USB_Device/App/usbd_desc.c ****   if(speed == USBD_SPEED_HIGH)
  400              		.loc 1 303 1 is_stmt 1 view -0
  401              		.cfi_startproc
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  413 0004 28B9     		cbnz	r0, .L38
  306:USB_Device/App/usbd_desc.c ****   }
  414              		.loc 1 306 5 is_stmt 1 view .LVU91
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 16
 
 
  415 0006 0549     		ldr	r1, .L41
@@ -941,7 +941,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  444 001c 00000000 		.word	USBD_StrDesc
  445 0020 00000000 		.word	.LC2
  446              		.cfi_endproc
- 447              	.LFE959:
+ 447              	.LFE1113:
  449              		.section	.rodata.USBD_CDC_InterfaceStrDescriptor.str1.4,"aMS",%progbits,1
  450              		.align	2
  451              	.LC3:
@@ -957,8 +957,8 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  458              		.thumb_func
  460              	USBD_CDC_InterfaceStrDescriptor:
  461              	.LVL39:
- 462              	.LFB960:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 17
+ 462              	.LFB1114:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 17
 
 
  322:USB_Device/App/usbd_desc.c ****   if(speed == 0)
@@ -1018,13 +1018,13 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  504              	.L48:
  505              		.align	2
  506              	.L47:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 18
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 18
 
 
  507 001c 00000000 		.word	USBD_StrDesc
  508 0020 00000000 		.word	.LC3
  509              		.cfi_endproc
- 510              	.LFE960:
+ 510              	.LFE1114:
  512              		.global	USBD_StringSerial
  513              		.section	.data.USBD_StringSerial,"aw"
  514              		.align	2
@@ -1069,59 +1069,58 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 1
  552 0010 00000000 		.word	USBD_CDC_SerialStrDescriptor
  553 0014 00000000 		.word	USBD_CDC_ConfigStrDescriptor
  554 0018 00000000 		.word	USBD_CDC_InterfaceStrDescriptor
- 555 001c 00000000 		.space	4
- 556              		.text
- 557              	.Letext0:
- 558              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
- 559              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
- 560              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
- 561              		.file 5 "USB_Device/App/usbd_desc.h"
- 562              		.file 6 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s 			page 19
+ 555              		.text
+ 556              	.Letext0:
+ 557              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 558              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 559              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 560              		.file 5 "USB_Device/App/usbd_desc.h"
+ 561              		.file 6 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_desc.c
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:21     .text.USBD_CDC_DeviceDescriptor:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:27     .text.USBD_CDC_DeviceDescriptor:00000000 USBD_CDC_DeviceDescriptor
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:49     .text.USBD_CDC_DeviceDescriptor:00000008 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:539    .data.USBD_CDC_DeviceDesc:00000000 USBD_CDC_DeviceDesc
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:54     .text.USBD_CDC_LangIDStrDescriptor:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:60     .text.USBD_CDC_LangIDStrDescriptor:00000000 USBD_CDC_LangIDStrDescriptor
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:82     .text.USBD_CDC_LangIDStrDescriptor:00000008 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:532    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:87     .text.IntToUnicode:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:92     .text.IntToUnicode:00000000 IntToUnicode
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:167    .text.Get_SerialNum:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:172    .text.Get_SerialNum:00000000 Get_SerialNum
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:231    .text.Get_SerialNum:00000030 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:517    .data.USBD_StringSerial:00000000 USBD_StringSerial
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:237    .text.USBD_CDC_SerialStrDescriptor:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:243    .text.USBD_CDC_SerialStrDescriptor:00000000 USBD_CDC_SerialStrDescriptor
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:271    .text.USBD_CDC_SerialStrDescriptor:00000010 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:276    .rodata.USBD_CDC_ProductStrDescriptor.str1.4:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:280    .text.USBD_CDC_ProductStrDescriptor:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:286    .text.USBD_CDC_ProductStrDescriptor:00000000 USBD_CDC_ProductStrDescriptor
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:333    .text.USBD_CDC_ProductStrDescriptor:0000001c $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:525    .bss.USBD_StrDesc:00000000 USBD_StrDesc
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:339    .rodata.USBD_CDC_ManufacturerStrDescriptor.str1.4:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:343    .text.USBD_CDC_ManufacturerStrDescriptor:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:349    .text.USBD_CDC_ManufacturerStrDescriptor:00000000 USBD_CDC_ManufacturerStrDescriptor
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:381    .text.USBD_CDC_ManufacturerStrDescriptor:00000014 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:387    .rodata.USBD_CDC_ConfigStrDescriptor.str1.4:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:391    .text.USBD_CDC_ConfigStrDescriptor:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:397    .text.USBD_CDC_ConfigStrDescriptor:00000000 USBD_CDC_ConfigStrDescriptor
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:444    .text.USBD_CDC_ConfigStrDescriptor:0000001c $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:450    .rodata.USBD_CDC_InterfaceStrDescriptor.str1.4:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:454    .text.USBD_CDC_InterfaceStrDescriptor:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:460    .text.USBD_CDC_InterfaceStrDescriptor:00000000 USBD_CDC_InterfaceStrDescriptor
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:507    .text.USBD_CDC_InterfaceStrDescriptor:0000001c $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:514    .data.USBD_StringSerial:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:522    .bss.USBD_StrDesc:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:529    .data.USBD_LangIDDesc:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:536    .data.USBD_CDC_DeviceDesc:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:547    .data.CDC_Desc:00000000 CDC_Desc
-C:\Users\bku598\AppData\Local\Temp\ccT9E4d2.s:544    .data.CDC_Desc:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:21     .text.USBD_CDC_DeviceDescriptor:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:27     .text.USBD_CDC_DeviceDescriptor:00000000 USBD_CDC_DeviceDescriptor
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:49     .text.USBD_CDC_DeviceDescriptor:00000008 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:539    .data.USBD_CDC_DeviceDesc:00000000 USBD_CDC_DeviceDesc
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:54     .text.USBD_CDC_LangIDStrDescriptor:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:60     .text.USBD_CDC_LangIDStrDescriptor:00000000 USBD_CDC_LangIDStrDescriptor
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:82     .text.USBD_CDC_LangIDStrDescriptor:00000008 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:532    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:87     .text.IntToUnicode:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:92     .text.IntToUnicode:00000000 IntToUnicode
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:167    .text.Get_SerialNum:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:172    .text.Get_SerialNum:00000000 Get_SerialNum
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:231    .text.Get_SerialNum:00000030 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:517    .data.USBD_StringSerial:00000000 USBD_StringSerial
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:237    .text.USBD_CDC_SerialStrDescriptor:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:243    .text.USBD_CDC_SerialStrDescriptor:00000000 USBD_CDC_SerialStrDescriptor
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:271    .text.USBD_CDC_SerialStrDescriptor:00000010 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:276    .rodata.USBD_CDC_ProductStrDescriptor.str1.4:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:280    .text.USBD_CDC_ProductStrDescriptor:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:286    .text.USBD_CDC_ProductStrDescriptor:00000000 USBD_CDC_ProductStrDescriptor
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:333    .text.USBD_CDC_ProductStrDescriptor:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:525    .bss.USBD_StrDesc:00000000 USBD_StrDesc
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:339    .rodata.USBD_CDC_ManufacturerStrDescriptor.str1.4:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:343    .text.USBD_CDC_ManufacturerStrDescriptor:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:349    .text.USBD_CDC_ManufacturerStrDescriptor:00000000 USBD_CDC_ManufacturerStrDescriptor
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:381    .text.USBD_CDC_ManufacturerStrDescriptor:00000014 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:387    .rodata.USBD_CDC_ConfigStrDescriptor.str1.4:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:391    .text.USBD_CDC_ConfigStrDescriptor:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:397    .text.USBD_CDC_ConfigStrDescriptor:00000000 USBD_CDC_ConfigStrDescriptor
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:444    .text.USBD_CDC_ConfigStrDescriptor:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:450    .rodata.USBD_CDC_InterfaceStrDescriptor.str1.4:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:454    .text.USBD_CDC_InterfaceStrDescriptor:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:460    .text.USBD_CDC_InterfaceStrDescriptor:00000000 USBD_CDC_InterfaceStrDescriptor
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:507    .text.USBD_CDC_InterfaceStrDescriptor:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:514    .data.USBD_StringSerial:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:522    .bss.USBD_StrDesc:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:529    .data.USBD_LangIDDesc:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:536    .data.USBD_CDC_DeviceDesc:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:547    .data.CDC_Desc:00000000 CDC_Desc
+C:\Users\bku598\AppData\Local\Temp\ccB5DmOE.s:544    .data.CDC_Desc:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_GetString

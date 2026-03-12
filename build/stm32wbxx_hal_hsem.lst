@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -28,7 +28,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
   25              		.thumb_func
   27              	HAL_HSEM_Take:
   28              	.LVL0:
-  29              	.LFB950:
+  29              	.LFB1104:
    1:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
    2:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ******************************************************************************
    3:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @file    stm32wbxx_hal_hsem.c
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
   27:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ******************************************************************************
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   @verbatim
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ==============================================================================
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 2
 
 
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****                      ##### How to use this driver #####
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
   84:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   ******************************************************************************
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 3
 
 
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /* Includes ------------------------------------------------------------------*/
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  141:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** [..] This section provides functions allowing to:
  142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Take a semaphore with 2 Step method
  143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Fast Take a semaphore with 1 Step method
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 4
 
 
  144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****       (+) Check semaphore state Taken or not
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  176:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   return HAL_ERROR;
   52              		.loc 1 176 10 view .LVU10
   53 0016 0120     		movs	r0, #1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 5
 
 
   54              	.LVL2:
@@ -258,7 +258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
   66              	.L4:
   67 0020 00140058 		.word	1476400128
   68              		.cfi_endproc
-  69              	.LFE950:
+  69              	.LFE1104:
   71              		.section	.text.HAL_HSEM_FastTake,"ax",%progbits
   72              		.align	1
   73              		.global	HAL_HSEM_FastTake
@@ -267,7 +267,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
   76              		.thumb_func
   78              	HAL_HSEM_FastTake:
   79              	.LVL5:
-  80              	.LFB951:
+  80              	.LFB1105:
  178:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  179:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
  180:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Fast Take a semaphore with 1 Step mode.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
   95 0008 044B     		ldr	r3, .L9+4
   96 000a 9A42     		cmp	r2, r3
   97 000c 01D0     		beq	.L8
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 6
 
 
  191:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   {
@@ -326,7 +326,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  111 0018 00140058 		.word	1476400128
  112 001c 00040080 		.word	-2147482624
  113              		.cfi_endproc
- 114              	.LFE951:
+ 114              	.LFE1105:
  116              		.section	.text.HAL_HSEM_IsSemTaken,"ax",%progbits
  117              		.align	1
  118              		.global	HAL_HSEM_IsSemTaken
@@ -335,7 +335,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  121              		.thumb_func
  123              	HAL_HSEM_IsSemTaken:
  124              	.LVL8:
- 125              	.LFB952:
+ 125              	.LFB1106:
  199:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
  200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Check semaphore state Taken or not.
  201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @param  SemID: semaphore ID
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  137 0008 01DB     		blt	.L14
  138              		.loc 1 206 56 discriminator 2 view .LVU28
  139 000a 0020     		movs	r0, #0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 7
 
 
  140              	.LVL9:
@@ -379,7 +379,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  152              	.L15:
  153 0014 00140058 		.word	1476400128
  154              		.cfi_endproc
- 155              	.LFE952:
+ 155              	.LFE1106:
  157              		.section	.text.HAL_HSEM_Release,"ax",%progbits
  158              		.align	1
  159              		.global	HAL_HSEM_Release
@@ -388,7 +388,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  162              		.thumb_func
  164              	HAL_HSEM_Release:
  165              	.LVL12:
- 166              	.LFB953:
+ 166              	.LFB1107:
  208:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  209:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  210:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  177              	.LVL13:
  178              		.loc 1 223 18 view .LVU37
  179 0004 014B     		ldr	r3, .L18
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 8
 
 
  180 0006 43F82010 		str	r1, [r3, r0, lsl #2]
@@ -431,7 +431,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  185              	.L18:
  186 000c 00140058 		.word	1476400128
  187              		.cfi_endproc
- 188              	.LFE953:
+ 188              	.LFE1107:
  190              		.section	.text.HAL_HSEM_ReleaseAll,"ax",%progbits
  191              		.align	1
  192              		.global	HAL_HSEM_ReleaseAll
@@ -440,7 +440,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  195              		.thumb_func
  197              	HAL_HSEM_ReleaseAll:
  198              	.LVL14:
- 199              	.LFB954:
+ 199              	.LFB1108:
  226:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  227:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
  228:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Release All semaphore used by a given Master .
@@ -478,10 +478,10 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  220              	.L21:
  221 0010 00140058 		.word	1476400128
  222              		.cfi_endproc
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 9
 
 
- 223              	.LFE954:
+ 223              	.LFE1108:
  225              		.section	.text.HAL_HSEM_SetClearKey,"ax",%progbits
  226              		.align	1
  227              		.global	HAL_HSEM_SetClearKey
@@ -490,7 +490,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  230              		.thumb_func
  232              	HAL_HSEM_SetClearKey:
  233              	.LVL16:
- 234              	.LFB955:
+ 234              	.LFB1109:
  240:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  241:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
  242:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @}
@@ -538,14 +538,14 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  247              		.loc 1 271 1 is_stmt 0 view .LVU50
  248 0010 7047     		bx	lr
  249              	.L25:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 10
 
 
  250 0012 00BF     		.align	2
  251              	.L24:
  252 0014 00140058 		.word	1476400128
  253              		.cfi_endproc
- 254              	.LFE955:
+ 254              	.LFE1109:
  256              		.section	.text.HAL_HSEM_GetClearKey,"ax",%progbits
  257              		.align	1
  258              		.global	HAL_HSEM_GetClearKey
@@ -553,7 +553,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  260              		.thumb
  261              		.thumb_func
  263              	HAL_HSEM_GetClearKey:
- 264              	.LFB956:
+ 264              	.LFB1110:
  272:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  273:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
  274:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Get semaphore Key .
@@ -580,7 +580,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  279              	.L27:
  280 000c 00140058 		.word	1476400128
  281              		.cfi_endproc
- 282              	.LFE956:
+ 282              	.LFE1110:
  284              		.section	.text.HAL_HSEM_ActivateNotification,"ax",%progbits
  285              		.align	1
  286              		.global	HAL_HSEM_ActivateNotification
@@ -589,7 +589,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  289              		.thumb_func
  291              	HAL_HSEM_ActivateNotification:
  292              	.LVL17:
- 293              	.LFB957:
+ 293              	.LFB1111:
  281:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  282:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
  283:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @}
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  286:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /** @defgroup HSEM_Exported_Functions_Group3 HSEM IRQ handler management
  287:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *  @brief    HSEM Notification functions.
  288:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   *
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 11
 
 
  289:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** @verbatim
@@ -639,7 +639,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  310              	.L30:
  311 000c 00150058 		.word	1476400384
  312              		.cfi_endproc
- 313              	.LFE957:
+ 313              	.LFE1111:
  315              		.section	.text.HAL_HSEM_DeactivateNotification,"ax",%progbits
  316              		.align	1
  317              		.global	HAL_HSEM_DeactivateNotification
@@ -648,7 +648,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  320              		.thumb_func
  322              	HAL_HSEM_DeactivateNotification:
  323              	.LVL18:
- 324              	.LFB958:
+ 324              	.LFB1112:
  308:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  309:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
  310:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  Deactivate Semaphore release Notification for a given Semaphores Mask .
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** void HAL_HSEM_DeactivateNotification(uint32_t SemMask)
  315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
  325              		.loc 1 315 1 is_stmt 1 view -0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 12
 
 
  326              		.cfi_startproc
@@ -681,7 +681,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  341              	.L33:
  342 000c 00150058 		.word	1476400384
  343              		.cfi_endproc
- 344              	.LFE958:
+ 344              	.LFE1112:
  346              		.section	.text.HAL_HSEM_FreeCallback,"ax",%progbits
  347              		.align	1
  348              		.weak	HAL_HSEM_FreeCallback
@@ -690,7 +690,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  351              		.thumb_func
  353              	HAL_HSEM_FreeCallback:
  354              	.LVL19:
- 355              	.LFB960:
+ 355              	.LFB1114:
  318:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  319:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** /**
  320:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @brief  This function handles HSEM interrupt request
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  342:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   * @retval None
  343:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   */
  344:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** __weak void HAL_HSEM_FreeCallback(uint32_t SemMask)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 13
 
 
  345:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** {
@@ -738,7 +738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  362              		.loc 1 352 1 is_stmt 0 view .LVU67
  363 0000 7047     		bx	lr
  364              		.cfi_endproc
- 365              	.LFE960:
+ 365              	.LFE1114:
  367              		.section	.text.HAL_HSEM_IRQHandler,"ax",%progbits
  368              		.align	1
  369              		.global	HAL_HSEM_IRQHandler
@@ -746,7 +746,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  371              		.thumb
  372              		.thumb_func
  374              	HAL_HSEM_IRQHandler:
- 375              	.LFB959:
+ 375              	.LFB1113:
  324:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c ****   uint32_t statusreg;
  376              		.loc 1 324 1 is_stmt 1 view -0
  377              		.cfi_startproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  333:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
  397              		.loc 1 333 3 is_stmt 1 view .LVU75
  333:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_hsem.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 14
 
 
  398              		.loc 1 333 20 is_stmt 0 view .LVU76
@@ -795,49 +795,49 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 1
  407              	.L38:
  408 0018 00150058 		.word	1476400384
  409              		.cfi_endproc
- 410              	.LFE959:
+ 410              	.LFE1113:
  412              		.text
  413              	.Letext0:
  414              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
  415              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
  416              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  417              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_hsem.c
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:21     .text.HAL_HSEM_Take:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:27     .text.HAL_HSEM_Take:00000000 HAL_HSEM_Take
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:67     .text.HAL_HSEM_Take:00000020 $d
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:72     .text.HAL_HSEM_FastTake:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:78     .text.HAL_HSEM_FastTake:00000000 HAL_HSEM_FastTake
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:111    .text.HAL_HSEM_FastTake:00000018 $d
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:117    .text.HAL_HSEM_IsSemTaken:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:123    .text.HAL_HSEM_IsSemTaken:00000000 HAL_HSEM_IsSemTaken
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:153    .text.HAL_HSEM_IsSemTaken:00000014 $d
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:158    .text.HAL_HSEM_Release:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:164    .text.HAL_HSEM_Release:00000000 HAL_HSEM_Release
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:186    .text.HAL_HSEM_Release:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:191    .text.HAL_HSEM_ReleaseAll:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:197    .text.HAL_HSEM_ReleaseAll:00000000 HAL_HSEM_ReleaseAll
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:221    .text.HAL_HSEM_ReleaseAll:00000010 $d
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:226    .text.HAL_HSEM_SetClearKey:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:232    .text.HAL_HSEM_SetClearKey:00000000 HAL_HSEM_SetClearKey
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:252    .text.HAL_HSEM_SetClearKey:00000014 $d
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:257    .text.HAL_HSEM_GetClearKey:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:263    .text.HAL_HSEM_GetClearKey:00000000 HAL_HSEM_GetClearKey
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:280    .text.HAL_HSEM_GetClearKey:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:285    .text.HAL_HSEM_ActivateNotification:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:291    .text.HAL_HSEM_ActivateNotification:00000000 HAL_HSEM_ActivateNotification
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:311    .text.HAL_HSEM_ActivateNotification:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:316    .text.HAL_HSEM_DeactivateNotification:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:322    .text.HAL_HSEM_DeactivateNotification:00000000 HAL_HSEM_DeactivateNotification
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:342    .text.HAL_HSEM_DeactivateNotification:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:347    .text.HAL_HSEM_FreeCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:353    .text.HAL_HSEM_FreeCallback:00000000 HAL_HSEM_FreeCallback
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:368    .text.HAL_HSEM_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:374    .text.HAL_HSEM_IRQHandler:00000000 HAL_HSEM_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\ccTF0uGg.s:408    .text.HAL_HSEM_IRQHandler:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:21     .text.HAL_HSEM_Take:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:27     .text.HAL_HSEM_Take:00000000 HAL_HSEM_Take
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:67     .text.HAL_HSEM_Take:00000020 $d
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:72     .text.HAL_HSEM_FastTake:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:78     .text.HAL_HSEM_FastTake:00000000 HAL_HSEM_FastTake
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:111    .text.HAL_HSEM_FastTake:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:117    .text.HAL_HSEM_IsSemTaken:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:123    .text.HAL_HSEM_IsSemTaken:00000000 HAL_HSEM_IsSemTaken
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:153    .text.HAL_HSEM_IsSemTaken:00000014 $d
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:158    .text.HAL_HSEM_Release:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:164    .text.HAL_HSEM_Release:00000000 HAL_HSEM_Release
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:186    .text.HAL_HSEM_Release:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:191    .text.HAL_HSEM_ReleaseAll:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:197    .text.HAL_HSEM_ReleaseAll:00000000 HAL_HSEM_ReleaseAll
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:221    .text.HAL_HSEM_ReleaseAll:00000010 $d
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:226    .text.HAL_HSEM_SetClearKey:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:232    .text.HAL_HSEM_SetClearKey:00000000 HAL_HSEM_SetClearKey
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:252    .text.HAL_HSEM_SetClearKey:00000014 $d
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:257    .text.HAL_HSEM_GetClearKey:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:263    .text.HAL_HSEM_GetClearKey:00000000 HAL_HSEM_GetClearKey
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:280    .text.HAL_HSEM_GetClearKey:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:285    .text.HAL_HSEM_ActivateNotification:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:291    .text.HAL_HSEM_ActivateNotification:00000000 HAL_HSEM_ActivateNotification
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:311    .text.HAL_HSEM_ActivateNotification:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:316    .text.HAL_HSEM_DeactivateNotification:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:322    .text.HAL_HSEM_DeactivateNotification:00000000 HAL_HSEM_DeactivateNotification
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:342    .text.HAL_HSEM_DeactivateNotification:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:347    .text.HAL_HSEM_FreeCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:353    .text.HAL_HSEM_FreeCallback:00000000 HAL_HSEM_FreeCallback
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:368    .text.HAL_HSEM_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:374    .text.HAL_HSEM_IRQHandler:00000000 HAL_HSEM_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccOGJH7d.s:408    .text.HAL_HSEM_IRQHandler:00000018 $d
 
 NO UNDEFINED SYMBOLS
