@@ -31,7 +31,6 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-uint8_t usbReady = 1;
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -94,7 +93,12 @@ uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
-
+USBD_CDC_LineCodingTypeDef LineCoding = {
+  115200,                       /* baud rate */
+  0x00,                         /* stop bits-1 */
+  0x00,                         /* parity - none */
+  0x08                          /* nb. of bits 8 */
+};
 /* USER CODE END PRIVATE_VARIABLES */
 
 /**
@@ -220,11 +224,21 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
   /* 6      | bDataBits  |   1   | Number Data bits (5, 6, 7, 8 or 16).          */
   /*******************************************************************************/
     case CDC_SET_LINE_CODING:
-
+        LineCoding.bitrate = (uint32_t) (pbuf[0] | (pbuf[1] << 8) |
+                                         (pbuf[2] << 16) | (pbuf[3] << 24));
+        LineCoding.format = pbuf[4];
+        LineCoding.paritytype = pbuf[5];
+        LineCoding.datatype = pbuf[6];
     break;
 
     case CDC_GET_LINE_CODING:
-
+        pbuf[0] = (uint8_t) (LineCoding.bitrate);
+        pbuf[1] = (uint8_t) (LineCoding.bitrate >> 8);
+        pbuf[2] = (uint8_t) (LineCoding.bitrate >> 16);
+        pbuf[3] = (uint8_t) (LineCoding.bitrate >> 24);
+        pbuf[4] = LineCoding.format;
+        pbuf[5] = LineCoding.paritytype;
+        pbuf[6] = LineCoding.datatype;
     break;
 
     case CDC_SET_CONTROL_LINE_STATE:
@@ -308,7 +322,7 @@ static int8_t CDC_TransmitCplt_FS(uint8_t *Buf, uint32_t *Len, uint8_t epnum)
 {
   uint8_t result = USBD_OK;
   /* USER CODE BEGIN 13 */
-  usbReady = 1;
+
   UNUSED(Buf);
   UNUSED(Len);
   UNUSED(epnum);
