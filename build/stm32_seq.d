@@ -43,6 +43,7 @@ build/stm32_seq.o: Utilities/sequencer/stm32_seq.c \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc_ex.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_crs.h \
+ Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rng.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rtc.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rtc_ex.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h \
@@ -111,6 +112,7 @@ Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc_ex.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_crs.h:
+Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rng.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rtc.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rtc_ex.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_tim.h:

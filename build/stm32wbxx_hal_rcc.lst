@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       and I-Cache are disabled, and all peripherals are off except internal
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       SRAM, Flash and JTAG.
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 2
 
 
   31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       (+) There is no prescaler on High speed (AHBs) and Low speed (APBs) buses:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** #define MEGA_HZ                    (1000000U) /* Division factor to convert Hz in Mhz */
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** /**
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @}
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 3
 
 
   88:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****            ##### Initialization and de-initialization functions #####
  143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****  ===============================================================================
  144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     [..]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 4
 
 
  145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       This section provides functions allowing to configure the internal and external oscillators
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  199:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****          (+) Several clock sources can be used to drive the System clock (SYSCLK): MSI, HSI,
  200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****              HSE and main PLL.
  201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****              The AHB clock (HCLK1) is derived from System clock through configurable
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 5
 
 
  202:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****              prescaler and used to clock the CPU, memory and peripherals mapped
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  256:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *           - MSI ON and used as system clock source
  257:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *           - HSE, HSI, PLL, PLLSAI1
  258:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *           - HCLK1, HCLK2, HCLK4, PCLK1 and PCLK2 prescalers set to 1.
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 6
 
 
  259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *           - CSS, MCO OFF
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  313:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** #if defined(SAI1)
  314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   CLEAR_BIT(RCC->CR, RCC_CR_HSION | RCC_CR_HSIKERON | RCC_CR_HSIASFS | RCC_CR_HSEON | RCC_CR_HSEPRE
  315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             RCC_CR_PLLSAI1ON);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 7
 
 
  316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** #else
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  370:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
  371:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     return HAL_OK;
  372:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 8
 
 
  373:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  427:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
  428:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           /* Selects the Multiple Speed oscillator (MSI) clock range .*/
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 9
 
 
  430:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           __HAL_RCC_MSI_RANGE_CONFIG(RCC_OscInitStruct->MSIClockRange);
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  484:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       else
  485:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
  486:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         /* Disable the Internal High Speed oscillator (MSI). */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 10
 
 
  487:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         __HAL_RCC_MSI_DISABLE();
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  541:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       else
  542:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
  543:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         /* Get Start Tick*/
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 11
 
 
  544:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         tickstart = HAL_GetTick();
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  598:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
  599:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             return HAL_TIMEOUT;
  600:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 12
 
 
  601:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  655:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****               return HAL_TIMEOUT;
  656:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             }
  657:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 13
 
 
  658:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  712:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         /*2. Switch OFF LSI2*/
  713:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  714:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         /* Disable the Internal Low Speed oscillator (LSI2). */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 14
 
 
  715:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         __HAL_RCC_LSI2_DISABLE();
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  769:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     /* Requires to enable write access to Backup Domain of necessary */
  770:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  771:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     if (HAL_IS_BIT_CLR(PWR->CR1, PWR_CR1_DBP))
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 15
 
 
  772:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     {
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  826:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     /* Check the parameters */
  827:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     assert_param(IS_RCC_HSI48(RCC_OscInitStruct->HSI48State));
  828:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 16
 
 
  829:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     /* Check the HSI State */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  883:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       assert_param(IS_RCC_PLLQ_VALUE(RCC_OscInitStruct->PLL.PLLQ));
  884:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       assert_param(IS_RCC_PLLR_VALUE(RCC_OscInitStruct->PLL.PLLR));
  885:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 17
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 17
 
 
  886:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       /* Do nothing if PLL configuration is unchanged */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  940:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             /* Wait till PLL is ready */
  941:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             while (READ_BIT(RCC->CR, RCC_CR_PLLRDY) == 0U)
  942:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 18
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 18
 
 
  943:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****               if ((HAL_GetTick() - tickstart) > PLL_TIMEOUT_VALUE)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  997:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
  998:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             return HAL_TIMEOUT;
  999:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 19
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 19
 
 
 1000:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         }
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1054:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @retval None
 1055:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   */
 1056:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, uint32_t FLatency)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 20
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 20
 
 
 1057:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** {
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1111:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   /*-------------------------- HCLK2 Configuration --------------------------*/
 1112:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   if (((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_HCLK2) == RCC_CLOCKTYPE_HCLK2)
 1113:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 21
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 21
 
 
 1114:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     assert_param(IS_RCC_HCLKx(RCC_ClkInitStruct->AHBCLK2Divider));
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1168:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     tickstart = HAL_GetTick();
 1169:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     while (LL_RCC_IsActiveFlag_PPRE2() == 0U)
 1170:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 22
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 22
 
 
 1171:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       if ((HAL_GetTick() - tickstart) > PRESCALER_TIMEOUT_VALUE)
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1225:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     tickstart = HAL_GetTick();
 1226:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
 1227:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     /* check system clock source switch status */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 23
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 23
 
 
 1228:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     while (__HAL_RCC_GET_SYSCLK_SOURCE() != (RCC_ClkInitStruct->SYSCLKSource << RCC_CFGR_SWS_Pos))
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1282:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     (+) Enable the Clock Security System.
 1283:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
 1284:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** @endverbatim
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 24
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 24
 
 
 1285:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @{
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1339:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   mco_gpio_index = RCC_GET_MCO_GPIO_INDEX(RCC_MCOx);
 1340:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   SET_BIT(RCC->AHB2ENR, (1UL << mco_gpio_index));
 1341:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 25
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 25
 
 
 1342:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   /* Configure the MCOx pin in alternate function mode */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1396:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @note   This function can be used by the user application to compute the
 1397:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *         baudrate for the communication peripherals or configure other parameters.
 1398:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 26
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 26
 
 
 1399:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @note   Each time SYSCLK changes, this function must be called to update the
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1453:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         break;
 1454:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       case RCC_PLLSOURCE_MSI:  /* MSI used as PLL clock source */
 1455:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       default:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 27
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 27
 
 
 1456:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         pllinputfreq = __LL_RCC_CALC_MSI_FREQ(LL_RCC_MSI_GetRange());
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1510:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @note   Each time PCLK2 changes, this function must be called to update the
 1511:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *         right PCLK2 value. Otherwise, any configuration based on this function will be incorrec
 1512:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @retval PCLK2 frequency in Hz
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 28
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 28
 
 
 1513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   */
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1567:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   RCC_OscInitStruct->PLL.PLLQ      = (regPLLCFGRvalue & RCC_PLLCFGR_PLLQ);
 1568:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   RCC_OscInitStruct->PLL.PLLR      = (regPLLCFGRvalue & RCC_PLLCFGR_PLLR);
 1569:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 29
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 29
 
 
 1570:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   /* Get Backup Domain register */
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1624:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
 1625:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   /* Get the AHBCLK4Divider configuration ------------------------------------*/
 1626:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   RCC_ClkInitStruct->AHBCLK4Divider = LL_RCC_GetAHB4Prescaler();
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 30
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 30
 
 
 1627:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1681:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @retval can be a combination of @ref RCC_Reset_Flag
 1682:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   */
 1683:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** uint32_t HAL_RCC_GetResetSource(void)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 31
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 31
 
 
 1684:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** {
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1738:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   return RCC_SetFlashLatency((flash_clksrcfreq / MEGA_HZ), PWR_REGULATOR_VOLTAGE_SCALE1);
 1739:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** #endif /* PWR_CR1_VOS */
 1740:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 32
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 32
 
 
 1741:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1759:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   uint32_t latency   = FLASH_LATENCY_0;  /* default value 0WS */
   65              		.loc 1 1759 3 is_stmt 1 view .LVU9
   66              	.LVL2:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 33
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 33
 
 
 1760:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   uint32_t tickstart;
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
   98 0048 032B     		cmp	r3, #3
   99 004a 08D8     		bhi	.L15
 1767:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 34
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 34
 
 
  100              		.loc 1 1767 7 view .LVU21
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  143              	.LVL12:
  144              		.loc 1 1780 17 view .LVU36
  145 007c 53F82C5C 		ldr	r5, [r3, #-44]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 35
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 35
 
 
  146              	.LVL13:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  176 009a 03F00703 		and	r3, r3, #7
  177              		.loc 1 1803 36 view .LVU47
  178 009e AB42     		cmp	r3, r5
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 36
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 36
 
 
  179 00a0 06D0     		beq	.L18
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  225              		.loc 1 1716 1 is_stmt 0 view .LVU57
  226 0000 10B5     		push	{r4, lr}
  227              	.LCFI3:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 37
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 37
 
 
  228              		.cfi_def_cfa_offset 8
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
   27:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /* Includes ------------------------------------------------------------------*/
   28:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #include "stm32wbxx.h"
   29:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 38
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 38
 
 
   30:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @addtogroup STM32WBxx_LL_Driver
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
   84:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   uint32_t PCLK2_Frequency;          /*!< PCLK2 clock frequency  */
   85:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** } LL_RCC_ClocksTypeDef;
   86:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 39
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 39
 
 
   87:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  141:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CICR_LSI1RDYC               RCC_CICR_LSI1RDYC    /*!< LSI1 Ready Interrupt Clear    
  142:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CICR_LSI2RDYC               RCC_CICR_LSI2RDYC    /*!< LSI1 Ready Interrupt Clear    
  143:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CICR_LSERDYC                RCC_CICR_LSERDYC     /*!< LSE Ready Interrupt Clear     
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 40
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 40
 
 
  144:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CICR_MSIRDYC                RCC_CICR_MSIRDYC     /*!< MSI Ready Interrupt Clear     
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  198:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CIER_HSIRDYIE               RCC_CIER_HSIRDYIE      /*!< HSI Ready Interrupt Enable  
  199:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CIER_HSERDYIE               RCC_CIER_HSERDYIE      /*!< HSE Ready Interrupt Enable  
  200:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CIER_PLLRDYIE               RCC_CIER_PLLRDYIE      /*!< PLL Ready Interrupt Enable  
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 41
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 41
 
 
  201:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(RCC_HSI48_SUPPORT)
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  255:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
  256:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  257:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 42
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 42
 
 
  258:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EC_HSE_SENSE_AMPLIFIER  HSE sense amplifier threshold
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  312:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_3                RCC_CFGR_HPRE_0                                         
  313:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_4                (RCC_CFGR_HPRE_3 | RCC_CFGR_HPRE_0)                     
  314:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_5                RCC_CFGR_HPRE_1                                         
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 43
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 43
 
 
  315:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_6                (RCC_CFGR_HPRE_2 | RCC_CFGR_HPRE_0)                     
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  369:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_MCO1SOURCE_PLLCLK           (RCC_CFGR_MCOSEL_0|RCC_CFGR_MCOSEL_2)         /*!< Main 
  370:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_MCO1SOURCE_LSI1             (RCC_CFGR_MCOSEL_1|RCC_CFGR_MCOSEL_2)         /*!< LSI1 
  371:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_MCO1SOURCE_LSI2             (RCC_CFGR_MCOSEL_0|RCC_CFGR_MCOSEL_1|RCC_CFGR_MCOSEL_2) 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 44
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 44
 
 
  372:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_MCO1SOURCE_LSE              RCC_CFGR_MCOSEL_3                             /*!< LSE s
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  426:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
  427:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(USE_FULL_LL_DRIVER)
  428:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EC_PERIPH_FREQUENCY Peripheral clock frequency
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 45
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 45
 
 
  429:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  483:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_LPTIM1_CLKSOURCE_LSE        (uint32_t)(RCC_CCIPR_LPTIM1SEL | (RCC_CCIPR_LPTIM1SEL >>
  484:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_LPTIM2_CLKSOURCE_PCLK1      (uint32_t)(RCC_CCIPR_LPTIM2SEL | (0x00000000U >> 16))   
  485:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_LPTIM2_CLKSOURCE_LSI        (uint32_t)(RCC_CCIPR_LPTIM2SEL | (RCC_CCIPR_LPTIM2SEL_0 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 46
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 46
 
 
  486:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_LPTIM2_CLKSOURCE_HSI        (uint32_t)(RCC_CCIPR_LPTIM2SEL | (RCC_CCIPR_LPTIM2SEL_1 
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  540:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_ADC_CLKSOURCE_PLLSAI1          RCC_CCIPR_ADCSEL_0 /*!< PLLSAI1 selected as ADC clock
  541:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #elif defined (STM32WB15xx) || defined(STM32WB1Mxx)
  542:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_ADC_CLKSOURCE_HSI              RCC_CCIPR_ADCSEL_0 /*!< HSI selected as ADC clock    
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 47
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 47
 
 
  543:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* STM32WB55xx || STM32WB5Mxx || STM32WB35xx */
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  597:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
  598:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EC_SAI1 SAI1
  599:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 48
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 48
 
 
  600:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  654:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  655:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_RFWKP_CLKSOURCE_NONE          0x00000000U                 /*!< No clock used as RF W
  656:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_RFWKP_CLKSOURCE_LSE           RCC_CSR_RFWKPSEL_0          /*!< LSE oscillator clock 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 49
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 49
 
 
  657:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(STM32WB15xx) || defined(STM32WB10xx)
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  711:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_3                  (RCC_PLLCFGR_PLLP_1)                                    
  712:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_4                  (RCC_PLLCFGR_PLLP_0|RCC_PLLCFGR_PLLP_1)                 
  713:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_5                  (RCC_PLLCFGR_PLLP_2)                                    
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 50
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 50
 
 
  714:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_6                  (RCC_PLLCFGR_PLLP_0|RCC_PLLCFGR_PLLP_2)                 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  768:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLSAI1Q_DIV_6              (RCC_PLLSAI1CFGR_PLLQ_2 | RCC_PLLSAI1CFGR_PLLQ_0)       
  769:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLSAI1Q_DIV_7              (RCC_PLLSAI1CFGR_PLLQ_2 | RCC_PLLSAI1CFGR_PLLQ_1)       
  770:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLSAI1Q_DIV_8              (RCC_PLLSAI1CFGR_PLLQ_2 | RCC_PLLSAI1CFGR_PLLQ_1 | RCC_P
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 51
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 51
 
 
  771:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  825:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  826:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* SAI1 */
  827:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 52
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 52
 
 
  828:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  882:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLR_DIV_5
  883:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLR_DIV_6
  884:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLR_DIV_7
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 53
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 53
 
 
  885:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLR_DIV_8
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  939:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  940:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define __LL_RCC_CALC_PLLCLK_SAI_FREQ(__INPUTFREQ__, __PLLM__, __PLLN__, __PLLP__) ((__INPUTFREQ__)
  941:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****     (((__PLLP__) >> RCC_PLLCFGR_PLLP_Pos) + 1U))
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 54
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 54
 
 
  942:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* SAI1 */
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  996:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
  997:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
  998:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Helper macro to calculate the PLLQCLK frequency used on 48M domain
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 55
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 55
 
 
  999:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note ex: @ref __LL_RCC_CALC_PLLCLK_48M_FREQ (HSE_VALUE,@ref LL_RCC_PLL_GetDivider (),
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1053:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_13
 1054:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_14
 1055:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_15
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 56
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 56
 
 
 1056:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_16
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1110:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note ex: @ref __LL_RCC_CALC_PLLSAI1_ADC_FREQ (HSE_VALUE,@ref LL_RCC_PLL_GetDivider (),
 1111:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *             @ref LL_RCC_PLLSAI1_GetN (), @ref LL_RCC_PLLSAI1_GetR ());
 1112:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __INPUTFREQ__ PLL Input frequency (based on MSI/HSE/HSI)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 57
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 57
 
 
 1113:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __PLLM__ This parameter can be one of the following values:
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1167:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_3
 1168:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_4
 1169:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_5
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 58
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 58
 
 
 1170:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_6
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1224:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __HCLKFREQ__ HCLK frequency
 1225:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __APB2PRESCALER__ This parameter can be one of the following values:
 1226:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_APB2_DIV_1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 59
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 59
 
 
 1227:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_APB2_DIV_2
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1281:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 1282:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 1283:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 60
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 60
 
 
 1284:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Disable HSE sysclk and pll prescaler
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1338:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE uint32_t LL_RCC_HSE_IsReady(void)
 1339:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 1340:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return ((READ_BIT(RCC->CR, RCC_CR_HSERDY) == (RCC_CR_HSERDY)) ? 1UL : 0UL);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 61
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 61
 
 
 1341:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1395:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get HSE current control
 1396:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll HSECR        HSEGMC       LL_RCC_HSE_GetCurrentControl
 1397:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 62
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 62
 
 
 1398:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_HSE_CURRENTMAX_0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1452:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   SET_BIT(RCC->CR, RCC_CR_HSIKERON);
 1453:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 1454:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 63
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 63
 
 
 1455:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1509:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1510:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_HSI_EnableAutoFromStop(void)
 1511:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 64
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 64
 
 
 1512:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   SET_BIT(RCC->CR, RCC_CR_HSIASFS);
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1566:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
 1567:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1568:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 65
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 65
 
 
 1569:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1623:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_LSE_Enable(void)
 1624:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 1625:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   SET_BIT(RCC->BDCR, RCC_BDCR_LSEON);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 66
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 66
 
 
 1626:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1680:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 1681:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   MODIFY_REG(RCC->BDCR, RCC_BDCR_LSEDRV, LSEDrive);
 1682:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 67
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 67
 
 
 1683:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1737:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return ((READ_BIT(RCC->BDCR, RCC_BDCR_LSECSSD) == (RCC_BDCR_LSECSSD)) ? 1UL : 0UL);
 1738:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 1739:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 68
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 68
 
 
 1740:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1794:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 1795:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 1796:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 69
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 69
 
 
 1797:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Disable LSI2 Oscillator
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1851:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 1852:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   SET_BIT(RCC->CR, RCC_CR_MSION);
 1853:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 70
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 70
 
 
 1854:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1908:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_2
 1909:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_3
 1910:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 71
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 71
 
 
 1911:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_5
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1965:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 1966:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Set MSI Calibration trimming
 1967:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note user-programmable trimming value that is added to the MSICAL
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 72
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 72
 
 
 1968:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll ICSCR        MSITRIM       LL_RCC_MSI_SetCalibTrimming
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2022:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 2023:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_LSCO_SetSource(uint32_t Source)
 2024:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 73
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 73
 
 
 2025:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   MODIFY_REG(RCC->BDCR, RCC_BDCR_LSCOSEL, Source);
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2079:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll EXTCFGR         RFCSS           LL_RCC_GetRFClockSource
 2080:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
 2081:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_RF_CLKSOURCE_HSI
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 74
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 74
 
 
 2082:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_RF_CLKSOURCE_HSE_DIV2
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2136:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_1
 2137:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_2
 2138:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_3
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 75
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 75
 
 
 2139:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_4
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2193:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_10
 2194:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_16
 2195:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_32
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 76
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 76
 
 
 2196:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_64
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2250:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_10
 2251:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_16
 2252:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_32
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 77
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 77
 
 
 2253:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_64
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  248              		.loc 2 2306 26 view .LVU66
  249              	.LBB226:
 2307:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 78
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 78
 
 
 2308:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return (uint32_t)(READ_BIT(RCC->EXTCFGR, RCC_EXTCFGR_SHDHPRE) << 4);
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  293 0044 00000000 		.word	AHBPrescTable
  294 0048 83DE1B43 		.word	1125899907
  295              		.cfi_endproc
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 79
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 79
 
 
  296              	.LFE1120:
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  342              		.loc 2 1852 3 view .LVU88
  343 0014 1A68     		ldr	r2, [r3]
  344 0016 42F00102 		orr	r2, r2, #1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 80
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 80
 
 
  345 001a 1A60     		str	r2, [r3]
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  386              		.loc 2 1974 3 view .LVU101
  387 0038 6B68     		ldr	r3, [r5, #4]
  388 003a 23F47F43 		bic	r3, r3, #65280
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 81
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 81
 
 
  389 003e 6B60     		str	r3, [r5, #4]
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  429 0062 FFF7FEFF 		bl	HAL_GetTick
  430              	.LVL39:
  306:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 82
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 82
 
 
  431              		.loc 1 306 24 discriminator 1 view .LVU116
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  472              	.LBB239:
  473              	.LBI239:
 2309:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 83
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 83
 
 
 2310:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2364:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 2365:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 2366:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 84
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 84
 
 
 2367:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2421:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 2422:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Set SMPS prescaler
 2423:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll SMPSCR         SMPSDIV          LL_RCC_SetSMPSPrescaler
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 85
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 85
 
 
 2424:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  Prescaler This parameter can be one of the following values:
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2478:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MCO1_DIV_4
 2479:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MCO1_DIV_8
 2480:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MCO1_DIV_16
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 86
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 86
 
 
 2481:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note   (*) Value not defined for all devices
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2535:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_I2C1_CLKSOURCE_HSI
 2536:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_I2C3_CLKSOURCE_PCLK1 (*)
 2537:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_I2C3_CLKSOURCE_SYSCLK (*)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 87
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 87
 
 
 2538:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_I2C3_CLKSOURCE_HSI (*)
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2592:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 2593:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_SetRNGClockSource(uint32_t RNGxSource)
 2594:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 88
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 88
 
 
 2595:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   MODIFY_REG(RCC->CCIPR, RCC_CCIPR_RNGSEL, RNGxSource);
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2649:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_ConfigRNGClockSource(uint32_t RNGxSource, uint32_t CLK48xSource)
 2650:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 2651:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   if (RNGxSource == LL_RCC_RNG_CLKSOURCE_CLK48)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 89
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 89
 
 
 2652:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   {
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2706:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 2707:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return (uint32_t)(READ_BIT(RCC->CCIPR, LPUARTx));
 2708:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 90
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 90
 
 
 2709:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* LPUART1 */
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2763:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 2764:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE uint32_t LL_RCC_GetSAIClockSource(uint32_t SAIx)
 2765:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 91
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 91
 
 
 2766:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return (uint32_t)(READ_BIT(RCC->CCIPR, SAIx));
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2820:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 2821:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get ADCx clock source
 2822:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CCIPR        ADCSEL        LL_RCC_GetADCClockSource
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 92
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 92
 
 
 2823:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  ADCx This parameter can be one of the following values:
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2877:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 2878:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 2879:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Enable RTC
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 93
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 93
 
 
 2880:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll BDCR         RTCEN         LL_RCC_EnableRTC
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2934:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
 2935:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 2936:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 94
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 94
 
 
 2937:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  495              		.loc 1 340 3 is_stmt 1 view .LVU137
  496              	.L34:
  340:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 95
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 95
 
 
  497              		.loc 1 340 35 view .LVU138
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3017:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSOURCE_MSI
 3018:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSOURCE_HSI
 3019:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSOURCE_HSE
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 96
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 96
 
 
 3020:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  PLLM This parameter can be one of the following values:
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3074:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *       PLLSAI1 are disabled
 3075:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note PLLN/PLLP can be written only when PLL is disabled
 3076:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll PLLCFGR      PLLSRC        LL_RCC_PLL_ConfigDomain_ADC\n
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 97
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 97
 
 
 3077:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         PLLCFGR      PLLM          LL_RCC_PLL_ConfigDomain_ADC\n
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3131:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   MODIFY_REG(RCC->PLLCFGR, RCC_PLLCFGR_PLLSRC | RCC_PLLCFGR_PLLM | RCC_PLLCFGR_PLLN | RCC_PLLCFGR_P
 3132:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****              Source | PLLM | (PLLN << RCC_PLLCFGR_PLLN_Pos) | PLLP);
 3133:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 98
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 98
 
 
 3134:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3188:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note   used for PLLSAI1CLK (SAI1 clock)
 3189:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll PLLCFGR      PLLP       LL_RCC_PLL_GetP
 3190:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 99
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 99
 
 
 3191:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_2
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3245:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 3246:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 3247:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get Main PLL division factor for PLLR
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 100
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 100
 
 
 3248:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note used for PLLCLK (system clock)
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3302:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   CLEAR_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLPEN);
 3303:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 3304:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* SAI1 */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 101
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 101
 
 
 3305:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3359:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Disable PLL output mapped on 48MHz domain clock
 3360:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note In order to save power, when the PLLCLK  of the PLL is
 3361:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *       not used,  should be 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 102
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 102
 
 
 3362:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll PLLCFGR      PLLQEN        LL_RCC_PLL_DisableDomain_48M
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3416:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 3417:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
 3418:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EF_PLLSAI1 PLLSAI1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 103
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 103
 
 
 3419:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  520 00ca 1A62     		str	r2, [r3, #32]
  359:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  521              		.loc 1 359 3 view .LVU146
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 104
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 104
 
 
  522 00cc 4FF44032 		mov	r2, #196608
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  561              		.loc 1 342 8 discriminator 1 view .LVU161
  562 00fe 0228     		cmp	r0, #2
  563 0100 D5D9     		bls	.L34
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 105
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 105
 
 
  344:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     }
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1328:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   gpio_initstruct.Speed     = GPIO_SPEED_FREQ_VERY_HIGH;
  611              		.loc 1 1328 29 is_stmt 0 view .LVU171
  612 0008 0223     		movs	r3, #2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 106
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 106
 
 
  613 000a 0293     		str	r3, [sp, #8]
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  650 0034 C0F30750 		ubfx	r0, r0, #20, #8
  651              	.LVL54:
 1344:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   HAL_GPIO_Init(mco_gpio_port, &gpio_initstruct);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 107
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 107
 
 
  652              		.loc 1 1344 29 view .LVU189
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  694              	.L45:
  695              	.LCFI8:
  696              		.cfi_restore_state
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 108
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 108
 
 
 1354:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1409:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   const uint32_t temp_sysclksrc = __HAL_RCC_GET_SYSCLK_SOURCE();
  740              		.loc 1 1409 3 view .LVU215
 1410:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 109
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 109
 
 
  741              		.loc 1 1410 3 view .LVU216
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1949:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  780              		.loc 2 1949 3 is_stmt 1 view .LVU232
 1949:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 110
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 110
 
 
  781              		.loc 2 1949 3 is_stmt 0 view .LVU233
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3457:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note This  can be selected for USB, RNG
 3458:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll PLLCFGR      PLLSRC        LL_RCC_PLLSAI1_ConfigDomain_48M\n
 3459:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         PLLCFGR      PLLM          LL_RCC_PLLSAI1_ConfigDomain_48M\n
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 111
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 111
 
 
 3460:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         PLLSAI1CFGR  PLLN      LL_RCC_PLLSAI1_ConfigDomain_48M\n
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3514:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_6
 3515:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_7
 3516:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_8
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 112
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 112
 
 
 3517:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  PLLN Between 6 and 127
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3571:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSOURCE_MSI
 3572:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSOURCE_HSI
 3573:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSOURCE_HSE
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 113
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 113
 
 
 3574:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  PLLM This parameter can be one of the following values:
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3628:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_15
 3629:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_16
 3630:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_17
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 114
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 114
 
 
 3631:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_18
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3685:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return (uint32_t)(READ_BIT(RCC->PLLSAI1CFGR, RCC_PLLSAI1CFGR_PLLR));
 3686:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 3687:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 115
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 115
 
 
 3688:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3742:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 3743:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 3744:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Check if PLLSAI1 output mapped on 48MHz domain clock is enabled
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 116
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 116
 
 
 3745:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll PLLSAI1CFGR  PLLQEN        LL_RCC_PLLSAI1_IsEnabledDomain_48M
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3799:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
 3800:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 3801:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_ClearFlag_LSI1RDY(void)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 117
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 117
 
 
 3802:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3856:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 3857:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Configure PLL clock source
 3858:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll PLLCFGR      PLLSRC        LL_RCC_PLL_SetMainSource
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 118
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 118
 
 
 3859:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param PLLSource This parameter can be one of the following values:
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  843 0042 4FF0B043 		mov	r3, #1476395008
  844              	.LVL74:
 1300:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 119
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 119
 
 
  845              		.loc 2 1300 12 view .LVU256
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  886              	.LVL78:
 1944:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   if (msiRange > LL_RCC_MSIRANGE_11)
  887              		.loc 2 1944 23 view .LVU270
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 120
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 120
 
 
  888 0066 1B68     		ldr	r3, [r3]
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3277:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
  928              		.loc 2 3277 26 is_stmt 1 view .LVU285
  929              	.LBB265:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 121
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 121
 
 
 3279:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  971 00a2 0648     		ldr	r0, .L65+8
  972 00a4 E8E7     		b	.L53
  973              	.LVL87:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 122
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 122
 
 
  974              	.L60:
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1022              	.LBB269:
  1023              	.LBI269:
 2258:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 123
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 123
 
 
  1024              		.loc 2 2258 26 is_stmt 1 view .LVU307
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1071              		.cfi_offset 5, -8
  1072              		.cfi_offset 14, -4
  1073 0008 0446     		mov	r4, r0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 124
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 124
 
 
  395:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  408:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         ((temp_sysclksrc == RCC_SYSCLKSOURCE_STATUS_PLLCLK) && (temp_plloscsrc == RCC_PLLSOURCE_MSI
  1113              		.loc 1 408 8 is_stmt 0 view .LVU336
  1114 001e 13F00C03 		ands	r3, r3, #12
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 125
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 125
 
 
  1115              	.LVL95:
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1870:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
  1155              		.loc 2 1870 26 view .LVU351
  1156              	.LBB279:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 126
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 126
 
 
 1872:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1199              		.loc 2 1974 3 is_stmt 0 view .LVU363
  1200              	.LBE283:
  1201              	.LBE282:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 127
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 127
 
 
  1202              	.LBE271:
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1242 0088 082B     		cmp	r3, #8
  1243 008a 00F08B80 		beq	.L84
  513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         ((temp_sysclksrc == RCC_SYSCLKSOURCE_STATUS_PLLCLK) && (temp_plloscsrc == RCC_PLLSOURCE_HSE
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 128
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 128
 
 
  1244              		.loc 1 513 57 discriminator 1 view .LVU382
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1284              	.L89:
  533:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         {
  1285              		.loc 1 533 37 view .LVU397
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 129
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 129
 
 
  1286              	.LBB307:
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1326 00da 00F00883 		beq	.L138
  421:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         {
  1327              		.loc 1 421 9 is_stmt 1 view .LVU412
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 130
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 130
 
 
  421:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         {
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1367              		.loc 2 1920 22 view .LVU427
  1368              	.LBB288:
 1922:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 131
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 131
 
 
  1369              		.loc 2 1922 3 view .LVU428
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1411              		.loc 1 452 12 discriminator 1 view .LVU440
  1412 012a 0028     		cmp	r0, #0
  1413 012c 9FD0     		beq	.L73
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 132
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 132
 
 
  454:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         }
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1456              	.LBB295:
 1974:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  1457              		.loc 2 1974 3 view .LVU453
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 133
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 133
 
 
  1458 0146 5368     		ldr	r3, [r2, #4]
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1499 0170 4FF0B042 		mov	r2, #1476395008
  1500              	.LVL137:
 1862:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 134
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 134
 
 
  1501              		.loc 2 1862 3 is_stmt 0 view .LVU467
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1541 019c B0E2     		b	.L72
  1542              	.LVL141:
  1543              	.L177:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 135
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 135
 
 
  497:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1582              	.LVL144:
 2074:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  1583              		.loc 2 2074 10 view .LVU498
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 136
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 136
 
 
  1584              	.LBE317:
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1626 01dc 1360     		str	r3, [r2]
  1627              	.LBE321:
  1628              	.LBE320:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 137
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 137
 
 
  592:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1668              		.loc 1 524 7 is_stmt 1 discriminator 1 view .LVU529
  1669              	.LBB309:
  1670              	.LBI309:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 138
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 138
 
 
 1318:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1710 021e FFF7FEFF 		bl	HAL_GetTick
  1711              	.LVL155:
  549:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 139
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 139
 
 
  1712              		.loc 1 549 30 discriminator 1 view .LVU545
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1754              	.LVL161:
  1755              	.L95:
 1548:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 140
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 140
 
 
  1756              		.loc 2 1548 1 view .LVU558
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  642:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         {
  1796              		.loc 1 642 9 view .LVU573
  1797              	.LBB334:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 141
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 141
 
 
  1798              	.LBI334:
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1838 029e D3F89430 		ldr	r3, [r3, #148]
 1775:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  1839              		.loc 2 1775 76 view .LVU588
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 142
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 142
 
 
  1840 02a2 13F0020F 		tst	r3, #2
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1881              		.loc 1 615 37 view .LVU601
  1882              	.LBB330:
  1883              	.LBI330:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 143
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 143
 
 
 1500:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  664:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  1924              		.loc 1 664 21 is_stmt 0 view .LVU616
  1925 02f2 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 144
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 144
 
 
  1926              	.LVL173:
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  1966 0316 4FF0B042 		mov	r2, #1476395008
  1967 031a D2F89430 		ldr	r3, [r2, #148]
  1968 031e 23F47063 		bic	r3, r3, #3840
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 145
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 145
 
 
  1969 0322 43EA0123 		orr	r3, r3, r1, lsl #8
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2009              		.loc 1 688 16 is_stmt 0 view .LVU644
  2010 034a FFF7FEFF 		bl	HAL_GetTick
  2011              	.LVL180:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 146
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 146
 
 
  688:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2052 0376 13F0020F 		tst	r3, #2
  2053 037a 06D1     		bne	.L106
  2054              	.LBE354:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 147
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 147
 
 
  2055              	.LBE353:
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2095              	.LBE358:
  2096              	.LBE357:
  720:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 148
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 148
 
 
  2097              		.loc 1 720 11 is_stmt 1 view .LVU673
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2137              		.loc 2 1813 12 is_stmt 0 view .LVU687
  2138 03cc 4FF0B043 		mov	r3, #1476395008
  2139 03d0 D3F89430 		ldr	r3, [r3, #148]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 149
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 149
 
 
 1813:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2180              		.loc 1 754 14 is_stmt 0 view .LVU701
  2181 03fe FFF7FEFF 		bl	HAL_GetTick
  2182              	.LVL191:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 150
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 150
 
 
  754:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         {
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2222              		.loc 1 771 8 view .LVU716
  2223 0430 13F4807F 		tst	r3, #256
  2224 0434 27D0     		beq	.L182
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 151
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 151
 
 
  2225              	.L113:
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  795:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  2265              		.loc 1 795 19 is_stmt 0 view .LVU731
  2266 0460 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 152
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 152
 
 
  2267              	.LVL194:
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2307              	.LVL199:
  2308 048e 0546     		mov	r5, r0
  2309              	.LVL200:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 153
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 153
 
 
  779:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1655:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  2351              		.loc 2 1655 3 view .LVU759
  2352 04ba 4FF0B043 		mov	r3, #1476395008
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 154
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 154
 
 
  2353 04be D3F89020 		ldr	r2, [r3, #144]
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2394              	.LBE379:
  814:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         {
  2395              		.loc 1 814 9 is_stmt 1 view .LVU773
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 155
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 155
 
 
  814:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         {
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  836:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  2435              		.loc 1 836 19 is_stmt 0 view .LVU789
  2436 051a FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 156
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 156
 
 
  2437              	.LVL207:
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2477 0540 D2F89830 		ldr	r3, [r2, #152]
  2478 0544 23F00103 		bic	r3, r3, #1
  2479 0548 C2F89830 		str	r3, [r2, #152]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 157
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 157
 
 
  2480              	.LBE386:
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2519              		.loc 1 870 3 view .LVU818
  870:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
  2520              		.loc 1 870 29 is_stmt 0 view .LVU819
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 158
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 158
 
 
  2521 056e E36A     		ldr	r3, [r4, #44]
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2559 058c 4FF0B042 		mov	r2, #1476395008
  2560              	.LVL217:
 2955:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 159
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 159
 
 
  2561              		.loc 2 2955 3 is_stmt 0 view .LVU836
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  882:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       assert_param(IS_RCC_PLLQ_VALUE(RCC_OscInitStruct->PLL.PLLQ));
  2600              		.loc 1 882 7 view .LVU852
  883:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       assert_param(IS_RCC_PLLR_VALUE(RCC_OscInitStruct->PLL.PLLR));
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 160
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 160
 
 
  2601              		.loc 1 883 7 view .LVU853
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2639 05e8 A06B     		ldr	r0, [r4, #56]
  888:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           ((READ_BIT(temp_pllconfig, RCC_PLLCFGR_PLLN) >> RCC_PLLCFGR_PLLN_Pos) != RCC_OscInitStruc
  2640              		.loc 1 888 87 view .LVU870
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 161
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 161
 
 
  2641 05ea 8342     		cmp	r3, r0
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 2953:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
  2681              		.loc 2 2953 22 view .LVU885
  2682              	.LBB395:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 162
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 162
 
 
 2955:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2723 0650 1940     		ands	r1, r1, r3
  2724 0652 236B     		ldr	r3, [r4, #48]
  2725 0654 606B     		ldr	r0, [r4, #52]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 163
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 163
 
 
  2726 0656 0343     		orrs	r3, r3, r0
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2768              		.loc 1 943 20 is_stmt 0 view .LVU911
  2769 0690 FFF7FEFF 		bl	HAL_GetTick
  2770              	.LVL230:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 164
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 164
 
 
  943:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****               {
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2812              	.L133:
  972:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
  2813              		.loc 1 972 51 view .LVU925
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 165
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 165
 
 
  972:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2857              		.cfi_restore 5
  2858              		.cfi_restore 14
 1016:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 166
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 166
 
 
  2859              		.loc 1 1016 10 view .LVU937
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2903              		.loc 1 574 16 view .LVU947
  2904              	.LBE406:
 1016:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 167
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 167
 
 
  2905              		.loc 1 1016 10 view .LVU948
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  2953              	.LCFI13:
  2954              		.cfi_def_cfa_offset 16
  2955              		.cfi_offset 4, -16
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 168
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 168
 
 
  2956              		.cfi_offset 5, -12
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
  2995              		.loc 1 1145 26 is_stmt 0 view .LVU972
  2996 0030 2B68     		ldr	r3, [r5]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 169
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 169
 
 
 1145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1872:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  3034              		.loc 2 1872 3 view .LVU990
 1872:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 170
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 170
 
 
  3035              		.loc 2 1872 12 is_stmt 0 view .LVU991
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3076 0096 801B     		subs	r0, r0, r6
 1087:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
  3077              		.loc 1 1087 10 discriminator 1 view .LVU1005
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 171
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 171
 
 
  3078 0098 0228     		cmp	r0, #2
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3887:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
 3888:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 3889:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_ClearFlag_PLLRDY(void)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 172
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 172
 
 
 3890:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 3944:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 3945:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return ((READ_BIT(RCC->CIFR, RCC_CIFR_LSI1RDYF) == (RCC_CIFR_LSI1RDYF)) ? 1UL : 0UL);
 3946:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 173
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 173
 
 
 3947:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 4001:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval State of bit (1 or 0).
 4002:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 4003:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE uint32_t LL_RCC_IsActiveFlag_PLLRDY(void)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 174
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 174
 
 
 4004:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3116              		.loc 2 4057 26 view .LVU1017
  3117              	.LBB413:
 4058:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 175
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 175
 
 
 4059:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return ((READ_BIT(RCC->CFGR, RCC_CFGR_HPREF) == (RCC_CFGR_HPREF)) ? 1UL : 0UL);
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3160              	.LBE414:
 1118:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     while (LL_RCC_IsActiveFlag_C2HPRE() == 0U)
  3161              		.loc 1 1118 5 is_stmt 1 view .LVU1032
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 176
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 176
 
 
 1118:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     while (LL_RCC_IsActiveFlag_C2HPRE() == 0U)
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3197              		.loc 1 1130 5 is_stmt 1 view .LVU1045
 1131:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  3198              		.loc 1 1131 5 view .LVU1046
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 177
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 177
 
 
  3199 0106 A969     		ldr	r1, [r5, #24]
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3236              	.LBE420:
 1137:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
  3237              		.loc 1 1137 7 is_stmt 1 view .LVU1058
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 178
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 178
 
 
 1137:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1152:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     {
  3279              		.loc 1 1152 40 view .LVU1072
  3280              	.LBB424:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 179
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 179
 
 
  3281              	.LBI424:
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3315              	.LBB427:
 2236:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  3316              		.loc 2 2236 3 view .LVU1086
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 180
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 180
 
 
  3317 0174 4FF0B042 		mov	r2, #1476395008
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3353 019c 801B     		subs	r0, r0, r6
 1171:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
  3354              		.loc 1 1171 10 discriminator 1 view .LVU1099
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 181
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 181
 
 
  3355 019e 0228     		cmp	r0, #2
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3396 01c4 45E0     		b	.L198
  3397              	.L216:
 1214:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 182
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 182
 
 
  3398              		.loc 1 1214 7 is_stmt 1 view .LVU1113
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3439              		.loc 1 1228 42 view .LVU1126
  3440              	.LBB438:
  3441              	.LBI438:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 183
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 183
 
 
 2072:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3481 0216 114A     		ldr	r2, .L244
  3482 0218 1368     		ldr	r3, [r2]
  3483 021a 23F00703 		bic	r3, r3, #7
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 184
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 184
 
 
  3484 021e 2343     		orrs	r3, r3, r4
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3523              		.loc 1 1263 3 is_stmt 1 view .LVU1156
 1263:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
  3524              		.loc 1 1263 10 is_stmt 0 view .LVU1157
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 185
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 185
 
 
  3525 024a FFF7FEFF 		bl	HAL_GetTickPrio
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3575              		.cfi_startproc
  3576              		@ args = 0, pretend = 0, frame = 0
  3577              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 186
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 186
 
 
  3578 0000 08B5     		push	{r3, lr}
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3626              		.cfi_def_cfa_offset 8
  3627              		.cfi_offset 3, -8
  3628              		.cfi_offset 14, -4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 187
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 187
 
 
 1493:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1505:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
  3676              		.loc 1 1505 22 is_stmt 0 view .LVU1181
  3677 0002 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 188
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 188
 
 
  3678              	.LVL305:
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3726              	.LBB446:
  3727              	.LBI446:
 2336:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 189
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 189
 
 
  3728              		.loc 2 2336 26 is_stmt 1 view .LVU1190
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1534:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  3775              		.loc 1 1534 3 view .LVU1200
 1537:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****                                       RCC_OSCILLATORTYPE_LSE | RCC_OSCILLATORTYPE_LSI1 | RCC_OSCILL
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 190
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 190
 
 
  3776              		.loc 1 1537 3 view .LVU1201
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
 1555:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  3812              		.loc 1 1555 3 is_stmt 1 view .LVU1220
 1555:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 191
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 191
 
 
  3813              		.loc 1 1555 54 is_stmt 0 view .LVU1221
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3848 004c C2F30623 		ubfx	r3, r2, #8, #7
 1565:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   RCC_OscInitStruct->PLL.PLLP      = (regPLLCFGRvalue & RCC_PLLCFGR_PLLP);
  3849              		.loc 1 1565 36 view .LVU1241
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 192
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 192
 
 
  3850 0050 8363     		str	r3, [r0, #56]
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3885              		.loc 1 1580 77 view .LVU1260
  3886 0076 00D0     		beq	.L263
 1580:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 193
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 193
 
 
  3887              		.loc 1 1580 77 discriminator 1 view .LVU1261
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3931              		.loc 1 1607 32 is_stmt 0 view .LVU1273
  3932 0000 6F23     		movs	r3, #111
  3933 0002 0360     		str	r3, [r0]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 194
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 194
 
 
 1611:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  3971              		.loc 2 2323 10 view .LVU1290
  3972 001a 02F4E062 		and	r2, r2, #1792
  3973              	.LBE453:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 195
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 195
 
 
  3974              	.LBE452:
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  4011              		.loc 2 2308 21 is_stmt 0 view .LVU1307
  4012 0032 D3F80831 		ldr	r3, [r3, #264]
 2308:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 196
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 196
 
 
  4013              		.loc 2 2308 10 view .LVU1308
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  4060              	.LBE461:
  4061              	.LBE460:
 1645:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 197
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 197
 
 
  4062              		.loc 1 1645 1 is_stmt 0 view .LVU1318
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  4113 000e 08BD     		pop	{r3, pc}
  4114              	.L273:
 1658:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 198
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 198
 
 
  4115              		.loc 1 1658 5 is_stmt 1 view .LVU1326
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  4159              		.cfi_endproc
  4160              	.LFE1119:
  4162              		.section	.rodata
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 199
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 199
 
 
  4163              		.align	2
@@ -11909,67 +11909,67 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 1
  4188              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
  4189              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pwr_ex.h"
  4190              		.file 12 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pwr.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 200
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 200
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_rcc.c
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:21     .text.RCC_SetFlashLatency:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:26     .text.RCC_SetFlashLatency:00000000 RCC_SetFlashLatency
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:207    .text.RCC_SetFlashLatency:000000b8 $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:213    .text.RCC_SetFlashLatencyFromMSIRange:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:218    .text.RCC_SetFlashLatencyFromMSIRange:00000000 RCC_SetFlashLatencyFromMSIRange
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:292    .text.RCC_SetFlashLatencyFromMSIRange:00000040 $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:299    .text.HAL_RCC_DeInit:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:305    .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:570    .text.HAL_RCC_DeInit:00000108 $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:579    .text.HAL_RCC_MCOConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:585    .text.HAL_RCC_MCOConfig:00000000 HAL_RCC_MCOConfig
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:725    .text.HAL_RCC_GetSysClockFreq:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:731    .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:994    .text.HAL_RCC_GetSysClockFreq:000000b4 $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:1001   .text.HAL_RCC_GetHCLKFreq:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:1007   .text.HAL_RCC_GetHCLKFreq:00000000 HAL_RCC_GetHCLKFreq
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:1042   .text.HAL_RCC_GetHCLKFreq:0000001c $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:1047   .text.HAL_RCC_OscConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:1053   .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:2207   .text.HAL_RCC_OscConfig:0000041c $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:2213   .text.HAL_RCC_OscConfig:00000424 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:2925   .text.HAL_RCC_OscConfig:0000070c $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:2933   .text.HAL_RCC_ClockConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:2939   .text.HAL_RCC_ClockConfig:00000000 HAL_RCC_ClockConfig
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3560   .text.HAL_RCC_ClockConfig:0000025c $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3566   .text.HAL_RCC_GetHCLK2Freq:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3572   .text.HAL_RCC_GetHCLK2Freq:00000000 HAL_RCC_GetHCLK2Freq
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3607   .text.HAL_RCC_GetHCLK2Freq:00000020 $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3612   .text.HAL_RCC_GetHCLK4Freq:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3618   .text.HAL_RCC_GetHCLK4Freq:00000000 HAL_RCC_GetHCLK4Freq
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3653   .text.HAL_RCC_GetHCLK4Freq:00000020 $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3658   .text.HAL_RCC_GetPCLK1Freq:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3664   .text.HAL_RCC_GetPCLK1Freq:00000000 HAL_RCC_GetPCLK1Freq
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3700   .text.HAL_RCC_GetPCLK1Freq:00000020 $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3705   .text.HAL_RCC_GetPCLK2Freq:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3711   .text.HAL_RCC_GetPCLK2Freq:00000000 HAL_RCC_GetPCLK2Freq
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3747   .text.HAL_RCC_GetPCLK2Freq:00000020 $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3752   .text.HAL_RCC_GetOscConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3758   .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3914   .text.HAL_RCC_GetClockConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:3920   .text.HAL_RCC_GetClockConfig:00000000 HAL_RCC_GetClockConfig
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:4032   .text.HAL_RCC_GetClockConfig:00000048 $d
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:4037   .text.HAL_RCC_EnableCSS:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:4043   .text.HAL_RCC_EnableCSS:00000000 HAL_RCC_EnableCSS
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:4068   .text.HAL_RCC_CSSCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:4074   .text.HAL_RCC_CSSCallback:00000000 HAL_RCC_CSSCallback
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:4087   .text.HAL_RCC_NMI_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:4093   .text.HAL_RCC_NMI_IRQHandler:00000000 HAL_RCC_NMI_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:4128   .text.HAL_RCC_GetResetSource:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:4134   .text.HAL_RCC_GetResetSource:00000000 HAL_RCC_GetResetSource
-C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s:4163   .rodata:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:21     .text.RCC_SetFlashLatency:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:26     .text.RCC_SetFlashLatency:00000000 RCC_SetFlashLatency
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:207    .text.RCC_SetFlashLatency:000000b8 $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:213    .text.RCC_SetFlashLatencyFromMSIRange:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:218    .text.RCC_SetFlashLatencyFromMSIRange:00000000 RCC_SetFlashLatencyFromMSIRange
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:292    .text.RCC_SetFlashLatencyFromMSIRange:00000040 $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:299    .text.HAL_RCC_DeInit:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:305    .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:570    .text.HAL_RCC_DeInit:00000108 $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:579    .text.HAL_RCC_MCOConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:585    .text.HAL_RCC_MCOConfig:00000000 HAL_RCC_MCOConfig
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:725    .text.HAL_RCC_GetSysClockFreq:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:731    .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:994    .text.HAL_RCC_GetSysClockFreq:000000b4 $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:1001   .text.HAL_RCC_GetHCLKFreq:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:1007   .text.HAL_RCC_GetHCLKFreq:00000000 HAL_RCC_GetHCLKFreq
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:1042   .text.HAL_RCC_GetHCLKFreq:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:1047   .text.HAL_RCC_OscConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:1053   .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:2207   .text.HAL_RCC_OscConfig:0000041c $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:2213   .text.HAL_RCC_OscConfig:00000424 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:2925   .text.HAL_RCC_OscConfig:0000070c $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:2933   .text.HAL_RCC_ClockConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:2939   .text.HAL_RCC_ClockConfig:00000000 HAL_RCC_ClockConfig
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3560   .text.HAL_RCC_ClockConfig:0000025c $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3566   .text.HAL_RCC_GetHCLK2Freq:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3572   .text.HAL_RCC_GetHCLK2Freq:00000000 HAL_RCC_GetHCLK2Freq
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3607   .text.HAL_RCC_GetHCLK2Freq:00000020 $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3612   .text.HAL_RCC_GetHCLK4Freq:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3618   .text.HAL_RCC_GetHCLK4Freq:00000000 HAL_RCC_GetHCLK4Freq
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3653   .text.HAL_RCC_GetHCLK4Freq:00000020 $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3658   .text.HAL_RCC_GetPCLK1Freq:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3664   .text.HAL_RCC_GetPCLK1Freq:00000000 HAL_RCC_GetPCLK1Freq
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3700   .text.HAL_RCC_GetPCLK1Freq:00000020 $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3705   .text.HAL_RCC_GetPCLK2Freq:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3711   .text.HAL_RCC_GetPCLK2Freq:00000000 HAL_RCC_GetPCLK2Freq
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3747   .text.HAL_RCC_GetPCLK2Freq:00000020 $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3752   .text.HAL_RCC_GetOscConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3758   .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3914   .text.HAL_RCC_GetClockConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:3920   .text.HAL_RCC_GetClockConfig:00000000 HAL_RCC_GetClockConfig
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:4032   .text.HAL_RCC_GetClockConfig:00000048 $d
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:4037   .text.HAL_RCC_EnableCSS:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:4043   .text.HAL_RCC_EnableCSS:00000000 HAL_RCC_EnableCSS
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:4068   .text.HAL_RCC_CSSCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:4074   .text.HAL_RCC_CSSCallback:00000000 HAL_RCC_CSSCallback
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:4087   .text.HAL_RCC_NMI_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:4093   .text.HAL_RCC_NMI_IRQHandler:00000000 HAL_RCC_NMI_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:4128   .text.HAL_RCC_GetResetSource:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:4134   .text.HAL_RCC_GetResetSource:00000000 HAL_RCC_GetResetSource
+C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s:4163   .rodata:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick
 HAL_PWREx_GetVoltageRange
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccuWPXle.s 			page 201
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\cc6s7QHI.s 			page 201
 
 
 MSIRangeTable

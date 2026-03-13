@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
   27:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****   * @{
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****   */
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 2
 
 
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** /** @defgroup PCDEx PCDEx
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 3
 
 
   34              		@ link register save eliminated.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  109:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** 
  110:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     /* Configure the PMA */
  111:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     ep->pmaaddr0 = (uint16_t)(pmaadress & 0xFFFFU);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 4
 
 
  112:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     ep->pmaaddr1 = (uint16_t)((pmaadress & 0xFFFF0000U) >> 16);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
   98              		.cfi_endproc
   99              	.LFE1104:
  101              		.section	.text.HAL_PCDEx_ActivateBCD,"ax",%progbits
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 5
 
 
  102              		.align	1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  141              		.loc 1 133 7 is_stmt 0 view .LVU40
  142 0028 B2F85830 		ldrh	r3, [r2, #88]
  143 002c 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 6
 
 
  144              		.loc 1 133 14 view .LVU41
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  184              		.loc 1 149 7 is_stmt 0 view .LVU53
  185 000a B2F85830 		ldrh	r3, [r2, #88]
  186              	.LVL16:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 7
 
 
  187              		.loc 1 149 7 view .LVU54
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  184:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     {
  185:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****       /* Dedicated Downstream Port DCP */
  186:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** #if (USE_HAL_PCD_REGISTER_CALLBACKS == 1U)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 8
 
 
  187:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****       hpcd->BCDCallback(hpcd, PCD_BCD_DEDICATED_CHARGING_PORT);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  209              		.loc 1 240 1 is_stmt 1 view -0
  210              		.cfi_startproc
  211              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 9
 
 
  212              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  257              		.thumb_func
  259              	HAL_PCDEx_DeActivateLPM:
  260              	.LVL21:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 10
 
 
  261              	.LFB1109:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  298              		.loc 1 267 1 is_stmt 0 view .LVU91
  299 002a 7047     		bx	lr
  300              		.cfi_endproc
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 11
 
 
  301              	.LFE1109:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  292:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****   */
  293:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** __weak void HAL_PCDEx_BCD_Callback(PCD_HandleTypeDef *hpcd, PCD_BCD_MsgTypeDef msg)
  294:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 12
 
 
  335              		.loc 1 294 1 is_stmt 1 view -0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  377              	.LVL29:
  162:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** 
  378              		.loc 1 162 24 view .LVU106
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 13
 
 
  379 000a 0646     		mov	r6, r0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  418 0048 B5F85830 		ldrh	r3, [r5, #88]
  419 004c 9BB2     		uxth	r3, r3
  179:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     HAL_Delay(50U);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 14
 
 
  420              		.loc 1 179 16 view .LVU122
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  462              		.loc 1 216 22 discriminator 1 view .LVU134
  463 008c 801B     		subs	r0, r0, r6
  216:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****   {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 15
 
 
  464              		.loc 1 216 6 discriminator 1 view .LVU135
@@ -876,27 +876,27 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 1
  493              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_usb.h"
  494              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pcd.h"
  495              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_pcd_ex.c
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:21     .text.HAL_PCDEx_PMAConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:27     .text.HAL_PCDEx_PMAConfig:00000000 HAL_PCDEx_PMAConfig
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:102    .text.HAL_PCDEx_ActivateBCD:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:108    .text.HAL_PCDEx_ActivateBCD:00000000 HAL_PCDEx_ActivateBCD
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:157    .text.HAL_PCDEx_DeActivateBCD:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:163    .text.HAL_PCDEx_DeActivateBCD:00000000 HAL_PCDEx_DeActivateBCD
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:200    .text.HAL_PCDEx_ActivateLPM:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:206    .text.HAL_PCDEx_ActivateLPM:00000000 HAL_PCDEx_ActivateLPM
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:253    .text.HAL_PCDEx_DeActivateLPM:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:259    .text.HAL_PCDEx_DeActivateLPM:00000000 HAL_PCDEx_DeActivateLPM
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:304    .text.HAL_PCDEx_LPM_Callback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:310    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:326    .text.HAL_PCDEx_BCD_Callback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:332    .text.HAL_PCDEx_BCD_Callback:00000000 HAL_PCDEx_BCD_Callback
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:348    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccCuTHwh.s:354    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 HAL_PCDEx_BCD_VBUSDetect
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:21     .text.HAL_PCDEx_PMAConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:27     .text.HAL_PCDEx_PMAConfig:00000000 HAL_PCDEx_PMAConfig
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:102    .text.HAL_PCDEx_ActivateBCD:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:108    .text.HAL_PCDEx_ActivateBCD:00000000 HAL_PCDEx_ActivateBCD
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:157    .text.HAL_PCDEx_DeActivateBCD:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:163    .text.HAL_PCDEx_DeActivateBCD:00000000 HAL_PCDEx_DeActivateBCD
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:200    .text.HAL_PCDEx_ActivateLPM:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:206    .text.HAL_PCDEx_ActivateLPM:00000000 HAL_PCDEx_ActivateLPM
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:253    .text.HAL_PCDEx_DeActivateLPM:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:259    .text.HAL_PCDEx_DeActivateLPM:00000000 HAL_PCDEx_DeActivateLPM
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:304    .text.HAL_PCDEx_LPM_Callback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:310    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:326    .text.HAL_PCDEx_BCD_Callback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:332    .text.HAL_PCDEx_BCD_Callback:00000000 HAL_PCDEx_BCD_Callback
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:348    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccA4V1a5.s:354    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 HAL_PCDEx_BCD_VBUSDetect
 
 UNDEFINED SYMBOLS
 HAL_GetTick

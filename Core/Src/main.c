@@ -65,6 +65,8 @@ DMA_HandleTypeDef hdma_lpuart1_rx;
 
 QSPI_HandleTypeDef hqspi;
 
+RNG_HandleTypeDef hrng;
+
 RTC_HandleTypeDef hrtc;
 
 TIM_HandleTypeDef htim16;
@@ -85,6 +87,7 @@ static void MX_RTC_Init(void);
 static void MX_LPUART1_UART_Init(void);
 static void MX_QUADSPI_Init(void);
 static void MX_ADC1_Init(void);
+static void MX_RNG_Init(void);
 static void MX_RF_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -139,6 +142,7 @@ int main(void)
   MX_QUADSPI_Init();
   MX_USB_Device_Init();
   MX_ADC1_Init();
+  MX_RNG_Init();
   MX_RF_Init();
   /* USER CODE BEGIN 2 */
   
@@ -157,6 +161,8 @@ int main(void)
 
   findStartPos();
 
+  HAL_HSEM_FastTake(5); // Lock semaphore 5. If not BLE will stop the USB clock
+
   /* USER CODE END 2 */
 
   /* Init code for STM32_WPAN */
@@ -169,6 +175,7 @@ int main(void)
     switch(btnState)
     {
       case STATE_1:
+        CDC_Transmit_FS((uint8_t *)data, strlen(data));
 
         HAL_GPIO_TogglePin(GPIOB, LED_R_Pin);  
         HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 0);
@@ -220,6 +227,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_CRSInitTypeDef RCC_CRSInitStruct = {0};
 
   /** Configure LSE Drive Capability
   */
@@ -268,6 +276,21 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
+  /** Enable the SYSCFG APB clock
+  */
+  __HAL_RCC_CRS_CLK_ENABLE();
+
+  /** Configures CRS
+  */
+  RCC_CRSInitStruct.Prescaler = RCC_CRS_SYNC_DIV1;
+  RCC_CRSInitStruct.Source = RCC_CRS_SYNC_SOURCE_USB;
+  RCC_CRSInitStruct.Polarity = RCC_CRS_SYNC_POLARITY_RISING;
+  RCC_CRSInitStruct.ReloadValue = __HAL_RCC_CRS_RELOADVALUE_CALCULATE(48000000,1000);
+  RCC_CRSInitStruct.ErrorLimitValue = 34;
+  RCC_CRSInitStruct.HSI48CalibrationValue = 32;
+
+  HAL_RCCEx_CRSConfig(&RCC_CRSInitStruct);
 }
 
 /**
@@ -536,6 +559,33 @@ static void MX_RF_Init(void)
   /* USER CODE BEGIN RF_Init 2 */
 
   /* USER CODE END RF_Init 2 */
+
+}
+
+/**
+  * @brief RNG Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_RNG_Init(void)
+{
+
+  /* USER CODE BEGIN RNG_Init 0 */
+
+  /* USER CODE END RNG_Init 0 */
+
+  /* USER CODE BEGIN RNG_Init 1 */
+
+  /* USER CODE END RNG_Init 1 */
+  hrng.Instance = RNG;
+  hrng.Init.ClockErrorDetection = RNG_CED_ENABLE;
+  if (HAL_RNG_Init(&hrng) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN RNG_Init 2 */
+
+  /* USER CODE END RNG_Init 2 */
 
 }
 

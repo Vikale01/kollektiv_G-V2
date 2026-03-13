@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
   27:Core/Src/gps.c **** uint8_t start_pos = 0;
   28:Core/Src/gps.c **** 
   29:Core/Src/gps.c **** /**
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 2
 
 
   30:Core/Src/gps.c ****  * @brief  Verify UBX checksum
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
   71:Core/Src/gps.c ****             myGpsData.second = p[SEC_POS];
   72:Core/Src/gps.c ****         }
   73:Core/Src/gps.c ****         else
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 3
 
 
   74:Core/Src/gps.c ****         {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
   51 0010 FAD1     		bne	.L1
   54:Core/Src/gps.c **** 
   52              		.loc 1 54 41 discriminator 2 view .LVU7
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 4
 
 
   53 0012 8378     		ldrb	r3, [r0, #2]	@ zero_extendqisi2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
   89              		.loc 1 65 32 is_stmt 0 view .LVU25
   90 003a 837B     		ldrb	r3, [r0, #14]	@ zero_extendqisi2
   65:Core/Src/gps.c ****         myGpsData.minute    = p[MIN_POS];
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 5
 
 
   91              		.loc 1 65 29 view .LVU26
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  127              	.L4:
   79:Core/Src/gps.c ****         myGpsData.numSV     = p[SAT_POS];
  128              		.loc 1 79 9 is_stmt 1 view .LVU45
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 6
 
 
   79:Core/Src/gps.c ****         myGpsData.numSV     = p[SAT_POS];
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  166              		.loc 1 88 9 is_stmt 1 view .LVU62
   88:Core/Src/gps.c **** 
  167              		.loc 1 88 32 is_stmt 0 view .LVU63
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 7
 
 
  168 00ae 90F84620 		ldrb	r2, [r0, #70]	@ zero_extendqisi2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  103:Core/Src/gps.c ****         GPSraw_data[5] =     p[MIN_POS];
  205              		.loc 1 103 9 is_stmt 1 view .LVU81
  103:Core/Src/gps.c ****         GPSraw_data[5] =     p[MIN_POS];
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 8
 
 
  206              		.loc 1 103 31 is_stmt 0 view .LVU82
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  240              		.loc 1 112 9 is_stmt 1 view .LVU102
  112:Core/Src/gps.c ****         GPSraw_data[12] =    p[LAT_POS + 1];
  241              		.loc 1 112 31 is_stmt 0 view .LVU103
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 9
 
 
  242 00fc 90F82220 		ldrb	r2, [r0, #34]	@ zero_extendqisi2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  280              		.loc 1 95 27 is_stmt 0 view .LVU120
  281 0134 034B     		ldr	r3, .L8+8
  282 0136 0022     		movs	r2, #0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 10
 
 
  283 0138 1A70     		strb	r2, [r3]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  127:Core/Src/gps.c ****     {
  128:Core/Src/gps.c ****         Error_Handler();
  129:Core/Src/gps.c ****     }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 11
 
 
  130:Core/Src/gps.c ****     
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  377 0004 00E0     		b	.L17
  378              	.LVL5:
  379              	.L18:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 12
 
 
  380              		.loc 1 137 45 is_stmt 1 discriminator 2 view .LVU134
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  428              	HAL_UART_RxCpltCallback:
  429              	.LVL8:
  430              	.LFB1419:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 13
 
 
  146:Core/Src/gps.c **** 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  468              		.cfi_endproc
  469              	.LFE1419:
  471              		.section	.text.gpsLogo,"ax",%progbits
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 14
 
 
  472              		.align	1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  506              		.loc 1 181 13 is_stmt 0 view .LVU160
  507 0010 B3B1     		cbz	r3, .L35
  508              	.L30:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 15
 
 
  182:Core/Src/gps.c ****     {
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  552 004c 0021     		movs	r1, #0
  553 004e 6B20     		movs	r0, #107
  554 0050 FFF7FEFF 		bl	Oled_Draw1BitImage
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 16
 
 
  555              	.LVL15:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  611      00000000 
  611      00000000 
  611      00000000 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 17
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 17
 
 
  612              		.text
@@ -973,36 +973,36 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 1
  621              		.file 9 "Core/Inc/gps.h"
  622              		.file 10 "Core/Inc/oled_display.h"
  623              		.file 11 "Core/Inc/main.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s 			page 18
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gps.c
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:21     .text.processGPS:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:27     .text.processGPS:00000000 processGPS
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:288    .text.processGPS:0000013c $d
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:603    .bss.myGpsData:00000000 myGpsData
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:596    .bss.GPS_connected:00000000 GPS_connected
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:298    .text.GPS_Start:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:304    .text.GPS_Start:00000000 GPS_Start
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:346    .text.GPS_Start:0000002c $d
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:610    .bss.gpsRxBuffer:00000000 gpsRxBuffer
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:353    .text.Find_start:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:359    .text.Find_start:00000000 Find_start
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:417    .text.Find_start:0000002c $d
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:422    .text.HAL_UART_RxCpltCallback:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:428    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:466    .text.HAL_UART_RxCpltCallback:0000001c $d
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:472    .text.gpsLogo:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:478    .text.gpsLogo:00000000 gpsLogo
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:574    .text.gpsLogo:0000006c $d
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:590    .bss.logoSwitched:00000000 logoSwitched
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:584    .bss.start_pos:00000000 start_pos
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:585    .bss.start_pos:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:591    .bss.logoSwitched:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:597    .bss.GPS_connected:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:600    .bss.myGpsData:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccdxBzNF.s:607    .bss.gpsRxBuffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:21     .text.processGPS:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:27     .text.processGPS:00000000 processGPS
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:288    .text.processGPS:0000013c $d
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:603    .bss.myGpsData:00000000 myGpsData
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:596    .bss.GPS_connected:00000000 GPS_connected
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:298    .text.GPS_Start:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:304    .text.GPS_Start:00000000 GPS_Start
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:346    .text.GPS_Start:0000002c $d
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:610    .bss.gpsRxBuffer:00000000 gpsRxBuffer
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:353    .text.Find_start:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:359    .text.Find_start:00000000 Find_start
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:417    .text.Find_start:0000002c $d
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:422    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:428    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:466    .text.HAL_UART_RxCpltCallback:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:472    .text.gpsLogo:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:478    .text.gpsLogo:00000000 gpsLogo
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:574    .text.gpsLogo:0000006c $d
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:590    .bss.logoSwitched:00000000 logoSwitched
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:584    .bss.start_pos:00000000 start_pos
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:585    .bss.start_pos:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:591    .bss.logoSwitched:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:597    .bss.GPS_connected:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:600    .bss.myGpsData:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccDi79dh.s:607    .bss.gpsRxBuffer:00000000 $d
 
 UNDEFINED SYMBOLS
 GPSraw_data
