@@ -14,6 +14,7 @@ extern QSPI_HandleTypeDef hqspi;
 #define FOUR_PAGE_WRITE                         0X38
 
 #define SECTOR_ERASE_CMD                        0x21
+#define CHIP_ERASE_CMD                          0x60
 
 #define WRITE_ENABLE_CMD                        0x06
 #define WRITE_DISABLE_CMD                       0x04
@@ -34,5 +35,6 @@ void Flash_WritePage(uint32_t adress, uint8_t *buffer, uint32_t size);
 void Flash_SectorErase(uint32_t adress);
 uint8_t Flash_ConfigRegister(void);
 void Flash_NormalRead(uint32_t adress, uint8_t *buffer, uint32_t size);
+void Flash_ChipErase();
 
 #endif

@@ -34,10 +34,11 @@ enum {
   STATE_3
 }btnState;
 
+extern uint8_t usbReady;
 
 uint8_t readbuffer[256];
 
-uint8_t *data = "Hello from stm32\n";
+char *data = "Hello from stm32\n";
 
 /* USER CODE END PTD */
 
@@ -169,8 +170,10 @@ int main(void)
     switch(btnState)
     {
       case STATE_1:
-
-        CDC_Transmit_FS(data, strlen(data));
+        if(usbReady){
+          CDC_Transmit_FS((uint8_t *)data, strlen(data));
+          usbReady = 0;
+        }
 
         HAL_GPIO_TogglePin(GPIOB, LED_R_Pin);  
         HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 0);
@@ -193,6 +196,7 @@ int main(void)
           HAL_GPIO_WritePin(GPIOB, LED_G_Pin, 1);
           tastScheduler = 0;
         }
+
         break;
       case STATE_3:
         if(Custom_STN_NotificationEnabled()) // Check if someone is connected and has notification enabled

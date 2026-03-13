@@ -365,3 +365,31 @@ void Flash_SectorErase(uint32_t sector)
     Flash_WriteDisable();
 }
 
+void Flash_ChipErase()
+{
+    Flash_WriteEnable();
+
+    QSPI_CommandTypeDef cmd = {0};
+
+    cmd.Instruction         = CHIP_ERASE_CMD;
+    cmd.Address             = 0;
+    cmd.AlternateBytes      = 0;
+    cmd.AddressSize         = 0;
+    cmd.AlternateBytesSize  = 0;
+    cmd.DummyCycles         = 0;
+    cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+    cmd.AddressMode         = QSPI_ADDRESS_NONE;
+    cmd.AlternateByteMode   = QSPI_ALTERNATE_BYTES_NONE;
+    cmd.DataMode            = QSPI_DATA_NONE;
+    cmd.NbData              = 0;
+    cmd.DdrMode             = 0;
+    cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+
+    if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    Flash_WaitWhileBusy();
+    Flash_WriteDisable();
+}
