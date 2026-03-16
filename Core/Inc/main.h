@@ -40,7 +40,9 @@ extern "C" {
 #include "flash.h"
 #include "sensordata.h"
 #include "oled_display.h"
-
+#include "usbd_cdc_if.h"
+#include "usbd_cdc.h"
+#include <string.h>
 #include "custom_stm.h"
 #include "custom_app.h"
 /* USER CODE END Includes */

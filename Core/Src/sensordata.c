@@ -37,6 +37,8 @@ static uint8_t readBuffer[BUFFER_SIZE];
 static uint32_t currentBlePage = 0;
 static uint8_t  currentSubPage = 0; // 0 for first half, 1 for second half
 
+static uint32_t currentUSbPage = 0;
+
 static void packageHeader(void)
 {
   BME280_ReadMeasurement_Raw(BMEraw_data);
@@ -187,3 +189,18 @@ void sendDataStepByStep(void) {
         }
     }
 }
+
+void sendDataUSB(void) {
+    if (currentUSbPage < addInc) {
+        Flash_4ByteRead(currentUSbPage * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+
+        if(CDC_Transmit_FS(readBuffer, BUFFER_SIZE) == USBD_OK)
+        {
+          currentUSbPage++;
+        }
+        
+    }
+}
+
+
+

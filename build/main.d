@@ -64,7 +64,15 @@ build/main.o: Core/Src/main.c Core/Inc/main.h \
  Middlewares/ST/STM32_WPAN/ble/core/ble_bufsize.h Core/Inc/app_entry.h \
  Core/Inc/app_common.h Core/Inc/bmi270.h Core/Inc/main.h \
  Core/Inc/bme280.h Core/Inc/gps.h Core/Inc/flash.h Core/Inc/sensordata.h \
- Core/Inc/oled_display.h STM32_WPAN/App/custom_stm.h \
+ Core/Inc/oled_display.h USB_Device/App/usbd_cdc_if.h \
+ Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ USB_Device/Target/usbd_conf.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
+ STM32_WPAN/App/custom_stm.h \
  Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h \
  Middlewares/ST/STM32_WPAN/ble/core/template/ble_const.h \
  Middlewares/ST/STM32_WPAN/ble/core/ble_std.h \
@@ -72,14 +80,7 @@ build/main.o: Core/Src/main.c Core/Inc/main.h \
  Middlewares/ST/STM32_WPAN/ble/core/template/osal.h \
  Middlewares/ST/STM32_WPAN/ble/core/template/compiler.h \
  STM32_WPAN/App/custom_app.h USB_Device/App/usb_device.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- USB_Device/Target/usbd_conf.h USB_Device/App/usbd_cdc_if.h \
- Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
 Core/Inc/main.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h:
 Core/Inc/stm32wbxx_hal_conf.h:
@@ -156,6 +157,14 @@ Core/Inc/gps.h:
 Core/Inc/flash.h:
 Core/Inc/sensordata.h:
 Core/Inc/oled_display.h:
+USB_Device/App/usbd_cdc_if.h:
+Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
+USB_Device/Target/usbd_conf.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
 STM32_WPAN/App/custom_stm.h:
 Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h:
 Middlewares/ST/STM32_WPAN/ble/core/template/ble_const.h:
@@ -166,11 +175,3 @@ Middlewares/ST/STM32_WPAN/ble/core/template/compiler.h:
 STM32_WPAN/App/custom_app.h:
 USB_Device/App/usb_device.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
-USB_Device/Target/usbd_conf.h:
-USB_Device/App/usbd_cdc_if.h:
-Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:

@@ -99,6 +99,8 @@ USBD_CDC_LineCodingTypeDef LineCoding = {
   0x00,                         /* parity - none */
   0x08                          /* nb. of bits 8 */
 };
+
+uint8_t usbConnected = 0;
 /* USER CODE END PRIVATE_VARIABLES */
 
 /**
@@ -242,6 +244,11 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
     break;
 
     case CDC_SET_CONTROL_LINE_STATE:
+      if (pbuf[2] & 0x01) {
+        usbConnected = 1; // Värden har öppnat porten (DTR active)
+      } else {
+        usbConnected = 0; // Värden har stängt porten
+      }
 
     break;
 

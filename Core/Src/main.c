@@ -22,9 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "usbd_cdc_if.h"
-#include "usbd_cdc.h"
-#include <string.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -35,17 +33,14 @@ enum {
   STATE_3
 }btnState;
 
-uint8_t readbuffer[256];
-
-char *data = "hejhej\r\n";
-
-
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
 uint8_t tastScheduler = 0;
+
+extern uint8_t usbConnected;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -175,7 +170,6 @@ int main(void)
     switch(btnState)
     {
       case STATE_1:
-        CDC_Transmit_FS((uint8_t *)data, strlen(data));
 
         HAL_GPIO_TogglePin(GPIOB, LED_R_Pin);  
         HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 0);
@@ -201,11 +195,16 @@ int main(void)
 
         break;
       case STATE_3:
-        if(Custom_STN_NotificationEnabled()) // Check if someone is connected and has notification enabled
+
+        if(Custom_STN_NotificationEnabled()) // Check if someone is connected via BLE and has notification enabled
         {
           sendDataStepByStep();
         }
-
+        if(usbConnected) // Check if someone is connected via USB
+        {
+          sendDataUSB();
+        }
+   
         HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 1);
         HAL_GPIO_WritePin(GPIOB, LED_R_Pin, 0);  
         HAL_GPIO_WritePin(GPIOB, LED_G_Pin, 0);

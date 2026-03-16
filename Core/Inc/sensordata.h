@@ -13,4 +13,6 @@ void findStartPos(void);
 
 void sendDataStepByStep(void);
 
+void sendDataUSB(void);
+
 #endif

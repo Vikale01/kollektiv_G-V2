@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
   23              		.thumb
   24              		.thumb_func
   26              	packageHeader:
-  27              	.LFB1415:
+  27              	.LFB1416:
    1:Core/Src/sensordata.c **** /**
    2:Core/Src/sensordata.c ****  * @file sensordata.c
    3:Core/Src/sensordata.c ****  * @brief Handles packaging of sensor data and storage in flash memory.
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
   29:Core/Src/sensordata.c **** 
   30:Core/Src/sensordata.c **** static uint8_t buffer[BUFFER_SIZE];
   31:Core/Src/sensordata.c **** static uint32_t addInc = 0;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 2
 
 
   32:Core/Src/sensordata.c **** static uint8_t pageCounter = 0;
@@ -69,9 +69,11 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
   37:Core/Src/sensordata.c **** static uint32_t currentBlePage = 0;
   38:Core/Src/sensordata.c **** static uint8_t  currentSubPage = 0; // 0 for first half, 1 for second half
   39:Core/Src/sensordata.c **** 
-  40:Core/Src/sensordata.c **** static void packageHeader(void)
-  41:Core/Src/sensordata.c **** {
-  28              		.loc 1 41 1 view -0
+  40:Core/Src/sensordata.c **** static uint32_t currentUSbPage = 0;
+  41:Core/Src/sensordata.c **** 
+  42:Core/Src/sensordata.c **** static void packageHeader(void)
+  43:Core/Src/sensordata.c **** {
+  28              		.loc 1 43 1 view -0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -80,30 +82,30 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 4, -8
   36              		.cfi_offset 14, -4
-  42:Core/Src/sensordata.c ****   BME280_ReadMeasurement_Raw(BMEraw_data);
-  37              		.loc 1 42 3 view .LVU1
+  44:Core/Src/sensordata.c ****   BME280_ReadMeasurement_Raw(BMEraw_data);
+  37              		.loc 1 44 3 view .LVU1
   38 0002 104C     		ldr	r4, .L3
   39 0004 2046     		mov	r0, r4
   40 0006 FFF7FEFF 		bl	BME280_ReadMeasurement_Raw
   41              	.LVL0:
-  43:Core/Src/sensordata.c **** 
-  44:Core/Src/sensordata.c ****   headerBuffer[0] = 0xAA;
-  42              		.loc 1 44 3 view .LVU2
-  43              		.loc 1 44 19 is_stmt 0 view .LVU3
+  45:Core/Src/sensordata.c **** 
+  46:Core/Src/sensordata.c ****   headerBuffer[0] = 0xAA;
+  42              		.loc 1 46 3 view .LVU2
+  43              		.loc 1 46 19 is_stmt 0 view .LVU3
   44 000a 0F4B     		ldr	r3, .L3+4
   45 000c 4FF0AA0E 		mov	lr, #170
   46 0010 9C46     		mov	ip, r3
   47 0012 0CF801EB 		strb	lr, [ip], #1
-  45:Core/Src/sensordata.c **** 
-  46:Core/Src/sensordata.c ****   memcpy(&headerBuffer[1], BMEraw_data, sizeof(BMEraw_data));
-  48              		.loc 1 46 3 is_stmt 1 view .LVU4
+  47:Core/Src/sensordata.c **** 
+  48:Core/Src/sensordata.c ****   memcpy(&headerBuffer[1], BMEraw_data, sizeof(BMEraw_data));
+  48              		.loc 1 48 3 is_stmt 1 view .LVU4
   49 0016 2246     		mov	r2, r4
   50 0018 03CA     		ldmia	r2!, {r0, r1}
   51 001a C3F80100 		str	r0, [r3, #1]	@ unaligned
   52 001e CCF80410 		str	r1, [ip, #4]	@ unaligned
-  47:Core/Src/sensordata.c **** 
-  48:Core/Src/sensordata.c ****   memcpy(&headerBuffer[9], GPSraw_data, sizeof(GPSraw_data));
-  53              		.loc 1 48 3 view .LVU5
+  49:Core/Src/sensordata.c **** 
+  50:Core/Src/sensordata.c ****   memcpy(&headerBuffer[9], GPSraw_data, sizeof(GPSraw_data));
+  53              		.loc 1 50 3 view .LVU5
   54 0022 0A4C     		ldr	r4, .L3+8
   55 0024 07CC     		ldmia	r4!, {r0, r1, r2}
   56 0026 C3F80900 		str	r0, [r3, #9]	@ unaligned
@@ -113,16 +115,16 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
   60 0034 A278     		ldrb	r2, [r4, #2]	@ zero_extendqisi2
   61 0036 A3F81510 		strh	r1, [r3, #21]	@ unaligned
   62 003a DA75     		strb	r2, [r3, #23]
-  49:Core/Src/sensordata.c **** 
-  50:Core/Src/sensordata.c ****   headerBuffer[24] = 0xAA;
-  63              		.loc 1 50 3 view .LVU6
-  64              		.loc 1 50 20 is_stmt 0 view .LVU7
+  51:Core/Src/sensordata.c **** 
+  52:Core/Src/sensordata.c ****   headerBuffer[24] = 0xAA;
+  63              		.loc 1 52 3 view .LVU6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 3
+
+
+  64              		.loc 1 52 20 is_stmt 0 view .LVU7
   65 003c 83F818E0 		strb	lr, [r3, #24]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 3
-
-
-  51:Core/Src/sensordata.c **** }
-  66              		.loc 1 51 1 view .LVU8
+  53:Core/Src/sensordata.c **** }
+  66              		.loc 1 53 1 view .LVU8
   67 0040 10BD     		pop	{r4, pc}
   68              	.L4:
   69 0042 00BF     		.align	2
@@ -131,43 +133,43 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
   72 0048 00000000 		.word	headerBuffer
   73 004c 00000000 		.word	GPSraw_data
   74              		.cfi_endproc
-  75              	.LFE1415:
+  75              	.LFE1416:
   77              		.section	.text.newSectionCheck,"ax",%progbits
   78              		.align	1
   79              		.syntax unified
   80              		.thumb
   81              		.thumb_func
   83              	newSectionCheck:
-  84              	.LFB1417:
-  52:Core/Src/sensordata.c **** 
-  53:Core/Src/sensordata.c **** void packageDataToMem(void)
-  54:Core/Src/sensordata.c **** {
-  55:Core/Src/sensordata.c ****   // Put header values ONCE first in buffer
-  56:Core/Src/sensordata.c ****   if(bufferPointer == 0)
-  57:Core/Src/sensordata.c ****   {
-  58:Core/Src/sensordata.c ****     packageHeader(); 
-  59:Core/Src/sensordata.c ****     memcpy(buffer, headerBuffer, sizeof(headerBuffer));
-  60:Core/Src/sensordata.c ****     bufferPointer += HEADER_SIZE;
-  61:Core/Src/sensordata.c ****     dataCounter = 0;
-  62:Core/Src/sensordata.c ****   }
-  63:Core/Src/sensordata.c **** 
-  64:Core/Src/sensordata.c ****   if(dataCounter < BMI_SAMPLES_PER_PAGE)
-  65:Core/Src/sensordata.c ****   {
-  66:Core/Src/sensordata.c ****     BMI270_ReadMeasurement_raw(BMIraw_data);  // Read data from sensor
-  67:Core/Src/sensordata.c **** 
-  68:Core/Src/sensordata.c ****     memcpy(buffer + bufferPointer, BMIraw_data, sizeof(BMIraw_data)); // put data on the buffer. 
+  84              	.LFB1418:
+  54:Core/Src/sensordata.c **** 
+  55:Core/Src/sensordata.c **** void packageDataToMem(void)
+  56:Core/Src/sensordata.c **** {
+  57:Core/Src/sensordata.c ****   // Put header values ONCE first in buffer
+  58:Core/Src/sensordata.c ****   if(bufferPointer == 0)
+  59:Core/Src/sensordata.c ****   {
+  60:Core/Src/sensordata.c ****     packageHeader(); 
+  61:Core/Src/sensordata.c ****     memcpy(buffer, headerBuffer, sizeof(headerBuffer));
+  62:Core/Src/sensordata.c ****     bufferPointer += HEADER_SIZE;
+  63:Core/Src/sensordata.c ****     dataCounter = 0;
+  64:Core/Src/sensordata.c ****   }
+  65:Core/Src/sensordata.c **** 
+  66:Core/Src/sensordata.c ****   if(dataCounter < BMI_SAMPLES_PER_PAGE)
+  67:Core/Src/sensordata.c ****   {
+  68:Core/Src/sensordata.c ****     BMI270_ReadMeasurement_raw(BMIraw_data);  // Read data from sensor
   69:Core/Src/sensordata.c **** 
-  70:Core/Src/sensordata.c ****     bufferPointer += 12; 
-  71:Core/Src/sensordata.c ****     dataCounter++;
-  72:Core/Src/sensordata.c ****   }
-  73:Core/Src/sensordata.c ****   else
-  74:Core/Src/sensordata.c ****   { 
-  75:Core/Src/sensordata.c ****     bufferFull = true;
-  76:Core/Src/sensordata.c ****   }
-  77:Core/Src/sensordata.c **** }
-  78:Core/Src/sensordata.c **** static void newSectionCheck(void)
-  79:Core/Src/sensordata.c **** {
-  85              		.loc 1 79 1 is_stmt 1 view -0
+  70:Core/Src/sensordata.c ****     memcpy(buffer + bufferPointer, BMIraw_data, sizeof(BMIraw_data)); // put data on the buffer. 
+  71:Core/Src/sensordata.c **** 
+  72:Core/Src/sensordata.c ****     bufferPointer += 12; 
+  73:Core/Src/sensordata.c ****     dataCounter++;
+  74:Core/Src/sensordata.c ****   }
+  75:Core/Src/sensordata.c ****   else
+  76:Core/Src/sensordata.c ****   { 
+  77:Core/Src/sensordata.c ****     bufferFull = true;
+  78:Core/Src/sensordata.c ****   }
+  79:Core/Src/sensordata.c **** }
+  80:Core/Src/sensordata.c **** static void newSectionCheck(void)
+  81:Core/Src/sensordata.c **** {
+  85              		.loc 1 81 1 is_stmt 1 view -0
   86              		.cfi_startproc
   87              		@ args = 0, pretend = 0, frame = 0
   88              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -176,59 +178,59 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
   91              		.cfi_def_cfa_offset 8
   92              		.cfi_offset 3, -8
   93              		.cfi_offset 14, -4
-  80:Core/Src/sensordata.c ****   if(pageCounter >= PAGE_PER_SECTION)
-  94              		.loc 1 80 3 view .LVU10
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 4
 
 
-  95              		.loc 1 80 18 is_stmt 0 view .LVU11
+  82:Core/Src/sensordata.c ****   if(pageCounter >= PAGE_PER_SECTION)
+  94              		.loc 1 82 3 view .LVU10
+  95              		.loc 1 82 18 is_stmt 0 view .LVU11
   96 0002 0C4B     		ldr	r3, .L9
   97 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  98              		.loc 1 80 5 view .LVU12
+  98              		.loc 1 82 5 view .LVU12
   99 0006 0F2B     		cmp	r3, #15
  100 0008 12D9     		bls	.L5
-  81:Core/Src/sensordata.c ****   {
-  82:Core/Src/sensordata.c ****     pageCounter = 0;
- 101              		.loc 1 82 5 is_stmt 1 view .LVU13
- 102              		.loc 1 82 17 is_stmt 0 view .LVU14
+  83:Core/Src/sensordata.c ****   {
+  84:Core/Src/sensordata.c ****     pageCounter = 0;
+ 101              		.loc 1 84 5 is_stmt 1 view .LVU13
+ 102              		.loc 1 84 17 is_stmt 0 view .LVU14
  103 000a 0A4B     		ldr	r3, .L9
  104 000c 0022     		movs	r2, #0
  105 000e 1A70     		strb	r2, [r3]
-  83:Core/Src/sensordata.c ****     sectorCounter++;
- 106              		.loc 1 83 5 is_stmt 1 view .LVU15
- 107              		.loc 1 83 18 is_stmt 0 view .LVU16
+  85:Core/Src/sensordata.c ****     sectorCounter++;
+ 106              		.loc 1 85 5 is_stmt 1 view .LVU15
+ 107              		.loc 1 85 18 is_stmt 0 view .LVU16
  108 0010 094A     		ldr	r2, .L9+4
  109 0012 1388     		ldrh	r3, [r2]
  110 0014 0133     		adds	r3, r3, #1
  111 0016 9BB2     		uxth	r3, r3
  112 0018 1380     		strh	r3, [r2]	@ movhi
-  84:Core/Src/sensordata.c ****     
-  85:Core/Src/sensordata.c ****     if (sectorCounter >= 15624)
- 113              		.loc 1 85 5 is_stmt 1 view .LVU17
- 114              		.loc 1 85 8 is_stmt 0 view .LVU18
+  86:Core/Src/sensordata.c ****     
+  87:Core/Src/sensordata.c ****     if (sectorCounter >= 15624)
+ 113              		.loc 1 87 5 is_stmt 1 view .LVU17
+ 114              		.loc 1 87 8 is_stmt 0 view .LVU18
  115 001a 43F60752 		movw	r2, #15623
  116 001e 9342     		cmp	r3, r2
  117 0020 02D9     		bls	.L7
-  86:Core/Src/sensordata.c ****     {
-  87:Core/Src/sensordata.c ****       sectorCounter = 0;
- 118              		.loc 1 87 7 is_stmt 1 view .LVU19
- 119              		.loc 1 87 21 is_stmt 0 view .LVU20
+  88:Core/Src/sensordata.c ****     {
+  89:Core/Src/sensordata.c ****       sectorCounter = 0;
+ 118              		.loc 1 89 7 is_stmt 1 view .LVU19
+ 119              		.loc 1 89 21 is_stmt 0 view .LVU20
  120 0022 054B     		ldr	r3, .L9+4
  121 0024 0022     		movs	r2, #0
  122 0026 1A80     		strh	r2, [r3]	@ movhi
  123              	.L7:
-  88:Core/Src/sensordata.c ****     }  
-  89:Core/Src/sensordata.c **** 
-  90:Core/Src/sensordata.c ****     Flash_SectorErase(sectorCounter);
- 124              		.loc 1 90 5 is_stmt 1 view .LVU21
+  90:Core/Src/sensordata.c ****     }  
+  91:Core/Src/sensordata.c **** 
+  92:Core/Src/sensordata.c ****     Flash_SectorErase(sectorCounter);
+ 124              		.loc 1 92 5 is_stmt 1 view .LVU21
  125 0028 034B     		ldr	r3, .L9+4
  126 002a 1888     		ldrh	r0, [r3]
  127 002c FFF7FEFF 		bl	Flash_SectorErase
  128              	.LVL1:
  129              	.L5:
-  91:Core/Src/sensordata.c ****   }
-  92:Core/Src/sensordata.c **** }
- 130              		.loc 1 92 1 is_stmt 0 view .LVU22
+  93:Core/Src/sensordata.c ****   }
+  94:Core/Src/sensordata.c **** }
+ 130              		.loc 1 94 1 is_stmt 0 view .LVU22
  131 0030 08BD     		pop	{r3, pc}
  132              	.L10:
  133 0032 00BF     		.align	2
@@ -236,119 +238,119 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  135 0034 00000000 		.word	pageCounter
  136 0038 00000000 		.word	sectorCounter
  137              		.cfi_endproc
- 138              	.LFE1417:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 5
+
+
+ 138              	.LFE1418:
  140              		.section	.text.sendHalfPage_ble,"ax",%progbits
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 5
-
-
  141              		.align	1
  142              		.syntax unified
  143              		.thumb
  144              		.thumb_func
  146              	sendHalfPage_ble:
  147              	.LVL2:
- 148              	.LFB1420:
-  93:Core/Src/sensordata.c **** 
-  94:Core/Src/sensordata.c **** void sendPackageToMem(void)
-  95:Core/Src/sensordata.c **** {
-  96:Core/Src/sensordata.c ****   if(!bufferFull){return;}
-  97:Core/Src/sensordata.c **** 
-  98:Core/Src/sensordata.c ****   newSectionCheck();  // Check if we are in a new section in the memory (One section is 4096 bytes)
+ 148              	.LFB1421:
+  95:Core/Src/sensordata.c **** 
+  96:Core/Src/sensordata.c **** void sendPackageToMem(void)
+  97:Core/Src/sensordata.c **** {
+  98:Core/Src/sensordata.c ****   if(!bufferFull){return;}
   99:Core/Src/sensordata.c **** 
- 100:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 4] = (addInc >> 24) & 0xFF;
- 101:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 3] = (addInc >> 16) & 0xFF;
- 102:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
- 103:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 1] = addInc & 0xFF;
- 104:Core/Src/sensordata.c **** 
- 105:Core/Src/sensordata.c ****   Flash_WritePage((sectorCounter * SECTION_SIZE) + (BUFFER_SIZE * pageCounter), buffer, BUFFER_SIZE
+ 100:Core/Src/sensordata.c ****   newSectionCheck();  // Check if we are in a new section in the memory (One section is 4096 bytes)
+ 101:Core/Src/sensordata.c **** 
+ 102:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 4] = (addInc >> 24) & 0xFF;
+ 103:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 3] = (addInc >> 16) & 0xFF;
+ 104:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
+ 105:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 1] = addInc & 0xFF;
  106:Core/Src/sensordata.c **** 
- 107:Core/Src/sensordata.c ****   pageCounter++;
- 108:Core/Src/sensordata.c ****   addInc++;
- 109:Core/Src/sensordata.c **** 
- 110:Core/Src/sensordata.c ****   bufferPointer = 0;
- 111:Core/Src/sensordata.c ****   dataCounter = 0;
- 112:Core/Src/sensordata.c ****   bufferFull = false;
- 113:Core/Src/sensordata.c ****   memset(buffer, 0xFF, BUFFER_SIZE);
- 114:Core/Src/sensordata.c **** }
- 115:Core/Src/sensordata.c **** 
- 116:Core/Src/sensordata.c **** // Function to find the last written page in flash
- 117:Core/Src/sensordata.c **** void findStartPos(void)
- 118:Core/Src/sensordata.c **** {
- 119:Core/Src/sensordata.c ****     for (uint32_t i = 0; i < PAGE_IN_MEMORY; i++)
- 120:Core/Src/sensordata.c ****     {
- 121:Core/Src/sensordata.c ****         Flash_4ByteRead(i * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
- 122:Core/Src/sensordata.c **** 
- 123:Core/Src/sensordata.c ****         uint32_t pageId = ((uint32_t)readBuffer[BUFFER_SIZE-4] << 24) |
- 124:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
- 125:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
- 126:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-1]);
- 127:Core/Src/sensordata.c **** 
- 128:Core/Src/sensordata.c ****         if (pageId == 0xFFFFFFFF)
- 129:Core/Src/sensordata.c ****         {
- 130:Core/Src/sensordata.c ****             if (i == 0)
- 131:Core/Src/sensordata.c ****             {
- 132:Core/Src/sensordata.c ****                 // Flash is empty
- 133:Core/Src/sensordata.c ****                 addInc = 0;
- 134:Core/Src/sensordata.c ****                 pageCounter = 0;
- 135:Core/Src/sensordata.c ****                 sectorCounter = 0;
- 136:Core/Src/sensordata.c ****             }
- 137:Core/Src/sensordata.c ****             else
- 138:Core/Src/sensordata.c ****             {
- 139:Core/Src/sensordata.c **** 
- 140:Core/Src/sensordata.c ****                 Flash_4ByteRead((i - 1) * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+ 107:Core/Src/sensordata.c ****   Flash_WritePage((sectorCounter * SECTION_SIZE) + (BUFFER_SIZE * pageCounter), buffer, BUFFER_SIZE
+ 108:Core/Src/sensordata.c **** 
+ 109:Core/Src/sensordata.c ****   pageCounter++;
+ 110:Core/Src/sensordata.c ****   addInc++;
+ 111:Core/Src/sensordata.c **** 
+ 112:Core/Src/sensordata.c ****   bufferPointer = 0;
+ 113:Core/Src/sensordata.c ****   dataCounter = 0;
+ 114:Core/Src/sensordata.c ****   bufferFull = false;
+ 115:Core/Src/sensordata.c ****   memset(buffer, 0xFF, BUFFER_SIZE);
+ 116:Core/Src/sensordata.c **** }
+ 117:Core/Src/sensordata.c **** 
+ 118:Core/Src/sensordata.c **** // Function to find the last written page in flash
+ 119:Core/Src/sensordata.c **** void findStartPos(void)
+ 120:Core/Src/sensordata.c **** {
+ 121:Core/Src/sensordata.c ****     for (uint32_t i = 0; i < PAGE_IN_MEMORY; i++)
+ 122:Core/Src/sensordata.c ****     {
+ 123:Core/Src/sensordata.c ****         Flash_4ByteRead(i * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+ 124:Core/Src/sensordata.c **** 
+ 125:Core/Src/sensordata.c ****         uint32_t pageId = ((uint32_t)readBuffer[BUFFER_SIZE-4] << 24) |
+ 126:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+ 127:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
+ 128:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-1]);
+ 129:Core/Src/sensordata.c **** 
+ 130:Core/Src/sensordata.c ****         if (pageId == 0xFFFFFFFF)
+ 131:Core/Src/sensordata.c ****         {
+ 132:Core/Src/sensordata.c ****             if (i == 0)
+ 133:Core/Src/sensordata.c ****             {
+ 134:Core/Src/sensordata.c ****                 // Flash is empty
+ 135:Core/Src/sensordata.c ****                 addInc = 0;
+ 136:Core/Src/sensordata.c ****                 pageCounter = 0;
+ 137:Core/Src/sensordata.c ****                 sectorCounter = 0;
+ 138:Core/Src/sensordata.c ****             }
+ 139:Core/Src/sensordata.c ****             else
+ 140:Core/Src/sensordata.c ****             {
  141:Core/Src/sensordata.c **** 
- 142:Core/Src/sensordata.c ****                 uint32_t pageId = ((uint32_t)readBuffer[BUFFER_SIZE-4] << 24) |
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 6
+ 142:Core/Src/sensordata.c ****                 Flash_4ByteRead((i - 1) * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 6
 
 
- 143:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
- 144:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
- 145:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-1]);
- 146:Core/Src/sensordata.c **** 
- 147:Core/Src/sensordata.c ****                 // Last written page is i-1
- 148:Core/Src/sensordata.c ****                 addInc = pageId + 1; // optional: continue numbering
- 149:Core/Src/sensordata.c ****                 pageCounter = (i % PAGE_PER_SECTION);
- 150:Core/Src/sensordata.c ****                 sectorCounter = (i / PAGE_PER_SECTION);
- 151:Core/Src/sensordata.c ****             }
- 152:Core/Src/sensordata.c ****             return;
- 153:Core/Src/sensordata.c ****         }
- 154:Core/Src/sensordata.c ****     }
- 155:Core/Src/sensordata.c **** 
- 156:Core/Src/sensordata.c ****     // All pages used
- 157:Core/Src/sensordata.c ****     addInc = PAGE_IN_MEMORY;
- 158:Core/Src/sensordata.c ****     pageCounter = PAGE_IN_MEMORY % PAGE_PER_SECTION;
- 159:Core/Src/sensordata.c ****     sectorCounter = PAGE_IN_MEMORY / PAGE_PER_SECTION;
- 160:Core/Src/sensordata.c **** }
- 161:Core/Src/sensordata.c **** 
- 162:Core/Src/sensordata.c **** static tBleStatus sendHalfPage_ble(uint8_t *data, uint16_t length) 
- 163:Core/Src/sensordata.c **** { 
- 149              		.loc 1 163 1 is_stmt 1 view -0
+ 143:Core/Src/sensordata.c **** 
+ 144:Core/Src/sensordata.c ****                 uint32_t pageId = ((uint32_t)readBuffer[BUFFER_SIZE-4] << 24) |
+ 145:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+ 146:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
+ 147:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-1]);
+ 148:Core/Src/sensordata.c **** 
+ 149:Core/Src/sensordata.c ****                 // Last written page is i-1
+ 150:Core/Src/sensordata.c ****                 addInc = pageId + 1; // optional: continue numbering
+ 151:Core/Src/sensordata.c ****                 pageCounter = (i % PAGE_PER_SECTION);
+ 152:Core/Src/sensordata.c ****                 sectorCounter = (i / PAGE_PER_SECTION);
+ 153:Core/Src/sensordata.c ****             }
+ 154:Core/Src/sensordata.c ****             return;
+ 155:Core/Src/sensordata.c ****         }
+ 156:Core/Src/sensordata.c ****     }
+ 157:Core/Src/sensordata.c **** 
+ 158:Core/Src/sensordata.c ****     // All pages used
+ 159:Core/Src/sensordata.c ****     addInc = PAGE_IN_MEMORY;
+ 160:Core/Src/sensordata.c ****     pageCounter = PAGE_IN_MEMORY % PAGE_PER_SECTION;
+ 161:Core/Src/sensordata.c ****     sectorCounter = PAGE_IN_MEMORY / PAGE_PER_SECTION;
+ 162:Core/Src/sensordata.c **** }
+ 163:Core/Src/sensordata.c **** 
+ 164:Core/Src/sensordata.c **** static tBleStatus sendHalfPage_ble(uint8_t *data, uint16_t length) 
+ 165:Core/Src/sensordata.c **** { 
+ 149              		.loc 1 165 1 is_stmt 1 view -0
  150              		.cfi_startproc
  151              		@ args = 0, pretend = 0, frame = 0
  152              		@ frame_needed = 0, uses_anonymous_args = 0
- 153              		.loc 1 163 1 is_stmt 0 view .LVU24
+ 153              		.loc 1 165 1 is_stmt 0 view .LVU24
  154 0000 08B5     		push	{r3, lr}
  155              	.LCFI2:
  156              		.cfi_def_cfa_offset 8
  157              		.cfi_offset 3, -8
  158              		.cfi_offset 14, -4
- 164:Core/Src/sensordata.c ****     return Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, data, length);
- 159              		.loc 1 164 5 is_stmt 1 view .LVU25
- 160              		.loc 1 164 12 is_stmt 0 view .LVU26
+ 166:Core/Src/sensordata.c ****     return Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, data, length);
+ 159              		.loc 1 166 5 is_stmt 1 view .LVU25
+ 160              		.loc 1 166 12 is_stmt 0 view .LVU26
  161 0002 CAB2     		uxtb	r2, r1
  162 0004 0146     		mov	r1, r0
  163              	.LVL3:
- 164              		.loc 1 164 12 view .LVU27
+ 164              		.loc 1 166 12 view .LVU27
  165 0006 0020     		movs	r0, #0
  166              	.LVL4:
- 167              		.loc 1 164 12 view .LVU28
+ 167              		.loc 1 166 12 view .LVU28
  168 0008 FFF7FEFF 		bl	Custom_STM_App_Update_Char_Variable_Length
  169              	.LVL5:
- 165:Core/Src/sensordata.c **** }
- 170              		.loc 1 165 1 view .LVU29
+ 167:Core/Src/sensordata.c **** }
+ 170              		.loc 1 167 1 view .LVU29
  171 000c 08BD     		pop	{r3, pc}
  172              		.cfi_endproc
- 173              	.LFE1420:
+ 173              	.LFE1421:
  175              		.section	.text.packageDataToMem,"ax",%progbits
  176              		.align	1
  177              		.global	packageDataToMem
@@ -356,12 +358,12 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  179              		.thumb
  180              		.thumb_func
  182              	packageDataToMem:
- 183              	.LFB1416:
-  54:Core/Src/sensordata.c ****   // Put header values ONCE first in buffer
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 7
 
 
- 184              		.loc 1 54 1 is_stmt 1 view -0
+ 183              	.LFB1417:
+  56:Core/Src/sensordata.c ****   // Put header values ONCE first in buffer
+ 184              		.loc 1 56 1 is_stmt 1 view -0
  185              		.cfi_startproc
  186              		@ args = 0, pretend = 0, frame = 0
  187              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -374,79 +376,79 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  194              		.cfi_offset 6, -12
  195              		.cfi_offset 7, -8
  196              		.cfi_offset 14, -4
-  56:Core/Src/sensordata.c ****   {
- 197              		.loc 1 56 3 view .LVU31
-  56:Core/Src/sensordata.c ****   {
- 198              		.loc 1 56 20 is_stmt 0 view .LVU32
+  58:Core/Src/sensordata.c ****   {
+ 197              		.loc 1 58 3 view .LVU31
+  58:Core/Src/sensordata.c ****   {
+ 198              		.loc 1 58 20 is_stmt 0 view .LVU32
  199 0002 1A4B     		ldr	r3, .L20
  200 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  56:Core/Src/sensordata.c ****   {
- 201              		.loc 1 56 5 view .LVU33
+  58:Core/Src/sensordata.c ****   {
+ 201              		.loc 1 58 5 view .LVU33
  202 0006 3BB1     		cbz	r3, .L18
  203              	.L14:
-  64:Core/Src/sensordata.c ****   {
- 204              		.loc 1 64 3 is_stmt 1 view .LVU34
-  64:Core/Src/sensordata.c ****   {
- 205              		.loc 1 64 18 is_stmt 0 view .LVU35
+  66:Core/Src/sensordata.c ****   {
+ 204              		.loc 1 66 3 is_stmt 1 view .LVU34
+  66:Core/Src/sensordata.c ****   {
+ 205              		.loc 1 66 18 is_stmt 0 view .LVU35
  206 0008 194B     		ldr	r3, .L20+4
  207 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  64:Core/Src/sensordata.c ****   {
- 208              		.loc 1 64 5 view .LVU36
+  66:Core/Src/sensordata.c ****   {
+ 208              		.loc 1 66 5 view .LVU36
  209 000c 112B     		cmp	r3, #17
  210 000e 15D9     		bls	.L19
-  75:Core/Src/sensordata.c ****   }
- 211              		.loc 1 75 5 is_stmt 1 view .LVU37
-  75:Core/Src/sensordata.c ****   }
- 212              		.loc 1 75 16 is_stmt 0 view .LVU38
+  77:Core/Src/sensordata.c ****   }
+ 211              		.loc 1 77 5 is_stmt 1 view .LVU37
+  77:Core/Src/sensordata.c ****   }
+ 212              		.loc 1 77 16 is_stmt 0 view .LVU38
  213 0010 184B     		ldr	r3, .L20+8
  214 0012 0122     		movs	r2, #1
  215 0014 1A70     		strb	r2, [r3]
  216              	.L13:
-  77:Core/Src/sensordata.c **** static void newSectionCheck(void)
- 217              		.loc 1 77 1 view .LVU39
+  79:Core/Src/sensordata.c **** static void newSectionCheck(void)
+ 217              		.loc 1 79 1 view .LVU39
  218 0016 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
  219              	.L18:
-  58:Core/Src/sensordata.c ****     memcpy(buffer, headerBuffer, sizeof(headerBuffer));
- 220              		.loc 1 58 5 is_stmt 1 view .LVU40
+  60:Core/Src/sensordata.c ****     memcpy(buffer, headerBuffer, sizeof(headerBuffer));
+ 220              		.loc 1 60 5 is_stmt 1 view .LVU40
  221 0018 FFF7FEFF 		bl	packageHeader
  222              	.LVL6:
-  59:Core/Src/sensordata.c ****     bufferPointer += HEADER_SIZE;
- 223              		.loc 1 59 5 view .LVU41
+  61:Core/Src/sensordata.c ****     bufferPointer += HEADER_SIZE;
+ 223              		.loc 1 61 5 view .LVU41
  224 001c 164C     		ldr	r4, .L20+12
  225 001e 174D     		ldr	r5, .L20+16
  226 0020 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
  227 0022 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 8
+
+
  228 0024 95E80700 		ldm	r5, {r0, r1, r2}
  229 0028 03C4     		stmia	r4!, {r0, r1}
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 8
-
-
  230 002a 2270     		strb	r2, [r4]
-  60:Core/Src/sensordata.c ****     dataCounter = 0;
- 231              		.loc 1 60 5 view .LVU42
-  60:Core/Src/sensordata.c ****     dataCounter = 0;
- 232              		.loc 1 60 19 is_stmt 0 view .LVU43
+  62:Core/Src/sensordata.c ****     dataCounter = 0;
+ 231              		.loc 1 62 5 view .LVU42
+  62:Core/Src/sensordata.c ****     dataCounter = 0;
+ 232              		.loc 1 62 19 is_stmt 0 view .LVU43
  233 002c 0F4A     		ldr	r2, .L20
  234 002e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  235 0030 1933     		adds	r3, r3, #25
  236 0032 1370     		strb	r3, [r2]
-  61:Core/Src/sensordata.c ****   }
- 237              		.loc 1 61 5 is_stmt 1 view .LVU44
-  61:Core/Src/sensordata.c ****   }
- 238              		.loc 1 61 17 is_stmt 0 view .LVU45
+  63:Core/Src/sensordata.c ****   }
+ 237              		.loc 1 63 5 is_stmt 1 view .LVU44
+  63:Core/Src/sensordata.c ****   }
+ 238              		.loc 1 63 17 is_stmt 0 view .LVU45
  239 0034 0E4B     		ldr	r3, .L20+4
  240 0036 0022     		movs	r2, #0
  241 0038 1A70     		strb	r2, [r3]
  242 003a E5E7     		b	.L14
  243              	.L19:
-  66:Core/Src/sensordata.c **** 
- 244              		.loc 1 66 5 is_stmt 1 view .LVU46
+  68:Core/Src/sensordata.c **** 
+ 244              		.loc 1 68 5 is_stmt 1 view .LVU46
  245 003c 104C     		ldr	r4, .L20+20
  246 003e 2046     		mov	r0, r4
  247 0040 FFF7FEFF 		bl	BMI270_ReadMeasurement_raw
  248              	.LVL7:
-  68:Core/Src/sensordata.c **** 
- 249              		.loc 1 68 5 view .LVU47
+  70:Core/Src/sensordata.c **** 
+ 249              		.loc 1 70 5 view .LVU47
  250 0044 094E     		ldr	r6, .L20
  251 0046 3578     		ldrb	r5, [r6]	@ zero_extendqisi2
  252 0048 0B4F     		ldr	r7, .L20+12
@@ -456,16 +458,16 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  256 0052 7851     		str	r0, [r7, r5]	@ unaligned
  257 0054 CCF80410 		str	r1, [ip, #4]	@ unaligned
  258 0058 CCF80820 		str	r2, [ip, #8]	@ unaligned
-  70:Core/Src/sensordata.c ****     dataCounter++;
- 259              		.loc 1 70 5 view .LVU48
-  70:Core/Src/sensordata.c ****     dataCounter++;
- 260              		.loc 1 70 19 is_stmt 0 view .LVU49
+  72:Core/Src/sensordata.c ****     dataCounter++;
+ 259              		.loc 1 72 5 view .LVU48
+  72:Core/Src/sensordata.c ****     dataCounter++;
+ 260              		.loc 1 72 19 is_stmt 0 view .LVU49
  261 005c 0C35     		adds	r5, r5, #12
  262 005e 3570     		strb	r5, [r6]
-  71:Core/Src/sensordata.c ****   }
- 263              		.loc 1 71 5 is_stmt 1 view .LVU50
-  71:Core/Src/sensordata.c ****   }
- 264              		.loc 1 71 16 is_stmt 0 view .LVU51
+  73:Core/Src/sensordata.c ****   }
+ 263              		.loc 1 73 5 is_stmt 1 view .LVU50
+  73:Core/Src/sensordata.c ****   }
+ 264              		.loc 1 73 16 is_stmt 0 view .LVU51
  265 0060 034A     		ldr	r2, .L20+4
  266 0062 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  267 0064 0133     		adds	r3, r3, #1
@@ -476,15 +478,15 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  272              	.L20:
  273 006c 00000000 		.word	bufferPointer
  274 0070 00000000 		.word	dataCounter
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 9
+
+
  275 0074 00000000 		.word	bufferFull
  276 0078 00000000 		.word	buffer
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 9
-
-
  277 007c 00000000 		.word	headerBuffer
  278 0080 00000000 		.word	BMIraw_data
  279              		.cfi_endproc
- 280              	.LFE1416:
+ 280              	.LFE1417:
  282              		.section	.text.sendPackageToMem,"ax",%progbits
  283              		.align	1
  284              		.global	sendPackageToMem
@@ -492,25 +494,25 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  286              		.thumb
  287              		.thumb_func
  289              	sendPackageToMem:
- 290              	.LFB1418:
-  95:Core/Src/sensordata.c ****   if(!bufferFull){return;}
- 291              		.loc 1 95 1 is_stmt 1 view -0
+ 290              	.LFB1419:
+  97:Core/Src/sensordata.c ****   if(!bufferFull){return;}
+ 291              		.loc 1 97 1 is_stmt 1 view -0
  292              		.cfi_startproc
  293              		@ args = 0, pretend = 0, frame = 0
  294              		@ frame_needed = 0, uses_anonymous_args = 0
-  96:Core/Src/sensordata.c **** 
- 295              		.loc 1 96 3 view .LVU53
-  96:Core/Src/sensordata.c **** 
- 296              		.loc 1 96 6 is_stmt 0 view .LVU54
+  98:Core/Src/sensordata.c **** 
+ 295              		.loc 1 98 3 view .LVU53
+  98:Core/Src/sensordata.c **** 
+ 296              		.loc 1 98 6 is_stmt 0 view .LVU54
  297 0000 1A4B     		ldr	r3, .L29
  298 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  96:Core/Src/sensordata.c **** 
- 299              		.loc 1 96 5 view .LVU55
+  98:Core/Src/sensordata.c **** 
+ 299              		.loc 1 98 5 view .LVU55
  300 0004 03B9     		cbnz	r3, .L28
  301 0006 7047     		bx	lr
  302              	.L28:
-  95:Core/Src/sensordata.c ****   if(!bufferFull){return;}
- 303              		.loc 1 95 1 view .LVU56
+  97:Core/Src/sensordata.c ****   if(!bufferFull){return;}
+ 303              		.loc 1 97 1 view .LVU56
  304 0008 70B5     		push	{r4, r5, r6, lr}
  305              	.LCFI4:
  306              		.cfi_def_cfa_offset 16
@@ -518,106 +520,106 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  308              		.cfi_offset 5, -12
  309              		.cfi_offset 6, -8
  310              		.cfi_offset 14, -4
-  98:Core/Src/sensordata.c **** 
- 311              		.loc 1 98 3 is_stmt 1 view .LVU57
+ 100:Core/Src/sensordata.c **** 
+ 311              		.loc 1 100 3 is_stmt 1 view .LVU57
  312 000a FFF7FEFF 		bl	newSectionCheck
  313              	.LVL8:
- 100:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 3] = (addInc >> 16) & 0xFF;
- 314              		.loc 1 100 3 view .LVU58
- 100:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 3] = (addInc >> 16) & 0xFF;
- 315              		.loc 1 100 37 is_stmt 0 view .LVU59
+ 102:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 3] = (addInc >> 16) & 0xFF;
+ 314              		.loc 1 102 3 view .LVU58
+ 102:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 3] = (addInc >> 16) & 0xFF;
+ 315              		.loc 1 102 37 is_stmt 0 view .LVU59
  316 000e 184D     		ldr	r5, .L29+4
  317 0010 2B68     		ldr	r3, [r5]
  318 0012 1A0E     		lsrs	r2, r3, #24
- 100:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 3] = (addInc >> 16) & 0xFF;
- 319              		.loc 1 100 27 view .LVU60
+ 102:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 3] = (addInc >> 16) & 0xFF;
+ 319              		.loc 1 102 27 view .LVU60
  320 0014 174C     		ldr	r4, .L29+8
  321 0016 84F8FC20 		strb	r2, [r4, #252]
- 101:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
- 322              		.loc 1 101 3 is_stmt 1 view .LVU61
- 101:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
- 323              		.loc 1 101 37 is_stmt 0 view .LVU62
+ 103:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
+ 322              		.loc 1 103 3 is_stmt 1 view .LVU61
+ 103:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 10
+
+
+ 323              		.loc 1 103 37 is_stmt 0 view .LVU62
  324 001a 1A0C     		lsrs	r2, r3, #16
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 10
-
-
- 101:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
- 325              		.loc 1 101 27 view .LVU63
+ 103:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
+ 325              		.loc 1 103 27 view .LVU63
  326 001c 84F8FD20 		strb	r2, [r4, #253]
- 102:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 1] = addInc & 0xFF;
- 327              		.loc 1 102 3 is_stmt 1 view .LVU64
- 102:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 1] = addInc & 0xFF;
- 328              		.loc 1 102 37 is_stmt 0 view .LVU65
+ 104:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 1] = addInc & 0xFF;
+ 327              		.loc 1 104 3 is_stmt 1 view .LVU64
+ 104:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 1] = addInc & 0xFF;
+ 328              		.loc 1 104 37 is_stmt 0 view .LVU65
  329 0020 1A0A     		lsrs	r2, r3, #8
- 102:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 1] = addInc & 0xFF;
- 330              		.loc 1 102 27 view .LVU66
+ 104:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 1] = addInc & 0xFF;
+ 330              		.loc 1 104 27 view .LVU66
  331 0022 84F8FE20 		strb	r2, [r4, #254]
- 103:Core/Src/sensordata.c **** 
- 332              		.loc 1 103 3 is_stmt 1 view .LVU67
- 103:Core/Src/sensordata.c **** 
- 333              		.loc 1 103 27 is_stmt 0 view .LVU68
+ 105:Core/Src/sensordata.c **** 
+ 332              		.loc 1 105 3 is_stmt 1 view .LVU67
+ 105:Core/Src/sensordata.c **** 
+ 333              		.loc 1 105 27 is_stmt 0 view .LVU68
  334 0026 84F8FF30 		strb	r3, [r4, #255]
- 105:Core/Src/sensordata.c **** 
- 335              		.loc 1 105 3 is_stmt 1 view .LVU69
- 105:Core/Src/sensordata.c **** 
- 336              		.loc 1 105 50 is_stmt 0 view .LVU70
+ 107:Core/Src/sensordata.c **** 
+ 335              		.loc 1 107 3 is_stmt 1 view .LVU69
+ 107:Core/Src/sensordata.c **** 
+ 336              		.loc 1 107 50 is_stmt 0 view .LVU70
  337 002a 134B     		ldr	r3, .L29+12
  338 002c 1B88     		ldrh	r3, [r3]
  339 002e 134E     		ldr	r6, .L29+16
  340 0030 3078     		ldrb	r0, [r6]	@ zero_extendqisi2
  341 0032 00EB0310 		add	r0, r0, r3, lsl #4
- 105:Core/Src/sensordata.c **** 
- 342              		.loc 1 105 3 view .LVU71
+ 107:Core/Src/sensordata.c **** 
+ 342              		.loc 1 107 3 view .LVU71
  343 0036 4FF48072 		mov	r2, #256
  344 003a 2146     		mov	r1, r4
  345 003c 0002     		lsls	r0, r0, #8
  346 003e FFF7FEFF 		bl	Flash_WritePage
  347              	.LVL9:
- 107:Core/Src/sensordata.c ****   addInc++;
- 348              		.loc 1 107 3 is_stmt 1 view .LVU72
- 107:Core/Src/sensordata.c ****   addInc++;
- 349              		.loc 1 107 14 is_stmt 0 view .LVU73
+ 109:Core/Src/sensordata.c ****   addInc++;
+ 348              		.loc 1 109 3 is_stmt 1 view .LVU72
+ 109:Core/Src/sensordata.c ****   addInc++;
+ 349              		.loc 1 109 14 is_stmt 0 view .LVU73
  350 0042 3378     		ldrb	r3, [r6]	@ zero_extendqisi2
  351 0044 0133     		adds	r3, r3, #1
  352 0046 3370     		strb	r3, [r6]
- 108:Core/Src/sensordata.c **** 
- 353              		.loc 1 108 3 is_stmt 1 view .LVU74
- 108:Core/Src/sensordata.c **** 
- 354              		.loc 1 108 9 is_stmt 0 view .LVU75
+ 110:Core/Src/sensordata.c **** 
+ 353              		.loc 1 110 3 is_stmt 1 view .LVU74
+ 110:Core/Src/sensordata.c **** 
+ 354              		.loc 1 110 9 is_stmt 0 view .LVU75
  355 0048 2B68     		ldr	r3, [r5]
  356 004a 0133     		adds	r3, r3, #1
  357 004c 2B60     		str	r3, [r5]
- 110:Core/Src/sensordata.c ****   dataCounter = 0;
- 358              		.loc 1 110 3 is_stmt 1 view .LVU76
- 110:Core/Src/sensordata.c ****   dataCounter = 0;
- 359              		.loc 1 110 17 is_stmt 0 view .LVU77
+ 112:Core/Src/sensordata.c ****   dataCounter = 0;
+ 358              		.loc 1 112 3 is_stmt 1 view .LVU76
+ 112:Core/Src/sensordata.c ****   dataCounter = 0;
+ 359              		.loc 1 112 17 is_stmt 0 view .LVU77
  360 004e 0023     		movs	r3, #0
  361 0050 0B4A     		ldr	r2, .L29+20
  362 0052 1370     		strb	r3, [r2]
- 111:Core/Src/sensordata.c ****   bufferFull = false;
- 363              		.loc 1 111 3 is_stmt 1 view .LVU78
- 111:Core/Src/sensordata.c ****   bufferFull = false;
- 364              		.loc 1 111 15 is_stmt 0 view .LVU79
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 11
+ 113:Core/Src/sensordata.c ****   bufferFull = false;
+ 363              		.loc 1 113 3 is_stmt 1 view .LVU78
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 11
 
 
+ 113:Core/Src/sensordata.c ****   bufferFull = false;
+ 364              		.loc 1 113 15 is_stmt 0 view .LVU79
  365 0054 0B4A     		ldr	r2, .L29+24
  366 0056 1370     		strb	r3, [r2]
- 112:Core/Src/sensordata.c ****   memset(buffer, 0xFF, BUFFER_SIZE);
- 367              		.loc 1 112 3 is_stmt 1 view .LVU80
- 112:Core/Src/sensordata.c ****   memset(buffer, 0xFF, BUFFER_SIZE);
- 368              		.loc 1 112 14 is_stmt 0 view .LVU81
+ 114:Core/Src/sensordata.c ****   memset(buffer, 0xFF, BUFFER_SIZE);
+ 367              		.loc 1 114 3 is_stmt 1 view .LVU80
+ 114:Core/Src/sensordata.c ****   memset(buffer, 0xFF, BUFFER_SIZE);
+ 368              		.loc 1 114 14 is_stmt 0 view .LVU81
  369 0058 044A     		ldr	r2, .L29
  370 005a 1370     		strb	r3, [r2]
- 113:Core/Src/sensordata.c **** }
- 371              		.loc 1 113 3 is_stmt 1 view .LVU82
+ 115:Core/Src/sensordata.c **** }
+ 371              		.loc 1 115 3 is_stmt 1 view .LVU82
  372 005c 4FF48072 		mov	r2, #256
  373 0060 FF21     		movs	r1, #255
  374 0062 2046     		mov	r0, r4
  375 0064 FFF7FEFF 		bl	memset
  376              	.LVL10:
- 114:Core/Src/sensordata.c **** 
- 377              		.loc 1 114 1 is_stmt 0 view .LVU83
+ 116:Core/Src/sensordata.c **** 
+ 377              		.loc 1 116 1 is_stmt 0 view .LVU83
  378 0068 70BD     		pop	{r4, r5, r6, pc}
  379              	.L30:
  380 006a 00BF     		.align	2
@@ -630,7 +632,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  387 0080 00000000 		.word	bufferPointer
  388 0084 00000000 		.word	dataCounter
  389              		.cfi_endproc
- 390              	.LFE1418:
+ 390              	.LFE1419:
  392              		.section	.text.findStartPos,"ax",%progbits
  393              		.align	1
  394              		.global	findStartPos
@@ -638,9 +640,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  396              		.thumb
  397              		.thumb_func
  399              	findStartPos:
- 400              	.LFB1419:
- 118:Core/Src/sensordata.c ****     for (uint32_t i = 0; i < PAGE_IN_MEMORY; i++)
- 401              		.loc 1 118 1 is_stmt 1 view -0
+ 400              	.LFB1420:
+ 120:Core/Src/sensordata.c ****     for (uint32_t i = 0; i < PAGE_IN_MEMORY; i++)
+ 401              		.loc 1 120 1 is_stmt 1 view -0
  402              		.cfi_startproc
  403              		@ args = 0, pretend = 0, frame = 0
  404              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -651,230 +653,230 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  409              		.cfi_offset 4, -12
  410              		.cfi_offset 5, -8
  411              		.cfi_offset 14, -4
- 119:Core/Src/sensordata.c ****     {
- 412              		.loc 1 119 5 view .LVU85
+ 121:Core/Src/sensordata.c ****     {
+ 412              		.loc 1 121 5 view .LVU85
  413              	.LBB2:
- 119:Core/Src/sensordata.c ****     {
- 414              		.loc 1 119 10 view .LVU86
+ 121:Core/Src/sensordata.c ****     {
+ 414              		.loc 1 121 10 view .LVU86
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 12
+
+
  415              	.LVL11:
- 119:Core/Src/sensordata.c ****     {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 12
-
-
- 416              		.loc 1 119 19 is_stmt 0 view .LVU87
+ 121:Core/Src/sensordata.c ****     {
+ 416              		.loc 1 121 19 is_stmt 0 view .LVU87
  417 0002 0025     		movs	r5, #0
  418              	.LVL12:
  419              	.L32:
- 119:Core/Src/sensordata.c ****     {
- 420              		.loc 1 119 28 is_stmt 1 discriminator 1 view .LVU88
+ 121:Core/Src/sensordata.c ****     {
+ 420              		.loc 1 121 28 is_stmt 1 discriminator 1 view .LVU88
  421 0004 284B     		ldr	r3, .L41
  422 0006 9D42     		cmp	r5, r3
  423 0008 43D8     		bhi	.L39
  424              	.LBB3:
- 121:Core/Src/sensordata.c **** 
- 425              		.loc 1 121 9 view .LVU89
+ 123:Core/Src/sensordata.c **** 
+ 425              		.loc 1 123 9 view .LVU89
  426 000a 284C     		ldr	r4, .L41+4
  427 000c 4FF48072 		mov	r2, #256
  428 0010 2146     		mov	r1, r4
  429 0012 2802     		lsls	r0, r5, #8
  430 0014 FFF7FEFF 		bl	Flash_4ByteRead
  431              	.LVL13:
- 123:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
- 432              		.loc 1 123 9 view .LVU90
- 123:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
- 433              		.loc 1 123 48 is_stmt 0 view .LVU91
+ 125:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+ 432              		.loc 1 125 9 view .LVU90
+ 125:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+ 433              		.loc 1 125 48 is_stmt 0 view .LVU91
  434 0018 94F8FC20 		ldrb	r2, [r4, #252]	@ zero_extendqisi2
- 124:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
- 435              		.loc 1 124 48 view .LVU92
+ 126:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
+ 435              		.loc 1 126 48 view .LVU92
  436 001c 94F8FD30 		ldrb	r3, [r4, #253]	@ zero_extendqisi2
- 124:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
- 437              		.loc 1 124 64 view .LVU93
+ 126:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
+ 437              		.loc 1 126 64 view .LVU93
  438 0020 1B04     		lsls	r3, r3, #16
- 123:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
- 439              		.loc 1 123 71 view .LVU94
+ 125:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+ 439              		.loc 1 125 71 view .LVU94
  440 0022 43EA0263 		orr	r3, r3, r2, lsl #24
- 125:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-1]);
- 441              		.loc 1 125 48 view .LVU95
+ 127:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-1]);
+ 441              		.loc 1 127 48 view .LVU95
  442 0026 94F8FE20 		ldrb	r2, [r4, #254]	@ zero_extendqisi2
- 124:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
- 443              		.loc 1 124 71 view .LVU96
+ 126:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
+ 443              		.loc 1 126 71 view .LVU96
  444 002a 43EA0223 		orr	r3, r3, r2, lsl #8
- 126:Core/Src/sensordata.c **** 
- 445              		.loc 1 126 48 view .LVU97
+ 128:Core/Src/sensordata.c **** 
+ 445              		.loc 1 128 48 view .LVU97
  446 002e 94F8FF20 		ldrb	r2, [r4, #255]	@ zero_extendqisi2
- 123:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
- 447              		.loc 1 123 18 view .LVU98
+ 125:Core/Src/sensordata.c ****                           ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+ 447              		.loc 1 125 18 view .LVU98
  448 0032 1343     		orrs	r3, r3, r2
  449              	.LVL14:
- 128:Core/Src/sensordata.c ****         {
- 450              		.loc 1 128 9 is_stmt 1 view .LVU99
- 128:Core/Src/sensordata.c ****         {
- 451              		.loc 1 128 12 is_stmt 0 view .LVU100
+ 130:Core/Src/sensordata.c ****         {
+ 450              		.loc 1 130 9 is_stmt 1 view .LVU99
+ 130:Core/Src/sensordata.c ****         {
+ 451              		.loc 1 130 12 is_stmt 0 view .LVU100
  452 0034 B3F1FF3F 		cmp	r3, #-1
  453 0038 01D0     		beq	.L40
  454              	.LBE3:
- 119:Core/Src/sensordata.c ****     {
- 455              		.loc 1 119 47 is_stmt 1 discriminator 2 view .LVU101
+ 121:Core/Src/sensordata.c ****     {
+ 455              		.loc 1 121 47 is_stmt 1 discriminator 2 view .LVU101
  456 003a 0135     		adds	r5, r5, #1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 13
+
+
  457              	.LVL15:
- 119:Core/Src/sensordata.c ****     {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 13
-
-
- 458              		.loc 1 119 47 is_stmt 0 discriminator 2 view .LVU102
+ 121:Core/Src/sensordata.c ****     {
+ 458              		.loc 1 121 47 is_stmt 0 discriminator 2 view .LVU102
  459 003c E2E7     		b	.L32
  460              	.L40:
  461              	.LBB5:
- 130:Core/Src/sensordata.c ****             {
- 462              		.loc 1 130 13 is_stmt 1 view .LVU103
- 130:Core/Src/sensordata.c ****             {
- 463              		.loc 1 130 16 is_stmt 0 view .LVU104
+ 132:Core/Src/sensordata.c ****             {
+ 462              		.loc 1 132 13 is_stmt 1 view .LVU103
+ 132:Core/Src/sensordata.c ****             {
+ 463              		.loc 1 132 16 is_stmt 0 view .LVU104
  464 003e 3DB9     		cbnz	r5, .L34
- 133:Core/Src/sensordata.c ****                 pageCounter = 0;
- 465              		.loc 1 133 17 is_stmt 1 view .LVU105
- 133:Core/Src/sensordata.c ****                 pageCounter = 0;
- 466              		.loc 1 133 24 is_stmt 0 view .LVU106
+ 135:Core/Src/sensordata.c ****                 pageCounter = 0;
+ 465              		.loc 1 135 17 is_stmt 1 view .LVU105
+ 135:Core/Src/sensordata.c ****                 pageCounter = 0;
+ 466              		.loc 1 135 24 is_stmt 0 view .LVU106
  467 0040 0023     		movs	r3, #0
  468              	.LVL16:
- 133:Core/Src/sensordata.c ****                 pageCounter = 0;
- 469              		.loc 1 133 24 view .LVU107
+ 135:Core/Src/sensordata.c ****                 pageCounter = 0;
+ 469              		.loc 1 135 24 view .LVU107
  470 0042 1B4A     		ldr	r2, .L41+8
  471              	.LVL17:
- 133:Core/Src/sensordata.c ****                 pageCounter = 0;
- 472              		.loc 1 133 24 view .LVU108
+ 135:Core/Src/sensordata.c ****                 pageCounter = 0;
+ 472              		.loc 1 135 24 view .LVU108
  473 0044 1360     		str	r3, [r2]
- 134:Core/Src/sensordata.c ****                 sectorCounter = 0;
- 474              		.loc 1 134 17 is_stmt 1 view .LVU109
- 134:Core/Src/sensordata.c ****                 sectorCounter = 0;
- 475              		.loc 1 134 29 is_stmt 0 view .LVU110
+ 136:Core/Src/sensordata.c ****                 sectorCounter = 0;
+ 474              		.loc 1 136 17 is_stmt 1 view .LVU109
+ 136:Core/Src/sensordata.c ****                 sectorCounter = 0;
+ 475              		.loc 1 136 29 is_stmt 0 view .LVU110
  476 0046 1B4A     		ldr	r2, .L41+12
  477 0048 1370     		strb	r3, [r2]
- 135:Core/Src/sensordata.c ****             }
- 478              		.loc 1 135 17 is_stmt 1 view .LVU111
- 135:Core/Src/sensordata.c ****             }
- 479              		.loc 1 135 31 is_stmt 0 view .LVU112
+ 137:Core/Src/sensordata.c ****             }
+ 478              		.loc 1 137 17 is_stmt 1 view .LVU111
+ 137:Core/Src/sensordata.c ****             }
+ 479              		.loc 1 137 31 is_stmt 0 view .LVU112
  480 004a 1B4A     		ldr	r2, .L41+16
  481 004c 1380     		strh	r3, [r2]	@ movhi
  482              	.LVL18:
  483              	.L31:
- 135:Core/Src/sensordata.c ****             }
- 484              		.loc 1 135 31 view .LVU113
+ 137:Core/Src/sensordata.c ****             }
+ 484              		.loc 1 137 31 view .LVU113
  485              	.LBE5:
  486              	.LBE2:
- 160:Core/Src/sensordata.c **** 
- 487              		.loc 1 160 1 view .LVU114
+ 162:Core/Src/sensordata.c **** 
+ 487              		.loc 1 162 1 view .LVU114
  488 004e 38BD     		pop	{r3, r4, r5, pc}
  489              	.LVL19:
  490              	.L34:
  491              	.LBB7:
  492              	.LBB6:
  493              	.LBB4:
- 140:Core/Src/sensordata.c **** 
- 494              		.loc 1 140 17 is_stmt 1 view .LVU115
- 140:Core/Src/sensordata.c **** 
- 495              		.loc 1 140 36 is_stmt 0 view .LVU116
+ 142:Core/Src/sensordata.c **** 
+ 494              		.loc 1 142 17 is_stmt 1 view .LVU115
+ 142:Core/Src/sensordata.c **** 
+ 495              		.loc 1 142 36 is_stmt 0 view .LVU116
  496 0050 681E     		subs	r0, r5, #1
- 140:Core/Src/sensordata.c **** 
- 497              		.loc 1 140 17 view .LVU117
+ 142:Core/Src/sensordata.c **** 
+ 497              		.loc 1 142 17 view .LVU117
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 14
+
+
  498 0052 164C     		ldr	r4, .L41+4
  499 0054 4FF48072 		mov	r2, #256
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 14
-
-
  500 0058 2146     		mov	r1, r4
  501 005a 0002     		lsls	r0, r0, #8
  502 005c FFF7FEFF 		bl	Flash_4ByteRead
  503              	.LVL20:
- 142:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
- 504              		.loc 1 142 17 is_stmt 1 view .LVU118
- 142:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
- 505              		.loc 1 142 56 is_stmt 0 view .LVU119
+ 144:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+ 504              		.loc 1 144 17 is_stmt 1 view .LVU118
+ 144:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+ 505              		.loc 1 144 56 is_stmt 0 view .LVU119
  506 0060 94F8FC20 		ldrb	r2, [r4, #252]	@ zero_extendqisi2
- 143:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
- 507              		.loc 1 143 56 view .LVU120
+ 145:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
+ 507              		.loc 1 145 56 view .LVU120
  508 0064 94F8FD30 		ldrb	r3, [r4, #253]	@ zero_extendqisi2
- 143:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
- 509              		.loc 1 143 72 view .LVU121
+ 145:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
+ 509              		.loc 1 145 72 view .LVU121
  510 0068 1B04     		lsls	r3, r3, #16
- 142:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
- 511              		.loc 1 142 79 view .LVU122
+ 144:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+ 511              		.loc 1 144 79 view .LVU122
  512 006a 43EA0263 		orr	r3, r3, r2, lsl #24
- 144:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-1]);
- 513              		.loc 1 144 56 view .LVU123
+ 146:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-1]);
+ 513              		.loc 1 146 56 view .LVU123
  514 006e 94F8FE20 		ldrb	r2, [r4, #254]	@ zero_extendqisi2
- 143:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
- 515              		.loc 1 143 79 view .LVU124
+ 145:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
+ 515              		.loc 1 145 79 view .LVU124
  516 0072 43EA0223 		orr	r3, r3, r2, lsl #8
- 145:Core/Src/sensordata.c **** 
- 517              		.loc 1 145 56 view .LVU125
+ 147:Core/Src/sensordata.c **** 
+ 517              		.loc 1 147 56 view .LVU125
  518 0076 94F8FF20 		ldrb	r2, [r4, #255]	@ zero_extendqisi2
- 142:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
- 519              		.loc 1 142 26 view .LVU126
+ 144:Core/Src/sensordata.c ****                                   ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
+ 519              		.loc 1 144 26 view .LVU126
  520 007a 1343     		orrs	r3, r3, r2
  521              	.LVL21:
- 148:Core/Src/sensordata.c ****                 pageCounter = (i % PAGE_PER_SECTION);
- 522              		.loc 1 148 17 is_stmt 1 view .LVU127
- 148:Core/Src/sensordata.c ****                 pageCounter = (i % PAGE_PER_SECTION);
- 523              		.loc 1 148 33 is_stmt 0 view .LVU128
+ 150:Core/Src/sensordata.c ****                 pageCounter = (i % PAGE_PER_SECTION);
+ 522              		.loc 1 150 17 is_stmt 1 view .LVU127
+ 150:Core/Src/sensordata.c ****                 pageCounter = (i % PAGE_PER_SECTION);
+ 523              		.loc 1 150 33 is_stmt 0 view .LVU128
  524 007c 0133     		adds	r3, r3, #1
  525              	.LVL22:
- 148:Core/Src/sensordata.c ****                 pageCounter = (i % PAGE_PER_SECTION);
- 526              		.loc 1 148 24 view .LVU129
+ 150:Core/Src/sensordata.c ****                 pageCounter = (i % PAGE_PER_SECTION);
+ 526              		.loc 1 150 24 view .LVU129
  527 007e 0C4A     		ldr	r2, .L41+8
  528 0080 1360     		str	r3, [r2]
- 149:Core/Src/sensordata.c ****                 sectorCounter = (i / PAGE_PER_SECTION);
- 529              		.loc 1 149 17 is_stmt 1 view .LVU130
- 149:Core/Src/sensordata.c ****                 sectorCounter = (i / PAGE_PER_SECTION);
- 530              		.loc 1 149 34 is_stmt 0 view .LVU131
+ 151:Core/Src/sensordata.c ****                 sectorCounter = (i / PAGE_PER_SECTION);
+ 529              		.loc 1 151 17 is_stmt 1 view .LVU130
+ 151:Core/Src/sensordata.c ****                 sectorCounter = (i / PAGE_PER_SECTION);
+ 530              		.loc 1 151 34 is_stmt 0 view .LVU131
  531 0082 05F00F02 		and	r2, r5, #15
- 149:Core/Src/sensordata.c ****                 sectorCounter = (i / PAGE_PER_SECTION);
- 532              		.loc 1 149 29 view .LVU132
+ 151:Core/Src/sensordata.c ****                 sectorCounter = (i / PAGE_PER_SECTION);
+ 532              		.loc 1 151 29 view .LVU132
  533 0086 0B4B     		ldr	r3, .L41+12
  534              	.LVL23:
- 149:Core/Src/sensordata.c ****                 sectorCounter = (i / PAGE_PER_SECTION);
- 535              		.loc 1 149 29 view .LVU133
+ 151:Core/Src/sensordata.c ****                 sectorCounter = (i / PAGE_PER_SECTION);
+ 535              		.loc 1 151 29 view .LVU133
  536 0088 1A70     		strb	r2, [r3]
- 150:Core/Src/sensordata.c ****             }
- 537              		.loc 1 150 17 is_stmt 1 view .LVU134
- 150:Core/Src/sensordata.c ****             }
- 538              		.loc 1 150 36 is_stmt 0 view .LVU135
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 15
+ 152:Core/Src/sensordata.c ****             }
+ 537              		.loc 1 152 17 is_stmt 1 view .LVU134
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 15
 
 
+ 152:Core/Src/sensordata.c ****             }
+ 538              		.loc 1 152 36 is_stmt 0 view .LVU135
  539 008a 2D09     		lsrs	r5, r5, #4
  540              	.LVL24:
- 150:Core/Src/sensordata.c ****             }
- 541              		.loc 1 150 31 view .LVU136
+ 152:Core/Src/sensordata.c ****             }
+ 541              		.loc 1 152 31 view .LVU136
  542 008c 0A4B     		ldr	r3, .L41+16
  543 008e 1D80     		strh	r5, [r3]	@ movhi
  544              	.LBE4:
- 152:Core/Src/sensordata.c ****         }
- 545              		.loc 1 152 13 is_stmt 1 view .LVU137
+ 154:Core/Src/sensordata.c ****         }
+ 545              		.loc 1 154 13 is_stmt 1 view .LVU137
  546 0090 DDE7     		b	.L31
  547              	.LVL25:
  548              	.L39:
- 152:Core/Src/sensordata.c ****         }
- 549              		.loc 1 152 13 is_stmt 0 view .LVU138
+ 154:Core/Src/sensordata.c ****         }
+ 549              		.loc 1 154 13 is_stmt 0 view .LVU138
  550              	.LBE6:
  551              	.LBE7:
- 157:Core/Src/sensordata.c ****     pageCounter = PAGE_IN_MEMORY % PAGE_PER_SECTION;
- 552              		.loc 1 157 5 is_stmt 1 view .LVU139
- 157:Core/Src/sensordata.c ****     pageCounter = PAGE_IN_MEMORY % PAGE_PER_SECTION;
- 553              		.loc 1 157 12 is_stmt 0 view .LVU140
+ 159:Core/Src/sensordata.c ****     pageCounter = PAGE_IN_MEMORY % PAGE_PER_SECTION;
+ 552              		.loc 1 159 5 is_stmt 1 view .LVU139
+ 159:Core/Src/sensordata.c ****     pageCounter = PAGE_IN_MEMORY % PAGE_PER_SECTION;
+ 553              		.loc 1 159 12 is_stmt 0 view .LVU140
  554 0092 074B     		ldr	r3, .L41+8
  555 0094 094A     		ldr	r2, .L41+20
  556 0096 1A60     		str	r2, [r3]
- 158:Core/Src/sensordata.c ****     sectorCounter = PAGE_IN_MEMORY / PAGE_PER_SECTION;
- 557              		.loc 1 158 5 is_stmt 1 view .LVU141
- 158:Core/Src/sensordata.c ****     sectorCounter = PAGE_IN_MEMORY / PAGE_PER_SECTION;
- 558              		.loc 1 158 17 is_stmt 0 view .LVU142
+ 160:Core/Src/sensordata.c ****     sectorCounter = PAGE_IN_MEMORY / PAGE_PER_SECTION;
+ 557              		.loc 1 160 5 is_stmt 1 view .LVU141
+ 160:Core/Src/sensordata.c ****     sectorCounter = PAGE_IN_MEMORY / PAGE_PER_SECTION;
+ 558              		.loc 1 160 17 is_stmt 0 view .LVU142
  559 0098 064B     		ldr	r3, .L41+12
  560 009a 0022     		movs	r2, #0
  561 009c 1A70     		strb	r2, [r3]
- 159:Core/Src/sensordata.c **** }
- 562              		.loc 1 159 5 is_stmt 1 view .LVU143
- 159:Core/Src/sensordata.c **** }
- 563              		.loc 1 159 19 is_stmt 0 view .LVU144
+ 161:Core/Src/sensordata.c **** }
+ 562              		.loc 1 161 5 is_stmt 1 view .LVU143
+ 161:Core/Src/sensordata.c **** }
+ 563              		.loc 1 161 19 is_stmt 0 view .LVU144
  564 009e 064B     		ldr	r3, .L41+16
  565 00a0 43F60952 		movw	r2, #15625
  566 00a4 1A80     		strh	r2, [r3]	@ movhi
@@ -889,21 +891,21 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  575 00b8 00000000 		.word	sectorCounter
  576 00bc 90D00300 		.word	250000
  577              		.cfi_endproc
- 578              	.LFE1419:
+ 578              	.LFE1420:
  580              		.section	.text.sendDataStepByStep,"ax",%progbits
  581              		.align	1
  582              		.global	sendDataStepByStep
  583              		.syntax unified
  584              		.thumb
  585              		.thumb_func
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 16
+
+
  587              	sendDataStepByStep:
- 588              	.LFB1421:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 16
-
-
- 166:Core/Src/sensordata.c **** 
- 167:Core/Src/sensordata.c **** void sendDataStepByStep(void) {
- 589              		.loc 1 167 31 is_stmt 1 view -0
+ 588              	.LFB1422:
+ 168:Core/Src/sensordata.c **** 
+ 169:Core/Src/sensordata.c **** void sendDataStepByStep(void) {
+ 589              		.loc 1 169 31 is_stmt 1 view -0
  590              		.cfi_startproc
  591              		@ args = 0, pretend = 0, frame = 0
  592              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -912,97 +914,97 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  595              		.cfi_def_cfa_offset 8
  596              		.cfi_offset 3, -8
  597              		.cfi_offset 14, -4
- 168:Core/Src/sensordata.c ****     if (currentBlePage < addInc) {
- 598              		.loc 1 168 5 view .LVU146
- 599              		.loc 1 168 24 is_stmt 0 view .LVU147
+ 170:Core/Src/sensordata.c ****     if (currentBlePage < addInc) {
+ 598              		.loc 1 170 5 view .LVU146
+ 599              		.loc 1 170 24 is_stmt 0 view .LVU147
  600 0002 144B     		ldr	r3, .L50
  601 0004 1868     		ldr	r0, [r3]
  602 0006 144B     		ldr	r3, .L50+4
  603 0008 1B68     		ldr	r3, [r3]
- 604              		.loc 1 168 8 view .LVU148
+ 604              		.loc 1 170 8 view .LVU148
  605 000a 9842     		cmp	r0, r3
  606 000c 18D2     		bcs	.L43
  607              	.LBB8:
- 169:Core/Src/sensordata.c ****         
- 170:Core/Src/sensordata.c ****         // 1. Only read from flash if we are starting a fresh page
- 171:Core/Src/sensordata.c ****         if (currentSubPage == 0) {
- 608              		.loc 1 171 9 is_stmt 1 view .LVU149
- 609              		.loc 1 171 28 is_stmt 0 view .LVU150
+ 171:Core/Src/sensordata.c ****         
+ 172:Core/Src/sensordata.c ****         // 1. Only read from flash if we are starting a fresh page
+ 173:Core/Src/sensordata.c ****         if (currentSubPage == 0) {
+ 608              		.loc 1 173 9 is_stmt 1 view .LVU149
+ 609              		.loc 1 173 28 is_stmt 0 view .LVU150
  610 000e 134B     		ldr	r3, .L50+8
  611 0010 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 612              		.loc 1 171 12 view .LVU151
+ 612              		.loc 1 173 12 view .LVU151
  613 0012 B3B1     		cbz	r3, .L49
  614              	.L45:
- 172:Core/Src/sensordata.c ****             Flash_4ByteRead(currentBlePage * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
- 173:Core/Src/sensordata.c ****         }
- 174:Core/Src/sensordata.c ****         
- 175:Core/Src/sensordata.c ****         // 2. Determine which half to send
- 176:Core/Src/sensordata.c ****         uint8_t *dataPtr = (currentSubPage == 0) ? readBuffer : (readBuffer + 128);
- 615              		.loc 1 176 9 is_stmt 1 view .LVU152
- 616              		.loc 1 176 44 is_stmt 0 view .LVU153
+ 174:Core/Src/sensordata.c ****             Flash_4ByteRead(currentBlePage * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+ 175:Core/Src/sensordata.c ****         }
+ 176:Core/Src/sensordata.c ****         
+ 177:Core/Src/sensordata.c ****         // 2. Determine which half to send
+ 178:Core/Src/sensordata.c ****         uint8_t *dataPtr = (currentSubPage == 0) ? readBuffer : (readBuffer + 128);
+ 615              		.loc 1 178 9 is_stmt 1 view .LVU152
+ 616              		.loc 1 178 44 is_stmt 0 view .LVU153
  617 0014 114B     		ldr	r3, .L50+8
  618 0016 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 619              		.loc 1 176 63 view .LVU154
+ 619              		.loc 1 178 63 view .LVU154
  620 0018 D3B9     		cbnz	r3, .L47
- 621              		.loc 1 176 63 discriminator 1 view .LVU155
+ 621              		.loc 1 178 63 discriminator 1 view .LVU155
  622 001a 1148     		ldr	r0, .L50+12
  623              	.L46:
  624              	.LVL26:
- 177:Core/Src/sensordata.c ****         
- 178:Core/Src/sensordata.c ****         // 3. Try to send the current piece
- 179:Core/Src/sensordata.c ****         if (sendHalfPage_ble(dataPtr, 128) == BLE_STATUS_SUCCESS) {
- 625              		.loc 1 179 9 is_stmt 1 view .LVU156
- 626              		.loc 1 179 13 is_stmt 0 view .LVU157
+ 179:Core/Src/sensordata.c ****         
+ 180:Core/Src/sensordata.c ****         // 3. Try to send the current piece
+ 181:Core/Src/sensordata.c ****         if (sendHalfPage_ble(dataPtr, 128) == BLE_STATUS_SUCCESS) {
+ 625              		.loc 1 181 9 is_stmt 1 view .LVU156
+ 626              		.loc 1 181 13 is_stmt 0 view .LVU157
  627 001c 8021     		movs	r1, #128
  628 001e FFF7FEFF 		bl	sendHalfPage_ble
  629              	.LVL27:
- 630              		.loc 1 179 12 discriminator 1 view .LVU158
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 17
+
+
+ 630              		.loc 1 181 12 discriminator 1 view .LVU158
  631 0022 68B9     		cbnz	r0, .L43
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 17
-
-
- 180:Core/Src/sensordata.c ****             currentSubPage++; 
- 632              		.loc 1 180 13 is_stmt 1 view .LVU159
- 633              		.loc 1 180 27 is_stmt 0 view .LVU160
+ 182:Core/Src/sensordata.c ****             currentSubPage++; 
+ 632              		.loc 1 182 13 is_stmt 1 view .LVU159
+ 633              		.loc 1 182 27 is_stmt 0 view .LVU160
  634 0024 0D4A     		ldr	r2, .L50+8
  635 0026 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  636 0028 0133     		adds	r3, r3, #1
  637 002a DBB2     		uxtb	r3, r3
  638 002c 1370     		strb	r3, [r2]
- 181:Core/Src/sensordata.c ****             
- 182:Core/Src/sensordata.c ****             // 4. If both halves are done, move to the next flash page
- 183:Core/Src/sensordata.c ****             if (currentSubPage >= 2) {
- 639              		.loc 1 183 13 is_stmt 1 view .LVU161
- 640              		.loc 1 183 16 is_stmt 0 view .LVU162
+ 183:Core/Src/sensordata.c ****             
+ 184:Core/Src/sensordata.c ****             // 4. If both halves are done, move to the next flash page
+ 185:Core/Src/sensordata.c ****             if (currentSubPage >= 2) {
+ 639              		.loc 1 185 13 is_stmt 1 view .LVU161
+ 640              		.loc 1 185 16 is_stmt 0 view .LVU162
  641 002e 012B     		cmp	r3, #1
  642 0030 06D9     		bls	.L43
- 184:Core/Src/sensordata.c ****                 currentSubPage = 0;
- 643              		.loc 1 184 17 is_stmt 1 view .LVU163
- 644              		.loc 1 184 32 is_stmt 0 view .LVU164
+ 186:Core/Src/sensordata.c ****                 currentSubPage = 0;
+ 643              		.loc 1 186 17 is_stmt 1 view .LVU163
+ 644              		.loc 1 186 32 is_stmt 0 view .LVU164
  645 0032 1346     		mov	r3, r2
  646 0034 0022     		movs	r2, #0
  647 0036 1A70     		strb	r2, [r3]
- 185:Core/Src/sensordata.c ****                 currentBlePage++;
- 648              		.loc 1 185 17 is_stmt 1 view .LVU165
- 649              		.loc 1 185 31 is_stmt 0 view .LVU166
+ 187:Core/Src/sensordata.c ****                 currentBlePage++;
+ 648              		.loc 1 187 17 is_stmt 1 view .LVU165
+ 649              		.loc 1 187 31 is_stmt 0 view .LVU166
  650 0038 064A     		ldr	r2, .L50
  651 003a 1368     		ldr	r3, [r2]
  652 003c 0133     		adds	r3, r3, #1
  653 003e 1360     		str	r3, [r2]
  654              	.LVL28:
  655              	.L43:
- 656              		.loc 1 185 31 view .LVU167
+ 656              		.loc 1 187 31 view .LVU167
  657              	.LBE8:
- 186:Core/Src/sensordata.c ****             }
- 187:Core/Src/sensordata.c ****         }
- 188:Core/Src/sensordata.c ****     }
- 189:Core/Src/sensordata.c **** }
- 658              		.loc 1 189 1 view .LVU168
+ 188:Core/Src/sensordata.c ****             }
+ 189:Core/Src/sensordata.c ****         }
+ 190:Core/Src/sensordata.c ****     }
+ 191:Core/Src/sensordata.c **** }
+ 658              		.loc 1 191 1 view .LVU168
  659 0040 08BD     		pop	{r3, pc}
  660              	.L49:
  661              	.LBB9:
- 172:Core/Src/sensordata.c ****         }
- 662              		.loc 1 172 13 is_stmt 1 view .LVU169
+ 174:Core/Src/sensordata.c ****         }
+ 662              		.loc 1 174 13 is_stmt 1 view .LVU169
  663 0042 4FF48072 		mov	r2, #256
  664 0046 0649     		ldr	r1, .L50+12
  665 0048 0002     		lsls	r0, r0, #8
@@ -1010,174 +1012,266 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 1
  667              	.LVL29:
  668 004e E1E7     		b	.L45
  669              	.L47:
- 176:Core/Src/sensordata.c ****         
- 670              		.loc 1 176 63 is_stmt 0 discriminator 2 view .LVU170
+ 178:Core/Src/sensordata.c ****         
+ 670              		.loc 1 178 63 is_stmt 0 discriminator 2 view .LVU170
  671 0050 0448     		ldr	r0, .L50+16
  672 0052 E3E7     		b	.L46
  673              	.L51:
  674              		.align	2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 18
+
+
  675              	.L50:
  676 0054 00000000 		.word	currentBlePage
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 18
-
-
  677 0058 00000000 		.word	addInc
  678 005c 00000000 		.word	currentSubPage
  679 0060 00000000 		.word	readBuffer
  680 0064 80000000 		.word	readBuffer+128
  681              	.LBE9:
  682              		.cfi_endproc
- 683              	.LFE1421:
- 685              		.section	.bss.currentSubPage,"aw",%nobits
- 688              	currentSubPage:
- 689 0000 00       		.space	1
- 690              		.section	.bss.currentBlePage,"aw",%nobits
- 691              		.align	2
- 694              	currentBlePage:
- 695 0000 00000000 		.space	4
- 696              		.section	.bss.readBuffer,"aw",%nobits
- 697              		.align	2
- 700              	readBuffer:
- 701 0000 00000000 		.space	256
- 701      00000000 
- 701      00000000 
- 701      00000000 
- 701      00000000 
- 702              		.section	.bss.sectorCounter,"aw",%nobits
- 703              		.align	1
- 706              	sectorCounter:
- 707 0000 0000     		.space	2
- 708              		.section	.bss.pageCounter,"aw",%nobits
- 711              	pageCounter:
- 712 0000 00       		.space	1
- 713              		.section	.bss.addInc,"aw",%nobits
- 714              		.align	2
- 717              	addInc:
- 718 0000 00000000 		.space	4
- 719              		.section	.bss.buffer,"aw",%nobits
- 720              		.align	2
- 723              	buffer:
- 724 0000 00000000 		.space	256
- 724      00000000 
- 724      00000000 
- 724      00000000 
- 724      00000000 
- 725              		.section	.bss.dataCounter,"aw",%nobits
- 728              	dataCounter:
- 729 0000 00       		.space	1
- 730              		.section	.bss.bufferPointer,"aw",%nobits
- 733              	bufferPointer:
- 734 0000 00       		.space	1
- 735              		.section	.bss.headerBuffer,"aw",%nobits
- 736              		.align	2
- 739              	headerBuffer:
- 740 0000 00000000 		.space	25
- 740      00000000 
- 740      00000000 
- 740      00000000 
- 740      00000000 
- 741              		.global	BMIraw_data
- 742              		.section	.bss.BMIraw_data,"aw",%nobits
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 19
+ 683              	.LFE1422:
+ 685              		.section	.text.sendDataUSB,"ax",%progbits
+ 686              		.align	1
+ 687              		.global	sendDataUSB
+ 688              		.syntax unified
+ 689              		.thumb
+ 690              		.thumb_func
+ 692              	sendDataUSB:
+ 693              	.LFB1423:
+ 192:Core/Src/sensordata.c **** 
+ 193:Core/Src/sensordata.c **** void sendDataUSB(void) {
+ 694              		.loc 1 193 24 is_stmt 1 view -0
+ 695              		.cfi_startproc
+ 696              		@ args = 0, pretend = 0, frame = 0
+ 697              		@ frame_needed = 0, uses_anonymous_args = 0
+ 194:Core/Src/sensordata.c ****     if (currentUSbPage < addInc) {
+ 698              		.loc 1 194 5 view .LVU172
+ 699              		.loc 1 194 24 is_stmt 0 view .LVU173
+ 700 0000 0C4B     		ldr	r3, .L59
+ 701 0002 1868     		ldr	r0, [r3]
+ 702 0004 0C4B     		ldr	r3, .L59+4
+ 703 0006 1B68     		ldr	r3, [r3]
+ 704              		.loc 1 194 8 view .LVU174
+ 705 0008 9842     		cmp	r0, r3
+ 706 000a 00D3     		bcc	.L58
+ 707 000c 7047     		bx	lr
+ 708              	.L58:
+ 193:Core/Src/sensordata.c ****     if (currentUSbPage < addInc) {
+ 709              		.loc 1 193 24 view .LVU175
+ 710 000e 10B5     		push	{r4, lr}
+ 711              	.LCFI7:
+ 712              		.cfi_def_cfa_offset 8
+ 713              		.cfi_offset 4, -8
+ 714              		.cfi_offset 14, -4
+ 195:Core/Src/sensordata.c ****         Flash_4ByteRead(currentUSbPage * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+ 715              		.loc 1 195 9 is_stmt 1 view .LVU176
+ 716 0010 0A4C     		ldr	r4, .L59+8
+ 717 0012 4FF48072 		mov	r2, #256
+ 718 0016 2146     		mov	r1, r4
+ 719 0018 0002     		lsls	r0, r0, #8
+ 720 001a FFF7FEFF 		bl	Flash_4ByteRead
+ 721              	.LVL30:
+ 196:Core/Src/sensordata.c **** 
+ 197:Core/Src/sensordata.c ****         if(CDC_Transmit_FS(readBuffer, BUFFER_SIZE) == USBD_OK)
+ 722              		.loc 1 197 9 view .LVU177
+ 723              		.loc 1 197 12 is_stmt 0 view .LVU178
+ 724 001e 4FF48071 		mov	r1, #256
+ 725 0022 2046     		mov	r0, r4
+ 726 0024 FFF7FEFF 		bl	CDC_Transmit_FS
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 19
 
 
- 743              		.align	2
- 746              	BMIraw_data:
- 747 0000 00000000 		.space	12
- 747      00000000 
- 747      00000000 
- 748              		.global	BMEraw_data
- 749              		.section	.bss.BMEraw_data,"aw",%nobits
- 750              		.align	2
- 753              	BMEraw_data:
- 754 0000 00000000 		.space	8
- 754      00000000 
- 755              		.global	GPSraw_data
- 756              		.section	.bss.GPSraw_data,"aw",%nobits
- 757              		.align	2
- 760              	GPSraw_data:
- 761 0000 00000000 		.space	15
- 761      00000000 
- 761      00000000 
- 761      000000
- 762              		.section	.bss.bufferFull,"aw",%nobits
- 765              	bufferFull:
- 766 0000 00       		.space	1
- 767              		.text
- 768              	.Letext0:
- 769              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
- 770              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
- 771              		.file 4 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/include/stdd
- 772              		.file 5 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h"
- 773              		.file 6 "Core/Inc/app_conf.h"
- 774              		.file 7 "STM32_WPAN/App/custom_stm.h"
- 775              		.file 8 "Core/Inc/gps.h"
- 776              		.file 9 "Core/Inc/flash.h"
- 777              		.file 10 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../..
- 778              		.file 11 "Core/Inc/bme280.h"
- 779              		.file 12 "Core/Inc/bmi270.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 20
+ 727              	.LVL31:
+ 728              		.loc 1 197 11 discriminator 1 view .LVU179
+ 729 0028 18B9     		cbnz	r0, .L52
+ 198:Core/Src/sensordata.c ****         {
+ 199:Core/Src/sensordata.c ****           currentUSbPage++;
+ 730              		.loc 1 199 11 is_stmt 1 view .LVU180
+ 731              		.loc 1 199 25 is_stmt 0 view .LVU181
+ 732 002a 024A     		ldr	r2, .L59
+ 733 002c 1368     		ldr	r3, [r2]
+ 734 002e 0133     		adds	r3, r3, #1
+ 735 0030 1360     		str	r3, [r2]
+ 736              	.L52:
+ 200:Core/Src/sensordata.c ****         }
+ 201:Core/Src/sensordata.c ****         
+ 202:Core/Src/sensordata.c ****     }
+ 203:Core/Src/sensordata.c **** }
+ 737              		.loc 1 203 1 view .LVU182
+ 738 0032 10BD     		pop	{r4, pc}
+ 739              	.L60:
+ 740              		.align	2
+ 741              	.L59:
+ 742 0034 00000000 		.word	currentUSbPage
+ 743 0038 00000000 		.word	addInc
+ 744 003c 00000000 		.word	readBuffer
+ 745              		.cfi_endproc
+ 746              	.LFE1423:
+ 748              		.section	.bss.currentUSbPage,"aw",%nobits
+ 749              		.align	2
+ 752              	currentUSbPage:
+ 753 0000 00000000 		.space	4
+ 754              		.section	.bss.currentSubPage,"aw",%nobits
+ 757              	currentSubPage:
+ 758 0000 00       		.space	1
+ 759              		.section	.bss.currentBlePage,"aw",%nobits
+ 760              		.align	2
+ 763              	currentBlePage:
+ 764 0000 00000000 		.space	4
+ 765              		.section	.bss.readBuffer,"aw",%nobits
+ 766              		.align	2
+ 769              	readBuffer:
+ 770 0000 00000000 		.space	256
+ 770      00000000 
+ 770      00000000 
+ 770      00000000 
+ 770      00000000 
+ 771              		.section	.bss.sectorCounter,"aw",%nobits
+ 772              		.align	1
+ 775              	sectorCounter:
+ 776 0000 0000     		.space	2
+ 777              		.section	.bss.pageCounter,"aw",%nobits
+ 780              	pageCounter:
+ 781 0000 00       		.space	1
+ 782              		.section	.bss.addInc,"aw",%nobits
+ 783              		.align	2
+ 786              	addInc:
+ 787 0000 00000000 		.space	4
+ 788              		.section	.bss.buffer,"aw",%nobits
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 20
+
+
+ 789              		.align	2
+ 792              	buffer:
+ 793 0000 00000000 		.space	256
+ 793      00000000 
+ 793      00000000 
+ 793      00000000 
+ 793      00000000 
+ 794              		.section	.bss.dataCounter,"aw",%nobits
+ 797              	dataCounter:
+ 798 0000 00       		.space	1
+ 799              		.section	.bss.bufferPointer,"aw",%nobits
+ 802              	bufferPointer:
+ 803 0000 00       		.space	1
+ 804              		.section	.bss.headerBuffer,"aw",%nobits
+ 805              		.align	2
+ 808              	headerBuffer:
+ 809 0000 00000000 		.space	25
+ 809      00000000 
+ 809      00000000 
+ 809      00000000 
+ 809      00000000 
+ 810              		.global	BMIraw_data
+ 811              		.section	.bss.BMIraw_data,"aw",%nobits
+ 812              		.align	2
+ 815              	BMIraw_data:
+ 816 0000 00000000 		.space	12
+ 816      00000000 
+ 816      00000000 
+ 817              		.global	BMEraw_data
+ 818              		.section	.bss.BMEraw_data,"aw",%nobits
+ 819              		.align	2
+ 822              	BMEraw_data:
+ 823 0000 00000000 		.space	8
+ 823      00000000 
+ 824              		.global	GPSraw_data
+ 825              		.section	.bss.GPSraw_data,"aw",%nobits
+ 826              		.align	2
+ 829              	GPSraw_data:
+ 830 0000 00000000 		.space	15
+ 830      00000000 
+ 830      00000000 
+ 830      000000
+ 831              		.section	.bss.bufferFull,"aw",%nobits
+ 834              	bufferFull:
+ 835 0000 00       		.space	1
+ 836              		.text
+ 837              	.Letext0:
+ 838              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 839              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 840              		.file 4 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/include/stdd
+ 841              		.file 5 "Core/Inc/app_conf.h"
+ 842              		.file 6 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 843              		.file 7 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h"
+ 844              		.file 8 "STM32_WPAN/App/custom_stm.h"
+ 845              		.file 9 "Core/Inc/gps.h"
+ 846              		.file 10 "USB_Device/App/usbd_cdc_if.h"
+ 847              		.file 11 "Core/Inc/flash.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 21
+
+
+ 848              		.file 12 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../..
+ 849              		.file 13 "Core/Inc/bme280.h"
+ 850              		.file 14 "Core/Inc/bmi270.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sensordata.c
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:21     .text.packageHeader:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:26     .text.packageHeader:00000000 packageHeader
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:71     .text.packageHeader:00000044 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:753    .bss.BMEraw_data:00000000 BMEraw_data
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:739    .bss.headerBuffer:00000000 headerBuffer
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:760    .bss.GPSraw_data:00000000 GPSraw_data
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:78     .text.newSectionCheck:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:83     .text.newSectionCheck:00000000 newSectionCheck
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:135    .text.newSectionCheck:00000034 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:711    .bss.pageCounter:00000000 pageCounter
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:706    .bss.sectorCounter:00000000 sectorCounter
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:141    .text.sendHalfPage_ble:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:146    .text.sendHalfPage_ble:00000000 sendHalfPage_ble
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:176    .text.packageDataToMem:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:182    .text.packageDataToMem:00000000 packageDataToMem
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:273    .text.packageDataToMem:0000006c $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:733    .bss.bufferPointer:00000000 bufferPointer
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:728    .bss.dataCounter:00000000 dataCounter
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:765    .bss.bufferFull:00000000 bufferFull
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:723    .bss.buffer:00000000 buffer
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:746    .bss.BMIraw_data:00000000 BMIraw_data
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:283    .text.sendPackageToMem:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:289    .text.sendPackageToMem:00000000 sendPackageToMem
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:382    .text.sendPackageToMem:0000006c $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:717    .bss.addInc:00000000 addInc
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:393    .text.findStartPos:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:399    .text.findStartPos:00000000 findStartPos
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:571    .text.findStartPos:000000a8 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:700    .bss.readBuffer:00000000 readBuffer
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:581    .text.sendDataStepByStep:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:587    .text.sendDataStepByStep:00000000 sendDataStepByStep
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:676    .text.sendDataStepByStep:00000054 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:694    .bss.currentBlePage:00000000 currentBlePage
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:688    .bss.currentSubPage:00000000 currentSubPage
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:689    .bss.currentSubPage:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:691    .bss.currentBlePage:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:697    .bss.readBuffer:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:703    .bss.sectorCounter:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:712    .bss.pageCounter:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:714    .bss.addInc:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:720    .bss.buffer:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:729    .bss.dataCounter:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:734    .bss.bufferPointer:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:736    .bss.headerBuffer:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:743    .bss.BMIraw_data:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:750    .bss.BMEraw_data:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:757    .bss.GPSraw_data:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s:766    .bss.bufferFull:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:21     .text.packageHeader:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:26     .text.packageHeader:00000000 packageHeader
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:71     .text.packageHeader:00000044 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:822    .bss.BMEraw_data:00000000 BMEraw_data
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:808    .bss.headerBuffer:00000000 headerBuffer
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:829    .bss.GPSraw_data:00000000 GPSraw_data
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:78     .text.newSectionCheck:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:83     .text.newSectionCheck:00000000 newSectionCheck
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:135    .text.newSectionCheck:00000034 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:780    .bss.pageCounter:00000000 pageCounter
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:775    .bss.sectorCounter:00000000 sectorCounter
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:141    .text.sendHalfPage_ble:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:146    .text.sendHalfPage_ble:00000000 sendHalfPage_ble
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:176    .text.packageDataToMem:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:182    .text.packageDataToMem:00000000 packageDataToMem
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:273    .text.packageDataToMem:0000006c $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:802    .bss.bufferPointer:00000000 bufferPointer
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:797    .bss.dataCounter:00000000 dataCounter
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:834    .bss.bufferFull:00000000 bufferFull
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:792    .bss.buffer:00000000 buffer
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:815    .bss.BMIraw_data:00000000 BMIraw_data
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:283    .text.sendPackageToMem:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:289    .text.sendPackageToMem:00000000 sendPackageToMem
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:382    .text.sendPackageToMem:0000006c $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:786    .bss.addInc:00000000 addInc
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:393    .text.findStartPos:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:399    .text.findStartPos:00000000 findStartPos
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:571    .text.findStartPos:000000a8 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:769    .bss.readBuffer:00000000 readBuffer
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:581    .text.sendDataStepByStep:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:587    .text.sendDataStepByStep:00000000 sendDataStepByStep
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:676    .text.sendDataStepByStep:00000054 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:763    .bss.currentBlePage:00000000 currentBlePage
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:757    .bss.currentSubPage:00000000 currentSubPage
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:686    .text.sendDataUSB:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:692    .text.sendDataUSB:00000000 sendDataUSB
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:742    .text.sendDataUSB:00000034 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:752    .bss.currentUSbPage:00000000 currentUSbPage
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:749    .bss.currentUSbPage:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:758    .bss.currentSubPage:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:760    .bss.currentBlePage:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:766    .bss.readBuffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:772    .bss.sectorCounter:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:781    .bss.pageCounter:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:783    .bss.addInc:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:789    .bss.buffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:798    .bss.dataCounter:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:803    .bss.bufferPointer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:805    .bss.headerBuffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:812    .bss.BMIraw_data:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:819    .bss.BMEraw_data:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:826    .bss.GPSraw_data:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:835    .bss.bufferFull:00000000 $d
 
 UNDEFINED SYMBOLS
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 23
+
+
 BME280_ReadMeasurement_Raw
 Flash_SectorErase
 Custom_STM_App_Update_Char_Variable_Length
 BMI270_ReadMeasurement_raw
 Flash_WritePage
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccjmfozw.s 			page 21
-
-
 memset
 Flash_4ByteRead
+CDC_Transmit_FS
