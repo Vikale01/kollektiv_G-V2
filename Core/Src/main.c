@@ -27,11 +27,19 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-enum {
-  STATE_1,
-  STATE_2,
-  STATE_3
-}btnState;
+typedef enum {
+  MAIN_MENU,
+  MEASURING,
+  SENDING
+}menuState;
+
+typedef enum {
+  CUR_START,
+  CUR_SEND
+}menuCursor;
+
+menuState currentLvl = MAIN_MENU;
+menuCursor currentCur = CUR_START;
 
 /* USER CODE END PTD */
 
@@ -39,6 +47,8 @@ enum {
 /* USER CODE BEGIN PD */
 
 uint8_t tastScheduler = 0;
+uint8_t stateChange = 1;
+uint8_t cursorChange = 1;
 
 extern uint8_t usbConnected;
 /* USER CODE END PD */
@@ -152,7 +162,9 @@ int main(void)
 
   //Display initiation
   Oled_init();
-  Oled_introScreen();
+  Oled_Clear(0x00);
+  Oled_Update();
+  //Oled_introScreen();
 
   findStartPos();
 
@@ -167,34 +179,69 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    switch(btnState)
+
+    switch(currentLvl)
     {
-      case STATE_1:
 
-        HAL_GPIO_TogglePin(GPIOB, LED_R_Pin);  
-        HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 0);
-        HAL_GPIO_WritePin(GPIOB, LED_G_Pin, 0); 
-        
-        break;
-      case STATE_2:
+      case MAIN_MENU:
+        if(stateChange)
+        {
+          mainMenu();
+          stateChange = 0;
+        }
 
-        if (tastScheduler >= 1){
+        if(cursorChange)
+        {
+          if(currentCur == CUR_START)
+          {
+            DrawCircle(10, 19, 2, 0x0F);
+            DrawCircle(10, 39, 2, 0x00);
+          }
+          else{
+            DrawCircle(10, 39, 2, 0x0F);
+            DrawCircle(10, 19, 2, 0x00);
+          }
+
+          SSD1327_UpdateArea(8, 17, 14, 43, NULL);
 
           gpsLogo();
+
+          cursorChange = 0;
+        }
+        break;
+
+      case MEASURING:
+
+        if(stateChange)
+        {
+          Oled_Clear(0x00);
+          Oled_Draw1BitImage(107,0, icon_gps_20x20, ICON_GPS_W, ICON_GPS_H, 0x05);
+          oled_numSV();
+          Oled_Update();
+          stateChange = 0;
+        }
+
+        gpsLogo();
+        Oled_updateNumSV();
+
+        if (tastScheduler >= 1){
+          //gpsLogo();
           if(GPS_connected)  // Check if gps has good connection before storing data.
           {
             packageDataToMem();
             sendPackageToMem();
           }
-
-          HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 0);
-          HAL_GPIO_WritePin(GPIOB, LED_R_Pin, 0);  
-          HAL_GPIO_WritePin(GPIOB, LED_G_Pin, 1);
           tastScheduler = 0;
         }
-
         break;
-      case STATE_3:
+      case SENDING:
+
+        if(stateChange)
+        {
+          Oled_Clear(0x00);
+          Oled_Update();
+          stateChange = 0;
+        }
 
         if(Custom_STN_NotificationEnabled()) // Check if someone is connected via BLE and has notification enabled
         {
@@ -204,10 +251,7 @@ int main(void)
         {
           sendDataUSB();
         }
-   
-        HAL_GPIO_WritePin(GPIOB, LED_B_Pin, 1);
-        HAL_GPIO_WritePin(GPIOB, LED_R_Pin, 0);  
-        HAL_GPIO_WritePin(GPIOB, LED_G_Pin, 0);
+
         break;
     }
     /* USER CODE END WHILE */
@@ -703,9 +747,15 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED_R_Pin|LED_G_Pin|LED_B_Pin, GPIO_PIN_RESET);
 
+  /*Configure GPIO pins : BTN_YELLOW_Pin BTN_BLUE_Pin */
+  GPIO_InitStruct.Pin = BTN_YELLOW_Pin|BTN_BLUE_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pin : BTN_1_Pin */
   GPIO_InitStruct.Pin = BTN_1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(BTN_1_GPIO_Port, &GPIO_InitStruct);
 
@@ -720,6 +770,12 @@ static void MX_GPIO_Init(void)
   HAL_NVIC_SetPriority(EXTI2_IRQn, 8, 0);
   HAL_NVIC_EnableIRQ(EXTI2_IRQn);
 
+  HAL_NVIC_SetPriority(EXTI4_IRQn, 8, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 8, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
   /* USER CODE BEGIN MX_GPIO_Init_2 */
 
   /* USER CODE END MX_GPIO_Init_2 */
@@ -730,11 +786,34 @@ static void MX_GPIO_Init(void)
 /* Callback function for button, rising edge */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+  uint32_t interruptTime = HAL_GetTick();
+  static uint32_t lastTime = 0;
+
+  if(interruptTime - lastTime < 200) return; //Debounce
+
   if (GPIO_Pin == BTN_1_Pin)
   {
-    // wrap around for state-machine
-    (btnState == STATE_3) ? (btnState = STATE_1) : (btnState++);
+    if(currentLvl == MAIN_MENU)
+    {
+      cursorChange = 1;
+      currentCur = (currentCur == CUR_START) ? CUR_SEND : CUR_START;
+    }
   }
+  if(GPIO_Pin == BTN_BLUE_Pin)
+  {
+    if(currentLvl == MAIN_MENU)
+    {
+      stateChange = 1;
+      currentLvl = (currentCur == CUR_START) ? MEASURING : SENDING;
+    }
+  }
+  if(GPIO_Pin == BTN_YELLOW_Pin)
+  {
+    stateChange = 1;
+    cursorChange = 1;
+    currentLvl = MAIN_MENU;
+  }
+  lastTime = interruptTime;
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)

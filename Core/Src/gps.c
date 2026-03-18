@@ -23,8 +23,9 @@ uint8_t GPS_connected = 0;
 
 uint8_t logoSwitched = 0;
 
-
 uint8_t start_pos = 0;
+
+uint8_t lastNumSV;
 
 /**
  * @brief  Verify UBX checksum
@@ -183,5 +184,16 @@ void gpsLogo()
         Oled_Draw1BitImage(107,0, icon_gps_20x20, ICON_GPS_W, ICON_GPS_H, 0x05);
         SSD1327_UpdateArea(107, 0, 127, 20, NULL);
         logoSwitched = 0;
+    }
+}
+
+void Oled_updateNumSV(void)
+{
+    if(lastNumSV != myGpsData.numSV)
+    {
+        DrawSquare(60, 100, 95, 120, 0x00);
+        Oled_drawDigit(60, 100, myGpsData.numSV, 0x0F);
+        SSD1327_UpdateArea(60, 100, 96, 127, NULL);
+        lastNumSV = myGpsData.numSV;
     }
 }

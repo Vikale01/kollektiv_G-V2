@@ -73,5 +73,7 @@ void UpdateClockDisplay(void);
 void Oled_drawColon(int x, int y, uint8_t color);
 void SSD1327_UpdateArea(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1, uint8_t *data);
 void Oled_introScreen(void);
+void mainMenu(void);
+void oled_numSV(void);
 
 #endif

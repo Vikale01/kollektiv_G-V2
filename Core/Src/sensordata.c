@@ -202,5 +202,9 @@ void sendDataUSB(void) {
     }
 }
 
+void displayGNSS()
+{
+}
+
 
 

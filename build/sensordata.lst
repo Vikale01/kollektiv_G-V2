@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
   29:Core/Src/sensordata.c **** 
   30:Core/Src/sensordata.c **** static uint8_t buffer[BUFFER_SIZE];
   31:Core/Src/sensordata.c **** static uint32_t addInc = 0;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 2
 
 
   32:Core/Src/sensordata.c **** static uint8_t pageCounter = 0;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
   51:Core/Src/sensordata.c **** 
   52:Core/Src/sensordata.c ****   headerBuffer[24] = 0xAA;
   63              		.loc 1 52 3 view .LVU6
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 3
 
 
   64              		.loc 1 52 20 is_stmt 0 view .LVU7
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
   91              		.cfi_def_cfa_offset 8
   92              		.cfi_offset 3, -8
   93              		.cfi_offset 14, -4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 4
 
 
   82:Core/Src/sensordata.c ****   if(pageCounter >= PAGE_PER_SECTION)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  135 0034 00000000 		.word	pageCounter
  136 0038 00000000 		.word	sectorCounter
  137              		.cfi_endproc
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 5
 
 
  138              	.LFE1418:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  140:Core/Src/sensordata.c ****             {
  141:Core/Src/sensordata.c **** 
  142:Core/Src/sensordata.c ****                 Flash_4ByteRead((i - 1) * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 6
 
 
  143:Core/Src/sensordata.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  179              		.thumb
  180              		.thumb_func
  182              	packageDataToMem:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 7
 
 
  183              	.LFB1417:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  225 001e 174D     		ldr	r5, .L20+16
  226 0020 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
  227 0022 0FC4     		stmia	r4!, {r0, r1, r2, r3}
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 8
 
 
  228 0024 95E80700 		ldm	r5, {r0, r1, r2}
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  272              	.L20:
  273 006c 00000000 		.word	bufferPointer
  274 0070 00000000 		.word	dataCounter
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 9
 
 
  275 0074 00000000 		.word	bufferFull
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  103:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
  322              		.loc 1 103 3 is_stmt 1 view .LVU61
  103:Core/Src/sensordata.c ****   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 10
 
 
  323              		.loc 1 103 37 is_stmt 0 view .LVU62
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  362 0052 1370     		strb	r3, [r2]
  113:Core/Src/sensordata.c ****   bufferFull = false;
  363              		.loc 1 113 3 is_stmt 1 view .LVU78
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 11
 
 
  113:Core/Src/sensordata.c ****   bufferFull = false;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  413              	.LBB2:
  121:Core/Src/sensordata.c ****     {
  414              		.loc 1 121 10 view .LVU86
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 12
 
 
  415              	.LVL11:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  121:Core/Src/sensordata.c ****     {
  455              		.loc 1 121 47 is_stmt 1 discriminator 2 view .LVU101
  456 003a 0135     		adds	r5, r5, #1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 13
 
 
  457              	.LVL15:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  496 0050 681E     		subs	r0, r5, #1
  142:Core/Src/sensordata.c **** 
  497              		.loc 1 142 17 view .LVU117
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 14
 
 
  498 0052 164C     		ldr	r4, .L41+4
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  536 0088 1A70     		strb	r2, [r3]
  152:Core/Src/sensordata.c ****             }
  537              		.loc 1 152 17 is_stmt 1 view .LVU134
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 15
 
 
  152:Core/Src/sensordata.c ****             }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  583              		.syntax unified
  584              		.thumb
  585              		.thumb_func
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 16
 
 
  587              	sendDataStepByStep:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  627 001c 8021     		movs	r1, #128
  628 001e FFF7FEFF 		bl	sendHalfPage_ble
  629              	.LVL27:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 17
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 17
 
 
  630              		.loc 1 181 12 discriminator 1 view .LVU158
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  672 0052 E3E7     		b	.L46
  673              	.L51:
  674              		.align	2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 18
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 18
 
 
  675              	.L50:
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  724 001e 4FF48071 		mov	r1, #256
  725 0022 2046     		mov	r0, r4
  726 0024 FFF7FEFF 		bl	CDC_Transmit_FS
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 19
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 19
 
 
  727              	.LVL31:
@@ -1107,166 +1107,189 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 1
  744 003c 00000000 		.word	readBuffer
  745              		.cfi_endproc
  746              	.LFE1423:
- 748              		.section	.bss.currentUSbPage,"aw",%nobits
- 749              		.align	2
- 752              	currentUSbPage:
- 753 0000 00000000 		.space	4
- 754              		.section	.bss.currentSubPage,"aw",%nobits
- 757              	currentSubPage:
- 758 0000 00       		.space	1
- 759              		.section	.bss.currentBlePage,"aw",%nobits
- 760              		.align	2
- 763              	currentBlePage:
- 764 0000 00000000 		.space	4
- 765              		.section	.bss.readBuffer,"aw",%nobits
- 766              		.align	2
- 769              	readBuffer:
- 770 0000 00000000 		.space	256
- 770      00000000 
- 770      00000000 
- 770      00000000 
- 770      00000000 
- 771              		.section	.bss.sectorCounter,"aw",%nobits
- 772              		.align	1
- 775              	sectorCounter:
- 776 0000 0000     		.space	2
- 777              		.section	.bss.pageCounter,"aw",%nobits
- 780              	pageCounter:
- 781 0000 00       		.space	1
- 782              		.section	.bss.addInc,"aw",%nobits
- 783              		.align	2
- 786              	addInc:
- 787 0000 00000000 		.space	4
- 788              		.section	.bss.buffer,"aw",%nobits
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 20
+ 748              		.section	.text.displayGNSS,"ax",%progbits
+ 749              		.align	1
+ 750              		.global	displayGNSS
+ 751              		.syntax unified
+ 752              		.thumb
+ 753              		.thumb_func
+ 755              	displayGNSS:
+ 756              	.LFB1424:
+ 204:Core/Src/sensordata.c **** 
+ 205:Core/Src/sensordata.c **** void displayGNSS()
+ 206:Core/Src/sensordata.c **** {
+ 757              		.loc 1 206 1 is_stmt 1 view -0
+ 758              		.cfi_startproc
+ 759              		@ args = 0, pretend = 0, frame = 0
+ 760              		@ frame_needed = 0, uses_anonymous_args = 0
+ 761              		@ link register save eliminated.
+ 207:Core/Src/sensordata.c **** }
+ 762              		.loc 1 207 1 view .LVU184
+ 763 0000 7047     		bx	lr
+ 764              		.cfi_endproc
+ 765              	.LFE1424:
+ 767              		.section	.bss.currentUSbPage,"aw",%nobits
+ 768              		.align	2
+ 771              	currentUSbPage:
+ 772 0000 00000000 		.space	4
+ 773              		.section	.bss.currentSubPage,"aw",%nobits
+ 776              	currentSubPage:
+ 777 0000 00       		.space	1
+ 778              		.section	.bss.currentBlePage,"aw",%nobits
+ 779              		.align	2
+ 782              	currentBlePage:
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 20
 
 
- 789              		.align	2
- 792              	buffer:
- 793 0000 00000000 		.space	256
- 793      00000000 
- 793      00000000 
- 793      00000000 
- 793      00000000 
- 794              		.section	.bss.dataCounter,"aw",%nobits
- 797              	dataCounter:
- 798 0000 00       		.space	1
- 799              		.section	.bss.bufferPointer,"aw",%nobits
- 802              	bufferPointer:
- 803 0000 00       		.space	1
- 804              		.section	.bss.headerBuffer,"aw",%nobits
- 805              		.align	2
- 808              	headerBuffer:
- 809 0000 00000000 		.space	25
- 809      00000000 
- 809      00000000 
- 809      00000000 
- 809      00000000 
- 810              		.global	BMIraw_data
- 811              		.section	.bss.BMIraw_data,"aw",%nobits
- 812              		.align	2
- 815              	BMIraw_data:
- 816 0000 00000000 		.space	12
- 816      00000000 
- 816      00000000 
- 817              		.global	BMEraw_data
- 818              		.section	.bss.BMEraw_data,"aw",%nobits
- 819              		.align	2
- 822              	BMEraw_data:
- 823 0000 00000000 		.space	8
- 823      00000000 
- 824              		.global	GPSraw_data
- 825              		.section	.bss.GPSraw_data,"aw",%nobits
- 826              		.align	2
- 829              	GPSraw_data:
- 830 0000 00000000 		.space	15
- 830      00000000 
- 830      00000000 
- 830      000000
- 831              		.section	.bss.bufferFull,"aw",%nobits
- 834              	bufferFull:
- 835 0000 00       		.space	1
- 836              		.text
- 837              	.Letext0:
- 838              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
- 839              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
- 840              		.file 4 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/include/stdd
- 841              		.file 5 "Core/Inc/app_conf.h"
- 842              		.file 6 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
- 843              		.file 7 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h"
- 844              		.file 8 "STM32_WPAN/App/custom_stm.h"
- 845              		.file 9 "Core/Inc/gps.h"
- 846              		.file 10 "USB_Device/App/usbd_cdc_if.h"
- 847              		.file 11 "Core/Inc/flash.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 21
+ 783 0000 00000000 		.space	4
+ 784              		.section	.bss.readBuffer,"aw",%nobits
+ 785              		.align	2
+ 788              	readBuffer:
+ 789 0000 00000000 		.space	256
+ 789      00000000 
+ 789      00000000 
+ 789      00000000 
+ 789      00000000 
+ 790              		.section	.bss.sectorCounter,"aw",%nobits
+ 791              		.align	1
+ 794              	sectorCounter:
+ 795 0000 0000     		.space	2
+ 796              		.section	.bss.pageCounter,"aw",%nobits
+ 799              	pageCounter:
+ 800 0000 00       		.space	1
+ 801              		.section	.bss.addInc,"aw",%nobits
+ 802              		.align	2
+ 805              	addInc:
+ 806 0000 00000000 		.space	4
+ 807              		.section	.bss.buffer,"aw",%nobits
+ 808              		.align	2
+ 811              	buffer:
+ 812 0000 00000000 		.space	256
+ 812      00000000 
+ 812      00000000 
+ 812      00000000 
+ 812      00000000 
+ 813              		.section	.bss.dataCounter,"aw",%nobits
+ 816              	dataCounter:
+ 817 0000 00       		.space	1
+ 818              		.section	.bss.bufferPointer,"aw",%nobits
+ 821              	bufferPointer:
+ 822 0000 00       		.space	1
+ 823              		.section	.bss.headerBuffer,"aw",%nobits
+ 824              		.align	2
+ 827              	headerBuffer:
+ 828 0000 00000000 		.space	25
+ 828      00000000 
+ 828      00000000 
+ 828      00000000 
+ 828      00000000 
+ 829              		.global	BMIraw_data
+ 830              		.section	.bss.BMIraw_data,"aw",%nobits
+ 831              		.align	2
+ 834              	BMIraw_data:
+ 835 0000 00000000 		.space	12
+ 835      00000000 
+ 835      00000000 
+ 836              		.global	BMEraw_data
+ 837              		.section	.bss.BMEraw_data,"aw",%nobits
+ 838              		.align	2
+ 841              	BMEraw_data:
+ 842 0000 00000000 		.space	8
+ 842      00000000 
+ 843              		.global	GPSraw_data
+ 844              		.section	.bss.GPSraw_data,"aw",%nobits
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 21
 
 
- 848              		.file 12 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../..
- 849              		.file 13 "Core/Inc/bme280.h"
- 850              		.file 14 "Core/Inc/bmi270.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 22
+ 845              		.align	2
+ 848              	GPSraw_data:
+ 849 0000 00000000 		.space	15
+ 849      00000000 
+ 849      00000000 
+ 849      000000
+ 850              		.section	.bss.bufferFull,"aw",%nobits
+ 853              	bufferFull:
+ 854 0000 00       		.space	1
+ 855              		.text
+ 856              	.Letext0:
+ 857              		.file 2 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 858              		.file 3 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../../
+ 859              		.file 4 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/include/stdd
+ 860              		.file 5 "Core/Inc/app_conf.h"
+ 861              		.file 6 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 862              		.file 7 "Middlewares/ST/STM32_WPAN/ble/core/auto/ble_types.h"
+ 863              		.file 8 "STM32_WPAN/App/custom_stm.h"
+ 864              		.file 9 "Core/Inc/gps.h"
+ 865              		.file 10 "USB_Device/App/usbd_cdc_if.h"
+ 866              		.file 11 "Core/Inc/flash.h"
+ 867              		.file 12 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../..
+ 868              		.file 13 "Core/Inc/bme280.h"
+ 869              		.file 14 "Core/Inc/bmi270.h"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sensordata.c
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:21     .text.packageHeader:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:26     .text.packageHeader:00000000 packageHeader
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:71     .text.packageHeader:00000044 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:822    .bss.BMEraw_data:00000000 BMEraw_data
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:808    .bss.headerBuffer:00000000 headerBuffer
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:829    .bss.GPSraw_data:00000000 GPSraw_data
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:78     .text.newSectionCheck:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:83     .text.newSectionCheck:00000000 newSectionCheck
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:135    .text.newSectionCheck:00000034 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:780    .bss.pageCounter:00000000 pageCounter
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:775    .bss.sectorCounter:00000000 sectorCounter
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:141    .text.sendHalfPage_ble:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:146    .text.sendHalfPage_ble:00000000 sendHalfPage_ble
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:176    .text.packageDataToMem:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:182    .text.packageDataToMem:00000000 packageDataToMem
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:273    .text.packageDataToMem:0000006c $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:802    .bss.bufferPointer:00000000 bufferPointer
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:797    .bss.dataCounter:00000000 dataCounter
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:834    .bss.bufferFull:00000000 bufferFull
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:792    .bss.buffer:00000000 buffer
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:815    .bss.BMIraw_data:00000000 BMIraw_data
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:283    .text.sendPackageToMem:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:289    .text.sendPackageToMem:00000000 sendPackageToMem
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:382    .text.sendPackageToMem:0000006c $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:786    .bss.addInc:00000000 addInc
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:393    .text.findStartPos:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:399    .text.findStartPos:00000000 findStartPos
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:571    .text.findStartPos:000000a8 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:769    .bss.readBuffer:00000000 readBuffer
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:581    .text.sendDataStepByStep:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:587    .text.sendDataStepByStep:00000000 sendDataStepByStep
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:676    .text.sendDataStepByStep:00000054 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:763    .bss.currentBlePage:00000000 currentBlePage
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:757    .bss.currentSubPage:00000000 currentSubPage
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:686    .text.sendDataUSB:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:692    .text.sendDataUSB:00000000 sendDataUSB
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:742    .text.sendDataUSB:00000034 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:752    .bss.currentUSbPage:00000000 currentUSbPage
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:749    .bss.currentUSbPage:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:758    .bss.currentSubPage:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:760    .bss.currentBlePage:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:766    .bss.readBuffer:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:772    .bss.sectorCounter:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:781    .bss.pageCounter:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:783    .bss.addInc:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:789    .bss.buffer:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:798    .bss.dataCounter:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:803    .bss.bufferPointer:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:805    .bss.headerBuffer:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:812    .bss.BMIraw_data:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:819    .bss.BMEraw_data:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:826    .bss.GPSraw_data:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s:835    .bss.bufferFull:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:21     .text.packageHeader:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:26     .text.packageHeader:00000000 packageHeader
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:71     .text.packageHeader:00000044 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:841    .bss.BMEraw_data:00000000 BMEraw_data
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:827    .bss.headerBuffer:00000000 headerBuffer
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:848    .bss.GPSraw_data:00000000 GPSraw_data
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:78     .text.newSectionCheck:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:83     .text.newSectionCheck:00000000 newSectionCheck
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:135    .text.newSectionCheck:00000034 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:799    .bss.pageCounter:00000000 pageCounter
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:794    .bss.sectorCounter:00000000 sectorCounter
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:141    .text.sendHalfPage_ble:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:146    .text.sendHalfPage_ble:00000000 sendHalfPage_ble
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:176    .text.packageDataToMem:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:182    .text.packageDataToMem:00000000 packageDataToMem
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:273    .text.packageDataToMem:0000006c $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:821    .bss.bufferPointer:00000000 bufferPointer
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:816    .bss.dataCounter:00000000 dataCounter
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:853    .bss.bufferFull:00000000 bufferFull
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:811    .bss.buffer:00000000 buffer
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:834    .bss.BMIraw_data:00000000 BMIraw_data
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:283    .text.sendPackageToMem:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:289    .text.sendPackageToMem:00000000 sendPackageToMem
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:382    .text.sendPackageToMem:0000006c $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:805    .bss.addInc:00000000 addInc
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:393    .text.findStartPos:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:399    .text.findStartPos:00000000 findStartPos
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:571    .text.findStartPos:000000a8 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:788    .bss.readBuffer:00000000 readBuffer
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:581    .text.sendDataStepByStep:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:587    .text.sendDataStepByStep:00000000 sendDataStepByStep
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:676    .text.sendDataStepByStep:00000054 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:782    .bss.currentBlePage:00000000 currentBlePage
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:776    .bss.currentSubPage:00000000 currentSubPage
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:686    .text.sendDataUSB:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:692    .text.sendDataUSB:00000000 sendDataUSB
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:742    .text.sendDataUSB:00000034 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:771    .bss.currentUSbPage:00000000 currentUSbPage
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:749    .text.displayGNSS:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:755    .text.displayGNSS:00000000 displayGNSS
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:768    .bss.currentUSbPage:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:777    .bss.currentSubPage:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:779    .bss.currentBlePage:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:785    .bss.readBuffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:791    .bss.sectorCounter:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:800    .bss.pageCounter:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:802    .bss.addInc:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:808    .bss.buffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:817    .bss.dataCounter:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:822    .bss.bufferPointer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:824    .bss.headerBuffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:831    .bss.BMIraw_data:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:838    .bss.BMEraw_data:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:845    .bss.GPSraw_data:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccX9htms.s:854    .bss.bufferFull:00000000 $d
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccX9htms.s 			page 23
+
+
 
 UNDEFINED SYMBOLS
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccxhlJgi.s 			page 23
-
-
 BME280_ReadMeasurement_Raw
 Flash_SectorErase
 Custom_STM_App_Update_Char_Variable_Length

@@ -74,5 +74,6 @@ extern uint8_t GPSraw_data[15];
 
 void GPS_Start(void);
 void gpsLogo();
+void Oled_updateNumSV(void);
 
 #endif
