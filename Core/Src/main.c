@@ -50,7 +50,17 @@ uint8_t tastScheduler = 0;
 uint8_t stateChange = 1;
 uint8_t cursorChange = 1;
 
+uint8_t usbReconnected = 0;
+
+uint32_t batBuffer;
+uint32_t USBBuffer;
+float batVoltage;
+
 extern uint8_t usbConnected;
+
+const uint8_t charges[] = {	
+    0x7f, 0xf0, 0x7f, 0xf0, 0x7f, 0xf0, 0x7f, 0xf0};
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -95,7 +105,8 @@ static void MX_ADC1_Init(void);
 static void MX_RNG_Init(void);
 static void MX_RF_Init(void);
 /* USER CODE BEGIN PFP */
-
+void BatteryLevel(void);
+void USBLevel(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -163,11 +174,13 @@ int main(void)
   //Display initiation
   Oled_init();
   Oled_Clear(0x00);
+
   Oled_Update();
   //Oled_introScreen();
 
+  //Find memory page
   findStartPos();
-
+  //Block BLE from turning off USB-clock
   HAL_HSEM_FastTake(5); // Lock semaphore 5. If not BLE will stop the USB clock
 
   /* USER CODE END 2 */
@@ -182,7 +195,6 @@ int main(void)
 
     switch(currentLvl)
     {
-
       case MAIN_MENU:
         if(stateChange)
         {
@@ -190,7 +202,7 @@ int main(void)
           stateChange = 0;
         }
 
-        if(cursorChange)
+        if(cursorChange || stateChange)
         {
           if(currentCur == CUR_START)
           {
@@ -201,27 +213,29 @@ int main(void)
             DrawCircle(10, 39, 2, 0x0F);
             DrawCircle(10, 19, 2, 0x00);
           }
-
           SSD1327_UpdateArea(8, 17, 14, 43, NULL);
-
-          gpsLogo();
-
           cursorChange = 0;
         }
+        BatteryLevel();
+        USBLevel();
+
+        gpsLogo();
+
         break;
-
       case MEASURING:
-
+      
         if(stateChange)
         {
           Oled_Clear(0x00);
           Oled_Draw1BitImage(107,0, icon_gps_20x20, ICON_GPS_W, ICON_GPS_H, 0x05);
+          Oled_Draw1BitImage(110, 100, batFram, 15, 20, 0x08);
           oled_numSV();
           Oled_Update();
           stateChange = 0;
         }
 
         gpsLogo();
+        BatteryLevel();
         Oled_updateNumSV();
 
         if (tastScheduler >= 1){
@@ -239,6 +253,8 @@ int main(void)
         if(stateChange)
         {
           Oled_Clear(0x00);
+          Oled_Draw1BitImage(110, 100, batFram, 15, 20, 0x08);
+          Oled_Draw1BitImage(0,100,connecttoUSB,100,15,0x0F);
           Oled_Update();
           stateChange = 0;
         }
@@ -251,7 +267,7 @@ int main(void)
         {
           sendDataUSB();
         }
-
+        BatteryLevel();
         break;
     }
     /* USER CODE END WHILE */
@@ -410,9 +426,9 @@ static void MX_ADC1_Init(void)
 
   /** Configure Regular Channel
   */
-  sConfig.Channel = ADC_CHANNEL_VREFINT;
+  sConfig.Channel = ADC_CHANNEL_5;
   sConfig.Rank = ADC_REGULAR_RANK_1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_2CYCLES_5;
+  sConfig.SamplingTime = ADC_SAMPLETIME_640CYCLES_5;
   sConfig.SingleDiff = ADC_SINGLE_ENDED;
   sConfig.OffsetNumber = ADC_OFFSET_NONE;
   sConfig.Offset = 0;
@@ -783,6 +799,56 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+void BatteryLevel(void)
+{
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  sConfig.Channel = ADC_CHANNEL_5;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+  HAL_ADC_Start(&hadc1);
+  HAL_ADC_PollForConversion(&hadc1, 1000);
+  
+
+  batBuffer = HAL_ADC_GetValue(&hadc1);
+  batVoltage = ((batBuffer * 3.3f * 1.615f) / 4095.0f);
+
+  HAL_ADC_Stop(&hadc1);
+
+  if(batVoltage > 3.85)
+  {
+    Oled_Draw1BitImage(111,104, charges,13,4,0x08); // HIGHEST BLOCK
+    Oled_Draw1BitImage(111,109, charges,13,4,0x08); // MIDDLE BLOCK
+    Oled_Draw1BitImage(111,114, charges,13,4,0x08); // LOWEST BLOCK
+  }
+  else if((batVoltage < 3.85) && (batVoltage >= 3.5f))
+  {
+    Oled_Draw1BitImage(111,104, charges,13,4,0x00); // HIGHEST BLOCK
+    Oled_Draw1BitImage(111,109, charges,13,4,0x08); // MIDDLE BLOCK
+    Oled_Draw1BitImage(111,114, charges,13,4,0x08); // LOWEST BLOCK    
+  }
+  else{
+    Oled_Draw1BitImage(111,104, charges,13,4,0x00); // HIGHEST BLOCK
+    Oled_Draw1BitImage(111,109, charges,13,4,0x00); // MIDDLE BLOCK
+    Oled_Draw1BitImage(111,114, charges,13,4,0x08); // LOWEST BLOCK  
+  }
+
+  SSD1327_UpdateArea(110, 100, 110+15-1, 100+20-1, NULL);
+}
+
+void USBLevel(void)
+{
+  ADC_ChannelConfTypeDef sConfig = {0};
+  sConfig.Channel = ADC_CHANNEL_6;
+  sConfig.Rank = ADC_REGULAR_RANK_1;
+  HAL_ADC_ConfigChannel(&hadc1, &sConfig);
+  HAL_ADC_Start(&hadc1);
+  HAL_ADC_PollForConversion(&hadc1, 1000);
+  HAL_ADC_Stop(&hadc1);
+
+  USBBuffer = HAL_ADC_GetValue(&hadc1);
+}
+
 /* Callback function for button, rising edge */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
@@ -809,9 +875,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   }
   if(GPIO_Pin == BTN_YELLOW_Pin)
   {
-    stateChange = 1;
-    cursorChange = 1;
-    currentLvl = MAIN_MENU;
+    if(currentLvl != MAIN_MENU)
+    {
+      stateChange = 1;
+      cursorChange = 1;
+      currentLvl = MAIN_MENU;
+    }
+  }
+  if(GPIO_Pin == GPIO_PIN_1)
+  {
+    usbReconnected = 1;
+    HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_B_Pin);
   }
   lastTime = interruptTime;
 }

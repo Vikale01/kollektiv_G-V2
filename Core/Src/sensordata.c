@@ -118,36 +118,39 @@ void sendPackageToMem(void)
 // Function to find the last written page in flash
 void findStartPos(void)
 {
+    uint8_t pageIdBytes[4];
+
     for (uint32_t i = 0; i < PAGE_IN_MEMORY; i++)
     {
-        Flash_4ByteRead(i * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+        // Läs bara de sista 4 bytena från sidan
+        Flash_4ByteRead(i * BUFFER_SIZE + (BUFFER_SIZE - 4), pageIdBytes, 4);
 
-        uint32_t pageId = ((uint32_t)readBuffer[BUFFER_SIZE-4] << 24) |
-                          ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
-                          ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
-                          ((uint32_t)readBuffer[BUFFER_SIZE-1]);
+        uint32_t pageId = ((uint32_t)pageIdBytes[0] << 24) |
+                          ((uint32_t)pageIdBytes[1] << 16) |
+                          ((uint32_t)pageIdBytes[2] << 8)  |
+                          ((uint32_t)pageIdBytes[3]);
 
         if (pageId == 0xFFFFFFFF)
         {
             if (i == 0)
             {
-                // Flash is empty
+                // Flash är tom
                 addInc = 0;
                 pageCounter = 0;
                 sectorCounter = 0;
             }
             else
             {
+                // Läs sista sidan
+                Flash_4ByteRead((i - 1) * BUFFER_SIZE + (BUFFER_SIZE - 4), pageIdBytes, 4);
 
-                Flash_4ByteRead((i - 1) * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+                pageId = ((uint32_t)pageIdBytes[0] << 24) |
+                         ((uint32_t)pageIdBytes[1] << 16) |
+                         ((uint32_t)pageIdBytes[2] << 8)  |
+                         ((uint32_t)pageIdBytes[3]);
 
-                uint32_t pageId = ((uint32_t)readBuffer[BUFFER_SIZE-4] << 24) |
-                                  ((uint32_t)readBuffer[BUFFER_SIZE-3] << 16) |
-                                  ((uint32_t)readBuffer[BUFFER_SIZE-2] << 8)  |
-                                  ((uint32_t)readBuffer[BUFFER_SIZE-1]);
-
-                // Last written page is i-1
-                addInc = pageId + 1; // optional: continue numbering
+                // Senast skrivna sidan är i-1
+                addInc = pageId + 1;
                 pageCounter = (i % PAGE_PER_SECTION);
                 sectorCounter = (i / PAGE_PER_SECTION);
             }
@@ -155,12 +158,11 @@ void findStartPos(void)
         }
     }
 
-    // All pages used
+    // Alla sidor använda
     addInc = PAGE_IN_MEMORY;
     pageCounter = PAGE_IN_MEMORY % PAGE_PER_SECTION;
     sectorCounter = PAGE_IN_MEMORY / PAGE_PER_SECTION;
 }
-
 static tBleStatus sendHalfPage_ble(uint8_t *data, uint16_t length) 
 { 
     return Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, data, length);
@@ -202,9 +204,6 @@ void sendDataUSB(void) {
     }
 }
 
-void displayGNSS()
-{
-}
 
 
 
