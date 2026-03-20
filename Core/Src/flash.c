@@ -379,7 +379,7 @@ void Flash_QuadRead(uint32_t adress, uint8_t *buffer, uint32_t size)
 {
     QSPI_CommandTypeDef cmd = {0};
 
-    cmd.Instruction         = FOUR_BYTE_READ_CMD;
+    cmd.Instruction         = QUAD_READ_CMD;
     cmd.Address             = adress;
     cmd.AlternateBytes      = 0;
     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
@@ -392,6 +392,8 @@ void Flash_QuadRead(uint32_t adress, uint8_t *buffer, uint32_t size)
     cmd.NbData              = size;
     cmd.DdrMode             = 0;
     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+
+    Flash_WriteEnable();
 
     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {

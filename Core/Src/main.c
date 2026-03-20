@@ -63,7 +63,7 @@ uint8_t usbVolt = 0;
 const uint8_t charges[] = {	
     0x7f, 0xf0, 0x7f, 0xf0, 0x7f, 0xf0, 0x7f, 0xf0};
 
-uint8_t statusRegister;
+uint8_t statusRegister[255] = {0};
 
 /* USER CODE END PD */
 
@@ -174,7 +174,7 @@ int main(void)
   
   // Flash configuration
   Enable_4BYTEMODE();
-
+  Flash_QuadRead(0, statusRegister, 255);
   //Display initiation
   Oled_init();
   Oled_Clear(0x00);
