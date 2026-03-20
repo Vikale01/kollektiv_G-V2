@@ -70,6 +70,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define BAT_Pin GPIO_PIN_0
+#define BAT_GPIO_Port GPIOA
 #define BTN_YELLOW_Pin GPIO_PIN_4
 #define BTN_YELLOW_GPIO_Port GPIOA
 #define BTN_YELLOW_EXTI_IRQn EXTI4_IRQn

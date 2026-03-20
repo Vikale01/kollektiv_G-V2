@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
   29:USB_Device/App/usbd_cdc_if.c **** /* Private define ------------------------------------------------------------*/
   30:USB_Device/App/usbd_cdc_if.c **** /* Private macro -------------------------------------------------------------*/
   31:USB_Device/App/usbd_cdc_if.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 2
 
 
   32:USB_Device/App/usbd_cdc_if.c **** /* USER CODE BEGIN PV */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
   86:USB_Device/App/usbd_cdc_if.c ****   */
   87:USB_Device/App/usbd_cdc_if.c **** /* Create buffer for reception and transmission           */
   88:USB_Device/App/usbd_cdc_if.c **** /* It's up to user to redefine and/or remove those define */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 3
 
 
   89:USB_Device/App/usbd_cdc_if.c **** /** Received data over USB are stored in this buffer      */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  143:USB_Device/App/usbd_cdc_if.c **** 
  144:USB_Device/App/usbd_cdc_if.c **** USBD_CDC_ItfTypeDef USBD_Interface_fops_FS =
  145:USB_Device/App/usbd_cdc_if.c **** {
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 4
 
 
  146:USB_Device/App/usbd_cdc_if.c ****   CDC_Init_FS,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  181:USB_Device/App/usbd_cdc_if.c ****   * @param  cmd: Command code
  182:USB_Device/App/usbd_cdc_if.c ****   * @param  pbuf: Buffer containing command data (request parameters)
  183:USB_Device/App/usbd_cdc_if.c ****   * @param  length: Number of data to be sent (in bytes)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 5
 
 
  184:USB_Device/App/usbd_cdc_if.c ****   * @retval Result of the operation: USBD_OK if all operations are OK else USBD_FAIL
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  226:USB_Device/App/usbd_cdc_if.c ****   /* 6      | bDataBits  |   1   | Number Data bits (5, 6, 7, 8 or 16).          */
  227:USB_Device/App/usbd_cdc_if.c ****   /*******************************************************************************/
  228:USB_Device/App/usbd_cdc_if.c ****     case CDC_SET_LINE_CODING:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 6
 
 
  229:USB_Device/App/usbd_cdc_if.c ****         LineCoding.bitrate = (uint32_t) (pbuf[0] | (pbuf[1] << 8) |
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  248:USB_Device/App/usbd_cdc_if.c ****         usbConnected = 1; // Värden har öppnat porten (DTR active)
  249:USB_Device/App/usbd_cdc_if.c ****       } else {
  250:USB_Device/App/usbd_cdc_if.c ****         usbConnected = 0; // Värden har stängt porten
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 7
 
 
  251:USB_Device/App/usbd_cdc_if.c ****       }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  121              		.loc 1 240 19 is_stmt 0 view .LVU35
  122 0042 DA78     		ldrb	r2, [r3, #3]	@ zero_extendqisi2
  240:USB_Device/App/usbd_cdc_if.c ****         pbuf[4] = LineCoding.format;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 8
 
 
  123              		.loc 1 240 17 view .LVU36
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  160              		.loc 1 250 9 is_stmt 1 view .LVU53
  250:USB_Device/App/usbd_cdc_if.c ****       }
  161              		.loc 1 250 22 is_stmt 0 view .LVU54
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 9
 
 
  162 0064 024B     		ldr	r3, .L7+4
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  298:USB_Device/App/usbd_cdc_if.c ****   * @param  Buf: Buffer of data to be sent
  299:USB_Device/App/usbd_cdc_if.c ****   * @param  Len: Number of data to be sent (in bytes)
  300:USB_Device/App/usbd_cdc_if.c ****   * @retval USBD_OK if all operations are OK else USBD_FAIL or USBD_BUSY
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 10
 
 
  301:USB_Device/App/usbd_cdc_if.c ****   */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  201              	.LFE1113:
  203              		.section	.text.CDC_Receive_FS,"ax",%progbits
  204              		.align	1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 11
 
 
  205              		.syntax unified
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  254              		.loc 1 159 1 is_stmt 1 view -0
  255              		.cfi_startproc
  256              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 12
 
 
  257              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  305 0000 094B     		ldr	r3, .L26
  306 0002 D3F8BC32 		ldr	r3, [r3, #700]
  307              	.LVL19:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 13
 
 
  307:USB_Device/App/usbd_cdc_if.c ****     return USBD_BUSY;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  348              	.L27:
  349 0026 00BF     		.align	2
  350              	.L26:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 14
 
 
  351 0028 00000000 		.word	hUsbDeviceFS
@@ -831,37 +831,37 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 1
  401              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
  402              		.file 5 "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h"
  403              		.file 6 "USB_Device/App/usbd_cdc_if.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_cdc_if.c
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:21     .text.CDC_DeInit_FS:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:26     .text.CDC_DeInit_FS:00000000 CDC_DeInit_FS
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:41     .text.CDC_Control_FS:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:46     .text.CDC_Control_FS:00000000 CDC_Control_FS
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:171    .text.CDC_Control_FS:0000006c $d
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:377    .data.LineCoding:00000000 LineCoding
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:370    .bss.usbConnected:00000000 usbConnected
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:177    .text.CDC_TransmitCplt_FS:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:182    .text.CDC_TransmitCplt_FS:00000000 CDC_TransmitCplt_FS
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:204    .text.CDC_Receive_FS:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:209    .text.CDC_Receive_FS:00000000 CDC_Receive_FS
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:242    .text.CDC_Receive_FS:00000018 $d
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:247    .text.CDC_Init_FS:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:252    .text.CDC_Init_FS:00000000 CDC_Init_FS
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:282    .text.CDC_Init_FS:0000001c $d
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:388    .bss.UserTxBufferFS:00000000 UserTxBufferFS
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:395    .bss.UserRxBufferFS:00000000 UserRxBufferFS
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:289    .text.CDC_Transmit_FS:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:295    .text.CDC_Transmit_FS:00000000 CDC_Transmit_FS
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:351    .text.CDC_Transmit_FS:00000028 $d
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:360    .data.USBD_Interface_fops_FS:00000000 USBD_Interface_fops_FS
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:357    .data.USBD_Interface_fops_FS:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:371    .bss.usbConnected:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:374    .data.LineCoding:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:385    .bss.UserTxBufferFS:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccO2PDS8.s:392    .bss.UserRxBufferFS:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:21     .text.CDC_DeInit_FS:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:26     .text.CDC_DeInit_FS:00000000 CDC_DeInit_FS
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:41     .text.CDC_Control_FS:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:46     .text.CDC_Control_FS:00000000 CDC_Control_FS
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:171    .text.CDC_Control_FS:0000006c $d
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:377    .data.LineCoding:00000000 LineCoding
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:370    .bss.usbConnected:00000000 usbConnected
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:177    .text.CDC_TransmitCplt_FS:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:182    .text.CDC_TransmitCplt_FS:00000000 CDC_TransmitCplt_FS
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:204    .text.CDC_Receive_FS:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:209    .text.CDC_Receive_FS:00000000 CDC_Receive_FS
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:242    .text.CDC_Receive_FS:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:247    .text.CDC_Init_FS:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:252    .text.CDC_Init_FS:00000000 CDC_Init_FS
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:282    .text.CDC_Init_FS:0000001c $d
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:388    .bss.UserTxBufferFS:00000000 UserTxBufferFS
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:395    .bss.UserRxBufferFS:00000000 UserRxBufferFS
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:289    .text.CDC_Transmit_FS:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:295    .text.CDC_Transmit_FS:00000000 CDC_Transmit_FS
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:351    .text.CDC_Transmit_FS:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:360    .data.USBD_Interface_fops_FS:00000000 USBD_Interface_fops_FS
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:357    .data.USBD_Interface_fops_FS:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:371    .bss.usbConnected:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:374    .data.LineCoding:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:385    .bss.UserTxBufferFS:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccqv0IVg.s:392    .bss.UserRxBufferFS:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_CDC_SetRxBuffer

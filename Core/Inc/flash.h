@@ -9,7 +9,7 @@ extern QSPI_HandleTypeDef hqspi;
 #define READ_IDENTIFICATION_CMD                 0x9F
 #define NORMAL_READ_CMD                         0x03
 #define FOUR_BYTE_READ_CMD                      0x13
-#define FOUR_BYTE_MODE                          0XB7
+#define FOUR_BYTE_MODE                          0xB7
 #define PAGE_WRITE                              0x02
 #define FOUR_PAGE_WRITE                         0X38
 
@@ -22,6 +22,7 @@ extern QSPI_HandleTypeDef hqspi;
 #define READ_STATUSREG_CMD                      0x05
 #define READ_CONFIGREG_CMD                      0x15
 
+#define QUAD_READ_CMD                           0xEB
 
 /* Private functions *************************************************/
 void Flash_ReadJEDEC(void);
@@ -36,5 +37,6 @@ void Flash_SectorErase(uint32_t adress);
 uint8_t Flash_ConfigRegister(void);
 void Flash_NormalRead(uint32_t adress, uint8_t *buffer, uint32_t size);
 void Flash_ChipErase();
+void Flash_QuadRead(uint32_t adress, uint8_t *buffer, uint32_t size);
 
 #endif

@@ -58,8 +58,12 @@ float batVoltage;
 
 extern uint8_t usbConnected;
 
+uint8_t usbVolt = 0;
+
 const uint8_t charges[] = {	
     0x7f, 0xf0, 0x7f, 0xf0, 0x7f, 0xf0, 0x7f, 0xf0};
+
+uint8_t statusRegister;
 
 /* USER CODE END PD */
 
@@ -79,6 +83,7 @@ UART_HandleTypeDef hlpuart1;
 DMA_HandleTypeDef hdma_lpuart1_rx;
 
 QSPI_HandleTypeDef hqspi;
+DMA_HandleTypeDef hdma_quadspi;
 
 RNG_HandleTypeDef hrng;
 
@@ -106,7 +111,6 @@ static void MX_RNG_Init(void);
 static void MX_RF_Init(void);
 /* USER CODE BEGIN PFP */
 void BatteryLevel(void);
-void USBLevel(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -217,7 +221,6 @@ int main(void)
           cursorChange = 0;
         }
         BatteryLevel();
-        USBLevel();
 
         gpsLogo();
 
@@ -584,11 +587,11 @@ static void MX_QUADSPI_Init(void)
   /* USER CODE END QUADSPI_Init 1 */
   /* QUADSPI parameter configuration*/
   hqspi.Instance = QUADSPI;
-  hqspi.Init.ClockPrescaler = 255;
+  hqspi.Init.ClockPrescaler = 1;
   hqspi.Init.FifoThreshold = 4;
-  hqspi.Init.SampleShifting = QSPI_SAMPLE_SHIFTING_NONE;
+  hqspi.Init.SampleShifting = QSPI_SAMPLE_SHIFTING_HALFCYCLE;
   hqspi.Init.FlashSize = 25;
-  hqspi.Init.ChipSelectHighTime = QSPI_CS_HIGH_TIME_2_CYCLE;
+  hqspi.Init.ChipSelectHighTime = QSPI_CS_HIGH_TIME_1_CYCLE;
   hqspi.Init.ClockMode = QSPI_CLOCK_MODE_0;
   if (HAL_QSPI_Init(&hqspi) != HAL_OK)
   {
@@ -740,6 +743,9 @@ static void MX_DMA_Init(void)
   /* DMA1_Channel1_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Channel1_IRQn, 7, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+  /* DMA1_Channel2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel2_IRQn);
 
 }
 
@@ -801,27 +807,19 @@ static void MX_GPIO_Init(void)
 
 void BatteryLevel(void)
 {
-  ADC_ChannelConfTypeDef sConfig = {0};
-
-  sConfig.Channel = ADC_CHANNEL_5;
-  sConfig.Rank = ADC_REGULAR_RANK_1;
-  HAL_ADC_ConfigChannel(&hadc1, &sConfig);
   HAL_ADC_Start(&hadc1);
-  HAL_ADC_PollForConversion(&hadc1, 1000);
-  
-
+  HAL_ADC_PollForConversion(&hadc1, 1000);  
   batBuffer = HAL_ADC_GetValue(&hadc1);
-  batVoltage = ((batBuffer * 3.3f * 1.615f) / 4095.0f);
-
+  batVoltage = ((batBuffer * 3.3f) / 4095.0f) * 1.5f;
   HAL_ADC_Stop(&hadc1);
 
-  if(batVoltage > 3.85)
+  if(batVoltage > 3.7)
   {
     Oled_Draw1BitImage(111,104, charges,13,4,0x08); // HIGHEST BLOCK
     Oled_Draw1BitImage(111,109, charges,13,4,0x08); // MIDDLE BLOCK
     Oled_Draw1BitImage(111,114, charges,13,4,0x08); // LOWEST BLOCK
   }
-  else if((batVoltage < 3.85) && (batVoltage >= 3.5f))
+  else if((batVoltage < 3.7) && (batVoltage >= 3.5f))
   {
     Oled_Draw1BitImage(111,104, charges,13,4,0x00); // HIGHEST BLOCK
     Oled_Draw1BitImage(111,109, charges,13,4,0x08); // MIDDLE BLOCK
@@ -834,19 +832,6 @@ void BatteryLevel(void)
   }
 
   SSD1327_UpdateArea(110, 100, 110+15-1, 100+20-1, NULL);
-}
-
-void USBLevel(void)
-{
-  ADC_ChannelConfTypeDef sConfig = {0};
-  sConfig.Channel = ADC_CHANNEL_6;
-  sConfig.Rank = ADC_REGULAR_RANK_1;
-  HAL_ADC_ConfigChannel(&hadc1, &sConfig);
-  HAL_ADC_Start(&hadc1);
-  HAL_ADC_PollForConversion(&hadc1, 1000);
-  HAL_ADC_Stop(&hadc1);
-
-  USBBuffer = HAL_ADC_GetValue(&hadc1);
 }
 
 /* Callback function for button, rising edge */
@@ -882,11 +867,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
       currentLvl = MAIN_MENU;
     }
   }
-  if(GPIO_Pin == GPIO_PIN_1)
-  {
-    usbReconnected = 1;
-    HAL_GPIO_TogglePin(LED_G_GPIO_Port, LED_B_Pin);
-  }
+
   lastTime = interruptTime;
 }
 

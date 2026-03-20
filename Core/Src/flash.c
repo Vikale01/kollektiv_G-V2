@@ -1,6 +1,5 @@
 #include "flash.h"
 
-
 //   uint32_t Instruction;        /* Specifies the Instruction to be sent
 //                                   This parameter can be a value (8-bit) between 0x00 and 0xFF */
 //   uint32_t Address;            /* Specifies the Address to be sent (Size from 1 to 4 bytes according AddressSize)
@@ -198,7 +197,7 @@ uint8_t Flash_ReadStatusReg(void)
     cmd.AlternateBytesSize  = 0;
     cmd.DummyCycles         = 0;
     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
-    cmd.AddressMode         = 0;
+    cmd.AddressMode         = QSPI_ADDRESS_NONE;
     cmd.AlternateByteMode   = 0;
     cmd.DataMode            = QSPI_DATA_1_LINE;
     cmd.NbData              = 1;
@@ -243,17 +242,34 @@ uint8_t Flash_ConfigRegister(void)
         Error_Handler();
     }
 
+    Flash_WaitWhileBusy();
+
     if (HAL_QSPI_Receive(&hqspi, &status, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
         Error_Handler();
     }
 
+    Flash_WaitWhileBusy();
+
     return status;
 }
-
+/**
+ * @brief  Configures the MX25L51245G flash memory for high-speed Quad I/O operation.
+ * @note   This sequence performs three critical steps:
+ * 1. Enables 32-bit (4-byte) addressing mode to access the full 512Mb range.
+ * 2. Sets the Quad Enable (QE) bit in the Status/Configuration registers.
+ * 3. Ensures proper write synchronization using Flash_WaitWhileBusy().
+ * * @details The MX25L51245G requires a 16-bit write (Status Reg + Config Reg) to 
+ * persistently enable Quad Mode via the QE bit (Bit 6 of Status Register).
+ * InstructionMode is set to 1-Line for initial configuration as the 
+ * device boots in standard SPI mode.
+ * * @param  None
+ * @retval None
+ */
 void Enable_4BYTEMODE(void)
 {
     QSPI_CommandTypeDef cmd = {0};
+    uint8_t config_data[2];
 
     cmd.Instruction         = FOUR_BYTE_MODE;
     cmd.Address             = 0;
@@ -265,14 +281,39 @@ void Enable_4BYTEMODE(void)
     cmd.AddressMode         = 0;
     cmd.AlternateByteMode   = 0;
     cmd.DataMode            = 0;
-    cmd.NbData              = 0;
+    cmd.NbData              = QSPI_DATA_NONE;
     cmd.DdrMode             = 0;
     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+
+    Flash_WriteEnable();
 
     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
         Error_Handler();
-    }    
+    }
+
+    Flash_WaitWhileBusy();
+
+    Flash_WriteEnable();
+
+    config_data[0]          = 0x40;
+    config_data[1]          = 0x00;
+    cmd.Instruction         = WRITE_STATUS_CMD;
+    cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+    cmd.DataMode            = QSPI_DATA_1_LINE;
+    cmd.NbData              = 2;
+    
+    if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    if (HAL_QSPI_Transmit(&hqspi, config_data, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    Flash_WaitWhileBusy();
 }
 
 void Flash_NormalRead(uint32_t adress, uint8_t *buffer, uint32_t size)
@@ -318,6 +359,36 @@ void Flash_4ByteRead(uint32_t adress, uint8_t *buffer, uint32_t size)
     cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
     cmd.AlternateByteMode   = QSPI_ALTERNATE_BYTES_NONE;
     cmd.DataMode            = QSPI_DATA_1_LINE;
+    cmd.NbData              = size;
+    cmd.DdrMode             = 0;
+    cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
+
+    if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    if (HAL_QSPI_Receive(&hqspi, buffer, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    Flash_WaitWhileBusy();
+}
+
+void Flash_QuadRead(uint32_t adress, uint8_t *buffer, uint32_t size)
+{
+    QSPI_CommandTypeDef cmd = {0};
+
+    cmd.Instruction         = FOUR_BYTE_READ_CMD;
+    cmd.Address             = adress;
+    cmd.AlternateBytes      = 0;
+    cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
+    cmd.AlternateBytesSize  = 0;
+    cmd.DummyCycles         = 10;
+    cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+    cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+    cmd.AlternateByteMode   = QSPI_ALTERNATE_BYTES_NONE;
+    cmd.DataMode            = QSPI_DATA_4_LINES;
     cmd.NbData              = size;
     cmd.DdrMode             = 0;
     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
