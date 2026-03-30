@@ -93,7 +93,7 @@ void Flash_WritePage(uint32_t adress, uint8_t *buffer, uint32_t size)
 
     Flash_WriteEnable();
 
-    cmd.Instruction         = PAGE_WRITE;
+    cmd.Instruction         = PAGE_WRITE_12;
     cmd.Address             = adress;
     cmd.AlternateBytes      = 0;
     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
@@ -138,7 +138,7 @@ void Flash_Write4Page(uint32_t section, uint8_t *buffer, uint32_t size)
     cmd.AlternateBytesSize  = 0;
     cmd.DummyCycles         = 0;
     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
-    cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+    cmd.AddressMode         = QSPI_ADDRESS_4_LINES;
     cmd.AlternateByteMode   = 0;
     cmd.DataMode            = QSPI_DATA_4_LINES;
     cmd.NbData              = size;
@@ -271,6 +271,27 @@ void Enable_4BYTEMODE(void)
     QSPI_CommandTypeDef cmd = {0};
     uint8_t config_data[2];
 
+    Flash_WriteEnable();
+
+    config_data[0]          = 0x40;
+    config_data[1]          = 0x00;
+    cmd.Instruction         = WRITE_STATUS_CMD;
+    cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
+    cmd.DataMode            = QSPI_DATA_1_LINE;
+    cmd.NbData              = 2;
+    
+    if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    if (HAL_QSPI_Transmit(&hqspi, config_data, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    Flash_WaitWhileBusy();
+
     cmd.Instruction         = FOUR_BYTE_MODE;
     cmd.Address             = 0;
     cmd.AlternateBytes      = 0;
@@ -293,27 +314,6 @@ void Enable_4BYTEMODE(void)
     }
 
     Flash_WaitWhileBusy();
-
-    Flash_WriteEnable();
-
-    config_data[0]          = 0x40;
-    config_data[1]          = 0x00;
-    cmd.Instruction         = WRITE_STATUS_CMD;
-    cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
-    cmd.DataMode            = QSPI_DATA_1_LINE;
-    cmd.NbData              = 2;
-    
-    if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
-    {
-        Error_Handler();
-    }
-
-    if (HAL_QSPI_Transmit(&hqspi, config_data, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
-    {
-        Error_Handler();
-    }
-
-    Flash_WaitWhileBusy();
 }
 
 void Flash_NormalRead(uint32_t adress, uint8_t *buffer, uint32_t size)
@@ -323,7 +323,7 @@ void Flash_NormalRead(uint32_t adress, uint8_t *buffer, uint32_t size)
     cmd.Instruction         = NORMAL_READ_CMD;
     cmd.Address             = adress;
     cmd.AlternateBytes      = 0;
-    cmd.AddressSize         = 0;
+    cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
     cmd.AlternateBytesSize  = 0;
     cmd.DummyCycles         = 0;
     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
@@ -384,16 +384,14 @@ void Flash_QuadRead(uint32_t adress, uint8_t *buffer, uint32_t size)
     cmd.AlternateBytes      = 0;
     cmd.AddressSize         = QSPI_ADDRESS_32_BITS;
     cmd.AlternateBytesSize  = 0;
-    cmd.DummyCycles         = 10;
+    cmd.DummyCycles         = 8;
     cmd.InstructionMode     = QSPI_INSTRUCTION_1_LINE;
-    cmd.AddressMode         = QSPI_ADDRESS_1_LINE;
+    cmd.AddressMode         = QSPI_ADDRESS_4_LINES;
     cmd.AlternateByteMode   = QSPI_ALTERNATE_BYTES_NONE;
     cmd.DataMode            = QSPI_DATA_4_LINES;
     cmd.NbData              = size;
     cmd.DdrMode             = 0;
     cmd.SIOOMode            = QSPI_SIOO_INST_EVERY_CMD;
-
-    Flash_WriteEnable();
 
     if (HAL_QSPI_Command(&hqspi, &cmd, HAL_QSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
@@ -410,7 +408,7 @@ void Flash_QuadRead(uint32_t adress, uint8_t *buffer, uint32_t size)
 void Flash_SectorErase(uint32_t sector)
 {
     Flash_WriteEnable();
-
+    
     uint32_t adress = sector * 4096;
 
     QSPI_CommandTypeDef cmd = {0};
@@ -435,7 +433,7 @@ void Flash_SectorErase(uint32_t sector)
     }
 
     Flash_WaitWhileBusy();
-    Flash_WriteDisable();
+
 }
 
 void Flash_ChipErase()

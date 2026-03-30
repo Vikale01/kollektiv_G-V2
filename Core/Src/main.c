@@ -62,9 +62,7 @@ uint8_t usbVolt = 0;
 
 const uint8_t charges[] = {	
     0x7f, 0xf0, 0x7f, 0xf0, 0x7f, 0xf0, 0x7f, 0xf0};
-
-uint8_t statusRegister[255] = {0};
-
+              
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -174,7 +172,7 @@ int main(void)
   
   // Flash configuration
   Enable_4BYTEMODE();
-  Flash_QuadRead(0, statusRegister, 255);
+
   //Display initiation
   Oled_init();
   Oled_Clear(0x00);
@@ -242,12 +240,12 @@ int main(void)
         Oled_updateNumSV();
 
         if (tastScheduler >= 1){
-          //gpsLogo();
           if(GPS_connected)  // Check if gps has good connection before storing data.
           {
             packageDataToMem();
             sendPackageToMem();
           }
+
           tastScheduler = 0;
         }
         break;
@@ -587,7 +585,7 @@ static void MX_QUADSPI_Init(void)
   /* USER CODE END QUADSPI_Init 1 */
   /* QUADSPI parameter configuration*/
   hqspi.Instance = QUADSPI;
-  hqspi.Init.ClockPrescaler = 1;
+  hqspi.Init.ClockPrescaler = 10;
   hqspi.Init.FifoThreshold = 4;
   hqspi.Init.SampleShifting = QSPI_SAMPLE_SHIFTING_HALFCYCLE;
   hqspi.Init.FlashSize = 25;

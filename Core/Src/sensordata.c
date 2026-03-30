@@ -104,7 +104,7 @@ void sendPackageToMem(void)
   buffer[BUFFER_SIZE - 2] = (addInc >> 8) & 0xFF;
   buffer[BUFFER_SIZE - 1] = addInc & 0xFF;
 
-  Flash_WritePage((sectorCounter * SECTION_SIZE) + (BUFFER_SIZE * pageCounter), buffer, BUFFER_SIZE);
+  Flash_Write4Page((sectorCounter * 16) + pageCounter, buffer, BUFFER_SIZE);
 
   pageCounter++;
   addInc++;
@@ -123,7 +123,7 @@ void findStartPos(void)
     for (uint32_t i = 0; i < PAGE_IN_MEMORY; i++)
     {
         // Läs bara de sista 4 bytena från sidan
-        Flash_4ByteRead(i * BUFFER_SIZE + (BUFFER_SIZE - 4), pageIdBytes, 4);
+        Flash_NormalRead(i * BUFFER_SIZE + (BUFFER_SIZE - 4), pageIdBytes, 4);
 
         uint32_t pageId = ((uint32_t)pageIdBytes[0] << 24) |
                           ((uint32_t)pageIdBytes[1] << 16) |
@@ -142,7 +142,7 @@ void findStartPos(void)
             else
             {
                 // Läs sista sidan
-                Flash_4ByteRead((i - 1) * BUFFER_SIZE + (BUFFER_SIZE - 4), pageIdBytes, 4);
+                Flash_NormalRead((i - 1) * BUFFER_SIZE + (BUFFER_SIZE - 4), pageIdBytes, 4);
 
                 pageId = ((uint32_t)pageIdBytes[0] << 24) |
                          ((uint32_t)pageIdBytes[1] << 16) |
@@ -173,7 +173,7 @@ void sendDataStepByStep(void) {
         
         // 1. Only read from flash if we are starting a fresh page
         if (currentSubPage == 0) {
-            Flash_4ByteRead(currentBlePage * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+            Flash_NormalRead(currentBlePage * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
         }
         
         // 2. Determine which half to send
@@ -194,13 +194,12 @@ void sendDataStepByStep(void) {
 
 void sendDataUSB(void) {
     if (currentUSbPage < addInc) {
-        Flash_4ByteRead(currentUSbPage * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
+        Flash_NormalRead(currentUSbPage * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
 
         if(CDC_Transmit_FS(readBuffer, BUFFER_SIZE) == USBD_OK)
         {
           currentUSbPage++;
         }
-        
     }
 }
 
