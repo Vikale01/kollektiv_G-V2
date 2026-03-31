@@ -122,7 +122,7 @@ void findStartPos(void)
 
     for (uint32_t i = 0; i < PAGE_IN_MEMORY; i++)
     {
-        // Läs bara de sista 4 bytena från sidan
+        // only read the last 4 bytes. 
         Flash_NormalRead(i * BUFFER_SIZE + (BUFFER_SIZE - 4), pageIdBytes, 4);
 
         uint32_t pageId = ((uint32_t)pageIdBytes[0] << 24) |
@@ -134,14 +134,14 @@ void findStartPos(void)
         {
             if (i == 0)
             {
-                // Flash är tom
+                // Flash is empty
                 addInc = 0;
                 pageCounter = 0;
                 sectorCounter = 0;
             }
             else
             {
-                // Läs sista sidan
+                // Read last page
                 Flash_NormalRead((i - 1) * BUFFER_SIZE + (BUFFER_SIZE - 4), pageIdBytes, 4);
 
                 pageId = ((uint32_t)pageIdBytes[0] << 24) |
@@ -149,7 +149,7 @@ void findStartPos(void)
                          ((uint32_t)pageIdBytes[2] << 8)  |
                          ((uint32_t)pageIdBytes[3]);
 
-                // Senast skrivna sidan är i-1
+                // Last written page is i-1
                 addInc = pageId + 1;
                 pageCounter = (i % PAGE_PER_SECTION);
                 sectorCounter = (i / PAGE_PER_SECTION);
@@ -158,7 +158,7 @@ void findStartPos(void)
         }
     }
 
-    // Alla sidor använda
+    // All pages used
     addInc = PAGE_IN_MEMORY;
     pageCounter = PAGE_IN_MEMORY % PAGE_PER_SECTION;
     sectorCounter = PAGE_IN_MEMORY / PAGE_PER_SECTION;

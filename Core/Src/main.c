@@ -47,6 +47,7 @@ menuCursor currentCur = CUR_START;
 /* USER CODE BEGIN PD */
 
 uint8_t tastScheduler = 0;
+uint8_t displayScheduler = 0;
 uint8_t stateChange = 1;
 uint8_t cursorChange = 1;
 
@@ -178,7 +179,7 @@ int main(void)
   Oled_Clear(0x00);
 
   Oled_Update();
-  //Oled_introScreen();
+  Oled_introScreen();
 
   //Find memory page
   findStartPos();
@@ -234,10 +235,12 @@ int main(void)
           Oled_Update();
           stateChange = 0;
         }
-
-        gpsLogo();
-        BatteryLevel();
-        Oled_updateNumSV();
+        if(displayScheduler >= 100)
+        {
+          gpsLogo();
+          BatteryLevel();
+          Oled_updateNumSV();
+        }
 
         if (tastScheduler >= 1){
           if(GPS_connected)  // Check if gps has good connection before storing data.
@@ -803,6 +806,11 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+/**
+  * @brief Battery-status function
+  * @param None
+  * @retval None
+  */
 void BatteryLevel(void)
 {
   HAL_ADC_Start(&hadc1);
@@ -832,7 +840,11 @@ void BatteryLevel(void)
   SSD1327_UpdateArea(110, 100, 110+15-1, 100+20-1, NULL);
 }
 
-/* Callback function for button, rising edge */
+/**
+  * @brief Button-callback
+  * @param None
+  * @retval None
+  */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   uint32_t interruptTime = HAL_GetTick();
@@ -869,11 +881,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   lastTime = interruptTime;
 }
 
+/**
+  * @brief Timer-callback
+  * @param None
+  * @retval None
+  */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if (htim == &htim16)
   {
     tastScheduler++;
+    displayScheduler++;
   }
 }
 

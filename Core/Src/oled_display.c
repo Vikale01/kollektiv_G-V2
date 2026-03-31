@@ -723,11 +723,11 @@ void Oled_introScreen(void)
 
     Oled_Draw1BitImage(0,0, Afry_logo, 128, 128, 0x0F);
     Oled_Update();
-    HAL_Delay(2000);
+    HAL_Delay(1000);
     Oled_Clear(0x00);
     Oled_Draw1BitImage(0,0, KG_logo, 128, 128, 0x0F);
     Oled_Update();
-    HAL_Delay(2000);
+    HAL_Delay(1000);
 
     Oled_Clear(0x00);
 
