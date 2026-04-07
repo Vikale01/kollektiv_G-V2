@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
   28:Core/Src/stm32wbxx_it.c **** /* USER CODE BEGIN TD */
   29:Core/Src/stm32wbxx_it.c **** 
   30:Core/Src/stm32wbxx_it.c **** /* USER CODE END TD */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 2
 
 
   31:Core/Src/stm32wbxx_it.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
   35              	.L2:
   79:Core/Src/stm32wbxx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
   80:Core/Src/stm32wbxx_it.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 3
 
 
   81:Core/Src/stm32wbxx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 0 */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
   70              		.thumb
   71              		.thumb_func
   73              	MemManage_Handler:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 4
 
 
   74              	.LFB1418:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  126:Core/Src/stm32wbxx_it.c ****   /* USER CODE END BusFault_IRQn 0 */
  127:Core/Src/stm32wbxx_it.c ****   while (1)
  105              		.loc 1 127 3 view .LVU13
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 5
 
 
  128:Core/Src/stm32wbxx_it.c ****   {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  143              	.LFB1421:
  147:Core/Src/stm32wbxx_it.c **** }
  148:Core/Src/stm32wbxx_it.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 6
 
 
  149:Core/Src/stm32wbxx_it.c **** /**
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  176              		.syntax unified
  177              		.thumb
  178              		.thumb_func
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 7
 
 
  180              	PendSV_Handler:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  197:Core/Src/stm32wbxx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 1 */
  198:Core/Src/stm32wbxx_it.c **** 
  199:Core/Src/stm32wbxx_it.c ****   /* USER CODE END SysTick_IRQn 1 */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 8
 
 
  200:Core/Src/stm32wbxx_it.c **** }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  248              		.thumb
  249              		.thumb_func
  251              	RCC_IRQHandler:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 9
 
 
  252              	.LFB1426:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  245:Core/Src/stm32wbxx_it.c ****   /* USER CODE BEGIN EXTI2_IRQn 1 */
  246:Core/Src/stm32wbxx_it.c **** 
  247:Core/Src/stm32wbxx_it.c ****   /* USER CODE END EXTI2_IRQn 1 */
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 10
 
 
  248:Core/Src/stm32wbxx_it.c **** }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  265:Core/Src/stm32wbxx_it.c ****   * @brief This function handles DMA1 channel1 global interrupt.
  266:Core/Src/stm32wbxx_it.c ****   */
  267:Core/Src/stm32wbxx_it.c **** void DMA1_Channel1_IRQHandler(void)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 11
 
 
  268:Core/Src/stm32wbxx_it.c **** {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  284:Core/Src/stm32wbxx_it.c **** 
  285:Core/Src/stm32wbxx_it.c ****   /* USER CODE END DMA1_Channel2_IRQn 0 */
  286:Core/Src/stm32wbxx_it.c ****   HAL_DMA_IRQHandler(&hdma_quadspi);
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 12
 
 
  366              		.loc 1 286 3 view .LVU44
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  404 000a 00BF     		.align	2
  405              	.L33:
  406 000c 00000000 		.word	hpcd_USB_FS
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 13
 
 
  407              		.cfi_endproc
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  324:Core/Src/stm32wbxx_it.c **** {
  446              		.loc 1 324 1 is_stmt 1 view -0
  447              		.cfi_startproc
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 14
 
 
  448              		@ args = 0, pretend = 0, frame = 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  486              		.loc 1 342 3 view .LVU56
  487 0002 0248     		ldr	r0, .L43
  488 0004 FFF7FEFF 		bl	HAL_I2C_EV_IRQHandler
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 15
 
 
  489              	.LVL9:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  527              		.cfi_endproc
  528              	.LFE1435:
  530              		.section	.text.LPUART1_IRQHandler,"ax",%progbits
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 16
 
 
  531              		.align	1
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  379:Core/Src/stm32wbxx_it.c **** void IPCC_C1_RX_IRQHandler(void)
  380:Core/Src/stm32wbxx_it.c **** {
  570              		.loc 1 380 1 is_stmt 1 view -0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 17
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 17
 
 
  571              		.cfi_startproc
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  400:Core/Src/stm32wbxx_it.c **** 
  401:Core/Src/stm32wbxx_it.c ****   /* USER CODE END IPCC_C1_TX_IRQn 1 */
  402:Core/Src/stm32wbxx_it.c **** }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 18
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 18
 
 
  608              		.loc 1 402 1 is_stmt 0 view .LVU69
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  421:Core/Src/stm32wbxx_it.c **** void QUADSPI_IRQHandler(void)
  422:Core/Src/stm32wbxx_it.c **** {
  648              		.loc 1 422 1 is_stmt 1 view -0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 19
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 19
 
 
  649              		.cfi_startproc
@@ -1129,72 +1129,72 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 1
  687              		.file 17 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
  688              		.file 18 "Core/Inc/hw_if.h"
  689              		.file 19 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 20
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_it.c
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:21     .text.NMI_Handler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:27     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:44     .text.HardFault_Handler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:67     .text.MemManage_Handler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:90     .text.BusFault_Handler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:113    .text.UsageFault_Handler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:136    .text.SVC_Handler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:142    .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:155    .text.DebugMon_Handler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:174    .text.PendSV_Handler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:193    .text.SysTick_Handler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:219    .text.RTC_WKUP_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:225    .text.RTC_WKUP_IRQHandler:00000000 RTC_WKUP_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:245    .text.RCC_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:251    .text.RCC_IRQHandler:00000000 RCC_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:264    .text.EXTI2_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:270    .text.EXTI2_IRQHandler:00000000 EXTI2_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:291    .text.EXTI4_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:297    .text.EXTI4_IRQHandler:00000000 EXTI4_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:318    .text.DMA1_Channel1_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:324    .text.DMA1_Channel1_IRQHandler:00000000 DMA1_Channel1_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:344    .text.DMA1_Channel1_IRQHandler:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:349    .text.DMA1_Channel2_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:355    .text.DMA1_Channel2_IRQHandler:00000000 DMA1_Channel2_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:375    .text.DMA1_Channel2_IRQHandler:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:380    .text.USB_LP_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:386    .text.USB_LP_IRQHandler:00000000 USB_LP_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:406    .text.USB_LP_IRQHandler:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:411    .text.EXTI9_5_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:417    .text.EXTI9_5_IRQHandler:00000000 EXTI9_5_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:438    .text.TIM1_UP_TIM16_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:444    .text.TIM1_UP_TIM16_IRQHandler:00000000 TIM1_UP_TIM16_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:464    .text.TIM1_UP_TIM16_IRQHandler:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:469    .text.I2C1_EV_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:475    .text.I2C1_EV_IRQHandler:00000000 I2C1_EV_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:495    .text.I2C1_EV_IRQHandler:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:500    .text.I2C1_ER_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:506    .text.I2C1_ER_IRQHandler:00000000 I2C1_ER_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:526    .text.I2C1_ER_IRQHandler:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:531    .text.LPUART1_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:537    .text.LPUART1_IRQHandler:00000000 LPUART1_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:557    .text.LPUART1_IRQHandler:0000000c $d
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:562    .text.IPCC_C1_RX_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:568    .text.IPCC_C1_RX_IRQHandler:00000000 IPCC_C1_RX_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:588    .text.IPCC_C1_TX_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:594    .text.IPCC_C1_TX_IRQHandler:00000000 IPCC_C1_TX_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:614    .text.HSEM_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:620    .text.HSEM_IRQHandler:00000000 HSEM_IRQHandler
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\cclra9oV.s 			page 21
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:21     .text.NMI_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:27     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:44     .text.HardFault_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:67     .text.MemManage_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:90     .text.BusFault_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:113    .text.UsageFault_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:136    .text.SVC_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:142    .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:155    .text.DebugMon_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:174    .text.PendSV_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:193    .text.SysTick_Handler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:219    .text.RTC_WKUP_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:225    .text.RTC_WKUP_IRQHandler:00000000 RTC_WKUP_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:245    .text.RCC_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:251    .text.RCC_IRQHandler:00000000 RCC_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:264    .text.EXTI2_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:270    .text.EXTI2_IRQHandler:00000000 EXTI2_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:291    .text.EXTI4_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:297    .text.EXTI4_IRQHandler:00000000 EXTI4_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:318    .text.DMA1_Channel1_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:324    .text.DMA1_Channel1_IRQHandler:00000000 DMA1_Channel1_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:344    .text.DMA1_Channel1_IRQHandler:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:349    .text.DMA1_Channel2_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:355    .text.DMA1_Channel2_IRQHandler:00000000 DMA1_Channel2_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:375    .text.DMA1_Channel2_IRQHandler:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:380    .text.USB_LP_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:386    .text.USB_LP_IRQHandler:00000000 USB_LP_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:406    .text.USB_LP_IRQHandler:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:411    .text.EXTI9_5_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:417    .text.EXTI9_5_IRQHandler:00000000 EXTI9_5_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:438    .text.TIM1_UP_TIM16_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:444    .text.TIM1_UP_TIM16_IRQHandler:00000000 TIM1_UP_TIM16_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:464    .text.TIM1_UP_TIM16_IRQHandler:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:469    .text.I2C1_EV_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:475    .text.I2C1_EV_IRQHandler:00000000 I2C1_EV_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:495    .text.I2C1_EV_IRQHandler:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:500    .text.I2C1_ER_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:506    .text.I2C1_ER_IRQHandler:00000000 I2C1_ER_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:526    .text.I2C1_ER_IRQHandler:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:531    .text.LPUART1_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:537    .text.LPUART1_IRQHandler:00000000 LPUART1_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:557    .text.LPUART1_IRQHandler:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:562    .text.IPCC_C1_RX_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:568    .text.IPCC_C1_RX_IRQHandler:00000000 IPCC_C1_RX_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:588    .text.IPCC_C1_TX_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:594    .text.IPCC_C1_TX_IRQHandler:00000000 IPCC_C1_TX_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:614    .text.HSEM_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:620    .text.HSEM_IRQHandler:00000000 HSEM_IRQHandler
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s 			page 21
 
 
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:640    .text.QUADSPI_IRQHandler:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:646    .text.QUADSPI_IRQHandler:00000000 QUADSPI_IRQHandler
-C:\Users\bku598\AppData\Local\Temp\cclra9oV.s:666    .text.QUADSPI_IRQHandler:0000000c $d
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:640    .text.QUADSPI_IRQHandler:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:646    .text.QUADSPI_IRQHandler:00000000 QUADSPI_IRQHandler
+C:\Users\bku598\AppData\Local\Temp\ccMzbVWm.s:666    .text.QUADSPI_IRQHandler:0000000c $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick

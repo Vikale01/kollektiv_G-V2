@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
   27:Core/Src/oled_display.c ****     0x3f, 0xf8, 0xff, 0xfe, 0xff, 0xfe, 0x80, 0x02, 
   28:Core/Src/oled_display.c ****     0x80, 0x02, 0x80, 0x02, 0x80, 0x02, 0x80, 0x02, 
   29:Core/Src/oled_display.c **** 	0x80, 0x02, 0x80, 0x02, 0x80, 0x02, 0x80, 0x02, 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 2
 
 
   30:Core/Src/oled_display.c ****     0x80, 0x02, 0x80, 0x02, 0x80, 0x02, 0x80, 0x02, 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
   84:Core/Src/oled_display.c **** 		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
   85:Core/Src/oled_display.c **** 		0x00, 0x00, 0x00
   86:Core/Src/oled_display.c **** };
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 3
 
 
   87:Core/Src/oled_display.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  141:Core/Src/oled_display.c **** const uint8_t digit_4[] = { 
  142:Core/Src/oled_display.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
  143:Core/Src/oled_display.c ****     0x00, 0x00, 0x02, 0x00, 0x06, 0x00, 0x0a, 0x00, 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 4
 
 
  144:Core/Src/oled_display.c **** 	0x12, 0x00, 0x22, 0x00, 0x3f, 0x80, 0x02, 0x00, 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  198:Core/Src/oled_display.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
  199:Core/Src/oled_display.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x7F, 0xFE, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
  200:Core/Src/oled_display.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0xFF, 0xFF, 0xF8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 5
 
 
  201:Core/Src/oled_display.c ****     0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0xFF, 0xFF, 0xFF, 0xFF, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  255:Core/Src/oled_display.c ****     0x7F, 0xFF, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0xF8, 0x00, 0x01, 0xFC, 0x00, 0x00, 0xFE,
  256:Core/Src/oled_display.c ****     0x7E, 0x7F, 0xFC, 0x00, 0x00, 0x00, 0x00, 0x00, 0x3F, 0xF0, 0x00, 0x01, 0xF8, 0x00, 0x00, 0x7E,
  257:Core/Src/oled_display.c ****     0x7E, 0x1F, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xC0, 0x00, 0x03, 0xF8, 0x00, 0x00, 0x7E,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 6
 
 
  258:Core/Src/oled_display.c ****     0xFE, 0x0F, 0xFF, 0xC0, 0x00, 0x00, 0x00, 0x00, 0xFF, 0x80, 0x00, 0x03, 0xF8, 0x00, 0x00, 0x7E,
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  312:Core/Src/oled_display.c ****     0x00, 0x00, 0x00, 0x7F, 0xF8, 0x00, 0x00, 0x1F, 0x87, 0xF0, 0x00, 0x1F, 0xFC, 0x00, 0x00, 0x00,
  313:Core/Src/oled_display.c ****     0x00, 0x00, 0x00, 0x3F, 0xFC, 0x00, 0x00, 0x1F, 0xC7, 0xE0, 0x00, 0x3F, 0xF8, 0x00, 0x00, 0x00,
  314:Core/Src/oled_display.c ****     0x00, 0x00, 0x00, 0x0F, 0xFF, 0x80, 0x00, 0x1F, 0xCF, 0xE0, 0x01, 0xFF, 0xF0, 0x00, 0x00, 0x00,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 7
 
 
  315:Core/Src/oled_display.c ****     0x00, 0x00, 0x00, 0x03, 0xFF, 0xE0, 0x00, 0x0F, 0xFF, 0xC0, 0x07, 0xFF, 0xC0, 0x00, 0x00, 0x00,
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  369:Core/Src/oled_display.c ****     0x07, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0F, 0xE0,
  370:Core/Src/oled_display.c ****     0x07, 0xE0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0F, 0xE0,
  371:Core/Src/oled_display.c ****     0x0F, 0xE0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07, 0xE0,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 8
 
 
  372:Core/Src/oled_display.c ****     0x0F, 0xE0, 0x00, 0x00, 0x00, 0x06, 0x18, 0x00, 0x00, 0x60, 0x00, 0x00, 0xC0, 0x00, 0x07, 0xF0,
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  426:Core/Src/oled_display.c ****     0x00, 0x3F, 0x80, 0x00, 0x00, 0x00, 0x3E, 0x00, 0x00, 0xF0, 0x00, 0x00, 0x00, 0x01, 0xFC, 0x00,
  427:Core/Src/oled_display.c ****     0x00, 0x1F, 0xC0, 0x00, 0x00, 0x00, 0x3F, 0x00, 0x00, 0xF0, 0x00, 0x00, 0x00, 0x03, 0xF8, 0x00,
  428:Core/Src/oled_display.c ****     0x00, 0x1F, 0xC0, 0x00, 0x00, 0x00, 0x1F, 0x80, 0x01, 0xF0, 0x00, 0x00, 0x00, 0x03, 0xF0, 0x00,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 9
 
 
  429:Core/Src/oled_display.c ****     0x00, 0x0F, 0xE0, 0x00, 0x00, 0x00, 0x0F, 0xF0, 0x07, 0xF0, 0x00, 0x00, 0x00, 0x07, 0xF0, 0x00,
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
   51 0018 0022     		movs	r2, #0
   52 001a 7A21     		movs	r1, #122
   53 001c 0248     		ldr	r0, .L3
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 10
 
 
   54              	.LVL1:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  102 0018 4022     		movs	r2, #64
  103 001a 7A21     		movs	r1, #122
  104 001c 0248     		ldr	r0, .L7
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 11
 
 
  105              	.LVL4:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  479:Core/Src/oled_display.c ****     Oled_SendCommand(SET_DISPLAY_STARTLINE);
  152              		.loc 1 479 5 view .LVU16
  153 0014 A120     		movs	r0, #161
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 12
 
 
  154 0016 FFF7FEFF 		bl	Oled_SendCommand
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  193 0050 B320     		movs	r0, #179
  194 0052 FFF7FEFF 		bl	Oled_SendCommand
  195              	.LVL19:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 13
 
 
  495:Core/Src/oled_display.c ****     Oled_SendCommand(0x50);                     // Ställer front clock divider / oscillator freque
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  232              		.loc 1 512 5 view .LVU36
  233 008c 6220     		movs	r0, #98
  234 008e FFF7FEFF 		bl	Oled_SendCommand
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 14
 
 
  235              	.LVL29:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  274              		.align	1
  275              		.global	Oled_DrawPixel
  276              		.syntax unified
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 15
 
 
  277              		.thumb
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  319              		.loc 1 541 9 is_stmt 1 view .LVU60
  320 0026 21F00F01 		bic	r1, r1, #15
  321              	.LVL41:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 16
 
 
  322              		.loc 1 541 9 is_stmt 0 view .LVU61
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  365              	.LFB1420:
  551:Core/Src/oled_display.c **** 
  552:Core/Src/oled_display.c **** void Oled_Update(void)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 17
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 17
 
 
  553:Core/Src/oled_display.c **** {
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  409 003a 4022     		movs	r2, #64
  410 003c 7A21     		movs	r1, #122
  411 003e 0448     		ldr	r0, .L19+4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 18
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 18
 
 
  412 0040 FFF7FEFF 		bl	HAL_I2C_Mem_Write
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  570:Core/Src/oled_display.c **** }
  462              		.loc 1 570 1 view .LVU86
  463 0016 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 19
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 19
 
 
  464              	.L24:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  511              		.loc 1 579 5 is_stmt 1 view .LVU93
  512 0016 1520     		movs	r0, #21
  513              	.LVL63:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 20
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 20
 
 
  514              		.loc 1 579 5 is_stmt 0 view .LVU94
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  555 0048 11E0     		b	.L26
  556              	.LVL73:
  557              	.L27:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 21
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 21
 
 
  593:Core/Src/oled_display.c ****     {
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  596              	.LVL77:
  597              	.L30:
  598              		.loc 1 602 1 view .LVU119
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 22
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 22
 
 
  599 007a 00BF     		.align	2
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  647              		.loc 1 610 13 is_stmt 1 view .LVU126
  648 0012 3A46     		mov	r2, r7
  649 0014 2146     		mov	r1, r4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 23
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 23
 
 
  650 0016 2846     		mov	r0, r5
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  689 0032 BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
  690              		.loc 1 613 1 view .LVU140
  691              		.cfi_endproc
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 24
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 24
 
 
  692              	.LFE1423:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  743              		.loc 1 618 26 discriminator 1 view .LVU149
  744 001c 0093     		str	r3, [sp]
  745              	.L39:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 25
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 25
 
 
  746              	.LVL91:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  631:Core/Src/oled_display.c ****         if (e2 >= dy)
  788              		.loc 1 631 9 is_stmt 1 view .LVU164
  789              		.loc 1 631 12 is_stmt 0 view .LVU165
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 26
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 26
 
 
  790 0050 B9EB440F 		cmp	r9, r4, lsl #1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  627:Core/Src/oled_display.c ****             break;
  833              		.loc 1 627 22 discriminator 1 view .LVU180
  834 0076 019B     		ldr	r3, [sp, #4]
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 27
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 27
 
 
  835 0078 9E42     		cmp	r6, r3
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  884              		.loc 1 646 5 is_stmt 1 view .LVU186
  885              	.LVL107:
  647:Core/Src/oled_display.c ****     int y = 0;
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 28
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 28
 
 
  886              		.loc 1 647 5 view .LVU187
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  915 0028 019A     		ldr	r2, [sp, #4]
  916 002a 9342     		cmp	r3, r2
  917 002c 59DB     		blt	.L56
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 29
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 29
 
 
  652:Core/Src/oled_display.c ****         Oled_DrawPixel(x0 + y, y0 + x, color);
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  959 007a 3246     		mov	r2, r6
  960 007c 5946     		mov	r1, fp
  961 007e 9B46     		mov	fp, r3
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 30
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 30
 
 
  962 0080 1846     		mov	r0, r3
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1005 00c4 FFF7FEFF 		bl	Oled_DrawPixel
  1006              	.LVL119:
  661:Core/Src/oled_display.c ****         if (err <= 0)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 31
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 31
 
 
  1007              		.loc 1 661 9 view .LVU224
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1051              	.LVL124:
  1052              	.LFB1426:
  673:Core/Src/oled_display.c **** 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 32
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 32
 
 
  674:Core/Src/oled_display.c **** void Oled_Draw1BitImage(int x0, int y0, const uint8_t *img, uint8_t w, uint8_t h, uint8_t color)
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1100              		.loc 1 680 36 is_stmt 0 discriminator 2 view .LVU246
  1101 0022 E4B2     		uxtb	r4, r4
  1102              	.LVL129:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 33
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 33
 
 
  1103              	.L62:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1149              		.loc 1 680 21 is_stmt 0 view .LVU263
  1150 005c 0024     		movs	r4, #0
  1151 005e E1E7     		b	.L62
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 34
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 34
 
 
  1152              	.L66:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1199              		.cfi_def_cfa_offset 40
  1200 000c 0546     		mov	r5, r0
  1201 000e 0E46     		mov	r6, r1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 35
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 35
 
 
  1202 0010 1F46     		mov	r7, r3
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1248              	.LVL141:
  701:Core/Src/oled_display.c **** }
  1249              		.loc 1 701 1 is_stmt 0 view .LVU280
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 36
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 36
 
 
  1250 006a 02B0     		add	sp, sp, #8
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1300 0018 627B     		ldrb	r2, [r4, #13]	@ zero_extendqisi2
  1301 001a 6421     		movs	r1, #100
  1302 001c 2D20     		movs	r0, #45
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 37
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 37
 
 
  1303 001e FFF7FEFF 		bl	Oled_drawDigit
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1351              		.cfi_offset 4, -16
  1352              		.cfi_offset 5, -12
  1353              		.cfi_offset 6, -8
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 38
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 38
 
 
  1354              		.cfi_offset 14, -4
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1404 0002 82B0     		sub	sp, sp, #8
  1405              	.LCFI32:
  1406              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 39
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 39
 
 
  722:Core/Src/oled_display.c ****     Oled_Clear(0x00);
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1450 004c 0020     		movs	r0, #0
  1451 004e FFF7FEFF 		bl	Oled_Clear
  1452              	.LVL160:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 40
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 40
 
 
  733:Core/Src/oled_display.c **** 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1498 00a0 00000000 		.word	numSV
  1499              		.cfi_endproc
  1500              	.LFE1430:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 41
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 41
 
 
  1502              		.section	.text.mainMenu,"ax",%progbits
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1549 0030 1423     		movs	r3, #20
  1550 0032 0093     		str	r3, [sp]
  1551 0034 2346     		mov	r3, r4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 42
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 42
 
 
  1552 0036 064A     		ldr	r2, .L88+8
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1601 000e 6421     		movs	r1, #100
  1602 0010 0020     		movs	r0, #0
  1603 0012 FFF7FEFF 		bl	Oled_Draw1BitImage
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 43
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 43
 
 
  1604              	.LVL170:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1633 0076 FFC003FF 		.ascii	"\377\300\003\377\377\360\000\000\000\000\000\000\000"
  1633      FFF00000 
  1633      00000000 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 44
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 44
 
 
  1633      00
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1647      00000000 
  1647      00000000 
  1647      1F
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 45
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 45
 
 
  1648 013d F8000000 		.ascii	"\370\000\000\000\000?\340\000\000\000\000\000\000\000"
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1661      7F800000 
  1661      00
  1662 01f6 00000000 		.ascii	"\000\000\000\000\000\000\000\003\374\000\000\177\000"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 46
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 46
 
 
  1662      00000003 
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1675      07
  1676 02af E00FE000 		.ascii	"\340\017\340\000\000\000\006\030\000\000`\000\000\300"
  1676      00000618 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 47
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 47
 
 
  1676      00006000 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1690 0377 30006E01 		.ascii	"0\000n\001\200\300g\000\376\177\001\303\203\001\206"
  1690      80C06700 
  1690      FE7F01C3 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 48
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 48
 
 
  1690      830186
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1703      7E000000 
  1703      00000000 
  1703      000000
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 49
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 49
 
 
  1704 044b 00000000 		.ascii	"\000\000\000\000~~\000\000\000\000\000\000\000\000\000"
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1717      80000000 
  1717      00
  1718 0516 F8000000 		.ascii	"\370\000\000\000\000\000\000\000\001\370\037\200\000"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 50
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 50
 
 
  1718      00000000 
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1731      00
  1732 05cc 00003F80 		.ascii	"\000\000?\200\000\374\000\000\000\000\370\000\000\360"
  1732      00FC0000 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 51
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 51
 
 
  1732      0000F800 
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1746 068a 0000007F 		.ascii	"\000\000\000\177\200\000\000\000\377\000\000\000\000"
  1746      80000000 
  1746      FF000000 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 52
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 52
 
 
  1746      00
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1760      000000FF 
  1760      F0000000 
  1760      00
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 53
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 53
 
 
  1761 0751 000003FF 		.ascii	"\000\000\003\377\300\000\000\000\000\003\377\300\000"
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1775              		.global	Afry_logo
  1776              		.section	.rodata.Afry_logo,"a"
  1777              		.align	2
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 54
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 54
 
 
  1780              	Afry_logo:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1794      00000000 
  1794      07FFC000 
  1794      00
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 55
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 55
 
 
  1795 00b8 000003FF 		.ascii	"\000\000\003\377\340\000\000\000\000\000\000\037\376"
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1808      FE000000 
  1808      01
  1809 0172 FF000000 		.ascii	"\377\000\000\000\000\000\000\000\000\017\377\377\000"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 56
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 56
 
 
  1809      00000000 
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1822      03
  1823 022c FF3FFF00 		.ascii	"\377?\377\000\001\376\000\000\000\000\177\377\377\000"
  1823      01FE0000 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 57
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 57
 
 
  1823      00007FFF 
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1837 02e8 0000FFC0 		.ascii	"\000\000\377\300\017\340\003\370\037\377\377\360\000"
  1837      0FE003F8 
  1837      1FFFFFF0 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 58
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 58
 
 
  1837      00
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1851      01F80000 
  1851      7E7E1FFF 
  1851      000000
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 59
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 59
 
 
  1852 03b6 0000FFC0 		.ascii	"\000\000\377\300\000\003\370\000\000~\376\017\377\300"
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1865      F0000000 
  1865      7F0000
  1866 047e 00FE7E00 		.ascii	"\000\376~\000\000\000\016\000\177\340\000\000\000\376"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 60
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 60
 
 
  1866      00000E00 
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1879      00
  1880 053a 1FC00000 		.ascii	"\037\300\000\000\003\360\017\300\000\000\000\001\374"
  1880      03F00FC0 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 61
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 61
 
 
  1880      00000001 
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1894 05f8 0003F000 		.ascii	"\000\003\360\000\000\000\376\000\000\177\200\000\000"
  1894      0000FE00 
  1894      007F8000 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 62
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 62
 
 
  1894      00
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1908      00FE0000 
  1908      07FC0000 
  1908      00
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 63
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 63
 
 
  1909 06c1 003FF000 		.ascii	"\000?\360\000\000\000\376\000\374\000\000\017\370\000"
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1922      FFFE0000 
  1922      00
  1923 077f 00000000 		.ascii	"\000\000\000\000\000\037\377\374\007\377\377\377\370"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 64
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 64
 
 
  1923      001FFFFC 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1942      00
  1943 0027 00000000 		.ascii	"\000\000\000\000\003\310\020\000\000\000\000\000\000"
  1943      03C81000 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 65
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 65
 
 
  1943      00000000 
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  1969              		.align	2
  1972              	digit_7:
  1973 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000?\000\001\000"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 66
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 66
 
 
  1973      00000000 
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  2008 000e 01000100 		.ascii	"\001\000\001\000\016\000\001\000\001\000!\000\036\000"
  2008      0E000100 
  2008      01002100 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 67
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 67
 
 
  2008      1E00
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  2044      07FE000E 
  2044      67801C63 
  2044      800067
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 68
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 68
 
 
  2045 002f 80006E00 		.ascii	"\200\000n\000\000|\000\000x\000\000`\000"
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  2063      00000000 
  2063      000000
  2064 00ab 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 69
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 69
 
 
  2064      00000000 
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  2082 00a2 C7DE3A41 		.ascii	"\307\336:A\340\000\000\000\000\000\000\000\000\000\000"
  2082      E0000000 
  2082      00000000 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 70
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 70
 
 
  2082      000000
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  2100      04442420 
  2101 009c 38F21211 		.ascii	"8\362\022\021\343\216\007<\003\203\307\300\000\000\000"
  2101      E38E073C 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 71
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 71
 
 
  2101      0383C7C0 
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  2133 0010 00000000 		.word	digit_4
  2134 0014 00000000 		.word	digit_5
  2135 0018 00000000 		.word	digit_6
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 72
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 72
 
 
  2136 001c 00000000 		.word	digit_7
@@ -4291,103 +4291,103 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 1
  2163              		.file 12 "Core/Inc/oled_display.h"
  2164              		.file 13 "C:\\dev\\tools\\gcc-arm-none-eabi-13.3\\bin\\../lib/gcc/arm-none-eabi/13.3.1/../../../..
  2165              		.file 14 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 73
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 73
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 oled_display.c
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:21     .text.Oled_SendCommand:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:27     .text.Oled_SendCommand:00000000 Oled_SendCommand
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:68     .text.Oled_SendCommand:00000028 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:73     .text.Oled_SendData:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:79     .text.Oled_SendData:00000000 Oled_SendData
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:118    .text.Oled_SendData:00000028 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:123    .text.Oled_init:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:129    .text.Oled_init:00000000 Oled_init
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:274    .text.Oled_DrawPixel:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:280    .text.Oled_DrawPixel:00000000 Oled_DrawPixel
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:353    .text.Oled_DrawPixel:00000044 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2149   .bss.buffer:00000000 buffer
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:358    .text.Oled_Update:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:364    .text.Oled_Update:00000000 Oled_Update
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:423    .text.Oled_Update:0000004c $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:429    .text.Oled_Clear:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:435    .text.Oled_Clear:00000000 Oled_Clear
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:467    .text.Oled_Clear:00000018 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:472    .text.SSD1327_UpdateArea:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:478    .text.SSD1327_UpdateArea:00000000 SSD1327_UpdateArea
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:601    .text.SSD1327_UpdateArea:0000007c $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:607    .text.DrawSquare:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:613    .text.DrawSquare:00000000 DrawSquare
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:695    .text.DrawLine:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:701    .text.DrawLine:00000000 DrawLine
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:851    .text.DrawCircle:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:857    .text.DrawCircle:00000000 DrawCircle
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1044   .text.Oled_Draw1BitImage:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1050   .text.Oled_Draw1BitImage:00000000 Oled_Draw1BitImage
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1166   .text.Oled_drawDigit:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1172   .text.Oled_drawDigit:00000000 Oled_drawDigit
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1260   .text.Oled_drawDigit:00000070 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2128   .data.digits:00000000 digits
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1266   .text.UpdateClockDisplay:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1272   .text.UpdateClockDisplay:00000000 UpdateClockDisplay
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1329   .text.UpdateClockDisplay:00000040 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1334   .text.Oled_drawColon:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1340   .text.Oled_drawColon:00000000 Oled_drawColon
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1385   .text.Oled_introScreen:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1391   .text.Oled_introScreen:00000000 Oled_introScreen
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1494   .text.Oled_introScreen:00000090 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1780   .rodata.Afry_logo:00000000 Afry_logo
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1623   .rodata.KG_logo:00000000 KG_logo
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2109   .rodata.icon_gps_20x20:00000000 icon_gps_20x20
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2041   .rodata.icon_bt_20x20:00000000 icon_bt_20x20
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1939   .rodata.numSV:00000000 numSV
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1503   .text.mainMenu:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1509   .text.mainMenu:00000000 mainMenu
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1569   .text.mainMenu:00000048 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2071   .rodata.startMeasure:00000000 startMeasure
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2051   .rodata.sendData_Logo:00000000 sendData_Logo
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2119   .rodata.batFram:00000000 batFram
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1576   .text.oled_numSV:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1582   .text.oled_numSV:00000000 oled_numSV
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1614   .text.oled_numSV:0000001c $d
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s 			page 74
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:21     .text.Oled_SendCommand:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:27     .text.Oled_SendCommand:00000000 Oled_SendCommand
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:68     .text.Oled_SendCommand:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:73     .text.Oled_SendData:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:79     .text.Oled_SendData:00000000 Oled_SendData
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:118    .text.Oled_SendData:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:123    .text.Oled_init:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:129    .text.Oled_init:00000000 Oled_init
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:274    .text.Oled_DrawPixel:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:280    .text.Oled_DrawPixel:00000000 Oled_DrawPixel
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:353    .text.Oled_DrawPixel:00000044 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2149   .bss.buffer:00000000 buffer
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:358    .text.Oled_Update:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:364    .text.Oled_Update:00000000 Oled_Update
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:423    .text.Oled_Update:0000004c $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:429    .text.Oled_Clear:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:435    .text.Oled_Clear:00000000 Oled_Clear
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:467    .text.Oled_Clear:00000018 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:472    .text.SSD1327_UpdateArea:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:478    .text.SSD1327_UpdateArea:00000000 SSD1327_UpdateArea
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:601    .text.SSD1327_UpdateArea:0000007c $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:607    .text.DrawSquare:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:613    .text.DrawSquare:00000000 DrawSquare
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:695    .text.DrawLine:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:701    .text.DrawLine:00000000 DrawLine
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:851    .text.DrawCircle:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:857    .text.DrawCircle:00000000 DrawCircle
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1044   .text.Oled_Draw1BitImage:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1050   .text.Oled_Draw1BitImage:00000000 Oled_Draw1BitImage
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1166   .text.Oled_drawDigit:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1172   .text.Oled_drawDigit:00000000 Oled_drawDigit
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1260   .text.Oled_drawDigit:00000070 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2128   .data.digits:00000000 digits
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1266   .text.UpdateClockDisplay:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1272   .text.UpdateClockDisplay:00000000 UpdateClockDisplay
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1329   .text.UpdateClockDisplay:00000040 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1334   .text.Oled_drawColon:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1340   .text.Oled_drawColon:00000000 Oled_drawColon
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1385   .text.Oled_introScreen:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1391   .text.Oled_introScreen:00000000 Oled_introScreen
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1494   .text.Oled_introScreen:00000090 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1780   .rodata.Afry_logo:00000000 Afry_logo
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1623   .rodata.KG_logo:00000000 KG_logo
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2109   .rodata.icon_gps_20x20:00000000 icon_gps_20x20
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2041   .rodata.icon_bt_20x20:00000000 icon_bt_20x20
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1939   .rodata.numSV:00000000 numSV
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1503   .text.mainMenu:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1509   .text.mainMenu:00000000 mainMenu
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1569   .text.mainMenu:00000048 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2071   .rodata.startMeasure:00000000 startMeasure
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2051   .rodata.sendData_Logo:00000000 sendData_Logo
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2119   .rodata.batFram:00000000 batFram
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1576   .text.oled_numSV:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1582   .text.oled_numSV:00000000 oled_numSV
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1614   .text.oled_numSV:0000001c $d
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s 			page 74
 
 
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1620   .rodata.KG_logo:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1777   .rodata.Afry_logo:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1936   .rodata.numSV:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1955   .rodata.digit_9:00000000 digit_9
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1952   .rodata.digit_9:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1964   .rodata.digit_8:00000000 digit_8
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1961   .rodata.digit_8:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1972   .rodata.digit_7:00000000 digit_7
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1969   .rodata.digit_7:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1981   .rodata.digit_6:00000000 digit_6
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1978   .rodata.digit_6:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1989   .rodata.digit_5:00000000 digit_5
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1986   .rodata.digit_5:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1997   .rodata.digit_4:00000000 digit_4
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:1994   .rodata.digit_4:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2006   .rodata.digit_3:00000000 digit_3
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2003   .rodata.digit_3:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2015   .rodata.digit_2:00000000 digit_2
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2012   .rodata.digit_2:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2024   .rodata.digit_1:00000000 digit_1
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2021   .rodata.digit_1:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2033   .rodata.digit_0:00000000 digit_0
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2030   .rodata.digit_0:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2038   .rodata.icon_bt_20x20:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2048   .rodata.sendData_Logo:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2068   .rodata.startMeasure:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2090   .rodata.connecttoUSB:00000000 connecttoUSB
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2087   .rodata.connecttoUSB:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2106   .rodata.icon_gps_20x20:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2116   .rodata.batFram:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2125   .data.digits:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2143   .bss.display_busy:00000000 display_busy
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2144   .bss.display_busy:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccVGFMmy.s:2146   .bss.buffer:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1620   .rodata.KG_logo:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1777   .rodata.Afry_logo:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1936   .rodata.numSV:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1955   .rodata.digit_9:00000000 digit_9
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1952   .rodata.digit_9:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1964   .rodata.digit_8:00000000 digit_8
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1961   .rodata.digit_8:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1972   .rodata.digit_7:00000000 digit_7
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1969   .rodata.digit_7:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1981   .rodata.digit_6:00000000 digit_6
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1978   .rodata.digit_6:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1989   .rodata.digit_5:00000000 digit_5
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1986   .rodata.digit_5:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1997   .rodata.digit_4:00000000 digit_4
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:1994   .rodata.digit_4:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2006   .rodata.digit_3:00000000 digit_3
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2003   .rodata.digit_3:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2015   .rodata.digit_2:00000000 digit_2
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2012   .rodata.digit_2:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2024   .rodata.digit_1:00000000 digit_1
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2021   .rodata.digit_1:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2033   .rodata.digit_0:00000000 digit_0
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2030   .rodata.digit_0:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2038   .rodata.icon_bt_20x20:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2048   .rodata.sendData_Logo:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2068   .rodata.startMeasure:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2090   .rodata.connecttoUSB:00000000 connecttoUSB
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2087   .rodata.connecttoUSB:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2106   .rodata.icon_gps_20x20:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2116   .rodata.batFram:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2125   .data.digits:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2143   .bss.display_busy:00000000 display_busy
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2144   .bss.display_busy:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccny8rTm.s:2146   .bss.buffer:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_I2C_Mem_Write

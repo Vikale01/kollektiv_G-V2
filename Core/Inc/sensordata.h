@@ -15,4 +15,6 @@ void sendDataStepByStep(void);
 
 void sendDataUSB(void);
 
+void sendDataUSB_Live(uint8_t buffer[12]);
+
 #endif

@@ -7,10 +7,7 @@
 /* Includes -----------------------------------------------*/
 #include "gps.h"
 
-/* extern UART_HandleTypeDef huart2;
-extern DMA_HandleTypeDef handle_GPDMA1_Channel2;
- */
-
+/* Hardware handles from main/stm32xxxx_it.c */
 extern UART_HandleTypeDef hlpuart1;
 extern DMA_HandleTypeDef hdma_lpuart1_rx;
 
@@ -28,8 +25,9 @@ uint8_t start_pos = 0;
 uint8_t lastNumSV;
 
 /**
- * @brief  Verify UBX checksum
- * @return True if checksum is valid
+ * @brief   Verify UBX checksum (8-bit Fletcher algorithm)
+ * @param   p: Pointer to the start of the UBX message
+ * @return  1 if checksum is valid, 0 otherwise
  */
 static uint8_t checkSum(volatile uint8_t *p)
 {
@@ -40,6 +38,7 @@ static uint8_t checkSum(volatile uint8_t *p)
         ck_a += p[i];
         ck_b += ck_a;
     }
+    /* Compare calculated checksum with the two bytes at the end of the packet */
     if((ck_a == p[98]) && (ck_b == p[99])) return 1;
     return 0;
 }
@@ -132,7 +131,9 @@ void GPS_Start(void)
     __HAL_DMA_DISABLE_IT(&hdma_lpuart1_rx, DMA_IT_HT); 
 
 }
-
+/**
+ * @brief   Scan the buffer to find the UBX sync sequence (0xB5 0x62)
+ */
 void Find_start(void)
 {
     for (int i = 0; i < RX_BUFFER_LEN - 1; i++)
@@ -170,7 +171,9 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 // }
 
 
-
+/**
+ * @brief   Updates the GPS status icon on the OLED display
+ */
 void gpsLogo()
 {
     if (GPS_connected && logoSwitched == 0)
@@ -186,7 +189,9 @@ void gpsLogo()
         logoSwitched = 0;
     }
 }
-
+/**
+ * @brief   Updates the satellite count on the OLED if the value has changed
+ */
 void Oled_updateNumSV(void)
 {
     if(lastNumSV != myGpsData.numSV)

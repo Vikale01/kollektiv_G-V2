@@ -8,22 +8,23 @@
 /* Includes -----------------------------------------------*/
 #include "sensordata.h"
 
+/* Logic Constants */
 #define BMI_SAMPLES_PER_PAGE    18
 #define BUFFER_SIZE             256
 #define HEADER_SIZE             25
 #define SECTION_SIZE            4096
 #define PAGE_PER_SECTION        16
-
 #define PAGE_IN_MEMORY          250000
 
+/* State Variables */
 static bool bufferFull = false; 
 
+/* Raw sensor data storage */
 uint8_t GPSraw_data[15]; 
 uint8_t BMEraw_data[8]; 
 uint8_t BMIraw_data[12]; 
 
 static uint8_t headerBuffer[HEADER_SIZE];
-
 static uint8_t bufferPointer = 0;
 static uint8_t dataCounter = 0;
 
@@ -36,9 +37,12 @@ static uint8_t readBuffer[BUFFER_SIZE];
 
 static uint32_t currentBlePage = 0;
 static uint8_t  currentSubPage = 0; // 0 for first half, 1 for second half
-
 static uint32_t currentUSbPage = 0;
 
+/**
+ * @brief  Constructs a metadata header for a new data page.
+ * Includes BME280 environment data and GPS coordinates.
+ */
 static void packageHeader(void)
 {
   BME280_ReadMeasurement_Raw(BMEraw_data);
@@ -52,6 +56,10 @@ static void packageHeader(void)
   headerBuffer[24] = 0xAA;
 }
 
+/**
+ * @brief  Appends IMU data to the RAM buffer. 
+ * Starts a new page with a header if the buffer is empty.
+ */
 void packageDataToMem(void)
 {
   // Put header values ONCE first in buffer
@@ -77,6 +85,10 @@ void packageDataToMem(void)
     bufferFull = true;
   }
 }
+
+/**
+ * @brief  Manages sector transitions. Erases the next sector before writing.
+ */
 static void newSectionCheck(void)
 {
   if(pageCounter >= PAGE_PER_SECTION)
@@ -93,6 +105,10 @@ static void newSectionCheck(void)
   }
 }
 
+/**
+ * @brief  Writes the full RAM buffer to Flash memory.
+ * Includes a 4-byte Page ID at the end for recovery/tracking.
+ */
 void sendPackageToMem(void)
 {
   if(!bufferFull){return;}
@@ -115,7 +131,10 @@ void sendPackageToMem(void)
   memset(buffer, 0xFF, BUFFER_SIZE);
 }
 
-// Function to find the last written page in flash
+/**
+ * @brief  Scans Flash memory on boot to find the last written page.
+ * Enables the system to resume logging without overwriting old data.
+ */
 void findStartPos(void)
 {
     uint8_t pageIdBytes[4];
@@ -163,11 +182,16 @@ void findStartPos(void)
     pageCounter = PAGE_IN_MEMORY % PAGE_PER_SECTION;
     sectorCounter = PAGE_IN_MEMORY / PAGE_PER_SECTION;
 }
+
 static tBleStatus sendHalfPage_ble(uint8_t *data, uint16_t length) 
 { 
     return Custom_STM_App_Update_Char_Variable_Length(CUSTOM_STM_DP, data, length);
 }
 
+/**
+ * @brief  Sends log data over BLE in 128-byte segments.
+ * Splits each 256-byte Flash page into two BLE transmissions.
+ */
 void sendDataStepByStep(void) {
     if (currentBlePage < addInc) {
         
@@ -192,6 +216,9 @@ void sendDataStepByStep(void) {
     }
 }
 
+/**
+ * @brief  Dumps Flash data over USB CDC (Virtual COM Port).
+ */
 void sendDataUSB(void) {
     if (currentUSbPage < addInc) {
         Flash_NormalRead(currentUSbPage * BUFFER_SIZE, readBuffer, BUFFER_SIZE);
@@ -203,6 +230,14 @@ void sendDataUSB(void) {
     }
 }
 
+/**
+ * @brief  Live-stream IMU data over USB for real-time visualization.
+ */
+void sendDataUSB_Live(uint8_t buffer[12])
+{
+  BMI270_ReadMeasurement_raw(buffer);
+  CDC_Transmit_FS(buffer, 12);
+}
 
 
 

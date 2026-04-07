@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
   28:Core/Src/bmi270.c ****     0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00,
   29:Core/Src/bmi270.c ****     0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e,
   30:Core/Src/bmi270.c ****     0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0x80,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 2
 
 
   31:Core/Src/bmi270.c ****     0x80, 0x2e, 0x00, 0xc1, 0x80, 0x2e, 0x00, 0xc1, 0xe0, 0x5f, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00,
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
   85:Core/Src/bmi270.c ****     0x21, 0x2e, 0x7b, 0x00, 0x01, 0x2e, 0x7c, 0x00, 0x00, 0xb2, 0x90, 0x2e, 0x09, 0x03, 0x01, 0x2e,
   86:Core/Src/bmi270.c ****     0x31, 0x01, 0x08, 0x00, 0xb2, 0x04, 0x2f, 0x98, 0x2e, 0x47, 0xcb, 0x10, 0x30, 0x21, 0x2e, 0x77,
   87:Core/Src/bmi270.c ****     0x01, 0x2e, 0x7c, 0x00, 0x01, 0x08, 0x00, 0xb2, 0x61, 0x2f, 0x03, 0x2e, 0x89, 0x00, 0x01, 0x2e,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 3
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 3
 
 
   88:Core/Src/bmi270.c ****     0xbc, 0x98, 0xb8, 0x05, 0xb2, 0x0f, 0x58, 0x23, 0x2f, 0x07, 0x90, 0x09, 0x54, 0x00, 0x30, 0x37,
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  142:Core/Src/bmi270.c ****     0x84, 0x23, 0x2e, 0x7a, 0x00, 0x02, 0x42, 0x02, 0x32, 0x25, 0x2e, 0x62, 0xf5, 0x05, 0x2e, 0xd6,
  143:Core/Src/bmi270.c ****     0x25, 0x2e, 0xd6, 0x00, 0x02, 0x31, 0x25, 0x2e, 0x60, 0xf5, 0x05, 0x2e, 0x8a, 0x00, 0x0b, 0x50,
  144:Core/Src/bmi270.c ****     0xb2, 0x0b, 0x2f, 0x05, 0x2e, 0xca, 0xf5, 0xf0, 0x3e, 0x90, 0x08, 0x25, 0x2e, 0xca, 0xf5, 0x05,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 4
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 4
 
 
  145:Core/Src/bmi270.c ****     0xe0, 0x3f, 0x90, 0x08, 0x25, 0x2e, 0x59, 0xf5, 0x90, 0x6f, 0xa1, 0x6f, 0xb3, 0x6f, 0xc4, 0x6f,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  199:Core/Src/bmi270.c ****     0xd5, 0x6f, 0x52, 0x40, 0x50, 0x43, 0xc1, 0x7f, 0xd5, 0x7f, 0x10, 0x25, 0x98, 0x2e, 0xfe, 0xc9,
  200:Core/Src/bmi270.c ****     0x2e, 0x74, 0xc0, 0x86, 0x6f, 0x30, 0x28, 0x92, 0x6f, 0x82, 0x8c, 0xa5, 0x6f, 0x6f, 0x52, 0x69,
  201:Core/Src/bmi270.c ****     0xdb, 0x2f, 0x19, 0xa0, 0x15, 0x30, 0x03, 0x2f, 0x00, 0x30, 0x21, 0x2e, 0x81, 0x01, 0x0a, 0x2d,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 5
 
 
  202:Core/Src/bmi270.c ****     0x01, 0x05, 0x28, 0x42, 0x36, 0x21, 0x2e, 0x81, 0x01, 0x02, 0x0e, 0x01, 0x2f, 0x98, 0x2e, 0xf3,
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  256:Core/Src/bmi270.c ****     0x00, 0xbc, 0x84, 0x02, 0x80, 0x82, 0x40, 0x00, 0x40, 0x90, 0x0e, 0xd5, 0x6f, 0x02, 0x2f, 0x15,
  257:Core/Src/bmi270.c ****     0xf3, 0x03, 0x41, 0x91, 0x05, 0x30, 0x07, 0x2f, 0x67, 0x50, 0x3d, 0x80, 0x2b, 0x2e, 0x8f, 0x01,
  258:Core/Src/bmi270.c ****     0x80, 0x00, 0x2e, 0x05, 0x42, 0x02, 0x2c, 0x00, 0x30, 0x00, 0x30, 0xa2, 0x6f, 0x98, 0x8a, 0x86,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 6
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 6
 
 
  259:Core/Src/bmi270.c ****     0x05, 0x2f, 0x98, 0x2e, 0xf3, 0x03, 0xc0, 0x30, 0x21, 0x2e, 0x95, 0x01, 0x06, 0x25, 0x1a, 0x25,
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  313:Core/Src/bmi270.c ****     0xae, 0x07, 0x80, 0xab, 0x04, 0x2f, 0x80, 0x91, 0x0a, 0x2f, 0x86, 0x6f, 0x73, 0x0f, 0x07, 0x2f,
  314:Core/Src/bmi270.c ****     0xb2, 0x04, 0x2f, 0x54, 0x42, 0x45, 0x42, 0x12, 0x30, 0x04, 0x2c, 0x11, 0x30, 0x02, 0x2c, 0x11,
  315:Core/Src/bmi270.c ****     0x02, 0xbc, 0x0f, 0xb8, 0xd2, 0x7f, 0x00, 0xb2, 0x0a, 0x2f, 0x01, 0x2e, 0xfc, 0x00, 0x05, 0x2e,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 7
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 7
 
 
  316:Core/Src/bmi270.c ****     0x1a, 0x02, 0x2f, 0x21, 0x2e, 0xc7, 0x01, 0x03, 0x2d, 0x02, 0x2c, 0x01, 0x30, 0x01, 0x30, 0xb0,
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  370:Core/Src/bmi270.c ****     0x42, 0x9b, 0x42, 0x8b, 0x42, 0x55, 0x42, 0x32, 0x7f, 0x40, 0xa9, 0xc3, 0x6f, 0x71, 0x7f, 0x02,
  371:Core/Src/bmi270.c ****     0xc3, 0x7f, 0x03, 0x2f, 0x40, 0x91, 0x15, 0x2f, 0x00, 0xa7, 0x13, 0x2f, 0x00, 0xa4, 0x11, 0x2f,
  372:Core/Src/bmi270.c ****     0x2e, 0x79, 0xca, 0x55, 0x6f, 0xb7, 0x54, 0x54, 0x41, 0x82, 0x00, 0xf3, 0x3f, 0x45, 0x41, 0xcb,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 8
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 8
 
 
  373:Core/Src/bmi270.c ****     0x98, 0x2e, 0x37, 0xca, 0x35, 0x6f, 0xa4, 0x6f, 0x41, 0x43, 0x03, 0x2c, 0x00, 0x43, 0xa4, 0x6f,
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  427:Core/Src/bmi270.c ****     0x64, 0xcf, 0x10, 0x30, 0x98, 0x2e, 0xdc, 0x03, 0x20, 0x26, 0xc0, 0x6f, 0x02, 0x31, 0x12, 0x42,
  428:Core/Src/bmi270.c ****     0x42, 0x37, 0x80, 0x01, 0x30, 0x01, 0x42, 0xf3, 0x37, 0xf7, 0x52, 0xfb, 0x50, 0x44, 0x40, 0xa2,
  429:Core/Src/bmi270.c ****     0x8b, 0x31, 0x09, 0x2e, 0x5e, 0xf7, 0xf9, 0x54, 0xe3, 0x08, 0x83, 0x42, 0x1b, 0x42, 0x23, 0x33,
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 9
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 9
 
 
  430:Core/Src/bmi270.c ****     0x84, 0x0b, 0x40, 0x33, 0x30, 0x83, 0x42, 0x0b, 0x42, 0xe0, 0x7f, 0xd1, 0x7f, 0x98, 0x2e, 0x58,
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33              		.loc 1 481 1 is_stmt 0 view .LVU1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 10
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 10
 
 
   34 0000 00B5     		push	{lr}
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
   75              	.L6:
   76 0028 00000000 		.word	hi2c1
   77              		.cfi_endproc
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 11
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 11
 
 
   78              	.LFE1416:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  510:Core/Src/bmi270.c ****     }
  511:Core/Src/bmi270.c ****  
  512:Core/Src/bmi270.c **** 	if (chip_id != CHIP_ID) { return BMI270_ERR_CHIP_ID; }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 12
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 12
 
 
  118              		.loc 1 512 2 is_stmt 1 view .LVU18
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  558:Core/Src/bmi270.c ****         }
  559:Core/Src/bmi270.c **** 
  560:Core/Src/bmi270.c ****         if (status_value == 0x01)
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 13
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 13
 
 
  561:Core/Src/bmi270.c ****         {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  160              	.L24:
  519:Core/Src/bmi270.c **** 
  161              		.loc 1 519 5 is_stmt 1 view .LVU29
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 14
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 14
 
 
  162 0054 0A20     		movs	r0, #10
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  205 009e D021     		movs	r1, #208
  206 00a0 2A48     		ldr	r0, .L29
  207 00a2 FFF7FEFF 		bl	HAL_I2C_Mem_Write
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 15
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 15
 
 
  208              	.LVL9:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  250 00e4 0292     		str	r2, [sp, #8]
  251 00e6 0193     		str	r3, [sp, #4]
  252 00e8 0DF11502 		add	r2, sp, #21
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 16
 
 
  253 00ec 0092     		str	r2, [sp]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  560:Core/Src/bmi270.c ****         {
  295              		.loc 1 560 12 view .LVU65
  296 012a 012B     		cmp	r3, #1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 17
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 17
 
 
  297 012c 04D0     		beq	.L11
@@ -1015,12 +1015,17 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  341              	BMI270_Configure:
  342              	.LFB1418:
  576:Core/Src/bmi270.c **** 
- 577:Core/Src/bmi270.c **** int BMI270_Configure()
- 578:Core/Src/bmi270.c **** {
- 343              		.loc 1 578 1 is_stmt 1 view -0
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 18
+ 577:Core/Src/bmi270.c **** /**
+ 578:Core/Src/bmi270.c ****  * @brief  configuration function for the IMU.
+ 579:Core/Src/bmi270.c ****  * Sets power modes, ranges, and data rates for Accel/Gyro.
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 18
 
 
+ 580:Core/Src/bmi270.c ****  * @return 0 on success, 1 on failure
+ 581:Core/Src/bmi270.c ****  */
+ 582:Core/Src/bmi270.c **** int BMI270_Configure()
+ 583:Core/Src/bmi270.c **** {
+ 343              		.loc 1 583 1 is_stmt 1 view -0
  344              		.cfi_startproc
  345              		@ args = 0, pretend = 0, frame = 8
  346              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1032,67 +1037,67 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  352 0002 86B0     		sub	sp, sp, #24
  353              	.LCFI9:
  354              		.cfi_def_cfa_offset 32
- 579:Core/Src/bmi270.c ****     uint8_t reg_value = 0x00;
- 355              		.loc 1 579 5 view .LVU76
- 356              		.loc 1 579 13 is_stmt 0 view .LVU77
+ 584:Core/Src/bmi270.c ****     uint8_t reg_value = 0x00;
+ 355              		.loc 1 584 5 view .LVU76
+ 356              		.loc 1 584 13 is_stmt 0 view .LVU77
  357 0004 0023     		movs	r3, #0
  358 0006 8DF81730 		strb	r3, [sp, #23]
- 580:Core/Src/bmi270.c **** 
- 581:Core/Src/bmi270.c ****     if(BMI270_WriteConfig() != 0)
- 359              		.loc 1 581 5 is_stmt 1 view .LVU78
- 360              		.loc 1 581 8 is_stmt 0 view .LVU79
+ 585:Core/Src/bmi270.c **** 
+ 586:Core/Src/bmi270.c ****     if(BMI270_WriteConfig() != 0)
+ 359              		.loc 1 586 5 is_stmt 1 view .LVU78
+ 360              		.loc 1 586 8 is_stmt 0 view .LVU79
  361 000a FFF7FEFF 		bl	BMI270_WriteConfig
  362              	.LVL21:
- 363              		.loc 1 581 7 discriminator 1 view .LVU80
+ 363              		.loc 1 586 7 discriminator 1 view .LVU80
  364 000e 18B1     		cbz	r0, .L40
- 582:Core/Src/bmi270.c ****     {
- 583:Core/Src/bmi270.c ****         return 1;
- 365              		.loc 1 583 16 view .LVU81
+ 587:Core/Src/bmi270.c ****     {
+ 588:Core/Src/bmi270.c ****         return 1;
+ 365              		.loc 1 588 16 view .LVU81
  366 0010 0124     		movs	r4, #1
  367              	.L31:
- 584:Core/Src/bmi270.c ****     }
- 585:Core/Src/bmi270.c **** 
- 586:Core/Src/bmi270.c ****     reg_value = 0x0E;
- 587:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CTRL, 1, &reg_value, 1, 1000) != HAL_
- 588:Core/Src/bmi270.c ****     {
- 589:Core/Src/bmi270.c ****         return 1;
- 590:Core/Src/bmi270.c ****     }
- 591:Core/Src/bmi270.c ****     HAL_Delay(10);
- 592:Core/Src/bmi270.c **** 
- 593:Core/Src/bmi270.c ****     reg_value = 0xA8;
- 594:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_CONF, 1, &reg_value, 1, 1000) != HAL_
- 595:Core/Src/bmi270.c ****     {
- 596:Core/Src/bmi270.c ****         return 1;
- 597:Core/Src/bmi270.c ****     }
- 598:Core/Src/bmi270.c ****     HAL_Delay(1);
- 599:Core/Src/bmi270.c **** 
- 600:Core/Src/bmi270.c ****     reg_value = 0x01;
- 601:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_RANGE, 1, &reg_value, 1, 1000) != HAL
- 602:Core/Src/bmi270.c ****     {
- 603:Core/Src/bmi270.c ****         return 1;
- 604:Core/Src/bmi270.c ****     }
- 605:Core/Src/bmi270.c ****     HAL_Delay(1);
- 606:Core/Src/bmi270.c **** 
- 607:Core/Src/bmi270.c ****     reg_value = 0xA9;
- 608:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_GYR_CONF, 1, &reg_value, 1, 1000) != HAL_
- 609:Core/Src/bmi270.c ****     {
- 610:Core/Src/bmi270.c ****         return 1;
- 611:Core/Src/bmi270.c ****     }
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 19
+ 589:Core/Src/bmi270.c ****     }
+ 590:Core/Src/bmi270.c **** 
+ 591:Core/Src/bmi270.c ****     reg_value = 0x0E;
+ 592:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CTRL, 1, &reg_value, 1, 1000) != HAL_
+ 593:Core/Src/bmi270.c ****     {
+ 594:Core/Src/bmi270.c ****         return 1;
+ 595:Core/Src/bmi270.c ****     }
+ 596:Core/Src/bmi270.c ****     HAL_Delay(10);
+ 597:Core/Src/bmi270.c **** 
+ 598:Core/Src/bmi270.c ****     reg_value = 0xA8;
+ 599:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 600:Core/Src/bmi270.c ****     {
+ 601:Core/Src/bmi270.c ****         return 1;
+ 602:Core/Src/bmi270.c ****     }
+ 603:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 604:Core/Src/bmi270.c **** 
+ 605:Core/Src/bmi270.c ****     reg_value = 0x01;
+ 606:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_RANGE, 1, &reg_value, 1, 1000) != HAL
+ 607:Core/Src/bmi270.c ****     {
+ 608:Core/Src/bmi270.c ****         return 1;
+ 609:Core/Src/bmi270.c ****     }
+ 610:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 611:Core/Src/bmi270.c **** 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 19
 
 
- 612:Core/Src/bmi270.c ****     HAL_Delay(1);
- 613:Core/Src/bmi270.c **** 
- 614:Core/Src/bmi270.c ****     reg_value = 0x02;
- 615:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CONF, 1, &reg_value, 1, 1000) != HAL_
- 616:Core/Src/bmi270.c ****     {
- 617:Core/Src/bmi270.c ****         return 1;
- 618:Core/Src/bmi270.c ****     }
- 619:Core/Src/bmi270.c ****     HAL_Delay(1);
- 620:Core/Src/bmi270.c **** 
- 621:Core/Src/bmi270.c ****     return 0; //ALLT OK
- 622:Core/Src/bmi270.c **** }
- 368              		.loc 1 622 1 view .LVU82
+ 612:Core/Src/bmi270.c ****     reg_value = 0xA9;
+ 613:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_GYR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 614:Core/Src/bmi270.c ****     {
+ 615:Core/Src/bmi270.c ****         return 1;
+ 616:Core/Src/bmi270.c ****     }
+ 617:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 618:Core/Src/bmi270.c **** 
+ 619:Core/Src/bmi270.c ****     reg_value = 0x02;
+ 620:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 621:Core/Src/bmi270.c ****     {
+ 622:Core/Src/bmi270.c ****         return 1;
+ 623:Core/Src/bmi270.c ****     }
+ 624:Core/Src/bmi270.c ****     HAL_Delay(1);
+ 625:Core/Src/bmi270.c **** 
+ 626:Core/Src/bmi270.c ****     return 0; //ALLT OK
+ 627:Core/Src/bmi270.c **** }
+ 368              		.loc 1 627 1 view .LVU82
  369 0012 2046     		mov	r0, r4
  370 0014 06B0     		add	sp, sp, #24
  371              	.LCFI10:
@@ -1104,16 +1109,16 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  377              	.LCFI11:
  378              		.cfi_restore_state
  379 0018 0446     		mov	r4, r0
- 586:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CTRL, 1, &reg_value, 1, 1000) != HAL_
- 380              		.loc 1 586 5 is_stmt 1 view .LVU83
- 586:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CTRL, 1, &reg_value, 1, 1000) != HAL_
- 381              		.loc 1 586 15 is_stmt 0 view .LVU84
+ 591:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CTRL, 1, &reg_value, 1, 1000) != HAL_
+ 380              		.loc 1 591 5 is_stmt 1 view .LVU83
+ 591:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CTRL, 1, &reg_value, 1, 1000) != HAL_
+ 381              		.loc 1 591 15 is_stmt 0 view .LVU84
  382 001a 0E23     		movs	r3, #14
  383 001c 8DF81730 		strb	r3, [sp, #23]
- 587:Core/Src/bmi270.c ****     {
- 384              		.loc 1 587 5 is_stmt 1 view .LVU85
- 587:Core/Src/bmi270.c ****     {
- 385              		.loc 1 587 8 is_stmt 0 view .LVU86
+ 592:Core/Src/bmi270.c ****     {
+ 384              		.loc 1 592 5 is_stmt 1 view .LVU85
+ 592:Core/Src/bmi270.c ****     {
+ 385              		.loc 1 592 8 is_stmt 0 view .LVU86
  386 0020 4FF47A73 		mov	r3, #1000
  387 0024 0293     		str	r3, [sp, #8]
  388 0026 0123     		movs	r3, #1
@@ -1125,32 +1130,32 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  394 0034 3048     		ldr	r0, .L46
  395 0036 FFF7FEFF 		bl	HAL_I2C_Mem_Write
  396              	.LVL22:
- 587:Core/Src/bmi270.c ****     {
- 397              		.loc 1 587 7 discriminator 1 view .LVU87
+ 592:Core/Src/bmi270.c ****     {
+ 397              		.loc 1 592 7 discriminator 1 view .LVU87
  398 003a 08B1     		cbz	r0, .L41
- 589:Core/Src/bmi270.c ****     }
- 399              		.loc 1 589 16 view .LVU88
+ 594:Core/Src/bmi270.c ****     }
+ 399              		.loc 1 594 16 view .LVU88
  400 003c 0124     		movs	r4, #1
  401 003e E8E7     		b	.L31
  402              	.L41:
- 591:Core/Src/bmi270.c **** 
- 403              		.loc 1 591 5 is_stmt 1 view .LVU89
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 20
+
+
+ 596:Core/Src/bmi270.c **** 
+ 403              		.loc 1 596 5 is_stmt 1 view .LVU89
  404 0040 0A20     		movs	r0, #10
  405 0042 FFF7FEFF 		bl	HAL_Delay
  406              	.LVL23:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 20
-
-
- 593:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_CONF, 1, &reg_value, 1, 1000) != HAL_
- 407              		.loc 1 593 5 view .LVU90
- 593:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_CONF, 1, &reg_value, 1, 1000) != HAL_
- 408              		.loc 1 593 15 is_stmt 0 view .LVU91
+ 598:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 407              		.loc 1 598 5 view .LVU90
+ 598:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 408              		.loc 1 598 15 is_stmt 0 view .LVU91
  409 0046 A823     		movs	r3, #168
  410 0048 8DF81730 		strb	r3, [sp, #23]
- 594:Core/Src/bmi270.c ****     {
- 411              		.loc 1 594 5 is_stmt 1 view .LVU92
- 594:Core/Src/bmi270.c ****     {
- 412              		.loc 1 594 8 is_stmt 0 view .LVU93
+ 599:Core/Src/bmi270.c ****     {
+ 411              		.loc 1 599 5 is_stmt 1 view .LVU92
+ 599:Core/Src/bmi270.c ****     {
+ 412              		.loc 1 599 8 is_stmt 0 view .LVU93
  413 004c 4FF47A73 		mov	r3, #1000
  414 0050 0293     		str	r3, [sp, #8]
  415 0052 0123     		movs	r3, #1
@@ -1162,29 +1167,29 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  421 0060 2548     		ldr	r0, .L46
  422 0062 FFF7FEFF 		bl	HAL_I2C_Mem_Write
  423              	.LVL24:
- 594:Core/Src/bmi270.c ****     {
- 424              		.loc 1 594 7 discriminator 1 view .LVU94
+ 599:Core/Src/bmi270.c ****     {
+ 424              		.loc 1 599 7 discriminator 1 view .LVU94
  425 0066 08B1     		cbz	r0, .L42
- 596:Core/Src/bmi270.c ****     }
- 426              		.loc 1 596 16 view .LVU95
+ 601:Core/Src/bmi270.c ****     }
+ 426              		.loc 1 601 16 view .LVU95
  427 0068 0124     		movs	r4, #1
  428 006a D2E7     		b	.L31
  429              	.L42:
- 598:Core/Src/bmi270.c **** 
- 430              		.loc 1 598 5 is_stmt 1 view .LVU96
+ 603:Core/Src/bmi270.c **** 
+ 430              		.loc 1 603 5 is_stmt 1 view .LVU96
  431 006c 0120     		movs	r0, #1
  432 006e FFF7FEFF 		bl	HAL_Delay
  433              	.LVL25:
- 600:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_RANGE, 1, &reg_value, 1, 1000) != HAL
- 434              		.loc 1 600 5 view .LVU97
- 600:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_RANGE, 1, &reg_value, 1, 1000) != HAL
- 435              		.loc 1 600 15 is_stmt 0 view .LVU98
+ 605:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_RANGE, 1, &reg_value, 1, 1000) != HAL
+ 434              		.loc 1 605 5 view .LVU97
+ 605:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_RANGE, 1, &reg_value, 1, 1000) != HAL
+ 435              		.loc 1 605 15 is_stmt 0 view .LVU98
  436 0072 0123     		movs	r3, #1
  437 0074 8DF81730 		strb	r3, [sp, #23]
- 601:Core/Src/bmi270.c ****     {
- 438              		.loc 1 601 5 is_stmt 1 view .LVU99
- 601:Core/Src/bmi270.c ****     {
- 439              		.loc 1 601 8 is_stmt 0 view .LVU100
+ 606:Core/Src/bmi270.c ****     {
+ 438              		.loc 1 606 5 is_stmt 1 view .LVU99
+ 606:Core/Src/bmi270.c ****     {
+ 439              		.loc 1 606 8 is_stmt 0 view .LVU100
  440 0078 4FF47A72 		mov	r2, #1000
  441 007c 0292     		str	r2, [sp, #8]
  442 007e 0193     		str	r3, [sp, #4]
@@ -1193,34 +1198,34 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  445 0086 4122     		movs	r2, #65
  446 0088 D021     		movs	r1, #208
  447 008a 1B48     		ldr	r0, .L46
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 21
+
+
  448 008c FFF7FEFF 		bl	HAL_I2C_Mem_Write
  449              	.LVL26:
- 601:Core/Src/bmi270.c ****     {
- 450              		.loc 1 601 7 discriminator 1 view .LVU101
+ 606:Core/Src/bmi270.c ****     {
+ 450              		.loc 1 606 7 discriminator 1 view .LVU101
  451 0090 08B1     		cbz	r0, .L43
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 21
-
-
- 603:Core/Src/bmi270.c ****     }
- 452              		.loc 1 603 16 view .LVU102
+ 608:Core/Src/bmi270.c ****     }
+ 452              		.loc 1 608 16 view .LVU102
  453 0092 0124     		movs	r4, #1
  454 0094 BDE7     		b	.L31
  455              	.L43:
- 605:Core/Src/bmi270.c **** 
- 456              		.loc 1 605 5 is_stmt 1 view .LVU103
+ 610:Core/Src/bmi270.c **** 
+ 456              		.loc 1 610 5 is_stmt 1 view .LVU103
  457 0096 0120     		movs	r0, #1
  458 0098 FFF7FEFF 		bl	HAL_Delay
  459              	.LVL27:
- 607:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_GYR_CONF, 1, &reg_value, 1, 1000) != HAL_
- 460              		.loc 1 607 5 view .LVU104
- 607:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_GYR_CONF, 1, &reg_value, 1, 1000) != HAL_
- 461              		.loc 1 607 15 is_stmt 0 view .LVU105
+ 612:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_GYR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 460              		.loc 1 612 5 view .LVU104
+ 612:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_GYR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 461              		.loc 1 612 15 is_stmt 0 view .LVU105
  462 009c A923     		movs	r3, #169
  463 009e 8DF81730 		strb	r3, [sp, #23]
- 608:Core/Src/bmi270.c ****     {
- 464              		.loc 1 608 5 is_stmt 1 view .LVU106
- 608:Core/Src/bmi270.c ****     {
- 465              		.loc 1 608 8 is_stmt 0 view .LVU107
+ 613:Core/Src/bmi270.c ****     {
+ 464              		.loc 1 613 5 is_stmt 1 view .LVU106
+ 613:Core/Src/bmi270.c ****     {
+ 465              		.loc 1 613 8 is_stmt 0 view .LVU107
  466 00a2 4FF47A73 		mov	r3, #1000
  467 00a6 0293     		str	r3, [sp, #8]
  468 00a8 0123     		movs	r3, #1
@@ -1232,35 +1237,35 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  474 00b6 1048     		ldr	r0, .L46
  475 00b8 FFF7FEFF 		bl	HAL_I2C_Mem_Write
  476              	.LVL28:
- 608:Core/Src/bmi270.c ****     {
- 477              		.loc 1 608 7 discriminator 1 view .LVU108
+ 613:Core/Src/bmi270.c ****     {
+ 477              		.loc 1 613 7 discriminator 1 view .LVU108
  478 00bc 08B1     		cbz	r0, .L44
- 610:Core/Src/bmi270.c ****     }
- 479              		.loc 1 610 16 view .LVU109
+ 615:Core/Src/bmi270.c ****     }
+ 479              		.loc 1 615 16 view .LVU109
  480 00be 0124     		movs	r4, #1
  481 00c0 A7E7     		b	.L31
  482              	.L44:
- 612:Core/Src/bmi270.c **** 
- 483              		.loc 1 612 5 is_stmt 1 view .LVU110
+ 617:Core/Src/bmi270.c **** 
+ 483              		.loc 1 617 5 is_stmt 1 view .LVU110
  484 00c2 0120     		movs	r0, #1
  485 00c4 FFF7FEFF 		bl	HAL_Delay
  486              	.LVL29:
- 614:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CONF, 1, &reg_value, 1, 1000) != HAL_
- 487              		.loc 1 614 5 view .LVU111
- 614:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CONF, 1, &reg_value, 1, 1000) != HAL_
- 488              		.loc 1 614 15 is_stmt 0 view .LVU112
+ 619:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 487              		.loc 1 619 5 view .LVU111
+ 619:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Write(&BMI270_I2C, BMI270_ADDRESS, REG_PWR_CONF, 1, &reg_value, 1, 1000) != HAL_
+ 488              		.loc 1 619 15 is_stmt 0 view .LVU112
  489 00c8 0223     		movs	r3, #2
  490 00ca 8DF81730 		strb	r3, [sp, #23]
- 615:Core/Src/bmi270.c ****     {
- 491              		.loc 1 615 5 is_stmt 1 view .LVU113
- 615:Core/Src/bmi270.c ****     {
- 492              		.loc 1 615 8 is_stmt 0 view .LVU114
+ 620:Core/Src/bmi270.c ****     {
+ 491              		.loc 1 620 5 is_stmt 1 view .LVU113
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 22
+
+
+ 620:Core/Src/bmi270.c ****     {
+ 492              		.loc 1 620 8 is_stmt 0 view .LVU114
  493 00ce 4FF47A73 		mov	r3, #1000
  494 00d2 0293     		str	r3, [sp, #8]
  495 00d4 0123     		movs	r3, #1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 22
-
-
  496 00d6 0193     		str	r3, [sp, #4]
  497 00d8 0DF11702 		add	r2, sp, #23
  498 00dc 0092     		str	r2, [sp]
@@ -1269,23 +1274,23 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  501 00e2 0548     		ldr	r0, .L46
  502 00e4 FFF7FEFF 		bl	HAL_I2C_Mem_Write
  503              	.LVL30:
- 615:Core/Src/bmi270.c ****     {
- 504              		.loc 1 615 7 discriminator 1 view .LVU115
+ 620:Core/Src/bmi270.c ****     {
+ 504              		.loc 1 620 7 discriminator 1 view .LVU115
  505 00e8 08B1     		cbz	r0, .L45
- 617:Core/Src/bmi270.c ****     }
- 506              		.loc 1 617 16 view .LVU116
+ 622:Core/Src/bmi270.c ****     }
+ 506              		.loc 1 622 16 view .LVU116
  507 00ea 0124     		movs	r4, #1
  508 00ec 91E7     		b	.L31
  509              	.L45:
- 619:Core/Src/bmi270.c **** 
- 510              		.loc 1 619 5 is_stmt 1 view .LVU117
+ 624:Core/Src/bmi270.c **** 
+ 510              		.loc 1 624 5 is_stmt 1 view .LVU117
  511 00ee 0120     		movs	r0, #1
  512 00f0 FFF7FEFF 		bl	HAL_Delay
  513              	.LVL31:
- 621:Core/Src/bmi270.c **** }
- 514              		.loc 1 621 5 view .LVU118
- 621:Core/Src/bmi270.c **** }
- 515              		.loc 1 621 12 is_stmt 0 view .LVU119
+ 626:Core/Src/bmi270.c **** }
+ 514              		.loc 1 626 5 view .LVU118
+ 626:Core/Src/bmi270.c **** }
+ 515              		.loc 1 626 12 is_stmt 0 view .LVU119
  516 00f4 8DE7     		b	.L31
  517              	.L47:
  518 00f6 00BF     		.align	2
@@ -1302,25 +1307,25 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  531              	BMI270_ReadMeasurement:
  532              	.LVL32:
  533              	.LFB1419:
- 623:Core/Src/bmi270.c **** 
- 624:Core/Src/bmi270.c **** /**
- 625:Core/Src/bmi270.c ****   * @brief BMI270 read measurement function
- 626:Core/Src/bmi270.c ****   * @param None
- 627:Core/Src/bmi270.c ****   * @retval Accelerometer and Gyro values
- 628:Core/Src/bmi270.c ****   */
- 629:Core/Src/bmi270.c **** void BMI270_ReadMeasurement(float *ax, float *ay, float *az, float *gx, float *gy, float *gz)
- 630:Core/Src/bmi270.c **** {
- 534              		.loc 1 630 1 is_stmt 1 view -0
+ 628:Core/Src/bmi270.c **** 
+ 629:Core/Src/bmi270.c **** /**
+ 630:Core/Src/bmi270.c ****   * @brief BMI270 read measurement function
+ 631:Core/Src/bmi270.c ****   * @param None
+ 632:Core/Src/bmi270.c ****   * @retval Accelerometer and Gyro values
+ 633:Core/Src/bmi270.c ****   */
+ 634:Core/Src/bmi270.c **** void BMI270_ReadMeasurement(float *ax, float *ay, float *az, float *gx, float *gy, float *gz)
+ 635:Core/Src/bmi270.c **** {
+ 534              		.loc 1 635 1 is_stmt 1 view -0
  535              		.cfi_startproc
  536              		@ args = 8, pretend = 0, frame = 16
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 23
+
+
  537              		@ frame_needed = 0, uses_anonymous_args = 0
- 538              		.loc 1 630 1 is_stmt 0 view .LVU121
+ 538              		.loc 1 635 1 is_stmt 0 view .LVU121
  539 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
  540              	.LCFI12:
  541              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 23
-
-
  542              		.cfi_offset 4, -24
  543              		.cfi_offset 5, -20
  544              		.cfi_offset 6, -16
@@ -1334,178 +1339,178 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  552 0008 0E46     		mov	r6, r1
  553 000a 1546     		mov	r5, r2
  554 000c 1C46     		mov	r4, r3
- 631:Core/Src/bmi270.c ****     uint8_t sensor_raw[12];
- 555              		.loc 1 631 5 is_stmt 1 view .LVU122
- 632:Core/Src/bmi270.c **** 
- 633:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Read(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_GYRO_DATA, 1, sensor_raw, 12, HAL_MAX_
- 556              		.loc 1 633 5 view .LVU123
- 557              		.loc 1 633 8 is_stmt 0 view .LVU124
+ 636:Core/Src/bmi270.c ****     uint8_t sensor_raw[12];
+ 555              		.loc 1 636 5 is_stmt 1 view .LVU122
+ 637:Core/Src/bmi270.c **** 
+ 638:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Read(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_GYRO_DATA, 1, sensor_raw, 12, HAL_MAX_
+ 556              		.loc 1 638 5 view .LVU123
+ 557              		.loc 1 638 8 is_stmt 0 view .LVU124
  558 000e 4FF0FF33 		mov	r3, #-1
  559              	.LVL33:
- 560              		.loc 1 633 8 view .LVU125
+ 560              		.loc 1 638 8 view .LVU125
  561 0012 0293     		str	r3, [sp, #8]
  562 0014 0C22     		movs	r2, #12
  563              	.LVL34:
- 564              		.loc 1 633 8 view .LVU126
+ 564              		.loc 1 638 8 view .LVU126
  565 0016 0192     		str	r2, [sp, #4]
  566 0018 05AB     		add	r3, sp, #20
  567 001a 0093     		str	r3, [sp]
  568 001c 0123     		movs	r3, #1
  569 001e D021     		movs	r1, #208
  570              	.LVL35:
- 571              		.loc 1 633 8 view .LVU127
+ 571              		.loc 1 638 8 view .LVU127
  572 0020 4248     		ldr	r0, .L53
  573              	.LVL36:
- 574              		.loc 1 633 8 view .LVU128
+ 574              		.loc 1 638 8 view .LVU128
  575 0022 FFF7FEFF 		bl	HAL_I2C_Mem_Read
  576              	.LVL37:
- 577              		.loc 1 633 7 discriminator 1 view .LVU129
+ 577              		.loc 1 638 7 discriminator 1 view .LVU129
  578 0026 0028     		cmp	r0, #0
  579 0028 75D1     		bne	.L52
- 634:Core/Src/bmi270.c ****     {
- 635:Core/Src/bmi270.c ****         *ax = *ay = *az = *gx = *gy = *gz = 0.0f;
- 636:Core/Src/bmi270.c ****         return;
- 637:Core/Src/bmi270.c ****     }
- 638:Core/Src/bmi270.c **** 
- 639:Core/Src/bmi270.c ****     raw_gx = ((sensor_raw[1] << 8) | sensor_raw[0]);
- 580              		.loc 1 639 5 is_stmt 1 view .LVU130
- 581              		.loc 1 639 26 is_stmt 0 view .LVU131
+ 639:Core/Src/bmi270.c ****     {
+ 640:Core/Src/bmi270.c ****         *ax = *ay = *az = *gx = *gy = *gz = 0.0f;
+ 641:Core/Src/bmi270.c ****         return;
+ 642:Core/Src/bmi270.c ****     }
+ 643:Core/Src/bmi270.c **** 
+ 644:Core/Src/bmi270.c ****     raw_gx = ((sensor_raw[1] << 8) | sensor_raw[0]);
+ 580              		.loc 1 644 5 is_stmt 1 view .LVU130
+ 581              		.loc 1 644 26 is_stmt 0 view .LVU131
  582 002a 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
- 583              		.loc 1 639 48 view .LVU132
+ 583              		.loc 1 644 48 view .LVU132
  584 002e 9DF814E0 		ldrb	lr, [sp, #20]	@ zero_extendqisi2
- 585              		.loc 1 639 36 view .LVU133
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 24
+
+
+ 585              		.loc 1 644 36 view .LVU133
  586 0032 4EEA032E 		orr	lr, lr, r3, lsl #8
  587 0036 0FFA8EFE 		sxth	lr, lr
- 588              		.loc 1 639 12 view .LVU134
+ 588              		.loc 1 644 12 view .LVU134
  589 003a 3D4B     		ldr	r3, .L53+4
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 24
-
-
  590 003c A3F800E0 		strh	lr, [r3]	@ movhi
- 640:Core/Src/bmi270.c ****     raw_gy = ((sensor_raw[3] << 8) | sensor_raw[2]);
- 591              		.loc 1 640 5 is_stmt 1 view .LVU135
- 592              		.loc 1 640 26 is_stmt 0 view .LVU136
+ 645:Core/Src/bmi270.c ****     raw_gy = ((sensor_raw[3] << 8) | sensor_raw[2]);
+ 591              		.loc 1 645 5 is_stmt 1 view .LVU135
+ 592              		.loc 1 645 26 is_stmt 0 view .LVU136
  593 0040 9DF81730 		ldrb	r3, [sp, #23]	@ zero_extendqisi2
- 594              		.loc 1 640 48 view .LVU137
+ 594              		.loc 1 645 48 view .LVU137
  595 0044 9DF81600 		ldrb	r0, [sp, #22]	@ zero_extendqisi2
- 596              		.loc 1 640 36 view .LVU138
+ 596              		.loc 1 645 36 view .LVU138
  597 0048 40EA0320 		orr	r0, r0, r3, lsl #8
  598 004c 00B2     		sxth	r0, r0
- 599              		.loc 1 640 12 view .LVU139
+ 599              		.loc 1 645 12 view .LVU139
  600 004e 394B     		ldr	r3, .L53+8
  601 0050 1880     		strh	r0, [r3]	@ movhi
- 641:Core/Src/bmi270.c ****     raw_gz = ((sensor_raw[5] << 8) | sensor_raw[4]);
- 602              		.loc 1 641 5 is_stmt 1 view .LVU140
- 603              		.loc 1 641 26 is_stmt 0 view .LVU141
+ 646:Core/Src/bmi270.c ****     raw_gz = ((sensor_raw[5] << 8) | sensor_raw[4]);
+ 602              		.loc 1 646 5 is_stmt 1 view .LVU140
+ 603              		.loc 1 646 26 is_stmt 0 view .LVU141
  604 0052 9DF81930 		ldrb	r3, [sp, #25]	@ zero_extendqisi2
- 605              		.loc 1 641 48 view .LVU142
+ 605              		.loc 1 646 48 view .LVU142
  606 0056 9DF81810 		ldrb	r1, [sp, #24]	@ zero_extendqisi2
- 607              		.loc 1 641 36 view .LVU143
+ 607              		.loc 1 646 36 view .LVU143
  608 005a 41EA0321 		orr	r1, r1, r3, lsl #8
  609 005e 09B2     		sxth	r1, r1
- 610              		.loc 1 641 12 view .LVU144
+ 610              		.loc 1 646 12 view .LVU144
  611 0060 354B     		ldr	r3, .L53+12
  612 0062 1980     		strh	r1, [r3]	@ movhi
- 642:Core/Src/bmi270.c **** 
- 643:Core/Src/bmi270.c ****     raw_ax = ((sensor_raw[7] << 8) | sensor_raw[6]);
- 613              		.loc 1 643 5 is_stmt 1 view .LVU145
- 614              		.loc 1 643 26 is_stmt 0 view .LVU146
+ 647:Core/Src/bmi270.c **** 
+ 648:Core/Src/bmi270.c ****     raw_ax = ((sensor_raw[7] << 8) | sensor_raw[6]);
+ 613              		.loc 1 648 5 is_stmt 1 view .LVU145
+ 614              		.loc 1 648 26 is_stmt 0 view .LVU146
  615 0064 9DF81B30 		ldrb	r3, [sp, #27]	@ zero_extendqisi2
- 616              		.loc 1 643 48 view .LVU147
+ 616              		.loc 1 648 48 view .LVU147
  617 0068 9DF81A20 		ldrb	r2, [sp, #26]	@ zero_extendqisi2
- 618              		.loc 1 643 36 view .LVU148
+ 618              		.loc 1 648 36 view .LVU148
  619 006c 42EA0322 		orr	r2, r2, r3, lsl #8
  620 0070 12B2     		sxth	r2, r2
- 621              		.loc 1 643 12 view .LVU149
+ 621              		.loc 1 648 12 view .LVU149
  622 0072 324B     		ldr	r3, .L53+16
  623 0074 1A80     		strh	r2, [r3]	@ movhi
- 644:Core/Src/bmi270.c ****     raw_ay = ((sensor_raw[9] << 8) | sensor_raw[8]);
- 624              		.loc 1 644 5 is_stmt 1 view .LVU150
- 625              		.loc 1 644 26 is_stmt 0 view .LVU151
+ 649:Core/Src/bmi270.c ****     raw_ay = ((sensor_raw[9] << 8) | sensor_raw[8]);
+ 624              		.loc 1 649 5 is_stmt 1 view .LVU150
+ 625              		.loc 1 649 26 is_stmt 0 view .LVU151
  626 0076 9DF81DC0 		ldrb	ip, [sp, #29]	@ zero_extendqisi2
- 627              		.loc 1 644 48 view .LVU152
+ 627              		.loc 1 649 48 view .LVU152
  628 007a 9DF81C30 		ldrb	r3, [sp, #28]	@ zero_extendqisi2
- 629              		.loc 1 644 36 view .LVU153
+ 629              		.loc 1 649 36 view .LVU153
  630 007e 43EA0C23 		orr	r3, r3, ip, lsl #8
  631 0082 1BB2     		sxth	r3, r3
- 632              		.loc 1 644 12 view .LVU154
+ 632              		.loc 1 649 12 view .LVU154
  633 0084 DFF8C0C0 		ldr	ip, .L53+28
  634 0088 ACF80030 		strh	r3, [ip]	@ movhi
- 645:Core/Src/bmi270.c ****     raw_az = ((sensor_raw[11] << 8) | sensor_raw[10]);
- 635              		.loc 1 645 5 is_stmt 1 view .LVU155
- 636              		.loc 1 645 26 is_stmt 0 view .LVU156
+ 650:Core/Src/bmi270.c ****     raw_az = ((sensor_raw[11] << 8) | sensor_raw[10]);
+ 635              		.loc 1 650 5 is_stmt 1 view .LVU155
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 25
+
+
+ 636              		.loc 1 650 26 is_stmt 0 view .LVU156
  637 008c 9DF81F80 		ldrb	r8, [sp, #31]	@ zero_extendqisi2
- 638              		.loc 1 645 49 view .LVU157
+ 638              		.loc 1 650 49 view .LVU157
  639 0090 9DF81EC0 		ldrb	ip, [sp, #30]	@ zero_extendqisi2
- 640              		.loc 1 645 37 view .LVU158
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 25
-
-
+ 640              		.loc 1 650 37 view .LVU158
  641 0094 4CEA082C 		orr	ip, ip, r8, lsl #8
  642 0098 0FFA8CFC 		sxth	ip, ip
- 643              		.loc 1 645 12 view .LVU159
+ 643              		.loc 1 650 12 view .LVU159
  644 009c DFF8AC80 		ldr	r8, .L53+32
  645 00a0 A8F800C0 		strh	ip, [r8]	@ movhi
- 646:Core/Src/bmi270.c **** 
- 647:Core/Src/bmi270.c ****     *ax = raw_ax / 16384.0f;
- 646              		.loc 1 647 5 is_stmt 1 view .LVU160
- 647              		.loc 1 647 18 is_stmt 0 view .LVU161
+ 651:Core/Src/bmi270.c **** 
+ 652:Core/Src/bmi270.c ****     *ax = raw_ax / 16384.0f;
+ 646              		.loc 1 652 5 is_stmt 1 view .LVU160
+ 647              		.loc 1 652 18 is_stmt 0 view .LVU161
  648 00a4 07EE902A 		vmov	s15, r2	@ int
  649 00a8 F8EEE77A 		vcvt.f32.s32	s15, s15
  650 00ac 9FED247A 		vldr.32	s14, .L53+20
  651 00b0 67EE877A 		vmul.f32	s15, s15, s14
- 652              		.loc 1 647 9 view .LVU162
+ 652              		.loc 1 652 9 view .LVU162
  653 00b4 C7ED007A 		vstr.32	s15, [r7]
- 648:Core/Src/bmi270.c ****     *ay = raw_ay / 16384.0f;
- 654              		.loc 1 648 5 is_stmt 1 view .LVU163
- 655              		.loc 1 648 18 is_stmt 0 view .LVU164
+ 653:Core/Src/bmi270.c ****     *ay = raw_ay / 16384.0f;
+ 654              		.loc 1 653 5 is_stmt 1 view .LVU163
+ 655              		.loc 1 653 18 is_stmt 0 view .LVU164
  656 00b8 07EE903A 		vmov	s15, r3	@ int
  657 00bc F8EEE77A 		vcvt.f32.s32	s15, s15
  658 00c0 67EE877A 		vmul.f32	s15, s15, s14
- 659              		.loc 1 648 9 view .LVU165
+ 659              		.loc 1 653 9 view .LVU165
  660 00c4 C6ED007A 		vstr.32	s15, [r6]
- 649:Core/Src/bmi270.c ****     *az = raw_az / 16384.0f;
- 661              		.loc 1 649 5 is_stmt 1 view .LVU166
- 662              		.loc 1 649 18 is_stmt 0 view .LVU167
+ 654:Core/Src/bmi270.c ****     *az = raw_az / 16384.0f;
+ 661              		.loc 1 654 5 is_stmt 1 view .LVU166
+ 662              		.loc 1 654 18 is_stmt 0 view .LVU167
  663 00c8 07EE90CA 		vmov	s15, ip	@ int
  664 00cc F8EEE77A 		vcvt.f32.s32	s15, s15
  665 00d0 67EE877A 		vmul.f32	s15, s15, s14
- 666              		.loc 1 649 9 view .LVU168
+ 666              		.loc 1 654 9 view .LVU168
  667 00d4 C5ED007A 		vstr.32	s15, [r5]
- 650:Core/Src/bmi270.c **** 
- 651:Core/Src/bmi270.c ****     *gx = raw_gx / 16.4f;
- 668              		.loc 1 651 5 is_stmt 1 view .LVU169
- 669              		.loc 1 651 18 is_stmt 0 view .LVU170
+ 655:Core/Src/bmi270.c **** 
+ 656:Core/Src/bmi270.c ****     *gx = raw_gx / 16.4f;
+ 668              		.loc 1 656 5 is_stmt 1 view .LVU169
+ 669              		.loc 1 656 18 is_stmt 0 view .LVU170
  670 00d8 07EE90EA 		vmov	s15, lr	@ int
  671 00dc F8EEE77A 		vcvt.f32.s32	s15, s15
  672 00e0 9FED187A 		vldr.32	s14, .L53+24
  673 00e4 C7EE876A 		vdiv.f32	s13, s15, s14
- 674              		.loc 1 651 9 view .LVU171
+ 674              		.loc 1 656 9 view .LVU171
  675 00e8 C4ED006A 		vstr.32	s13, [r4]
- 652:Core/Src/bmi270.c ****     *gy = raw_gy / 16.4f;
- 676              		.loc 1 652 5 is_stmt 1 view .LVU172
- 677              		.loc 1 652 18 is_stmt 0 view .LVU173
+ 657:Core/Src/bmi270.c ****     *gy = raw_gy / 16.4f;
+ 676              		.loc 1 657 5 is_stmt 1 view .LVU172
+ 677              		.loc 1 657 18 is_stmt 0 view .LVU173
  678 00ec 07EE900A 		vmov	s15, r0	@ int
  679 00f0 F8EEE77A 		vcvt.f32.s32	s15, s15
  680 00f4 C7EE876A 		vdiv.f32	s13, s15, s14
- 681              		.loc 1 652 9 view .LVU174
+ 681              		.loc 1 657 9 view .LVU174
  682 00f8 0E9B     		ldr	r3, [sp, #56]
  683 00fa C3ED006A 		vstr.32	s13, [r3]
- 653:Core/Src/bmi270.c ****     *gz = raw_gz / 16.4f;
- 684              		.loc 1 653 5 is_stmt 1 view .LVU175
- 685              		.loc 1 653 18 is_stmt 0 view .LVU176
+ 658:Core/Src/bmi270.c ****     *gz = raw_gz / 16.4f;
+ 684              		.loc 1 658 5 is_stmt 1 view .LVU175
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 26
+
+
+ 685              		.loc 1 658 18 is_stmt 0 view .LVU176
  686 00fe 07EE901A 		vmov	s15, r1	@ int
  687 0102 F8EEE77A 		vcvt.f32.s32	s15, s15
  688 0106 C7EE876A 		vdiv.f32	s13, s15, s14
- 689              		.loc 1 653 9 view .LVU177
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 26
-
-
+ 689              		.loc 1 658 9 view .LVU177
  690 010a 0F9B     		ldr	r3, [sp, #60]
  691 010c C3ED006A 		vstr.32	s13, [r3]
  692              	.L48:
- 654:Core/Src/bmi270.c **** }
- 693              		.loc 1 654 1 view .LVU178
+ 659:Core/Src/bmi270.c **** }
+ 693              		.loc 1 659 1 view .LVU178
  694 0110 08B0     		add	sp, sp, #32
  695              	.LCFI14:
  696              		.cfi_remember_state
@@ -1516,31 +1521,31 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  701              	.L52:
  702              	.LCFI15:
  703              		.cfi_restore_state
- 635:Core/Src/bmi270.c ****         return;
- 704              		.loc 1 635 9 is_stmt 1 view .LVU179
- 635:Core/Src/bmi270.c ****         return;
- 705              		.loc 1 635 43 is_stmt 0 view .LVU180
+ 640:Core/Src/bmi270.c ****         return;
+ 704              		.loc 1 640 9 is_stmt 1 view .LVU179
+ 640:Core/Src/bmi270.c ****         return;
+ 705              		.loc 1 640 43 is_stmt 0 view .LVU180
  706 0116 0023     		movs	r3, #0
  707 0118 0F9A     		ldr	r2, [sp, #60]
  708 011a 1360     		str	r3, [r2]	@ float
- 635:Core/Src/bmi270.c ****         return;
- 709              		.loc 1 635 37 view .LVU181
+ 640:Core/Src/bmi270.c ****         return;
+ 709              		.loc 1 640 37 view .LVU181
  710 011c 0E9A     		ldr	r2, [sp, #56]
  711 011e 1360     		str	r3, [r2]	@ float
- 635:Core/Src/bmi270.c ****         return;
- 712              		.loc 1 635 31 view .LVU182
+ 640:Core/Src/bmi270.c ****         return;
+ 712              		.loc 1 640 31 view .LVU182
  713 0120 2360     		str	r3, [r4]	@ float
- 635:Core/Src/bmi270.c ****         return;
- 714              		.loc 1 635 25 view .LVU183
+ 640:Core/Src/bmi270.c ****         return;
+ 714              		.loc 1 640 25 view .LVU183
  715 0122 2B60     		str	r3, [r5]	@ float
- 635:Core/Src/bmi270.c ****         return;
- 716              		.loc 1 635 19 view .LVU184
+ 640:Core/Src/bmi270.c ****         return;
+ 716              		.loc 1 640 19 view .LVU184
  717 0124 3360     		str	r3, [r6]	@ float
- 635:Core/Src/bmi270.c ****         return;
- 718              		.loc 1 635 13 view .LVU185
+ 640:Core/Src/bmi270.c ****         return;
+ 718              		.loc 1 640 13 view .LVU185
  719 0126 3B60     		str	r3, [r7]	@ float
- 636:Core/Src/bmi270.c ****     }
- 720              		.loc 1 636 9 is_stmt 1 view .LVU186
+ 641:Core/Src/bmi270.c ****     }
+ 720              		.loc 1 641 9 is_stmt 1 view .LVU186
  721 0128 F2E7     		b	.L48
  722              	.L54:
  723 012a 00BF     		.align	2
@@ -1553,14 +1558,14 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  730 0140 00008038 		.word	947912704
  731 0144 33338341 		.word	1099117363
  732 0148 00000000 		.word	raw_ay
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 27
+
+
  733 014c 00000000 		.word	raw_az
  734              		.cfi_endproc
  735              	.LFE1419:
  737              		.section	.text.BMI270_ReadMeasurement_raw,"ax",%progbits
  738              		.align	1
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 27
-
-
  739              		.global	BMI270_ReadMeasurement_raw
  740              		.syntax unified
  741              		.thumb
@@ -1568,14 +1573,18 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  744              	BMI270_ReadMeasurement_raw:
  745              	.LVL39:
  746              	.LFB1420:
- 655:Core/Src/bmi270.c **** 
- 656:Core/Src/bmi270.c **** void BMI270_ReadMeasurement_raw(uint8_t sensor_raw[12])
- 657:Core/Src/bmi270.c **** {
- 747              		.loc 1 657 1 view -0
+ 660:Core/Src/bmi270.c **** 
+ 661:Core/Src/bmi270.c **** /**
+ 662:Core/Src/bmi270.c ****  * @brief  Raw burst read for storage or high-speed processing.
+ 663:Core/Src/bmi270.c ****  * @param  sensor_raw: 12-byte buffer for the raw data
+ 664:Core/Src/bmi270.c ****  */
+ 665:Core/Src/bmi270.c **** void BMI270_ReadMeasurement_raw(uint8_t sensor_raw[12])
+ 666:Core/Src/bmi270.c **** {
+ 747              		.loc 1 666 1 view -0
  748              		.cfi_startproc
  749              		@ args = 0, pretend = 0, frame = 0
  750              		@ frame_needed = 0, uses_anonymous_args = 0
- 751              		.loc 1 657 1 is_stmt 0 view .LVU188
+ 751              		.loc 1 666 1 is_stmt 0 view .LVU188
  752 0000 00B5     		push	{lr}
  753              	.LCFI16:
  754              		.cfi_def_cfa_offset 4
@@ -1583,10 +1592,10 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  756 0002 85B0     		sub	sp, sp, #20
  757              	.LCFI17:
  758              		.cfi_def_cfa_offset 24
- 658:Core/Src/bmi270.c **** 
- 659:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Read(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_GYRO_DATA, 1, sensor_raw, 12, HAL_MAX_
- 759              		.loc 1 659 5 is_stmt 1 view .LVU189
- 760              		.loc 1 659 8 is_stmt 0 view .LVU190
+ 667:Core/Src/bmi270.c **** 
+ 668:Core/Src/bmi270.c ****     if(HAL_I2C_Mem_Read(&BMI270_I2C, BMI270_ADDRESS, REG_ACC_GYRO_DATA, 1, sensor_raw, 12, HAL_MAX_
+ 759              		.loc 1 668 5 is_stmt 1 view .LVU189
+ 760              		.loc 1 668 8 is_stmt 0 view .LVU190
  761 0004 4FF0FF33 		mov	r3, #-1
  762 0008 0293     		str	r3, [sp, #8]
  763 000a 0C22     		movs	r2, #12
@@ -1596,19 +1605,22 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  767 0012 D021     		movs	r1, #208
  768 0014 0248     		ldr	r0, .L57
  769              	.LVL40:
- 770              		.loc 1 659 8 view .LVU191
+ 770              		.loc 1 668 8 view .LVU191
  771 0016 FFF7FEFF 		bl	HAL_I2C_Mem_Read
  772              	.LVL41:
- 660:Core/Src/bmi270.c ****     {
- 661:Core/Src/bmi270.c ****         return;
- 773              		.loc 1 661 9 is_stmt 1 view .LVU192
- 662:Core/Src/bmi270.c ****     }
- 663:Core/Src/bmi270.c **** }...
- 774              		.loc 1 663 1 is_stmt 0 view .LVU193
+ 669:Core/Src/bmi270.c ****     {
+ 670:Core/Src/bmi270.c ****         return;
+ 773              		.loc 1 670 9 is_stmt 1 view .LVU192
+ 671:Core/Src/bmi270.c ****     }
+ 672:Core/Src/bmi270.c **** }...
+ 774              		.loc 1 672 1 is_stmt 0 view .LVU193
  775 001a 05B0     		add	sp, sp, #20
  776              	.LCFI18:
  777              		.cfi_def_cfa_offset 4
  778              		@ sp needed
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 28
+
+
  779 001c 5DF804FB 		ldr	pc, [sp], #4
  780              	.L58:
  781              		.align	2
@@ -1618,9 +1630,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  785              	.LFE1420:
  787              		.global	bmi270_config_file
  788              		.section	.rodata.bmi270_config_file,"a"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 28
-
-
  789              		.align	2
  792              	bmi270_config_file:
  793 0000 C82E002E 		.ascii	"\310.\000.\200.=\261\310.\000.\200.\221\003\200.\274"
@@ -1669,6 +1678,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  803 00a8 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
  803      802E00C1 
  803      802E00C1 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 29
+
+
  803      802E00C1 
  804 00b8 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
  804      802E00C1 
@@ -1678,9 +1690,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  805      802E00C1 
  805      802E00C1 
  805      802E00C1 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 29
-
-
  806 00d8 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
  806      802E00C1 
  806      802E00C1 
@@ -1729,6 +1738,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  817 0177 04BC02B3 		.ascii	"\004\274\002\263\000\205\007\000\000\000\000\000\000"
  817      00850700 
  817      00000000 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 30
+
+
  817      00
  818 0184 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  818      00000000 
@@ -1738,9 +1750,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  819      00B90001 
  819      00980000 
  819      00
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 30
-
-
  820 019e 00000000 		.ascii	"\000\000\000\000\000\000\001\000\200\000\004\000\000"
  820      00000100 
  820      80000400 
@@ -1789,6 +1798,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  831      FF3FCA03 
  831      6C3856FE 
  831      44FDBC02 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 31
+
+
  831      F9
  832 0245 0600FC12 		.ascii	"\006\000\374\022\002\256\001X\372\232\375w\005\273\002"
  832      02AE0158 
@@ -1798,9 +1810,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  833      7F018201 
  833      89018701 
  833      88
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 31
-
-
  834 0261 018A018C 		.ascii	"\001\212\001\214\001\217\001\215\001\222\001\221\001"
  834      018F018D 
  834      01920191 
@@ -1849,6 +1858,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  845 0301 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  845      00000000 
  845      00000000 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 32
+
+
  845      00
  846 030e 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  846      00000000 
@@ -1858,9 +1870,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  847      00000000 
  847      00000000 
  847      00
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 32
-
-
  848 0328 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  848      00000000 
  848      00000000 
@@ -1909,6 +1918,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  859      00000000 
  859      00000000 
  859      00
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 33
+
+
  860 03c4 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  860      00000000 
  860      00000000 
@@ -1918,9 +1930,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  861      50982ED7 
  861      0E503298 
  861      2EFA
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 33
-
-
  862 03e3 030030F0 		.ascii	"\003\0000\360\177\000.\000.\320.\000.\001\200\010\242"
  862      7F002E00 
  862      2ED02E00 
@@ -1969,6 +1978,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  871      2EDD0000 
  871      B2072F05 
  871      52982E8E 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 34
+
+
  871      0E
  872 0496 00B2022F 		.ascii	"\000\262\002/\0200!.}\000\001.}\000\000\220\220.\361"
  872      1030212E 
@@ -1978,9 +1990,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  873 04a9 02012ED7 		.ascii	"\002\001.\327\000\000\262\004/\230./\016\0000!.{\000"
  873      0000B204 
  873      2F982E2F 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 34
-
-
  873      0E003021 
  873      2E7B00
  874 04bc 012E7B00 		.ascii	"\001.{\000\000\262\022/\001.\324\000\000\220\002/\230"
@@ -2029,6 +2038,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  883 0564 982EC3B7 		.ascii	"\230.\303\267\0000!.Z\365\030-\341\177P0\230.\372\003"
  883      0030212E 
  883      5AF5182D 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 35
+
+
  883      E17F5030 
  883      982EFA03 
  884 0578 0F520750 		.ascii	"\017R\007PPBp0\015TBB~\202\342o\200\262BB\005/!.\324"
@@ -2038,9 +2050,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  884      80B24242 
  885 0591 00103098 		.ascii	"\000\0200\230.\303\267\003-`0!.\324\000\001.\324\000"
  885      2EC3B703 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 35
-
-
  885      2D603021 
  885      2ED40001 
  885      2ED400
@@ -2089,6 +2098,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  894      BD080802 
  894      0AD0
  895 0651 7F982EA8 		.ascii	"\177\230.\250\317\006\274\321o\342o\010\012\200B\230"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 36
+
+
  895      CF06BCD1 
  895      6FE26F08 
  895      0A804298 
@@ -2098,9 +2110,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  896      00212EDD 
  896      00802EF4 
  897 0676 1A242200 		.ascii	"\032$\"\000\200.\354\001\020P\373\177\230.\363\003W"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 36
-
-
  897      802EEC01 
  897      1050FB7F 
  897      982EF303 
@@ -2149,6 +2158,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  908 0714 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
  908      00000000 
  908      00000000 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 37
+
+
  908      00
  909 0721 002050E7 		.ascii	"\000 P\347\177\366\177\0062\017.a\365\376\011\300\263"
  909      7FF67F06 
@@ -2158,9 +2170,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  910 0732 042F1730 		.ascii	"\004/\0270/.\357\000-.a\365\366o\347o\340_\310. P\347"
  910      2F2EEF00 
  910      2D2E61F5 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 37
-
-
  910      F66FE76F 
  910      E05FC82E 
  911 0749 7FF67F46 		.ascii	"\177\366\177F0\017.\244\361\276\011\200\263\006/\015"
@@ -2209,6 +2218,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  920      2FB82E21 
  920      2E59F510 
  921 0800 9050F77F 		.ascii	"\220P\367\177\346\177\325\177\304\177\263\177\241\177"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 38
+
+
  921      E67FD57F 
  921      C47FB37F 
  921      A17F
@@ -2218,9 +2230,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  922      902E97B0 
  923 081e 032E8F00 		.ascii	"\003.\217\000\007.\221\000\005.\261\000?\272\237\270"
  923      072E9100 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 38
-
-
  923      052EB100 
  923      3FBA9FB8 
  924 082e 012EB100 		.ascii	"\001.\261\000\243\275L\012\005.\261\000\004\276\277"
@@ -2269,6 +2278,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  933      01401756 
  933      46BE4B08 
  934 08db 0A01420A 		.ascii	"\012\001B\012\200\025R\001B\000.\001.\030\000\000\262"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 39
+
+
  934      80155201 
  934      42002E01 
  934      2E180000 
@@ -2278,9 +2290,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  935      480847AA 
  935      7430072E 
  935      7A006122 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 39
-
-
  936 0902 052F072E 		.ascii	"\005/\007.f\365\277\275\277\271\300\220\013/\035V+0"
  936      66F5BFBD 
  936      BFB9C090 
@@ -2329,6 +2338,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  945 09aa 142F00B2 		.ascii	"\024/\000\262\003/\011.\030\000\000\221\014/C\177\230"
  945      032F092E 
  945      18000091 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 40
+
+
  945      0C2F437F 
  945      98
  946 09bb 2E97B71F 		.ascii	".\227\267\037P\002\212\0022\0040%.d\365\025RPoCoDC%"
@@ -2338,9 +2350,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  946      52506F43 
  947 09d3 2E60F5D9 		.ascii	".`\365\331\010\300\2626/\230.>\267\000\262\006/\001"
  947      08C0B236 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 40
-
-
  947      2F982E3E 
  947      B700B206 
  947      2F01
@@ -2389,6 +2398,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  956      BE09A27F 
  956      807F80B3 
  956      D5
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 41
+
+
  957 0a97 7FC47FB3 		.ascii	"\177\304\177\263\177\221\177{\177\013/#P\032%\022@B"
  957      7F917F7B 
  957      7F0B2F23 
@@ -2398,9 +2410,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  958      40527F00 
  958      2E004060 
  958      7F982E6A 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 41
-
-
  958      D6813001 
  959 0abd 2E7C0001 		.ascii	".|\000\001\010\000\262B/\003.\211\000\001.\211\000\227"
  959      0800B242 
@@ -2449,6 +2458,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  968      52323013 
  968      30982E15 
  968      CB0A2533 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 42
+
+
  968      84D27F43 
  969 0b86 05502D52 		.ascii	"\005P-R\230.\225\301\322o'R\230.\327\307*%\260\206\300"
  969      982E95C1 
@@ -2458,9 +2470,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  970 0b9b 7FD37FAF 		.ascii	"\177\323\177\257\204)P\361o\230.M\310*%\256\212\252"
  970      842950F1 
  970      6F982E4D 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 42
-
-
  970      C82A25AE 
  970      8AAA
  971 0bad 88F26E2B 		.ascii	"\210\362n+P\301o\323o\364\177\230.\266\310\340n\000"
@@ -2509,6 +2518,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  979      2F375823 
  980 0c54 C8001041 		.ascii	"\310\000\020A\240\1778\201\001A\320\177\261\177\230"
  980      A07F3881 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 43
+
+
  980      0141D07F 
  980      B17F98
  981 0c63 2E64CFD0 		.ascii	".d\317\320o\007\200\241o\021B\000.\261o\001B\0210\001"
@@ -2518,9 +2530,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  981      42113001 
  982 0c77 2EFC0000 		.ascii	".\374\000\000\250\0030\313\"J%\001.\177\000<\2115R\005"
  982      A80330CB 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 43
-
-
  982      224A2501 
  982      2E7F003C 
  982      89355205 
@@ -2569,6 +2578,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  991      845550D2 
  991      7FE27F
  992 0d30 038CC07F 		.ascii	"\003\214\300\177\273\177\0000\005Z9TQA\245\177\226\177"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 44
+
+
  992      BB7F0030 
  992      055A3954 
  992      5141A57F 
@@ -2578,9 +2590,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  993      F57F2025 
  993      916F3B58 
  993      3D5C3B56 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 44
-
-
  994 0d57 2E67CCC1 		.ascii	".g\314\301o\325oR@PC\301\177\325\177\020%\230.\376\311"
  994      6FD56F52 
  994      405043C1 
@@ -2629,6 +2638,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1003 0e11 01100E05 		.ascii	"\001\020\016\005/\001.\177\001\001\220\001/\230.\363"
  1003      2F012E7F 
  1003      01019001 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 45
+
+
  1003      2F982EF3 
  1004 0e21 03002EA0 		.ascii	"\003\000.\240A\001\220\246\177\220.\343\264\001.\225"
  1004      410190A6 
@@ -2638,9 +2650,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1005      2EE3B45B 
  1005      54958082 
  1005      4080B202 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 45
-
-
  1006 0e41 402D8C3F 		.ascii	"@-\214?R\226\177\220.\302\263)\016v/\001.\311\000\000"
  1006      52967F90 
  1006      2EC2B329 
@@ -2689,6 +2698,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1015 0efb 2F635002 		.ascii	"/cP\0020\027B\027,\002B\230.\376\311\020%\230.t\300"
  1015      30174217 
  1015      2C024298 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 46
+
+
  1015      2EFEC910 
  1015      25982E74 
  1016 0f10 052EC900 		.ascii	"\005.\311\000\201\204[0\202@7.\203\001\002\016\007/"
@@ -2698,9 +2710,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1016      072F
  1017 0f22 5F524030 		.ascii	"_R@0b@A@\221\016\001/!.\203\001\0050+.\205\001\0220"
  1017      62404140 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 46
-
-
  1017      910E012F 
  1017      212E8301 
  1017      05302B2E 
@@ -2749,6 +2758,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1027 0fde 81B2052F 		.ascii	"\201\262\005/cT\006(\220B\205B\011,\0020[P\003\200)"
  1027      63540628 
  1027      90428542 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 47
+
+
  1027      092C0230 
  1027      5B500380 
  1028 0ff3 2E7E012B 		.ascii	".~\001+.\202\001\005B\0220+.\203\001E\202\000.@@z\202"
@@ -2758,9 +2770,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1028      82002E40 
  1029 100a 02A0082F 		.ascii	"\002\240\010/cP;0\025B\005B7\2007.~\001\005B\0220\001"
  1029      63503B30 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 47
-
-
  1029      15420542 
  1029      3780372E 
  1029      7E010542 
@@ -2809,6 +2818,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1038      436B5242 
  1038      8C002E85 
  1038      43153024 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 48
+
+
  1039 10de 202F0D2E 		.ascii	" /\015.\216\001\261\016\034/#.\216\001\032-\016\016"
  1039      8E01B10E 
  1039      1C2F232E 
@@ -2818,9 +2830,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1040      152F232E 
  1040      8D01132D 
  1040      982E74C0 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 48
-
-
  1040      4354C20E 
  1041 1104 0A2F6550 		.ascii	"\012/eP\004\200\0130\006\202\013By\200A@\0220%.\214"
  1041      04800B30 
@@ -2869,6 +2878,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1050      42048000 
  1050      2E054202 
  1050      2C003000 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 49
+
+
  1050      30A2
  1051 11c9 6F988A86 		.ascii	"o\230\212\206@\200\247\005/\230.\363\003\3000!.\225"
  1051      4080A705 
@@ -2878,9 +2890,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1052 11db 0106251A 		.ascii	"\001\006%\032%\342ov\202\226@VCQ\016\373/\273o0_\270"
  1052      25E26F76 
  1052      82964056 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 49
-
-
  1052      43510EFB 
  1052      2FBB6F30 
  1053 11f1 2E012EB8 		.ascii	".\001.\270\000\0011A\010@\262 P\3620\002\010\373\177"
@@ -2929,6 +2938,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1061      0A
  1062 1296 0954847F 		.ascii	"\011T\204\177\230.\331\300\243o{T\320B\243\177\362\177"
  1062      982ED9C0 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 50
+
+
  1062      A36F7B54 
  1062      D042A37F 
  1062      F27F
@@ -2938,9 +2950,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1063      7556982E 
  1063      67CCB16F 
  1064 12c5 25982E0F 		.ascii	"%\230.\017\312\204o )qo\222o\245ov\202j\016s0\0000\320"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 50
-
-
  1064      CA846F20 
  1064      29716F92 
  1064      6FA56F76 
@@ -2989,6 +2998,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1073      6F04
  1074 1385 4104058C 		.ascii	"A\004\005\214\016\0040\010/\203\210\000.\004A\214\017"
  1074      0E043008 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 51
+
+
  1074      2F838800 
  1074      2E04418C 
  1074      0F
@@ -2998,9 +3010,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1075      142F032E 
  1075      A101
  1076 13a8 41900E2F 		.ascii	"A\220\016/\003.\255\001\0240L(#.\255\001F\240\006/\201"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 51
-
-
  1076      032EAD01 
  1076      14304C28 
  1076      232EAD01 
@@ -3049,6 +3058,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1085      2F526F03 
  1085      2EAC0191 
  1085      0F02300C 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 52
+
+
  1085      2F212EAA 
  1086 146d 010A2C12 		.ascii	"\001\012,\0220\003.\313\000\215X\010\211A@\021C\000"
  1086      30032ECB 
@@ -3058,9 +3070,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1087 147f 43252EA1 		.ascii	"C%.\241\001\324o\217R\000C:\211\000.\020C\020Ca\016"
  1087      01D46F8F 
  1087      5200433A 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 52
-
-
  1087      89002E10 
  1087      43104361 
  1088 1494 FB2F032E 		.ascii	"\373/\003.\240\001\021\032\002/\002%!.\240\001\353o"
@@ -3109,6 +3118,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1097      B2D4B00C 
  1097      2F99549B 
  1098 1545 560B300B 		.ascii	"V\0130\013.\261\000\241X\233B\333Bl\011+.\261\000\213"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 53
+
+
  1098      2EB100A1 
  1098      589B42DB 
  1098      426C092B 
@@ -3118,9 +3130,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1099      56C30839 
  1099      52055072 
  1099      7F637F98 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 53
-
-
  1100 156d 2EC2C0E1 		.ascii	".\302\300\341obo\321\012\001.\315\000\325o\304oro\227"
  1100      6F626FD1 
  1100      0A012ECD 
@@ -3169,6 +3178,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1109      CFD16FA0 
  1109      6F982E95 
  1109      CFE2
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 54
+
+
  1110 1629 6F9F5201 		.ascii	"o\237R\001.\316\000\202@PB\014,BB\0210#.\322\000\001"
  1110      2ECE0082 
  1110      4050420C 
@@ -3178,9 +3190,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1111      2E95CFA0 
  1111      6F013098 
  1111      2E95CF00 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 54
-
-
  1111      2EFB
  1112 1651 6F005FB8 		.ascii	"o\000_\270.\203\206\0010\0000\224@$\030\006\000S\016"
  1112      2E838601 
@@ -3229,6 +3238,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1121 16fc 1554AF56 		.ascii	"\025T\257V\202\010\013.i\367\313\012\261X\200\220\335"
  1121      82080B2E 
  1121      69F7CB0A 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 55
+
+
  1121      B1588090 
  1121      DD
  1122 170d BE4C085F 		.ascii	"\276L\010_\271Y\"\200\220\007/\0034\303\010\362:\012"
@@ -3238,9 +3250,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1122      3A0A
  1123 171f 080235C0 		.ascii	"\010\0025\300\220J\012H\"\300.#.\374\365\020P\373\177"
  1123      904A0A48 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 55
-
-
  1123      22C02E23 
  1123      2EFCF510 
  1123      50FB7F
@@ -3289,6 +3298,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1133      2E00C180 
  1133      2E00C180 
  1133      2E00C180 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 56
+
+
  1134 17e5 2E00C180 		.ascii	".\000\301\200.\000\301\200.\000\301\200.\000\301\200"
  1134      2E00C180 
  1134      2E00C180 
@@ -3298,9 +3310,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1135      2E00C101 
  1135      2E5DF708 
  1135      BC
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 56
-
-
  1136 1806 80AC0EBB 		.ascii	"\200\254\016\273\002/\0000A\004\202\006\300\244\000"
  1136      022F0030 
  1136      41048206 
@@ -3349,6 +3358,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1145      2EFDF3BF 
  1145      52904294 
  1145      42954205 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 57
+
+
  1146 18b7 30C1500F 		.ascii	"0\301P\017\210\006@\004A\226B\305BH\276s0\015.\330\000"
  1146      88064004 
  1146      419642C5 
@@ -3358,9 +3370,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1147      034281B3 
  1147      022F2B2E 
  1147      6FF5062D 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 57
-
-
  1147      052E77F7 
  1148 18e1 56930825 		.ascii	"V\223\010%.w\367\273T%.\302\365\007.\375\363B0\2643"
  1148      2E77F7BB 
@@ -3409,6 +3418,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1157 1990 C954517F 		.ascii	"\311TQ\177\000.\205oB\177\000.QAE\201BA\023@;\212\000"
  1157      002E856F 
  1157      427F002E 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 58
+
+
  1157      51414581 
  1157      42411340 
  1158 19a7 404B04D0 		.ascii	"@K\004\320\006\300\254\205\177\002/\0020Q\004\323\006"
@@ -3418,9 +3430,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1158      06
  1159 19b8 41840530 		.ascii	"A\204\0050]\002\311\026\337\010\323\000\215\002\257"
  1159      5D02C916 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 58
-
-
  1159      DF08D300 
  1159      8D02AF
  1160 19c7 BCB1B959 		.ascii	"\274\261\271Y\012eo\021C\241\264RASA\001C4\177e\177"
@@ -3469,6 +3478,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1168      906F1341 
  1168      B66FE4
  1169 1a91 7F002E91 		.ascii	"\177\000.\221A\024@\222A\025@\027.o\365\266\177\320"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 59
+
+
  1169      41144092 
  1169      41154017 
  1169      2E6FF5B6 
@@ -3478,9 +3490,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1170      15C26F14 
  1170      0B292E6F 
  1170      F5
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 59
-
-
  1171 1ab4 C3A3C18F 		.ascii	"\303\243\301\217\344o\320o\346/\0240\005.o\365\024\013"
  1171      E46FD06F 
  1171      E62F1430 
@@ -3529,6 +3538,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1180 1b6c FB6FF05F 		.ascii	"\373o\360_\0000\200.\316\267\335R\323TBBO\204s0\333"
  1180      0030802E 
  1180      CEB7DD52 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 60
+
+
  1180      D3544242 
  1180      4F847330 
  1181 1b81 5283421B 		.ascii	"R\203B\0330kB#0'.\327\0007.\324\000!.\326\000z\204\027"
@@ -3538,9 +3550,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1181      00212ED6 
  1182 1b99 2C424230 		.ascii	",BB00!.\324\000\022-!0\0000#.\324\000!.{\367\013-\027"
  1182      30212ED4 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 60
-
-
  1182      00122D21 
  1182      30003023 
  1182      2ED40021 
@@ -3589,6 +3598,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1191      2ED60021 
  1191      2ED700B8 
  1192 1c5d 2E012ED7 		.ascii	".\001.\327\000\003.\326\000H\016\001/\200.\037\016\270"
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 61
+
+
  1192      00032ED6 
  1192      00480E01 
  1192      2F802E1F 
@@ -3598,9 +3610,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1193      30C13225 
  1193      2E62F501 
  1193      00223001 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 61
-
-
  1194 1c86 0142B82E 		.ascii	"\001B\270.\343T\360;\203@\330\010\345R\203B\0000\203"
  1194      E354F03B 
  1194      8340D808 
@@ -3649,6 +3658,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1203 1d41 6FE322C0 		.ascii	"o\343\"\300oR@\344oL\016\022B\323\177\353/\003.\206"
  1203      6F5240E4 
  1203      6F4C0E12 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 62
+
+
  1203      42D37FEB 
  1203      2F032E86 
  1204 1d55 0F409011 		.ascii	"\017@\220\0210\003/#.\206\017\002,\0000\320o\373o\260"
@@ -3658,9 +3670,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1204      6FFB6FB0 
  1205 1d69 5FB82E40 		.ascii	"_\270.@P\361\177\012%<\206\353\177A3\"0\230.\302\304"
  1205      50F17F0A 
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 62
-
-
  1205      253C86EB 
  1205      7F413322 
  1205      30982EC2 
@@ -3709,6 +3718,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1214      002E00
  1215 1e27 2ED02E98 		.ascii	".\320.\230.m\300\230.]\300\355P\230.D\313\357P\230."
  1215      2E6DC098 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 63
+
+
  1215      2E5DC0ED 
  1215      50982E44 
  1215      CBEF5098 
@@ -3718,9 +3730,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1216      64CF1030 
  1216      982EDC03 
  1217 1e51 26C06F02 		.ascii	"&\300o\0021\022B\2533\013B7\200\0010\001B\3637\367R"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 63
-
-
  1217      311242AB 
  1217      330B4237 
  1217      80013001 
@@ -3769,6 +3778,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1227      00000000 
  1227      00000000 
  1227      00
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 64
+
+
  1228 1f0c 00000000 		.ascii	"\000\000\000\000\000\000\000\000\200.\000\301\200.\000"
  1228      00000000 
  1228      802E00C1 
@@ -3778,9 +3790,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1229      C1802E00 
  1229      C1802E00 
  1230 1f2b C1802E00 		.ascii	"\301\200.\000\301\200.\000\301\200.\000\301\200.\000"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 64
-
-
  1230      C1802E00 
  1230      C1802E00 
  1230      C1802E00 
@@ -3829,6 +3838,9 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1242 1fe0 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
  1242      802E00C1 
  1242      802E00C1 
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 65
+
+
  1242      802E00C1 
  1243 1ff0 802E00C1 		.ascii	"\200.\000\301\200.\000\301\200.\000\301\200.\000\301"
  1243      802E00C1 
@@ -3838,9 +3850,6 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1245              		.section	.bss.raw_gz,"aw",%nobits
  1246              		.align	1
  1249              	raw_gz:
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 65
-
-
  1250 0000 0000     		.space	2
  1251              		.global	raw_gy
  1252              		.section	.bss.raw_gy,"aw",%nobits
@@ -3879,40 +3888,40 @@ ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 1
  1295              		.file 9 "Core/Inc/bmi270.h"
  1296              		.file 10 "Core/Inc/bme280.h"
  1297              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s 			page 66
+ARM GAS  C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s 			page 66
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 bmi270.c
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:21     .text.BMI270_I2C_read:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:26     .text.BMI270_I2C_read:00000000 BMI270_I2C_read
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:76     .text.BMI270_I2C_read:00000028 $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:81     .text.BMI270_WriteConfig:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:86     .text.BMI270_WriteConfig:00000000 BMI270_WriteConfig
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:329    .text.BMI270_WriteConfig:0000014c $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:792    .rodata.bmi270_config_file:00000000 bmi270_config_file
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:335    .text.BMI270_Configure:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:341    .text.BMI270_Configure:00000000 BMI270_Configure
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:520    .text.BMI270_Configure:000000f8 $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:525    .text.BMI270_ReadMeasurement:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:531    .text.BMI270_ReadMeasurement:00000000 BMI270_ReadMeasurement
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:725    .text.BMI270_ReadMeasurement:0000012c $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1263   .bss.raw_gx:00000000 raw_gx
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1256   .bss.raw_gy:00000000 raw_gy
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1249   .bss.raw_gz:00000000 raw_gz
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1284   .bss.raw_ax:00000000 raw_ax
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1277   .bss.raw_ay:00000000 raw_ay
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1270   .bss.raw_az:00000000 raw_az
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:738    .text.BMI270_ReadMeasurement_raw:00000000 $t
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:744    .text.BMI270_ReadMeasurement_raw:00000000 BMI270_ReadMeasurement_raw
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:783    .text.BMI270_ReadMeasurement_raw:00000020 $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:789    .rodata.bmi270_config_file:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1246   .bss.raw_gz:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1253   .bss.raw_gy:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1260   .bss.raw_gx:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1267   .bss.raw_az:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1274   .bss.raw_ay:00000000 $d
-C:\Users\bku598\AppData\Local\Temp\ccPUPttd.s:1281   .bss.raw_ax:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:21     .text.BMI270_I2C_read:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:26     .text.BMI270_I2C_read:00000000 BMI270_I2C_read
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:76     .text.BMI270_I2C_read:00000028 $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:81     .text.BMI270_WriteConfig:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:86     .text.BMI270_WriteConfig:00000000 BMI270_WriteConfig
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:329    .text.BMI270_WriteConfig:0000014c $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:792    .rodata.bmi270_config_file:00000000 bmi270_config_file
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:335    .text.BMI270_Configure:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:341    .text.BMI270_Configure:00000000 BMI270_Configure
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:520    .text.BMI270_Configure:000000f8 $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:525    .text.BMI270_ReadMeasurement:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:531    .text.BMI270_ReadMeasurement:00000000 BMI270_ReadMeasurement
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:725    .text.BMI270_ReadMeasurement:0000012c $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1263   .bss.raw_gx:00000000 raw_gx
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1256   .bss.raw_gy:00000000 raw_gy
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1249   .bss.raw_gz:00000000 raw_gz
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1284   .bss.raw_ax:00000000 raw_ax
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1277   .bss.raw_ay:00000000 raw_ay
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1270   .bss.raw_az:00000000 raw_az
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:738    .text.BMI270_ReadMeasurement_raw:00000000 $t
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:744    .text.BMI270_ReadMeasurement_raw:00000000 BMI270_ReadMeasurement_raw
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:783    .text.BMI270_ReadMeasurement_raw:00000020 $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:789    .rodata.bmi270_config_file:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1246   .bss.raw_gz:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1253   .bss.raw_gy:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1260   .bss.raw_gx:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1267   .bss.raw_az:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1274   .bss.raw_ay:00000000 $d
+C:\Users\bku598\AppData\Local\Temp\ccGVCQP0.s:1281   .bss.raw_ax:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_I2C_Mem_Read

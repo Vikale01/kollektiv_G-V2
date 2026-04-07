@@ -61,6 +61,8 @@ extern uint8_t usbConnected;
 
 uint8_t usbVolt = 0;
 
+uint8_t livedata[12];
+
 const uint8_t charges[] = {	
     0x7f, 0xf0, 0x7f, 0xf0, 0x7f, 0xf0, 0x7f, 0xf0};
               
@@ -220,7 +222,6 @@ int main(void)
           cursorChange = 0;
         }
         BatteryLevel();
-
         gpsLogo();
 
         break;
@@ -242,13 +243,15 @@ int main(void)
           Oled_updateNumSV();
         }
 
-        if (tastScheduler >= 1){
-          if(GPS_connected)  // Check if gps has good connection before storing data.
-          {
-            packageDataToMem();
-            sendPackageToMem();
-          }
 
+        if (tastScheduler >= 1){
+          // if(GPS_connected)  // Check if gps has good connection before storing data.
+          // {
+          //   packageDataToMem();
+          //   sendPackageToMem();
+          // }
+          packageDataToMem();
+          sendPackageToMem();
           tastScheduler = 0;
         }
         break;

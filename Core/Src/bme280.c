@@ -1,23 +1,14 @@
-/*
-  ***************************************************************************************************************
-  ***************************************************************************************************************
-  ***************************************************************************************************************
+/***********************************************************
+ * @file    bme280.c
+ * @brief   Driver for the Bosch BME280 sensor.
+ * Handles I2C communication, sensor configuration, and
+ * complex compensation formulas for temperature, pressure,
+ * and humidity based on factory calibration data.
+ * @author  Viktor Alexandersson & Niklas Christensen 
+ * @date    2025-12-04
+ ***********************************************************/
 
-  File:		  BME280_STM32.c
-  Author:     ControllersTech.com
-  Updated:    Dec 14, 2021
-
-  ***************************************************************************************************************
-  Copyright (C) 2017 ControllersTech.com
-
-  This is a free software under the GNU license, you can redistribute it and/or modify it under the terms
-  of the GNU General Public License version 3 as published by the Free Software Foundation.
-  This software library is shared with public for educational purposes, without WARRANTY and Author is not liable for any damages caused directly
-  or indirectly by this software, read more about this on the GNU General Public License.
-
-  ***************************************************************************************************************
-*/
-
+/* Includes -----------------------------------------------*/
 #include "bme280.h"
 
 //extern float Temperature, Pressure, Humidity;
@@ -128,8 +119,9 @@ int BME280_Config (uint8_t osrs_t, uint8_t osrs_p, uint8_t osrs_h, uint8_t mode,
 	return 0;  //Success
 }
 
-/* To be used when doing the force measurement
- * the Device need to be put in forced mode every time the measurement is needed
+/**
+ * @brief  Triggers a single measurement in Forced mode.
+ * Sensor returns to Sleep mode automatically after the measurement.
  */
 void BME280_WakeUP(void)
 {
@@ -147,8 +139,11 @@ void BME280_WakeUP(void)
 	HAL_Delay (100);
 }
 
-/* measure the temp, pressure and humidity
- * the values will be stored in the parameters passed to the function
+/**
+ * @brief  Reads and compensates environmental data.
+ * @param  temperature: Result in DegC.
+ * @param  pressure: Result in hPa.
+ * @param  humidity: Result in %RH.
  */
 void BME280_Measure(float *temperature, float *pressure, float *humidity)
 {
@@ -186,7 +181,9 @@ void BME280_Measure(float *temperature, float *pressure, float *humidity)
 }
 
 
-// Read the Trimming parameters saved in the NVM ROM of the device
+/**
+ * @brief  Reads factory trimming parameters from the sensor NVM.
+ */
 static int TrimRead(void)
 {
 	uint8_t trimdata[32];
@@ -230,6 +227,9 @@ static int TrimRead(void)
 	return 0; //Success
 }
 
+/**
+ * @brief  Reads raw ADC values for P, T, and H in a single burst.
+ */
 static int BMEReadRaw(void)
 {
 	uint8_t RawData[8];
@@ -254,6 +254,9 @@ static int BMEReadRaw(void)
 	else return 1;  //error NUM for debug
 }
 
+/**
+ * @brief  Burst read raw data into a provided buffer.
+ */
 void BME280_ReadMeasurement_Raw(uint8_t Rawdata[8])
 {
 	// Check the chip ID before reading

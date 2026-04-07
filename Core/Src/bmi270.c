@@ -574,6 +574,11 @@ static int BMI270_WriteConfig(void)
 	return 0;
 }
 
+/**
+ * @brief  configuration function for the IMU.
+ * Sets power modes, ranges, and data rates for Accel/Gyro.
+ * @return 0 on success, 1 on failure
+ */
 int BMI270_Configure()
 {
     uint8_t reg_value = 0x00;
@@ -653,6 +658,10 @@ void BMI270_ReadMeasurement(float *ax, float *ay, float *az, float *gx, float *g
     *gz = raw_gz / 16.4f;
 }
 
+/**
+ * @brief  Raw burst read for storage or high-speed processing.
+ * @param  sensor_raw: 12-byte buffer for the raw data
+ */
 void BMI270_ReadMeasurement_raw(uint8_t sensor_raw[12])
 {
 
